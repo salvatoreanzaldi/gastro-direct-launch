@@ -14,10 +14,10 @@ import FounderTrustSection from "@/components/landing/FounderTrustSection";
 import ProcessSection from "@/components/landing/ProcessSection";
 import PartnerSection from "@/components/landing/PartnerSection";
 import IntegrationSliderSection from "@/components/landing/IntegrationSliderSection";
-import ContactCTASection from "@/components/landing/ContactCTASection";
 import GoogleReviewsGrid from "@/components/GoogleReviewsGrid";
 import TrustedBrandsSection from "@/components/landing/TrustedBrandsSection";
 import Footer from "@/components/landing/Footer";
+import HomeTeamCTA from "@/components/HomeTeamCTA";
 import { CTASection } from "@/components/CTASection";
 import { getCTAConfig } from "@/data/cta-config";
 
@@ -68,9 +68,9 @@ const Index = () => {
       {/* <PartnerSection /> */}
       <IntegrationSliderSection />
 
-      {/* Desktop CTA Section */}
+      {/* Desktop Team CTA Section */}
       <div className="hidden md:block">
-        <ContactCTASection />
+        <HomeTeamCTA />
       </div>
 
       {/* Mobile CTA Section */}
