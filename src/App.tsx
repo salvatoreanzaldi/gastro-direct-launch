@@ -36,6 +36,14 @@ const LAZY_COMPONENTS: Record<string, ComponentType> = {
   "@/pages/UeberUnsPage":               lazy(() => import("@/pages/UeberUnsPage")),
   "@/pages/GhostKitchenPage":           lazy(() => import("@/pages/GhostKitchenPage")),
   "@/pages/IntegrationPage":            lazy(() => import("@/pages/IntegrationPage")),
+
+  // Add-Ons
+  "@/pages/AddOnsPage":                 lazy(() => import("@/pages/AddOnsPage")),
+  "@/pages/add-ons/QRCodeFlyerPage":    lazy(() => import("@/pages/add-ons/QRCodeFlyerPage")),
+  "@/pages/add-ons/FahrerAppGpsPage":   lazy(() => import("@/pages/add-ons/FahrerAppGpsPage")),
+  "@/pages/add-ons/QRCodeTischsystemPage": lazy(() => import("@/pages/add-ons/QRCodeTischsystemPage")),
+  "@/pages/add-ons/BildschirmfunktionPage": lazy(() => import("@/pages/add-ons/BildschirmfunktionPage")),
+  "@/pages/add-ons/KioskPage":          lazy(() => import("@/pages/add-ons/KioskPage")),
 };
 
 const queryClient = new QueryClient();
@@ -64,6 +72,7 @@ const App = () => (
               <Route path="/preise" element={<Navigate to="/de/preise" replace />} />
               <Route path="/uber-uns" element={<Navigate to="/de/uber-uns" replace />} />
               <Route path="/downloads/*" element={<RedirectWithLang />} />
+              <Route path="/add-ons/*" element={<RedirectWithLang />} />
 
               {/* /:lang routes — generated from ROUTES config */}
               <Route path="/:lang" element={<LanguageLayout />}>

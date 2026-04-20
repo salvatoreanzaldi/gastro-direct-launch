@@ -39,6 +39,14 @@ export const ROUTES: RouteEntry[] = [
   { path: "/loesungen/cafe-baeckerei",            importPath: "@/pages/CafeBaeckereiPage",           priority: 0.8, changefreq: "weekly" },
   { path: "/loesungen/ghost-kitchen",             importPath: "@/pages/GhostKitchenPage",            priority: 0.7, changefreq: "weekly" },
 
+  // Add-Ons
+  { path: "/add-ons",                             importPath: "@/pages/AddOnsPage",                  priority: 0.85, changefreq: "weekly" },
+  { path: "/add-ons/qr-code-flyer",               importPath: "@/pages/add-ons/QRCodeFlyerPage",    priority: 0.7, changefreq: "monthly" },
+  { path: "/add-ons/fahrer-app-gps",              importPath: "@/pages/add-ons/FahrerAppGpsPage",   priority: 0.7, changefreq: "monthly" },
+  { path: "/add-ons/qr-code-tischsystem",         importPath: "@/pages/add-ons/QRCodeTischsystemPage", priority: 0.7, changefreq: "monthly" },
+  { path: "/add-ons/bildschirmfunktion",          importPath: "@/pages/add-ons/BildschirmfunktionPage", priority: 0.7, changefreq: "monthly" },
+  { path: "/add-ons/kiosk",                       importPath: "@/pages/add-ons/KioskPage",          priority: 0.7, changefreq: "monthly" },
+
   // Info-Seiten
   { path: "/faq",                                 importPath: "@/pages/FAQPage",                    priority: 0.7, changefreq: "monthly" },
   { path: "/preise",                              importPath: "@/pages/PreisePage",                  priority: 0.8, changefreq: "weekly" },
