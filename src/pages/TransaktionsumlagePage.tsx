@@ -11,6 +11,8 @@ import {
 import { Link } from "react-router-dom";
 import Navbar from "@/components/landing/Navbar";
 import Footer from "@/components/landing/Footer";
+import { CTASection } from "@/components/CTASection";
+import { getCTAConfig } from "@/data/cta-config";
 
 // ─── Assets ───────────────────────────────────────────────────────────────────
 import payPaypalIcon  from "@/assets/logos/payment/Logo - PayPal Icon.png";
@@ -430,10 +432,6 @@ const TeamCTA = () => {
               {langs.map((label, i) => (
                 <motion.div
                   key={label}
-                  initial={{ opacity: 0, scale: 0.85 }}
-                  whileInView={{ opacity: 1, scale: 1 }}
-                  viewport={{ once: true }}
-                  transition={{ delay: 0.05 + i * 0.06, duration: 0.3, ease: "easeOut" }}
                   whileHover={{ scale: 1.08, y: -2 }}
                   className={`flex items-center gap-1.5 px-3 py-1.5 rounded-full border-2 border-[#0A264A]/10 dark:border-white/10 bg-[#0A264A]/[0.03] dark:bg-white/[0.04] text-[#0A264A] dark:text-white font-semibold text-xs cursor-default select-none whitespace-nowrap transition-all duration-300 shadow-sm hover:shadow-md ${LANG_META[i]?.color ?? ""}`}
                 >
@@ -1041,6 +1039,9 @@ const TransaktionsumlagePage = () => {
 
         {/* ── S10: TEAM CTA ─────────────────────────────────────────────────── */}
         <TeamCTA />
+
+        {/* ── S10b: MOBILE CTA SECTION ──────────────────────────────────────── */}
+        <CTASection {...getCTAConfig("/produkte/transaktionsumlage")} />
 
         <Footer />
       </div>

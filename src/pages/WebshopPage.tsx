@@ -12,6 +12,8 @@ import Navbar from "@/components/landing/Navbar";
 import Footer from "@/components/landing/Footer";
 import CalculatorSection from "@/components/landing/CalculatorSection";
 import TargetGroupSection from "@/components/landing/TargetGroupSection";
+import { CTASection } from "@/components/CTASection";
+import { getCTAConfig } from "@/data/cta-config";
 
 // ─── Assets ──────────────────────────────────────────────────────────────────
 import phone1 from "@/assets/mockups/1 - Mock Up Small.png";
@@ -351,10 +353,6 @@ const WebshopTeamCTA = () => {
               ].map((lang, i) => (
                 <motion.div
                   key={lang.label}
-                  initial={{ opacity: 0, scale: 0.85 }}
-                  whileInView={{ opacity: 1, scale: 1 }}
-                  viewport={{ once: true }}
-                  transition={{ delay: 0.05 + i * 0.06, duration: 0.3, ease: "easeOut" }}
                   whileHover={{ scale: 1.08, y: -2 }}
                   className={`flex items-center gap-1.5 px-3 py-1.5 rounded-full border-2 border-[#0A264A]/10 dark:border-white/10 bg-[#0A264A]/[0.03] dark:bg-white/[0.04] text-[#0A264A] dark:text-white font-semibold text-xs cursor-default select-none whitespace-nowrap transition-all duration-300 shadow-sm hover:shadow-md ${lang.color}`}
                 >
@@ -1105,6 +1103,9 @@ const WebshopPage = () => {
 
       {/* ── S12: FINAL CTA ──────────────────────────────────────── */}
       <WebshopTeamCTA />
+
+      {/* ── S12b: MOBILE CTA SECTION ────────────────────────────── */}
+      <CTASection {...getCTAConfig("/produkte/webshop")} />
 
       <Footer />
     </div>
