@@ -1037,10 +1037,14 @@ const AppPage = () => {
       </section>
 
       {/* ── S14: FINAL CTA ──────────────────────────────────────── */}
-      <AppTeamCTA />
+      <div className="hidden md:block">
+        <AppTeamCTA />
+      </div>
 
       {/* ── S14b: MOBILE CTA SECTION ────────────────────────────── */}
-      <CTASection {...getCTAConfig("/produkte/app")} />
+      <div className="md:hidden">
+        <CTASection {...getCTAConfig("/produkte/app")} />
+      </div>
 
       <Footer />
     </div>

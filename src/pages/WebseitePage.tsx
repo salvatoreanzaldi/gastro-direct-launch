@@ -1073,10 +1073,14 @@ const WebseitePage = () => {
         </section>
 
         {/* ── S11: TEAM CTA ─────────────────────────────────────────────────── */}
-        <TeamCTA />
+        <div className="hidden md:block">
+          <TeamCTA />
+        </div>
 
         {/* ── S11b: MOBILE CTA SECTION ──────────────────────────────────────── */}
-        <CTASection {...getCTAConfig("/produkte/webseite")} />
+        <div className="md:hidden">
+          <CTASection {...getCTAConfig("/produkte/webseite")} />
+        </div>
 
       </div>
       <Footer />

@@ -599,8 +599,7 @@ const UeberUnsPage = () => {
             </p>
             <div className="flex flex-wrap justify-center gap-3 py-3">
               {langItems.map((lang, i) => (
-                <motion.div key={lang.flag} initial={{ opacity: 0, scale: 0.85 }} whileInView={{ opacity: 1, scale: 1 }} viewport={{ once: true }}
-                  transition={{ delay: 0.1 + i * 0.07, duration: 0.35, ease: "easeOut" }} whileHover={{ scale: 1.08, y: -3 }}
+                <motion.div key={lang.flag} whileHover={{ scale: 1.08, y: -3 }}
                   className={`flex-shrink-0 flex items-center gap-2 px-4 py-2.5 rounded-full border-2 border-border bg-surface-light text-foreground font-semibold text-sm cursor-default select-none whitespace-nowrap transition-all duration-300 shadow-sm hover:shadow-md ${FLAG_COLOR_MAP[lang.flag] || ""}`}>
                   <span className="text-2xl leading-none">{FLAG_MAP[lang.flag] || ""}</span>
                   {lang.label}

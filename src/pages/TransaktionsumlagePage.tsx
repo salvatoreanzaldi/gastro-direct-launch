@@ -1038,10 +1038,14 @@ const TransaktionsumlagePage = () => {
         </section>
 
         {/* ── S10: TEAM CTA ─────────────────────────────────────────────────── */}
-        <TeamCTA />
+        <div className="hidden md:block">
+          <TeamCTA />
+        </div>
 
         {/* ── S10b: MOBILE CTA SECTION ──────────────────────────────────────── */}
-        <CTASection {...getCTAConfig("/produkte/transaktionsumlage")} />
+        <div className="md:hidden">
+          <CTASection {...getCTAConfig("/produkte/transaktionsumlage")} />
+        </div>
 
         <Footer />
       </div>

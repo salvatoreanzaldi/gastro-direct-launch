@@ -1102,10 +1102,14 @@ const WebshopPage = () => {
       </section>
 
       {/* ── S12: FINAL CTA ──────────────────────────────────────── */}
-      <WebshopTeamCTA />
+      <div className="hidden md:block">
+        <WebshopTeamCTA />
+      </div>
 
       {/* ── S12b: MOBILE CTA SECTION ────────────────────────────── */}
-      <CTASection {...getCTAConfig("/produkte/webshop")} />
+      <div className="md:hidden">
+        <CTASection {...getCTAConfig("/produkte/webshop")} />
+      </div>
 
       <Footer />
     </div>

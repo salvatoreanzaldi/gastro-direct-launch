@@ -4,6 +4,7 @@ import { useTranslation } from "react-i18next";
 import Navbar from "@/components/landing/Navbar";
 import Footer from "@/components/landing/Footer";
 import { InfiniteSlider } from "@/components/ui/infinite-slider";
+import { useEffect, useState } from "react";
 
 // Import Lieferplattformen Icons
 import lieferandoIcon from "@/assets/icons/app/App Icon - Lieferando.png";
@@ -40,7 +41,7 @@ import whatsappIcon from "@/assets/icons/app/App Icon - WhatsApp.png";
 
 // Import Router Icons
 import fritzIcon from "@/assets/icons/app/App Icon - Fritz.png";
-import vodafoneIcon from "@/assets/icons/app/App Icon - Vodafone.png";
+import vodafoneIcon from "@/assets/icons/app/App Icon - Vodafone 2.png";
 import telekomIcon from "@/assets/icons/app/App Icon - Telekom.png";
 
 // Import all integration icons for slider
@@ -55,15 +56,15 @@ import liefersoftIcon from "@/assets/icons/app/App Icon - Liefersoft.png";
 import sidesSliderIcon from "@/assets/icons/app/App Icon - Sides.png";
 import eloSliderIcon from "@/assets/icons/app/App Icon - Elo.png";
 import appleIcon from "@/assets/icons/app/App Icon - Apple.png";
-import microsoftIcon from "@/assets/icons/app/App Icon - Microsoft.png";
-import googleIcon from "@/assets/icons/app/App Icon - Google.png";
+import microsoftIcon from "@/assets/icons/app/App Icon - Microsoft 2.png";
+import googleIcon from "@/assets/icons/app/App Icon - Google 2.png";
 import youtubeIcon from "@/assets/icons/app/App Icon - YouTube.png";
 import clickupIcon from "@/assets/icons/app/App Icon - Click Up.png";
 import upsSliderIcon from "@/assets/icons/app/App Icon - ups.png";
 import dpdSliderIcon from "@/assets/icons/app/App Icon - DPD.png";
 import dhlSliderIcon from "@/assets/icons/app/App Icon - DHL.png";
 import fritzSliderIcon from "@/assets/icons/app/App Icon - Fritz.png";
-import vodafoneSliderIcon from "@/assets/icons/app/App Icon - Vodafone.png";
+import vodafoneSliderIcon from "@/assets/icons/app/App Icon - Vodafone 2.png";
 import telekomSliderIcon from "@/assets/icons/app/App Icon - Telekom.png";
 import makeIcon from "@/assets/icons/app/App Icon - Make.png";
 import whatsappSliderIcon from "@/assets/icons/app/App Icon - WhatsApp.png";
@@ -141,6 +142,22 @@ const allSliderIcons: IconItem[] = [
 // Split icons: first 16 for row A, remaining 15 for row B
 const sliderRowA = [...allSliderIcons.slice(0, 16), ...allSliderIcons.slice(0, 16)];
 const sliderRowB = [...allSliderIcons.slice(16), ...allSliderIcons.slice(16)];
+
+const useIsDesktop = () => {
+  const [isDesktop, setIsDesktop] = useState(true);
+
+  useEffect(() => {
+    const checkDesktop = () => {
+      setIsDesktop(window.innerWidth >= 768);
+    };
+
+    checkDesktop();
+    window.addEventListener("resize", checkDesktop);
+    return () => window.removeEventListener("resize", checkDesktop);
+  }, []);
+
+  return isDesktop;
+};
 
 const IconCardSlider = ({ id, src, alt }: IconItem) => (
   <div className="flex-shrink-0 w-20 h-20 rounded-2xl overflow-hidden bg-gray-50 dark:bg-white/5 border border-border shadow-sm">
@@ -355,11 +372,14 @@ const IntegrationCard = ({
 }: {
   card: IntegrationCard;
   index: number;
-}) => (
+}) => {
+  const isDesktop = useIsDesktop();
+
+  return (
   <motion.div
-    initial={{ opacity: 0, y: 20 }}
-    whileInView={{ opacity: 1, y: 0 }}
-    transition={{ duration: 0.4, delay: index * 0.1 }}
+    initial={isDesktop ? { opacity: 0, y: 20 } : { opacity: 1, y: 0 }}
+    whileInView={isDesktop ? { opacity: 1, y: 0 } : { opacity: 1, y: 0 }}
+    transition={isDesktop ? { duration: 0.4, delay: index * 0.1 } : { duration: 0 }}
     viewport={{ once: true }}
     className="group relative h-full p-8 rounded-2xl border border-border bg-white dark:bg-slate-950 hover:border-cyan-brand/50 dark:hover:border-cyan-mid/50 transition-all duration-300 hover:shadow-lg dark:hover:shadow-cyan-mid/10 flex flex-col"
   >
@@ -378,7 +398,7 @@ const IntegrationCard = ({
 
     {/* CTA Button */}
     <Button
-      className="w-full gap-2"
+      className="w-full gap-2 font-bold"
       variant="default"
       asChild
     >
@@ -388,10 +408,11 @@ const IntegrationCard = ({
       </a>
     </Button>
   </motion.div>
-);
+  );
+};
 
 const IntegrationCategory = ({ category }: { category: IntegrationCategory }) => (
-  <section className="py-8 md:py-10">
+  <section className="py-8 md:py-10 px-5 md:px-0">
     <motion.div
       initial={{ opacity: 0, y: 20 }}
       whileInView={{ opacity: 1, y: 0 }}
@@ -424,7 +445,7 @@ export default function IntegrationPage() {
       <Navbar />
 
       {/* Hero Section */}
-      <section className="py-16 md:py-24 bg-gradient-to-b from-background to-slate-50/30 dark:to-slate-950/30 border-b border-border">
+      <section className="pt-24 pb-16 md:pt-28 md:pb-24 bg-gradient-to-b from-background to-slate-50/30 dark:to-slate-950/30 border-b border-border">
         <div className="container-tight">
           <motion.div
             initial={{ opacity: 0, y: 20 }}

@@ -1123,10 +1123,14 @@ const KassePage = () => {
     })}
 
     {/* ── S9: TEAM CTA ──────────────────────────────────────────── */}
-    <TeamCTASection t={t} lp={lp} />
+    <div className="hidden md:block">
+      <TeamCTASection t={t} lp={lp} />
+    </div>
 
     {/* ── S9b: MOBILE CTA SECTION ─────────────────────────────── */}
-    <CTASection {...getCTAConfig("/produkte/kassensystem")} />
+    <div className="md:hidden">
+      <CTASection {...getCTAConfig("/produkte/kassensystem")} />
+    </div>
 
     {/* ── S10: FAQ ───────────────────────────────────────────── */}
     <section className="bg-[#081628] px-5 md:px-8 lg:px-16 py-20 md:py-28">
