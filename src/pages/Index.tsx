@@ -18,6 +18,8 @@ import ContactCTASection from "@/components/landing/ContactCTASection";
 import GoogleReviewsGrid from "@/components/GoogleReviewsGrid";
 import TrustedBrandsSection from "@/components/landing/TrustedBrandsSection";
 import Footer from "@/components/landing/Footer";
+import { CTASection } from "@/components/CTASection";
+import { getCTAConfig } from "@/data/cta-config";
 
 
 const Index = () => {
@@ -65,7 +67,17 @@ const Index = () => {
       {/* <ReferencesSection /> */}
       {/* <PartnerSection /> */}
       <IntegrationSliderSection />
-      <ContactCTASection />
+
+      {/* Desktop CTA Section */}
+      <div className="hidden md:block">
+        <ContactCTASection />
+      </div>
+
+      {/* Mobile CTA Section */}
+      <div className="md:hidden">
+        <CTASection {...getCTAConfig("/")} />
+      </div>
+
       {/* ACTION */}
       <Footer />
     </div>

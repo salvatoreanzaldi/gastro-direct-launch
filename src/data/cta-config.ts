@@ -6,6 +6,10 @@ interface CTAConfig {
 
 export const getCTAConfig = (productPath: string): CTASectionProps => {
   const configs: CTAConfig = {
+    "/": {
+      productPath: "/",
+      text: "Die komplette Lösung für dein Restaurant – von der Kasse bis zum Online-Shop. Einfach, skalierbar, vertrauenswürdig.",
+    },
     "/produkte/kassensystem": {
       productPath: "/produkte/kassensystem",
       text: "Verwalte deine komplette Kassenfunktion mit einer eleganten Lösung. Einfach, zuverlässig, skalierbar.",
