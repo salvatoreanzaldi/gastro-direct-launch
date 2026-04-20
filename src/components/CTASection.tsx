@@ -29,10 +29,10 @@ export const CTASection = ({ productPath, text }: CTASectionProps) => {
   const [current, setCurrent] = useState(0);
 
   const teamMembers = [
-    { name: "René Ebert", role: "CEO & Founder", img: teamReneImg },
-    { name: "Salvatore Anzaldi", role: "Co-Founder", img: teamSalvatoreImg },
-    { name: "Andrej Krutsch", role: "Head of Development", img: teamAndrejImg },
-    { name: "Mohammad Motakalemi", role: "Lead Engineer", img: teamMohammadImg },
+    { name: "René Ebert", role: "Gründer & CEO", img: teamReneImg },
+    { name: "Salvatore Anzaldi", role: "Vertriebsleiter", img: teamSalvatoreImg },
+    { name: "Andrej Krutsch", role: "Service Customer Manager", img: teamAndrejImg },
+    { name: "Mohammad Motakalemi", role: "Vertrieb", img: teamMohammadImg },
   ];
 
   const languages = [
@@ -126,7 +126,7 @@ export const CTASection = ({ productPath, text }: CTASectionProps) => {
             whileInView={{ opacity: 1, y: 0 }}
             viewport={{ once: true }}
             transition={{ delay: 0.3, duration: 0.6 }}
-            className="grid grid-cols-3 gap-2 w-full max-w-xs justify-items-center"
+            className="grid grid-cols-3 gap-1.5 w-full max-w-xs justify-items-center"
           >
             {languages.map(lang => (
               <div
