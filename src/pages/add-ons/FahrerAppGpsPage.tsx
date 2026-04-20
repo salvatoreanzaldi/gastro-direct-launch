@@ -5,8 +5,8 @@ import {
 } from "lucide-react";
 import AddOnPageTemplate, { type AddOnPageConfig } from "@/components/addon/AddOnPageTemplate";
 import heroImage from "@/assets/addons/addon-frankfurt.png";
-import appleIcon from "@/assets/Icons/Icon - Apple App Store.png";
-import googleIcon from "@/assets/Icons/Icon - Google Play Store.png";
+import appleIcon from "@/assets/icons/Icon - Apple App Store.png";
+import googleIcon from "@/assets/icons/Icon - Google Play Store.png";
 
 const config: AddOnPageConfig = {
   meta: {

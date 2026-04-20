@@ -11,12 +11,12 @@ import teamAndrejImg    from "@/assets/team/team-andrej-krutsch.png";
 import teamMohammadImg  from "@/assets/team/team-mohammad-motakalemi.png";
 
 // Language SVGs
-import deutschSvg    from "@/assets/Icons/Deutsch.svg";
-import englischSvg   from "@/assets/Icons/Englisch.svg";
-import italienischSvg from "@/assets/Icons/Italienisch.svg";
-import persischSvg   from "@/assets/Icons/Persisch.svg";
-import russischSvg   from "@/assets/Icons/Russisch.svg";
-import singhalesischSvg from "@/assets/Icons/Singhalesisch.svg";
+import deutschSvg    from "@/assets/icons/Deutsch.svg";
+import englischSvg   from "@/assets/icons/Englisch.svg";
+import italienischSvg from "@/assets/icons/Italienisch.svg";
+import persischSvg   from "@/assets/icons/Persisch.svg";
+import russischSvg   from "@/assets/icons/Russisch.svg";
+import singhalesischSvg from "@/assets/icons/Singhalesisch.svg";
 
 export interface CTASectionProps {
   productPath: string;
