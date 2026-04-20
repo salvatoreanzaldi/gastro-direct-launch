@@ -104,7 +104,7 @@ export const CTASection = ({ productPath, text }: CTASectionProps) => {
             whileInView={{ opacity: 1, y: 0 }}
             viewport={{ once: true }}
             transition={{ delay: 0.1, duration: 0.6 }}
-            className="text-2xl font-black text-[#0A264A] dark:text-white leading-tight"
+            className="text-2xl font-black text-[#0A264A] dark:text-white leading-tight -mt-1"
           >
             Buche jetzt dein kostenloses Beratungsgespräch
           </motion.h2>
@@ -115,18 +115,18 @@ export const CTASection = ({ productPath, text }: CTASectionProps) => {
             whileInView={{ opacity: 1, y: 0 }}
             viewport={{ once: true }}
             transition={{ delay: 0.2, duration: 0.6 }}
-            className="text-[#0A264A]/60 dark:text-white/60 text-base leading-relaxed"
+            className="text-[#0A264A]/60 dark:text-white/60 text-base leading-relaxed -mt-2"
           >
             {text}
           </motion.p>
 
-          {/* Language Pills - Inline */}
+          {/* Language Pills - 3x2 Grid */}
           <motion.div
             initial={{ opacity: 0, y: 20 }}
             whileInView={{ opacity: 1, y: 0 }}
             viewport={{ once: true }}
             transition={{ delay: 0.3, duration: 0.6 }}
-            className="flex flex-wrap items-center justify-center gap-2"
+            className="grid grid-cols-3 gap-2 w-full max-w-xs justify-items-center"
           >
             {languages.map(lang => (
               <div
