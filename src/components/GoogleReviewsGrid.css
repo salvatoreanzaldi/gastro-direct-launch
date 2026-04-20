@@ -1,23 +1,27 @@
 /* Persistent horizontal scrollbar styling */
 .reviews-scroll-container {
-  scrollbar-width: auto;
+  overflow-x: scroll !important;
+  overflow-y: hidden;
   scrollbar-gutter: stable;
-  overflow-x: auto !important;
-}
 
-/* Firefox */
-.reviews-scroll-container {
+  /* Firefox */
   scrollbar-width: thin;
-  scrollbar-color: #0A264A rgba(10, 38, 74, 0.1);
+  scrollbar-color: #0A264A rgba(10, 38, 74, 0.15);
 }
 
-/* Chrome, Safari, Edge */
+/* Chrome, Safari, Edge — force persistent visible scrollbar
+   (-webkit-appearance: none is required to override macOS Sonoma's
+   default overlay-scrollbar behaviour, otherwise the bar stays hidden
+   even when height is set explicitly.) */
 .reviews-scroll-container::-webkit-scrollbar {
+  -webkit-appearance: none;
+  appearance: none;
   height: 12px;
+  display: block;
 }
 
 .reviews-scroll-container::-webkit-scrollbar-track {
-  background: rgba(10, 38, 74, 0.05);
+  background: rgba(10, 38, 74, 0.08);
   border-radius: 10px;
 }
 
@@ -25,6 +29,7 @@
   background: #0A264A;
   border-radius: 10px;
   border: 2px solid rgba(10, 38, 74, 0.05);
+  min-width: 40px;
 }
 
 .reviews-scroll-container::-webkit-scrollbar-thumb:hover {
