@@ -43,11 +43,11 @@ const Index = () => {
       {/* <TrustSection /> */}
       {/* INTEREST */}
       <ProductShowcaseAccordionSection />
+      <CalculatorSection />
       <TargetGroupSection />
       <VideoTestimonialSection />
       <AppShowcaseSection animate={false} showFloatingFood={false} carousel={true} />
       {/* <PositioningSection /> */}
-      <CalculatorSection />
       {/* <ProblemSection /> */}
       {/* <SolutionSection /> */}
       {/* <MockupShowcase /> */}
@@ -59,7 +59,7 @@ const Index = () => {
       {/* <PickUpScreenSection /> */}
       {/* <TransaktionsUmlageSection /> */}
       <DifferentiationSection />
-      <FounderTrustSection />
+      {/* <FounderTrustSection /> */}
       {/* <LanguageBadgeSection /> */}
       {/* <MomentumSection /> */}
       <ProcessSection />

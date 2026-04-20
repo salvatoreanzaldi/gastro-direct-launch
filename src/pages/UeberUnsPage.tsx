@@ -590,17 +590,17 @@ const UeberUnsPage = () => {
         <div className="container-tight">
           <motion.div initial={{ opacity: 0, y: 24 }} whileInView={{ opacity: 1, y: 0 }} viewport={{ once: true }} transition={{ delay: 0.2, duration: 0.6 }}
             className="rounded-3xl border border-border bg-background shadow-lg px-8 py-10 max-w-4xl mx-auto text-center">
-            <div className="flex items-center justify-center gap-2.5 mb-3">
-              <Globe className="w-6 h-6 text-cyan-brand" />
-              <h2 className="text-2xl md:text-3xl font-black text-foreground">{t("languages.heading")}</h2>
+            <div className="flex flex-col md:flex-row items-center justify-center gap-2.5 mb-3">
+              <Globe className="w-6 h-6 text-cyan-brand md:order-1" />
+              <h2 className="text-2xl md:text-3xl font-black text-foreground md:order-2">{t("languages.heading")}</h2>
             </div>
             <p className="text-muted-foreground text-base md:text-lg mb-8 max-w-xl mx-auto">
               {t("languages.subtitle")}
             </p>
-            <div className="flex flex-wrap justify-center gap-3 py-3">
+            <div className="grid grid-cols-2 md:flex md:flex-wrap md:justify-center gap-3 py-3 max-w-sm mx-auto md:max-w-none">
               {langItems.map((lang, i) => (
                 <motion.div key={lang.flag} whileHover={{ scale: 1.08, y: -3 }}
-                  className={`flex-shrink-0 flex items-center gap-2 px-4 py-2.5 rounded-full border-2 border-border bg-surface-light text-foreground font-semibold text-sm cursor-default select-none whitespace-nowrap transition-all duration-300 shadow-sm hover:shadow-md ${FLAG_COLOR_MAP[lang.flag] || ""}`}>
+                  className={`flex-shrink-0 flex items-center justify-center md:inline-flex gap-2 px-5 md:px-4 py-2.5 rounded-full border-2 border-border bg-surface-light text-foreground font-semibold text-sm cursor-default select-none whitespace-nowrap transition-all duration-300 shadow-sm hover:shadow-md ${FLAG_COLOR_MAP[lang.flag] || ""}`}>
                   <span className="text-2xl leading-none">{FLAG_MAP[lang.flag] || ""}</span>
                   {lang.label}
                 </motion.div>
