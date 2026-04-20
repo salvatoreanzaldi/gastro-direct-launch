@@ -1,52 +1,101 @@
-import { useState } from "react";
-import { motion } from "framer-motion";
-import { ArrowRight, ChevronDown } from "lucide-react";
+import { useState, useEffect } from "react";
+import { motion, AnimatePresence } from "framer-motion";
+import { ArrowRight } from "lucide-react";
 import { useTranslation } from "react-i18next";
 import { useLangPath } from "@/components/LanguageLayout";
 
+// Team member images
+import teamReneImg      from "@/assets/team/ceo-rene-ebert.png";
+import teamSalvatoreImg from "@/assets/team/team-salvatore-anzaldi.png";
+import teamAndrejImg    from "@/assets/team/team-andrej-krutsch.png";
+import teamMohammadImg  from "@/assets/team/team-mohammad-motakalemi.png";
+
+// Language SVGs
+import deutschSvg    from "@/assets/Icons/Deutsch.svg";
+import englischSvg   from "@/assets/Icons/Englisch.svg";
+import italienischSvg from "@/assets/Icons/Italienisch.svg";
+import persischSvg   from "@/assets/Icons/Persisch.svg";
+import russischSvg   from "@/assets/Icons/Russisch.svg";
+import singhalesischSvg from "@/assets/Icons/Singhalesisch.svg";
+
 export interface CTASectionProps {
   productPath: string;
-  heroImage: string;
-  headline: string;
   text: string;
 }
 
-export const CTASection = ({ productPath, heroImage, headline, text }: CTASectionProps) => {
+export const CTASection = ({ productPath, text }: CTASectionProps) => {
   const { i18n } = useTranslation();
-  const [isOpen, setIsOpen] = useState(false);
   const lp = useLangPath();
+  const [current, setCurrent] = useState(0);
 
-  const languages = [
-    { code: "de", flag: "🇩🇪", name: "Deutsch" },
-    { code: "en", flag: "🇬🇧", name: "English" },
-    { code: "it", flag: "🇮🇹", name: "Italiano" },
+  const teamMembers = [
+    { name: "René Ebert", role: "CEO & Founder", img: teamReneImg },
+    { name: "Salvatore Anzaldi", role: "Co-Founder", img: teamSalvatoreImg },
+    { name: "Andrej Krutsch", role: "Head of Development", img: teamAndrejImg },
+    { name: "Mohammad Motakalemi", role: "Lead Engineer", img: teamMohammadImg },
   ];
 
-  const currentLang = languages.find(l => l.code === i18n.language) || languages[0];
+  const languages = [
+    { code: "de", label: "DE", svg: deutschSvg },
+    { code: "en", label: "EN", svg: englischSvg },
+    { code: "it", label: "IT", svg: italienischSvg },
+    { code: "fa", label: "FA", svg: persischSvg },
+    { code: "ru", label: "RU", svg: russischSvg },
+    { code: "si", label: "SI", svg: singhalesischSvg },
+  ];
+
+  useEffect(() => {
+    const timer = setInterval(() => {
+      setCurrent(c => (c + 1) % teamMembers.length);
+    }, 4000);
+    return () => clearInterval(timer);
+  }, []);
 
   const handleLangChange = (code: string) => {
     i18n.changeLanguage(code);
-    setIsOpen(false);
   };
+
+  const member = teamMembers[current];
 
   return (
     <section className="bg-white dark:bg-[#081628] px-5 md:px-8 lg:px-16 py-12 md:py-20">
       <div className="max-w-2xl mx-auto">
         {/* Mobile Layout: Vertikal stacked */}
         <div className="md:hidden flex flex-col items-center text-center gap-8">
-          {/* Image */}
+          {/* Team Slideshow */}
           <motion.div
             initial={{ opacity: 0, scale: 0.96 }}
             whileInView={{ opacity: 1, scale: 1 }}
             viewport={{ once: true }}
             transition={{ duration: 0.6 }}
-            className="w-full max-w-sm"
+            className="relative w-full max-w-sm aspect-square rounded-2xl overflow-hidden shadow-lg"
           >
-            <img
-              src={heroImage}
-              alt={headline}
-              className="w-full rounded-2xl shadow-lg"
-            />
+            <AnimatePresence mode="wait">
+              <motion.img
+                key={current}
+                src={member.img}
+                alt={member.name}
+                initial={{ opacity: 0, scale: 1.04 }}
+                animate={{ opacity: 1, scale: 1 }}
+                exit={{ opacity: 0, scale: 0.97 }}
+                transition={{ duration: 0.5 }}
+                className="absolute inset-0 w-full h-full object-cover"
+              />
+            </AnimatePresence>
+            <div className="absolute bottom-0 left-0 right-0 bg-gradient-to-t from-black/70 via-black/30 to-transparent px-6 py-5">
+              <AnimatePresence mode="wait">
+                <motion.div
+                  key={current}
+                  initial={{ opacity: 0, y: 8 }}
+                  animate={{ opacity: 1, y: 0 }}
+                  exit={{ opacity: 0, y: -8 }}
+                  transition={{ duration: 0.3 }}
+                >
+                  <p className="text-white font-bold text-base">{member.name}</p>
+                  <p className="text-white/80 text-xs mt-1">{member.role}</p>
+                </motion.div>
+              </AnimatePresence>
+            </div>
           </motion.div>
 
           {/* Headline */}
@@ -57,7 +106,7 @@ export const CTASection = ({ productPath, heroImage, headline, text }: CTASectio
             transition={{ delay: 0.1, duration: 0.6 }}
             className="text-2xl font-black text-[#0A264A] dark:text-white leading-tight"
           >
-            {headline}
+            Buche jetzt dein kostenloses Beratungsgespräch
           </motion.h2>
 
           {/* Text */}
@@ -71,60 +120,42 @@ export const CTASection = ({ productPath, heroImage, headline, text }: CTASectio
             {text}
           </motion.p>
 
-          {/* Language Dropdown */}
+          {/* Language Pills - 3x2 Grid */}
           <motion.div
             initial={{ opacity: 0, y: 20 }}
             whileInView={{ opacity: 1, y: 0 }}
             viewport={{ once: true }}
             transition={{ delay: 0.3, duration: 0.6 }}
-            className="relative w-full max-w-xs"
+            className="grid grid-cols-3 gap-3 w-full max-w-xs"
           >
-            <button
-              onClick={() => setIsOpen(!isOpen)}
-              className="w-full flex items-center justify-between gap-2 px-4 py-3 rounded-lg border-2 border-[#0A264A]/20 dark:border-white/20 bg-[#0A264A]/[0.05] dark:bg-white/[0.05] text-[#0A264A] dark:text-white font-semibold hover:border-cyan-brand/50 transition-colors"
-            >
-              <span className="flex items-center gap-2">
-                <span className="text-lg">{currentLang.flag}</span>
-                {currentLang.name}
-              </span>
-              <ChevronDown className={`w-4 h-4 transition-transform ${isOpen ? "rotate-180" : ""}`} />
-            </button>
-
-            {isOpen && (
-              <motion.div
-                initial={{ opacity: 0, y: -8 }}
-                animate={{ opacity: 1, y: 0 }}
-                exit={{ opacity: 0, y: -8 }}
-                className="absolute top-full mt-2 w-full bg-white dark:bg-[#0d1f35] border-2 border-[#0A264A]/20 dark:border-white/20 rounded-lg overflow-hidden shadow-lg z-50"
+            {languages.map(lang => (
+              <button
+                key={lang.code}
+                onClick={() => handleLangChange(lang.code)}
+                className={`flex flex-col items-center justify-center gap-2 px-4 py-3 rounded-lg border-2 transition-all duration-200 ${
+                  i18n.language === lang.code
+                    ? "border-cyan-brand bg-cyan-brand/10 text-[#0A264A] dark:text-white"
+                    : "border-[#0A264A]/20 dark:border-white/20 bg-[#0A264A]/[0.05] dark:bg-white/[0.05] text-[#0A264A]/70 dark:text-white/70 hover:border-cyan-brand/30"
+                }`}
               >
-                {languages.map(lang => (
-                  <button
-                    key={lang.code}
-                    onClick={() => handleLangChange(lang.code)}
-                    className="w-full px-4 py-3 flex items-center gap-2 text-left hover:bg-cyan-brand/10 transition-colors text-[#0A264A] dark:text-white font-medium"
-                  >
-                    <span className="text-lg">{lang.flag}</span>
-                    {lang.name}
-                  </button>
-                ))}
-              </motion.div>
-            )}
+                <img
+                  src={lang.svg}
+                  alt={lang.label}
+                  className="w-6 h-6 object-contain"
+                />
+                <span className="text-xs font-bold">{lang.label}</span>
+              </button>
+            ))}
           </motion.div>
 
-          {/* CTA Button */}
-          <motion.button
-            initial={{ opacity: 0, y: 20 }}
-            whileInView={{ opacity: 1, y: 0 }}
-            viewport={{ once: true }}
-            transition={{ delay: 0.4, duration: 0.6 }}
+          {/* CTA Button - Statisch */}
+          <button
             onClick={() => { window.location.href = lp("/kontakt"); }}
-            whileHover={{ scale: 1.04 }}
-            whileTap={{ scale: 0.97 }}
-            className="w-full max-w-xs bg-gradient-amber text-[#0A264A] font-bold px-8 py-4 rounded-xl inline-flex items-center justify-center gap-2 shadow-lg shadow-[#ED8400]/20 hover:shadow-[#ED8400]/40 transition-all"
+            className="w-full max-w-xs bg-gradient-amber text-[#0A264A] font-bold px-8 py-4 rounded-xl inline-flex items-center justify-center gap-2 shadow-lg shadow-[#ED8400]/20 hover:shadow-[#ED8400]/40 transition-shadow"
           >
-            Jetzt anfragen
+            Kostenlose Beratung
             <ArrowRight className="w-5 h-5" />
-          </motion.button>
+          </button>
         </div>
 
         {/* Desktop Layout: Hidden (unchanged) */}
