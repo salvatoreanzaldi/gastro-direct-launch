@@ -58,17 +58,17 @@ export const CTASection = ({ productPath, text }: CTASectionProps) => {
   const member = teamMembers[current];
 
   return (
-    <section className="bg-white dark:bg-[#081628] px-5 md:px-8 lg:px-16 py-12 md:py-20">
+    <section className="bg-white dark:bg-[#081628] px-5 md:px-8 lg:px-16 py-8 md:py-20">
       <div className="max-w-2xl mx-auto">
         {/* Mobile Layout: Vertikal stacked */}
-        <div className="md:hidden flex flex-col items-center text-center gap-8">
+        <div className="md:hidden flex flex-col items-center text-center gap-6">
           {/* Team Slideshow */}
           <motion.div
             initial={{ opacity: 0, scale: 0.96 }}
             whileInView={{ opacity: 1, scale: 1 }}
             viewport={{ once: true }}
             transition={{ duration: 0.6 }}
-            className="relative w-full max-w-sm aspect-square rounded-2xl overflow-hidden shadow-lg"
+            className="relative w-full max-w-xs aspect-square rounded-2xl overflow-hidden shadow-lg"
           >
             <AnimatePresence mode="wait">
               <motion.img
@@ -120,31 +120,26 @@ export const CTASection = ({ productPath, text }: CTASectionProps) => {
             {text}
           </motion.p>
 
-          {/* Language Pills - 3x2 Grid */}
+          {/* Language Pills - Inline */}
           <motion.div
             initial={{ opacity: 0, y: 20 }}
             whileInView={{ opacity: 1, y: 0 }}
             viewport={{ once: true }}
             transition={{ delay: 0.3, duration: 0.6 }}
-            className="grid grid-cols-3 gap-3 w-full max-w-xs"
+            className="flex flex-wrap items-center justify-center gap-2"
           >
             {languages.map(lang => (
-              <button
+              <div
                 key={lang.code}
-                onClick={() => handleLangChange(lang.code)}
-                className={`flex flex-col items-center justify-center gap-2 px-4 py-3 rounded-lg border-2 transition-all duration-200 ${
-                  i18n.language === lang.code
-                    ? "border-cyan-brand bg-cyan-brand/10 text-[#0A264A] dark:text-white"
-                    : "border-[#0A264A]/20 dark:border-white/20 bg-[#0A264A]/[0.05] dark:bg-white/[0.05] text-[#0A264A]/70 dark:text-white/70 hover:border-cyan-brand/30"
-                }`}
+                className="flex items-center gap-1.5 px-3 py-1.5 rounded-full bg-[#0A264A]/[0.06] dark:bg-white/[0.06] text-[#0A264A]/60 dark:text-white/60"
               >
                 <img
                   src={lang.svg}
                   alt={lang.label}
-                  className="w-6 h-6 object-contain"
+                  className="w-4 h-4 object-contain"
                 />
-                <span className="text-xs font-bold">{lang.label}</span>
-              </button>
+                <span className="text-xs font-semibold">{lang.label}</span>
+              </div>
             ))}
           </motion.div>
 
