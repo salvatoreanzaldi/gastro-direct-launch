@@ -13,6 +13,42 @@ import { ChevronRight } from "lucide-react";
 
 const BLOG_POSTS = [
   {
+    slug: "bestellsystem-gastronomie",
+    title: "Gastro-Master: Dein Bestellsystem – Gastronomie für mehr Umsatz und Unabhängigkeit",
+    excerpt:
+      "Mit Gastro Master dein provisionsfreies Bestellsystem aufbauen. Unabhängig von Drittplattformen, flexibel und profitabel.",
+    category: "Bestellsystem",
+    readingTime: "9 min",
+    publishDate: "21. April 2026",
+  },
+  {
+    slug: "kassensystem-gastronomie",
+    title: "Kassensystem Gastronomie & Handel: Deine digitale Komplettlösung",
+    excerpt:
+      "TSE-konformes Kassensystem für Restaurants und Handel: skalierbar, benutzerfreundlich und mit 24/7 Support.",
+    category: "Kassensystem",
+    readingTime: "10 min",
+    publishDate: "21. April 2026",
+  },
+  {
+    slug: "gastronomie-website-erstellen",
+    title: "Gastronomie Website erstellen: Professionell, mobilfreundlich, provisionsfrei",
+    excerpt:
+      "Professionelle Restaurant-Website mit digitaler Speisekarte, Online-Reservierung und provisionsfreiem Shop – ohne Programmierkenntnisse.",
+    category: "Website",
+    readingTime: "8 min",
+    publishDate: "21. April 2026",
+  },
+  {
+    slug: "wolt-integration-restaurants",
+    title: "Wolt Integration Gastronomie: Effiziente Anbindung für Restaurants",
+    excerpt:
+      "Wolt direkt ins Kassensystem integrieren: Bestellungen laufen automatisch, manuelle Eingaben entfallen, Fehlerquote sinkt.",
+    category: "Integration",
+    readingTime: "10 min",
+    publishDate: "21. April 2026",
+  },
+  {
     slug: "warum-lieferando-verzichten",
     title: "Warum dein Lieferservice auf Lieferando verzichten sollte",
     excerpt:

@@ -7,9 +7,13 @@ import Footer from "@/components/landing/Footer";
 import { ChevronRight, Clock, ArrowLeft, ArrowRight } from "lucide-react";
 
 const CATEGORY_COLORS: Record<string, string> = {
-  "Meinung":   "bg-orange-500/15 text-orange-400 border border-orange-500/25",
-  "How-to":    "bg-cyan-500/15 text-cyan-400 border border-cyan-500/25",
-  "Vergleich": "bg-purple-500/15 text-purple-400 border border-purple-500/25",
+  "Meinung":       "bg-orange-500/15 text-orange-400 border border-orange-500/25",
+  "How-to":        "bg-cyan-500/15 text-cyan-400 border border-cyan-500/25",
+  "Vergleich":     "bg-purple-500/15 text-purple-400 border border-purple-500/25",
+  "Bestellsystem": "bg-blue-500/15 text-blue-400 border border-blue-500/25",
+  "Kassensystem":  "bg-green-500/15 text-green-400 border border-green-500/25",
+  "Website":       "bg-pink-500/15 text-pink-400 border border-pink-500/25",
+  "Integration":   "bg-indigo-500/15 text-indigo-400 border border-indigo-500/25",
 };
 
 export interface BlogPostLayoutProps {

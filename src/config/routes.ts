@@ -53,6 +53,10 @@ export const ROUTES: RouteEntry[] = [
   { path: "/blog/warum-lieferando-verzichten",   importPath: "@/pages/blog/BlogPostLieferandoPage",                priority: 0.6, changefreq: "monthly" },
   { path: "/blog/5-fehler-lieferdienst-eroffnen", importPath: "@/pages/blog/BlogPostFehlerPage",                  priority: 0.6, changefreq: "monthly" },
   { path: "/blog/was-kostet-bestellsystem",      importPath: "@/pages/blog/BlogPostKostenPage",                    priority: 0.6, changefreq: "monthly" },
+  { path: "/blog/bestellsystem-gastronomie",    importPath: "@/pages/blog/BlogPostBestellsystemPage",             priority: 0.6, changefreq: "monthly" },
+  { path: "/blog/kassensystem-gastronomie",     importPath: "@/pages/blog/BlogPostKassensystemPage",              priority: 0.6, changefreq: "monthly" },
+  { path: "/blog/gastronomie-website-erstellen", importPath: "@/pages/blog/BlogPostWebsitePage",                  priority: 0.6, changefreq: "monthly" },
+  { path: "/blog/wolt-integration-restaurants", importPath: "@/pages/blog/BlogPostWoltPage",                      priority: 0.6, changefreq: "monthly" },
 
   // Info-Seiten
   { path: "/faq",                                 importPath: "@/pages/FAQPage",                    priority: 0.7, changefreq: "monthly" },
