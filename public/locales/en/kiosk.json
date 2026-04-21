@@ -1,0 +1,92 @@
+{
+  "meta": {
+    "title": "Self-Ordering Kiosk for Hospitality — Order Terminal & Self-Service | Gastro Master",
+    "description": "Self-ordering kiosk from Gastro Master: guests order and pay directly at the terminal — no queue, no counter stress. Multilingual, 24/7, automatic upselling, fully integrated into the POS system. For fast food restaurants, bakeries, food courts and franchises.",
+    "breadcrumbName": "Self-Ordering Kiosk"
+  },
+  "hero": {
+    "badge": "Add-On · Self-Ordering Terminal",
+    "headline": "Self-Ordering Kiosk — End of the Queue",
+    "subline": "The terminal takes over the counter. Guests choose, configure and pay directly on screen — multilingual, with active upselling and no waiting time. Orders land in real time in the POS and kitchen. Your staff works instead of taking orders."
+  },
+  "problem": {
+    "title": "The Problem at the Classic Counter",
+    "points": [
+      "During rush hour everything backs up at the counter — guests wait 8–12 minutes, many turn away and don't come back.",
+      "Staff shortages in hospitality: even one missing till operator noticeably reduces revenue per shift.",
+      "Manual order taking takes 90–120 seconds per guest — time that's directly missing during lunch or rush hour.",
+      "Upselling only works when staff have the time and inclination — in practice, larger portions, sides and drinks are regularly missed."
+    ]
+  },
+  "solution": {
+    "title": "The Solution: Self-Ordering Kiosk",
+    "points": [
+      "Guests order themselves on the touchscreen — completely done in 60–90 seconds, with clear images, quantities and add-on options.",
+      "Payment directly at the terminal: card, Apple Pay, Google Pay, cash optional. No additional step at the till.",
+      "Active upselling in the order flow: Large portion of chips? Drink with that? +20–30% average basket, all without staff.",
+      "Order lands instantly in POS and kitchen, with order number for the pick-up screen. No double entry, no misunderstandings."
+    ]
+  },
+  "features": {
+    "headline": "Everything You Need for Self-Ordering That Really Relieves the Pressure",
+    "sub": "Six features that turn the terminal into a fully-fledged ordering and payment channel.",
+    "items": [
+      { "title": "Intuitive Touch Operation", "description": "Large buttons, clear images, German and international visual language. Even elderly guests and children get through without help — no explanation needed." },
+      { "title": "Automatic Upselling", "description": "For each item you store recommendations — size upgrade, sides, drinks, desserts. Appears automatically in the order flow and demonstrably increases the basket by 20–30%." },
+      { "title": "Multilingual Menu", "description": "German, English, French, Italian, Turkish, Spanish and more — guest chooses their language at the start. Perfect for tourism, train stations, airports, city centre locations." },
+      { "title": "All Payment Methods Integrated", "description": "Debit card, Visa, Mastercard, Apple Pay, Google Pay — directly at the terminal. Cash module upgradeable on request. ZVT-compliant, connectable to any card reader." },
+      { "title": "24/7 Operation Possible", "description": "For petrol station bistros, hotel lobbies or unmanned self-service: the terminal takes orders around the clock, even when nobody is at the counter." },
+      { "title": "Live Sync with POS & Kitchen", "description": "Every order lands instantly in the cloud POS and on the kitchen monitor. Pick-up screen calls the order number. No double entry, no lost orders." }
+    ]
+  },
+  "useCases": {
+    "headline": "How Restaurateurs Use the Self-Ordering Kiosk",
+    "sub": "Three real scenarios from our customer base — from fast food to food courts.",
+    "items": [
+      { "title": "Fast Food Chain with Lunchtime Rush", "story": "A burger concept in Berlin-Kreuzberg replaced two till positions with four self-ordering kiosks. Average waiting time fell from 8 to under 4 minutes — lunchtime revenue rose by 28%, without extra staff." },
+      { "title": "Bakery with Takeaway", "story": "A bakery outlet at Hamburg Central Station installed two kiosks next to the counter. Guests with a quick takeaway need order at the terminal, staff can focus on consultation and filled rolls — +35% orders per hour." },
+      { "title": "Food Court with Multiple Concepts", "story": "An operator of several food stations in a Munich shopping centre placed a kiosk terminal in front of every stand. Guests order in advance, order number appears on the pick-up screen — the counter became a pure handover station, labour costs per shift reduced by 1.5 FTE." }
+    ]
+  },
+  "trust": {
+    "stats": [
+      { "value": "−50%", "label": "shorter wait per guest during rush hour" },
+      { "value": "+25%", "label": "higher average basket through active upselling" },
+      { "value": "24/7", "label": "orders without staff at the counter" }
+    ],
+    "testimonial": {
+      "quote": "We regularly had 15 people queuing at lunch — many left again. Since the four kiosks we handle the same rush in half the time, and the average basket has risen by €4.80 because the terminal suggests a drink and a dessert to everyone. For my counter crew, the biggest stress-killer of recent years.",
+      "author": "Tarek B.",
+      "role": "Owner Burger Restaurant, Berlin-Kreuzberg"
+    }
+  },
+  "pricing": {
+    "headline": "Pricing & Availability",
+    "price": "On request",
+    "note": "POS add-on for fast food restaurants, bakeries, food courts and franchise concepts. The price depends on form factor (counter, freestanding, wall-mounted), number of terminals, card reader integration and optional cash module. In a free consultation we put together the right setup for your business — including hardware, installation, configuration and connection to your cloud POS."
+  },
+  "internalLinks": {
+    "headline": "Works Perfectly With",
+    "intro": "The self-ordering kiosk unfolds its full potential as part of the Gastro Master ecosystem — from the order at the terminal to handover to the guest.",
+    "items": [
+      { "title": "POS System", "description": "The heart of it all. Every kiosk order lands automatically in the cloud POS, on the kitchen monitor and on the pick-up screen — with order number, items and special requests." },
+      { "title": "Restaurant Solution", "description": "Complete package of POS, self-ordering, display system and kitchen monitor — specifically for fast food restaurants, quick service concepts and businesses with high on-site throughput." }
+    ]
+  },
+  "faq": {
+    "headline": "Frequently Asked Questions about the Self-Ordering Kiosk",
+    "sub": "Answers to the questions we receive most often from fast food restaurants, bakeries, food courts and franchise businesses.",
+    "items": [
+      { "q": "What does a self-ordering kiosk cost for my business?", "a": "The price depends on form factor (counter, freestanding, wall-mounted), number of terminals and chosen modules (card reader, optional cash acceptance). We don't offer the kiosk as a list price — instead, after a free consultation we put together a specific quote. In most fast food restaurants and bakeries a kiosk pays for itself within 6–12 months." },
+      { "q": "Which businesses benefit most from a self-ordering kiosk?", "a": "Particularly businesses with high order volume and short dwell times: fast food concepts, burger and pizza chains, bakeries with a lunch menu, cafes with takeaway, food courts, franchise systems, petrol station bistros, hotel lobbies. Rule of thumb: from 80–100 orders per day or regular peak times with queuing, the first kiosk pays for itself quickly." },
+      { "q": "How many kiosks do I need for my business?", "a": "Rule of thumb: one kiosk replaces roughly one till operator at peak times. For a fast food restaurant with 60–80 seats we recommend 2–3 terminals, for a bakery outlet with lunch trade 1–2 terminals, for a food court stand with pick-up 1 terminal per concept. The exact number is determined in consultation after reviewing your daily revenue distribution." },
+      { "q": "Which form factors are available?", "a": "Three main variants: counter (stand-up terminal for counter or bar, compact), freestanding (floor-standing column with large display, ideal for entrance area or centre island) and wall-mounted (space-saving, perfect for narrow sales areas like bakeries). All form factors come with a card reader, cash module optional." },
+      { "q": "Which payment methods does the terminal support?", "a": "Debit card (girocard), Visa, Mastercard, American Express, Apple Pay and Google Pay are integrated as standard. A cash module with change dispensing is optionally available — useful for businesses with a high cash proportion. Connection is via the ZVT standard, compatible with all common card readers without vendor lock-in." },
+      { "q": "How does upselling at the kiosk work exactly?", "a": "For each item you can store matching recommendations in the backoffice — larger chips with the burger, a drink to go with it, a dessert at the end. The kiosk displays these suggestions automatically in the order flow. Industry average increases the basket by 20–30% — without staff having to actively sell. You retain full control over what's offered when." },
+      { "q": "Which languages does the kiosk menu support?", "a": "German, English, French, Italian, Spanish and Turkish as standard. Additional languages such as Polish, Russian, Dutch or Arabic can be added on request. The guest selects their language at the start with a tap." },
+      { "q": "Is the kiosk connected to my POS system?", "a": "If you already use a Gastro Master POS system, the kiosk is immediately ready. Orders from the terminal land automatically in the cloud POS, on the kitchen monitor and on the pick-up screen — with order number, items, special requests and payment status. No separate setup, no third-party interface, no developers needed." },
+      { "q": "Is the kiosk accessible and suitable for elderly guests?", "a": "Yes. The interface works with large buttons, clear product images and simple language. The screen height can be lowered on request (wheelchair mode), and the touch sensitivity is also suitable for hands with reduced fine motor skills. A voice output module can be added on request for inclusivity." },
+      { "q": "What happens during an internet or power outage?", "a": "During a brief internet outage, the terminal continues in offline mode — orders are stored locally and sync with the POS and kitchen as soon as the connection is restored. During a power outage, the display restarts automatically after recovery and reloads the last state from the cloud. Card payments are limited during this time; cash payment (if the module is present) remains possible." }
+    ]
+  }
+}

@@ -5,7 +5,7 @@ import { useTranslation } from "react-i18next";
 import { useLangPath } from "@/components/LanguageLayout";
 
 const icons = [Globe, Smartphone, CreditCard, Palette];
-const featureHrefPaths = ["/produkte/webshop", "/produkte/bestellapp", "/produkte/transaktionsumlage", null] as const;
+const featureHrefPaths = ["/produkte/pakete/online-bestellshop", "/produkte/pakete/bestell-app", "/produkte/add-ons/transaktionsumlage", null] as const;
 
 const SolutionSection = () => {
   const { t } = useTranslation("common");

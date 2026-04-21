@@ -37,6 +37,7 @@ import visaIcon from "@/assets/icons/app/App Icon - VISA.png";
 import mastercardIcon from "@/assets/icons/app/App Icon - mastercard.png";
 import datevIcon from "@/assets/icons/app/App Icon - Datev.png";
 import epsonIcon from "@/assets/icons/app/App Icon - Epson.png";
+import adyenIcon from "@/assets/icons/app/App Icon - Adyen.png";
 
 const FADE_MASK = `linear-gradient(to right, rgba(0,0,0,0) 0%, rgba(0,0,0,1) 10%, rgba(0,0,0,1) 90%, rgba(0,0,0,0) 100%)`;
 
@@ -81,6 +82,7 @@ const allIcons: IconItem[] = [
   { id: "wolt", src: woltIcon, alt: "Wolt" },
   { id: "visa", src: visaIcon, alt: "VISA" },
   { id: "mastercard", src: mastercardIcon, alt: "Mastercard" },
+  { id: "adyen", src: adyenIcon, alt: "Adyen" },
 ];
 
 // Split icons: first 16 for row A, remaining 15 for row B

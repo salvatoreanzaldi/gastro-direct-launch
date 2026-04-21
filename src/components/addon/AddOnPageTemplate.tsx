@@ -2,6 +2,7 @@ import { useEffect, useState } from "react";
 import { motion, AnimatePresence } from "framer-motion";
 import { ArrowRight, CheckCircle2, XCircle, Quote, Plus, Minus, type LucideIcon } from "lucide-react";
 import { Link } from "react-router-dom";
+import { useTranslation } from "react-i18next";
 import Navbar from "@/components/landing/Navbar";
 import Footer from "@/components/landing/Footer";
 import GoogleReviewsGrid from "@/components/GoogleReviewsGrid";
@@ -88,7 +89,9 @@ export interface AddOnPageConfig {
 }
 
 // ─── Hero (stays dark — brand-signature dramatic opener) ─────────────────────
-const HeroSection = ({ badge, headline, subline, heroImage, heroImageRounded }: AddOnPageConfig["hero"]) => (
+const HeroSection = ({ badge, headline, subline, heroImage, heroImageRounded }: AddOnPageConfig["hero"]) => {
+  const { t } = useTranslation("common");
+  return (
   <section className="mesh-gradient min-h-[82vh] flex items-center section-padding pt-36 relative overflow-hidden">
     <div className="absolute top-1/2 left-1/2 -translate-x-1/2 -translate-y-1/2 w-[700px] h-[500px] rounded-full bg-[#007DCF]/10 blur-[140px] pointer-events-none" />
     <div className="container-tight relative z-10 w-full">
@@ -112,7 +115,7 @@ const HeroSection = ({ badge, headline, subline, heroImage, heroImageRounded }: 
             href="/kontakt"
             className="bg-gradient-amber text-[#0A264A] font-bold px-8 py-4 rounded-xl text-base inline-flex items-center gap-2 hover:scale-[1.02] transition-transform shadow-lg shadow-[#ED8400]/20"
           >
-            Kostenlose Beratung
+            {t("nav.cta")}
             <ArrowRight className="w-5 h-5" />
           </a>
         </motion.div>
@@ -130,7 +133,8 @@ const HeroSection = ({ badge, headline, subline, heroImage, heroImageRounded }: 
       </div>
     </div>
   </section>
-);
+  );
+};
 
 // ─── Problem & Solution — now theme-aware ────────────────────────────────────
 const ProblemSolutionSection = ({ problem, solution }: AddOnPageConfig["problemSolution"]) => (
@@ -527,7 +531,7 @@ const useBreadcrumbSchema = (name: string, path: string) => {
       "@type": "BreadcrumbList",
       itemListElement: [
         { "@type": "ListItem", position: 1, name: "Gastro Master", item: "https://gastro-master.de" },
-        { "@type": "ListItem", position: 2, name: "Add-Ons", item: "https://gastro-master.de/add-ons" },
+        { "@type": "ListItem", position: 2, name: "Add-Ons", item: "https://gastro-master.de/produkte/add-ons" },
         { "@type": "ListItem", position: 3, name, item: `https://gastro-master.de${path}` },
       ],
     };

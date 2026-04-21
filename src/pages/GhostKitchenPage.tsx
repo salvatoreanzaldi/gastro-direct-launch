@@ -20,7 +20,7 @@ import imgTransaktion from "@/assets/loesungen/Loesung - Zahlungsgebühren.png";
 
 // ─── Static maps ────────────────────────────────────────────────────────────
 const productImages = [imgWebshop, imgApp, imgKasse, imgTransaktion, imgWebseite];
-const productHrefs  = ["/produkte/webshop", "/produkte/app", "/produkte/kassensystem", "/produkte/transaktionsumlage", "/produkte/webseite"];
+const productHrefs  = ["/produkte/pakete/online-bestellshop", "/produkte/pakete/bestell-app", "/produkte/pakete/kassensystem", "/produkte/add-ons/transaktionsumlage", "/produkte/pakete/webseite"];
 const productIcons  = [<ShoppingCart className="w-4 h-4" />, <Smartphone className="w-4 h-4" />, <Monitor className="w-4 h-4" />, <Percent className="w-4 h-4" />, <Globe className="w-4 h-4" />];
 const problemIcons  = [Flame, Eye, Layers];
 const stepIcons     = [MessageCircle, Settings, Rocket, Headphones];

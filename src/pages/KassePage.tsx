@@ -159,7 +159,7 @@ const SCHEMA_BREADCRUMB = {
   itemListElement: [
     { "@type": "ListItem", position: 1, name: "Gastro Master", item: "https://gastro-master.de" },
     { "@type": "ListItem", position: 2, name: "Produkte", item: "https://gastro-master.de/produkte" },
-    { "@type": "ListItem", position: 3, name: "Kassensystem", item: "https://gastro-master.de/produkte/kassensystem" },
+    { "@type": "ListItem", position: 3, name: "Kassensystem", item: "https://gastro-master.de/produkte/pakete/kassensystem" },
   ],
 };
 
@@ -722,7 +722,7 @@ const KassePage = () => {
   useSeoMeta({
     title: t("seo.title"),
     description: t("seo.description"),
-    canonical: "https://gastro-master.de/produkte/kassensystem",
+    canonical: "https://gastro-master.de/produkte/pakete/kassensystem",
   });
 
   return (
@@ -1129,7 +1129,7 @@ const KassePage = () => {
 
     {/* ── S9b: MOBILE CTA SECTION ─────────────────────────────── */}
     <div className="md:hidden">
-      <CTASection {...getCTAConfig("/produkte/kassensystem")} />
+      <CTASection {...getCTAConfig("/produkte/pakete/kassensystem")} />
     </div>
 
     {/* ── S10: FAQ ───────────────────────────────────────────── */}

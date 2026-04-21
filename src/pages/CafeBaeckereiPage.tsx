@@ -35,7 +35,7 @@ import imgTransaktion from "@/assets/loesungen/Loesung - Zahlungsgebühren.png";
 
 /* ─── Static maps ────────────────────────────────────────── */
 const smallImages = [imgWebshop, imgWebseite, imgApp, imgTransaktion];
-const smallHrefs  = ["/produkte/webshop", "/produkte/webseite", "/produkte/app", "/produkte/transaktionsumlage"];
+const smallHrefs  = ["/produkte/pakete/online-bestellshop", "/produkte/pakete/webseite", "/produkte/pakete/bestell-app", "/produkte/add-ons/transaktionsumlage"];
 
 const PROBLEM_ICONS = [
   <Clock className="w-6 h-6" />,
@@ -343,7 +343,7 @@ const CafeBaeckereiPage = () => {
                   ))}
                 </ul>
                 <Link
-                  to={lp("/produkte/kassensystem")}
+                  to={lp("/produkte/pakete/kassensystem")}
                   className="inline-flex items-center gap-2 text-cyan-brand font-semibold hover:gap-3 transition-all text-sm"
                 >
                   {t("products.featured.cta")} <ArrowRight className="w-4 h-4" />

@@ -19,6 +19,7 @@ const LAZY_COMPONENTS: Record<string, ComponentType> = {
   "@/pages/WebseitePage":               lazy(() => import("@/pages/WebseitePage")),
   "@/pages/KassePage":                  lazy(() => import("@/pages/KassePage")),
   "@/pages/TransaktionsumlagePage":     lazy(() => import("@/pages/TransaktionsumlagePage")),
+  "@/pages/HardwarePage":              lazy(() => import("@/pages/HardwarePage")),
   "@/pages/Impressum":                  lazy(() => import("@/pages/Impressum")),
   "@/pages/Datenschutz":                lazy(() => import("@/pages/Datenschutz")),
   "@/pages/AGB":                        lazy(() => import("@/pages/AGB")),
@@ -36,6 +37,12 @@ const LAZY_COMPONENTS: Record<string, ComponentType> = {
   "@/pages/UeberUnsPage":               lazy(() => import("@/pages/UeberUnsPage")),
   "@/pages/GhostKitchenPage":           lazy(() => import("@/pages/GhostKitchenPage")),
   "@/pages/IntegrationPage":            lazy(() => import("@/pages/IntegrationPage")),
+
+  // Blog
+  "@/pages/BlogPage":                            lazy(() => import("@/pages/BlogPage")),
+  "@/pages/blog/BlogPostLieferandoPage":         lazy(() => import("@/pages/blog/BlogPostLieferandoPage")),
+  "@/pages/blog/BlogPostFehlerPage":             lazy(() => import("@/pages/blog/BlogPostFehlerPage")),
+  "@/pages/blog/BlogPostKostenPage":             lazy(() => import("@/pages/blog/BlogPostKostenPage")),
 
   // Add-Ons
   "@/pages/AddOnsPage":                 lazy(() => import("@/pages/AddOnsPage")),
@@ -62,6 +69,7 @@ const App = () => (
               <Route path="/" element={<Navigate to="/de" replace />} />
 
               {/* Legacy routes without lang prefix → redirect to /de/... */}
+              <Route path="/produkte/transaktionsumlage" element={<Navigate to="/de/produkte/add-ons/transaktionsumlage" replace />} />
               <Route path="/produkte/*" element={<RedirectWithLang />} />
               <Route path="/loesungen/*" element={<RedirectWithLang />} />
               <Route path="/impressum" element={<Navigate to="/de/impressum" replace />} />
@@ -72,7 +80,9 @@ const App = () => (
               <Route path="/preise" element={<Navigate to="/de/preise" replace />} />
               <Route path="/uber-uns" element={<Navigate to="/de/uber-uns" replace />} />
               <Route path="/downloads/*" element={<RedirectWithLang />} />
-              <Route path="/add-ons/*" element={<RedirectWithLang />} />
+              <Route path="/add-ons" element={<Navigate to="/de/produkte/add-ons" replace />} />
+              <Route path="/add-ons/:slug" element={<AddOnsLegacyRedirect />} />
+              <Route path="/blog/*" element={<RedirectWithLang />} />
 
               {/* /:lang routes — generated from ROUTES config */}
               <Route path="/:lang" element={<LanguageLayout />}>
@@ -90,8 +100,13 @@ const App = () => (
                     />
                   );
                 })}
-                {/* Alias: /produkte/bestellapp → AppPage */}
-                <Route path="produkte/bestellapp" element={(() => { const C = LAZY_COMPONENTS["@/pages/AppPage"]; return C ? <C /> : null; })()} />
+                {/* Legacy: alte /produkte/* Pfade → neue /produkte/pakete/* */}
+                <Route path="produkte/webshop"      element={<LangRedirect to="/produkte/pakete/online-bestellshop" />} />
+                <Route path="produkte/app"          element={<LangRedirect to="/produkte/pakete/bestell-app" />} />
+                <Route path="produkte/webseite"     element={<LangRedirect to="/produkte/pakete/webseite" />} />
+                <Route path="produkte/kassensystem" element={<LangRedirect to="/produkte/pakete/kassensystem" />} />
+                {/* Alias: /produkte/bestellapp → /produkte/pakete/bestell-app */}
+                <Route path="produkte/bestellapp"   element={<LangRedirect to="/produkte/pakete/bestell-app" />} />
                 <Route path="*" element={<NotFound />} />
               </Route>
 
@@ -103,10 +118,22 @@ const App = () => (
   </QueryClientProvider>
 );
 
+/** Redirects old product paths to new /produkte/pakete/* structure within same language */
+const LangRedirect = ({ to }: { to: string }) => {
+  const { lang } = useParams<{ lang: string }>();
+  return <Navigate to={`/${lang}${to}`} replace />;
+};
+
 /** Redirects legacy paths like /produkte/webshop → /de/produkte/webshop */
 const RedirectWithLang = () => {
   const path = window.location.pathname;
   return <Navigate to={`/de${path}`} replace />;
+};
+
+/** Redirects /add-ons/:slug → /de/produkte/add-ons/:slug */
+const AddOnsLegacyRedirect = () => {
+  const slug = window.location.pathname.replace(/^\/add-ons\//, "");
+  return <Navigate to={`/de/produkte/add-ons/${slug}`} replace />;
 };
 
 export default App;

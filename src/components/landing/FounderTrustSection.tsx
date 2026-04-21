@@ -201,7 +201,7 @@ const FounderTrustSection = () => {
           initial={{ opacity: 0, y: 20 }}
           whileInView={{ opacity: 1, y: 0 }}
           viewport={{ once: true }}
-          className="text-center mb-14"
+          className="text-center mb-14 border-4 border-red-500 rounded-lg p-8"
         >
           <span className="text-cyan-brand text-sm font-semibold uppercase tracking-wider mb-3 block">
             {t("founder.badge")}
@@ -215,18 +215,22 @@ const FounderTrustSection = () => {
         </motion.div>
 
         {/* ── Mobile: Carousel ── */}
-        <TeamCarouselMobile />
+        <div className="border-4 border-red-500 rounded-lg p-6 sm:hidden">
+          <TeamCarouselMobile />
+        </div>
 
         {/* ── Desktop: Grids (unverändert) ── */}
-        <div className="hidden sm:grid grid-cols-2 gap-6 max-w-2xl mx-auto mb-6">
-          {founderKeys.map((key, i) => (
-            <FlipCard key={key} personKey={key} img={founderImgs[i]} index={i} />
-          ))}
-        </div>
-        <div className="hidden sm:grid grid-cols-2 lg:grid-cols-3 gap-6 max-w-2xl lg:max-w-4xl mx-auto">
-          {teamKeys.map((key, i) => (
-            <FlipCard key={key} personKey={key} img={teamImgs[i]} index={i + founderKeys.length} />
-          ))}
+        <div className="hidden sm:block border-4 border-red-500 rounded-lg p-8">
+          <div className="grid grid-cols-2 gap-6 max-w-2xl mx-auto mb-6">
+            {founderKeys.map((key, i) => (
+              <FlipCard key={key} personKey={key} img={founderImgs[i]} index={i} />
+            ))}
+          </div>
+          <div className="grid grid-cols-2 lg:grid-cols-3 gap-6 max-w-2xl lg:max-w-4xl mx-auto">
+            {teamKeys.map((key, i) => (
+              <FlipCard key={key} personKey={key} img={teamImgs[i]} index={i + founderKeys.length} />
+            ))}
+          </div>
         </div>
 
         {/* Language section */}
@@ -235,7 +239,7 @@ const FounderTrustSection = () => {
           whileInView={{ opacity: 1, y: 0 }}
           viewport={{ once: true }}
           transition={{ delay: 0.2, duration: 0.6 }}
-          className="mt-16 rounded-3xl border border-border bg-background shadow-lg px-8 py-10 max-w-4xl mx-auto text-center"
+          className="mt-16 rounded-3xl border-4 border-red-500 bg-background shadow-lg px-8 py-10 max-w-4xl mx-auto text-center"
         >
           <div className="flex flex-col items-center gap-2 mb-3 sm:flex-row sm:justify-center sm:gap-2.5">
             <Globe className="w-6 h-6 text-cyan-brand" />

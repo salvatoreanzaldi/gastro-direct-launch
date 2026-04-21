@@ -1,6 +1,15 @@
 {
   "buildCommand": "npm run build",
   "outputDirectory": "dist",
+  "redirects": [
+    { "source": "/:lang(de|en|it|fa|si|ru)/add-ons",       "destination": "/:lang/produkte/add-ons",       "permanent": true },
+    { "source": "/:lang(de|en|it|fa|si|ru)/add-ons/:slug", "destination": "/:lang/produkte/add-ons/:slug", "permanent": true },
+    { "source": "/:lang(de|en|it|fa|si|ru)/produkte/transaktionsumlage", "destination": "/:lang/produkte/add-ons/transaktionsumlage", "permanent": true },
+    { "source": "/:lang(de|en|it|fa|si|ru)/produkte/webshop",      "destination": "/:lang/produkte/pakete/online-bestellshop", "permanent": true },
+    { "source": "/:lang(de|en|it|fa|si|ru)/produkte/app",          "destination": "/:lang/produkte/pakete/bestell-app",        "permanent": true },
+    { "source": "/:lang(de|en|it|fa|si|ru)/produkte/webseite",     "destination": "/:lang/produkte/pakete/webseite",           "permanent": true },
+    { "source": "/:lang(de|en|it|fa|si|ru)/produkte/kassensystem", "destination": "/:lang/produkte/pakete/kassensystem",       "permanent": true }
+  ],
   "rewrites": [
     { "source": "/(.*)", "destination": "/index.html" }
   ]

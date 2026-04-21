@@ -448,6 +448,8 @@
       ],
       "basic": [
         "Webshop (provisionsfrei)",
+        "Eigene Domain inklusive",
+        "Digitale Speisekarte",
         "Unbegrenzte Bestellungen",
         "2.500 Flyer mit QR-Code",
         "Kundenpunkte-System",
@@ -455,6 +457,8 @@
       ],
       "standard": [
         "Webshop + native App",
+        "Eigene Domain inklusive",
+        "Digitale Speisekarte",
         "Push-Benachrichtigungen",
         "Unbegrenzte Bestellungen",
         "5.000 Flyer mit QR-Code",
@@ -469,6 +473,9 @@
       ],
       "enterprise": [
         "Individuelles Design",
+        "Eigene Domain inklusive",
+        "Digitale Speisekarte",
+        "Kiosk Self-Ordering Terminal, Pick Up Screens optional",
         "Fotograf vor Ort optional",
         "Cloud-Kasse inkl.",
         "Transaktionsumlage inkl.",

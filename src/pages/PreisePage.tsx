@@ -119,7 +119,7 @@ const ADDON_IMAGES = [
 ];
 
 const INTEGRATION_ICONS = [Globe, ShoppingCart, Smartphone, Monitor];
-const INTEGRATION_HREFS = ["/produkte/webseite", "/produkte/webshop", "/produkte/app", "/produkte/kassensystem"];
+const INTEGRATION_HREFS = ["/produkte/pakete/webseite", "/produkte/pakete/online-bestellshop", "/produkte/pakete/bestell-app", "/produkte/pakete/kassensystem"];
 const INTEGRATION_COLORS = [
   "border-cyan-brand/30 bg-[#0A264A]/5 dark:bg-[#0A264A]/40",
   "border-[#ED8400]/30 bg-[#ED8400]/5 dark:bg-[#ED8400]/10",
@@ -492,7 +492,7 @@ const PreisePage = () => {
                     <img key={p.alt} src={p.src} alt={p.alt} className={`${p.h} object-contain opacity-70 hover:opacity-100 transition-opacity`} />
                   ))}
                 </div>
-                <Link to={lp("/produkte/transaktionsumlage")} className="text-cyan-brand text-sm font-semibold inline-flex items-center gap-1.5 hover:gap-2.5 transition-all duration-200">
+                <Link to={lp("/produkte/add-ons/transaktionsumlage")} className="text-cyan-brand text-sm font-semibold inline-flex items-center gap-1.5 hover:gap-2.5 transition-all duration-200">
                   {t("addonsOrder.txMore")} <ArrowRight className="w-4 h-4" />
                 </Link>
               </div>

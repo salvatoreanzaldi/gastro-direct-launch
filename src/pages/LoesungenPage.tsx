@@ -49,11 +49,11 @@ const SOLUTION_HREFS = [
 
 const PRODUCT_ICONS = [Monitor, ShoppingCart, Smartphone, Globe, Percent];
 const PRODUCT_HREFS = [
-  "/produkte/kassensystem",
-  "/produkte/webshop",
-  "/produkte/app",
-  "/produkte/webseite",
-  "/produkte/transaktionsumlage",
+  "/produkte/pakete/kassensystem",
+  "/produkte/pakete/online-bestellshop",
+  "/produkte/pakete/bestell-app",
+  "/produkte/pakete/webseite",
+  "/produkte/add-ons/transaktionsumlage",
 ];
 
 const TARGET_GROUP_HREFS: Record<string, string> = {

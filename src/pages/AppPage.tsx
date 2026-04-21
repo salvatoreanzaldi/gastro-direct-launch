@@ -64,7 +64,7 @@ const SCHEMA_BREADCRUMB = {
   itemListElement: [
     { "@type": "ListItem", position: 1, name: "Gastro Master", item: "https://gastro-master.de" },
     { "@type": "ListItem", position: 2, name: "Produkte", item: "https://gastro-master.de/produkte" },
-    { "@type": "ListItem", position: 3, name: "Bestell-App", item: "https://gastro-master.de/produkte/app" },
+    { "@type": "ListItem", position: 3, name: "Bestell-App", item: "https://gastro-master.de/produkte/pakete/bestell-app" },
   ],
 };
 
@@ -385,7 +385,7 @@ const AppPage = () => {
   useSeoMeta({
     title: t("seo.title"),
     description: t("seo.description"),
-    canonical: "https://gastro-master.de/produkte/app",
+    canonical: "https://gastro-master.de/produkte/pakete/bestell-app",
   });
 
   return (
@@ -432,7 +432,7 @@ const AppPage = () => {
         >
           <p className="text-lg md:text-xl text-white/60 leading-relaxed">
             {t("hero.subtitle")}{" "}
-            <Link to={lp("/produkte/webshop")} className="text-cyan-brand/80 underline underline-offset-2 hover:opacity-80 transition-opacity">{t("hero.subtitleLinkText")}</Link>{" "}
+            <Link to={lp("/produkte/pakete/online-bestellshop")} className="text-cyan-brand/80 underline underline-offset-2 hover:opacity-80 transition-opacity">{t("hero.subtitleLinkText")}</Link>{" "}
             {t("hero.subtitleEnd")}
           </p>
 
@@ -894,7 +894,7 @@ const AppPage = () => {
                 {t("pricing.websiteText")}
               </p>
               <button
-                onClick={() => { window.location.href = lp("/produkte/webseite"); }}
+                onClick={() => { window.location.href = lp("/produkte/pakete/webseite"); }}
                 className="mt-5 text-cyan-brand text-sm font-semibold flex items-center gap-1 hover:gap-2 transition-all duration-200"
               >
                 {t("pricing.websiteLink")} <ArrowRight className="w-4 h-4" />
@@ -933,7 +933,7 @@ const AppPage = () => {
                 ))}
               </div>
               <button
-                onClick={() => { window.location.href = lp("/produkte/transaktionsumlage"); }}
+                onClick={() => { window.location.href = lp("/produkte/add-ons/transaktionsumlage"); }}
                 className="text-cyan-brand text-sm font-semibold flex items-center gap-1 hover:gap-2 transition-all duration-200"
               >
                 {t("pricing.txLink")} <ArrowRight className="w-4 h-4" />
@@ -1043,7 +1043,7 @@ const AppPage = () => {
 
       {/* ── S14b: MOBILE CTA SECTION ────────────────────────────── */}
       <div className="md:hidden">
-        <CTASection {...getCTAConfig("/produkte/app")} />
+        <CTASection {...getCTAConfig("/produkte/pakete/bestell-app")} />
       </div>
 
       <Footer />

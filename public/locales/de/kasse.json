@@ -203,7 +203,7 @@
     "expectText": "Im kostenlosen Erstgespräch entwickelt einer unserer Experten ein individuelles Konzept für dein neues Kassensystem – kostenlos, unverbindlich und auf deinen Betrieb zugeschnitten. Danach entscheidest du frei, ob du es mit uns umsetzen möchtest.",
     "privacyNote": "Deine Informationen werden ausschließlich für die Kontaktaufnahme verwendet und nicht gespeichert.",
     "languages": ["Deutsch", "Englisch", "Italienisch", "Persisch", "Russisch", "Singhalesisch"],
-    "cta": "Kostenlose Beratung anfragen",
+    "cta": "Kostenlose Beratung",
     "teamMembers": [
       { "name": "René Ebert", "role": "Gründer & Geschäftsführer" },
       { "name": "Salvatore Anzaldi", "role": "Head of Sales" },

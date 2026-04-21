@@ -24,11 +24,12 @@ export const ROUTES: RouteEntry[] = [
 
   // Produkte
   { path: "/produkte",                            importPath: "@/pages/ProduktePage",               priority: 0.9, changefreq: "weekly" },
-  { path: "/produkte/webshop",                    importPath: "@/pages/WebshopPage",                priority: 0.8, changefreq: "weekly" },
-  { path: "/produkte/app",                        importPath: "@/pages/AppPage",                    priority: 0.8, changefreq: "weekly" },
-  { path: "/produkte/webseite",                   importPath: "@/pages/WebseitePage",               priority: 0.8, changefreq: "weekly" },
-  { path: "/produkte/kassensystem",               importPath: "@/pages/KassePage",                  priority: 0.8, changefreq: "weekly" },
-  { path: "/produkte/transaktionsumlage",         importPath: "@/pages/TransaktionsumlagePage",     priority: 0.7, changefreq: "monthly" },
+  { path: "/produkte/pakete/online-bestellshop",  importPath: "@/pages/WebshopPage",                priority: 0.8, changefreq: "weekly" },
+  { path: "/produkte/pakete/bestell-app",         importPath: "@/pages/AppPage",                    priority: 0.8, changefreq: "weekly" },
+  { path: "/produkte/pakete/webseite",            importPath: "@/pages/WebseitePage",               priority: 0.8, changefreq: "weekly" },
+  { path: "/produkte/pakete/kassensystem",        importPath: "@/pages/KassePage",                  priority: 0.8, changefreq: "weekly" },
+  { path: "/produkte/add-ons/transaktionsumlage",  importPath: "@/pages/TransaktionsumlagePage",     priority: 0.7, changefreq: "monthly" },
+  { path: "/produkte/hardware",                   importPath: "@/pages/HardwarePage",               priority: 0.8, changefreq: "monthly" },
 
   // Lösungen
   { path: "/loesungen",                           importPath: "@/pages/LoesungenPage",              priority: 0.9, changefreq: "weekly" },
@@ -39,13 +40,19 @@ export const ROUTES: RouteEntry[] = [
   { path: "/loesungen/cafe-baeckerei",            importPath: "@/pages/CafeBaeckereiPage",           priority: 0.8, changefreq: "weekly" },
   { path: "/loesungen/ghost-kitchen",             importPath: "@/pages/GhostKitchenPage",            priority: 0.7, changefreq: "weekly" },
 
-  // Add-Ons
-  { path: "/add-ons",                             importPath: "@/pages/AddOnsPage",                  priority: 0.85, changefreq: "weekly" },
-  { path: "/add-ons/qr-code-flyer",               importPath: "@/pages/add-ons/QRCodeFlyerPage",    priority: 0.7, changefreq: "monthly" },
-  { path: "/add-ons/fahrer-app-gps",              importPath: "@/pages/add-ons/FahrerAppGpsPage",   priority: 0.7, changefreq: "monthly" },
-  { path: "/add-ons/qr-code-tischsystem",         importPath: "@/pages/add-ons/QRCodeTischsystemPage", priority: 0.7, changefreq: "monthly" },
-  { path: "/add-ons/bildschirmfunktion",          importPath: "@/pages/add-ons/BildschirmfunktionPage", priority: 0.7, changefreq: "monthly" },
-  { path: "/add-ons/kiosk",                       importPath: "@/pages/add-ons/KioskPage",          priority: 0.7, changefreq: "monthly" },
+  // Add-Ons (unter /produkte/add-ons/)
+  { path: "/produkte/add-ons",                             importPath: "@/pages/AddOnsPage",                        priority: 0.85, changefreq: "weekly" },
+  { path: "/produkte/add-ons/qr-code-flyer",               importPath: "@/pages/add-ons/QRCodeFlyerPage",          priority: 0.7,  changefreq: "monthly" },
+  { path: "/produkte/add-ons/fahrer-app-gps",              importPath: "@/pages/add-ons/FahrerAppGpsPage",         priority: 0.7,  changefreq: "monthly" },
+  { path: "/produkte/add-ons/qr-code-tischsystem",         importPath: "@/pages/add-ons/QRCodeTischsystemPage",    priority: 0.7,  changefreq: "monthly" },
+  { path: "/produkte/add-ons/bildschirmfunktion",          importPath: "@/pages/add-ons/BildschirmfunktionPage",   priority: 0.7,  changefreq: "monthly" },
+  { path: "/produkte/add-ons/kiosk",                       importPath: "@/pages/add-ons/KioskPage",                priority: 0.7,  changefreq: "monthly" },
+
+  // Blog
+  { path: "/blog",                               importPath: "@/pages/BlogPage",                                    priority: 0.7, changefreq: "weekly" },
+  { path: "/blog/warum-lieferando-verzichten",   importPath: "@/pages/blog/BlogPostLieferandoPage",                priority: 0.6, changefreq: "monthly" },
+  { path: "/blog/5-fehler-lieferdienst-eroffnen", importPath: "@/pages/blog/BlogPostFehlerPage",                  priority: 0.6, changefreq: "monthly" },
+  { path: "/blog/was-kostet-bestellsystem",      importPath: "@/pages/blog/BlogPostKostenPage",                    priority: 0.6, changefreq: "monthly" },
 
   // Info-Seiten
   { path: "/faq",                                 importPath: "@/pages/FAQPage",                    priority: 0.7, changefreq: "monthly" },

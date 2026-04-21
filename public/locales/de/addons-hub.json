@@ -1,0 +1,93 @@
+{
+  "seo": {
+    "title": "Add-Ons für Gastro Master — Erweiterungen für Webshop, App & Kassensystem | Gastro Master",
+    "description": "Add-Ons für Gastro Master: QR-Code Flyer, Fahrer-App mit GPS, QR-Code Tischsystem, Bildschirmfunktion, Self-Ordering Kiosk und mehr. Modular kombinierbar, voll integriert in Cloud-Kasse, Webshop und App."
+  },
+  "hero": {
+    "badge": "Add-Ons · Erweiterungen",
+    "headline": "Add-Ons für Gastro Master —",
+    "headlineHighlight": "gezielte Erweiterungen für deinen Betrieb",
+    "sub": "Ergänze deine bestehende Gastro-Master-Lösung um genau die Funktion, die deinem Betrieb fehlt — vom trackbaren QR-Code Flyer über Live-GPS-Tracking für Fahrer bis zum Self-Ordering Kiosk. Alle Add-Ons sind voll integriert in Webshop, App und Cloud-Kasse.",
+    "subSuffix": "Für Restaurants, Lieferdienste, Cafés, Bäckereien, Food Courts und Franchise-Konzepte."
+  },
+  "addons": [
+    {
+      "badge": "Marketing · Top-Seller",
+      "title": "QR-Code Flyer",
+      "price": "ab 65 € / 2.500 Stück",
+      "desc": "Verwandle jeden Papierflyer in einen messbaren Bestell-Kanal. Ein Scan führt direkt in deinen Webshop oder deine App — ohne Lieferando-Provision, mit Live-Tracking pro Kampagne.",
+      "benefits": ["Erste 2.500 Flyer im Abo inklusive", "DIN-A6, doppelseitig, eigenes Branding", "Tracking pro Kampagne im Dashboard"],
+      "compatibility": "Webshop · App"
+    },
+    {
+      "badge": "Lieferdienst",
+      "title": "Fahrer-App mit GPS",
+      "price": "+10 € / Monat pro Fahrer",
+      "desc": "Live-GPS-Tracking für jede Lieferung, automatische Routenoptimierung und Disposition direkt im Kassensystem. Kunden sehen, wo der Fahrer steht — dein Team fährt effizienter.",
+      "benefits": ["Echtzeit-GPS für alle Fahrer", "Automatische Routenoptimierung", "iOS- und Android-App für Fahrer"],
+      "compatibility": "Kassensystem"
+    },
+    {
+      "badge": "Tischservice",
+      "title": "QR-Code Tischsystem",
+      "price": "+50 € / 5 Tische, +5 € je weiterem",
+      "desc": "Gäste scannen am Tisch, wählen, bestellen, bezahlen — alles über ihr Smartphone. Bestellung landet sofort in Kasse und Küche. Weniger Wartezeit, höhere Tischumschlagrate, +18 % Bon durch Upselling.",
+      "benefits": ["Bestellen ohne App-Installation", "Mehrsprachiges Menü (DE/EN/FR/IT/ES/TR)", "Direkt am Tisch bezahlen"],
+      "compatibility": "Kassensystem"
+    },
+    {
+      "badge": "Küche & Theke",
+      "title": "Bildschirmfunktion",
+      "price": "Auf Anfrage",
+      "desc": "Pick-Up Screen für Gäste, Küchenmonitor für dein Team. Alle offenen Bestellungen in Echtzeit, farblich nach Warengruppe priorisiert, ohne Papierchaos. Für Schnellrestaurants, Bäckereien, Food Courts.",
+      "benefits": ["Pick-Up Screen + Küchenmonitor", "Priorisierung nach Bestellzeit", "Counter, Freestanding & Outdoor"],
+      "compatibility": "Kassensystem"
+    },
+    {
+      "badge": "Self-Service · Neu",
+      "title": "Self-Ordering Kiosk",
+      "price": "Auf Anfrage",
+      "desc": "Das Terminal übernimmt die Theke. Gäste bestellen und bezahlen direkt am Touchscreen — mehrsprachig, mit aktivem Upselling, ohne Wartezeit. −50 % Wartezeit, +25 % Durchschnittsbon.",
+      "benefits": ["Touch-Bedienung in 6+ Sprachen", "Alle Zahlungsarten integriert", "Counter, Freestanding & Wandmontage"],
+      "compatibility": "Kassensystem"
+    }
+  ],
+  "valueProps": {
+    "badge": "Warum Add-Ons",
+    "headline": "Ein Ökosystem aus Spezialisten",
+    "sub": "Jedes Add-On löst ein konkretes Problem im Tagesgeschäft — sauber integriert in das, was bei dir läuft.",
+    "items": [
+      { "title": "Modular kombinierbar", "desc": "Jedes Add-On läuft eigenständig — entfaltet seine volle Wirkung aber im Verbund mit Webshop, App oder Kassensystem." },
+      { "title": "Eine zentrale Verwaltung", "desc": "Alle Add-Ons werden über dein bestehendes Gastro-Master-Backoffice verwaltet — keine Drittanbieter, keine zusätzlichen Logins." },
+      { "title": "Sofort einsatzbereit", "desc": "Nach Buchung sind die Add-Ons in Stunden bis Tagen aktiv. Hardware-Add-Ons (Bildschirme, Kiosks) installieren wir auf Wunsch vor Ort." }
+    ]
+  },
+  "grid": {
+    "badge": "Alle Add-Ons",
+    "headline": "Alle Add-Ons im Überblick — jeweils mit klarem Mehrwert",
+    "sub": "Wähle das Add-On, das deinem Betrieb gerade am meisten Hebel gibt. Du kannst jederzeit weitere ergänzen — ohne Neustart, ohne Datenmigration.",
+    "combinedWith": "Kombinierbar mit",
+    "details": "Details",
+    "moreSoon": "Weitere folgen"
+  },
+  "combo": {
+    "badge": "Kombinationen",
+    "headline": "Add-Ons entfalten ihre Wirkung im Verbund",
+    "sub": "Die meisten Add-Ons setzen das Gastro-Master-Kassensystem voraus, weil sie Bestellungen, Bestellnummern und Küchenstatus in Echtzeit synchronisieren. Der QR-Code Flyer funktioniert auch mit Webshop oder Bestell-App alleine.",
+    "btnKasse": "Zum Kassensystem",
+    "btnAlleProdukte": "Alle Produkte ansehen"
+  },
+  "faq": {
+    "badge": "FAQ",
+    "headline": "Häufige Fragen zu Add-Ons",
+    "sub": "Antworten auf die Fragen, die uns Gastronomen am häufigsten zu unseren Erweiterungen stellen.",
+    "items": [
+      { "q": "Was sind Add-Ons bei Gastro Master?", "a": "Add-Ons sind Erweiterungen für deine bestehende Gastro-Master-Lösung — [Webshop](/produkte/webshop), [App](/produkte/app) oder [Kassensystem](/produkte/kassensystem). Sie lösen jeweils ein konkretes Problem (Marketing, Lieferdienst, Tischservice, Küchenmonitor, Self-Ordering) und sind voll integriert. Du buchst nur, was du wirklich brauchst." },
+      { "q": "Welche Add-Ons sind aktuell verfügbar?", "a": "Aktuell live sind: [QR-Code Flyer](/add-ons/qr-code-flyer) (Marketing), [Fahrer-App mit GPS](/add-ons/fahrer-app-gps) (Lieferdienst), [QR-Code Tischsystem](/add-ons/qr-code-tischsystem) (Tischservice), [Bildschirmfunktion](/add-ons/bildschirmfunktion) (Küche & Theke) und [Self-Ordering Kiosk](/add-ons/kiosk) (Self-Service). Weitere Erweiterungen sind in Vorbereitung." },
+      { "q": "Brauche ich für Add-Ons das Kassensystem?", "a": "Kommt drauf an. Der QR-Code Flyer funktioniert mit Webshop oder App alleine. Die Add-Ons Fahrer-App, QR-Code Tischsystem, Bildschirmfunktion und Kiosk setzen das [Gastro-Master-Kassensystem](/produkte/kassensystem) voraus, weil sie Bestellungen direkt mit der Cloud-Kasse, dem Küchenmonitor und dem Pick-Up Screen synchronisieren." },
+      { "q": "Was kosten die Add-Ons?", "a": "Die Preise variieren je nach Funktion: Der QR-Code Flyer startet ab 65 € für 2.500 Stück. Fahrer-App kostet +10 € pro Monat pro Fahrer, QR-Code Tischsystem +50 € pro Monat für 5 Tische. Bildschirmfunktion und Self-Ordering Kiosk sind Hardware-abhängig und werden in einer kostenlosen Beratung individuell kalkuliert." },
+      { "q": "Kann ich ein Add-On später wieder kündigen oder ergänzen?", "a": "Ja. Add-Ons sind monatlich aktivierbar und kündbar (Hardware ausgenommen). Du kannst zum Beispiel das QR-Code Tischsystem in der Hochsaison nutzen und im Winter pausieren — oder mit einem Kiosk starten und später weitere Terminals ergänzen." },
+      { "q": "Wie schnell sind Add-Ons einsatzbereit?", "a": "Software-Add-Ons (QR-Code Flyer, Fahrer-App, QR-Code Tischsystem) sind nach Buchung innerhalb weniger Stunden aktiv. Hardware-Add-Ons (Bildschirmfunktion, Kiosk) brauchen 2–4 Wochen für Lieferung, Konfiguration und Vor-Ort-Installation." }
+    ]
+  }
+}

@@ -153,7 +153,7 @@ const SCHEMA_BREADCRUMB = {
   itemListElement: [
     { "@type": "ListItem", position: 1, name: "Gastro Master", item: "https://gastro-master.de" },
     { "@type": "ListItem", position: 2, name: "Produkte", item: "https://gastro-master.de/produkte" },
-    { "@type": "ListItem", position: 3, name: "Webseite", item: "https://gastro-master.de/produkte/webseite" },
+    { "@type": "ListItem", position: 3, name: "Webseite", item: "https://gastro-master.de/produkte/pakete/webseite" },
   ],
 };
 
@@ -319,7 +319,7 @@ const WebseitePage = () => {
   useSeoMeta({
     title: t("seo.title"),
     description: t("seo.description"),
-    canonical: "https://gastro-master.de/produkte/webseite",
+    canonical: "https://gastro-master.de/produkte/pakete/webseite",
   });
 
   const isMobile = useIsMobile();
@@ -1079,7 +1079,7 @@ const WebseitePage = () => {
 
         {/* ── S11b: MOBILE CTA SECTION ──────────────────────────────────────── */}
         <div className="md:hidden">
-          <CTASection {...getCTAConfig("/produkte/webseite")} />
+          <CTASection {...getCTAConfig("/produkte/pakete/webseite")} />
         </div>
 
       </div>

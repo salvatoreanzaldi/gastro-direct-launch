@@ -106,7 +106,7 @@ const SCHEMA_BREADCRUMB = {
   "itemListElement": [
     { "@type": "ListItem", "position": 1, "name": "Startseite", "item": "https://gastro-master.de/" },
     { "@type": "ListItem", "position": 2, "name": "Produkte", "item": "https://gastro-master.de/produkte" },
-    { "@type": "ListItem", "position": 3, "name": "Transaktionsumlage", "item": "https://gastro-master.de/produkte/transaktionsumlage" },
+    { "@type": "ListItem", "position": 3, "name": "Transaktionsumlage", "item": "https://gastro-master.de/produkte/add-ons/transaktionsumlage" },
   ],
 };
 
@@ -507,7 +507,7 @@ const TransaktionsumlagePage = () => {
   useSeoMeta({
     title: t("seo.title"),
     description: t("seo.description"),
-    canonical: "https://gastro-master.de/produkte/transaktionsumlage",
+    canonical: "https://gastro-master.de/produkte/add-ons/transaktionsumlage",
   });
 
   const provider = PROVIDERS[activeProvider];
@@ -572,9 +572,9 @@ const TransaktionsumlagePage = () => {
               </h2>
               <p className="text-[#0A264A]/55 dark:text-white/45 mt-5 text-lg max-w-xl mx-auto leading-relaxed">
                 {t("howItWorks.desc")}{" "}
-                <Link to={lp("/produkte/webshop")} className="text-cyan-brand underline underline-offset-2 hover:opacity-80 transition-opacity">{t("howItWorks.descLinkShop")}</Link>
+                <Link to={lp("/produkte/pakete/online-bestellshop")} className="text-cyan-brand underline underline-offset-2 hover:opacity-80 transition-opacity">{t("howItWorks.descLinkShop")}</Link>
                 {" "}{t("howItWorks.descMid")}{" "}
-                <Link to={lp("/produkte/app")} className="text-cyan-brand underline underline-offset-2 hover:opacity-80 transition-opacity">{t("howItWorks.descLinkApp")}</Link>
+                <Link to={lp("/produkte/pakete/bestell-app")} className="text-cyan-brand underline underline-offset-2 hover:opacity-80 transition-opacity">{t("howItWorks.descLinkApp")}</Link>
                 {" "}{t("howItWorks.descEnd")}
               </p>
             </motion.div>
@@ -877,7 +877,7 @@ const TransaktionsumlagePage = () => {
                       </li>
                     ))}
                   </ul>
-                  <button onClick={() => { window.location.href = lp("/produkte/webshop"); }} className="text-cyan-brand text-sm font-semibold inline-flex items-center gap-1 hover:gap-2 transition-all duration-200">
+                  <button onClick={() => { window.location.href = lp("/produkte/pakete/online-bestellshop"); }} className="text-cyan-brand text-sm font-semibold inline-flex items-center gap-1 hover:gap-2 transition-all duration-200">
                     {t("requirements.webshop.link")} <ArrowRight className="w-4 h-4" />
                   </button>
                 </div>
@@ -897,7 +897,7 @@ const TransaktionsumlagePage = () => {
                       </li>
                     ))}
                   </ul>
-                  <button onClick={() => { window.location.href = lp("/produkte/app"); }} className="text-cyan-brand text-sm font-semibold inline-flex items-center gap-1 hover:gap-2 transition-all duration-200">
+                  <button onClick={() => { window.location.href = lp("/produkte/pakete/bestell-app"); }} className="text-cyan-brand text-sm font-semibold inline-flex items-center gap-1 hover:gap-2 transition-all duration-200">
                     {t("requirements.appWebshop.link")} <ArrowRight className="w-4 h-4" />
                   </button>
                 </div>
@@ -1044,7 +1044,7 @@ const TransaktionsumlagePage = () => {
 
         {/* ── S10b: MOBILE CTA SECTION ──────────────────────────────────────── */}
         <div className="md:hidden">
-          <CTASection {...getCTAConfig("/produkte/transaktionsumlage")} />
+          <CTASection {...getCTAConfig("/produkte/add-ons/transaktionsumlage")} />
         </div>
 
         <Footer />

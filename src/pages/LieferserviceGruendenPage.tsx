@@ -38,9 +38,9 @@ const plainText = (t: string) => t.replace(/\[([^\]]+)\]\([^)]+\)/g, "$1");
 
 // ─── Static maps ─────────────────────────────────────────────────────────────
 const topImages = [imgWebshop, imgApp, imgKasse];
-const topHrefs  = ["/produkte/webshop", "/produkte/app", "/produkte/kassensystem"];
+const topHrefs  = ["/produkte/pakete/online-bestellshop", "/produkte/pakete/bestell-app", "/produkte/pakete/kassensystem"];
 const bottomImages = [imgWebseite, imgTransaktion];
-const bottomHrefs  = ["/produkte/webseite", "/produkte/transaktionsumlage"];
+const bottomHrefs  = ["/produkte/pakete/webseite", "/produkte/add-ons/transaktionsumlage"];
 
 const stepIcons: LucideIcon[] = [Monitor, Target, Building2, ClipboardList];
 

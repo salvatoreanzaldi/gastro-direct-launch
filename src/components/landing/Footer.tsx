@@ -3,11 +3,11 @@ import logoWide from "@/assets/logos/logo-gastro-master-wide.png";
 import { useTranslation } from "react-i18next";
 
 const prodRoutes = [
-  "/produkte/webshop",
-  "/produkte/app",
-  "/produkte/webseite",
-  "/produkte/kassensystem",
-  "/produkte/transaktionsumlage",
+  "/produkte/pakete/online-bestellshop",
+  "/produkte/pakete/bestell-app",
+  "/produkte/pakete/webseite",
+  "/produkte/pakete/kassensystem",
+  "/produkte/add-ons/transaktionsumlage",
 ];
 
 const loesRoutes = [

@@ -45,7 +45,7 @@ import imgTransaktion from "@/assets/loesungen/Loesung - Zahlungsgebühren.png";
 // ─── Static image / icon maps (order must match JSON cards) ─────────────────
 const cardImages = [imgApp, imgKasse, imgWebseite, imgTransaktion];
 const cardIcons  = [<Smartphone className="w-4 h-4" />, <Monitor className="w-4 h-4" />, <Globe className="w-4 h-4" />, <Percent className="w-4 h-4" />];
-const cardHrefs  = ["/produkte/app", "/produkte/kassensystem", "/produkte/webseite", "/produkte/transaktionsumlage"];
+const cardHrefs  = ["/produkte/pakete/bestell-app", "/produkte/pakete/kassensystem", "/produkte/pakete/webseite", "/produkte/add-ons/transaktionsumlage"];
 const problemIcons = [<PenLine className="w-6 h-6" />, <TrendingDown className="w-6 h-6" />, <HelpCircle className="w-6 h-6" />];
 
 // ─── Component ───────────────────────────────────────────────────────────────
@@ -349,7 +349,7 @@ const LieferdienstPage = () => {
             className="mb-5"
           >
             <Link
-              to={lp("/produkte/webshop")}
+              to={lp("/produkte/pakete/online-bestellshop")}
               className="group relative rounded-2xl overflow-hidden bg-white/5 border-2 border-cyan-brand/30 hover:border-cyan-brand/60 transition-all duration-300 flex flex-col md:flex-row"
             >
               {/* Image */}

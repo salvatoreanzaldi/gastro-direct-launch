@@ -17,6 +17,7 @@ import klarnaIcon from "@/assets/icons/app/App Icon - Klarna.png";
 import mollieIcon from "@/assets/icons/app/App Icon - mollie.png";
 import visaIcon from "@/assets/icons/app/App Icon - VISA.png";
 import mastercardIcon from "@/assets/icons/app/App Icon - mastercard.png";
+import adyenIcon from "@/assets/icons/app/App Icon - Adyen.png";
 
 // Import Kassen Icons
 import tseIcon from "@/assets/icons/app/App Icon - TSE.png";
@@ -76,6 +77,7 @@ import datevSliderIcon from "@/assets/icons/app/App Icon - Datev.png";
 import epsonSliderIcon from "@/assets/icons/app/App Icon - Epson.png";
 import prismaSliderIcon from "@/assets/icons/app/App Icon - Prisma.png";
 import expertOrderSliderIcon from "@/assets/icons/app/App Icon - Expert Order.png";
+import adyenSliderIcon from "@/assets/icons/app/App Icon - Adyen.png";
 
 const FADE_MASK = `linear-gradient(to right, rgba(0,0,0,0) 0%, rgba(0,0,0,1) 10%, rgba(0,0,0,1) 90%, rgba(0,0,0,0) 100%)`;
 
@@ -137,6 +139,7 @@ const allSliderIcons: IconItem[] = [
   { id: "mastercard", src: mastercardSliderIcon, alt: "Mastercard" },
   { id: "prisma", src: prismaSliderIcon, alt: "Prisma" },
   { id: "expert-order", src: expertOrderSliderIcon, alt: "Expert Order" },
+  { id: "adyen", src: adyenSliderIcon, alt: "Adyen" },
 ];
 
 // Split icons: first 16 for row A, remaining 15 for row B
@@ -225,6 +228,12 @@ const categories: IntegrationCategory[] = [
         name: "Mollie",
         description: "Einfache Zahlungsintegration mit Mollie",
         icon: mollieIcon,
+      },
+      {
+        id: "adyen",
+        name: "Adyen",
+        description: "Enterprise-Zahlungsplattform für schnelle und sichere Transaktionen weltweit",
+        icon: adyenIcon,
       },
     ],
   },

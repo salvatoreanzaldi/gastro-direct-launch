@@ -421,6 +421,8 @@
       ],
       "basic": [
         "Webshop (commission-free)",
+        "Custom domain included",
+        "Digital Menu",
         "Unlimited Orders",
         "2,500 Flyers with QR Code",
         "Customer Loyalty Points",
@@ -428,6 +430,8 @@
       ],
       "standard": [
         "Webshop + Native App",
+        "Custom domain included",
+        "Digital Menu",
         "Push Notifications",
         "Unlimited Orders",
         "5,000 Flyers with QR Code",
@@ -442,6 +446,9 @@
       ],
       "enterprise": [
         "Custom Design",
+        "Custom domain included",
+        "Digital Menu",
+        "Kiosk Self-Ordering Terminal, Pick Up Screens optional",
         "On-site Photographer Optional",
         "Cloud POS incl.",
         "Transaction Pass-Through incl.",

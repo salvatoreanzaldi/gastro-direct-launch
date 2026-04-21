@@ -25,7 +25,7 @@ const i18n = {
     heroBadge: "Gastronomie Software · Digitale Lösungen",
     heroH1a: "Gastronomie Software —",
     heroH1b: "alle Produkte",
-    heroP1: (Link: any) => <>Gastro Master bietet digitale Komplettlösungen für die Gastronomie – und darüber hinaus. Vom provisionslosen Online-Bestellshop über eine{" "}<Link to="/produkte/app" className="text-white/90 underline underline-offset-2 hover:text-white transition-colors">eigene iOS & Android App</Link>{" "}bis hin zu professionellen Webseiten und{" "}<Link to="/produkte/kassensystem" className="text-white/90 underline underline-offset-2 hover:text-white transition-colors">TSE-konformen Kassensystemen</Link>. Alle Produkte sind aufeinander abgestimmt und lassen sich flexibel kombinieren.</>,
+    heroP1: (Link: any) => <>Gastro Master bietet digitale Komplettlösungen für die Gastronomie – und darüber hinaus. Vom provisionslosen Online-Bestellshop über eine{" "}<Link to="/produkte/pakete/bestell-app" className="text-white/90 underline underline-offset-2 hover:text-white transition-colors">eigene iOS & Android App</Link>{" "}bis hin zu professionellen Webseiten und{" "}<Link to="/produkte/pakete/kassensystem" className="text-white/90 underline underline-offset-2 hover:text-white transition-colors">TSE-konformen Kassensystemen</Link>. Alle Produkte sind aufeinander abgestimmt und lassen sich flexibel kombinieren.</>,
     heroP2: "Für Restaurants, Lieferdienste, Cafés, Bäckereien und alle weiteren Branchen.",
     heroCta: "Kostenlose Beratung",
     prodBadge: "Produkte", prodH2: "Digitale Produkte für die Gastronomie", prodSub: "Jedes Produkt funktioniert für sich allein – und entfaltet seine volle Stärke in Kombination.",
@@ -40,13 +40,13 @@ const i18n = {
     learnMore: "Mehr erfahren",
     topSeller: "Top-Seller Add-On",
     faqItems: [
-      { q: "Was ist der Unterschied zwischen Webshop und Webseite bei Gastro Master?", a: "Der [Webshop ab 79 \u20AC/Monat](/produkte/webshop) ist ein vollst\u00E4ndiges Online-Bestellsystem \u2014 deine Kunden bestellen direkt, du beh\u00E4ltst 100 % der Einnahmen ohne Provision. Die [professionelle Webseite ab 49 \u20AC/Monat](/produkte/webseite) ist deine Online-Pr\u00E4senz ohne Bestellfunktion: mit eigener Domain, Galerie, Speisekarte und Kontaktformular." },
-      { q: "Wie lange dauert die Einrichtung?", a: "F\u00FCr Webshop und Webseite planen wir 2\u20133 Wochen von Vertragsabschluss bis Go-Live. Das Kassensystem erfordert zus\u00E4tzlich die Hardware-Lieferung. Wir \u00FCbernehmen das komplette Setup f\u00FCr dich. Dein [Online-Bestellshop](/produkte/webshop) ist schneller live als du denkst." },
-      { q: "Kann ich Webshop, App und Kassensystem kombinieren?", a: "Ja \u2014 alle Gastro Master Produkte sind aufeinander abgestimmt. Bestellungen aus Webshop und App laufen in einem Backend zusammen. Men\u00FC und Preise synchronisieren sich automatisch mit der [Cloud-Kassensoftware](/produkte/kassensystem)." },
-      { q: "Was kostet das Kassensystem?", a: "Das Kassensystem kostet ab 69 \u20AC/Monat (zzgl. MwSt.). Enthalten sind: TSE-konforme Cloud-Kassensoftware, Updates, Cloud-Backoffice und pers\u00F6nlicher Support. Add-Ons wie Fahrer-App und QR-Code Tischsystem sind optional. Alle Infos auf der [Kassensystem-\u00DCbersicht](/produkte/kassensystem)." },
-      { q: "Brauche ich eine TSE?", a: "Ja. Seit 2020 ist eine TSE f\u00FCr alle elektronischen Kassen in Deutschland Pflicht (\u00A7146a AO). Bei Verst\u00F6\u00DFen drohen Bu\u00DFgelder bis 25.000 \u20AC. Die Gastro Master [TSE-Kassenl\u00F6sung](/produkte/kassensystem) ist von Anfang an gesetzeskonform." },
-      { q: "Was ist der Unterschied zwischen App und Webshop?", a: "Der Webshop ist browser-basiert. Die [eigene Bestell-App](/produkte/bestellapp) erscheint als native iOS- und Android-App im App Store und Google Play. Die App erm\u00F6glicht Push-Benachrichtigungen und bindet Stammkunden dauerhaft." },
-      { q: "Welche Zahlungsarten werden unterst\u00FCtzt?", a: "PayPal, Stripe, Kreditkarte (Visa, Mastercard), Apple Pay, Google Pay und Klarna. Mit der [Transaktionsumlage](/produkte/transaktionsumlage) gibst du Zahlungsgeb\u00FChren automatisch an deine Kunden weiter." },
+      { q: "Was ist der Unterschied zwischen Webshop und Webseite bei Gastro Master?", a: "Der [Webshop ab 79 \u20AC/Monat](/produkte/pakete/online-bestellshop) ist ein vollst\u00E4ndiges Online-Bestellsystem \u2014 deine Kunden bestellen direkt, du beh\u00E4ltst 100 % der Einnahmen ohne Provision. Die [professionelle Webseite ab 49 \u20AC/Monat](/produkte/pakete/webseite) ist deine Online-Pr\u00E4senz ohne Bestellfunktion: mit eigener Domain, Galerie, Speisekarte und Kontaktformular." },
+      { q: "Wie lange dauert die Einrichtung?", a: "F\u00FCr Webshop und Webseite planen wir 2\u20133 Wochen von Vertragsabschluss bis Go-Live. Das Kassensystem erfordert zus\u00E4tzlich die Hardware-Lieferung. Wir \u00FCbernehmen das komplette Setup f\u00FCr dich. Dein [Online-Bestellshop](/produkte/pakete/online-bestellshop) ist schneller live als du denkst." },
+      { q: "Kann ich Webshop, App und Kassensystem kombinieren?", a: "Ja \u2014 alle Gastro Master Produkte sind aufeinander abgestimmt. Bestellungen aus Webshop und App laufen in einem Backend zusammen. Men\u00FC und Preise synchronisieren sich automatisch mit der [Cloud-Kassensoftware](/produkte/pakete/kassensystem)." },
+      { q: "Was kostet das Kassensystem?", a: "Das Kassensystem kostet ab 69 \u20AC/Monat (zzgl. MwSt.). Enthalten sind: TSE-konforme Cloud-Kassensoftware, Updates, Cloud-Backoffice und pers\u00F6nlicher Support. Add-Ons wie Fahrer-App und QR-Code Tischsystem sind optional. Alle Infos auf der [Kassensystem-\u00DCbersicht](/produkte/pakete/kassensystem)." },
+      { q: "Brauche ich eine TSE?", a: "Ja. Seit 2020 ist eine TSE f\u00FCr alle elektronischen Kassen in Deutschland Pflicht (\u00A7146a AO). Bei Verst\u00F6\u00DFen drohen Bu\u00DFgelder bis 25.000 \u20AC. Die Gastro Master [TSE-Kassenl\u00F6sung](/produkte/pakete/kassensystem) ist von Anfang an gesetzeskonform." },
+      { q: "Was ist der Unterschied zwischen App und Webshop?", a: "Der Webshop ist browser-basiert. Die [eigene Bestell-App](/produkte/pakete/bestell-app) erscheint als native iOS- und Android-App im App Store und Google Play. Die App erm\u00F6glicht Push-Benachrichtigungen und bindet Stammkunden dauerhaft." },
+      { q: "Welche Zahlungsarten werden unterst\u00FCtzt?", a: "PayPal, Stripe, Kreditkarte (Visa, Mastercard), Apple Pay, Google Pay und Klarna. Mit der [Transaktionsumlage](/produkte/add-ons/transaktionsumlage) gibst du Zahlungsgeb\u00FChren automatisch an deine Kunden weiter." },
       { q: "Welche technischen Voraussetzungen gibt es?", a: "F\u00FCr das Kassensystem ben\u00F6tigst du einen Windows-PC (Windows 10+). Webshop und App laufen vollst\u00E4ndig in der Cloud. Wir \u00FCbernehmen Hosting, Domain und das komplette Setup." },
     ],
     mainProducts: [
@@ -75,7 +75,7 @@ const i18n = {
     heroBadge: "Restaurant Software · Digital Solutions",
     heroH1a: "Restaurant Software —",
     heroH1b: "all products",
-    heroP1: (Link: any) => <>Gastro Master provides complete digital solutions for the restaurant industry and beyond. From a commission-free{" "}<Link to="/produkte/webshop" className="text-white/90 underline underline-offset-2 hover:text-white transition-colors">online ordering system</Link>{" "}to a branded{" "}<Link to="/produkte/app" className="text-white/90 underline underline-offset-2 hover:text-white transition-colors">iOS & Android app</Link>, professional websites and{" "}<Link to="/produkte/kassensystem" className="text-white/90 underline underline-offset-2 hover:text-white transition-colors">TSE-compliant POS systems</Link>. All products work seamlessly together.</>,
+    heroP1: (Link: any) => <>Gastro Master provides complete digital solutions for the restaurant industry and beyond. From a commission-free{" "}<Link to="/produkte/pakete/online-bestellshop" className="text-white/90 underline underline-offset-2 hover:text-white transition-colors">online ordering system</Link>{" "}to a branded{" "}<Link to="/produkte/pakete/bestell-app" className="text-white/90 underline underline-offset-2 hover:text-white transition-colors">iOS & Android app</Link>, professional websites and{" "}<Link to="/produkte/pakete/kassensystem" className="text-white/90 underline underline-offset-2 hover:text-white transition-colors">TSE-compliant POS systems</Link>. All products work seamlessly together.</>,
     heroP2: "For restaurants, delivery services, cafés, bakeries and all other industries.",
     heroCta: "Free Consultation",
     prodBadge: "Products", prodH2: "Digital Products for Restaurants", prodSub: "Each product works on its own — and reaches full potential when combined.",
@@ -90,13 +90,13 @@ const i18n = {
     learnMore: "Learn more",
     topSeller: "Top-Seller Add-On",
     faqItems: [
-      { q: "What is the difference between online shop and website?", a: "The [online shop from \u20AC79/month](/produkte/webshop) is a full ordering system \u2014 your customers order directly and you keep 100% of revenue with zero commission. The [professional website from \u20AC49/month](/produkte/webseite) is your online presence without ordering functionality: with custom domain, gallery, menu and contact form." },
-      { q: "How long does the setup take?", a: "For the online shop and website, we plan 2\u20133 weeks from contract to go-live. The POS system requires additional hardware delivery. We handle the entire setup for you. Your [online ordering system](/produkte/webshop) goes live faster than you think." },
-      { q: "Can I combine online shop, app and POS system?", a: "Yes \u2014 all Gastro Master products are designed to work together. Orders from app and online shop come together in one backend. Menu and prices sync automatically with the [cloud POS software](/produkte/kassensystem)." },
-      { q: "How much does the POS system cost?", a: "The POS system starts at \u20AC69/month (excl. VAT). Included: TSE-compliant cloud POS software, updates, cloud back-office and personal support. Add-ons like driver app and QR-code table system are optional. All details on the [POS system page](/produkte/kassensystem)." },
-      { q: "Do I need a TSE (fiscal security device)?", a: "Yes. Since 2020, a TSE is mandatory for all electronic cash registers in Germany (\u00A7146a AO). Fines for non-compliance can reach \u20AC25,000. The Gastro Master [TSE POS solution](/produkte/kassensystem) is fully compliant from day one." },
-      { q: "What is the difference between the app and the online shop?", a: "The online shop is browser-based. The [branded ordering app](/produkte/bestellapp) appears as a native iOS and Android app on the App Store and Google Play. The app enables push notifications and builds long-term customer loyalty." },
-      { q: "Which payment methods are supported?", a: "PayPal, Stripe, credit card (Visa, Mastercard), Apple Pay, Google Pay and Klarna. With the [transaction fee pass-through](/produkte/transaktionsumlage) you automatically pass payment fees to your customers." },
+      { q: "What is the difference between online shop and website?", a: "The [online shop from \u20AC79/month](/produkte/pakete/online-bestellshop) is a full ordering system \u2014 your customers order directly and you keep 100% of revenue with zero commission. The [professional website from \u20AC49/month](/produkte/pakete/webseite) is your online presence without ordering functionality: with custom domain, gallery, menu and contact form." },
+      { q: "How long does the setup take?", a: "For the online shop and website, we plan 2\u20133 weeks from contract to go-live. The POS system requires additional hardware delivery. We handle the entire setup for you. Your [online ordering system](/produkte/pakete/online-bestellshop) goes live faster than you think." },
+      { q: "Can I combine online shop, app and POS system?", a: "Yes \u2014 all Gastro Master products are designed to work together. Orders from app and online shop come together in one backend. Menu and prices sync automatically with the [cloud POS software](/produkte/pakete/kassensystem)." },
+      { q: "How much does the POS system cost?", a: "The POS system starts at \u20AC69/month (excl. VAT). Included: TSE-compliant cloud POS software, updates, cloud back-office and personal support. Add-ons like driver app and QR-code table system are optional. All details on the [POS system page](/produkte/pakete/kassensystem)." },
+      { q: "Do I need a TSE (fiscal security device)?", a: "Yes. Since 2020, a TSE is mandatory for all electronic cash registers in Germany (\u00A7146a AO). Fines for non-compliance can reach \u20AC25,000. The Gastro Master [TSE POS solution](/produkte/pakete/kassensystem) is fully compliant from day one." },
+      { q: "What is the difference between the app and the online shop?", a: "The online shop is browser-based. The [branded ordering app](/produkte/pakete/bestell-app) appears as a native iOS and Android app on the App Store and Google Play. The app enables push notifications and builds long-term customer loyalty." },
+      { q: "Which payment methods are supported?", a: "PayPal, Stripe, credit card (Visa, Mastercard), Apple Pay, Google Pay and Klarna. With the [transaction fee pass-through](/produkte/add-ons/transaktionsumlage) you automatically pass payment fees to your customers." },
       { q: "What are the technical requirements?", a: "For the POS system you need a Windows PC (Windows 10+). Online shop and app run entirely in the cloud. We handle hosting, domain and the complete setup." },
     ],
     mainProducts: [
@@ -123,11 +123,11 @@ const i18n = {
 };
 
 // ─── Produkt-Daten (routes + icons, sprachunabhängig) ────────────────────────
-const PROD_ROUTES = ["/produkte/webshop", "/produkte/app", "/produkte/webseite", "/produkte/kassensystem"];
+const PROD_ROUTES = ["/produkte/pakete/online-bestellshop", "/produkte/pakete/bestell-app", "/produkte/pakete/webseite", "/produkte/pakete/kassensystem"];
 const PROD_ICONS = [ShoppingCart, Smartphone, Globe, Monitor];
-const ADDON_ROUTES = ["/produkte/transaktionsumlage", "/produkte/app"];
+const ADDON_ROUTES = ["/produkte/add-ons/transaktionsumlage", "/produkte/pakete/bestell-app"];
 const ADDON_ICONS = [Percent, QrCode];
-const KASSEN_ROUTES = ["/produkte/kassensystem", "/produkte/kassensystem", "/produkte/kassensystem"];
+const KASSEN_ROUTES = ["/produkte/pakete/kassensystem", "/produkte/pakete/kassensystem", "/produkte/pakete/kassensystem"];
 const KASSEN_ICONS = [Truck, QrCode, Monitor];
 const SYN_ICONS = [
   { a: { icon: ShoppingCart }, b: { icon: Percent } },
@@ -144,7 +144,7 @@ const MAIN_PRODUCTS = [
     price: "ab 79 €/Monat",
     desc: "Dein eigener Online-Bestellshop – ohne App, ohne Provision. Kunden bestellen direkt über deine Website, du behältst 100 % des Umsatzes.",
     benefits: ["0 % Provision", "Eigene Domain & Branding", "PayPal, Kreditkarte & mehr"],
-    href: "/produkte/webshop",
+    href: "/produkte/pakete/online-bestellshop",
   },
   {
     icon: Smartphone,
@@ -153,7 +153,7 @@ const MAIN_PRODUCTS = [
     price: "ab 149 €/Monat",
     desc: "Deine eigene Bestell-App im App Store und Google Play – unter deinem Namen, mit deinem Logo, vollständig provisionsfrei.",
     benefits: ["iOS & Android", "Push-Benachrichtigungen", "Multi-Standort fähig"],
-    href: "/produkte/app",
+    href: "/produkte/pakete/bestell-app",
   },
   {
     icon: Globe,
@@ -162,7 +162,7 @@ const MAIN_PRODUCTS = [
     price: "ab 49 €/Monat",
     desc: "Professionelle Online-Präsenz in wenigen Tagen – mit eigener Domain, Galerie, Kontaktformular und DSGVO-konformer Einrichtung. Für alle Branchen.",
     benefits: ["Eigene Domain inklusive", "DSGVO-konform", "Für alle Branchen"],
-    href: "/produkte/webseite",
+    href: "/produkte/pakete/webseite",
   },
   {
     icon: Monitor,
@@ -171,7 +171,7 @@ const MAIN_PRODUCTS = [
     price: "ab 69 €/Monat",
     desc: "TSE-konformes Kassensystem für die Gastronomie – mit Tischverwaltung, Fahrer-App, Statistiken und nahtloser Integration ins Bestell-System.",
     benefits: ["TSE-konform (GoBD)", "Tisch- & Lieferverwaltung", "Cloud-basierte Updates"],
-    href: "/produkte/kassensystem",
+    href: "/produkte/pakete/kassensystem",
   },
 ];
 
@@ -183,7 +183,7 @@ const ADD_ONS = [
     price: "Individuell",
     desc: "Gib PayPal-, Kreditkarten- und weitere Zahlungsgebühren automatisch und transparent an deine Kunden weiter. Du behältst 100 % deines Nettoumsatzes – rechtssicher, automatisch beim Checkout.",
     benefits: ["PayPal, Visa, Mastercard", "Apple Pay, Google Pay, Klarna", "Rechtssicher & transparent"],
-    href: "/produkte/transaktionsumlage",
+    href: "/produkte/add-ons/transaktionsumlage",
   },
   {
     icon: QrCode,
@@ -192,7 +192,7 @@ const ADD_ONS = [
     price: "ab 65 € / 2.500 Stück",
     desc: "Flyer sind das wirksamste Mittel, um Kunden zum Scannen deines QR-Codes zu bewegen. Professionell doppelseitig gedruckte DIN-A6-Flyer mit deinem Branding – ideal als Lieferbeigabe, an der Kasse oder zum Verteilen. Die ersten 2.500 Flyer sind mit jedem Abo kostenfrei inklusive.",
     benefits: ["Erste 2.500 Flyer kostenlos", "DIN-A6, doppelseitig gedruckt", "Eigenes Branding inklusive"],
-    href: "/produkte/app",
+    href: "/produkte/pakete/bestell-app",
   },
 ];
 
@@ -204,7 +204,7 @@ const KASSEN_ADD_ONS = [
     price: "+10 € / Monat pro Fahrer",
     desc: "Die Fahrer-App für Gastronomen mit eigenem Lieferdienst: Echtzeit-GPS-Tracking, automatische Routenoptimierung und Dispositionsübersicht direkt im Kassensystem. Fahrer sehen ihre Touren live auf dem Smartphone, der Betreiber behält jederzeit den Überblick.",
     benefits: ["Echtzeit-GPS-Tracking für alle Fahrer", "Automatische Routenoptimierung", "Nahtlose Integration ins Kassensystem"],
-    href: "/produkte/kassensystem",
+    href: "/produkte/pakete/kassensystem",
   },
   {
     icon: QrCode,
@@ -213,7 +213,7 @@ const KASSEN_ADD_ONS = [
     price: "+50 € / 5 Tische, +5 € je weiterem",
     desc: "Mit dem QR-Code Tischsystem bestellen Gäste direkt am Tisch – ohne Kellner, ohne Wartezeit. Jeder Tisch bekommt einen individuellen QR-Code; Bestellungen landen sofort im Kassensystem. Ideal für Restaurants, die Wartezeiten reduzieren und die Tischumschlagrate steigern möchten.",
     benefits: ["QR-Code-Bestellung am Tisch", "Direkte Übertragung ins Kassensystem", "Weniger Wartezeit, höhere Tischumschlagrate"],
-    href: "/produkte/kassensystem",
+    href: "/produkte/pakete/kassensystem",
   },
   {
     icon: Monitor,
@@ -222,7 +222,7 @@ const KASSEN_ADD_ONS = [
     price: "auf Anfrage",
     desc: "Pick-Up Screen und Küchenmonitor optimieren den Bestellfluss ohne zusätzliche Absprachen. Der Pick-Up Screen zeigt Abholkunden ihre Bestellnummer an – der Küchenmonitor gibt dem Küchenteam jederzeit den aktuellen Bestellstatus. Verfügbar als Counter, Freestanding oder Outdoor-Variante.",
     benefits: ["Pick-Up Screen für Abholkunden", "Küchenmonitor für den Bestellstatus", "Counter, Freestanding & Outdoor verfügbar"],
-    href: "/produkte/kassensystem",
+    href: "/produkte/pakete/kassensystem",
   },
 ];
 
@@ -287,31 +287,31 @@ const SCHEMA_PRODUCT_LIST = {
 const FAQ_ITEMS = [
   {
     q: "Was ist der Unterschied zwischen Webshop und Webseite bei Gastro Master?",
-    a: "Der [Webshop ab 79 €/Monat](/produkte/webshop) ist ein vollständiges Online-Bestellsystem — deine Kunden bestellen direkt, du behältst 100 % der Einnahmen ohne Provision. Die [professionelle Webseite ab 49 €/Monat](/produkte/webseite) ist deine Online-Präsenz ohne Bestellfunktion: mit eigener Domain, Galerie, Speisekarte und Kontaktformular. Willst du Direktbestellungen annehmen, ist der Webshop die richtige Wahl. Willst du einfach online gefunden werden, reicht die Webseite.",
+    a: "Der [Webshop ab 79 €/Monat](/produkte/pakete/online-bestellshop) ist ein vollständiges Online-Bestellsystem — deine Kunden bestellen direkt, du behältst 100 % der Einnahmen ohne Provision. Die [professionelle Webseite ab 49 €/Monat](/produkte/pakete/webseite) ist deine Online-Präsenz ohne Bestellfunktion: mit eigener Domain, Galerie, Speisekarte und Kontaktformular. Willst du Direktbestellungen annehmen, ist der Webshop die richtige Wahl. Willst du einfach online gefunden werden, reicht die Webseite.",
   },
   {
     q: "Wie lange dauert die Einrichtung — wann kann ich live gehen?",
-    a: "Für Webshop und Webseite planen wir 2–3 Wochen von Vertragsabschluss bis Go-Live — inklusive Design, Einrichtung und Testphase. Das Kassensystem erfordert zusätzlich die Hardware-Lieferung und Vor-Ort-Einrichtung. Wir übernehmen das komplette Setup für dich — du musst kein technisches Vorwissen mitbringen. Dein [Online-Bestellshop](/produkte/webshop) ist schneller live als du denkst.",
+    a: "Für Webshop und Webseite planen wir 2–3 Wochen von Vertragsabschluss bis Go-Live — inklusive Design, Einrichtung und Testphase. Das Kassensystem erfordert zusätzlich die Hardware-Lieferung und Vor-Ort-Einrichtung. Wir übernehmen das komplette Setup für dich — du musst kein technisches Vorwissen mitbringen. Dein [Online-Bestellshop](/produkte/pakete/online-bestellshop) ist schneller live als du denkst.",
   },
   {
     q: "Kann ich Webshop, App und Kassensystem kombinieren?",
-    a: "Ja — alle Gastro Master Produkte sind aufeinander abgestimmt und lassen sich flexibel kombinieren. Bestellungen aus Webshop und App laufen in einem gemeinsamen Backend zusammen. Menü, Preise und Bestellstatus synchronisieren sich automatisch mit der [Cloud-Kassensoftware](/produkte/kassensystem) — ohne manuelle Übertragung, ohne zusätzliche Schnittstellen. Du verwaltest alles zentral über ein einziges Dashboard.",
+    a: "Ja — alle Gastro Master Produkte sind aufeinander abgestimmt und lassen sich flexibel kombinieren. Bestellungen aus Webshop und App laufen in einem gemeinsamen Backend zusammen. Menü, Preise und Bestellstatus synchronisieren sich automatisch mit der [Cloud-Kassensoftware](/produkte/pakete/kassensystem) — ohne manuelle Übertragung, ohne zusätzliche Schnittstellen. Du verwaltest alles zentral über ein einziges Dashboard.",
   },
   {
     q: "Was kostet das Kassensystem — und was ist im Preis enthalten?",
-    a: "Das Kassensystem kostet ab 69 €/Monat (zzgl. MwSt.) und läuft auf Windows-Computern. Enthalten sind: TSE-konforme Cloud-Kassensoftware, regelmäßige Updates, Cloud-Backoffice, Auswertungen und persönlicher Support per WhatsApp. Add-Ons wie Fahrer-App (+10 €/Monat pro Fahrer) und QR-Code Tischsystem sind optional buchbar. Alle Infos auf der [Kassensystem-Übersicht](/produkte/kassensystem).",
+    a: "Das Kassensystem kostet ab 69 €/Monat (zzgl. MwSt.) und läuft auf Windows-Computern. Enthalten sind: TSE-konforme Cloud-Kassensoftware, regelmäßige Updates, Cloud-Backoffice, Auswertungen und persönlicher Support per WhatsApp. Add-Ons wie Fahrer-App (+10 €/Monat pro Fahrer) und QR-Code Tischsystem sind optional buchbar. Alle Infos auf der [Kassensystem-Übersicht](/produkte/pakete/kassensystem).",
   },
   {
     q: "Brauche ich eine TSE — und was kostet ein Verstoß?",
-    a: "Ja. Seit dem 1. Januar 2020 ist eine TSE (Technische Sicherheitseinrichtung) für alle elektronischen Kassen in Deutschland Pflicht — geregelt in §146a der Abgabenordnung (AO) und der Kassensicherungsverordnung (KassenSichV). Bei Verstößen drohen Bußgelder bis 25.000 €. Zusätzlich gilt seit dem 1. Juli 2025 die Kassenmeldepflicht: Alle Kassen müssen über ELSTER beim Finanzamt gemeldet werden. Die Gastro Master [TSE-Kassenlösung](/produkte/kassensystem) ist von Anfang an gesetzeskonform und meldereif.",
+    a: "Ja. Seit dem 1. Januar 2020 ist eine TSE (Technische Sicherheitseinrichtung) für alle elektronischen Kassen in Deutschland Pflicht — geregelt in §146a der Abgabenordnung (AO) und der Kassensicherungsverordnung (KassenSichV). Bei Verstößen drohen Bußgelder bis 25.000 €. Zusätzlich gilt seit dem 1. Juli 2025 die Kassenmeldepflicht: Alle Kassen müssen über ELSTER beim Finanzamt gemeldet werden. Die Gastro Master [TSE-Kassenlösung](/produkte/pakete/kassensystem) ist von Anfang an gesetzeskonform und meldereif.",
   },
   {
     q: "Was ist der Unterschied zwischen der Bestell-App und dem Webshop?",
-    a: "Der Webshop ist browser-basiert — deine Kunden bestellen über die Website, ohne eine App zu installieren. Die [eigene Bestell-App](/produkte/bestellapp) erscheint als native iOS- und Android-App im App Store und Google Play — unter deinem Namen und Logo. Die App ermöglicht Push-Benachrichtigungen und bindet Stammkunden dauerhaft. Beide Kanäle laufen in einem gemeinsamen Backend und können parallel betrieben werden.",
+    a: "Der Webshop ist browser-basiert — deine Kunden bestellen über die Website, ohne eine App zu installieren. Die [eigene Bestell-App](/produkte/pakete/bestell-app) erscheint als native iOS- und Android-App im App Store und Google Play — unter deinem Namen und Logo. Die App ermöglicht Push-Benachrichtigungen und bindet Stammkunden dauerhaft. Beide Kanäle laufen in einem gemeinsamen Backend und können parallel betrieben werden.",
   },
   {
     q: "Welche Zahlungsarten werden unterstützt?",
-    a: "Gastro Master unterstützt PayPal, Stripe, Kreditkarte (Visa, Mastercard), Apple Pay, Google Pay und Klarna. Mit der [Transaktionsumlage](/produkte/transaktionsumlage) gibst du Zahlungsgebühren automatisch und transparent an deine Kunden weiter — du behältst 100 % deines Nettoumsatzes. Die Umlage ist rechtssicher, wird beim Checkout ausgewiesen und muss nicht manuell abgerechnet werden.",
+    a: "Gastro Master unterstützt PayPal, Stripe, Kreditkarte (Visa, Mastercard), Apple Pay, Google Pay und Klarna. Mit der [Transaktionsumlage](/produkte/add-ons/transaktionsumlage) gibst du Zahlungsgebühren automatisch und transparent an deine Kunden weiter — du behältst 100 % deines Nettoumsatzes. Die Umlage ist rechtssicher, wird beim Checkout ausgewiesen und muss nicht manuell abgerechnet werden.",
   },
   {
     q: "Welche technischen Voraussetzungen gibt es?",

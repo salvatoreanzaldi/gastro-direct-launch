@@ -45,7 +45,7 @@ import imgTransaktion from "@/assets/loesungen/Loesung - Zahlungsgebühren.png";
 // ─── Static maps (order must match JSON products) ────────────────────────────
 const productImages = [imgKasse, imgWebshop, imgWebseite, imgApp, imgTransaktion];
 const productIcons  = [<Monitor className="w-4 h-4" />, <ShoppingCart className="w-4 h-4" />, <Globe className="w-4 h-4" />, <Smartphone className="w-4 h-4" />, <Percent className="w-4 h-4" />];
-const productHrefs  = ["/produkte/kassensystem", "/produkte/webshop", "/produkte/webseite", "/produkte/app", "/produkte/transaktionsumlage"];
+const productHrefs  = ["/produkte/pakete/kassensystem", "/produkte/pakete/online-bestellshop", "/produkte/pakete/webseite", "/produkte/pakete/bestell-app", "/produkte/add-ons/transaktionsumlage"];
 const problemIcons  = [<ClipboardX className="w-6 h-6" />, <BarChart2 className="w-6 h-6" />, <ShieldAlert className="w-6 h-6" />];
 
 // ─── Component ───────────────────────────────────────────────────────────────
@@ -349,7 +349,7 @@ const RestaurantPage = () => {
             className="mb-5"
           >
             <Link
-              to={lp("/produkte/kassensystem")}
+              to={lp("/produkte/pakete/kassensystem")}
               className="group relative rounded-2xl overflow-hidden bg-white/5 border-2 border-cyan-brand/30 hover:border-cyan-brand/60 transition-all duration-300 flex flex-col md:flex-row"
             >
               {/* Image */}

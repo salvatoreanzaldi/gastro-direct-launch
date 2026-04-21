@@ -165,7 +165,7 @@
     "expectText": "In einem kostenlosen Erstgespräch analysieren wir gemeinsam deine Zahlungsstruktur – Zahlungsmethoden, Standorte und Konten – und erstellen ein individuelles Angebot, das genau zu deinem Betrieb passt.",
     "setupText": "Die Einrichtung dauert in der Regel nur wenige Tage. Danach zahlst du keine Zahlungsgebühren mehr aus eigener Tasche.",
     "langs": ["Deutsch", "Englisch", "Italienisch", "Persisch", "Russisch", "Singhalesisch"],
-    "cta": "Kostenlose Beratung anfragen",
+    "cta": "Kostenlose Beratung",
     "teamRoles": ["Gründer & Geschäftsführer", "Head of Sales", "Head of Operations"]
   }
 }

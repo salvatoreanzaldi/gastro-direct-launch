@@ -86,8 +86,8 @@ const HeroSectionB = () => {
 
             <p className="text-lg md:text-xl text-white/60 max-w-2xl leading-relaxed mb-8 md:mb-12">
               {t("heroScroll.subPrefix")}{" "}
-              <Link to={lp("/produkte/webshop")} className="text-white/80 underline underline-offset-2 hover:text-white transition-colors">{t("heroScroll.linkWebshop")}</Link>,{" "}
-              <Link to={lp("/produkte/kassensystem")} className="text-white/80 underline underline-offset-2 hover:text-white transition-colors">{t("heroScroll.linkKasse")}</Link>,
+              <Link to={lp("/produkte/pakete/online-bestellshop")} className="text-white/80 underline underline-offset-2 hover:text-white transition-colors">{t("heroScroll.linkWebshop")}</Link>,{" "}
+              <Link to={lp("/produkte/pakete/kassensystem")} className="text-white/80 underline underline-offset-2 hover:text-white transition-colors">{t("heroScroll.linkKasse")}</Link>,
               {" "}{t("heroScroll.subSuffix")}
             </p>
 

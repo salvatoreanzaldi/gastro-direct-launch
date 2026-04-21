@@ -53,7 +53,7 @@ import imgTransaktion from "@/assets/loesungen/Loesung - Zahlungsgebühren.png";
 // ─── Static maps (order must match JSON products) ────────────────────────────
 const productImages = [imgApp, imgWebshop, imgKasse, imgWebseite, imgTransaktion];
 const productIcons  = [<Smartphone className="w-4 h-4" />, <ShoppingCart className="w-4 h-4" />, <Monitor className="w-4 h-4" />, <Globe className="w-4 h-4" />, <Percent className="w-4 h-4" />];
-const productHrefs  = ["/produkte/app", "/produkte/webshop", "/produkte/kassensystem", "/produkte/webseite", "/produkte/transaktionsumlage"];
+const productHrefs  = ["/produkte/pakete/bestell-app", "/produkte/pakete/online-bestellshop", "/produkte/pakete/kassensystem", "/produkte/pakete/webseite", "/produkte/add-ons/transaktionsumlage"];
 const problemIcons  = [<GitBranch className="w-6 h-6" />, <BarChart3 className="w-6 h-6" />, <AlertTriangle className="w-6 h-6" />];
 
 // ─── Component ───────────────────────────────────────────────────────────────
@@ -419,7 +419,7 @@ const FranchisePage = () => {
                 {renderWithLinks(t("kiosk.text"), lp)}
               </p>
               <Link
-                to={lp("/produkte/kassensystem")}
+                to={lp("/produkte/pakete/kassensystem")}
                 className="inline-flex items-center gap-2 bg-gradient-amber text-[#0A264A] font-bold px-6 py-3 rounded-xl text-base hover:scale-[1.02] transition-transform shadow-lg shadow-[#ED8400]/20"
               >
                 {t("kiosk.cta")}
@@ -778,7 +778,7 @@ const ScreensSection = () => {
               {renderWithLinks(t("screens.text"), lp)}
             </p>
             <Link
-              to={lp("/produkte/kassensystem")}
+              to={lp("/produkte/pakete/kassensystem")}
               className="inline-flex items-center gap-2 bg-gradient-amber text-[#0A264A] font-bold px-6 py-3 rounded-xl text-base hover:scale-[1.02] transition-transform shadow-lg shadow-[#ED8400]/20"
             >
               {t("screens.cta")}

@@ -1,0 +1,102 @@
+{
+  "meta": {
+    "title": "Sistema QR Code al Tavolo per Ristoranti — I Clienti Ordinano da Soli | Gastro Master",
+    "description": "Con il sistema QR Code al tavolo di Gastro Master i clienti ordinano direttamente al tavolo — senza cameriere, senza attesa. Meno personale, maggiore rotazione dei tavoli, upselling automatico. Per ristoranti, caffetterie e bar.",
+    "breadcrumbName": "Sistema QR Code Tavolo"
+  },
+  "hero": {
+    "badge": "Add-On · Servizio al Tavolo",
+    "headline": "Sistema QR Code al Tavolo — I Clienti Ordinano da Soli al Tavolo",
+    "subline": "Ogni tavolo ha il proprio QR code. I clienti scansionano, scelgono, pagano — tutto tramite smartphone. L'ordine arriva immediatamente al sistema POS e in cucina. Meno attesa, più rotazione dei tavoli, upselling automatico."
+  },
+  "problem": {
+    "title": "Il Problema dell'Ordinazione Classica al Tavolo",
+    "points": [
+      "I clienti aspettano 10–15 minuti finché il cameriere ha tempo per prendere l'ordine — fatturato che va perso.",
+      "Carenza di personale nella ristorazione: un cameriere in meno significa tempi d'attesa più lunghi, servizio peggiore e clienti persi.",
+      "Note scritte a mano, richieste speciali trasmesse verbalmente — errori, piatti sbagliati, lamentele in cucina.",
+      "Le riordenazioni richiedono un'eternità: un'altra birra, un dessert? I clienti cercano il cameriere con lo sguardo — e lasciano il locale senza riordenare."
+    ]
+  },
+  "solution": {
+    "title": "La Soluzione: Sistema QR Code al Tavolo",
+    "points": [
+      "Ogni tavolo riceve un QR code individuale. Il cliente scansiona — e vede subito il tuo menu sul proprio telefono.",
+      "Ordine direttamente dallo smartphone. Nessuna installazione di app, nessuna attesa, nessuno stress al bancone.",
+      "L'ordine arriva immediatamente al POS + cucina. Niente fogli, nessun errore di traduzione, nessuna richiesta speciale dimenticata.",
+      "Highlights del menu e suggerimenti di upselling nel menu digitale — i clienti ordinano in media il 18% in più per tavolo."
+    ]
+  },
+  "features": {
+    "headline": "Tutto il Necessario per un'Ordinazione al Tavolo che Alleggerisce Davvero",
+    "sub": "Sei funzionalità che trasformano ogni tavolo in un canale d'ordine indipendente.",
+    "items": [
+      { "title": "QR Code per Tavolo", "description": "QR code individuali per ogni tavolo — l'ordine viene automaticamente assegnato al numero tavolo corretto. Nessuna confusione." },
+      { "title": "Ordine Senza App", "description": "I clienti ordinano direttamente nel browser. Nessuna installazione, nessun account, nessun ostacolo — scansiona, scegli, fatto." },
+      { "title": "Pagamento Direttamente al Tavolo", "description": "PayPal, Apple Pay, Google Pay, carta di credito — tutti i metodi di pagamento comuni. Il cliente paga, si alza, va. Il cameriere non deve più incassare." },
+      { "title": "Menu Multilingue", "description": "Traduzione automatica del tuo menu in tedesco, inglese, francese, italiano, turco e altro — perfetto per le zone turistiche." },
+      { "title": "Upselling & Cross-Selling", "description": "Raccomandazioni come 'Si abbina bene con...' o 'Ancora un dessert?' vengono mostrate automaticamente — 18% di scontrino medio più alto." },
+      { "title": "Sync Live con POS & Cucina", "description": "Ogni ordine appare in tempo reale sul POS e sul display cucina. Nessun ritardo, nessun errore di passaggio." }
+    ]
+  },
+  "useCases": {
+    "headline": "Come i Ristoratori Usano il Sistema QR Code al Tavolo",
+    "sub": "Tre scenari reali dalla nostra base clienti — dal caffè trendy al ristorante da 120 posti.",
+    "items": [
+      { "title": "Ristorante con 80 Posti", "story": "Un ristorante italiano a Monaco ha ridotto il tempo medio di ordinazione da 12 a 3 minuti. Risultato: il tasso di rotazione dei tavoli è salito da 2,1 a 2,8 per serata — senza personale aggiuntivo." },
+      { "title": "Bar nel Quartiere della Movida", "story": "Un cocktail bar a Berlino-Mitte permette ai clienti di riordenare tramite QR code. Il fatturato delle bevande per cliente è aumentato del 24%, perché nessuno aspetta più il barista — e il personale lavora più rilassato." },
+      { "title": "Caffè Trendy con Turisti", "story": "Un caffè a Francoforte-Sachsenhausen serve il 30% di clienti internazionali. Da quando l'ordinazione QR code è disponibile in 8 lingue, i malintesi sono scomparsi — e le recensioni su Google sono salite da 4,1 a 4,7 stelle." }
+    ]
+  },
+  "trust": {
+    "stats": [
+      { "value": "−1 FTE", "label": "risparmio di personale per turno con 40–60 posti" },
+      { "value": "+18%", "label": "scontrino medio più alto grazie all'upselling" },
+      { "value": "3 min.", "label": "invece di 12 min. di ordinazione per tavolo" }
+    ],
+    "testimonial": {
+      "quote": "Nei momenti di punta perdevamo ordini perché i camerieri non riuscivano a stare dietro. Da quando c'è il sistema QR code al tavolo si è ribaltato tutto: i clienti ordinano da soli, la cucina lavora costantemente — e facciamo il 20% di fatturato in più per serata.",
+      "author": "Giulia M.",
+      "role": "Titolare Trattoria, Monaco-Schwabing"
+    }
+  },
+  "pricing": {
+    "headline": "Prezzi & Disponibilità",
+    "price": "+50 € / mese per 5 tavoli",
+    "note": "Add-on POS per ristoranti, caffetterie e bar. I primi 5 tavoli sono inclusi nel prezzo base — ogni tavolo aggiuntivo costa +5 € / mese (più IVA). Include QR code individuali, menu multilingue, sincronizzazione live con POS e cucina. Nessuna commissione per ordine, nessuna commissione nascosta.",
+    "tiersHeadline": "Prezzi Scalati per Numero di Tavoli",
+    "tiers": [
+      { "qty": "5 tavoli",  "price": "50,00 € / mese" },
+      { "qty": "10 tavoli", "price": "75,00 € / mese" },
+      { "qty": "15 tavoli", "price": "100,00 € / mese" },
+      { "qty": "20 tavoli", "price": "125,00 € / mese" },
+      { "qty": "30 tavoli", "price": "175,00 € / mese" },
+      { "qty": "50 tavoli", "price": "275,00 € / mese" }
+    ],
+    "tiersNote": "Tutti i prezzi netti più IVA. Le strutture più grandi con più di 50 tavoli ricevono su richiesta un preventivo individuale. Aree esterne, sale separate ed eventi contano come tavoli normali."
+  },
+  "internalLinks": {
+    "headline": "Funziona Perfettamente Con",
+    "intro": "Il sistema QR code al tavolo esprime il suo pieno potenziale come parte dell'ecosistema Gastro Master — dall'ordine al tavolo al conto nel POS.",
+    "items": [
+      { "title": "Sistema POS", "description": "Ogni ordine al tavolo arriva automaticamente nel POS — con numero tavolo, articoli e richieste speciali. Nessuna digitazione manuale, nessun errore." },
+      { "title": "Soluzione per Ristoranti", "description": "Pacchetto completo di POS, gestione tavoli, ordine QR e prenotazioni — specificamente per ristoranti, caffetterie e bar con servizio al tavolo." }
+    ]
+  },
+  "faq": {
+    "headline": "Domande Frequenti sul Sistema QR Code al Tavolo",
+    "sub": "Risposte alle domande che ci vengono poste più spesso da ristoranti, caffetterie e bar.",
+    "items": [
+      { "q": "Quanto costa il sistema QR code al tavolo per il mio ristorante?", "a": "Il sistema QR code al tavolo parte da 50 € al mese per i primi 5 tavoli. Ogni tavolo aggiuntivo costa +5 € al mese (più IVA). Un ristorante con 20 tavoli paga 125 € al mese. Incluso: QR code individuali, menu multilingue, sync live con POS e cucina e tutti i metodi di pagamento. Nessuna commissione per ordine." },
+      { "q": "Come funziona il sistema QR code al tavolo nella pratica?", "a": "Ogni tavolo riceve il proprio QR code — ad esempio come segnaposto, adesivo o sul menu. Il cliente scansiona con la fotocamera del telefono, il menu si apre automaticamente nel browser, il cliente seleziona gli articoli e ordina. L'ordine arriva immediatamente con il numero tavolo corretto nel POS e sul display cucina." },
+      { "q": "I miei clienti devono installare un'app?", "a": "No. Il sistema QR code al tavolo funziona interamente nel browser — su qualsiasi iPhone, telefono Android o tablet. Nessuna installazione di app, nessun account, nessuna registrazione. Il cliente scansiona, ordina, fatto. Questo abbassa significativamente la barriera e funziona in modo affidabile anche per clienti anziani o turisti." },
+      { "q": "Il cliente può pagare direttamente al tavolo?", "a": "Sì. Dopo aver ordinato, il cliente sceglie il suo metodo di pagamento preferito — PayPal, Apple Pay, Google Pay, carta di credito (Visa, Mastercard) o Klarna — e paga direttamente tramite smartphone. In alternativa, il conto può essere pagato nel modo classico alla fine con il cameriere. Entrambe le opzioni funzionano in parallelo." },
+      { "q": "Per quali ristoranti è adatto il sistema QR code al tavolo?", "a": "Il sistema è adatto a tutte le attività con servizio al tavolo: ristoranti italiani, pizzerie, cucina asiatica, caffetterie, bar, cocktail lounge, birrerie all'aperto. Particolarmente efficace con 20–80 posti e nei momenti di punta quando il personale lavora altrimenti al limite della capacità." },
+      { "q": "Quali lingue supporta il menu digitale?", "a": "Il menu viene tradotto automaticamente in tedesco, inglese, francese, italiano, spagnolo, turco e altro. Il cliente seleziona la sua lingua quando scansiona. Particolarmente prezioso per le zone turistiche — gli errori d'ordine dovuti a barriere linguistiche scompaiono quasi completamente." },
+      { "q": "Posso controllare l'upselling tramite il menu QR code?", "a": "Sì. Puoi memorizzare prodotti aggiuntivi appropriati per ogni articolo. Il sistema mostra questi suggerimenti automaticamente nel processo d'ordine. I nostri clienti riportano in media valori di scontrino del 18% più alti — soprattutto per bevande, contorni e dessert che altrimenti vengono spesso dimenticati." },
+      { "q": "Il sistema QR code al tavolo sostituisce completamente i miei camerieri?", "a": "No — e questo non è deliberatamente l'approccio. Il sistema si occupa della presa degli ordini e alleggerisce il tuo personale. I camerieri rimangono responsabili per la consulenza, le raccomandazioni di vino, sparecchiare i tavoli e l'ospitalità personale. In pratica, le attività risparmiano circa 1 dipendente per turno." },
+      { "q": "Come viene collegato il sistema QR code al tavolo al mio sistema POS?", "a": "Se usi già un sistema POS Gastro Master, il sistema tavolo è immediatamente pronto. Gli ordini arrivano automaticamente con il numero tavolo corretto nel POS e nel display cucina. Nessuna configurazione separata, nessuna integrazione, nessuno sviluppatore necessario." },
+      { "q": "Posso cambiare il menu in tempo reale, ad esempio quando qualcosa è esaurito?", "a": "Sì. Nel backoffice Gastro Master puoi disattivare singoli articoli in qualsiasi momento, adattare i prezzi, aggiungere piatti del giorno o ristrutturare interi menu. Le modifiche hanno effetto immediato — anche durante il servizio attivo. Gli articoli esauriti vengono automaticamente nascosti nel menu digitale." }
+    ]
+  }
+}

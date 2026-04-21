@@ -48,7 +48,7 @@ const SCHEMA_BREADCRUMB = {
   itemListElement: [
     { "@type": "ListItem", position: 1, name: "Gastro Master", item: "https://gastro-master.de" },
     { "@type": "ListItem", position: 2, name: "Produkte", item: "https://gastro-master.de/produkte" },
-    { "@type": "ListItem", position: 3, name: "Webshop", item: "https://gastro-master.de/produkte/webshop" },
+    { "@type": "ListItem", position: 3, name: "Webshop", item: "https://gastro-master.de/produkte/pakete/online-bestellshop" },
   ],
 };
 
@@ -76,7 +76,7 @@ const faqs = [
   },
   {
     q: "Was ist der Unterschied zwischen Webshop und App?",
-    a: "Der Webshop öffnet direkt im Browser – deine Kunden müssen nichts herunterladen. Die [eigene Bestell-App](/produkte/app) erscheint dagegen unter deinem Namen im Apple App Store und Google Play Store. Beide Produkte nutzen dasselbe Bestellsystem. Viele unserer Kunden starten mit dem Webshop und upgraden später auf die App. App + Webshop zusammen gibt es ab 149 € / Monat.",
+    a: "Der Webshop öffnet direkt im Browser – deine Kunden müssen nichts herunterladen. Die [eigene Bestell-App](/produkte/pakete/bestell-app) erscheint dagegen unter deinem Namen im Apple App Store und Google Play Store. Beide Produkte nutzen dasselbe Bestellsystem. Viele unserer Kunden starten mit dem Webshop und upgraden später auf die App. App + Webshop zusammen gibt es ab 149 € / Monat.",
   },
   {
     q: "Helft ihr mir auch dabei, auf Google besser gefunden zu werden?",
@@ -428,7 +428,7 @@ const WebshopPage = () => {
   useSeoMeta({
     title: t("seo.title"),
     description: t("seo.description"),
-    canonical: "https://gastro-master.de/produkte/webshop",
+    canonical: "https://gastro-master.de/produkte/pakete/online-bestellshop",
   });
 
   // Safe array extraction — returns [] if namespace not yet loaded
@@ -888,7 +888,7 @@ const WebshopPage = () => {
             </h2>
             <p className="text-[#0A264A]/55 dark:text-white/50 text-lg leading-relaxed">
               {t("pricing.sub")}{" "}
-              <Link to={lp("/produkte/kassensystem")} className="text-cyan-brand underline underline-offset-2 hover:opacity-80 transition-opacity">{t("pricing.kasseLinkText")}</Link>
+              <Link to={lp("/produkte/pakete/kassensystem")} className="text-cyan-brand underline underline-offset-2 hover:opacity-80 transition-opacity">{t("pricing.kasseLinkText")}</Link>
             </p>
           </motion.div>
 
@@ -978,7 +978,7 @@ const WebshopPage = () => {
                 Dein digitales Aushängeschild – eine eigenständige Restaurant-Website mit Bildergalerie, Kontaktformular und Google Maps. Informiert Besucher, während der Webshop Bestellungen entgegennimmt.
               </p>
               <button
-                onClick={() => { window.location.href = lp("/produkte/webseite"); }}
+                onClick={() => { window.location.href = lp("/produkte/pakete/webseite"); }}
                 className="mt-5 text-cyan-brand text-sm font-semibold flex items-center gap-1 hover:gap-2 transition-all duration-200"
               >
                 Mehr erfahren <ArrowRight className="w-4 h-4" />
@@ -1020,7 +1020,7 @@ const WebshopPage = () => {
                 ))}
               </div>
               <button
-                onClick={() => { window.location.href = lp("/produkte/transaktionsumlage"); }}
+                onClick={() => { window.location.href = lp("/produkte/add-ons/transaktionsumlage"); }}
                 className="text-cyan-brand text-sm font-semibold flex items-center gap-1 hover:gap-2 transition-all duration-200"
               >
                 Mehr erfahren <ArrowRight className="w-4 h-4" />
@@ -1108,7 +1108,7 @@ const WebshopPage = () => {
 
       {/* ── S12b: MOBILE CTA SECTION ────────────────────────────── */}
       <div className="md:hidden">
-        <CTASection {...getCTAConfig("/produkte/webshop")} />
+        <CTASection {...getCTAConfig("/produkte/pakete/online-bestellshop")} />
       </div>
 
       <Footer />

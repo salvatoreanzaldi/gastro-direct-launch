@@ -17,11 +17,11 @@ import RussischIcon from "@/assets/icons/Russisch.svg";
 import SinghalesischIcon from "@/assets/icons/Singhalesisch.svg";
 
 const prodRoutes = [
-  { to: "/produkte/webshop",            icon: ShoppingCart },
-  { to: "/produkte/app",                icon: Smartphone   },
-  { to: "/produkte/webseite",           icon: Globe        },
-  { to: "/produkte/kassensystem",       icon: Monitor      },
-  { to: "/produkte/transaktionsumlage", icon: Percent      },
+  { to: "/produkte/pakete/online-bestellshop",       icon: ShoppingCart },
+  { to: "/produkte/pakete/bestell-app",              icon: Smartphone   },
+  { to: "/produkte/pakete/webseite",                 icon: Globe        },
+  { to: "/produkte/pakete/kassensystem",             icon: Monitor      },
+  { to: "/produkte/add-ons/transaktionsumlage",      icon: Percent      },
 ];
 
 const loesRoutes = [

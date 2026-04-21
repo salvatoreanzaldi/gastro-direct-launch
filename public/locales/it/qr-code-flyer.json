@@ -1,0 +1,106 @@
+{
+  "meta": {
+    "title": "Volantini QR Code per Ristoranti — Ordini Diretti dal Volantino | Gastro Master",
+    "description": "Con il Volantino QR Code di Gastro Master i clienti ordinano direttamente dal volantino cartaceo. Generazione URL automatica, tracking & analytics, design pronti per la stampa. Perfetto per pizzerie, servizi di consegna e ristoranti.",
+    "breadcrumbName": "Volantino QR Code"
+  },
+  "hero": {
+    "badge": "Add-On · Marketing",
+    "headline": "Volantino QR Code — Ordini Diretti dal Volantino Cartaceo",
+    "subline": "Trasforma ogni volantino in un canale d'ordine. Una scansione, un tocco — e i tuoi clienti ordinano direttamente nel tuo webshop o nella tua app. Tracciabile, pronto per la stampa, misurabile."
+  },
+  "problem": {
+    "title": "Il Problema dei Volantini Classici",
+    "points": [
+      "I clienti devono prima cercare il tuo ristorante su Google — spesso finiscono sulle piattaforme di delivery.",
+      "Il percorso da 'volantino in mano' al primo ordine richiede 3–5 minuti — troppi abbandoni.",
+      "Non sai mai quale volantino, quale quartiere, quale azione porta davvero fatturato.",
+      "Digitare gli URL non funziona più — i volantini finiscono nel cestino inutilizzati."
+    ]
+  },
+  "solution": {
+    "title": "La Soluzione: Volantino QR Code",
+    "points": [
+      "Ogni volantino riceve un QR code individuale che porta direttamente al tuo webshop o alla tua app.",
+      "Una scansione — in 2 secondi il cliente è nel menu, senza passare da Google, senza provvigioni.",
+      "Ogni scansione viene tracciata: quando, dove, quale campagna. Vedi il ROI di ogni volantino in tempo reale.",
+      "PDF pronti per la stampa nel tuo branding — invia direttamente alla tipografia, fatto."
+    ]
+  },
+  "features": {
+    "headline": "Tutto il Necessario per Volantini che Generano Davvero Ordini",
+    "sub": "Sei funzionalità che trasformano ogni volantino in un asset di marketing misurabile.",
+    "items": [
+      { "title": "Generazione URL Automatica", "description": "Un deep-link unico con QR code per campagna — generato automaticamente, pronto all'uso immediatamente." },
+      { "title": "Tracking & Analytics", "description": "Scansioni, ordini, fatturato per volantino — trasparente nella dashboard. Finalmente sai cosa funziona." },
+      { "title": "Esportazione PDF Pronta per la Stampa", "description": "File pronti per la stampa con 3 mm di abbondanza e profilo colore CMYK — direttamente alla tipografia." },
+      { "title": "Personalizzazione del Brand", "description": "Logo, colori, font — il tuo volantino sembra creato da un'agenzia, senza pagare prezzi da agenzia." },
+      { "title": "Landing Page Ottimizzata per Mobile", "description": "Il QR code non porta mai a un sito lento, ma direttamente al flusso d'ordine semplificato." },
+      { "title": "Codici Campagna & Sconti", "description": "Promozione volantino con codice sconto del 10%? Un clic nella dashboard, attivo nel QR code, misurabile per quantità." }
+    ]
+  },
+  "useCases": {
+    "headline": "Come i Ristoratori Usano il Volantino QR Code",
+    "sub": "Tre scenari reali dalla nostra base clienti — dal quartiere alla catena.",
+    "items": [
+      { "title": "Pizzeria nel Quartiere Residenziale", "story": "Un pizzaiolo berlinese distribuisce 2.000 volantini con QR code in un raggio di 3 km. Risultato: +40% ordini diretti in 4 settimane — senza commissioni del 13% dalla piattaforma." },
+      { "title": "Catena di Consegne", "story": "Una catena di hamburger di Monaco stampa QR code su ogni confezione di consegna. I clienti abituali scansionano invece di cercare su Google — il tasso di riordine è salito dal 22% al 38%." },
+      { "title": "Marketing per Eventi", "story": "Un food truck ad Amburgo stampa QR code sui volantini della festa cittadina. Il truck sa in tempo reale: l'Evento X porta 3 € per volantino, l'Evento Y solo 0,40 €. Il budget viene riallocato di conseguenza." }
+    ]
+  },
+  "trust": {
+    "stats": [
+      { "value": "+40%", "label": "ordini diretti in più con i volantini QR code" },
+      { "value": "2 sec.", "label": "dalla scansione al menu aperto" },
+      { "value": "0%", "label": "commissione per ordine" }
+    ],
+    "testimonial": {
+      "quote": "I nostri volantini erano prima un tiro alla cieca. Con il QR code vediamo esattamente cosa funziona per ogni campagna — e ristampiamo solo per i quartieri che performano.",
+      "author": "Marco R.",
+      "role": "Titolare Pizzeria, Berlino-Kreuzberg"
+    }
+  },
+  "pricing": {
+    "headline": "Prezzi & Disponibilità",
+    "price": "Da 65,00 € per 2.500 pezzi",
+    "note": "Il sistema Volantino QR Code è incluso gratuitamente in ogni abbonamento webshop e app. Paghi solo la stampa — trasparente per quantità, senza costi nascosti.",
+    "tiersHeadline": "Prezzi Scalati per la Stampa",
+    "tiers": [
+      { "qty": "2.500 pezzi",  "price": "65,00 €" },
+      { "qty": "5.000 pezzi",  "price": "117,00 €" },
+      { "qty": "7.500 pezzi",  "price": "175,50 €" },
+      { "qty": "10.000 pezzi", "price": "234,00 €" },
+      { "qty": "12.500 pezzi", "price": "295,50 €" },
+      { "qty": "15.000 pezzi", "price": "351,00 €" },
+      { "qty": "20.000 pezzi", "price": "468,00 €" },
+      { "qty": "30.000 pezzi", "price": "702,00 €" },
+      { "qty": "40.000 pezzi", "price": "936,00 €" },
+      { "qty": "50.000 pezzi", "price": "1.117,00 €" }
+    ],
+    "tiersNote": "Tutti i prezzi netti più IVA. Include stampa, abbondanza, QR code individuale e spedizione in Germania. Quantità individuali su richiesta."
+  },
+  "internalLinks": {
+    "headline": "Funziona Perfettamente Con",
+    "intro": "Il Volantino QR Code esprime il suo pieno potenziale combinato con il tuo canale d'ordine. Entrambe le opzioni sono pienamente compatibili con l'add-on.",
+    "items": [
+      { "title": "Webshop", "description": "Deep-link diretto dal volantino al tuo webshop — senza download dell'app, subito nel browser. Ideale per acquisire nuovi clienti." },
+      { "title": "App d'Ordine Propria", "description": "Il QR code apre la tua app dallo store — o il webshop se l'app non è installata. Smart fallback incluso." }
+    ]
+  },
+  "faq": {
+    "headline": "Domande Frequenti sul Volantino QR Code",
+    "sub": "Risposte alle domande che ci vengono poste più spesso dai ristoratori in Germania e nella regione DACH.",
+    "items": [
+      { "q": "Quanto costa un volantino QR code per il mio ristorante?", "a": "Il sistema QR code stesso è incluso senza costi aggiuntivi in ogni abbonamento webshop e app di Gastro Master. Paghi solo la stampa per quantità: da 65 € per 2.500 pezzi a 1.117 € per 50.000 pezzi (netto, più IVA, inclusi stampa, abbondanza, QR code individuale e spedizione in Germania). Quantità individuali e formati speciali sono disponibili su richiesta in qualsiasi momento." },
+      { "q": "Come funziona il volantino QR code per la ristorazione?", "a": "Generiamo un QR code individuale per campagna che porta direttamente al tuo webshop Gastro Master o alla tua app d'ordine — senza passare da Google, senza commissioni di piattaforma. Il cliente scansiona, arriva al menu e ordina. Ogni scansione viene tracciata in tempo reale, così puoi vedere il ROI di ogni singolo volantino nella dashboard." },
+      { "q": "In quali città e regioni posso usare i volantini QR code?", "a": "Il Volantino QR Code funziona in tutta la Germania — da Berlino e Amburgo a Monaco, Colonia, Francoforte, Stoccarda, Düsseldorf e Lipsia fino alle città più piccole. La stampa e la spedizione avvengono in Germania; Austria e Svizzera sono disponibili su richiesta." },
+      { "q": "Quanto velocemente vengono prodotti e consegnati i volantini?", "a": "Dopo l'approvazione del design, il tempo di produzione standard è di 3–5 giorni lavorativi, più 1–2 giorni di spedizione in Germania. La produzione express è disponibile a costo aggiuntivo — per campagne urgenti consegniamo entro 48 ore." },
+      { "q": "Posso collegare il Volantino QR Code al mio webshop esistente?", "a": "Sì, se usi già un webshop o un'app Gastro Master, il Volantino QR Code Add-On è immediatamente pronto. I codici vengono automaticamente collegati al tuo sistema — nessuna configurazione, nessuna integrazione, nessuno sviluppatore necessario." },
+      { "q": "Ho bisogno di una mia app d'ordine per il Volantino QR Code?", "a": "No, un'app non è un prerequisito. Il QR code può portare direttamente al tuo webshop — i clienti ordinano subito nel browser, senza download. Se hai anche un'app, si apre automaticamente se installata — altrimenti subentra il webshop (smart fallback)." },
+      { "q": "Che qualità di stampa hanno i volantini?", "a": "Tutti i volantini vengono prodotti su carta patinata di alta qualità da 135 g/m² con stampa a 4/4 colori (Euroscala, CMYK). Formati standard: DL, A6 e A5. Formati speciali, carta più pesante (170–300 g/m²) e finiture come soft-touch o vernice UV sono disponibili a costo aggiuntivo." },
+      { "q": "Posso usare più QR code diversi per campagna?", "a": "Sì — puoi avere qualsiasi numero di campagne in parallelo, ciascuna con il proprio QR code. Così puoi tracciare separatamente come performano i volantini in diverse zone, o quale promozione porta più ordini. Ideale per test A/B e marketing geografico." },
+      { "q": "Posso inserire codici sconto nel QR code?", "a": "Sì. Per ogni campagna puoi collegare un codice sconto (es. 'VOLANTINO10' per il 10% di sconto sul primo ordine) direttamente al QR code. Il codice viene applicato automaticamente alla scansione — nessuna digitazione manuale da parte del cliente necessaria." },
+      { "q": "Come mi assicuro che i miei volantini portino davvero fatturato?", "a": "Nella dashboard di Gastro Master vedi in tempo reale per ogni campagna volantino: numero di scansioni, ordini risultanti, fatturato e il cost-per-order effettivo. Dopo pochi giorni sai quali zone, target o promozioni performano — e ristampi solo dove il volantino è conveniente." }
+    ]
+  }
+}
