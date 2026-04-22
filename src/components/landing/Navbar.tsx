@@ -1,6 +1,8 @@
 import { useState, useEffect, useRef } from "react";
-import { Link, useLocation, useNavigate, useParams } from "react-router-dom";
+import { Link, useLocation, useNavigate } from "react-router-dom";
 import { toast } from "sonner";
+import { buildLocalizedPath, ROUTE_BY_LANG_SLUG, type LangCode } from "@/config/routes";
+import { extractLangFromPath } from "@/components/LanguageLayout";
 import {
   ArrowRight, Menu, X, Moon, Sun, ChevronDown,
   ShoppingCart, Smartphone, Globe, Monitor, Percent,
@@ -44,20 +46,21 @@ const languages: { code: SupportedLang; label: string; icon: string }[] = [
 
 const Navbar = () => {
   const { t, i18n } = useTranslation("common");
-  const lang = (i18n.language || "de") as SupportedLang;
-  const { lang: urlLang } = useParams<{ lang: string }>();
-  const currentLang = urlLang || lang;
-  const lp = (path: string) => `/${currentLang}${path}`;
+  const { pathname } = useLocation();
+  const currentLang = (extractLangFromPath(pathname) ?? (i18n.language || "de")) as SupportedLang;
+  const lp = (deSlug: string) => buildLocalizedPath(deSlug, currentLang as LangCode);
 
   const prodItemsData = t("nav.prodItems", { returnObjects: true }) as { label: string; desc: string }[];
   const loesItemsData = t("nav.loesItems", { returnObjects: true }) as { label: string; desc: string }[];
   const prodItems = prodRoutes.map((r, i) => ({ ...r, label: prodItemsData[i]?.label || "", desc: prodItemsData[i]?.desc || "" }));
   const loesungenItems = loesRoutes.map((r, i) => ({ ...r, label: loesItemsData[i]?.label || "", desc: loesItemsData[i]?.desc || "" }));
-  const { pathname } = useLocation();
   const navigate = useNavigate();
   // Helle Seiten ohne Hero-Hintergrund brauchen immer die sichtbare (aktive) Navbar
-  const pathWithoutLang = pathname.replace(/^\/[a-z]{2}/, "");
-  const alwaysVisible = ["/impressum", "/datenschutz", "/agb", "/kontakt", "/preise", "/integrations"].includes(pathWithoutLang) || pathWithoutLang.startsWith("/downloads");
+  // Resolve back to canonical DE slug so the check works for ALL languages
+  const pathWithoutLang = pathname.replace(/^\/[a-z]{2}/, "") || "/";
+  const currentRoute = ROUTE_BY_LANG_SLUG[currentLang as LangCode]?.[pathWithoutLang];
+  const deSlug = currentRoute?.slugs.de ?? pathWithoutLang;
+  const alwaysVisible = ["/impressum", "/datenschutz", "/agb", "/kontakt", "/preise", "/integrations"].includes(deSlug) || deSlug.startsWith("/downloads");
   const [scrolled, setScrolled]             = useState(false);
   const active = scrolled;          // steuert schmal/weit
   const visibleBg = alwaysVisible || scrolled; // steuert Hintergrund-Sichtbarkeit
@@ -103,8 +106,11 @@ const Navbar = () => {
   };
 
   const switchLanguage = (code: SupportedLang) => {
-    const restPath = pathname.replace(/^\/[a-z]{2}/, "") || "/";
-    const newPath = `/${code}${restPath === "/" ? "" : restPath}`;
+    // Map current slug back to canonical DE slug, then forward to the target language's slug
+    const currentSlug = pathname.replace(/^\/[a-z]{2}/, "") || "/";
+    const route = ROUTE_BY_LANG_SLUG[currentLang as LangCode]?.[currentSlug];
+    const deSlugForLookup = route?.slugs.de ?? currentSlug;
+    const newPath = buildLocalizedPath(deSlugForLookup, code as LangCode);
     navigate(newPath);
     setLangOpen(false);
     setMobileOpen(false);

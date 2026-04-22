@@ -1,6 +1,7 @@
-import { Link, useParams } from "react-router-dom";
+import { Link } from "react-router-dom";
 import logoWide from "@/assets/logos/logo-gastro-master-wide.png";
 import { useTranslation } from "react-i18next";
+import { useLangPath } from "@/components/LanguageLayout";
 
 const prodRoutes = [
   "/produkte/pakete/online-bestellshop",
@@ -52,9 +53,7 @@ const socialLinks = [
 
 const Footer = () => {
   const { t } = useTranslation("common");
-  const { lang } = useParams<{ lang: string }>();
-  const currentLang = lang || "de";
-  const lp = (path: string) => `/${currentLang}${path}`;
+  const lp = useLangPath();
   return (
     <footer className="bg-gradient-navy border-t border-primary-foreground/10 px-5 md:px-8 lg:px-16 py-12">
       <div className="container-tight">

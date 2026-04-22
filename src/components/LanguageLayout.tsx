@@ -1,39 +1,40 @@
-import { useEffect } from "react";
-import { Outlet, useParams, useNavigate, useLocation } from "react-router-dom";
+import { useEffect, useMemo } from "react";
+import { Outlet, useLocation } from "react-router-dom";
 import { useTranslation } from "react-i18next";
 import { SUPPORTED_LANGS, type SupportedLang } from "@/i18n";
 import HreflangHead from "@/components/HreflangHead";
+import { buildLocalizedPath, translateSlug, type LangCode } from "@/config/routes";
 
 /**
- * Wrapper component that:
- * 1. Reads :lang from URL
- * 2. Syncs i18next language to URL
- * 3. Redirects invalid languages to /de/
- * 4. Renders child routes via <Outlet />
+ * Extracts the language from a pathname's first segment (e.g. "/en/products/..." → "en").
+ * Returns null if the first segment is not a supported language.
  */
-const LanguageLayout = () => {
-  const { lang } = useParams<{ lang: string }>();
+export function extractLangFromPath(pathname: string): SupportedLang | null {
+  const seg = pathname.split("/")[1] ?? "";
+  return SUPPORTED_LANGS.includes(seg as SupportedLang) ? (seg as SupportedLang) : null;
+}
+
+interface LanguageLayoutProps {
+  lang: SupportedLang;
+}
+
+/**
+ * Wrapper for each language's route tree.
+ * Receives `lang` as a prop because each language has its own explicit route tree in App.tsx.
+ * Syncs i18next to the URL language and renders child routes via <Outlet />.
+ */
+const LanguageLayout = ({ lang }: LanguageLayoutProps) => {
   const { i18n } = useTranslation();
-  const navigate = useNavigate();
-  const location = useLocation();
 
   useEffect(() => {
-    if (!lang || !SUPPORTED_LANGS.includes(lang as SupportedLang)) {
-      // Invalid or missing lang — redirect to /de/ keeping the rest of the path
-      const rest = location.pathname.replace(/^\/[^/]*/, "");
-      navigate(`/de${rest}${location.search}${location.hash}`, { replace: true });
-      return;
-    }
-
-    // Sync i18next to URL language
     if (i18n.language !== lang) {
       i18n.changeLanguage(lang);
     }
-  }, [lang, i18n, navigate, location]);
+  }, [lang, i18n]);
 
   return (
     <>
-      <HreflangHead />
+      <HreflangHead lang={lang} />
       <Outlet />
     </>
   );
@@ -43,18 +44,26 @@ export default LanguageLayout;
 
 /**
  * Hook to build language-aware paths.
- * Usage: const lp = useLangPath(); <Link to={lp("/produkte/webshop")} />
+ * Accepts a DE canonical slug and returns the fully-prefixed URL for the CURRENT language,
+ * with the slug translated to that language.
+ *
+ * Usage: const lp = useLangPath(); <Link to={lp("/produkte/pakete/bestell-app")} />
+ *   In /en/ context → "/en/products/packages/ordering-app"
+ *   In /it/ context → "/it/prodotti/pacchi/app-ordinazione"
  */
 export const useLangPath = () => {
-  const { lang } = useParams<{ lang: string }>();
-  const currentLang = lang || "de";
-  return (path: string) => `/${currentLang}${path}`;
+  const { pathname } = useLocation();
+  const currentLang = useMemo<LangCode>(
+    () => (extractLangFromPath(pathname) ?? "de") as LangCode,
+    [pathname],
+  );
+  return (deSlug: string) => buildLocalizedPath(deSlug, currentLang);
 };
 
-/**
- * Hook to get current language from URL.
- */
-export const useCurrentLang = () => {
-  const { lang } = useParams<{ lang: string }>();
-  return (lang as SupportedLang) || "de";
+/** Hook to get the current language from the URL path. */
+export const useCurrentLang = (): SupportedLang => {
+  const { pathname } = useLocation();
+  return extractLangFromPath(pathname) ?? "de";
 };
+
+export { translateSlug };

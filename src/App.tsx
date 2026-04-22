@@ -2,12 +2,18 @@ import { Toaster } from "@/components/ui/toaster";
 import { Toaster as Sonner } from "@/components/ui/sonner";
 import { TooltipProvider } from "@/components/ui/tooltip";
 import { QueryClient, QueryClientProvider } from "@tanstack/react-query";
-import { BrowserRouter, Routes, Route, Navigate } from "react-router-dom";
+import { BrowserRouter, Routes, Route, Navigate, useLocation } from "react-router-dom";
 import { lazy, Suspense, type ComponentType } from "react";
 import { ScrollToTop } from "@/components/ScrollToTop";
 import ScrollToTopButton from "@/components/ScrollToTopButton";
-import LanguageLayout from "@/components/LanguageLayout";
-import { ROUTES } from "@/config/routes";
+import LanguageLayout, { extractLangFromPath } from "@/components/LanguageLayout";
+import {
+  ROUTES,
+  LANGUAGES,
+  type LangCode,
+  buildLocalizedPath,
+  translateSlug,
+} from "@/config/routes";
 import Index from "./pages/Index";
 import NotFound from "./pages/NotFound";
 
@@ -59,6 +65,63 @@ const LAZY_COMPONENTS: Record<string, ComponentType> = {
 
 const queryClient = new QueryClient();
 
+/** Build the child routes for a single language tree. */
+const buildLangRoutes = (lang: LangCode) =>
+  ROUTES.flatMap((route) => {
+    const Component = route.slugs[lang] === "/" ? Index : LAZY_COMPONENTS[route.importPath];
+    if (!Component) return [];
+
+    const targetSlug = route.slugs[lang];
+    const isHome = targetSlug === "/";
+    const canonicalPath = isHome ? null : targetSlug.slice(1); // strip leading "/"
+
+    const elements = [] as JSX.Element[];
+
+    // Canonical route (translated slug)
+    if (isHome) {
+      elements.push(<Route key={`${lang}-${route.key}-index`} index element={<Component />} />);
+    } else {
+      elements.push(
+        <Route key={`${lang}-${route.key}`} path={canonicalPath!} element={<Component />} />,
+      );
+    }
+
+    // Legacy redirect: if user visits this lang's tree with the DE slug, redirect to translated slug
+    // (SEO: ensures old DE-slug URLs under /en/, /it/, ... redirect to localized slugs)
+    if (lang !== "de" && route.slugs.de !== targetSlug && route.slugs.de !== "/") {
+      const deChild = route.slugs.de.slice(1);
+      elements.push(
+        <Route
+          key={`${lang}-${route.key}-legacy-de`}
+          path={deChild}
+          element={<Navigate to={`/${lang}${targetSlug}`} replace />}
+        />,
+      );
+    }
+
+    return elements;
+  });
+
+/** Legacy-structure aliases (old URL scheme like /produkte/webshop) — registered within each lang tree. */
+const LEGACY_ALIASES: Array<{ from: string; to: string }> = [
+  { from: "produkte/webshop",      to: "/produkte/pakete/online-bestellshop" },
+  { from: "produkte/app",          to: "/produkte/pakete/bestell-app" },
+  { from: "produkte/webseite",     to: "/produkte/pakete/webseite" },
+  { from: "produkte/kassensystem", to: "/produkte/pakete/kassensystem" },
+  { from: "produkte/bestellapp",   to: "/produkte/pakete/bestell-app" },
+  // Alt-Pfad: /produkte/transaktionsumlage → neue /produkte/add-ons/transaktionsumlage
+  { from: "produkte/transaktionsumlage", to: "/produkte/add-ons/transaktionsumlage" },
+];
+
+const buildLegacyAliasRoutes = (lang: LangCode) =>
+  LEGACY_ALIASES.map(({ from, to }) => (
+    <Route
+      key={`${lang}-alias-${from}`}
+      path={from}
+      element={<Navigate to={buildLocalizedPath(to, lang)} replace />}
+    />
+  ));
+
 const App = () => (
   <QueryClientProvider client={queryClient}>
     <TooltipProvider>
@@ -72,47 +135,29 @@ const App = () => (
               {/* Root redirect → /de/ */}
               <Route path="/" element={<Navigate to="/de" replace />} />
 
-              {/* Legacy routes without lang prefix → redirect to /de/... */}
-              <Route path="/produkte/transaktionsumlage" element={<Navigate to="/de/produkte/add-ons/transaktionsumlage" replace />} />
-              <Route path="/produkte/*" element={<RedirectWithLang />} />
-              <Route path="/loesungen/*" element={<RedirectWithLang />} />
-              <Route path="/impressum" element={<Navigate to="/de/impressum" replace />} />
-              <Route path="/datenschutz" element={<Navigate to="/de/datenschutz" replace />} />
-              <Route path="/agb" element={<Navigate to="/de/agb" replace />} />
-              <Route path="/kontakt" element={<Navigate to="/de/kontakt" replace />} />
-              <Route path="/faq" element={<Navigate to="/de/faq" replace />} />
-              <Route path="/preise" element={<Navigate to="/de/preise" replace />} />
-              <Route path="/uber-uns" element={<Navigate to="/de/uber-uns" replace />} />
-              <Route path="/downloads/*" element={<RedirectWithLang />} />
-              <Route path="/add-ons" element={<Navigate to="/de/produkte/add-ons" replace />} />
+              {/* Legacy routes without lang prefix → redirect to /de/... (localized) */}
+              <Route path="/produkte/*"  element={<LegacyNoLangRedirect />} />
+              <Route path="/loesungen/*" element={<LegacyNoLangRedirect />} />
+              <Route path="/downloads/*" element={<LegacyNoLangRedirect />} />
+              <Route path="/blog/*"      element={<LegacyNoLangRedirect />} />
+              <Route path="/add-ons"     element={<Navigate to="/de/produkte/add-ons" replace />} />
               <Route path="/add-ons/:slug" element={<AddOnsLegacyRedirect />} />
-              <Route path="/blog/*" element={<RedirectWithLang />} />
+              <Route path="/impressum"   element={<Navigate to="/de/impressum" replace />} />
+              <Route path="/datenschutz" element={<Navigate to="/de/datenschutz" replace />} />
+              <Route path="/agb"         element={<Navigate to="/de/agb" replace />} />
+              <Route path="/kontakt"     element={<Navigate to="/de/kontakt" replace />} />
+              <Route path="/faq"         element={<Navigate to="/de/faq" replace />} />
+              <Route path="/preise"      element={<Navigate to="/de/preise" replace />} />
+              <Route path="/uber-uns"    element={<Navigate to="/de/uber-uns" replace />} />
 
-              {/* /:lang routes — generated from ROUTES config */}
-              <Route path="/:lang" element={<LanguageLayout />}>
-                {ROUTES.map((route) => {
-                  if (route.path === "/") {
-                    return <Route key="index" index element={<Index />} />;
-                  }
-                  const Component = LAZY_COMPONENTS[route.importPath];
-                  if (!Component) return null;
-                  return (
-                    <Route
-                      key={route.path}
-                      path={route.path.slice(1)}
-                      element={<Component />}
-                    />
-                  );
-                })}
-                {/* Legacy: alte /produkte/* Pfade → neue /produkte/pakete/* */}
-                <Route path="produkte/webshop"      element={<LangRedirect to="/produkte/pakete/online-bestellshop" />} />
-                <Route path="produkte/app"          element={<LangRedirect to="/produkte/pakete/bestell-app" />} />
-                <Route path="produkte/webseite"     element={<LangRedirect to="/produkte/pakete/webseite" />} />
-                <Route path="produkte/kassensystem" element={<LangRedirect to="/produkte/pakete/kassensystem" />} />
-                {/* Alias: /produkte/bestellapp → /produkte/pakete/bestell-app */}
-                <Route path="produkte/bestellapp"   element={<LangRedirect to="/produkte/pakete/bestell-app" />} />
-                <Route path="*" element={<NotFound />} />
-              </Route>
+              {/* One explicit route tree per language with its localized slugs */}
+              {LANGUAGES.map((lang) => (
+                <Route key={lang} path={`/${lang}`} element={<LanguageLayout lang={lang} />}>
+                  {buildLangRoutes(lang)}
+                  {buildLegacyAliasRoutes(lang)}
+                  <Route path="*" element={<NotFound />} />
+                </Route>
+              ))}
 
               <Route path="*" element={<NotFound />} />
             </Routes>
@@ -122,22 +167,22 @@ const App = () => (
   </QueryClientProvider>
 );
 
-/** Redirects old product paths to new /produkte/pakete/* structure within same language */
-const LangRedirect = ({ to }: { to: string }) => {
-  const { lang } = useParams<{ lang: string }>();
-  return <Navigate to={`/${lang}${to}`} replace />;
+/**
+ * Redirects no-lang legacy paths to /de/ with slug translation (DE→DE is identity).
+ * Handles cases like `/produkte/pakete/bestell-app` → `/de/produkte/pakete/bestell-app`.
+ */
+const LegacyNoLangRedirect = () => {
+  const location = useLocation();
+  return <Navigate to={`/de${location.pathname}${location.search}${location.hash}`} replace />;
 };
 
-/** Redirects legacy paths like /produkte/webshop → /de/produkte/webshop */
-const RedirectWithLang = () => {
-  const path = window.location.pathname;
-  return <Navigate to={`/de${path}`} replace />;
-};
-
-/** Redirects /add-ons/:slug → /de/produkte/add-ons/:slug */
+/** Redirects /add-ons/:slug → /{currentLang}/produkte/add-ons/:slug (lang-aware). */
 const AddOnsLegacyRedirect = () => {
-  const slug = window.location.pathname.replace(/^\/add-ons\//, "");
-  return <Navigate to={`/de/produkte/add-ons/${slug}`} replace />;
+  const location = useLocation();
+  const slug = location.pathname.replace(/^\/add-ons\//, "");
+  const lang = extractLangFromPath(location.pathname) ?? "de";
+  const deSlug = `/produkte/add-ons/${slug}`;
+  return <Navigate to={`/${lang}${translateSlug(deSlug, lang as LangCode)}`} replace />;
 };
 
 export default App;

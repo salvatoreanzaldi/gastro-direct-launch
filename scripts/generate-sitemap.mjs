@@ -1,6 +1,7 @@
 /**
  * Post-build script: generates dist/sitemap.xml
- * Reads route config from src/config/routes.ts (parsed as text, no TS runtime needed)
+ * Reads route config from src/config/routes.ts (parsed as text, no TS runtime needed).
+ * Supports per-language localized slugs.
  *
  * Usage: node scripts/generate-sitemap.mjs
  */
@@ -15,15 +16,36 @@ const ROOT = resolve(__dirname, "..");
 // ─── Parse routes from TypeScript config ─────────────────────────────────────
 const configSource = readFileSync(resolve(ROOT, "src/config/routes.ts"), "utf-8");
 
-// Extract ROUTES array entries via regex (avoids needing a TS runtime)
-const routeRegex = /\{\s*path:\s*"([^"]+)",\s*importPath:\s*"[^"]+",\s*priority:\s*([\d.]+),\s*changefreq:\s*"([^"]+)"\s*\}/g;
+// Matches entries that use the `slugs(de, en, it)` helper:
+//   { key: "foo", slugs: slugs("/de-slug", "/en-slug", "/it-slug"), importPath: "...", priority: 0.8, changefreq: "weekly" }
+const helperRegex =
+  /\{\s*key:\s*"([^"]+)",\s*slugs:\s*slugs\(\s*"([^"]+)"\s*,\s*"([^"]+)"\s*,\s*"([^"]+)"\s*\)\s*,\s*importPath:\s*"[^"]+",\s*priority:\s*([\d.]+),\s*changefreq:\s*"([^"]+)"\s*\}/g;
+
+// Matches entries with an explicit slugs object (e.g. the homepage):
+//   { key: "home", slugs: { de: "/", en: "/", it: "/", fa: "/", si: "/", ru: "/" }, ... }
+const explicitRegex =
+  /\{\s*key:\s*"([^"]+)",\s*slugs:\s*\{\s*de:\s*"([^"]+)",\s*en:\s*"([^"]+)",\s*it:\s*"([^"]+)",\s*fa:\s*"([^"]+)",\s*si:\s*"([^"]+)",\s*ru:\s*"([^"]+)"\s*\}\s*,\s*importPath:\s*"[^"]+",\s*priority:\s*([\d.]+),\s*changefreq:\s*"([^"]+)"\s*\}/g;
+
 const routes = [];
-let match;
-while ((match = routeRegex.exec(configSource)) !== null) {
+let m;
+
+while ((m = helperRegex.exec(configSource)) !== null) {
+  const [, key, de, en, it, priority, changefreq] = m;
   routes.push({
-    path: match[1],
-    priority: parseFloat(match[2]),
-    changefreq: match[3],
+    key,
+    slugs: { de, en, it, fa: en, si: en, ru: en },
+    priority: parseFloat(priority),
+    changefreq,
+  });
+}
+
+while ((m = explicitRegex.exec(configSource)) !== null) {
+  const [, key, de, en, it, fa, si, ru, priority, changefreq] = m;
+  routes.push({
+    key,
+    slugs: { de, en, it, fa, si, ru },
+    priority: parseFloat(priority),
+    changefreq,
   });
 }
 
@@ -40,18 +62,21 @@ const today = new Date().toISOString().split("T")[0]; // YYYY-MM-DD
 // ─── Generate XML ────────────────────────────────────────────────────────────
 const urlEntries = [];
 
+const buildHref = (lang, slug) => {
+  const pathPart = slug === "/" ? "" : slug;
+  return `${BASE_URL}/${lang}${pathPart}`;
+};
+
 for (const route of routes) {
   for (const lang of LANGUAGES) {
-    const pagePath = route.path === "/" ? "" : route.path;
-    const loc = `${BASE_URL}/${lang}${pagePath}`;
+    const loc = buildHref(lang, route.slugs[lang]);
 
-    // hreflang alternates for this page
     const alternates = LANGUAGES.map(
       (altLang) =>
-        `    <xhtml:link rel="alternate" hreflang="${altLang}" href="${BASE_URL}/${altLang}${pagePath}" />`
+        `    <xhtml:link rel="alternate" hreflang="${altLang}" href="${buildHref(altLang, route.slugs[altLang])}" />`,
     ).join("\n");
 
-    const xDefault = `    <xhtml:link rel="alternate" hreflang="x-default" href="${BASE_URL}/de${pagePath}" />`;
+    const xDefault = `    <xhtml:link rel="alternate" hreflang="x-default" href="${buildHref("de", route.slugs.de)}" />`;
 
     urlEntries.push(`  <url>
     <loc>${loc}</loc>
