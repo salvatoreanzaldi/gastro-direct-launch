@@ -104,32 +104,7 @@ export const ROUTES: RouteEntry[] = [
   { key: "blog-wolt-integration", slugs: slugs("/blog/wolt-integration-restaurants", "/blog/wolt-integration", "/blog/integrazione-wolt"),
     importPath: "@/pages/blog/BlogPostWoltPage", priority: 0.6, changefreq: "monthly" },
 
-
-  // Migrated Blog Posts (Batch 1)
-  { key: "blog-order-online", slugs: slugs("/blog/order-online", "/blog/order-online", "/blog/ordina-online"),
-    importPath: "@/pages/blog/BlogPostDetailPage", priority: 0.6, changefreq: "monthly" },
-  { key: "blog-werbesprueche", slugs: slugs("/blog/werbesprueche-die-sich-reimen", "/blog/advertising-slogans", "/blog/slogan-pubblicitari"),
-    importPath: "@/pages/blog/BlogPostDetailPage", priority: 0.6, changefreq: "monthly" },
-  { key: "blog-offene-kueche", slugs: slugs("/blog/offene-kuche-restaurant", "/blog/open-kitchen-restaurant", "/blog/cucina-aperta-ristorante"),
-    importPath: "@/pages/blog/BlogPostDetailPage", priority: 0.6, changefreq: "monthly" },
-  { key: "blog-essen-bestellen", slugs: slugs("/blog/essen-bestellen-ideen", "/blog/food-ordering-ideas", "/blog/idee-ordini-cibo"),
-    importPath: "@/pages/blog/BlogPostDetailPage", priority: 0.6, changefreq: "monthly" },
-  { key: "blog-google-profil", slugs: slugs("/blog/google-unternehmensprofil-login", "/blog/google-business-profile", "/blog/profilo-google-azienda"),
-    importPath: "@/pages/blog/BlogPostDetailPage", priority: 0.6, changefreq: "monthly" },
-
-  // Converted Blog Posts (Batch 2)
-  { key: "blog-kassensystem-tse", slugs: slugs("/blog/kassensystem-restaurant-tse-konform", "/blog/pos-system-tse-compliant", "/blog/sistema-cassa-tse-conformita"),
-    importPath: "@/pages/blog/BlogPostDetailPage", priority: 0.6, changefreq: "monthly" },
-  { key: "blog-online-shop", slugs: slugs("/blog/online-shop-restaurant-provisionsfreie-bestellungen", "/blog/online-shop-restaurant-free-orders", "/blog/negozio-online-ristorante-ordini-gratuiti"),
-    importPath: "@/pages/blog/BlogPostDetailPage", priority: 0.6, changefreq: "monthly" },
-  { key: "blog-website-profi", slugs: slugs("/blog/restaurant-website-erstellen-professionell", "/blog/restaurant-website-professional", "/blog/sito-web-ristorante-professionale"),
-    importPath: "@/pages/blog/BlogPostDetailPage", priority: 0.6, changefreq: "monthly" },
-  { key: "blog-app-ios-android", slugs: slugs("/blog/restaurant-app-eigene-ios-android-app", "/blog/restaurant-app-own-ios-android", "/blog/app-ristorante-propria-ios-android"),
-    importPath: "@/pages/blog/BlogPostDetailPage", priority: 0.6, changefreq: "monthly" },
-  { key: "blog-seo-lokal", slugs: slugs("/blog/restaurant-seo-lokale-suchmaschinen-optimierung", "/blog/restaurant-seo-local-search", "/blog/seo-ristorante-ricerca-locale"),
-    importPath: "@/pages/blog/BlogPostDetailPage", priority: 0.6, changefreq: "monthly" },
-
-    // Info-Seiten
+  // Info-Seiten
   { key: "faq", slugs: slugs("/faq", "/faq", "/faq"),
     importPath: "@/pages/FAQPage", priority: 0.7, changefreq: "monthly" },
   { key: "pricing", slugs: slugs("/preise", "/pricing", "/prezzi"),
