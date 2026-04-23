@@ -6,15 +6,14 @@
   },
   "hero": {
     "badge": "Add-On · Consegna",
-    "headline": "App Autista con GPS — Ogni Consegna Live sulla Mappa",
+    "headline": "App Autista con GPS — Ogni Consegna nella Tua Cassa",
     "subline": "Tracking GPS live, percorsi ottimizzati e notifiche push in un'unica app. Il tuo team consegna più velocemente, i tuoi clienti vedono l'autista in tempo reale — e risparmi fino a 2 ore per autista al giorno."
   },
   "problem": {
     "title": "Il Problema dei Servizi di Consegna Classici",
     "points": [
-      "Gli autisti pianificano i percorsi da soli — deviazioni, tragitti doppi, pizza fredda dal cliente.",
-      "Nessun tracking live: i clienti chiamano ogni 10 minuti chiedendo dov'è il loro ordine.",
-      "Problema di copertura — gli autisti perdono ordini perché l'app non funziona offline.",
+      "Gli autisti pianificano i percorsi da soli — deviazioni, tragitti doppi, pizza fredda dal cliente. I costi di consegna sono inutilmente alti a causa di percorsi inefficienti.",
+      "Gli autisti fanno pause a tue spese — non hai controllo sull'efficienza e il carico di lavoro del tuo team.",
       "Smistamento via carta o WhatsApp. Errori, incomprensioni, ordini persi."
     ]
   },
@@ -23,28 +22,27 @@
     "points": [
       "Pianificazione automatica del percorso — l'app raggruppa gli ordini e ottimizza la sequenza.",
       "Il cliente vede l'autista live sulla mappa. Nessuna chiamata di follow-up, meno supporto.",
-      "Modalità offline con sincronizzazione automatica — anche in cantinati o garage sotterranei.",
-      "Notifiche push per gli autisti: nuovo ordine, cambio indirizzo, pronto per il ritiro — in tempo reale."
+      "Assegnazione chiara: ogni consegna è assegnata all'autista. Sicurezza per ristorante e autista. Nessuna disputa sulla retribuzione meritata."
     ]
   },
   "features": {
     "headline": "Tutto il Necessario per un Servizio di Consegna che Scala Davvero",
-    "sub": "Sei funzionalità che trasformano il tuo team in una macchina di consegna ben oliata.",
+    "sub": "Otto funzionalità che trasformano il tuo team in una macchina di consegna ben oliata.",
     "items": [
       { "title": "Tracking GPS Live", "description": "Ogni autista in tempo reale sulla mappa — per lo smistamento, il cliente e i report. Precisione al metro." },
       { "title": "Ottimizzazione Percorsi", "description": "Più ordini vengono automaticamente raggruppati per direzione. Fino al 30% di chilometri in meno per tour." },
-      { "title": "Notifiche Push", "description": "Nuovo ordine, cambio indirizzo, ritiro urgente — l'autista viene informato immediatamente, anche con schermo bloccato." },
-      { "title": "Modalità Offline", "description": "L'app funziona anche senza segnale. Tutto viene salvato localmente e sincronizzato non appena il segnale ritorna." },
-      { "title": "Navigazione Turn-by-Turn", "description": "Navigazione integrata con Apple Maps, Google Maps o Waze — l'autista sceglie la sua app preferita con un tap." },
-      { "title": "Smistamento Multi-Autista", "description": "Il dispatcher vede tutti gli autisti, i loro percorsi e il carico di lavoro su un unico dashboard. Assegna ordini con drag & drop." }
+      { "title": "Navigazione Turn-by-Turn", "description": "Navigazione integrata con Google Maps — l'autista naviga con la soluzione di mapping collaudata." },
+      { "title": "Smistamento Autisti", "description": "Il dispatcher vede tutti gli autisti, i loro percorsi e il carico di lavoro su un dashboard centrale. Controllo totale sul tuo team." },
+      { "title": "Rendicontazione Autisti Trasparente", "description": "Chilometraggio, compenso ordini e salario orario sono registrati individualmente per autista e calcolati automaticamente. Rendicontazione chiara la sera — nessuna discussione." },
+      { "title": "Notifiche WhatsApp", "description": "Gli autisti ricevono un messaggio WhatsApp istantaneo quando una nuova consegna è pronta. Comunicazione veloce e affidabile — nessuno perde un ordine." }
     ]
   },
   "useCases": {
     "headline": "Come i Ristoratori Usano l'App Autista",
     "sub": "Tre scenari reali dalla nostra base clienti — dal servizio familiare alla catena multi-sede.",
     "items": [
-      { "title": "Pizzeria con 3 Autisti", "story": "Una pizzeria di Monaco sostituisce lo smistamento WhatsApp con l'app autista. Risultato: 20% di ordini in più ogni sera — perché gli autisti fanno tour più efficienti e i clienti cancellano meno spesso." },
-      { "title": "Catena di Consegne con 4 Sedi", "story": "Una catena di hamburger in NRW mette tutti i 12 autisti su un dashboard centrale. Quando una sede è sovraccarica, quella successiva prende automaticamente il sopravvento — il tempo di attesa per ordine è sceso da 42 a 28 minuti." },
+      { "title": "Pizzeria con 3 Autisti", "story": "Una pizzeria di Monaco utilizza l'app autista. Risultato: 20% di ordini in più ogni sera — perché gli autisti fanno tour più efficienti e i clienti cancellano meno spesso." },
+      { "title": "Azienda Multi-Sede", "story": "Un servizio di consegna con più filiali attiva l'app autista e riceve un accesso separato per ogni sede. Controllo centralizzato di tutti gli autisti e le sedi su un unico dashboard — perfetto per la crescita senza complessità." },
       { "title": "Corriere in Bicicletta nel Centro Città", "story": "Un servizio di consegna veggie a Berlino-Mitte usa e-bike. L'app GPS ottimizza i percorsi lungo le piste ciclabili — gli autisti completano 6 invece di 4 consegne all'ora, senza stress." }
     ]
   },
@@ -54,11 +52,7 @@
       { "value": "−30 %", "label": "di chilometri in meno grazie al raggruppamento dei percorsi" },
       { "value": "98 %", "label": "dei clienti usa il tracking live invece di richiamare" }
     ],
-    "testimonial": {
-      "quote": "Prima ricevevamo continuamente chiamate — dov'è l'autista? Da quando abbiamo il GPS live, il telefono è silenzioso, i clienti più soddisfatti e gli autisti più rilassati.",
-      "author": "Luca B.",
-      "role": "Titolare Catena Pizzeria, Francoforte"
-    }
+    "testimonial": {}
   },
   "pricing": {
     "headline": "Prezzi & Disponibilità",
@@ -84,14 +78,10 @@
     "items": [
       { "q": "Quanto costa l'app autista per il mio ristorante?", "a": "L'app autista con GPS è un add-on POS e costa 10 € al mese per autista attivo (più IVA). Include tracking GPS in tempo reale, ottimizzazione automatica dei percorsi e panoramica smistamento direttamente nel sistema POS. Nessuna commissione aggiuntiva per consegna o per chilometro — paghi solo per gli autisti effettivamente attivi." },
       { "q": "Su quali dispositivi funziona l'app autista?", "a": "L'app funziona su tutti gli smartphone iOS e Android attuali. Nessun dispositivo speciale necessario — gli autisti possono usare il loro telefono personale. Si consiglia iOS 14+ o Android 9+ per garantire il corretto funzionamento del tracking GPS e delle notifiche push." },
-      { "q": "L'app autista funziona anche senza internet?", "a": "Sì. L'app ha una modalità offline: ordini, indirizzi e percorsi vengono salvati localmente. Non appena l'autista torna in copertura, tutto si sincronizza automaticamente in background. Così nessun ordine va perso — nemmeno nei garage sotterranei, cantinati o zone rurali." },
-      { "q": "Quanto è preciso il tracking GPS?", "a": "Il GPS live è preciso al metro e aggiorna la posizione dell'autista ogni 5–15 secondi (a seconda della qualità di rete e delle impostazioni della batteria). I clienti vedono un marker live fluido sulla mappa — simile a Uber o Lieferando, ma senza commissioni." },
-      { "q": "Posso coordinare più autisti contemporaneamente?", "a": "Sì. Il dashboard dispatcher mostra tutti gli autisti attivi con posizione, ordine corrente e carico di lavoro su un unico schermo. I nuovi ordini possono essere assegnati con drag & drop o distribuiti automaticamente dal sistema all'autista ottimale." },
-      { "q": "Come funziona l'ottimizzazione automatica dei percorsi?", "a": "Il sistema raggruppa gli ordini in arrivo per prossimità geografica e calcola la sequenza ottimale. L'autista riceve un tour completo con 2–5 fermate — risparmiando fino al 30% di tempo di percorrenza per tour e riducendo significativamente i costi di carburante o elettricità." },
-      { "q": "Il cliente può vedere l'autista in tempo reale?", "a": "Sì. Non appena l'ordine è in consegna, il cliente riceve un link di tracking via SMS o email. Lì vede l'autista live sulla mappa, il tempo di arrivo stimato, e riceve una notifica automatica quando l'autista è nelle vicinanze." },
+      { "q": "Quanto è preciso il tracking GPS?", "a": "Il GPS live è preciso al metro e aggiorna la posizione dell'autista ogni 5–15 secondi (a seconda della qualità di rete e delle impostazioni della batteria). Tutti gli ordini arrivano centralmente nell'app autista — che vengano da Lieferando, Wolt, Uber Eats o direttamente da Gastro Master. Un unico sistema per tutte le piattaforme." },
       { "q": "Come si collega l'app autista al mio sistema POS?", "a": "Se usi già un sistema POS Gastro Master, l'app autista è immediatamente pronta — gli ordini arrivano automaticamente nell'app non appena vengono contrassegnati come 'consegna' alla cassa. Nessuna configurazione separata, nessuna integrazione, nessuno sviluppatore necessario." },
-      { "q": "Posso vedere quanti chilometri hanno percorso i miei autisti?", "a": "Sì. Nel dashboard dispatcher trovi report dettagliati per autista, per turno e per consegna: chilometri, tempo di percorrenza, numero di consegne, velocità media e tasso di consegna puntuale. Ideale per la contabilità, i sistemi di bonus e il controllo dei costi." },
-      { "q": "L'uso dell'app è conforme al GDPR?", "a": "Sì. L'app autista è pienamente conforme al GDPR. I dati di localizzazione vengono acquisiti solo durante i turni attivi, eliminati o anonimizzati al termine del turno, e gli autisti possono richiedere informazioni sui propri dati memorizzati in qualsiasi momento. Il trattamento dei dati avviene su server tedeschi." }
+      { "q": "Posso vedere quanti chilometri hanno percorso i miei autisti?", "a": "Sì. Nel dashboard dispatcher trovi report dettagliati per autista, per turno e per consegna: chilometri, tempo di percorrenza e numero di consegne. Ideale per la contabilità, i sistemi di bonus e il controllo dei costi." },
+      { "q": "L'uso dell'app è conforme al GDPR?", "a": "Sì. L'app autista è pienamente conforme al GDPR. I dati di localizzazione vengono acquisiti solo durante i turni attivi e eliminati o anonimizzati al termine del turno. Il trattamento dei dati avviene su server tedeschi." }
     ]
   }
 }

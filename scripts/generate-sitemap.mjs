@@ -9,6 +9,7 @@
 import { readFileSync, writeFileSync } from "fs";
 import { resolve, dirname } from "path";
 import { fileURLToPath } from "url";
+import { createRequire } from "module";
 
 const __dirname = dirname(fileURLToPath(import.meta.url));
 const ROOT = resolve(__dirname, "..");
@@ -89,6 +90,23 @@ ${xDefault}
   }
 }
 
+// ─── Blog post URLs ───────────────────────────────────────────────────────────
+const blogSlugsPath = resolve(ROOT, "src/config/blog-slugs.json");
+let blogSlugs = [];
+try {
+  blogSlugs = JSON.parse(readFileSync(blogSlugsPath, "utf-8"));
+} catch (e) {
+  console.warn("⚠️  Could not read blog-slugs.json:", e.message);
+}
+
+const BLOG_LASTMOD = "2026-04-23";
+for (const slug of blogSlugs) {
+  // Blog posts are DE-only: no multi-locale content, single canonical URL per post
+  const loc = `${BASE_URL}/de/blog/${slug}`;
+  const xDefault = `    <xhtml:link rel="alternate" hreflang="x-default" href="${loc}" />`;
+  urlEntries.push(`  <url>\n    <loc>${loc}</loc>\n    <lastmod>${BLOG_LASTMOD}</lastmod>\n    <changefreq>monthly</changefreq>\n    <priority>0.6</priority>\n${xDefault}\n  </url>`);
+}
+
 const sitemap = `<?xml version="1.0" encoding="UTF-8"?>
 <urlset
   xmlns="http://www.sitemaps.org/schemas/sitemap/0.9"
@@ -102,5 +120,6 @@ ${urlEntries.join("\n")}
 const outPath = resolve(ROOT, "dist/sitemap.xml");
 writeFileSync(outPath, sitemap, "utf-8");
 
-console.log(`✅ Sitemap generated: ${routes.length} routes × ${LANGUAGES.length} languages = ${urlEntries.length} URLs`);
+const blogUrlCount = blogSlugs.length;
+console.log(`✅ Sitemap generated: ${routes.length} routes × ${LANGUAGES.length} languages = ${routes.length * LANGUAGES.length} route URLs + ${blogUrlCount} blog URLs (DE only) = ${urlEntries.length} total URLs`);
 console.log(`   → ${outPath}`);

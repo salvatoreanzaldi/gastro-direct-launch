@@ -1,39 +1,8 @@
-export type SectionType = "h2" | "h3" | "p" | "ul" | "ol";
+export type { SectionType, ContentSection, FAQItem, InternalLink, BlogPost } from './blog-posts-types';
+import type { BlogPost } from './blog-posts-types';
+import { generatedBlogPosts } from './blog-posts-generated';
 
-export interface ContentSection {
-  type: SectionType;
-  content: string | string[];
-}
-
-export interface FAQItem {
-  question: string;
-  answer: string;
-}
-
-export interface InternalLink {
-  title: string;
-  href: string;
-}
-
-export interface BlogPost {
-  id: string;
-  slug: string;
-  title: string;
-  description: string;
-  sections: ContentSection[];
-  author: string;
-  publishedDate: string;
-  category: string;
-  tags: string[];
-  keywords: string[];
-  metaDescription: string;
-  readingTime: number;
-  featured: boolean;
-  internalLinks: InternalLink[];
-  faqItems: FAQItem[];
-}
-
-export const blogPosts: BlogPost[] = [
+const lbpPosts: BlogPost[] = [
   {
     id: "lbp-296",
     slug: "bestellsystem-gastronomie",
@@ -653,6 +622,11 @@ export const blogPosts: BlogPost[] = [
       },
     ],
   },
+];
+
+export const blogPosts: BlogPost[] = [
+  ...lbpPosts,
+  ...generatedBlogPosts,
 ];
 
 export const getBlogPostBySlug = (slug: string): BlogPost | undefined =>

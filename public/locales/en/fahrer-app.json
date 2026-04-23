@@ -6,15 +6,14 @@
   },
   "hero": {
     "badge": "Add-On · Delivery",
-    "headline": "Driver App with GPS — Every Delivery Live on the Map",
+    "headline": "Driver App with GPS — Track Every Delivery in Your POS",
     "subline": "Live GPS tracking, optimised routes and push notifications in one app. Your team delivers faster, your customers see the driver in real time — and you save up to 2 hours per driver per day."
   },
   "problem": {
     "title": "The Problem with Classic Delivery Services",
     "points": [
-      "Drivers plan their own routes — detours, duplicate trips, cold pizza at the customer's door.",
-      "No live tracking: customers call every 10 minutes asking where their order is.",
-      "Dead-zone problem — drivers lose orders because the app doesn't work offline.",
+      "Drivers plan their own routes — detours, duplicate trips, cold pizza at the customer's door. Delivery costs are unnecessarily high due to inefficient routes.",
+      "Drivers take breaks on your dime — you have no control over your team's efficiency and workload.",
       "Dispatching via paper or WhatsApp. Errors, misunderstandings, lost orders."
     ]
   },
@@ -23,28 +22,27 @@
     "points": [
       "Automatic route planning — the app bundles orders and optimises the sequence.",
       "Customer sees the driver live on the map. No follow-up calls, less support effort.",
-      "Offline mode with automatic sync — even in basements or underground car parks.",
-      "Push notifications for drivers: new order, address change, ready for pickup — in real time."
+      "Clear assignment: Every delivery is assigned to the driver. Security for restaurant and driver. No dispute over earned pay."
     ]
   },
   "features": {
     "headline": "Everything You Need for a Delivery Service That Truly Scales",
-    "sub": "Six features that turn your team into a well-oiled delivery machine.",
+    "sub": "Eight features that turn your team into a well-oiled delivery machine.",
     "items": [
       { "title": "Live GPS Tracking", "description": "Every driver in real time on the map — for dispatching, the customer and reporting. Accuracy down to a few metres." },
       { "title": "Route Optimisation", "description": "Multiple orders are automatically bundled by direction. Up to 30% fewer kilometres per tour." },
-      { "title": "Push Notifications", "description": "New order, address change, urgent pickup — driver is notified immediately, even with a locked screen." },
-      { "title": "Offline Mode", "description": "App works without signal. Everything is stored locally and synced as soon as the signal returns." },
-      { "title": "Turn-by-Turn Navigation", "description": "Built-in navigation with Apple Maps, Google Maps or Waze — driver chooses their preferred app with one tap." },
-      { "title": "Multi-Driver Dispatching", "description": "Dispatcher sees all drivers, their routes and workload on one dashboard. Assign orders via drag & drop." }
+      { "title": "Turn-by-Turn Navigation", "description": "Built-in navigation with Google Maps — driver navigates with the proven mapping solution." },
+      { "title": "Driver Dispatching", "description": "Dispatcher sees all drivers, their routes and workload on a central dashboard. Full control over your team." },
+      { "title": "Transparent Driver Accounting", "description": "Mileage reimbursement, order fees and hourly wages are recorded individually per driver and calculated automatically. Clear accounting in the evening — no disputes." },
+      { "title": "WhatsApp Notifications", "description": "Drivers receive an instant WhatsApp message when a new delivery is ready. Fast, reliable communication — no one misses an order." }
     ]
   },
   "useCases": {
     "headline": "How Restaurateurs Use the Driver App",
     "sub": "Three real scenarios from our customer base — from the family delivery service to the multi-location chain.",
     "items": [
-      { "title": "Pizzeria with 3 Drivers", "story": "A Munich pizzeria replaces WhatsApp dispatch with the driver app. Result: 20% more orders per evening — because drivers run more efficient tours and customers cancel less often." },
-      { "title": "Delivery Chain with 4 Locations", "story": "A burger chain in NRW puts all 12 drivers on a central dashboard. When one location is overloaded, the next takes over automatically — wait time per order dropped from 42 to 28 minutes." },
+      { "title": "Pizzeria with 3 Drivers", "story": "A Munich pizzeria uses the driver app. Result: 20% more orders per evening — because drivers run more efficient tours and customers cancel less often." },
+      { "title": "Multi-Location Business", "story": "A delivery service with multiple locations activates the driver app and receives a separate access for each location. Centralized control of all drivers and locations on one dashboard — perfect for growth without complexity." },
       { "title": "Bicycle Courier in the City Centre", "story": "A veggie delivery service in Berlin-Mitte uses e-bikes. The GPS app optimises routes via cycle paths — drivers complete 6 instead of 4 deliveries per hour, without the stress." }
     ]
   },
@@ -54,11 +52,7 @@
       { "value": "−30 %", "label": "fewer kilometres driven thanks to route bundling" },
       { "value": "98 %", "label": "of customers use live tracking instead of calling back" }
     ],
-    "testimonial": {
-      "quote": "We used to get constant calls — where's the driver? Since we got live GPS, the phone is quiet, customers are happier and drivers are more relaxed.",
-      "author": "Luca B.",
-      "role": "Owner Pizzeria Chain, Frankfurt"
-    }
+    "testimonial": {}
   },
   "pricing": {
     "headline": "Pricing & Availability",
@@ -84,14 +78,10 @@
     "items": [
       { "q": "What does the driver app cost for my restaurant?", "a": "The driver app with GPS is a POS add-on and costs €10 per month per active driver (plus VAT). Includes real-time GPS tracking, automatic route optimisation and dispatching overview directly in the POS system. No additional fees per delivery or per kilometre driven — you only pay for actually active drivers." },
       { "q": "Which devices does the driver app run on?", "a": "The app runs on all current iOS and Android smartphones. No special device needed — drivers can use their personal phone. iOS 14+ or Android 9+ is recommended so that GPS tracking and push notifications work reliably." },
-      { "q": "Does the driver app work without internet?", "a": "Yes. The app has an offline mode: orders, addresses and routes are stored locally. As soon as the driver has signal again, everything syncs automatically in the background. So no orders are lost — not in underground car parks, basements or rural areas." },
-      { "q": "How accurate is the GPS tracking?", "a": "The live GPS is accurate to within a few metres and updates the driver's position every 5–15 seconds (depending on network quality and battery settings). Customers see a smooth live marker on the map — similar to Uber or Lieferando, but without the commission." },
-      { "q": "Can I coordinate multiple drivers simultaneously?", "a": "Yes. The dispatcher dashboard shows all active drivers with their position, current order and workload on one screen. New orders can be assigned via drag & drop or automatically distributed by the system to the optimal driver." },
-      { "q": "How does automatic route optimisation work?", "a": "The system bundles incoming orders by geographic proximity and calculates the optimal sequence. The driver receives a complete tour with 2–5 stops — saving up to 30% travel time per tour and significantly reducing fuel or electricity costs." },
-      { "q": "Can the customer see the driver in real time?", "a": "Yes. As soon as the order is on its way, the customer receives a tracking link by SMS or email. There they see the driver live on the map, the estimated arrival time, and receive an automatic notification when the driver is nearby." },
+      { "q": "How accurate is the GPS tracking?", "a": "The live GPS is accurate to within a few metres and updates the driver's position every 5–15 seconds (depending on network quality and battery settings). All orders land centrally in the driver app — whether they come from Lieferando, Wolt, Uber Eats or directly from Gastro Master. One system for all platforms." },
       { "q": "How is the driver app connected to my POS system?", "a": "If you already use a Gastro Master POS system, the driver app is immediately ready to use — orders land automatically in the app as soon as they are marked as 'delivery' at the till. No separate setup, no integration, no developers needed." },
-      { "q": "Can I see how many kilometres my drivers have covered?", "a": "Yes. In the dispatcher dashboard you'll find detailed reports per driver, per shift and per delivery: kilometres, travel time, number of deliveries, average speed and on-time delivery rate. Ideal for payroll, bonus systems and cost control." },
-      { "q": "Is using the app GDPR-compliant?", "a": "Yes. The driver app is fully GDPR-compliant. Location data is only captured during active shifts, deleted or anonymised at the end of the shift, and drivers can request information about their stored data at any time. Data processing takes place on German servers." }
+      { "q": "Can I see how many kilometres my drivers have covered?", "a": "Yes. In the dispatcher dashboard you'll find detailed reports per driver, per shift and per delivery: kilometres, travel time and number of deliveries. Ideal for payroll, bonus systems and cost control." },
+      { "q": "Is using the app GDPR-compliant?", "a": "Yes. The driver app is fully GDPR-compliant. Location data is only captured during active shifts and deleted or anonymised at the end of the shift. Data processing takes place on German servers." }
     ]
   }
 }

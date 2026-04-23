@@ -91,7 +91,6 @@ const ACCESSORY_IMAGES = [
 // ─── Types ────────────────────────────────────────────────────────────────────
 type Product = { title: string; desc: string; features: string[]; labels: string[] };
 type FaqItem = { q: string; a: string };
-type CompatRow = { name: string; kasse: boolean; webshop: boolean };
 
 // ─── HwCard ──────────────────────────────────────────────────────────────────
 const HwCard = ({ product, images, index, lp, inquiryCta }: {
@@ -269,7 +268,6 @@ const HardwarePage = () => {
   const printerProducts  = arr("sections.printers.products")   as Product[];
   const accessoryProducts = arr("sections.accessories.products") as Product[];
   const faqItems         = arr("faq.items")                    as FaqItem[];
-  const compatRows       = arr("compat.rows")                  as CompatRow[];
 
   const SCHEMA_BREADCRUMB = {
     "@context": "https://schema.org",
@@ -426,59 +424,6 @@ const HardwarePage = () => {
           bg="bg-[#F5F7FA] dark:bg-[#0A264A]/25"
         />
       </div>
-
-      {/* ── COMPATIBILITY MATRIX ─────────────────────────────────────────── */}
-      <section className="bg-white dark:bg-[#111111] px-5 md:px-8 lg:px-16 py-12 md:py-16 border-t border-[#0A264A]/[0.06] dark:border-white/[0.04]">
-        <div className="max-w-4xl mx-auto">
-          <motion.div
-            initial={{ opacity: 0, y: 20 }}
-            whileInView={{ opacity: 1, y: 0 }}
-            viewport={{ once: true }}
-            className="text-center mb-10"
-          >
-            <span className="text-cyan-brand text-xs font-bold uppercase tracking-widest mb-4 block">{t("compat.badge")}</span>
-            <h2 className="text-2xl md:text-3xl font-black text-[#0A264A] dark:text-white">{t("compat.headline")}</h2>
-            <p className="text-[#0A264A]/55 dark:text-white/45 text-base mt-3">{t("compat.sub")}</p>
-          </motion.div>
-          <motion.div
-            initial={{ opacity: 0, y: 16 }}
-            whileInView={{ opacity: 1, y: 0 }}
-            viewport={{ once: true }}
-            transition={{ delay: 0.1 }}
-            className="overflow-x-auto rounded-2xl border border-[#0A264A]/[0.08] dark:border-white/[0.08]"
-          >
-            <table className="w-full text-sm">
-              <thead>
-                <tr className="bg-[#0A264A] text-white">
-                  <th className="text-left px-5 py-3.5 font-semibold rounded-tl-2xl">Hardware</th>
-                  <th className="text-center px-5 py-3.5 font-semibold">{t("compat.colKasse")}</th>
-                  <th className="text-center px-5 py-3.5 font-semibold rounded-tr-2xl">{t("compat.colWebshop")}</th>
-                </tr>
-              </thead>
-              <tbody>
-                {compatRows.map((row, i) => (
-                  <tr
-                    key={row.name}
-                    className={`border-t border-[#0A264A]/[0.06] dark:border-white/[0.06] ${i % 2 === 0 ? "bg-white dark:bg-white/[0.02]" : "bg-[#F5F7FA] dark:bg-white/[0.04]"}`}
-                  >
-                    <td className="px-5 py-3.5 font-medium text-[#0A264A] dark:text-white">{row.name}</td>
-                    <td className="px-5 py-3.5 text-center">
-                      {row.kasse
-                        ? <Check className="w-4 h-4 text-cyan-brand mx-auto" />
-                        : <X className="w-4 h-4 text-[#0A264A]/25 dark:text-white/25 mx-auto" />}
-                    </td>
-                    <td className="px-5 py-3.5 text-center">
-                      {row.webshop
-                        ? <Check className="w-4 h-4 text-cyan-brand mx-auto" />
-                        : <X className="w-4 h-4 text-[#0A264A]/25 dark:text-white/25 mx-auto" />}
-                    </td>
-                  </tr>
-                ))}
-              </tbody>
-            </table>
-          </motion.div>
-        </div>
-      </section>
 
       {/* ── CTA DARK ─────────────────────────────────────────────────────── */}
       <section className="bg-[#0A264A] px-5 md:px-8 lg:px-16 py-16 md:py-20">

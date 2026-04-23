@@ -17,7 +17,7 @@
     "kasse": {
       "badge": "POS & Terminals",
       "headline": "POS Systems & Displays",
-      "sub": "Professional all-in-one solutions for your counter area — robust, fast, and ready to use immediately.",
+      "sub": "Professional solutions for your counter area — robust, fast, and ready to use immediately.",
       "products": [
         {
           "title": "Elo Series-3",
@@ -72,12 +72,12 @@
     },
     "terminals": {
       "badge": "POS Terminals",
-      "headline": "POS Terminals & Receipt Printers",
+      "headline": "Card Readers & Thermal Receipt Printers",
       "sub": "Card terminals and compact receipt printers — everything you need for a complete POS setup.",
       "products": [
         {
           "title": "Adyen POS Terminal S1F2L",
-          "desc": "Compact card terminal with touchscreen and integrated receipt printer. Supports all common payment methods — debit, credit, Apple Pay and Google Pay.",
+          "desc": "Compact card terminal with touchscreen and integrated receipt printer for server order-taking at the table. Supports all common payment methods — debit, credit, Apple Pay and Google Pay.",
           "features": [
             "Debit & Credit",
             "Contactless (NFC)",
@@ -106,7 +106,7 @@
         },
         {
           "title": "Gastro Master 58mm Receipt Printer",
-          "desc": "Our compact 58mm thermal printer for space-saving POS setups. Ideal for small counters, coffee bars and fast food — reliable and easy to integrate.",
+          "desc": "Our compact 58mm thermal printer for order-taking from the online shop and app when no point-of-sale software is used. Integrated SIM card optionally available for seamless order transmission.",
           "features": [
             "58mm Print Width",
             "USB Connection",
@@ -123,7 +123,7 @@
     },
     "printers": {
       "badge": "Receipt Printers",
-      "headline": "Thermal Receipt Printers",
+      "headline": "80mm Thermal Receipt Printers",
       "sub": "Fast and reliable receipt printers for kitchen, bar and checkout — low maintenance and designed for continuous use.",
       "products": [
         {
@@ -131,7 +131,7 @@
           "desc": "Our own receipt printer with 80mm print width. Fast, quiet and low maintenance — ideal for continuous use in hospitality.",
           "features": [
             "80mm Print Width",
-            "USB & Ethernet",
+            "USB & LAN",
             "Auto Paper Cutter",
             "Quiet Operation",
             "Receipt & Kitchen"
@@ -152,7 +152,8 @@
             "250 mm/s Print Speed",
             "USB, LAN & WIFI",
             "Cloud Printing",
-            "Compact Design"
+            "Compact Design",
+            "Bluetooth"
           ],
           "labels": [
             "Front view",

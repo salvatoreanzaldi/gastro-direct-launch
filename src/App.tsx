@@ -2,8 +2,8 @@ import { Toaster } from "@/components/ui/toaster";
 import { Toaster as Sonner } from "@/components/ui/sonner";
 import { TooltipProvider } from "@/components/ui/tooltip";
 import { QueryClient, QueryClientProvider } from "@tanstack/react-query";
-import { BrowserRouter, Routes, Route, Navigate, useLocation } from "react-router-dom";
-import { lazy, Suspense, type ComponentType } from "react";
+import { BrowserRouter, Routes, Route, Navigate, useLocation, useParams } from "react-router-dom";
+import { lazy, Suspense, type ComponentType, createElement } from "react";
 import { ScrollToTop } from "@/components/ScrollToTop";
 import ScrollToTopButton from "@/components/ScrollToTopButton";
 import LanguageLayout, { extractLangFromPath } from "@/components/LanguageLayout";
@@ -46,6 +46,7 @@ const LAZY_COMPONENTS: Record<string, ComponentType> = {
 
   // Blog
   "@/pages/BlogPage":                            lazy(() => import("@/pages/BlogPage")),
+  "@/pages/blog/BlogPostDetailPage":             lazy(() => import("@/pages/blog/BlogPostDetailPage")),
   "@/pages/blog/BlogPostLieferandoPage":         lazy(() => import("@/pages/blog/BlogPostLieferandoPage")),
   "@/pages/blog/BlogPostFehlerPage":             lazy(() => import("@/pages/blog/BlogPostFehlerPage")),
   "@/pages/blog/BlogPostKostenPage":             lazy(() => import("@/pages/blog/BlogPostKostenPage")),
@@ -150,11 +151,24 @@ const App = () => (
               <Route path="/preise"      element={<Navigate to="/de/preise" replace />} />
               <Route path="/uber-uns"    element={<Navigate to="/de/uber-uns" replace />} />
 
+              {/* Umlaut-Schreibweise → ASCII-Variante (Legacy-Schutz für externe Links) */}
+              <Route path="/ueber-uns"     element={<Navigate to="/de/uber-uns" replace />} />
+              <Route path="/de/ueber-uns"  element={<Navigate to="/de/uber-uns" replace />} />
+
               {/* One explicit route tree per language with its localized slugs */}
               {LANGUAGES.map((lang) => (
                 <Route key={lang} path={`/${lang}`} element={<LanguageLayout lang={lang} />}>
                   {buildLangRoutes(lang)}
                   {buildLegacyAliasRoutes(lang)}
+                  {/* Dynamic blog post route — DE serves content, other locales redirect to /de/blog/:slug */}
+                  <Route
+                    path="blog/:slug"
+                    element={
+                      lang === "de"
+                        ? <Suspense fallback={null}>{createElement(LAZY_COMPONENTS["@/pages/blog/BlogPostDetailPage"]!)}</Suspense>
+                        : <BlogLocaleRedirect />
+                    }
+                  />
                   <Route path="*" element={<NotFound />} />
                 </Route>
               ))}
@@ -174,6 +188,12 @@ const App = () => (
 const LegacyNoLangRedirect = () => {
   const location = useLocation();
   return <Navigate to={`/de${location.pathname}${location.search}${location.hash}`} replace />;
+};
+
+/** Redirects non-DE blog URLs to /de/blog/:slug (client-side fallback for Vercel redirect). */
+const BlogLocaleRedirect = () => {
+  const { slug } = useParams<{ slug: string }>();
+  return <Navigate to={`/de/blog/${slug}`} replace />;
 };
 
 /** Redirects /add-ons/:slug → /{currentLang}/produkte/add-ons/:slug (lang-aware). */

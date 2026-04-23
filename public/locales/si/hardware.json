@@ -17,7 +17,7 @@
     "kasse": {
       "badge": "Kasse & POS",
       "headline": "POS පද්ධති & Displays",
-      "sub": "ඔබේ counter area සඳහා වෘත්තීය all-in-one විසඳුම් — ශක්තිමත්, වේගවත් සහ ක්ෂණිකව භාවිතයට සූදානම්.",
+      "sub": "ඔබේ counter area සඳහා වෘත්තීය විසඳුම් — ශක්තිමත්, වේගවත් සහ ක්ෂණිකව භාවිතයට සූදානම්.",
       "products": [
         {
           "title": "Elo Series-3",
@@ -72,12 +72,12 @@
     },
     "terminals": {
       "badge": "POS Terminali",
-      "headline": "POS Terminali in tiskalniki",
+      "headline": "Card Readers සහ Thermal Receipt Printers",
       "sub": "Terminali za kartično plačilo in kompaktni tiskalniki računov — vse za popolno POS namestitev.",
       "products": [
         {
           "title": "Adyen POS Terminal S1F2L",
-          "desc": "Touchscreen සහ built-in receipt printer සහිත compact card terminal. Debit, credit, Apple Pay සහ Google Pay සියලු payment methods support කරයි.",
+          "desc": "Touchscreen සහ built-in receipt printer සහිත compact card terminal table එ server order-taking සඳහා. Debit, credit, Apple Pay සහ Google Pay සියලු payment methods support කරයි.",
           "features": [
             "Debit & Credit",
             "Contactless (NFC)",
@@ -106,7 +106,7 @@
         },
         {
           "title": "Gastro Master 58mm tiskalnik",
-          "desc": "Naš kompakten 58mm termalni tiskalnik za prostorsko varčne POS namestitve. Idealen za majhne pulte in kavarne.",
+          "desc": "Naš kompakten 58mm termalni tiskalnik za order-taking online shop සහ app සිට POS software භාවිතා නොකරන විට. Integrated SIM card optionally available seamless order transmission සඳහා.",
           "features": [
             "Širina tiskanja 58mm",
             "USB priključek",
@@ -123,7 +123,7 @@
     },
     "printers": {
       "badge": "Receipt Printers",
-      "headline": "Thermal Receipt Printers",
+      "headline": "80mm Thermal Receipt Printers",
       "sub": "Kitchen, bar සහ POS සඳහා වේගවත් හා විශ්වාසදායී printers — අඩු maintenance සහ continuous operation සඳහා.",
       "products": [
         {
@@ -131,7 +131,7 @@
           "desc": "80mm print width සහිත අපගේ printer. වේගවත්, නිශ්ශබ්ද සහ අඩු maintenance — අවන්හල් continuous use සඳහා ආදර්ශ.",
           "features": [
             "80mm Width",
-            "USB & Ethernet",
+            "USB & LAN",
             "Auto Paper Cutter",
             "නිශ්ශබ්ද",
             "Receipt & Kitchen Print"
@@ -152,7 +152,8 @@
             "250 mm/s Speed",
             "USB, LAN & WLAN",
             "Cloud Printing",
-            "Compact Design"
+            "Compact Design",
+            "Bluetooth"
           ],
           "labels": [
             "ඉදිරිපස",

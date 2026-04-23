@@ -113,7 +113,7 @@ const HeroSection = ({ badge, headline, subline, heroImage, heroImageRounded }: 
           </p>
           <a
             href="/kontakt"
-            className="bg-gradient-amber text-[#0A264A] font-bold px-8 py-4 rounded-xl text-base inline-flex items-center gap-2 hover:scale-[1.02] transition-transform shadow-lg shadow-[#ED8400]/20"
+            className="bg-gradient-amber text-white font-bold px-8 py-4 rounded-xl text-base inline-flex items-center gap-2 hover:scale-[1.02] transition-transform shadow-lg shadow-[#ED8400]/20"
           >
             {t("nav.cta")}
             <ArrowRight className="w-5 h-5" />
@@ -303,7 +303,7 @@ const TrustSection = ({ stats, testimonial }: AddOnPageConfig["trust"]) => (
         </div>
       )}
 
-      {testimonial && (
+      {testimonial && testimonial.quote && (
         <motion.blockquote
           initial={{ opacity: 0, y: 20 }}
           whileInView={{ opacity: 1, y: 0 }}

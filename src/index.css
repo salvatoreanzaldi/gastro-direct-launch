@@ -177,3 +177,376 @@
     animation: float 3s ease-in-out infinite;
   }
 }
+
+/* ── Blog Callout Boxes (tldr-box, stat-callout, gm-callout variants) ─────── */
+/* All callouts rendered on dark blog bg (#091A33) — high-contrast dark theme */
+
+.prose .tldr-box,
+.prose .stat-callout,
+.prose .gm-stat-callout,
+.prose .gm-callout,
+.prose .gm-callout--stat,
+.prose .gm-callout--tip,
+.prose .gm-stat,
+.prose .gm-author-box,
+.prose aside[class*="callout"],
+.prose aside[class*="tldr"] {
+  background: rgba(245, 158, 11, 0.06) !important;
+  border-left: 4px solid rgb(245, 158, 11) !important;
+  padding: 1.25rem 1.5rem !important;
+  margin: 1.75rem 0 !important;
+  border-radius: 0.375rem !important;
+  color: rgb(244, 244, 245) !important;
+  box-shadow: none !important;
+}
+
+.prose .tldr-box h2,
+.prose .tldr-box h3,
+.prose .tldr-box h4,
+.prose .stat-callout h2,
+.prose .stat-callout h3,
+.prose .gm-callout h2,
+.prose .gm-callout h3,
+.prose aside[class*="callout"] h2,
+.prose aside[class*="callout"] h3,
+.prose aside[class*="tldr"] h2,
+.prose aside[class*="tldr"] h3 {
+  color: rgb(251, 191, 36) !important;
+  font-size: 0.75rem !important;
+  font-weight: 700 !important;
+  text-transform: uppercase !important;
+  letter-spacing: 0.1em !important;
+  margin: 0 0 0.75rem 0 !important;
+  padding: 0 !important;
+}
+
+.prose .tldr-box p,
+.prose .tldr-box li,
+.prose .stat-callout p,
+.prose .stat-callout li,
+.prose .gm-callout p,
+.prose .gm-callout li,
+.prose .gm-stat p,
+.prose .gm-stat li,
+.prose aside p,
+.prose aside li {
+  color: rgb(244, 244, 245) !important;
+  font-size: 0.9375rem !important;
+  line-height: 1.65 !important;
+  margin: 0.5rem 0 !important;
+}
+
+.prose .tldr-box strong,
+.prose .stat-callout strong,
+.prose .gm-callout strong,
+.prose aside strong {
+  color: rgb(255, 255, 255) !important;
+  font-weight: 700 !important;
+}
+
+/* Info variant (cyan) */
+.prose .gm-callout--info,
+.prose aside[class*="info-box"] {
+  background: rgba(6, 182, 212, 0.06) !important;
+  border-left-color: rgb(6, 182, 212) !important;
+}
+.prose .gm-callout--info h2,
+.prose .gm-callout--info h3,
+.prose aside[class*="info-box"] h2,
+.prose aside[class*="info-box"] h3 {
+  color: rgb(34, 211, 238) !important;
+}
+
+/* Warning variant (rose) */
+.prose .gm-callout--warning,
+.prose aside[class*="warnung"],
+.prose aside[class*="warning"] {
+  background: rgba(244, 63, 94, 0.06) !important;
+  border-left-color: rgb(244, 63, 94) !important;
+}
+.prose .gm-callout--warning h2,
+.prose .gm-callout--warning h3,
+.prose aside[class*="warnung"] h2,
+.prose aside[class*="warnung"] h3,
+.prose aside[class*="warning"] h2,
+.prose aside[class*="warning"] h3 {
+  color: rgb(251, 113, 133) !important;
+}
+
+/* Tip variant (emerald) */
+.prose .gm-callout--tip,
+.prose aside[class*="tipp"] {
+  background: rgba(16, 185, 129, 0.06) !important;
+  border-left-color: rgb(16, 185, 129) !important;
+}
+.prose .gm-callout--tip h2,
+.prose .gm-callout--tip h3,
+.prose aside[class*="tipp"] h2,
+.prose aside[class*="tipp"] h3 {
+  color: rgb(52, 211, 153) !important;
+}
+
+/* Override inline styles from legacy HTML (WordPress exported hardcoded colors) */
+.prose aside[style*="background:#eef"],
+.prose aside[style*="background: #eef"],
+.prose aside[style*="background:#ec"],
+.prose aside[style*="background: #ec"] {
+  background: rgba(245, 158, 11, 0.06) !important;
+  color: rgb(244, 244, 245) !important;
+}
+
+/* ── Light-BG Legal / Rechtshinweis Callouts ─────────────────────────────────
+ * These keep a warm cream BG but force DARK text (overriding prose-invert).
+ * Salvatore wants to preserve the light-variant visual for legal notes.
+ */
+.prose .legal-disclaimer-box,
+.prose .disclaimer-box,
+.prose .legal-box,
+.prose .legal-disclaimer,
+.prose div[class*="legal-disclaimer"],
+.prose aside[class*="legal-disclaimer"] {
+  background: #FFF8E7 !important;
+  border-left: 4px solid #F59E0B !important;
+  padding: 1.25rem 1.5rem !important;
+  margin: 1.75rem 0 !important;
+  border-radius: 0.5rem !important;
+  color: #1F2937 !important; /* zinc-800 — dark text on cream */
+  box-shadow: none !important;
+}
+.prose .legal-disclaimer-box p,
+.prose .legal-disclaimer-box li,
+.prose .disclaimer-box p,
+.prose .disclaimer-box li,
+.prose .legal-box p,
+.prose .legal-box li,
+.prose div[class*="legal-disclaimer"] p,
+.prose div[class*="legal-disclaimer"] li {
+  color: #1F2937 !important; /* zinc-800 */
+  font-size: 0.9375rem !important;
+  line-height: 1.65 !important;
+  margin: 0.5rem 0 !important;
+}
+.prose .legal-disclaimer-box strong,
+.prose .disclaimer-box strong,
+.prose .legal-box strong,
+.prose div[class*="legal-disclaimer"] strong {
+  color: #111827 !important; /* zinc-900 for max contrast */
+  font-weight: 700 !important;
+}
+.prose .legal-disclaimer-box a,
+.prose .disclaimer-box a,
+.prose .legal-box a,
+.prose div[class*="legal-disclaimer"] a {
+  color: #B45309 !important; /* amber-700 — readable on cream */
+  text-decoration: underline !important;
+}
+.prose .legal-disclaimer-box h2,
+.prose .legal-disclaimer-box h3,
+.prose .legal-disclaimer-box h4,
+.prose .disclaimer-box h2,
+.prose .disclaimer-box h3,
+.prose .disclaimer-box h4 {
+  color: #92400E !important; /* amber-800 */
+  font-size: 0.75rem !important;
+  font-weight: 700 !important;
+  text-transform: uppercase !important;
+  letter-spacing: 0.05em !important;
+  margin: 0 0 0.75rem 0 !important;
+}
+
+/* ── Generic catch-all: div/aside with inline light BG (wordpress exports) ── */
+.prose div[class*="stat-callout"],
+.prose div[class*="info-callout"],
+.prose div[class*="warning-callout"],
+.prose div[class*="weichmacher"],
+.prose div[class*="gm-stat-callout"],
+.prose div[class*="gm-callout"] {
+  background: rgba(245, 158, 11, 0.06) !important;
+  border-left: 4px solid rgb(245, 158, 11) !important;
+  color: rgb(244, 244, 245) !important; /* light text on dark overlay */
+  padding: 1.25rem 1.5rem !important;
+  margin: 1.75rem 0 !important;
+  border-radius: 0.5rem !important;
+  box-shadow: none !important;
+}
+.prose div[class*="stat-callout"] p,
+.prose div[class*="info-callout"] p,
+.prose div[class*="warning-callout"] p,
+.prose div[class*="weichmacher"] p,
+.prose div[class*="gm-stat-callout"] p,
+.prose div[class*="gm-callout"] p,
+.prose div[class*="stat-callout"] li,
+.prose div[class*="info-callout"] li,
+.prose div[class*="warning-callout"] li,
+.prose div[class*="weichmacher"] li {
+  color: rgb(244, 244, 245) !important;
+}
+.prose div[class*="stat-callout"] strong,
+.prose div[class*="info-callout"] strong,
+.prose div[class*="warning-callout"] strong,
+.prose div[class*="weichmacher"] strong,
+.prose div[class*="gm-callout"] strong {
+  color: rgb(255, 255, 255) !important;
+}
+
+/* Warning variant (rose) for warning-callout */
+.prose div[class*="warning-callout"] {
+  background: rgba(244, 63, 94, 0.08) !important;
+  border-left-color: rgb(244, 63, 94) !important;
+}
+
+/* ── v4: All remaining WordPress-export callout classes ─────────────────────
+ * Comprehensive dark-theme override for every class seen in blog-exports.
+ * Replaces inline light-BG styles and prose-invert text handling.
+ */
+.prose .google-reviews-block,
+.prose .google-reviews-box,
+.prose .google-reviews-trust,
+.prose .google-reviews-embed,
+.prose .wp-block-group.google-reviews-block,
+.prose .reviews-box,
+.prose .stat-card,
+.prose .hinweis-box,
+.prose .practice-callout,
+.prose .checklist-box,
+.prose .cross-link-box,
+.prose .callout-box,
+.prose .callout.callout-stat,
+.prose .author-box,
+.prose .wp-block-group.author-box,
+.prose .wp-block-group.stat-callout,
+.prose .wp-block-group.legal-disclaimer-box,
+.prose .wp-block-group.disclaimer-box,
+.prose .wp-block-group.tldr-box,
+.prose .gm-disclaimer,
+.prose .gm-disclaimer-box,
+.prose .blog-quellenhinweis {
+  background: rgba(245, 158, 11, 0.06) !important;
+  border-left: 4px solid rgb(245, 158, 11) !important;
+  padding: 1.25rem 1.5rem !important;
+  margin: 1.75rem 0 !important;
+  border-radius: 0.5rem !important;
+  color: rgb(244, 244, 245) !important;
+  box-shadow: none !important;
+}
+.prose .google-reviews-block p,
+.prose .google-reviews-box p,
+.prose .google-reviews-trust p,
+.prose .google-reviews-embed p,
+.prose .reviews-box p,
+.prose .stat-card p,
+.prose .hinweis-box p,
+.prose .practice-callout p,
+.prose .checklist-box p,
+.prose .cross-link-box p,
+.prose .callout-box p,
+.prose .author-box p,
+.prose .gm-disclaimer p,
+.prose .gm-disclaimer-box p,
+.prose .blog-quellenhinweis p,
+.prose .google-reviews-block li,
+.prose .reviews-box li,
+.prose .hinweis-box li,
+.prose .checklist-box li,
+.prose .callout-box li,
+.prose .blog-quellenhinweis li {
+  color: rgb(244, 244, 245) !important;
+  font-size: 0.9375rem !important;
+  line-height: 1.65 !important;
+}
+.prose .google-reviews-block strong,
+.prose .google-reviews-box strong,
+.prose .reviews-box strong,
+.prose .stat-card strong,
+.prose .hinweis-box strong,
+.prose .practice-callout strong,
+.prose .callout-box strong,
+.prose .author-box strong,
+.prose .blog-quellenhinweis strong {
+  color: rgb(255, 255, 255) !important;
+}
+.prose .google-reviews-block h2,
+.prose .google-reviews-block h3,
+.prose .google-reviews-block h4,
+.prose .hinweis-box h2,
+.prose .hinweis-box h3,
+.prose .practice-callout h2,
+.prose .practice-callout h3,
+.prose .callout-box h2,
+.prose .callout-box h3,
+.prose .author-box h2,
+.prose .author-box h3,
+.prose .blog-quellenhinweis h2,
+.prose .blog-quellenhinweis h3 {
+  color: rgb(251, 191, 36) !important;
+}
+.prose .google-reviews-block a,
+.prose .google-reviews-box a,
+.prose .reviews-box a,
+.prose .hinweis-box a,
+.prose .practice-callout a,
+.prose .callout-box a,
+.prose .author-box a,
+.prose .blog-quellenhinweis a {
+  color: rgb(34, 211, 238) !important; /* cyan-400 */
+  text-decoration: underline !important;
+}
+
+/* Sources / Quellen list — keep visually distinct, slate-tinted */
+.prose .sources-list,
+.prose .gm-sources,
+.prose .primary-sources,
+.prose section.sources-list,
+.prose section.gm-sources {
+  background: rgba(59, 130, 246, 0.05) !important;
+  border-left: 4px solid rgb(59, 130, 246) !important;
+  padding: 1.5rem 1.75rem !important;
+  margin: 2rem 0 !important;
+  border-radius: 0.5rem !important;
+  color: rgb(244, 244, 245) !important;
+}
+.prose .sources-list h2,
+.prose .sources-list h3,
+.prose .gm-sources h2,
+.prose .gm-sources h3,
+.prose .primary-sources h2,
+.prose .primary-sources h3 {
+  color: rgb(96, 165, 250) !important; /* blue-400 */
+  font-size: 0.875rem !important;
+  font-weight: 700 !important;
+  text-transform: uppercase !important;
+  letter-spacing: 0.05em !important;
+  margin: 0 0 1rem 0 !important;
+}
+.prose .sources-list p,
+.prose .sources-list li,
+.prose .gm-sources p,
+.prose .gm-sources li,
+.prose .primary-sources p,
+.prose .primary-sources li {
+  color: rgb(212, 212, 216) !important; /* zinc-300 */
+  font-size: 0.875rem !important;
+  line-height: 1.6 !important;
+}
+.prose .sources-list a,
+.prose .gm-sources a,
+.prose .primary-sources a {
+  color: rgb(147, 197, 253) !important; /* blue-300 */
+  text-decoration: underline !important;
+  word-break: break-word;
+}
+.prose .sources-list strong,
+.prose .gm-sources strong,
+.prose .primary-sources strong {
+  color: rgb(255, 255, 255) !important;
+}
+
+/* Force-override any inline style="background:#..." set by WordPress */
+.prose div[style*="background:#"],
+.prose div[style*="background: #"],
+.prose aside[style*="background:#"],
+.prose aside[style*="background: #"],
+.prose section[style*="background:#"] {
+  background: rgba(245, 158, 11, 0.06) !important;
+  color: rgb(244, 244, 245) !important;
+}

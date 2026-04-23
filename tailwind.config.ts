@@ -104,5 +104,19 @@ export default {
       },
     },
   },
-  plugins: [require("tailwindcss-animate")],
+  safelist: [
+    // Category backgrounds + gradients
+    { pattern: /^bg-(cyan|orange|pink|amber|violet|emerald|sky|rose|indigo|zinc)-500\/(10|30)$/ },
+    { pattern: /^from-(cyan|orange|pink|amber|violet|emerald|sky|rose|indigo|zinc)-500\/(10|5)$/ },
+    // Category text
+    { pattern: /^text-(cyan|orange|pink|amber|violet|emerald|sky|rose|indigo|zinc)-400$/ },
+    // Category borders
+    { pattern: /^border-(cyan|orange|pink|amber|violet|emerald|sky|rose|indigo|zinc)-500\/(30|50)$/ },
+    // Category solid (stripe)
+    { pattern: /^bg-(cyan|orange|pink|amber|violet|emerald|sky|rose|indigo|zinc)-500$/ },
+  ],
+  plugins: [
+    require("tailwindcss-animate"),
+    require("@tailwindcss/typography"),
+  ],
 } satisfies Config;

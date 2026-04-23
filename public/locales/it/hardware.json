@@ -17,7 +17,7 @@
     "kasse": {
       "badge": "Cassa & POS",
       "headline": "Sistemi POS & Display",
-      "sub": "Soluzioni all-in-one professionali per la tua area cassa — robuste, veloci e pronte all'uso immediato.",
+      "sub": "Soluzioni professionali per la tua area cassa — robuste, veloci e pronte all'uso immediato.",
       "products": [
         {
           "title": "Elo Series-3",
@@ -72,12 +72,12 @@
     },
     "terminals": {
       "badge": "POS Terminal",
-      "headline": "POS Terminal e Stampanti",
+      "headline": "Lettori di Carte & Stampanti Termiche",
       "sub": "Terminali per pagamento e stampanti ricevute compatte — tutto il necessario per un setup POS completo.",
       "products": [
         {
           "title": "Terminale Adyen POS S1F2L",
-          "desc": "Terminale per carte compatto con touchscreen e stampante scontrini integrata. Supporta tutti i metodi di pagamento comuni — bancomat, carta di credito, Apple Pay e Google Pay.",
+          "desc": "Terminale per carte compatto con touchscreen e stampante scontrini integrata per l'acquisizione degli ordini del cameriere al tavolo. Supporta tutti i metodi di pagamento comuni — bancomat, carta di credito, Apple Pay e Google Pay.",
           "features": [
             "Bancomat & Carta di credito",
             "Contactless (NFC)",
@@ -106,7 +106,7 @@
         },
         {
           "title": "Stampante Gastro Master 58mm",
-          "desc": "La nostra stampante termica compatta da 58mm per installazioni POS salvaspazio. Ideale per banconi piccoli, coffee bar e fast food.",
+          "desc": "La nostra stampante termica compatta da 58mm per l'acquisizione degli ordini del negozio online e dell'app quando non viene utilizzato alcun software di cassa. Scheda SIM integrata opzionalmente disponibile per la trasmissione rapida degli ordini.",
           "features": [
             "Larghezza di stampa 58mm",
             "Connessione USB",
@@ -123,7 +123,7 @@
     },
     "printers": {
       "badge": "Stampanti",
-      "headline": "Stampanti Termiche",
+      "headline": "Stampanti Termiche 80mm",
       "sub": "Stampanti veloci e affidabili per cucina, bar e cassa — con manutenzione ridotta e progettate per uso continuo.",
       "products": [
         {
@@ -131,7 +131,7 @@
           "desc": "La nostra stampante con larghezza di stampa di 80mm. Veloce, silenziosa e con manutenzione ridotta — ideale per uso continuo nella ristorazione.",
           "features": [
             "Larghezza 80mm",
-            "USB & Ethernet",
+            "USB & LAN",
             "Tagliacarta automatico",
             "Silenziosa",
             "Stampa scontrini & cucina"
@@ -152,7 +152,8 @@
             "250 mm/s velocità",
             "USB, LAN & WLAN",
             "Cloud Printing",
-            "Design compatto"
+            "Design compatto",
+            "Bluetooth"
           ],
           "labels": [
             "Vista frontale",

@@ -17,7 +17,7 @@
     "kasse": {
       "badge": "Kasse & POS",
       "headline": "Kassensysteme & Displays",
-      "sub": "Professionelle All-in-One-Lösungen für Ihren Thekenbereich — robust, schnell und sofort einsatzbereit.",
+      "sub": "Professionelle Lösungen für Ihren Thekenbereich — robust, schnell und sofort einsatzbereit.",
       "products": [
         {
           "title": "Elo Series-3",
@@ -72,12 +72,12 @@
     },
     "terminals": {
       "badge": "POS-Terminals",
-      "headline": "POS-Terminals & Kassendrucker",
+      "headline": "Kartenlesegeräte & Thermo-Bondrucker",
       "sub": "Kartenterminals und kompakte Bondrucker — alles, was Sie für ein vollständiges POS-Setup brauchen.",
       "products": [
         {
           "title": "Adyen POS-Terminal S1F2L",
-          "desc": "Kompaktes Kartenterminal mit Touchscreen und integriertem Belegdrucker. Unterstützt alle gängigen Zahlungsmethoden — EC, Kreditkarte, Apple Pay und Google Pay.",
+          "desc": "Kompaktes Kartenterminal mit Touchscreen und integriertem Belegdrucker für Bestellannahme des Kellners am Tisch. Unterstützt alle gängigen Zahlungsmethoden — EC, Kreditkarte, Apple Pay und Google Pay.",
           "features": [
             "EC & Kreditkarte",
             "Kontaktlos (NFC)",
@@ -106,7 +106,7 @@
         },
         {
           "title": "Gastro Master 58mm Bondrucker",
-          "desc": "Unser kompakter 58mm Thermodrucker für platzsparende Kassenaufbauten. Ideal für kleine Tresen, Coffee-Bars und Imbisse — zuverlässig und leicht zu integrieren.",
+          "desc": "Unser kompakter 58mm Thermodrucker für die Bestellannahme des Online Shops und der App, wenn keine Kassensoftware genutzt wird. Integrierte SIM-Karte optional möglich, für reibungslose Bestellübermittlung",
           "features": [
             "58mm Druckbreite",
             "USB-Anschluss",
@@ -123,7 +123,7 @@
     },
     "printers": {
       "badge": "Bondrucker",
-      "headline": "Thermobondrucker",
+      "headline": "80mm Thermobondrucker",
       "sub": "Schnelle und zuverlässige Belegdrucker für Küche, Bar und Kasse — wartungsarm und für den Dauerbetrieb ausgelegt.",
       "products": [
         {
@@ -131,7 +131,7 @@
           "desc": "Unser eigener Bondrucker mit 80mm Druckbreite. Schnell, leise und wartungsarm — ideal für den Dauerbetrieb in der Gastronomie.",
           "features": [
             "80mm Druckbreite",
-            "USB & Ethernet",
+            "USB & LAN",
             "Auto-Papierschneider",
             "Leise im Betrieb",
             "Bon & Küchendruck"
@@ -152,7 +152,8 @@
             "250 mm/s Druckgeschwindigkeit",
             "USB, LAN & WLAN",
             "Cloud-Printing",
-            "Kompaktes Design"
+            "Kompaktes Design",
+            "Bluetooth"
           ],
           "labels": [
             "Frontansicht",
@@ -183,8 +184,8 @@
       "sub": "Ergänzende Hardware für ein vollständiges, professionelles Setup — von der Kassenschublade bis zum Netzwerkkabel.",
       "products": [
         {
-          "title": "Gastro Master Kassenschublade",
-          "desc": "Robuste Kassenschublade mit 5 Münzfächern und 3 Scheinfächern. Direkt per RJ11-Kabel an Ihren Bondrucker anschließbar.",
+          "title": "APG ECD410 Kassenschublade",
+          "desc": "Robuste Kassenschublade mit 5 Münzfächern und 3 Scheinfächern. Maße: B 410mm, H 103mm, T 420mm. Direkt per RJ11-Kabel an Ihren Bondrucker anschließbar.",
           "features": [
             "5 Münzfächer",
             "3 Scheinfächer",
@@ -213,7 +214,7 @@
         },
         {
           "title": "Surface Pro Schutzhülle",
-          "desc": "Schlanke Schutzhülle mit integrierter Tastatur für das Microsoft Surface Pro. Ideal für den mobilen Einsatz in der Gastronomie — schützt vor Stößen und Spritzwasser.",
+          "desc": "Schlanke Schutzhülle für das Microsoft Surface Pro. Ideal für den mobilen Einsatz in der Gastronomie — schützt vor Stößen und Schäden.",
           "features": [
             "Integrierte Tastatur",
             "Schlankes Design",
@@ -227,7 +228,7 @@
           ]
         },
         {
-          "title": "Netzwerk Patchkabel",
+          "title": "LAN-Kabel",
           "desc": "Hochwertiges Cat 6 Netzwerk Patchkabel (RJ45) für eine stabile, kabelgebundene Verbindung Ihrer POS-Geräte. Erhältlich in den Längen 3m, 5m und 10m.",
           "features": [
             "Cat 6 Standard",
@@ -242,59 +243,10 @@
       ]
     }
   },
-  "compat": {
-    "badge": "Kompatibilität",
-    "headline": "Kompatibilitätsübersicht",
-    "sub": "Welche Hardware passt zu welchem Gastro Master Produkt?",
-    "colKasse": "Kassensystem",
-    "colWebshop": "Webshop & App",
-    "rows": [
-      {
-        "name": "Elo POS Terminal",
-        "kasse": true,
-        "webshop": false
-      },
-      {
-        "name": "Elo POS Doublescreen",
-        "kasse": true,
-        "webshop": false
-      },
-      {
-        "name": "Microsoft Surface Tablet",
-        "kasse": true,
-        "webshop": true
-      },
-      {
-        "name": "Adyen Terminals",
-        "kasse": true,
-        "webshop": true
-      },
-      {
-        "name": "Bondrucker",
-        "kasse": true,
-        "webshop": false
-      },
-      {
-        "name": "Kassenschublade",
-        "kasse": true,
-        "webshop": false
-      },
-      {
-        "name": "Tablet Ständer",
-        "kasse": true,
-        "webshop": true
-      },
-      {
-        "name": "Zubehör & Kabel",
-        "kasse": true,
-        "webshop": true
-      }
-    ]
-  },
   "cta": {
     "badge": "Auf Anfrage",
     "headline": "Konfigurieren Sie Ihr Setup",
-    "sub": "Alle Preise auf Anfrage — individuell abgestimmt auf Ihren Betrieb. Wir beraten Sie kostenlos und erstellen Ihnen ein passendes Angebot.",
+    "sub": "Individuell abgestimmt auf Ihren Betrieb. Wir beraten Sie kostenlos und erstellen Ihnen ein passendes Angebot.",
     "button": "Jetzt anfragen"
   },
   "faq": {
@@ -303,15 +255,11 @@
     "items": [
       {
         "q": "Liefert Gastro Master die Hardware direkt?",
-        "a": "Ja, wir liefern alle aufgeführten Produkte direkt an Ihren Betrieb in Deutschland. Auf Wunsch installieren und konfigurieren wir die Geräte auch vor Ort — z. B. in Berlin, München, Hamburg, Köln und Frankfurt."
+        "a": "Ja, wir liefern alle aufgeführten Produkte direkt an Ihren Betrieb in Deutschland."
       },
       {
         "q": "Wie lange ist die Garantiezeit auf die Hardware?",
-        "a": "Alle Geräte werden mit einer Herstellergarantie von mindestens 2 Jahren geliefert. Für Gastro Master Eigenprodukte wie den 80mm Drucker bieten wir direkten Support und schnellen Austausch im Fehlerfall."
-      },
-      {
-        "q": "Kann ich die Hardware auch ohne Gastro Master Software nutzen?",
-        "a": "Die EC-Terminals und Bondrucker sind mit dem ZVT-Standard kompatibel und können grundsätzlich auch mit anderen Systemen verwendet werden. Für optimale Performance und direkte Integration empfehlen wir jedoch die Kombination mit Gastro Master."
+        "a": "Wir bieten 12 Monate Garantie auf alle Geräte. Ausnahme: Elo Produkte (Kassen) haben 3 Jahre Softwaregarantie. Bei Eigenverschuldung entfällt die Garantie."
       },
       {
         "q": "Bietet Gastro Master Finanzierung oder Leasing an?",
@@ -319,7 +267,7 @@
       },
       {
         "q": "Wie erfolgt die Installation und Einrichtung der Geräte?",
-        "a": "Alle Geräte werden von uns vorkonfiguriert geliefert und sind sofort einsatzbereit. Auf Wunsch bieten wir eine professionelle Vor-Ort-Installation durch unser Technikteam an — bundesweit in ganz Deutschland."
+        "a": "Alle Geräte werden von uns vorkonfiguriert geliefert und sind sofort einsatzbereit. Sobald unsere Hardware angekommen ist, können wir einen Termin für die Einrichtung vereinbaren. Wir verbinden uns dann per Fernschaltung auf die Hardware und helfen Ihnen beim Start."
       }
     ]
   },
