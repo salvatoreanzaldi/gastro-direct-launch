@@ -43,6 +43,7 @@ export interface AddOnPageConfig {
     subline: string;
     heroImage?: string;
     heroImageRounded?: boolean;
+    heroImageLarge?: boolean;
   };
   problemSolution: {
     problem: { title: string; points: AddOnProblemPoint[] };
@@ -89,20 +90,20 @@ export interface AddOnPageConfig {
 }
 
 // ─── Hero (stays dark — brand-signature dramatic opener) ─────────────────────
-const HeroSection = ({ badge, headline, subline, heroImage, heroImageRounded }: AddOnPageConfig["hero"]) => {
+const HeroSection = ({ badge, headline, subline, heroImage, heroImageRounded, heroImageLarge }: AddOnPageConfig["hero"]) => {
   const { t } = useTranslation("common");
   return (
-  <section className="mesh-gradient min-h-[82vh] flex items-center section-padding pt-36 relative overflow-hidden">
+  <section className="mesh-gradient min-h-[82vh] flex items-center section-padding pt-48 relative overflow-hidden">
     <div className="absolute top-1/2 left-1/2 -translate-x-1/2 -translate-y-1/2 w-[700px] h-[500px] rounded-full bg-[#007DCF]/10 blur-[140px] pointer-events-none" />
     <div className="container-tight relative z-10 w-full">
-      <div className={`grid gap-14 items-center ${heroImage ? "lg:grid-cols-2" : ""}`}>
+      <div className={`grid gap-14 items-center ${heroImage ? heroImageLarge ? "lg:grid-cols-3" : "lg:grid-cols-2" : ""}`}>
         <motion.div
           initial={{ opacity: 0, y: 32 }}
           animate={{ opacity: 1, y: 0 }}
           transition={{ duration: 0.7, ease: [0.25, 0.1, 0.25, 1] }}
           className={heroImage ? "" : "text-center max-w-3xl mx-auto"}
         >
-          <span className="inline-block px-3 py-1 rounded-full bg-cyan-brand/15 text-cyan-brand text-xs font-bold uppercase tracking-widest mb-6">
+          <span className="inline-block px-3 py-1 rounded-full bg-cyan-brand/15 text-cyan-brand text-xs font-bold uppercase tracking-widest mb-3 mt-8">
             {badge}
           </span>
           <h1 className="text-4xl md:text-5xl lg:text-6xl font-black text-white leading-[1.15] mb-6">
@@ -124,7 +125,7 @@ const HeroSection = ({ badge, headline, subline, heroImage, heroImageRounded }: 
             initial={{ opacity: 0, y: 40 }}
             animate={{ opacity: 1, y: 0 }}
             transition={{ delay: 0.2, duration: 0.8, ease: [0.25, 0.1, 0.25, 1] }}
-            className="relative"
+            className={`relative ${heroImageLarge ? "lg:col-span-2" : ""}`}
           >
             <img src={heroImage} alt={badge} className={`w-full h-auto relative z-10 ${heroImageRounded ? "rounded-2xl" : ""}`} />
             <div className="absolute inset-0 -z-10 blur-3xl bg-[#007DCF]/20 scale-110" />
@@ -580,9 +581,15 @@ const useFaqSchema = (items: AddOnFaq[] | undefined) => {
 // ─── Template ────────────────────────────────────────────────────────────────
 interface AddOnPageTemplateProps {
   config: AddOnPageConfig;
+  hardwareSections?: {
+    afterTrust?: React.ReactNode;
+    beforeFeatures?: React.ReactNode;
+    beforeUseCases?: React.ReactNode;
+    beforePricing?: React.ReactNode;
+  };
 }
 
-const AddOnPageTemplate = ({ config }: AddOnPageTemplateProps) => {
+const AddOnPageTemplate = ({ config, hardwareSections }: AddOnPageTemplateProps) => {
   useSeoMeta({
     title: config.meta.title,
     description: config.meta.description,
@@ -601,14 +608,28 @@ const AddOnPageTemplate = ({ config }: AddOnPageTemplateProps) => {
       <GoogleReviewsGrid />
       <TrustedBrandsSection />
 
+      {/* Hardware Multicolor Section - direkt nach TrustedBrands */}
+      {hardwareSections?.afterTrust}
+
       <ProblemSolutionSection {...config.problemSolution} />
+
+      {/* Hardware Doublescreen Section - vor Features */}
+      {hardwareSections?.beforeFeatures}
+
       <FeaturesSection {...config.features} />
 
       {/* YouTube-Testimonial Slider */}
       <VideoTestimonialSection />
 
+      {/* Hardware Wallmount Section - vor UseCases */}
+      {hardwareSections?.beforeUseCases}
+
       <UseCasesSection {...config.useCases} />
       <TrustSection {...config.trust} />
+
+      {/* Hardware Outdoor Section - vor Pricing */}
+      {hardwareSections?.beforePricing}
+
       {config.pricing && <PricingSection {...config.pricing} />}
       {config.appDownload && <AppDownloadSection {...config.appDownload} />}
       <InternalLinksSection {...config.internalLinks} />

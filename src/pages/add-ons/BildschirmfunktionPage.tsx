@@ -5,7 +5,7 @@ import {
   Utensils, Pizza, Coffee,
 } from "lucide-react";
 import AddOnPageTemplate, { type AddOnPageConfig } from "@/components/addon/AddOnPageTemplate";
-import heroImage from "@/assets/addons/pickup-screen.jpeg";
+import heroImage from "@/assets/heroes/Hero - Pick Up Screen.png";
 
 const PROBLEM_ICONS = [AlertTriangle, FileText, Users, Clock];
 const SOLUTION_ICONS = [ChefHat, Bell, Timer, RefreshCw];
@@ -71,6 +71,7 @@ const BildschirmfunktionPage = () => {
       subline: t("hero.subline"),
       heroImage,
       heroImageRounded: true,
+      heroImageLarge: true,
     },
     problemSolution: {
       problem: { title: t("problem.title"), points: problemPoints },

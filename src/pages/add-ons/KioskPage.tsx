@@ -5,6 +5,7 @@ import {
   Pizza, Coffee, Utensils,
 } from "lucide-react";
 import AddOnPageTemplate, { type AddOnPageConfig } from "@/components/addon/AddOnPageTemplate";
+import HardwareSection from "@/components/addon/HardwareSection";
 import heroImage from "@/assets/addons/selfordering-terminals.png";
 
 const PROBLEM_ICONS = [Users, UserX, Timer, TrendingUp];
@@ -112,7 +113,15 @@ const KioskPage = () => {
 
   return (
     <div className={`transition-opacity duration-300 ${!ready ? "opacity-0" : "opacity-100"}`}>
-      <AddOnPageTemplate config={config} />
+      <AddOnPageTemplate
+        config={config}
+        hardwareSections={{
+          afterTrust: <HardwareSection variant="multicolor" />,
+          beforeFeatures: <HardwareSection variant="doublescreen" />,
+          beforeUseCases: <HardwareSection variant="wallmount" />,
+          beforePricing: <HardwareSection variant="outdoor" />,
+        }}
+      />
     </div>
   );
 };

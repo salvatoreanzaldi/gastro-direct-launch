@@ -33,8 +33,8 @@
     "items": [
       { "title": "Intuitive Touch ක්‍රියාකාරිත්වය", "description": "Large buttons, clear images, German and international visual language. Even elderly guests and children get through without help — no explanation needed." },
       { "title": "ස්වයංක්‍රීය Upselling", "description": "Per item store recommendations — size upgrade, sides, drinks, desserts. Automatically shown in order flow, demonstrably increasing basket by 20–30%." },
-      { "title": "Multilingual Menu", "description": "German, English, French, Italian, Turkish, Spanish and more — guest chooses language at start. Perfect for tourism, train stations, airports, city locations." },
-      { "title": "සියලු ගෙවීමේ ක්‍රම", "description": "Debit card, Visa, Mastercard, Apple Pay, Google Pay — at terminal. Cash module upgradeable. ZVT-compliant." },
+      { "title": "Multilingual Menu", "description": "German and English — guest chooses language at start. More languages coming in the next releases." },
+      { "title": "සියලු ගෙවීමේ ක්‍රම", "description": "Debit card, Visa, Mastercard, Apple Pay, Google Pay — at terminal. All payment methods automatically handled through Epit Pay. Cash module upgradeable." },
       { "title": "24/7 ක්‍රියාකාරිත්වය", "description": "For petrol stations, hotel lobbies or unmanned self-service: terminal takes orders round the clock, even when nobody is at counter." },
       { "title": "Live Sync POS සහ Kitchen සමඟ", "description": "Every order goes instantly to cloud POS and kitchen monitor. Pick-up screen calls order number. No double entry, no lost orders." }
     ]
@@ -45,7 +45,7 @@
     "items": [
       { "title": "Fast Food Chain Midday Rush", "story": "A burger concept in Berlin-Kreuzberg replaced two till positions with four self-ordering kiosks. Average wait fell from 8 to under 4 minutes — lunchtime revenue rose 28% without extra staff." },
       { "title": "Bakery with Takeaway", "story": "A bakery at Hamburg Central Station installed two kiosks. Quick takeaway customers order at terminal, staff focuses on consultation — +35% orders per hour." },
-      { "title": "Food Court with Multiple Concepts", "story": "An operator in a Munich shopping centre placed a kiosk in front of every stand. Guests order ahead, number appears on pick-up screen — counter became pure handover station, labour reduced by 1.5 FTE per shift." }
+      { "title": "Food Court with Multiple Concepts", "story": "An operator in a Munich shopping centre placed a kiosk in front of every stand. Guests order at the terminal and receive an order number right away. A large pick-up screen displays the order numbers as soon as the orders are ready — staff call out, guests collect. Counter became pure handover station, labour reduced by 1.5 FTE per shift." }
     ]
   },
   "trust": {
@@ -77,16 +77,15 @@
     "headline": "ස්වයං-ඇණවුම් Kiosk ගැන නිතර අසන ප්‍රශ්න",
     "sub": "Fast food, bakeries, food courts සහ franchise නිතර අසන ප්‍රශ්නවලට පිළිතුරු.",
     "items": [
-      { "q": "Kiosk කොපමණ වෙනවාද?", "a": "Depends on form factor, terminal count and modules. After free consultation we provide specific quote. Most fast food and bakeries pay back in 6–12 months." },
+      { "q": "Kiosk කොපමණ වෙනවාද?", "a": "Depends on form factor, terminal count and modules. After free consultation we provide specific quote. Payment can also be arranged in flexible instalments. Most fast food and bakeries pay back in 6–12 months." },
       { "q": "කුමන ව්‍යාපාරවලට kiosk වටිනවාද?", "a": "High order volume businesses with short dwell times: fast food, burger/pizza chains, bakeries, cafes, food courts, franchises. From 80–100 orders per day or regular peak queuing." },
       { "q": "කොපමණ kiosks?", "a": "One kiosk replaces roughly one till operator at peak. 60–80 seat restaurant: 2–3 terminals. Bakery with lunch: 1–2. Food court stand: 1 per concept." },
       { "q": "Form factors මොනවාද?", "a": "Counter (stand for counter, compact), freestanding (floor column, ideal entrance or centre island), wall-mounted (space-saving, bakeries). All with card reader, cash module optional." },
-      { "q": "Payment methods?", "a": "Debit, Visa, Mastercard, Amex, Apple Pay, Google Pay as standard. Cash module with change dispensing optional. ZVT standard, no vendor lock-in." },
+      { "q": "Payment methods?", "a": "Debit, Visa, Mastercard, Amex, Apple Pay, Google Pay as standard. All payment methods automatically handled through Epit Pay. Cash module with change dispensing optional." },
       { "q": "Upselling ක්‍රියා කරන ආකාරය?", "a": "Per item store recommendations in backoffice — larger fries, drink, dessert. Kiosk shows them automatically. Industry average increases basket 20–30% without staff selling." },
-      { "q": "Languages?", "a": "German, English, French, Italian, Spanish, Turkish as standard. Additional languages on request. Guest selects at start with one tap." },
+      { "q": "Languages?", "a": "Currently German and English. Additional languages coming in future releases. Guest selects at start with one tap." },
       { "q": "POS system ට connect?", "a": "If you use Gastro Master POS, kiosk is immediately ready. Orders land in cloud POS, kitchen monitor and pick-up screen. No separate setup needed." },
-      { "q": "Accessibility?", "a": "Yes. Large buttons, clear product images, simple language. Screen height adjustable (wheelchair mode). Voice output module on request." },
-      { "q": "Internet/power outage?", "a": "Brief internet outage: terminal continues offline, orders sync when connection returns. Power outage: display restarts automatically, reloads last state from cloud." }
+      { "q": "Internet/power outage?", "a": "Terminal requires stable internet connection. We recommend LAN cable connection to avoid short-term WiFi issues. Optional WiFi function also available. During power outage: display restarts automatically, reloads last state from cloud." }
     ]
   }
 }
