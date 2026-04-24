@@ -1,6 +1,7 @@
 import express from 'express';
 import cors from 'cors';
 import dotenv from 'dotenv';
+import nodemailer from 'nodemailer';
 import { Pinecone } from '@pinecone-database/pinecone';
 import { GoogleGenAI } from '@google/genai';
 
@@ -36,6 +37,70 @@ try {
 const EMBEDDING_MODEL = process.env.GEMINI_EMBEDDING_MODEL || 'gemini-embedding-2-preview';
 const CHAT_MODEL = process.env.GEMINI_CHAT_MODEL || 'gemini-2.0-flash';
 const INDEX_NAME = process.env.PINECONE_INDEX_NAME || 'antigravity';
+
+// ─── Contact Form Email ────────────────────────────────────────────────────
+
+app.post('/api/contact', async (req, res) => {
+  try {
+    const { name, restaurant, plz, phone, email, message, products } = req.body;
+
+    if (!name || !phone || !email || !message) {
+      return res.status(400).json({ error: 'Missing required fields' });
+    }
+
+    // Create transporter using environment variables
+    const transporter = nodemailer.createTransport({
+      host: process.env.SMTP_HOST,
+      port: process.env.SMTP_PORT || 587,
+      secure: process.env.SMTP_SECURE === 'true', // true for 465, false for other ports
+      auth: {
+        user: process.env.SMTP_USER,
+        pass: process.env.SMTP_PASSWORD,
+      },
+    });
+
+    // Construct email body
+    const emailBody = `
+Neue Kontaktanfrage von gastro-master.de
+
+━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━
+KONTAKTDATEN
+━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━
+Name: ${name}
+E-Mail: ${email}
+Telefon: ${phone}
+Unternehmen: ${restaurant || '-'}
+PLZ: ${plz || '-'}
+
+━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━
+NACHRICHT
+━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━
+${message}
+
+━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━
+PRODUKTINTERESSE
+━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━
+${products && products.length > 0 ? products.join(', ') : 'Keine Angabe'}
+    `.trim();
+
+    // Send email
+    const mailOptions = {
+      from: process.env.SMTP_FROM || 'noreply@gastro-master.de',
+      to: 'info@gastro-master.de',
+      subject: `Kontaktanfrage: ${name}`,
+      text: emailBody,
+      replyTo: email,
+    };
+
+    await transporter.sendMail(mailOptions);
+
+    console.log(`✅ Contact email sent from ${email}`);
+    res.json({ ok: true, message: 'Email sent successfully' });
+  } catch (err) {
+    console.error('Contact Email Error:', err.message);
+    res.status(500).json({ error: 'Failed to send email. Please try again later.' });
+  }
+});
 
 // ─── Health / connection check ─────────────────────────────────────────────
 

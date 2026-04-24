@@ -31,6 +31,8 @@ const Kontakt = () => {
     recaptcha: false,
   });
   const [activeSlide, setActiveSlide] = useState(0);
+  const [isSubmitting, setIsSubmitting] = useState(false);
+  const [submitMessage, setSubmitMessage] = useState("");
 
   useEffect(() => {
     const timer = setInterval(() => {
@@ -48,10 +50,35 @@ const Kontakt = () => {
     }));
   };
 
-  const handleSubmit = (e: React.FormEvent) => {
+  const handleSubmit = async (e: React.FormEvent) => {
     e.preventDefault();
-    console.log("Form submitted:", form);
-    alert(t("contact.success"));
+    setIsSubmitting(true);
+    setSubmitMessage("");
+
+    try {
+      const response = await fetch("/api/contact", {
+        method: "POST",
+        headers: { "Content-Type": "application/json" },
+        body: JSON.stringify(form),
+      });
+
+      if (!response.ok) throw new Error("Failed to send email");
+
+      setForm({
+        name: "", restaurant: "", plz: "", phone: "", email: "", message: "",
+        products: [],
+        datenschutz: false,
+        recaptcha: false,
+      });
+      setSubmitMessage("success");
+      setTimeout(() => setSubmitMessage(""), 5000);
+    } catch (error) {
+      console.error("Form error:", error);
+      setSubmitMessage("error");
+      setTimeout(() => setSubmitMessage(""), 5000);
+    } finally {
+      setIsSubmitting(false);
+    }
   };
 
   return (
@@ -220,10 +247,16 @@ const Kontakt = () => {
                   </label>
                 </div>
 
-                <button type="submit"
-                  className="w-full mt-5 bg-gradient-amber text-white font-bold px-8 py-3.5 rounded-xl text-base hover:scale-[1.01] transition-transform shadow-lg shadow-[#ED8400]/20 flex items-center justify-center gap-2">
-                  {t("contact.submitBtn")}
+                <button type="submit" disabled={isSubmitting}
+                  className="w-full mt-5 bg-gradient-amber text-white font-bold px-8 py-3.5 rounded-xl text-base hover:scale-[1.01] transition-transform shadow-lg shadow-[#ED8400]/20 flex items-center justify-center gap-2 disabled:opacity-60 disabled:cursor-not-allowed">
+                  {isSubmitting ? t("contact.submitting") : t("contact.submitBtn")}
                 </button>
+                {submitMessage === "success" && (
+                  <p className="text-green-600 text-sm text-center mt-3 font-medium">✓ {t("contact.success")}</p>
+                )}
+                {submitMessage === "error" && (
+                  <p className="text-red-600 text-sm text-center mt-3 font-medium">✗ {t("contact.error")}</p>
+                )}
                 <p className="text-gray-400 text-xs text-center mt-3">{t("contact.required")}</p>
               </form>
             </motion.div>
