@@ -116,12 +116,12 @@ const PricingSection = () => {
                 transition={{ delay: i * 0.08 }}
                 className={`relative rounded-2xl p-6 border flex flex-col ${
                   isHighlight
-                    ? "bg-gradient-navy text-primary-foreground border-cyan-brand/30 shadow-xl shadow-cyan-brand/10 lg:scale-105 z-10"
+                    ? "bg-gradient-navy text-primary-foreground border-cyan-brand/60 shadow-xl shadow-cyan-brand/25 lg:scale-105 z-10"
                     : "bg-surface-light border-border"
                 }`}
               >
                 {isHighlight && (
-                  <div className="absolute -top-3 left-1/2 -translate-x-1/2 bg-gradient-amber text-primary text-[11px] font-bold px-3 py-1 rounded-full whitespace-nowrap">
+                  <div className="absolute -top-4 left-1/2 -translate-x-1/2 bg-gradient-amber text-primary text-sm font-bold px-4 py-1.5 rounded-full whitespace-nowrap">
                     {t("pricing.badgePopular")}
                   </div>
                 )}
@@ -173,9 +173,10 @@ const PricingSection = () => {
                   onClick={scrollToForm}
                   className={`w-full py-3 rounded-xl text-sm font-bold transition-all ${
                     isHighlight
-                      ? "bg-gradient-amber text-primary hover:scale-[1.02]"
+                      ? "bg-gradient-amber !text-white hover:scale-[1.02]"
                       : "bg-primary text-primary-foreground hover:opacity-90"
                   }`}
+                  style={isHighlight ? { color: "#ffffff" } : undefined}
                 >
                   {hasPrice ? t("pricing.ctaPrimary") : t("pricing.ctaSecondary")}
                 </button>

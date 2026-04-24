@@ -260,7 +260,7 @@ const TargetGroupSection = ({ getSolutionHref, ctaLabel }: TargetGroupSectionPro
                       ? getSolutionHref(activeGroup, showSubs ? activeSub : null)
                       : null;
                     const label = ctaLabel ?? t("target.cta");
-                    const cls = "bg-gradient-amber text-primary font-bold px-6 py-3 rounded-xl text-sm hover:scale-[1.02] transition-transform shadow-lg inline-flex items-center gap-2 self-start";
+                    const cls = "bg-gradient-amber text-white font-bold px-6 py-3 rounded-xl text-sm hover:scale-[1.02] transition-transform shadow-lg inline-flex items-center gap-2 self-start";
                     return (
                       <div className="flex flex-col gap-3 items-start">
                         {href ? (

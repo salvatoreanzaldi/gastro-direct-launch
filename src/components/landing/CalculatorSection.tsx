@@ -134,7 +134,7 @@ const CalculatorSection = () => {
             </p>
             <button
               onClick={scrollToForm}
-              className="bg-gradient-amber text-primary font-bold px-6 py-3 md:px-8 md:py-4 rounded-xl text-base md:text-lg hover:scale-[1.02] transition-transform shadow-lg inline-flex items-center gap-2"
+              className="bg-gradient-amber text-white font-bold px-6 py-3 md:px-8 md:py-4 rounded-xl text-base md:text-lg hover:scale-[1.02] transition-transform shadow-lg inline-flex items-center gap-2"
             >
               {t("calculator.cta")}
               <ArrowRight className="w-5 h-5" />

@@ -22,7 +22,7 @@ const ProcessSection = () => {
               {t("process.sub")}
             </p>
             <button onClick={scrollToForm}
-              className="bg-gradient-amber text-primary font-bold px-7 py-3.5 rounded-xl text-base hover:scale-[1.02] transition-transform shadow-lg shadow-amber/20 inline-flex items-center gap-2">
+              className="bg-gradient-amber text-white font-bold px-7 py-3.5 rounded-xl text-base hover:scale-[1.02] transition-transform shadow-lg shadow-amber/20 inline-flex items-center gap-2">
               {t("process.cta")}
               <Rocket className="w-5 h-5" />
             </button>

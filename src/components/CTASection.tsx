@@ -126,19 +126,19 @@ export const CTASection = ({ productPath, text }: CTASectionProps) => {
             whileInView={{ opacity: 1, y: 0 }}
             viewport={{ once: true }}
             transition={{ delay: 0.3, duration: 0.6 }}
-            className="grid grid-cols-3 gap-1.5 w-full max-w-xs justify-items-center"
+            className="flex flex-wrap justify-center gap-2 w-full"
           >
             {languages.map(lang => (
               <div
                 key={lang.code}
-                className="flex items-center gap-1.5 px-3 py-1.5 rounded-full bg-[#0A264A]/[0.06] dark:bg-white/[0.06] text-[#0A264A]/60 dark:text-white/60"
+                className="flex items-center gap-1 px-4 py-2 rounded-full bg-[#0A264A]/[0.06] dark:bg-white/[0.06] text-[#0A264A]/60 dark:text-white/60"
               >
                 <img
                   src={lang.svg}
                   alt={lang.label}
-                  className="w-4 h-4 object-contain"
+                  className="w-5 h-5 object-contain"
                 />
-                <span className="text-xs font-semibold">{lang.label}</span>
+                <span className="text-sm font-semibold">{lang.label}</span>
               </div>
             ))}
           </motion.div>
@@ -146,7 +146,7 @@ export const CTASection = ({ productPath, text }: CTASectionProps) => {
           {/* CTA Button - Statisch */}
           <button
             onClick={() => { window.location.href = lp("/kontakt"); }}
-            className="w-full max-w-xs bg-gradient-amber text-[#0A264A] font-bold px-8 py-4 rounded-xl inline-flex items-center justify-center gap-2 shadow-lg shadow-[#ED8400]/20 hover:shadow-[#ED8400]/40 transition-shadow"
+            className="w-full max-w-xs bg-gradient-amber text-white font-bold px-8 py-4 rounded-xl inline-flex items-center justify-center gap-2 shadow-lg shadow-[#ED8400]/20 hover:shadow-[#ED8400]/40 transition-shadow"
           >
             Kostenlose Beratung
             <ArrowRight className="w-5 h-5" />
