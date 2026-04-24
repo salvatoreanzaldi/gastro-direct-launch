@@ -43,7 +43,7 @@ const ProductShowcaseAccordionSection = () => {
       title: "Kiosk",
       imageUrl: productKiosk,
       ctaText: "Mehr erfahren",
-      ctaUrl: "/produkte/pakete/kassensystem",
+      ctaUrl: "/produkte/add-ons/kiosk",
     },
   ];
 
@@ -64,8 +64,46 @@ const ProductShowcaseAccordionSection = () => {
           </h2>
         </div>
 
-        {/* Product Accordion - Horizontal Layout */}
-        <div className="flex items-center justify-center overflow-hidden -mx-48">
+        {/* Mobile Card Layout - 1 column, stacked */}
+        <div className="md:hidden space-y-6">
+          {products.map((product) => (
+            <div
+              key={product.id}
+              className="relative rounded-2xl overflow-hidden bg-muted h-[280px] flex flex-col items-center justify-end"
+            >
+              <img
+                src={product.imageUrl}
+                alt={product.title}
+                loading="lazy"
+                className="absolute inset-0 w-full h-full object-contain bg-white"
+                onError={(e) => {
+                  e.currentTarget.onerror = null;
+                  e.currentTarget.src =
+                    "https://placehold.co/1280x720/2d3748/ffffff?text=Product";
+                }}
+              />
+              <div className="absolute inset-0 bg-black/20"></div>
+              <div className="relative z-10 flex flex-col items-center justify-center text-center px-4 pb-6 gap-3">
+                <span
+                  className="font-black text-3xl text-white block"
+                >
+                  {product.title}
+                </span>
+                <a
+                  href={product.ctaUrl}
+                  className="px-6 py-2 rounded-full hover:opacity-90 transition-opacity duration-300 text-sm font-black text-white flex items-center gap-2"
+                  style={{ backgroundColor: "#f99e2c" }}
+                >
+                  {product.ctaText}
+                  <span>→</span>
+                </a>
+              </div>
+            </div>
+          ))}
+        </div>
+
+        {/* Desktop Accordion Layout - Horizontal */}
+        <div className="hidden md:flex items-center justify-center overflow-hidden -mx-48">
           <div className="flex gap-3 items-center justify-center w-full px-48">
             {products.map((product, index) => (
               <div
@@ -77,6 +115,15 @@ const ProductShowcaseAccordionSection = () => {
                   ${index === activeIndex ? "w-[420px] md:w-[620px] lg:w-[780px]" : "w-[120px] md:w-[150px]"}
                 `}
                 onMouseEnter={() => handleItemHover(index)}
+                onClick={() => {
+                  if (index === activeIndex) {
+                    window.location.href = product.ctaUrl;
+                  } else {
+                    setActiveIndex(index);
+                  }
+                }}
+                role="link"
+                aria-label={`${product.title} – ${product.ctaText}`}
               >
                 {/* Product Image - Fixed size, crops when collapsed */}
                 <img

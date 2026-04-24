@@ -10,7 +10,21 @@
     "faq": "FAQ",
     "cta": "Kostenlose Beratung",
     "alleProdukte": "Alle Produkte",
-    "prodItems": [
+    "prodCategories": [
+      {
+        "label": "Pakete",
+        "desc": "Shop, App, Webseite & Kasse"
+      },
+      {
+        "label": "Add-Ons",
+        "desc": "Ergänzungen für dein Setup"
+      },
+      {
+        "label": "Hardware",
+        "desc": "Geräte, Drucker & Displays"
+      }
+    ],
+    "prodSubPakete": [
       {
         "label": "Online Shop",
         "desc": "0% Provision, eigene Domain"
@@ -26,10 +40,32 @@
       {
         "label": "Kassensystem",
         "desc": "TSE-konform, Cloud-POS"
-      },
+      }
+    ],
+    "prodSubAddons": [
       {
         "label": "Transaktions-Umlage",
         "desc": "Gebühren transparent weitergeben"
+      },
+      {
+        "label": "QR-Code Flyer",
+        "desc": "Bestell-Flyer für Tisch & Tresen"
+      },
+      {
+        "label": "Fahrer-App GPS",
+        "desc": "Lieferungen live tracken"
+      },
+      {
+        "label": "QR-Code Tischsystem",
+        "desc": "Bestellen direkt am Tisch"
+      },
+      {
+        "label": "Bildschirmfunktion",
+        "desc": "Küchen- & Pickup-Display"
+      },
+      {
+        "label": "Kiosk",
+        "desc": "Self-Order-Terminal"
       }
     ],
     "loesItems": [
@@ -67,7 +103,14 @@
     "badge": "Das Gastro-System der nächsten Generation",
     "title1": "Dein Restaurant.",
     "title2": "Ohne Provision.",
-    "cyclingWords": ["Deine Regeln.", "Dein Gewinn.", "Dein Umsatz.", "Deine Freiheit.", "Dein Erfolg.", "Deine Zukunft."],
+    "cyclingWords": [
+      "Deine Regeln.",
+      "Dein Gewinn.",
+      "Dein Umsatz.",
+      "Deine Freiheit.",
+      "Dein Erfolg.",
+      "Deine Zukunft."
+    ],
     "subPrefix": "Gastro Master gibt dir die volle Kontrolle —",
     "linkWebshop": "digitales Bestellsystem",
     "linkKasse": "Kasse",
@@ -427,10 +470,41 @@
     "yearlyNote": "Monatlich abgerechnet · 12 Monate Laufzeit",
     "monthlyNote": "3 Monate Kündigungsfrist",
     "slimPlans": [
-      { "id": "webseite", "name": "Webseite", "tagline": "Professionelle Online-Präsenz", "priceMonthly": "49", "priceYearly": "49", "duration": "7–10 Tage", "monthlyNote": "Mindestvertragslaufzeit 12 Monate", "yearlyNote": "Mindestvertragslaufzeit 12 Monate" },
-      { "id": "basic", "name": "Starter", "tagline": "Reiner Webshop", "priceMonthly": "79", "priceYearly": "69", "duration": "10–14 Tage" },
-      { "id": "standard", "name": "Business", "tagline": "Webshop + App", "priceMonthly": "149", "priceYearly": "129", "duration": "2–3 Wochen", "popular": true },
-      { "id": "enterprise", "name": "Enterprise", "tagline": "Franchise / Mehr-Standorte", "priceMonthly": null, "priceYearly": null, "duration": "Nach Projektumfang" }
+      {
+        "id": "webseite",
+        "name": "Webseite",
+        "tagline": "Professionelle Online-Präsenz",
+        "priceMonthly": "49",
+        "priceYearly": "49",
+        "duration": "7–10 Tage",
+        "monthlyNote": "Mindestvertragslaufzeit 12 Monate",
+        "yearlyNote": "Mindestvertragslaufzeit 12 Monate"
+      },
+      {
+        "id": "basic",
+        "name": "Starter",
+        "tagline": "Reiner Webshop",
+        "priceMonthly": "79",
+        "priceYearly": "69",
+        "duration": "10–14 Tage"
+      },
+      {
+        "id": "standard",
+        "name": "Business",
+        "tagline": "Webshop + App",
+        "priceMonthly": "149",
+        "priceYearly": "129",
+        "duration": "2–3 Wochen",
+        "popular": true
+      },
+      {
+        "id": "enterprise",
+        "name": "Enterprise",
+        "tagline": "Franchise / Mehr-Standorte",
+        "priceMonthly": null,
+        "priceYearly": null,
+        "duration": "Nach Projektumfang"
+      }
     ],
     "packageFeatures": {
       "beginner": [
@@ -581,9 +655,25 @@
     ],
     "cta": "Kostenlose Beratung anfragen",
     "success": "Vielen Dank! Wir melden uns bei dir.",
-    "teamRoles": ["CEO & Gründer", "Sales & Onboarding", "Technik & Support", "Kundenbetreuung"],
-    "languageLabels": ["Deutsch", "Englisch", "Italienisch", "Persisch", "Russisch", "Singhalesisch"],
-    "promises": ["Du erhältst innerhalb von 12 Stunden eine Rückmeldung.", "Unser Team erarbeitet mit dir eine geeignete Strategie für deine Situation.", "Deine Informationen werden ausschließlich für die Kontaktaufnahme verwendet."],
+    "teamRoles": [
+      "CEO & Gründer",
+      "Sales & Onboarding",
+      "Technik & Support",
+      "Kundenbetreuung"
+    ],
+    "languageLabels": [
+      "Deutsch",
+      "Englisch",
+      "Italienisch",
+      "Persisch",
+      "Russisch",
+      "Singhalesisch"
+    ],
+    "promises": [
+      "Du erhältst innerhalb von 12 Stunden eine Rückmeldung.",
+      "Unser Team erarbeitet mit dir eine geeignete Strategie für deine Situation.",
+      "Deine Informationen werden ausschließlich für die Kontaktaufnahme verwendet."
+    ],
     "seoTitle": "Kontakt — Kostenlose Beratung für Gastronomen | Gastro Master",
     "seoDesc": "Gastro Master kontaktieren – kostenlose Beratung für Gastronomen. Webshop, App, Kassensystem und Webseite für die Gastronomie. Wir melden uns innerhalb von 24 Stunden.",
     "heroTitle": "Buche jetzt dein kostenloses Erstgespräch",
@@ -594,6 +684,8 @@
     "privacySuffix": "zu. *",
     "recaptchaLabel": "Ich bin kein Roboter (reCAPTCHA). *",
     "submitBtn": "Ja, ich möchte kontaktiert werden",
+    "submitting": "Wird gesendet...",
+    "error": "Es ist ein Fehler aufgetreten. Bitte versuche es später erneut.",
     "required": "* Pflichtfeld",
     "languageTitle": "Wir sprechen Ihre Sprache",
     "promiseTitle": "Unser Versprechen"
@@ -621,7 +713,14 @@
     "langTitle": "Beratung auf Augenhöhe. In deiner Sprache.",
     "langSub": "Unsere Beratung ist persönlich, direkt und auch sprachlich nah an deinem Alltag. Wir sprechen deine Sprache – damit du dich von Anfang an verstanden fühlst.",
     "linkedin": "LinkedIn Profil",
-    "languages": ["Deutsch", "Englisch", "Italienisch", "Persisch", "Russisch", "Singhalesisch"],
+    "languages": [
+      "Deutsch",
+      "Englisch",
+      "Italienisch",
+      "Persisch",
+      "Russisch",
+      "Singhalesisch"
+    ],
     "people": {
       "rene": {
         "role": "Gründer & CEO",

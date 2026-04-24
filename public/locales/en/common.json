@@ -10,7 +10,21 @@
     "faq": "FAQ",
     "cta": "Get Free Consultation",
     "alleProdukte": "All Products",
-    "prodItems": [
+    "prodCategories": [
+      {
+        "label": "Packages",
+        "desc": "Shop, App, Website & POS"
+      },
+      {
+        "label": "Add-Ons",
+        "desc": "Extensions for your setup"
+      },
+      {
+        "label": "Hardware",
+        "desc": "Devices, printers & displays"
+      }
+    ],
+    "prodSubPakete": [
       {
         "label": "Online Shop",
         "desc": "0% commission, own domain"
@@ -26,10 +40,32 @@
       {
         "label": "POS System",
         "desc": "TSE-compliant, cloud POS"
-      },
+      }
+    ],
+    "prodSubAddons": [
       {
         "label": "Transaction Fee",
         "desc": "Pass fees to customers"
+      },
+      {
+        "label": "QR-Code Flyer",
+        "desc": "Order flyers for tables"
+      },
+      {
+        "label": "Driver App GPS",
+        "desc": "Track deliveries live"
+      },
+      {
+        "label": "QR Table System",
+        "desc": "Order straight from the table"
+      },
+      {
+        "label": "Kitchen Display",
+        "desc": "Kitchen & pickup screens"
+      },
+      {
+        "label": "Kiosk",
+        "desc": "Self-order terminal"
       }
     ],
     "loesItems": [
@@ -67,7 +103,14 @@
     "badge": "The Next-Gen Restaurant System",
     "title1": "Your Restaurant.",
     "title2": "Zero Commission.",
-    "cyclingWords": ["Your Rules.", "Your Profit.", "Your Revenue.", "Your Freedom.", "Your Success.", "Your Future."],
+    "cyclingWords": [
+      "Your Rules.",
+      "Your Profit.",
+      "Your Revenue.",
+      "Your Freedom.",
+      "Your Success.",
+      "Your Future."
+    ],
     "subPrefix": "Gastro Master gives you full control —",
     "linkWebshop": "online ordering system",
     "linkKasse": "POS",
@@ -400,10 +443,41 @@
     "yearlyNote": "Billed monthly · 12-month term",
     "monthlyNote": "3-month notice period",
     "slimPlans": [
-      { "id": "webseite", "name": "Website", "tagline": "Professional Online Presence", "priceMonthly": "49", "priceYearly": "49", "duration": "7–10 days", "monthlyNote": "Minimum contract 12 months", "yearlyNote": "Minimum contract 12 months" },
-      { "id": "basic", "name": "Starter", "tagline": "Online Shop Only", "priceMonthly": "79", "priceYearly": "69", "duration": "10–14 days" },
-      { "id": "standard", "name": "Business", "tagline": "Shop + App", "priceMonthly": "149", "priceYearly": "129", "duration": "2–3 weeks", "popular": true },
-      { "id": "enterprise", "name": "Enterprise", "tagline": "Franchise / Multi-Location", "priceMonthly": null, "priceYearly": null, "duration": "By project scope" }
+      {
+        "id": "webseite",
+        "name": "Website",
+        "tagline": "Professional Online Presence",
+        "priceMonthly": "49",
+        "priceYearly": "49",
+        "duration": "7–10 days",
+        "monthlyNote": "Minimum contract 12 months",
+        "yearlyNote": "Minimum contract 12 months"
+      },
+      {
+        "id": "basic",
+        "name": "Starter",
+        "tagline": "Online Shop Only",
+        "priceMonthly": "79",
+        "priceYearly": "69",
+        "duration": "10–14 days"
+      },
+      {
+        "id": "standard",
+        "name": "Business",
+        "tagline": "Shop + App",
+        "priceMonthly": "149",
+        "priceYearly": "129",
+        "duration": "2–3 weeks",
+        "popular": true
+      },
+      {
+        "id": "enterprise",
+        "name": "Enterprise",
+        "tagline": "Franchise / Multi-Location",
+        "priceMonthly": null,
+        "priceYearly": null,
+        "duration": "By project scope"
+      }
     ],
     "packageFeatures": {
       "beginner": [
@@ -554,9 +628,25 @@
     ],
     "cta": "Request Free Consultation",
     "success": "Thank you! We'll be in touch shortly.",
-    "teamRoles": ["CEO & Founder", "Sales & Onboarding", "Tech & Support", "Customer Success"],
-    "languageLabels": ["German", "English", "Italian", "Persian", "Russian", "Sinhalese"],
-    "promises": ["You'll receive a response within 12 hours.", "Our team will develop a suitable strategy for your situation.", "Your information will only be used for contacting you."],
+    "teamRoles": [
+      "CEO & Founder",
+      "Sales & Onboarding",
+      "Tech & Support",
+      "Customer Success"
+    ],
+    "languageLabels": [
+      "German",
+      "English",
+      "Italian",
+      "Persian",
+      "Russian",
+      "Sinhalese"
+    ],
+    "promises": [
+      "You'll receive a response within 12 hours.",
+      "Our team will develop a suitable strategy for your situation.",
+      "Your information will only be used for contacting you."
+    ],
     "seoTitle": "Contact — Free Consultation for Restaurateurs | Gastro Master",
     "seoDesc": "Contact Gastro Master — free consultation for restaurateurs. Online shop, app, POS system and website for gastronomy. We'll get back to you within 24 hours.",
     "heroTitle": "Book your free initial consultation now",
@@ -567,6 +657,8 @@
     "privacySuffix": ". *",
     "recaptchaLabel": "I'm not a robot (reCAPTCHA). *",
     "submitBtn": "Yes, I'd like to be contacted",
+    "submitting": "Sending...",
+    "error": "An error occurred. Please try again later.",
     "required": "* Required field",
     "languageTitle": "We speak your language",
     "promiseTitle": "Our Promise"
@@ -594,7 +686,14 @@
     "langTitle": "Consulting That Speaks Your Language.",
     "langSub": "Our consulting is personal, direct and linguistically close to your everyday life. We speak your language — so you feel understood from day one.",
     "linkedin": "LinkedIn Profile",
-    "languages": ["German", "English", "Italian", "Persian", "Russian", "Sinhalese"],
+    "languages": [
+      "German",
+      "English",
+      "Italian",
+      "Persian",
+      "Russian",
+      "Sinhalese"
+    ],
     "people": {
       "rene": {
         "role": "Founder & CEO",

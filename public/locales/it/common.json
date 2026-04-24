@@ -10,7 +10,21 @@
     "faq": "FAQ",
     "cta": "Consulenza gratuita",
     "alleProdukte": "Tutti i prodotti",
-    "prodItems": [
+    "prodCategories": [
+      {
+        "label": "Pacchetti",
+        "desc": "Shop, App, Sito & Cassa"
+      },
+      {
+        "label": "Componenti aggiuntivi",
+        "desc": "Estensioni per il tuo setup"
+      },
+      {
+        "label": "Hardware",
+        "desc": "Dispositivi, stampanti & display"
+      }
+    ],
+    "prodSubPakete": [
       {
         "label": "Shop online",
         "desc": "0% commissioni, dominio proprio"
@@ -26,10 +40,32 @@
       {
         "label": "Sistema di cassa",
         "desc": "Conforme TSE, cloud POS"
-      },
+      }
+    ],
+    "prodSubAddons": [
       {
         "label": "Addebito transazioni",
         "desc": "Commissioni trasparenti al cliente"
+      },
+      {
+        "label": "Volantino QR-Code",
+        "desc": "Volantini d'ordine al tavolo"
+      },
+      {
+        "label": "App autista GPS",
+        "desc": "Traccia le consegne in diretta"
+      },
+      {
+        "label": "Sistema QR al tavolo",
+        "desc": "Ordini direttamente al tavolo"
+      },
+      {
+        "label": "Display cucina",
+        "desc": "Schermi cucina & pickup"
+      },
+      {
+        "label": "Chiosco",
+        "desc": "Terminale self-order"
       }
     ],
     "loesItems": [
@@ -67,7 +103,14 @@
     "badge": "Il sistema gastronomico di nuova generazione",
     "title1": "Il Suo ristorante.",
     "title2": "Zero commissioni.",
-    "cyclingWords": ["Le Sue regole.", "Il Suo profitto.", "Il Suo fatturato.", "La Sua libertà.", "Il Suo successo.", "Il Suo futuro."],
+    "cyclingWords": [
+      "Le Sue regole.",
+      "Il Suo profitto.",
+      "Il Suo fatturato.",
+      "La Sua libertà.",
+      "Il Suo successo.",
+      "Il Suo futuro."
+    ],
     "subPrefix": "Gastro Master Le offre il pieno controllo —",
     "linkWebshop": "sistema di ordinazione digitale",
     "linkKasse": "cassa",
@@ -400,10 +443,41 @@
     "yearlyNote": "Fatturazione mensile · durata 12 mesi",
     "monthlyNote": "3 mesi di preavviso",
     "slimPlans": [
-      { "id": "webseite", "name": "Sito web", "tagline": "Presenza online professionale", "priceMonthly": "49", "priceYearly": "49", "duration": "7–10 giorni", "monthlyNote": "Durata minima contratto 12 mesi", "yearlyNote": "Durata minima contratto 12 mesi" },
-      { "id": "basic", "name": "Starter", "tagline": "Solo webshop", "priceMonthly": "79", "priceYearly": "69", "duration": "10–14 giorni" },
-      { "id": "standard", "name": "Business", "tagline": "Webshop + App", "priceMonthly": "149", "priceYearly": "129", "duration": "2–3 settimane", "popular": true },
-      { "id": "enterprise", "name": "Enterprise", "tagline": "Franchise / Multi-sede", "priceMonthly": null, "priceYearly": null, "duration": "In base al progetto" }
+      {
+        "id": "webseite",
+        "name": "Sito web",
+        "tagline": "Presenza online professionale",
+        "priceMonthly": "49",
+        "priceYearly": "49",
+        "duration": "7–10 giorni",
+        "monthlyNote": "Durata minima contratto 12 mesi",
+        "yearlyNote": "Durata minima contratto 12 mesi"
+      },
+      {
+        "id": "basic",
+        "name": "Starter",
+        "tagline": "Solo webshop",
+        "priceMonthly": "79",
+        "priceYearly": "69",
+        "duration": "10–14 giorni"
+      },
+      {
+        "id": "standard",
+        "name": "Business",
+        "tagline": "Webshop + App",
+        "priceMonthly": "149",
+        "priceYearly": "129",
+        "duration": "2–3 settimane",
+        "popular": true
+      },
+      {
+        "id": "enterprise",
+        "name": "Enterprise",
+        "tagline": "Franchise / Multi-sede",
+        "priceMonthly": null,
+        "priceYearly": null,
+        "duration": "In base al progetto"
+      }
     ],
     "packageFeatures": {
       "beginner": [
@@ -547,9 +621,25 @@
     ],
     "cta": "Richieda una consulenza gratuita",
     "success": "Grazie! La contatteremo a breve.",
-    "teamRoles": ["CEO & Fondatore", "Sales & Onboarding", "Tecnica & Supporto", "Assistenza clienti"],
-    "languageLabels": ["Tedesco", "Inglese", "Italiano", "Persiano", "Russo", "Singalese"],
-    "promises": ["Riceverà una risposta entro 12 ore.", "Il nostro team elaborerà una strategia adatta alla Sua situazione.", "Le Sue informazioni verranno utilizzate esclusivamente per contattarLa."],
+    "teamRoles": [
+      "CEO & Fondatore",
+      "Sales & Onboarding",
+      "Tecnica & Supporto",
+      "Assistenza clienti"
+    ],
+    "languageLabels": [
+      "Tedesco",
+      "Inglese",
+      "Italiano",
+      "Persiano",
+      "Russo",
+      "Singalese"
+    ],
+    "promises": [
+      "Riceverà una risposta entro 12 ore.",
+      "Il nostro team elaborerà una strategia adatta alla Sua situazione.",
+      "Le Sue informazioni verranno utilizzate esclusivamente per contattarLa."
+    ],
     "seoTitle": "Contatti — Consulenza gratuita per ristoratori | Gastro Master",
     "seoDesc": "Contatti Gastro Master — consulenza gratuita per ristoratori. Shop online, app, sistema di cassa e sito web per la ristorazione. Le rispondiamo entro 24 ore.",
     "heroTitle": "Prenoti ora la Sua consulenza iniziale gratuita",
@@ -560,6 +650,8 @@
     "privacySuffix": ". *",
     "recaptchaLabel": "Non sono un robot (reCAPTCHA). *",
     "submitBtn": "Sì, desidero essere contattato",
+    "submitting": "Invio in corso...",
+    "error": "Si è verificato un errore. Riprova più tardi.",
     "required": "* Campo obbligatorio",
     "languageTitle": "Parliamo la Sua lingua",
     "promiseTitle": "La nostra promessa"
@@ -587,7 +679,14 @@
     "langTitle": "Consulenza nella Sua lingua.",
     "langSub": "La nostra consulenza è personale, diretta e anche linguisticamente vicina alla Sua quotidianità. Parliamo la Sua lingua — così si sente compreso fin dal primo giorno.",
     "linkedin": "Profilo LinkedIn",
-    "languages": ["Tedesco", "Inglese", "Italiano", "Persiano", "Russo", "Singalese"],
+    "languages": [
+      "Tedesco",
+      "Inglese",
+      "Italiano",
+      "Persiano",
+      "Russo",
+      "Singalese"
+    ],
     "people": {
       "rene": {
         "role": "Fondatore & CEO",

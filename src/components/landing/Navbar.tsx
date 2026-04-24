@@ -4,9 +4,10 @@ import { toast } from "sonner";
 import { buildLocalizedPath, ROUTE_BY_LANG_SLUG, type LangCode } from "@/config/routes";
 import { extractLangFromPath } from "@/components/LanguageLayout";
 import {
-  ArrowRight, Menu, X, Moon, Sun, ChevronDown,
+  ArrowRight, Menu, X, Moon, Sun, ChevronDown, ChevronRight,
   ShoppingCart, Smartphone, Globe, Monitor, Percent,
   Truck, Store, Coffee, UtensilsCrossed, Building2, Ghost,
+  Package, Puzzle, Server, Printer, QrCode, Hand,
 } from "lucide-react";
 import logo from "@/assets/logos/logo-gastro-master-round.png";
 import { useTranslation } from "react-i18next";
@@ -18,12 +19,27 @@ import PersischIcon from "@/assets/icons/Persisch.svg";
 import RussischIcon from "@/assets/icons/Russisch.svg";
 import SinghalesischIcon from "@/assets/icons/Singhalesisch.svg";
 
-const prodRoutes = [
-  { to: "/produkte/pakete/online-bestellshop",       icon: ShoppingCart },
-  { to: "/produkte/pakete/bestell-app",              icon: Smartphone   },
-  { to: "/produkte/pakete/webseite",                 icon: Globe        },
-  { to: "/produkte/pakete/kassensystem",             icon: Monitor      },
-  { to: "/produkte/add-ons/transaktionsumlage",      icon: Percent      },
+const paketeRoutes = [
+  { to: "/produkte/pakete/online-bestellshop", icon: ShoppingCart },
+  { to: "/produkte/pakete/bestell-app",        icon: Smartphone   },
+  { to: "/produkte/pakete/webseite",           icon: Globe        },
+  { to: "/produkte/pakete/kassensystem",       icon: Monitor      },
+];
+
+const addonsRoutes = [
+  { to: "/produkte/add-ons/transaktionsumlage",    icon: Percent },
+  { to: "/produkte/add-ons/qr-code-flyer",         icon: Printer },
+  { to: "/produkte/add-ons/fahrer-app-gps",        icon: Truck   },
+  { to: "/produkte/add-ons/qr-code-tischsystem",   icon: QrCode  },
+  { to: "/produkte/add-ons/bildschirmfunktion",    icon: Monitor },
+  { to: "/produkte/add-ons/kiosk",                 icon: Hand    },
+];
+
+type ProdCategoryKey = "pakete" | "addons" | "hardware";
+const prodCategories: { key: ProdCategoryKey; to: string; icon: typeof Package; hasChildren: boolean }[] = [
+  { key: "pakete",   to: "/produkte",           icon: Package,  hasChildren: true  },
+  { key: "addons",   to: "/produkte/add-ons",   icon: Puzzle,   hasChildren: true  },
+  { key: "hardware", to: "/produkte/hardware",  icon: Server,   hasChildren: false },
 ];
 
 const loesRoutes = [
@@ -50,9 +66,15 @@ const Navbar = () => {
   const currentLang = (extractLangFromPath(pathname) ?? (i18n.language || "de")) as SupportedLang;
   const lp = (deSlug: string) => buildLocalizedPath(deSlug, currentLang as LangCode);
 
-  const prodItemsData = t("nav.prodItems", { returnObjects: true }) as { label: string; desc: string }[];
-  const loesItemsData = t("nav.loesItems", { returnObjects: true }) as { label: string; desc: string }[];
-  const prodItems = prodRoutes.map((r, i) => ({ ...r, label: prodItemsData[i]?.label || "", desc: prodItemsData[i]?.desc || "" }));
+  const arr = <T,>(key: string): T[] => { const v = t(key, { returnObjects: true }); return Array.isArray(v) ? (v as T[]) : []; };
+  type Entry = { label: string; desc: string };
+  const prodCatData = arr<Entry>("nav.prodCategories");
+  const paketeItemsData = arr<Entry>("nav.prodSubPakete");
+  const addonsItemsData = arr<Entry>("nav.prodSubAddons");
+  const loesItemsData = arr<Entry>("nav.loesItems");
+  const prodCategoriesItems = prodCategories.map((c, i) => ({ ...c, label: prodCatData[i]?.label || "", desc: prodCatData[i]?.desc || "" }));
+  const paketeItems = paketeRoutes.map((r, i) => ({ ...r, label: paketeItemsData[i]?.label || "", desc: paketeItemsData[i]?.desc || "" }));
+  const addonsItems = addonsRoutes.map((r, i) => ({ ...r, label: addonsItemsData[i]?.label || "", desc: addonsItemsData[i]?.desc || "" }));
   const loesungenItems = loesRoutes.map((r, i) => ({ ...r, label: loesItemsData[i]?.label || "", desc: loesItemsData[i]?.desc || "" }));
   const navigate = useNavigate();
   // Helle Seiten ohne Hero-Hintergrund brauchen immer die sichtbare (aktive) Navbar
@@ -71,6 +93,9 @@ const Navbar = () => {
   const [loesDropOpen, setLoesDropOpen]     = useState(false);
   const [prodMobOpen, setProdMobOpen]       = useState(false);
   const [loesMobOpen, setLoesMobOpen]       = useState(false);
+  const [paketeMobOpen, setPaketeMobOpen]   = useState(false);
+  const [addonsMobOpen, setAddonsMobOpen]   = useState(false);
+  const [prodSubOpen, setProdSubOpen]       = useState<ProdCategoryKey | null>(null);
   const langRef      = useRef<HTMLDivElement>(null);
   const langRefMobile = useRef<HTMLDivElement>(null);
   const prodRef      = useRef<HTMLDivElement>(null);
@@ -93,7 +118,7 @@ const Navbar = () => {
       const isOutsideDesktopLang = langRef.current && !langRef.current.contains(e.target as Node);
       const isOutsideMobileLang = langRefMobile.current && !langRefMobile.current.contains(e.target as Node);
       if (isOutsideDesktopLang && isOutsideMobileLang) setLangOpen(false);
-      if (prodRef.current && !prodRef.current.contains(e.target as Node)) setProdDropOpen(false);
+      if (prodRef.current && !prodRef.current.contains(e.target as Node)) { setProdDropOpen(false); setProdSubOpen(null); }
       if (loesRef.current && !loesRef.current.contains(e.target as Node)) setLoesDropOpen(false);
     };
     document.addEventListener("mousedown", handleClickOutside);
@@ -118,7 +143,7 @@ const Navbar = () => {
 
   const currentLangObj = languages.find(l => l.code === currentLang) || languages[0];
 
-  const DropdownMenu = ({ items, onClose }: { items: typeof prodItems; onClose: () => void }) => (
+  const DropdownMenu = ({ items, onClose }: { items: typeof loesungenItems; onClose: () => void }) => (
     <div className="bg-surface-navy/95 backdrop-blur-xl rounded-2xl border border-white/10 shadow-2xl shadow-black/40 overflow-hidden py-2">
       {items.map(item => {
         const Icon = item.icon;
@@ -166,16 +191,84 @@ const Navbar = () => {
             className="relative"
             ref={prodRef}
             onMouseEnter={() => { if (prodCloseTimer.current) clearTimeout(prodCloseTimer.current); setProdDropOpen(true); }}
-            onMouseLeave={() => { prodCloseTimer.current = setTimeout(() => setProdDropOpen(false), 150); }}
+            onMouseLeave={() => { prodCloseTimer.current = setTimeout(() => { setProdDropOpen(false); setProdSubOpen(null); }, 150); }}
           >
-            <Link to={lp("/produkte")} onClick={() => setProdDropOpen(false)}
+            <Link to={lp("/produkte")} onClick={() => { setProdDropOpen(false); setProdSubOpen(null); }}
               className="flex items-center gap-1 text-primary-foreground/70 hover:text-primary-foreground font-medium transition-all duration-500 text-sm">
               {t('nav.produkte')}
               <ChevronDown className={`w-3 h-3 transition-transform duration-200 ${prodDropOpen ? "rotate-180" : ""}`} />
             </Link>
             {prodDropOpen && (
-              <div className="absolute top-full left-1/2 -translate-x-1/2 w-64 pt-3 z-50">
-                <DropdownMenu items={prodItems} onClose={() => setProdDropOpen(false)} />
+              <div className="absolute top-full left-1/2 -translate-x-1/2 w-72 pt-3 z-50">
+                <div className="bg-surface-navy/95 backdrop-blur-xl rounded-2xl border border-white/10 shadow-2xl shadow-black/40 py-2">
+                  {prodCategoriesItems.map(cat => {
+                    const CatIcon = cat.icon;
+                    const isOpen = prodSubOpen === cat.key;
+                    const subItems = cat.key === "pakete" ? paketeItems : cat.key === "addons" ? addonsItems : [];
+                    const rowClass = "flex items-start gap-3 px-4 py-3 hover:bg-white/[0.06] transition-colors w-full text-left";
+                    const rowContent = (
+                      <>
+                        <CatIcon className="w-4 h-4 text-cyan-brand mt-0.5 flex-shrink-0" strokeWidth={1.75} />
+                        <div className="flex-1 min-w-0">
+                          <p className="text-white text-sm font-semibold leading-none mb-0.5">{cat.label}</p>
+                          <p className="text-white/45 text-xs">{cat.desc}</p>
+                        </div>
+                        {cat.hasChildren && (
+                          <ChevronRight className={`w-4 h-4 text-white/40 mt-0.5 flex-shrink-0 transition-colors ${isOpen ? "text-cyan-brand" : ""}`} />
+                        )}
+                      </>
+                    );
+                    return (
+                      <div
+                        key={cat.key}
+                        className="relative"
+                        onMouseEnter={() => setProdSubOpen(cat.hasChildren ? cat.key : null)}
+                      >
+                        {cat.hasChildren ? (
+                          <button
+                            type="button"
+                            onClick={() => setProdSubOpen(isOpen ? null : cat.key)}
+                            className={rowClass}
+                            aria-expanded={isOpen}
+                          >
+                            {rowContent}
+                          </button>
+                        ) : (
+                          <Link
+                            to={lp(cat.to)}
+                            onClick={() => { setProdDropOpen(false); setProdSubOpen(null); }}
+                            className={rowClass}
+                          >
+                            {rowContent}
+                          </Link>
+                        )}
+                        {cat.hasChildren && isOpen && (
+                          <div className="absolute top-0 left-full pl-2 w-72 z-50">
+                            <div className="bg-surface-navy/95 backdrop-blur-xl rounded-2xl border border-white/10 shadow-2xl shadow-black/40 overflow-hidden py-2">
+                              {subItems.map(item => {
+                                const Icon = item.icon;
+                                return (
+                                  <Link
+                                    key={item.to}
+                                    to={lp(item.to)}
+                                    onClick={() => { setProdDropOpen(false); setProdSubOpen(null); }}
+                                    className="flex items-start gap-3 px-4 py-3 hover:bg-white/[0.06] transition-colors"
+                                  >
+                                    <Icon className="w-4 h-4 text-cyan-brand mt-0.5 flex-shrink-0" strokeWidth={1.75} />
+                                    <div>
+                                      <p className="text-white text-sm font-semibold leading-none mb-0.5">{item.label}</p>
+                                      <p className="text-white/45 text-xs">{item.desc}</p>
+                                    </div>
+                                  </Link>
+                                );
+                              })}
+                            </div>
+                          </div>
+                        )}
+                      </div>
+                    );
+                  })}
+                </div>
               </div>
             )}
           </div>
@@ -296,28 +389,72 @@ const Navbar = () => {
 
           {/* Produkte accordion */}
           <div>
-            <button
-              onClick={() => setProdMobOpen(!prodMobOpen)}
-              className="flex items-center w-full text-primary-foreground/70 hover:text-primary-foreground font-medium py-2 text-left"
-            >
-              {t('nav.produkte')}
-              <ChevronDown className={`w-4 h-4 ml-auto transition-transform duration-200 ${prodMobOpen ? "rotate-180" : ""}`} />
-            </button>
+            <div className="flex items-center">
+              <Link
+                to={lp("/produkte")}
+                onClick={() => setMobileOpen(false)}
+                className="flex-1 text-primary-foreground/70 hover:text-primary-foreground font-medium py-2"
+              >
+                {t('nav.produkte')}
+              </Link>
+              <button
+                onClick={() => setProdMobOpen(!prodMobOpen)}
+                className="py-2 px-1"
+                aria-label={`${t('nav.produkte')} Untermenü`}
+              >
+                <ChevronDown className={`w-4 h-4 text-primary-foreground/70 transition-transform duration-200 ${prodMobOpen ? "rotate-180" : ""}`} />
+              </button>
+            </div>
             {prodMobOpen && (
               <div className="pl-4 mt-1 space-y-1 border-l border-white/10 mb-2">
-                <Link to={lp("/produkte")} onClick={() => setMobileOpen(false)}
-                  className="flex items-center gap-2 py-2 text-primary-foreground font-semibold text-sm">
-                  <ArrowRight className="w-3.5 h-3.5 text-cyan-brand flex-shrink-0" />
-                  {t('nav.alleProdukte')}
-                </Link>
-                {prodItems.map(item => {
-                  const Icon = item.icon;
+                {prodCategoriesItems.map(cat => {
+                  const CatIcon = cat.icon;
+                  if (!cat.hasChildren) {
+                    return (
+                      <Link
+                        key={cat.key}
+                        to={lp(cat.to)}
+                        onClick={() => setMobileOpen(false)}
+                        className="flex items-center gap-2 py-2 text-primary-foreground/80 hover:text-primary-foreground text-sm font-medium"
+                      >
+                        <CatIcon className="w-3.5 h-3.5 text-cyan-brand flex-shrink-0" />
+                        {cat.label}
+                      </Link>
+                    );
+                  }
+                  const subOpen = cat.key === "pakete" ? paketeMobOpen : addonsMobOpen;
+                  const setSubOpen = cat.key === "pakete" ? setPaketeMobOpen : setAddonsMobOpen;
+                  const subItems = cat.key === "pakete" ? paketeItems : addonsItems;
                   return (
-                    <Link key={item.to} to={item.to} onClick={() => setMobileOpen(false)}
-                      className="flex items-center gap-2 py-2 text-primary-foreground/60 hover:text-primary-foreground text-sm">
-                      <Icon className="w-3.5 h-3.5 text-cyan-brand flex-shrink-0" />
-                      {item.label}
-                    </Link>
+                    <div key={cat.key}>
+                      <button
+                        onClick={() => setSubOpen(!subOpen)}
+                        className="flex items-center w-full py-2 text-primary-foreground/80 hover:text-primary-foreground text-sm font-medium text-left"
+                        aria-expanded={subOpen}
+                      >
+                        <CatIcon className="w-3.5 h-3.5 text-cyan-brand flex-shrink-0 mr-2" />
+                        {cat.label}
+                        <ChevronDown className={`w-3.5 h-3.5 ml-auto text-primary-foreground/70 transition-transform duration-200 ${subOpen ? "rotate-180" : ""}`} />
+                      </button>
+                      {subOpen && (
+                        <div className="pl-4 space-y-1 border-l border-white/10 mb-1">
+                          {subItems.map(item => {
+                            const Icon = item.icon;
+                            return (
+                              <Link
+                                key={item.to}
+                                to={lp(item.to)}
+                                onClick={() => setMobileOpen(false)}
+                                className="flex items-center gap-2 py-2 text-primary-foreground/60 hover:text-primary-foreground text-sm"
+                              >
+                                <Icon className="w-3.5 h-3.5 text-cyan-brand flex-shrink-0" />
+                                {item.label}
+                              </Link>
+                            );
+                          })}
+                        </div>
+                      )}
+                    </div>
                   );
                 })}
               </div>
