@@ -1,15 +1,28 @@
+import { useState } from "react";
 import { Link } from "react-router-dom";
 import logoWide from "@/assets/logos/logo-gastro-master-wide.png";
 import { useTranslation } from "react-i18next";
 import { useLangPath } from "@/components/LanguageLayout";
+import { ChevronDown, ArrowRight } from "lucide-react";
 
-const prodRoutes = [
-  "/produkte/pakete/online-bestellshop",
-  "/produkte/pakete/bestell-app",
-  "/produkte/pakete/webseite",
-  "/produkte/pakete/kassensystem",
-  "/produkte/add-ons/transaktionsumlage",
-];
+// Product data structure for mobile accordion + desktop
+const productData = {
+  pakete: [
+    { label: "Online Shop", route: "/produkte/pakete/online-bestellshop" },
+    { label: "App System", route: "/produkte/pakete/bestell-app" },
+    { label: "Webseite", route: "/produkte/pakete/webseite" },
+    { label: "Kassensystem", route: "/produkte/pakete/kassensystem" },
+  ],
+  addons: [
+    { label: "Transaktions-Umlage", route: "/produkte/add-ons/transaktionsumlage" },
+    { label: "QR-Code-Flyer", route: "/produkte/add-ons/qr-code-flyer" },
+    { label: "Fahrer-App mit GPS", route: "/produkte/add-ons/fahrer-app-gps" },
+    { label: "QR-Code-Tischsystem", route: "/produkte/add-ons/qr-code-tischsystem" },
+    { label: "Kitchen Display", route: "/produkte/add-ons/bildschirmfunktion" },
+    { label: "Self-Service-Kiosk", route: "/produkte/add-ons/kiosk" },
+  ],
+  hardware: { label: "Hardware", route: "/produkte/hardware" },
+};
 
 const loesRoutes = [
   "/loesungen/lieferservice-gruenden",
@@ -51,15 +64,162 @@ const socialLinks = [
   },
 ];
 
+// Mobile Accordion Component
+const MobileAccordionItem = ({ title, children, defaultOpen = false }: { title: string; children: React.ReactNode; defaultOpen?: boolean }) => {
+  const [isOpen, setIsOpen] = useState(defaultOpen);
+  return (
+    <div className="border-b border-primary-foreground/10">
+      <button
+        onClick={() => setIsOpen(!isOpen)}
+        className="w-full flex items-center justify-between py-4 px-4 text-left hover:bg-primary-foreground/5 transition-colors"
+        aria-expanded={isOpen}
+      >
+        <span className="text-primary-foreground font-semibold">{title}</span>
+        <ChevronDown className={`w-5 h-5 text-primary-foreground/60 transition-transform duration-300 ${isOpen ? "rotate-180" : ""}`} />
+      </button>
+      {isOpen && <div className="px-4 pb-4 space-y-3">{children}</div>}
+    </div>
+  );
+};
+
+const MobileSubAccordionItem = ({ title, children }: { title: string; children: React.ReactNode }) => {
+  const [isOpen, setIsOpen] = useState(false);
+  return (
+    <div className="border-l-2 border-primary-foreground/20 pl-4">
+      <button
+        onClick={() => setIsOpen(!isOpen)}
+        className="w-full flex items-center justify-between py-2 text-left hover:text-primary-foreground transition-colors"
+        aria-expanded={isOpen}
+      >
+        <span className="text-primary-foreground/70 text-sm font-medium">{title}</span>
+        <ChevronDown className={`w-4 h-4 text-primary-foreground/50 transition-transform duration-300 ${isOpen ? "rotate-180" : ""}`} />
+      </button>
+      {isOpen && <div className="mt-2 space-y-2 pl-0">{children}</div>}
+    </div>
+  );
+};
+
 const Footer = () => {
   const { t } = useTranslation("common");
   const lp = useLangPath();
+
   return (
     <footer className="bg-gradient-navy border-t border-primary-foreground/10 px-5 md:px-8 lg:px-16 py-12">
       <div className="container-tight">
 
-        {/* Top row */}
-        <div className="grid grid-cols-1 md:grid-cols-4 gap-10 mb-10">
+        {/* MOBILE LAYOUT */}
+        <div className="md:hidden">
+          {/* Logo + Social Icons */}
+          <div className="mb-6">
+            <Link to={lp("/")} className="inline-flex items-center mb-4">
+              <img src={logoWide} alt="Gastro Master" className="h-6 w-auto" />
+            </Link>
+            <div className="flex items-center gap-3">
+              {socialLinks.map((s) => (
+                <a
+                  key={s.label}
+                  href={s.href}
+                  target="_blank"
+                  rel="noopener noreferrer"
+                  aria-label={s.label}
+                  className="w-9 h-9 rounded-xl border border-primary-foreground/10 bg-primary-foreground/5 flex items-center justify-center text-primary-foreground/40 hover:text-primary-foreground hover:bg-primary-foreground/10 hover:border-primary-foreground/20 transition-all duration-300"
+                >
+                  {s.icon}
+                </a>
+              ))}
+            </div>
+          </div>
+
+          {/* Accordion Sections */}
+          <div className="border-t border-primary-foreground/10 mb-6">
+            {/* PRODUKTE */}
+            <MobileAccordionItem title="PRODUKTE">
+              {/* Pakete Sub-Accordion */}
+              <MobileSubAccordionItem title="Pakete">
+                {productData.pakete.map(pkg => (
+                  <Link
+                    key={pkg.route}
+                    to={lp(pkg.route)}
+                    className="block text-primary-foreground/60 hover:text-primary-foreground text-sm py-2 transition-colors"
+                  >
+                    {pkg.label}
+                  </Link>
+                ))}
+              </MobileSubAccordionItem>
+
+              {/* Add-Ons Sub-Accordion */}
+              <MobileSubAccordionItem title="Add-Ons">
+                {productData.addons.map(addon => (
+                  <Link
+                    key={addon.route}
+                    to={lp(addon.route)}
+                    className="block text-primary-foreground/60 hover:text-primary-foreground text-sm py-2 transition-colors"
+                  >
+                    {addon.label}
+                  </Link>
+                ))}
+              </MobileSubAccordionItem>
+
+              {/* Hardware Direct Link */}
+              <Link
+                to={lp(productData.hardware.route)}
+                className="flex items-center justify-between py-2 text-primary-foreground/70 hover:text-primary-foreground text-sm transition-colors"
+              >
+                <span>{productData.hardware.label}</span>
+                <ArrowRight className="w-4 h-4" />
+              </Link>
+            </MobileAccordionItem>
+
+            {/* LÖSUNGEN */}
+            <MobileAccordionItem title="LÖSUNGEN">
+              {loesRoutes.map((to, i) => (
+                <Link
+                  key={to}
+                  to={lp(to)}
+                  className="block text-primary-foreground/60 hover:text-primary-foreground text-sm py-2 transition-colors"
+                >
+                  {t(`nav.loesItems.${i}.label`)}
+                </Link>
+              ))}
+            </MobileAccordionItem>
+
+            {/* WEITERES */}
+            <MobileAccordionItem title="WEITERES">
+              <Link to={lp("/impressum")} className="block text-primary-foreground/60 hover:text-primary-foreground text-sm py-2 transition-colors">
+                {t('footer.impressum')}
+              </Link>
+              <Link to={lp("/datenschutz")} className="block text-primary-foreground/60 hover:text-primary-foreground text-sm py-2 transition-colors">
+                {t('footer.datenschutz')}
+              </Link>
+              <Link to={lp("/agb")} className="block text-primary-foreground/60 hover:text-primary-foreground text-sm py-2 transition-colors">
+                {t('footer.agb')}
+              </Link>
+              <Link to={lp("/kontakt")} className="block text-primary-foreground/60 hover:text-primary-foreground text-sm py-2 transition-colors">
+                {t('footer.kontakt')}
+              </Link>
+              <Link to={lp("/uber-uns")} className="block text-primary-foreground/60 hover:text-primary-foreground text-sm py-2 transition-colors">
+                {t('footer.ueberUns')}
+              </Link>
+              <Link to={lp("/faq")} className="block text-primary-foreground/60 hover:text-primary-foreground text-sm py-2 transition-colors">
+                FAQ
+              </Link>
+              <Link to={lp("/blog")} className="block text-primary-foreground/60 hover:text-primary-foreground text-sm py-2 transition-colors">
+                Blog
+              </Link>
+              <Link to={lp("/downloads")} className="block text-primary-foreground/60 hover:text-primary-foreground text-sm py-2 transition-colors">
+                {t('footer.downloads')}
+              </Link>
+            </MobileAccordionItem>
+          </div>
+
+          {/* Copyright */}
+          <div className="pt-4 border-t border-primary-foreground/10 text-center text-primary-foreground/30 text-xs">
+            © {new Date().getFullYear()} Gastro Master. {t('footer.rights')}
+          </div>
+        </div>
+
+        {/* DESKTOP LAYOUT (unchanged structure, expanded product data) */}
+        <div className="hidden md:grid grid-cols-1 md:grid-cols-4 gap-10 mb-10">
 
           {/* Brand + Social */}
           <div>
@@ -82,17 +242,37 @@ const Footer = () => {
             </div>
           </div>
 
-          {/* Produkte */}
+          {/* Produkte - All items with sub-grouping */}
           <div>
             <h4 className="text-primary-foreground/50 text-xs font-bold uppercase tracking-widest mb-4">{t('footer.produkte')}</h4>
             <ul className="space-y-2.5">
-              {prodRoutes.map((to, i) => (
-                <li key={to}>
-                  <Link to={lp(to)} className="text-primary-foreground/50 hover:text-primary-foreground text-sm transition-colors duration-200">
-                    {t(`nav.prodItems.${i}.label`)}
+              {/* Pakete Group Header */}
+              <li className="text-primary-foreground/30 text-xs font-bold uppercase tracking-wider mt-4">Pakete</li>
+              {productData.pakete.map(pkg => (
+                <li key={pkg.route}>
+                  <Link to={lp(pkg.route)} className="text-primary-foreground/50 hover:text-primary-foreground text-sm transition-colors duration-200">
+                    {pkg.label}
                   </Link>
                 </li>
               ))}
+
+              {/* Add-Ons Group Header */}
+              <li className="text-primary-foreground/30 text-xs font-bold uppercase tracking-wider mt-4">Add-Ons</li>
+              {productData.addons.map(addon => (
+                <li key={addon.route}>
+                  <Link to={lp(addon.route)} className="text-primary-foreground/50 hover:text-primary-foreground text-sm transition-colors duration-200">
+                    {addon.label}
+                  </Link>
+                </li>
+              ))}
+
+              {/* Hardware */}
+              <li className="text-primary-foreground/30 text-xs font-bold uppercase tracking-wider mt-4">Hardware</li>
+              <li>
+                <Link to={lp(productData.hardware.route)} className="text-primary-foreground/50 hover:text-primary-foreground text-sm transition-colors duration-200">
+                  {productData.hardware.label}
+                </Link>
+              </li>
             </ul>
           </div>
 
@@ -145,6 +325,11 @@ const Footer = () => {
                 </Link>
               </li>
               <li>
+                <Link to={lp("/blog")} className="text-primary-foreground/50 hover:text-primary-foreground text-sm transition-colors duration-200">
+                  Blog
+                </Link>
+              </li>
+              <li>
                 <Link to={lp("/downloads")} className="text-primary-foreground/50 hover:text-primary-foreground text-sm transition-colors duration-200">
                   {t('footer.downloads')}
                 </Link>
@@ -153,8 +338,8 @@ const Footer = () => {
           </div>
         </div>
 
-        {/* Bottom bar */}
-        <div className="pt-6 border-t border-primary-foreground/10 text-center text-primary-foreground/30 text-sm">
+        {/* Bottom bar - Desktop */}
+        <div className="hidden md:block pt-6 border-t border-primary-foreground/10 text-center text-primary-foreground/30 text-sm">
           © {new Date().getFullYear()} Gastro Master. {t('footer.rights')}
         </div>
       </div>
