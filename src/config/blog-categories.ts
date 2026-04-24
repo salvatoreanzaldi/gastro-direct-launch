@@ -10,6 +10,7 @@ export interface CategoryConfig {
 
 export const BLOG_CATEGORIES: CategoryConfig[] = [
   { slug: "bestellsysteme",   label: "Bestellsysteme",    bg: "bg-cyan-500/10",    text: "text-cyan-400",    border: "border-cyan-500/30",    solid: "bg-cyan-500",    gradient: "from-cyan-500/10"    },
+  { slug: "kassensysteme",    label: "Kassensysteme",     bg: "bg-teal-500/10",    text: "text-teal-400",    border: "border-teal-500/30",    solid: "bg-teal-500",    gradient: "from-teal-500/10"    },
   { slug: "lieferservice",    label: "Lieferservice",     bg: "bg-orange-500/10",  text: "text-orange-400",  border: "border-orange-500/30",  solid: "bg-orange-500",  gradient: "from-orange-500/10"  },
   { slug: "website-marketing",label: "Website & Marketing",bg:"bg-pink-500/10",   text: "text-pink-400",    border: "border-pink-500/30",    solid: "bg-pink-500",    gradient: "from-pink-500/10"    },
   { slug: "recht-compliance", label: "Recht & Compliance",bg: "bg-amber-500/10",  text: "text-amber-400",   border: "border-amber-500/30",   solid: "bg-amber-500",   gradient: "from-amber-500/10"   },

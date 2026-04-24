@@ -50,10 +50,6 @@ const LAZY_COMPONENTS: Record<string, ComponentType> = {
   "@/pages/blog/BlogPostLieferandoPage":         lazy(() => import("@/pages/blog/BlogPostLieferandoPage")),
   "@/pages/blog/BlogPostFehlerPage":             lazy(() => import("@/pages/blog/BlogPostFehlerPage")),
   "@/pages/blog/BlogPostKostenPage":             lazy(() => import("@/pages/blog/BlogPostKostenPage")),
-  "@/pages/blog/BlogPostBestellsystemPage":     lazy(() => import("@/pages/blog/BlogPostBestellsystemPage")),
-  "@/pages/blog/BlogPostKassensystemPage":      lazy(() => import("@/pages/blog/BlogPostKassensystemPage")),
-  "@/pages/blog/BlogPostWebsitePage":           lazy(() => import("@/pages/blog/BlogPostWebsitePage")),
-  "@/pages/blog/BlogPostWoltPage":              lazy(() => import("@/pages/blog/BlogPostWoltPage")),
 
   // Add-Ons
   "@/pages/AddOnsPage":                 lazy(() => import("@/pages/AddOnsPage")),

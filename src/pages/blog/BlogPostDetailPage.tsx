@@ -426,78 +426,45 @@ const BlogPostDetailPage = () => {
                   dangerouslySetInnerHTML={{ __html: processedHtml }}
                 />
               ) : (
-                <article className="max-w-[720px]">
-                  {post.sections && post.sections.length > 0 ? (
-                    post.sections.map((section, i) => (
-                      <div key={i}>
-                        {section.type === "p" && (
-                          <p className="text-zinc-300 leading-relaxed mb-5">{section.content}</p>
-                        )}
-                        {section.type === "h2" && (
-                          <h2
-                            id={slugifyHeading(String(section.content))}
-                            className="text-2xl font-bold text-white mt-10 mb-4 scroll-mt-24"
-                          >
-                            {section.content}
-                          </h2>
-                        )}
-                        {section.type === "h3" && (
-                          <h3 className="text-xl font-bold text-white mt-8 mb-3">{section.content}</h3>
-                        )}
-                        {section.type === "ul" && (
-                          <ul className="list-disc list-inside space-y-2 mb-5 text-zinc-300">
-                            {Array.isArray(section.content) &&
-                              section.content.map((item, j) => <li key={j}>{item}</li>)}
-                          </ul>
-                        )}
-                        {section.type === "ol" && (
-                          <ol className="list-decimal list-inside space-y-2 mb-5 text-zinc-300">
-                            {Array.isArray(section.content) &&
-                              section.content.map((item, j) => <li key={j}>{item}</li>)}
-                          </ol>
-                        )}
-                      </div>
-                    ))
-                  ) : (
-                    <p className="text-white/40">Keine Sections vorhanden</p>
-                  )}
-
-                  {/* FAQ (legacy) */}
-                  {post.faqItems.length > 0 && (
-                    <div className="mt-14 pt-12 border-t border-white/10">
-                      <h2 className="text-2xl font-bold text-white mb-8">Häufige Fragen</h2>
-                      <div className="space-y-5">
-                        {post.faqItems.map((item, i) => (
-                          <div key={i} className="bg-white/5 rounded-lg p-5 border border-white/10">
-                            <h3 className="font-bold text-white mb-2">{item.question}</h3>
-                            <p className="text-zinc-400 text-sm leading-relaxed">{item.answer}</p>
-                          </div>
-                        ))}
-                      </div>
-                    </div>
-                  )}
-
-                  {/* Internal links (legacy) */}
-                  {post.internalLinks.length > 0 && (
-                    <div className="mt-14 pt-12 border-t border-white/10">
-                      <h2 className="text-2xl font-bold text-white mb-6">Weitere Ressourcen</h2>
-                      <div className="grid grid-cols-1 sm:grid-cols-2 gap-4">
-                        {post.internalLinks.map((link, i) => (
-                          <Link
-                            key={i}
-                            to={link.href}
-                            className="flex items-center justify-between bg-white/5 rounded-lg p-5 border border-white/10 hover:border-cyan-brand/40 group transition-all"
-                          >
-                            <span className="text-white/80 group-hover:text-white transition-colors text-sm">
-                              {link.title}
-                            </span>
-                            <ChevronRight className="w-4 h-4 text-white/30 group-hover:text-cyan-brand transition-colors shrink-0" />
-                          </Link>
-                        ))}
-                      </div>
-                    </div>
-                  )}
+                <article className="max-w-[720px] text-zinc-300">
+                  <p className="text-white/40">Kein Artikel-Body vorhanden.</p>
                 </article>
+              )}
+
+              {/* FAQ — rendert für alle Posts mit faqItems */}
+              {post.faqItems.length > 0 && (
+                <div className="mt-14 pt-12 border-t border-white/10">
+                  <h2 className="text-2xl font-bold text-white mb-8">Häufige Fragen</h2>
+                  <div className="space-y-5">
+                    {post.faqItems.map((item, i) => (
+                      <div key={i} className="bg-white/5 rounded-lg p-5 border border-white/10">
+                        <h3 className="font-bold text-white mb-2">{item.question}</h3>
+                        <p className="text-zinc-400 text-sm leading-relaxed">{item.answer}</p>
+                      </div>
+                    ))}
+                  </div>
+                </div>
+              )}
+
+              {/* Weiterführende Seiten — rendert für alle Posts mit internalLinks */}
+              {post.internalLinks.length > 0 && (
+                <div className="mt-14 pt-12 border-t border-white/10">
+                  <h2 className="text-2xl font-bold text-white mb-6">Weiterführende Seiten</h2>
+                  <div className="grid grid-cols-1 sm:grid-cols-2 gap-4">
+                    {post.internalLinks.map((link, i) => (
+                      <Link
+                        key={i}
+                        to={link.href}
+                        className="flex items-center justify-between bg-white/5 rounded-lg p-5 border border-white/10 hover:border-cyan-brand/40 group transition-all"
+                      >
+                        <span className="text-white/80 group-hover:text-white transition-colors text-sm">
+                          {link.title}
+                        </span>
+                        <ChevronRight className="w-4 h-4 text-white/30 group-hover:text-cyan-brand transition-colors shrink-0" />
+                      </Link>
+                    ))}
+                  </div>
+                </div>
               )}
 
               {/* Related + Prev/Next */}

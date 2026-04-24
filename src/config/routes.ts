@@ -95,14 +95,6 @@ export const ROUTES: RouteEntry[] = [
     importPath: "@/pages/blog/BlogPostFehlerPage", priority: 0.6, changefreq: "monthly" },
   { key: "blog-ordering-cost", slugs: slugs("/blog/was-kostet-bestellsystem", "/blog/ordering-system-cost", "/blog/costo-sistema-ordinazione"),
     importPath: "@/pages/blog/BlogPostKostenPage", priority: 0.6, changefreq: "monthly" },
-  { key: "blog-ordering-system", slugs: slugs("/blog/bestellsystem-gastronomie", "/blog/ordering-system-gastronomy", "/blog/sistema-ordinazione-ristorazione"),
-    importPath: "@/pages/blog/BlogPostBestellsystemPage", priority: 0.6, changefreq: "monthly" },
-  { key: "blog-pos-system", slugs: slugs("/blog/kassensystem-gastronomie", "/blog/pos-system", "/blog/sistema-cassa"),
-    importPath: "@/pages/blog/BlogPostKassensystemPage", priority: 0.6, changefreq: "monthly" },
-  { key: "blog-restaurant-website", slugs: slugs("/blog/gastronomie-website-erstellen", "/blog/restaurant-website", "/blog/sito-web-ristorante"),
-    importPath: "@/pages/blog/BlogPostWebsitePage", priority: 0.6, changefreq: "monthly" },
-  { key: "blog-wolt-integration", slugs: slugs("/blog/wolt-integration-restaurants", "/blog/wolt-integration", "/blog/integrazione-wolt"),
-    importPath: "@/pages/blog/BlogPostWoltPage", priority: 0.6, changefreq: "monthly" },
 
   // Info-Seiten
   { key: "faq", slugs: slugs("/faq", "/faq", "/faq"),
