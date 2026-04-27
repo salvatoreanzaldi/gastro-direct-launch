@@ -4,6 +4,8 @@ import {
   Search, AlertTriangle, PhoneOff, Printer,
   Pizza, Truck, Bike, Users,
 } from "lucide-react";
+import ScrollProgressBar from "@/components/ScrollProgressBar";
+import ScrollToTopButton from "@/components/ScrollToTopButton";
 import AddOnPageTemplate, { type AddOnPageConfig } from "@/components/addon/AddOnPageTemplate";
 import heroImage from "@/assets/addons/addon-frankfurt.png";
 import appleIcon from "@/assets/icons/Icon - Apple App Store.png";
@@ -135,6 +137,8 @@ const FahrerAppGpsPage = () => {
 
   return (
     <div className={`transition-opacity duration-300 ${!ready ? "opacity-0" : "opacity-100"}`}>
+      <ScrollProgressBar />
+      <ScrollToTopButton />
       <AddOnPageTemplate config={config} />
     </div>
   );

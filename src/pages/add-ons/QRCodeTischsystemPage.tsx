@@ -4,6 +4,8 @@ import {
   Clock, UserX, Printer, Repeat,
   Utensils, Wine, Coffee,
 } from "lucide-react";
+import ScrollProgressBar from "@/components/ScrollProgressBar";
+import ScrollToTopButton from "@/components/ScrollToTopButton";
 import AddOnPageTemplate, { type AddOnPageConfig } from "@/components/addon/AddOnPageTemplate";
 import heroImage from "@/assets/addons/addon-qr-tischsystem.png";
 
@@ -118,6 +120,8 @@ const QRCodeTischsystemPage = () => {
 
   return (
     <div className={`transition-opacity duration-300 ${!ready ? "opacity-0" : "opacity-100"}`}>
+      <ScrollProgressBar />
+      <ScrollToTopButton />
       <AddOnPageTemplate config={config} />
     </div>
   );

@@ -3,6 +3,8 @@ import {
   QrCode, Smartphone, BarChart3, Printer, Paintbrush,
   Zap, Search, Clock, MousePointerClick, Pizza, Truck, Megaphone, Target,
 } from "lucide-react";
+import ScrollProgressBar from "@/components/ScrollProgressBar";
+import ScrollToTopButton from "@/components/ScrollToTopButton";
 import AddOnPageTemplate, { type AddOnPageConfig } from "@/components/addon/AddOnPageTemplate";
 import flyerMockup from "@/assets/mockups/Mock Up - Flyer.png";
 
@@ -116,6 +118,8 @@ const QRCodeFlyerPage = () => {
 
   return (
     <div className={`transition-opacity duration-300 ${!ready ? "opacity-0" : "opacity-100"}`}>
+      <ScrollProgressBar />
+      <ScrollToTopButton />
       <AddOnPageTemplate config={config} />
     </div>
   );
