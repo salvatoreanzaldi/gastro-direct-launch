@@ -1,6 +1,8 @@
 import { useState } from "react";
 import { useSeoMeta } from "@/hooks/useSeoMeta";
 import { Link } from "react-router-dom";
+import ScrollProgressBar from "@/components/ScrollProgressBar";
+import ScrollToTopButton from "@/components/ScrollToTopButton";
 import { useTranslation } from "react-i18next";
 import { motion, AnimatePresence } from "framer-motion";
 import {
@@ -491,6 +493,8 @@ const ProduktePage = () => {
 
   return (
     <>
+      <ScrollProgressBar />
+      <ScrollToTopButton />
       <script type="application/ld+json" dangerouslySetInnerHTML={{ __html: JSON.stringify(SCHEMA_BREADCRUMB) }} />
       <script type="application/ld+json" dangerouslySetInnerHTML={{ __html: JSON.stringify(SCHEMA_PRODUCT_LIST) }} />
       <script type="application/ld+json" dangerouslySetInnerHTML={{ __html: JSON.stringify(SCHEMA_FAQ_PRODUKTE) }} />

@@ -6,6 +6,8 @@ import {
   ChevronDown, ExternalLink,
   type LucideIcon,
 } from "lucide-react";
+import ScrollProgressBar from "@/components/ScrollProgressBar";
+import ScrollToTopButton from "@/components/ScrollToTopButton";
 import { Link } from "react-router-dom";
 import { useTranslation } from "react-i18next";
 import { useLangPath } from "@/components/LanguageLayout";
@@ -126,6 +128,8 @@ const LieferserviceGruendenPage = () => {
 
   return (
     <div className="min-h-screen bg-white dark:bg-[#0A264A]">
+      <ScrollProgressBar />
+      <ScrollToTopButton />
       {/* JSON-LD */}
       <script type="application/ld+json" dangerouslySetInnerHTML={{ __html: JSON.stringify(SCHEMA_FAQ) }} />
       <script type="application/ld+json" dangerouslySetInnerHTML={{ __html: JSON.stringify(SCHEMA_ARTICLE) }} />

@@ -1,6 +1,8 @@
-import React, { useState, useEffect } from "react";
+import React, { lazy, Suspense, useState, useEffect } from "react";
 import { useSeoMeta } from "@/hooks/useSeoMeta";
-import { motion, AnimatePresence, useScroll, useTransform, type MotionValue } from "framer-motion";
+import ScrollProgressBar from "@/components/ScrollProgressBar";
+import ScrollToTopButton from "@/components/ScrollToTopButton";
+import { motion, AnimatePresence } from "framer-motion";
 import {
   ArrowRight, Plus, Minus, CheckCircle2,
   Star, CreditCard, Globe, FileText, MapPin, Users, RefreshCw, Search, type LucideIcon,
@@ -9,18 +11,18 @@ import { Link } from "react-router-dom";
 import { useTranslation } from "react-i18next";
 import { useLangPath } from "@/components/LanguageLayout";
 import Navbar from "@/components/landing/Navbar";
-import Footer from "@/components/landing/Footer";
-import CalculatorSection from "@/components/landing/CalculatorSection";
-import TargetGroupSection from "@/components/landing/TargetGroupSection";
-import { CTASection } from "@/components/CTASection";
 import { getCTAConfig } from "@/data/cta-config";
 
+// Below-the-fold — code-split to shrink the WebshopPage chunk.
+const Footer = lazy(() => import("@/components/landing/Footer"));
+const CalculatorSection = lazy(() => import("@/components/landing/CalculatorSection"));
+const TargetGroupSection = lazy(() => import("@/components/landing/TargetGroupSection"));
+const GoogleReviewsGrid = lazy(() => import("@/components/GoogleReviewsGrid"));
+const CTASection = lazy(() =>
+  import("@/components/CTASection").then((m) => ({ default: m.CTASection }))
+);
+
 // ─── Assets ──────────────────────────────────────────────────────────────────
-import phone1 from "@/assets/mockups/1 - Mock Up Small.png";
-import phone2 from "@/assets/mockups/2 - Mock Up - Medium.png";
-import phone3 from "@/assets/mockups/3 - Mock Up - Large.png";
-import phone4 from "@/assets/mockups/4 - Mock Up Medium.png";
-import phone5 from "@/assets/mockups/5 - Mock Up Small.png";
 import heroWebshop from "@/assets/heroes/Hero - Webshop.png";
 import logoKojo      from "@/assets/logos/kunden/logo-kojo-sushi.png";
 import logoIlSorriso from "@/assets/logos/kunden/logo-il-sorriso.png";
@@ -32,10 +34,6 @@ import payGoogle     from "@/assets/logos/payment/pay-google.png";
 import payVisa       from "@/assets/logos/payment/pay-visa.png";
 import payMastercard from "@/assets/logos/payment/pay-mastercard.png";
 import payKlarna     from "@/assets/logos/payment/pay-klarna.png";
-import mockStart     from "@/assets/screenshots/take-startbild.jpeg";
-import mockMenu      from "@/assets/screenshots/take-menu.jpeg";
-import mockBestart   from "@/assets/screenshots/take-bestellart.jpeg";
-import mockFilialen  from "@/assets/screenshots/take-filialen.jpeg";
 import teamReneImg      from "@/assets/team/ceo-rene-ebert.png";
 import teamSalvatoreImg from "@/assets/team/team-salvatore-anzaldi.png";
 import teamAndrejImg    from "@/assets/team/team-andrej-krutsch.png";
@@ -184,102 +182,43 @@ const FaqItem = ({ q, a }: { q: string; a: string }) => {
   );
 };
 
-// ─── Hero Phone Spread (Scroll-driven) ───────────────────────────────────────
-const heroPhoneData = [
-  { src: phone1, alt: "Gastro Master Webshop – Startseite",       targetX: -330, targetScale: 0.80, zIndex: 1 },
-  { src: phone2, alt: "Gastro Master Webshop – Speisekarte",      targetX: -165, targetScale: 0.90, zIndex: 3 },
-  { src: phone3, alt: "Gastro Master Webshop – Online bestellen", targetX:    0, targetScale: 1.00, zIndex: 5 },
-  { src: phone4, alt: "Gastro Master Webshop – Bestellart",       targetX:  165, targetScale: 0.90, zIndex: 3 },
-  { src: phone5, alt: "Gastro Master Webshop – Filialen",         targetX:  330, targetScale: 0.80, zIndex: 1 },
-];
-
-function PhoneScrollItem({
-  src, alt, targetX, targetScale, zIndex, spread,
-}: {
-  src: string; alt: string; targetX: number; targetScale: number; zIndex: number;
-  spread: MotionValue<number>;
-}) {
-  const x     = useTransform(spread, [0, 250], [targetX * 0.55, targetX]);
-  const scale = useTransform(spread, [0, 250], [targetScale * 0.92, targetScale]);
-  return (
-    <motion.div
-      style={{ x, scale, zIndex, position: "absolute" }}
-      initial={{ opacity: 0 }}
-      animate={{ opacity: 1 }}
-      transition={{ duration: 0.9, delay: 0.3 }}
-    >
-      <img
-        src={src}
-        alt={alt}
-        className="w-[190px] md:w-[220px] lg:w-[260px] object-contain drop-shadow-2xl"
-        loading="eager"
-      />
-    </motion.div>
-  );
-}
-
-function HeroPhoneSpread() {
-  const { scrollY } = useScroll();
-  return (
-    <div className="relative h-[420px] md:h-[480px] w-full flex items-center justify-center overflow-visible">
-      <div className="absolute top-1/2 left-1/2 -translate-x-1/2 -translate-y-1/2 w-[220px] h-[480px] bg-cyan-brand/12 blur-[90px] rounded-full pointer-events-none z-0" />
-      {heroPhoneData.map((p, i) => (
-        <PhoneScrollItem key={i} spread={scrollY} {...p} />
-      ))}
-    </div>
-  );
-}
-
 // ─── Feature Cards ────────────────────────────────────────────────────────────
 const featureCards: {
-  img: string | null;
-  imgAlt?: string;
   icon: LucideIcon;
   title: string;
   text: string;
 }[] = [
   {
-    img: mockStart,
-    imgAlt: "Gastro Master Webshop – Eigene Bestellseite",
     icon: Globe,
     title: "Deine eigene Bestellseite",
     text: "Deine Kunden bestellen direkt auf deiner Seite – z.B. pizza-xyz.de/bestellen. Keine App, kein Umweg über Drittanbieter.",
   },
   {
-    img: mockMenu,
-    imgAlt: "Gastro Master Webshop – Kein App-Download nötig",
     icon: Globe,
     title: "Kein App-Download nötig",
     text: "Der Webshop öffnet direkt im Browser – auf Smartphone, Tablet oder Desktop. Einfach Link teilen, fertig bestellt.",
   },
   {
-    img: mockBestart,
-    imgAlt: "Gastro Master Webshop – Lieferung und Abholung",
     icon: MapPin,
     title: "Lieferung & Abholung",
     text: "Deine Kunden wählen selbst: direkt nach Hause liefern oder im Restaurant abholen. Lieferzonen und Öffnungszeiten stellst du selbst ein.",
   },
   {
-    img: mockFilialen,
-    imgAlt: "Gastro Master Webshop – Filialen verwalten",
     icon: Users,
     title: "Multi-Standort & Filialen",
     text: "Mehrere Standorte? Kein Problem. Verwalte alle Filialen zentral über eine Oberfläche – ideal für Franchise-Konzepte.",
   },
   {
-    img: null,
     icon: CreditCard,
     title: "Online-Zahlung",
     text: "Apple Pay, Google Pay, Kreditkarte und PayPal – alle gängigen Zahlungsarten direkt im Shop. Sicher, schnell, ohne Umwege.",
   },
   {
-    img: null,
     icon: Globe,
     title: "Eigenes Branding",
     text: "Dein Logo, deine Farben, dein Name – der Webshop erscheint vollständig unter deiner Marke. 0 % Gastro Master sichtbar für deine Kunden.",
   },
   {
-    img: null,
     icon: RefreshCw,
     title: "Speisekarte selbst verwalten",
     text: "Preise, Artikel und Kategorien jederzeit in Echtzeit ändern – kein Entwickler nötig, kein Warten auf Support.",
@@ -381,6 +320,8 @@ const WebshopTeamCTA = () => {
                 key={current}
                 src={member.img}
                 alt={member.name}
+                loading="lazy"
+                decoding="async"
                 initial={{ opacity: 0, scale: 1.04 }}
                 animate={{ opacity: 1, scale: 1 }}
                 exit={{ opacity: 0, scale: 0.97 }}
@@ -443,11 +384,12 @@ const WebshopPage = () => {
   const tCompPlatformItems = arr("compare.platformItems") as string[];
   const tCompGmItems = arr("compare.gmItems") as string[];
   const tPricingFeatures = arr("pricing.mainPackage.features") as string[];
-  const tPricingAddons = arr("pricing.addons") as any[];
   const tTestStats = arr("testimonials.stats") as { value: string; label: string }[];
 
   return (
     <div className="min-h-screen bg-[#0A264A]">
+      <ScrollProgressBar />
+      <ScrollToTopButton />
       <script type="application/ld+json" dangerouslySetInnerHTML={{ __html: JSON.stringify(SCHEMA_BREADCRUMB) }} />
       <script type="application/ld+json" dangerouslySetInnerHTML={{ __html: JSON.stringify(SCHEMA_FAQ_WEBSHOP) }} />
       <Navbar />
@@ -489,6 +431,9 @@ const WebshopPage = () => {
             src={heroWebshop}
             alt="Gastro Master Bestellsystem auf Desktop, Laptop, Tablet und Smartphone"
             className="w-full max-w-5xl mx-auto object-contain drop-shadow-2xl"
+            fetchPriority="high"
+            decoding="async"
+            loading="eager"
           />
         </motion.div>
 
@@ -525,6 +470,10 @@ const WebshopPage = () => {
           </div>
         </motion.div>
       </section>
+
+      {/* ── S1b: GOOGLE REVIEWS ─────────────────────────────────── */}
+      <Suspense fallback={null}>
+      <GoogleReviewsGrid />
 
       {/* ── S2: TRUST BAR ───────────────────────────────────────── */}
       <section className="bg-white dark:bg-[#111827] border-y border-[#0A264A]/[0.06] dark:border-white/[0.06] px-5 md:px-8 lg:px-16 py-10 md:py-12">
@@ -584,39 +533,42 @@ const WebshopPage = () => {
             </p>
           </motion.div>
 
-          <div className="grid md:grid-cols-2 lg:grid-cols-3 xl:grid-cols-4 gap-5 mb-7">
-            {featureCards.map((f, i) => (
-              <motion.div
-                key={f.title}
-                initial={{ opacity: 0, y: 20 }}
-                whileInView={{ opacity: 1, y: 0 }}
-                viewport={{ once: true }}
-                transition={{ delay: i * 0.07, duration: 0.5 }}
-                className="group bg-[#0A264A]/[0.04] dark:bg-[#1f2937] border border-[#0A264A]/10 dark:border-white/[0.08] rounded-2xl overflow-hidden hover:border-cyan-brand/30 transition-all duration-300"
-              >
-                {f.img ? (
-                  <div className="aspect-[9/14] overflow-hidden bg-white dark:bg-black">
-                    <img
-                      src={f.img}
-                      alt={f.imgAlt}
-                      className="w-full h-full object-cover group-hover:scale-[1.03] transition-transform duration-500"
-                      loading="lazy"
-                    />
+          <div className="grid md:grid-cols-2 lg:grid-cols-3 gap-5 mb-7">
+            {featureCards.map((f, i) => {
+              const isWide = i === featureCards.length - 1;
+              return (
+                <GlowCard
+                  key={f.title}
+                  glowRgb="0,125,207"
+                  className={`group rounded-2xl border border-[#0A264A]/10 dark:border-white/[0.08] bg-gradient-to-br from-white to-[#F0F4F8] dark:from-[#1f2937] dark:to-[#111827] hover:border-cyan-brand/40 transition-colors duration-300 ${
+                    isWide ? "md:col-span-2 lg:col-span-3" : ""
+                  }`}
+                  motionProps={{
+                    initial: { opacity: 0, y: 20 },
+                    whileInView: { opacity: 1, y: 0 },
+                    viewport: { once: true },
+                    transition: { delay: i * 0.07, duration: 0.5 },
+                  }}
+                >
+                  <div className={`relative z-10 p-7 md:p-8 ${isWide ? "flex flex-col md:flex-row md:items-center gap-6 md:gap-10" : "flex flex-col"}`}>
+                    <div className={`flex-shrink-0 ${isWide ? "" : "mb-6"}`}>
+                      <div className="relative w-14 h-14 rounded-2xl bg-gradient-to-br from-cyan-brand/20 to-cyan-brand/5 border border-cyan-brand/20 flex items-center justify-center transition-transform duration-300 group-hover:scale-105">
+                        <f.icon className="w-7 h-7 text-cyan-brand" strokeWidth={1.75} />
+                        <span className="absolute inset-0 rounded-2xl bg-cyan-brand/0 group-hover:bg-cyan-brand/10 transition-colors duration-300" />
+                      </div>
+                    </div>
+                    <div className={isWide ? "flex-1" : ""}>
+                      <h3 className={`text-[#0A264A] dark:text-white font-black leading-tight mb-3 ${isWide ? "text-xl md:text-2xl" : "text-lg"}`}>
+                        {tFeatures[i]?.title || f.title}
+                      </h3>
+                      <p className={`text-[#0A264A]/55 dark:text-white/50 leading-relaxed ${isWide ? "text-base max-w-2xl" : "text-sm"}`}>
+                        {tFeatures[i]?.text || f.text}
+                      </p>
+                    </div>
                   </div>
-                ) : (
-                  <div className="aspect-[9/14] flex items-center justify-center bg-cyan-brand/10 dark:bg-cyan-brand/5">
-                    <f.icon className="w-12 h-12 text-cyan-brand opacity-60" strokeWidth={1.5} />
-                  </div>
-                )}
-                <div className="p-5">
-                  <div className="flex items-center gap-2 mb-2">
-                    <f.icon className="w-4 h-4 text-cyan-brand flex-shrink-0" strokeWidth={2} />
-                    <h3 className="text-[#0A264A] dark:text-white font-bold text-sm leading-snug">{tFeatures[i]?.title || f.title}</h3>
-                  </div>
-                  <p className="text-[#0A264A]/55 dark:text-white/45 text-sm leading-relaxed">{tFeatures[i]?.text || f.text}</p>
-                </div>
-              </motion.div>
-            ))}
+                </GlowCard>
+              );
+            })}
           </div>
         </div>
       </section>
@@ -1013,6 +965,8 @@ const WebshopPage = () => {
                     key={p.alt}
                     src={p.src}
                     alt={p.alt}
+                    loading="lazy"
+                    decoding="async"
                     className={`${p.h} object-contain`}
                     whileHover={{ scale: 1.15, y: -2 }}
                     transition={{ duration: 0.18, ease: "easeOut" }}
@@ -1112,6 +1066,7 @@ const WebshopPage = () => {
       </div>
 
       <Footer />
+      </Suspense>
     </div>
   );
 };

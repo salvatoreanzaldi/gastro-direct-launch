@@ -14,6 +14,8 @@ import {
   TrendingDown,
   HelpCircle,
 } from "lucide-react";
+import ScrollProgressBar from "@/components/ScrollProgressBar";
+import ScrollToTopButton from "@/components/ScrollToTopButton";
 import { Link } from "react-router-dom";
 import { useTranslation } from "react-i18next";
 import { useLangPath } from "@/components/LanguageLayout";
@@ -99,6 +101,8 @@ const LieferdienstPage = () => {
 
   return (
     <div className="min-h-screen bg-background">
+      <ScrollProgressBar />
+      <ScrollToTopButton />
       {/* JSON-LD Schema */}
       <script
         type="application/ld+json"

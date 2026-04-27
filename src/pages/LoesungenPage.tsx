@@ -6,6 +6,8 @@ import {
   UtensilsCrossed, Coffee, Truck, Store, Building2,
   ShoppingCart, Smartphone, Globe, Monitor, Percent,
 } from "lucide-react";
+import ScrollProgressBar from "@/components/ScrollProgressBar";
+import ScrollToTopButton from "@/components/ScrollToTopButton";
 import { Link } from "react-router-dom";
 import { useTranslation } from "react-i18next";
 import { useLangPath } from "@/components/LanguageLayout";
@@ -114,6 +116,8 @@ const LoesungenPage = () => {
 
   return (
     <div className="min-h-screen bg-background">
+      <ScrollProgressBar />
+      <ScrollToTopButton />
       <script
         type="application/ld+json"
         dangerouslySetInnerHTML={{ __html: JSON.stringify(SCHEMA_FAQ) }}

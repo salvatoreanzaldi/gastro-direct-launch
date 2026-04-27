@@ -1,5 +1,7 @@
 import React, { useState } from "react";
 import { useSeoMeta } from "@/hooks/useSeoMeta";
+import ScrollProgressBar from "@/components/ScrollProgressBar";
+import ScrollToTopButton from "@/components/ScrollToTopButton";
 import { motion, AnimatePresence } from "framer-motion";
 import {
   ArrowRight, ChevronDown, ExternalLink,
@@ -108,6 +110,8 @@ const CafeBaeckereiPage = () => {
 
   return (
     <div className="min-h-screen bg-[#0A264A]">
+      <ScrollProgressBar />
+      <ScrollToTopButton />
       {/* JSON-LD */}
       <script type="application/ld+json" dangerouslySetInnerHTML={{ __html: JSON.stringify(SCHEMA_FAQ) }} />
       <script type="application/ld+json" dangerouslySetInnerHTML={{ __html: JSON.stringify(SCHEMA_ARTICLE) }} />

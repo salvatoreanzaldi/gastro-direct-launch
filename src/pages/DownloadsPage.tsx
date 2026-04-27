@@ -4,6 +4,8 @@ import Footer from "@/components/landing/Footer";
 import { useSeoMeta } from "@/hooks/useSeoMeta";
 import { useTranslation } from "react-i18next";
 import { useLangPath } from "@/components/LanguageLayout";
+import ScrollProgressBar from "@/components/ScrollProgressBar";
+import ScrollToTopButton from "@/components/ScrollToTopButton";
 
 const DOWNLOAD_URLS = [
   ["https://gastro-master.de/dd/gmwindows13.zip", "https://gastro-master.de/dd/GMClientDesktopV1.0.0.zip"],
@@ -40,6 +42,8 @@ const DownloadsPage = () => {
 
   return (
     <div className="min-h-screen bg-background">
+      <ScrollProgressBar />
+      <ScrollToTopButton />
       <Navbar />
       <main className="section-padding pt-28 md:pt-32">
         <div className="container-tight max-w-3xl">

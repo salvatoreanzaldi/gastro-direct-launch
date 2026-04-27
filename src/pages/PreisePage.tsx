@@ -2,6 +2,8 @@ import React, { useState } from "react";
 import { useTranslation } from "react-i18next";
 import { useLangPath } from "@/components/LanguageLayout";
 import { useSeoMeta } from "@/hooks/useSeoMeta";
+import ScrollProgressBar from "@/components/ScrollProgressBar";
+import ScrollToTopButton from "@/components/ScrollToTopButton";
 import { motion, AnimatePresence } from "framer-motion";
 import {
   ArrowRight,
@@ -245,6 +247,8 @@ const PreisePage = () => {
 
   return (
     <div className="min-h-screen bg-white dark:bg-[#0a0f1a] text-[#0A264A] dark:text-white">
+      <ScrollProgressBar />
+      <ScrollToTopButton />
       <script
         type="application/ld+json"
         dangerouslySetInnerHTML={{ __html: JSON.stringify(SCHEMA_BREADCRUMB) }}

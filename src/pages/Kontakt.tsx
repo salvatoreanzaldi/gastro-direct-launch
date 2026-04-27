@@ -1,5 +1,7 @@
 import { useState, useEffect } from "react";
 import { motion, AnimatePresence } from "framer-motion";
+import ScrollProgressBar from "@/components/ScrollProgressBar";
+import ScrollToTopButton from "@/components/ScrollToTopButton";
 import { Clock, Lightbulb, Lock, Mail, Phone } from "lucide-react";
 import Navbar from "@/components/landing/Navbar";
 import Footer from "@/components/landing/Footer";
@@ -83,6 +85,8 @@ const Kontakt = () => {
 
   return (
     <div className="min-h-screen bg-white dark:bg-[#0d1117]">
+      <ScrollProgressBar />
+      <ScrollToTopButton />
       <Navbar />
       <main className="pt-28 md:pt-32 pb-12 px-5 md:px-8 lg:px-16">
         <div className="max-w-6xl mx-auto">

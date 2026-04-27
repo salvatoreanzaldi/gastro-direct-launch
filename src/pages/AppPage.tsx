@@ -1,4 +1,6 @@
-import React, { useState, useEffect, useRef } from "react";
+import React, { lazy, Suspense, useState, useEffect, useRef } from "react";
+import ScrollProgressBar from "@/components/ScrollProgressBar";
+import ScrollToTopButton from "@/components/ScrollToTopButton";
 import { useSeoMeta } from "@/hooks/useSeoMeta";
 import { motion, AnimatePresence, useScroll, useTransform, type MotionValue } from "framer-motion";
 import {
@@ -10,11 +12,16 @@ import { Link } from "react-router-dom";
 import { useTranslation } from "react-i18next";
 import { useLangPath } from "@/components/LanguageLayout";
 import Navbar from "@/components/landing/Navbar";
-import Footer from "@/components/landing/Footer";
-import CalculatorSection from "@/components/landing/CalculatorSection";
-import TargetGroupSection from "@/components/landing/TargetGroupSection";
-import { CTASection } from "@/components/CTASection";
 import { getCTAConfig } from "@/data/cta-config";
+
+// Below-the-fold — code-split to shrink the AppPage chunk.
+const Footer = lazy(() => import("@/components/landing/Footer"));
+const CalculatorSection = lazy(() => import("@/components/landing/CalculatorSection"));
+const TargetGroupSection = lazy(() => import("@/components/landing/TargetGroupSection"));
+const GoogleReviewsGrid = lazy(() => import("@/components/GoogleReviewsGrid"));
+const CTASection = lazy(() =>
+  import("@/components/CTASection").then((m) => ({ default: m.CTASection }))
+);
 
 // ─── Assets ──────────────────────────────────────────────────────────────────
 import iosIcon          from "@/assets/icons/iOS 26 Icon.png";
@@ -201,10 +208,10 @@ const heroPhoneData = [
 ];
 
 function PhoneScrollItem({
-  src, alt, targetX, targetScale, zIndex, spread,
+  src, alt, targetX, targetScale, zIndex, spread, priority,
 }: {
   src: string; alt: string; targetX: number; targetScale: number; zIndex: number;
-  spread: MotionValue<number>;
+  spread: MotionValue<number>; priority?: boolean;
 }) {
   const x     = useTransform(spread, [0, 250], [targetX * 0.55, targetX]);
   const scale = useTransform(spread, [0, 250], [targetScale * 0.92, targetScale]);
@@ -220,6 +227,8 @@ function PhoneScrollItem({
         alt={alt}
         className="w-[190px] md:w-[220px] lg:w-[260px] object-contain drop-shadow-2xl"
         loading="eager"
+        decoding="async"
+        {...(priority ? { fetchPriority: "high" as const } : {})}
       />
     </motion.div>
   );
@@ -231,7 +240,7 @@ function HeroPhoneSpread() {
     <div className="relative h-[420px] md:h-[480px] w-full flex items-center justify-center overflow-visible">
       <div className="absolute top-1/2 left-1/2 -translate-x-1/2 -translate-y-1/2 w-[220px] h-[480px] bg-cyan-brand/12 blur-[90px] rounded-full pointer-events-none z-0" />
       {heroPhoneData.map((p, i) => (
-        <PhoneScrollItem key={i} spread={scrollY} {...p} />
+        <PhoneScrollItem key={i} spread={scrollY} {...p} priority={i === 2} />
       ))}
     </div>
   );
@@ -317,6 +326,8 @@ const AppTeamCTA = () => {
                 key={current}
                 src={teamImages[current]}
                 alt={members[current]?.name ?? ""}
+                loading="lazy"
+                decoding="async"
                 initial={{ opacity: 0, scale: 1.04 }}
                 animate={{ opacity: 1, scale: 1 }}
                 exit={{ opacity: 0, scale: 0.97 }}
@@ -390,6 +401,8 @@ const AppPage = () => {
 
   return (
     <div className="min-h-screen bg-[#0A264A]">
+      <ScrollProgressBar />
+      <ScrollToTopButton />
       <script type="application/ld+json" dangerouslySetInnerHTML={{ __html: JSON.stringify(SCHEMA_BREADCRUMB) }} />
       <script type="application/ld+json" dangerouslySetInnerHTML={{ __html: JSON.stringify(SCHEMA_FAQ_APP) }} />
       <Navbar />
@@ -449,6 +462,10 @@ const AppPage = () => {
         </motion.div>
       </section>
 
+      {/* ── S1b: GOOGLE REVIEWS ─────────────────────────────────── */}
+      <Suspense fallback={null}>
+      <GoogleReviewsGrid />
+
       {/* ── S2: TRUST BAR ───────────────────────────────────────── */}
       <section className="bg-white dark:bg-[#111827] border-y border-[#0A264A]/[0.06] dark:border-white/[0.06] px-5 md:px-8 lg:px-16 py-10 md:py-12">
         <div className="max-w-6xl mx-auto grid grid-cols-1 sm:grid-cols-3 gap-6 md:gap-6 items-center">
@@ -471,8 +488,8 @@ const AppPage = () => {
             className="text-center flex flex-col items-center gap-2"
           >
             <div className="flex items-center gap-4">
-              <img src={iosIcon}     alt={t("trustBar.iosAlt")}     className="w-14 h-14 md:w-20 md:h-20 object-contain" />
-              <img src={androidIcon} alt={t("trustBar.androidAlt")} className="w-14 h-14 md:w-20 md:h-20 object-contain" />
+              <img src={iosIcon}     alt={t("trustBar.iosAlt")}     className="w-14 h-14 md:w-20 md:h-20 object-contain" loading="lazy" decoding="async" />
+              <img src={androidIcon} alt={t("trustBar.androidAlt")} className="w-14 h-14 md:w-20 md:h-20 object-contain" loading="lazy" decoding="async" />
             </div>
             <p className="text-[#0A264A]/45 dark:text-white/40 text-sm leading-snug">{t("trustBar.storesLabel")}</p>
           </motion.div>
@@ -575,7 +592,7 @@ const AppPage = () => {
                 rel="noopener noreferrer"
                 className="hover:scale-105 transition-transform duration-200"
               >
-                <img src={iconAppStore} alt={t("demo.appStoreAlt")} className="h-14 object-contain" />
+                <img src={iconAppStore} alt={t("demo.appStoreAlt")} className="h-14 object-contain" loading="lazy" decoding="async" />
               </a>
               <a
                 href="https://play.google.com/store/apps/details?id=com.epitglobal.gastromasterapp"
@@ -583,7 +600,7 @@ const AppPage = () => {
                 rel="noopener noreferrer"
                 className="hover:scale-105 transition-transform duration-200"
               >
-                <img src={iconGooglePlay} alt={t("demo.googlePlayAlt")} className="h-14 object-contain" />
+                <img src={iconGooglePlay} alt={t("demo.googlePlayAlt")} className="h-14 object-contain" loading="lazy" decoding="async" />
               </a>
             </div>
           </div>
@@ -630,6 +647,8 @@ const AppPage = () => {
                     <img
                       src={s.src}
                       alt={s.alt}
+                      loading="lazy"
+                      decoding="async"
                       className="relative w-16 h-16 md:w-20 md:h-20 object-contain drop-shadow-[0_4px_12px_rgba(0,0,0,0.4)]"
                     />
                   </div>
@@ -856,6 +875,8 @@ const AppPage = () => {
                     <img
                       src={icon.src}
                       alt={icon.alt}
+                      loading="lazy"
+                      decoding="async"
                       className="relative w-32 h-32 object-contain drop-shadow-[0_0_24px_rgba(0,125,207,0.85)]"
                     />
                   </div>
@@ -926,6 +947,8 @@ const AppPage = () => {
                     key={p.alt}
                     src={p.src}
                     alt={p.alt}
+                    loading="lazy"
+                    decoding="async"
                     className={`${p.h} object-contain`}
                     whileHover={{ scale: 1.15, y: -2 }}
                     transition={{ duration: 0.18, ease: "easeOut" }}
@@ -1047,6 +1070,7 @@ const AppPage = () => {
       </div>
 
       <Footer />
+      </Suspense>
     </div>
   );
 };

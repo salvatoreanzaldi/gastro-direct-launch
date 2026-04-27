@@ -1,6 +1,8 @@
 import { useState } from "react";
 import { Link } from "react-router-dom";
 import { motion, AnimatePresence } from "framer-motion";
+import ScrollProgressBar from "@/components/ScrollProgressBar";
+import ScrollToTopButton from "@/components/ScrollToTopButton";
 import { useTranslation } from "react-i18next";
 import {
   ArrowRight, Star, ChevronDown, CheckCircle2,
@@ -167,6 +169,8 @@ const AddOnsPage = () => {
 
   return (
     <div className={`transition-opacity duration-300 ${!ready ? "opacity-0" : "opacity-100"}`}>
+      <ScrollProgressBar />
+      <ScrollToTopButton />
       <script type="application/ld+json" dangerouslySetInnerHTML={{ __html: JSON.stringify(SCHEMA_BREADCRUMB) }} />
       <script type="application/ld+json" dangerouslySetInnerHTML={{ __html: JSON.stringify(SCHEMA_ITEMLIST) }} />
       <script type="application/ld+json" dangerouslySetInnerHTML={{ __html: JSON.stringify(SCHEMA_FAQ) }} />

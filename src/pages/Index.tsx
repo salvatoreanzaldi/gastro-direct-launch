@@ -1,26 +1,51 @@
+import { lazy, Suspense, useEffect } from "react";
 import { useSeoMeta } from "@/hooks/useSeoMeta";
+import ScrollProgressBar from "@/components/ScrollProgressBar";
+import ScrollToTopButton from "@/components/ScrollToTopButton";
 import { useTranslation } from "react-i18next";
 import Navbar from "@/components/landing/Navbar";
 import HeroScrollSection from "@/components/landing/HeroScrollSection";
-import TargetGroupSection from "@/components/landing/TargetGroupSection";
-import CalculatorSection from "@/components/landing/CalculatorSection";
-import SlimPricingSection from "@/components/landing/SlimPricingSection";
-import POSSection from "@/components/landing/POSSection";
-import DifferentiationSection from "@/components/landing/DifferentiationSection";
-import VideoTestimonialSection from "@/components/landing/VideoTestimonialSection";
-import AppShowcaseSection from "@/components/landing/AppShowcaseSection";
-import ProductShowcaseAccordionSection from "@/components/landing/ProductShowcaseAccordionSection";
-import FounderTrustSection from "@/components/landing/FounderTrustSection";
-import ProcessSection from "@/components/landing/ProcessSection";
-import PartnerSection from "@/components/landing/PartnerSection";
-import IntegrationSliderSection from "@/components/landing/IntegrationSliderSection";
-import GoogleReviewsGrid from "@/components/GoogleReviewsGrid";
-import TrustedBrandsSection from "@/components/landing/TrustedBrandsSection";
-import Footer from "@/components/landing/Footer";
-import HomeTeamCTA from "@/components/HomeTeamCTA";
-import { CTASection } from "@/components/CTASection";
 import { getCTAConfig } from "@/data/cta-config";
 
+// Below-the-fold sections — code-split to keep the initial bundle small.
+const GoogleReviewsGrid = lazy(() => import("@/components/GoogleReviewsGrid"));
+const TrustedBrandsSection = lazy(() => import("@/components/landing/TrustedBrandsSection"));
+const ProductShowcaseAccordionSection = lazy(() => import("@/components/landing/ProductShowcaseAccordionSection"));
+const CalculatorSection = lazy(() => import("@/components/landing/CalculatorSection"));
+const TargetGroupSection = lazy(() => import("@/components/landing/TargetGroupSection"));
+const VideoTestimonialSection = lazy(() => import("@/components/landing/VideoTestimonialSection"));
+const AppShowcaseSection = lazy(() => import("@/components/landing/AppShowcaseSection"));
+const SlimPricingSection = lazy(() => import("@/components/landing/SlimPricingSection"));
+const POSSection = lazy(() => import("@/components/landing/POSSection"));
+const DifferentiationSection = lazy(() => import("@/components/landing/DifferentiationSection"));
+const ProcessSection = lazy(() => import("@/components/landing/ProcessSection"));
+const IntegrationSliderSection = lazy(() => import("@/components/landing/IntegrationSliderSection"));
+const HomeTeamCTA = lazy(() => import("@/components/HomeTeamCTA"));
+const CTASection = lazy(() =>
+  import("@/components/CTASection").then((m) => ({ default: m.CTASection }))
+);
+const Footer = lazy(() => import("@/components/landing/Footer"));
+
+// Preload all lazy chunks once the browser is idle so they are warm
+// by the time the user scrolls — keeps Suspense fallbacks invisible
+// without bloating the initial parse/exec budget.
+const prefetchBelowFold = () => {
+  void import("@/components/GoogleReviewsGrid");
+  void import("@/components/landing/TrustedBrandsSection");
+  void import("@/components/landing/ProductShowcaseAccordionSection");
+  void import("@/components/landing/CalculatorSection");
+  void import("@/components/landing/TargetGroupSection");
+  void import("@/components/landing/VideoTestimonialSection");
+  void import("@/components/landing/AppShowcaseSection");
+  void import("@/components/landing/SlimPricingSection");
+  void import("@/components/landing/POSSection");
+  void import("@/components/landing/DifferentiationSection");
+  void import("@/components/landing/ProcessSection");
+  void import("@/components/landing/IntegrationSliderSection");
+  void import("@/components/HomeTeamCTA");
+  void import("@/components/CTASection");
+  void import("@/components/landing/Footer");
+};
 
 const Index = () => {
   const { t } = useTranslation("common");
@@ -30,56 +55,54 @@ const Index = () => {
     canonical: "https://gastro-master.de/",
   });
 
+  useEffect(() => {
+    const win = window as Window & {
+      requestIdleCallback?: (cb: () => void) => number;
+    };
+    if (typeof win.requestIdleCallback === "function") {
+      win.requestIdleCallback(prefetchBelowFold);
+    } else {
+      const t = setTimeout(prefetchBelowFold, 200);
+      return () => clearTimeout(t);
+    }
+  }, []);
+
   return (
     <div className="min-h-screen bg-background">
+      <ScrollProgressBar />
+      <ScrollToTopButton />
       <Navbar />
       {/* ATTENTION */}
       <HeroScrollSection />
-      {/* A/B Test */}
-      {/* <HeroSectionB /> */}
-      {/* <HeroSection /> */}
-      <GoogleReviewsGrid />
-      <TrustedBrandsSection />
-      {/* <TrustSection /> */}
-      {/* INTEREST */}
-      <ProductShowcaseAccordionSection />
-      <CalculatorSection />
-      <TargetGroupSection />
-      <VideoTestimonialSection />
-      <AppShowcaseSection animate={false} showFloatingFood={false} carousel={true} />
-      {/* <PositioningSection /> */}
-      {/* <ProblemSection /> */}
-      {/* <SolutionSection /> */}
-      {/* <MockupShowcase /> */}
-      {/* DESIRE */}
-      {/* <PricingSection /> */}
-      {/* <GlassyPricingSection /> */}
-      <SlimPricingSection />
-      <POSSection />
-      {/* <PickUpScreenSection /> */}
-      {/* <TransaktionsUmlageSection /> */}
-      <DifferentiationSection />
-      {/* <FounderTrustSection /> */}
-      {/* <LanguageBadgeSection /> */}
-      {/* <MomentumSection /> */}
-      <ProcessSection />
-      {/* <RiskReversalSection /> */}
-      {/* <ReferencesSection /> */}
-      {/* <PartnerSection /> */}
-      <IntegrationSliderSection />
+      <Suspense fallback={null}>
+        <GoogleReviewsGrid />
+        <TrustedBrandsSection />
+        {/* INTEREST */}
+        <ProductShowcaseAccordionSection />
+        <CalculatorSection />
+        <TargetGroupSection />
+        <VideoTestimonialSection />
+        <AppShowcaseSection animate={false} showFloatingFood={false} carousel={true} />
+        {/* DESIRE */}
+        <SlimPricingSection />
+        <POSSection />
+        <DifferentiationSection />
+        <ProcessSection />
+        <IntegrationSliderSection />
 
-      {/* Desktop Team CTA Section */}
-      <div className="hidden md:block">
-        <HomeTeamCTA />
-      </div>
+        {/* Desktop Team CTA Section */}
+        <div className="hidden md:block">
+          <HomeTeamCTA />
+        </div>
 
-      {/* Mobile CTA Section */}
-      <div className="md:hidden">
-        <CTASection {...getCTAConfig("/")} />
-      </div>
+        {/* Mobile CTA Section */}
+        <div className="md:hidden">
+          <CTASection {...getCTAConfig("/")} />
+        </div>
 
-      {/* ACTION */}
-      <Footer />
+        {/* ACTION */}
+        <Footer />
+      </Suspense>
     </div>
   );
 };

@@ -1,5 +1,7 @@
-import React, { useState, useEffect } from "react";
+import React, { lazy, Suspense, useState, useEffect } from "react";
 import { useTranslation } from "react-i18next";
+import ScrollProgressBar from "@/components/ScrollProgressBar";
+import ScrollToTopButton from "@/components/ScrollToTopButton";
 import { useLangPath } from "@/components/LanguageLayout";
 import { useSeoMeta } from "@/hooks/useSeoMeta";
 import { motion, AnimatePresence } from "framer-motion";
@@ -12,11 +14,16 @@ import {
 } from "lucide-react";
 import { Link } from "react-router-dom";
 import Navbar from "@/components/landing/Navbar";
-import Footer from "@/components/landing/Footer";
 import { GlobeStickers } from "@/components/ui/cobe-globe-stickers";
 import { useIsMobile } from "@/hooks/use-mobile";
-import { CTASection } from "@/components/CTASection";
 import { getCTAConfig } from "@/data/cta-config";
+
+// Below-the-fold — code-split to shrink the WebseitePage chunk.
+const Footer = lazy(() => import("@/components/landing/Footer"));
+const GoogleReviewsGrid = lazy(() => import("@/components/GoogleReviewsGrid"));
+const CTASection = lazy(() =>
+  import("@/components/CTASection").then((m) => ({ default: m.CTASection }))
+);
 
 // ─── Assets ───────────────────────────────────────────────────────────────────
 import heroGastroMaster from "@/assets/heroes/Hero - Gastro Master.png";
@@ -273,6 +280,8 @@ const TeamCTA = () => {
                 key={current}
                 src={member.img}
                 alt={member.name}
+                loading="lazy"
+                decoding="async"
                 initial={{ opacity: 0, scale: 1.04 }}
                 animate={{ opacity: 1, scale: 1 }}
                 exit={{ opacity: 0, scale: 0.97 }}
@@ -357,6 +366,8 @@ const WebseitePage = () => {
 
   return (
     <>
+      <ScrollProgressBar />
+      <ScrollToTopButton />
       <script type="application/ld+json" dangerouslySetInnerHTML={{ __html: JSON.stringify(SCHEMA_PRODUCT) }} />
       <script type="application/ld+json" dangerouslySetInnerHTML={{ __html: JSON.stringify(SCHEMA_FAQ) }} />
       <script type="application/ld+json" dangerouslySetInnerHTML={{ __html: JSON.stringify(SCHEMA_BREADCRUMB) }} />
@@ -364,7 +375,6 @@ const WebseitePage = () => {
       <div className="min-h-screen bg-background">
         <Navbar />
 
-        {/* ── S1: HERO (ausgeblendet – alte Variante) ─────────────────────── */}
         {/* <section className="mesh-gradient relative overflow-hidden px-5 md:px-8 lg:px-16 pt-36 pb-20 md:pt-44 md:pb-28">
           <div className="absolute inset-0 pointer-events-none" style={{ background: "radial-gradient(ellipse 60% 50% at 50% 60%, rgba(0,125,207,0.12), transparent 70%)" }} />
           <div className="max-w-6xl mx-auto relative z-10">
@@ -469,7 +479,7 @@ const WebseitePage = () => {
                 onClick={() => { window.location.href = lp("/kontakt"); }}
                 whileHover={{ scale: 1.03, boxShadow: "0 0 32px 8px rgba(237,132,0,0.55)" }}
                 whileTap={{ scale: 0.97 }}
-                className="bg-gradient-amber text-[#0A264A] font-bold px-5 py-3 md:px-8 md:py-4 rounded-xl text-base md:text-lg inline-flex items-center gap-2 shadow-lg whitespace-nowrap"
+                className="bg-gradient-amber text-white font-bold px-5 py-3 md:px-8 md:py-4 rounded-xl text-base md:text-lg inline-flex items-center gap-2 shadow-lg whitespace-nowrap"
               >
                 {t("hero_b.cta")}
                 <ArrowRight className="w-5 h-5" />
@@ -477,6 +487,10 @@ const WebseitePage = () => {
             </motion.div>
           </div>
         </section>
+
+        {/* ── S1c: GOOGLE REVIEWS ───────────────────────────────────────────── */}
+        <Suspense fallback={null}>
+        <GoogleReviewsGrid />
 
         {/* ── S2: TRUST BAR ─────────────────────────────────────────────────── */}
         <section className="bg-white dark:bg-[#111827] border-y border-[#0A264A]/[0.06] dark:border-white/[0.06] px-5 md:px-8 lg:px-16 py-10 md:py-12">
@@ -565,11 +579,15 @@ const WebseitePage = () => {
                     <img
                       src={zg.mobile}
                       alt={`${zg.label} – Mobile Ansicht`}
+                      loading="lazy"
+                      decoding="async"
                       className="w-[28%] md:w-[22%]"
                     />
                     <img
                       src={zg.tablet}
                       alt={`${zg.label} – Tablet Ansicht`}
+                      loading="lazy"
+                      decoding="async"
                       className="w-[52%] md:w-[48%]"
                     />
                   </div>
@@ -594,6 +612,8 @@ const WebseitePage = () => {
                     <img
                       src={zg.desktop}
                       alt={`${zg.label} – Desktop Ansicht`}
+                      loading="lazy"
+                      decoding="async"
                       className="w-full block"
                     />
                   </div>
@@ -741,6 +761,8 @@ const WebseitePage = () => {
                   <img
                     src={PORTFOLIO_IMGS[i]}
                     alt={item.alt}
+                    loading="lazy"
+                    decoding="async"
                     className="w-full h-full object-cover object-top transition-transform duration-500 group-hover:scale-105"
                   />
                   <div className="absolute inset-0 bg-gradient-to-t from-black/70 via-black/10 to-transparent opacity-60 group-hover:opacity-80 transition-opacity duration-300" />
@@ -1007,7 +1029,7 @@ const WebseitePage = () => {
                       <p className="text-white font-semibold text-sm">{item.name}</p>
                       <p className="text-white/45 text-xs">{item.restaurant}</p>
                     </div>
-                    {TESTIMONIAL_LOGOS[i] && <img src={TESTIMONIAL_LOGOS[i]} alt={item.restaurant} className="h-7 object-contain ml-auto opacity-60" />}
+                    {TESTIMONIAL_LOGOS[i] && <img src={TESTIMONIAL_LOGOS[i]} alt={item.restaurant} loading="lazy" decoding="async" className="h-7 object-contain ml-auto opacity-60" />}
                   </div>
                 </motion.div>
               ))}
@@ -1082,8 +1104,9 @@ const WebseitePage = () => {
           <CTASection {...getCTAConfig("/produkte/pakete/webseite")} />
         </div>
 
-      </div>
       <Footer />
+      </Suspense>
+      </div>
     </>
   );
 };

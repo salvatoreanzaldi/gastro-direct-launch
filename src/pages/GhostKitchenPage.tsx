@@ -1,5 +1,7 @@
 import React, { useState, useMemo } from "react";
 import { useSeoMeta } from "@/hooks/useSeoMeta";
+import ScrollProgressBar from "@/components/ScrollProgressBar";
+import ScrollToTopButton from "@/components/ScrollToTopButton";
 import { motion, AnimatePresence } from "framer-motion";
 import {
   ArrowRight, ChevronDown, ExternalLink, Monitor, ShoppingCart,
@@ -95,6 +97,8 @@ const GhostKitchenPage = () => {
 
   return (
     <div className="min-h-screen bg-background">
+      <ScrollProgressBar />
+      <ScrollToTopButton />
       <script type="application/ld+json" dangerouslySetInnerHTML={{ __html: JSON.stringify(SCHEMA_FAQ) }} />
       <script type="application/ld+json" dangerouslySetInnerHTML={{ __html: JSON.stringify(SCHEMA_BREADCRUMB) }} />
       <script type="application/ld+json" dangerouslySetInnerHTML={{ __html: JSON.stringify(SCHEMA_HOWTO) }} />

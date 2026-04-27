@@ -5,6 +5,8 @@ import { ChevronDown } from "lucide-react";
 import Navbar from "@/components/landing/Navbar";
 import Footer from "@/components/landing/Footer";
 import { useSeoMeta } from "@/hooks/useSeoMeta";
+import ScrollProgressBar from "@/components/ScrollProgressBar";
+import ScrollToTopButton from "@/components/ScrollToTopButton";
 
 const RolleVerantwortlicher = ({ label }: { label: string }) => (
   <p className="border-l-2 border-cyan-brand pl-3 italic text-muted-foreground text-sm mb-4">
@@ -40,7 +42,7 @@ const AccordionSection = ({ title, open, onToggle, children }: AccordionSectionP
   <div className="border-b border-border/50 last:border-b-0">
     <button
       onClick={onToggle}
-      className="w-full flex items-center justify-between py-5 text-left group"
+      className="w-full flex items-center justify-between px-6 py-5 text-left group"
     >
       <span className="text-foreground font-semibold text-base pr-4 group-hover:text-cyan-brand transition-colors duration-200">
         {title}
@@ -58,7 +60,7 @@ const AccordionSection = ({ title, open, onToggle, children }: AccordionSectionP
           transition={{ duration: 0.28, ease: "easeInOut" }}
           style={{ overflow: "hidden" }}
         >
-          <div className="pb-7 pt-1">{children}</div>
+          <div className="px-6 pb-7 pt-1">{children}</div>
         </motion.div>
       )}
     </AnimatePresence>
@@ -98,9 +100,11 @@ const Datenschutz = () => {
 
   return (
     <div className="min-h-screen bg-background">
+      <ScrollProgressBar />
+      <ScrollToTopButton />
       <Navbar />
       <main className="section-padding pt-44 md:pt-52">
-        <div className="container-tight max-w-3xl">
+        <div className="container-tight">
 
           <h1 className="text-4xl font-black text-foreground mb-2">{t("title")}</h1>
           <p className="text-muted-foreground text-sm mb-8">{t("stand")}</p>

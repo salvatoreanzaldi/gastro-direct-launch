@@ -4,6 +4,8 @@ import Navbar from "@/components/landing/Navbar";
 import Footer from "@/components/landing/Footer";
 import { useSeoMeta } from "@/hooks/useSeoMeta";
 import { useTranslation } from "react-i18next";
+import ScrollProgressBar from "@/components/ScrollProgressBar";
+import ScrollToTopButton from "@/components/ScrollToTopButton";
 
 /* ── Helpers ── */
 
@@ -347,6 +349,8 @@ const AGB = () => {
 
   return (
     <div className="min-h-screen bg-background">
+      <ScrollProgressBar />
+      <ScrollToTopButton />
       <Navbar />
       <main className="section-padding pt-44 md:pt-52">
         <div className="container-tight max-w-3xl">

@@ -1,5 +1,7 @@
 import { useState } from "react";
 import { useSeoMeta } from "@/hooks/useSeoMeta";
+import ScrollProgressBar from "@/components/ScrollProgressBar";
+import ScrollToTopButton from "@/components/ScrollToTopButton";
 import { motion, AnimatePresence } from "framer-motion";
 import { ArrowRight, ChevronLeft, ChevronRight, Plus, Minus, Check, X } from "lucide-react";
 import { Link } from "react-router-dom";
@@ -297,6 +299,8 @@ const HardwarePage = () => {
 
   return (
     <div className={`min-h-screen transition-opacity duration-300 ${!ready ? "opacity-0" : "opacity-100"}`} style={{ backgroundColor: "#0A264A" }}>
+      <ScrollProgressBar />
+      <ScrollToTopButton />
       <script type="application/ld+json" dangerouslySetInnerHTML={{ __html: JSON.stringify(SCHEMA_BREADCRUMB) }} />
       <script type="application/ld+json" dangerouslySetInnerHTML={{ __html: JSON.stringify(SCHEMA_FAQ) }} />
       <Navbar />

@@ -1,6 +1,8 @@
 import { useSeoMeta } from "@/hooks/useSeoMeta";
 import { useTranslation } from "react-i18next";
 import { motion } from "framer-motion";
+import ScrollProgressBar from "@/components/ScrollProgressBar";
+import ScrollToTopButton from "@/components/ScrollToTopButton";
 import { Link } from "react-router-dom";
 import { useState, useMemo, useCallback } from "react";
 import { useLangPath } from "@/components/LanguageLayout";
@@ -93,6 +95,8 @@ const BlogPage = () => {
       className={`min-h-screen transition-opacity duration-300 ${!ready ? "opacity-0 lg:opacity-100" : "opacity-100"}`}
       style={{ backgroundColor: "#0A264A" }}
     >
+      <ScrollProgressBar />
+      <ScrollToTopButton />
       <script type="application/ld+json" dangerouslySetInnerHTML={{ __html: JSON.stringify(SCHEMA_BREADCRUMB) }} />
       <script type="application/ld+json" dangerouslySetInnerHTML={{ __html: JSON.stringify(SCHEMA_BLOG) }} />
       <Navbar />
