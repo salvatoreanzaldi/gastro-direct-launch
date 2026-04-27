@@ -1,5 +1,7 @@
 import { BlogPostLayout } from "@/components/blog/BlogPostLayout";
 import { MapPin, Smartphone, Calculator, Users, Megaphone, CheckCircle2 } from "lucide-react";
+import ScrollProgressBar from "@/components/ScrollProgressBar";
+import ScrollToTopButton from "@/components/ScrollToTopButton";
 
 const POST_META = {
   title: "5 Fehler beim Eröffnen eines Lieferdienstes (und wie du sie vermeidest)",
@@ -75,6 +77,8 @@ const SCHNELL_CHECKS = [
 export default function BlogPostFehlerPage() {
   return (
     <BlogPostLayout {...POST_META}>
+      <ScrollProgressBar />
+      <ScrollToTopButton />
       <div className="space-y-6 text-white/65 text-base leading-relaxed">
 
         <p>

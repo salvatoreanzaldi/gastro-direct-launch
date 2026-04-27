@@ -1,5 +1,7 @@
 import { BlogPostLayout } from "@/components/blog/BlogPostLayout";
 import { TrendingDown, AlertCircle, Calculator, CheckCircle2 } from "lucide-react";
+import ScrollProgressBar from "@/components/ScrollProgressBar";
+import ScrollToTopButton from "@/components/ScrollToTopButton";
 
 const POST_META = {
   title: "Warum dein Lieferservice auf Lieferando verzichten sollte",
@@ -53,6 +55,8 @@ const ALTERNATIVE_VORTEILE = [
 export default function BlogPostLieferandoPage() {
   return (
     <BlogPostLayout {...POST_META}>
+      <ScrollProgressBar />
+      <ScrollToTopButton />
       <div className="space-y-6 text-white/65 text-base leading-relaxed">
 
         <p>

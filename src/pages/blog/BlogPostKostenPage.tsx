@@ -1,5 +1,7 @@
 import { BlogPostLayout } from "@/components/blog/BlogPostLayout";
 import { CheckCircle2, XCircle, Minus } from "lucide-react";
+import ScrollProgressBar from "@/components/ScrollProgressBar";
+import ScrollToTopButton from "@/components/ScrollToTopButton";
 
 const POST_META = {
   title: "Was kostet ein eigenes Bestellsystem wirklich? (Ehrlicher Vergleich)",
@@ -105,6 +107,8 @@ const GM_RECHNER = [
 export default function BlogPostKostenPage() {
   return (
     <BlogPostLayout {...POST_META}>
+      <ScrollProgressBar />
+      <ScrollToTopButton />
       <div className="space-y-6 text-white/65 text-base leading-relaxed">
 
         <p>
