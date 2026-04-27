@@ -12,8 +12,7 @@
     "subtitleLinkRestaurant": "restaurants",
     "subtitleLinkLieferdienst": "delivery services",
     "subtitleEnd": "and hospitality businesses – with TSE certification, GoBD compliance, cloud updates and direct support from Germany.",
-    "cta": "Get free consultation now",
-    "ctaSecondary": "View pricing",
+    "cta": "Free Consultation",
     "heroImgAlt": "Gastro Master POS System – TSE-compliant point of sale for restaurants"
   },
   "trust": {
@@ -21,17 +20,41 @@
     "googleLabel": "Google Rating",
     "googleSub": "Over 50 verified reviews",
     "stats": [
-      { "value": "800+", "label": "active customers" },
-      { "value": "TSE", "label": "certified & GoBD-compliant" },
-      { "value": "€0", "label": "surcharge for cloud updates" },
-      { "value": "Support", "label": "directly from Germany" }
+      {
+        "value": "800+",
+        "label": "active customers"
+      },
+      {
+        "value": "TSE",
+        "label": "certified & GoBD-compliant"
+      },
+      {
+        "value": "€0",
+        "label": "surcharge for cloud updates"
+      },
+      {
+        "value": "Support",
+        "label": "directly from Germany"
+      }
     ]
   },
   "benefits": [
-    { "title": "TSE requirement met", "text": "Certified to KassenSichV & GoBD – legally compliant from day one." },
-    { "title": "Cloud updates included", "text": "Always the latest version – automatically, at no extra cost." },
-    { "title": "Support from Germany", "text": "Personal contact person, directly reachable." },
-    { "title": "All platforms integrated", "text": "Lieferando, Wolt, own app & online shop in one system." }
+    {
+      "title": "TSE requirement met",
+      "text": "Certified to KassenSichV & GoBD – legally compliant from day one."
+    },
+    {
+      "title": "Cloud updates included",
+      "text": "Always the latest version – automatically, at no extra cost."
+    },
+    {
+      "title": "Support from Germany",
+      "text": "Personal contact person, directly reachable."
+    },
+    {
+      "title": "All platforms integrated",
+      "text": "Lieferando, Wolt, own app & online shop in one system."
+    }
   ],
   "slideshow": {
     "badge": "Core features",
@@ -55,8 +78,8 @@
       {
         "label": "One solution for table, counter and driver",
         "title": "Driver app & delivery zones",
-        "text": "See in real time where your drivers are and which route they're taking. Define your delivery zones yourself on the map so nobody takes a wrong turn.",
-        "tagline": "You're always in full control.",
+        "text": "See in real time where your drivers are and which route they're taking. Set your delivery zones directly on the map – with clear zone boundaries and automatic distance calculation. That way every order arrives reliably, without unnecessary detours.",
+        "tagline": "Fewer wrong turns, happier customers – and you stay in full control at all times.",
         "imgAlt": "Delivery zones map with GPS zones"
       }
     ]
@@ -106,17 +129,46 @@
     "headlineBr": "your complete system.",
     "sub": "Modular hardware add-ons and smart software features that adapt to your business.",
     "cards": [
-      { "subtitle": "DIGITIZATION THAT MAKES SENSE", "title": "Self-ordering terminal", "text": "Guests order directly at the terminal – intuitive, no waiting. Your team gains time. We also offer pick-up screens." },
-      { "subtitle": "FLEXIBLE SERVICE", "title": "Bar system with Orderman & QR code", "text": "Take orders via Orderman or let guests order themselves by QR code. Lightning fast and modern." },
-      { "subtitle": "SIMPLE & EFFICIENT", "title": "One license – up to 4 registers", "text": "Up to four terminals with one package. No extra subscription per register – maximum value without hidden costs." },
-      { "subtitle": "SEAMLESS INTEGRATION", "title": "Connection to any card terminal", "text": "Compatible with all card terminals using ZVT standard. No vendor lock-in – secure and seamless." },
-      { "subtitle": "EVERYTHING AT A GLANCE", "title": "Employee management", "text": "Working hours, revenue and tips automatically recorded. GoBD-compliant export for your accountant." }
+      {
+        "subtitle": "DIGITIZATION THAT MAKES SENSE",
+        "title": "Self-ordering terminal",
+        "text": "Guests order directly at the terminal – intuitive, no waiting. Your team gains time. We also offer pick-up screens."
+      },
+      {
+        "subtitle": "FLEXIBLE SERVICE",
+        "title": "Bar system with Orderman & QR code",
+        "text": "Take orders via Orderman or let guests order themselves by QR code. Lightning fast and modern."
+      },
+      {
+        "subtitle": "SIMPLE & EFFICIENT",
+        "title": "One license – up to 4 registers",
+        "text": "Up to four terminals with one package. No extra subscription per register – maximum value without hidden costs."
+      },
+      {
+        "subtitle": "SEAMLESS INTEGRATION",
+        "title": "Connection to any card terminal",
+        "text": "Compatible with all card terminals using ZVT standard. No vendor lock-in – secure and seamless."
+      },
+      {
+        "subtitle": "EVERYTHING AT A GLANCE",
+        "title": "Employee management",
+        "text": "Working hours, revenue and tips automatically recorded. GoBD-compliant export for your accountant."
+      }
     ]
   },
   "featureCards3": [
-    { "title": "Table system", "text": "Take orders directly at the table – faster service, fewer errors." },
-    { "title": "Driver app & delivery zones", "text": "Delivery status in real time, GPS tracking and delivery zones on one map." },
-    { "title": "Statistics & reports", "text": "Daily, weekly and monthly reports – always have all the numbers at hand." }
+    {
+      "title": "Table system",
+      "text": "Take orders directly at the table – faster service, fewer errors."
+    },
+    {
+      "title": "Driver app & delivery zones",
+      "text": "Delivery status in real time, GPS tracking and delivery zones on one map."
+    },
+    {
+      "title": "Statistics & reports",
+      "text": "Daily, weekly and monthly reports – always have all the numbers at hand."
+    }
   ],
   "hardware": {
     "badge": "Recommended Hardware",
@@ -128,20 +180,48 @@
       {
         "title": "Elo Series-3",
         "desc": "Compact all-in-one POS system with touchscreen. Ideal for restaurants, cafés and takeaways.",
-        "features": ["15.6\" touchscreen", "Compact design", "Receipt printer compatible"],
-        "labels": ["Front", "Angled", "Back", "Ports", "Side"]
+        "features": [
+          "15.6\" touchscreen",
+          "Compact design",
+          "Receipt printer compatible"
+        ],
+        "labels": [
+          "Front",
+          "Angled",
+          "Back",
+          "Ports",
+          "Side"
+        ]
       },
       {
         "title": "Elo Series-3 Doublescreen",
         "desc": "Two screens: one for you, one for the guest. Perfect for counter service and upselling.",
-        "features": ["Customer display", "Upsell opportunity", "Professional appearance"],
-        "labels": ["Front", "Angled", "Back", "Ports"]
+        "features": [
+          "Customer display",
+          "Upsell opportunity",
+          "Professional appearance"
+        ],
+        "labels": [
+          "Front",
+          "Angled",
+          "Back",
+          "Ports"
+        ]
       },
       {
         "title": "Microsoft Surface Tablet",
         "desc": "Flexible and mobile. Take your POS anywhere. Ideal for food trucks, events and small businesses.",
-        "features": ["Mobile use", "Light & compact", "Windows-compatible"],
-        "labels": ["Front", "Angled", "Back", "Side"]
+        "features": [
+          "Mobile use",
+          "Light & compact",
+          "Windows-compatible"
+        ],
+        "labels": [
+          "Front",
+          "Angled",
+          "Back",
+          "Side"
+        ]
       }
     ]
   },
@@ -202,12 +282,28 @@
     "expectLabel": "What to expect:",
     "expectText": "In the free initial consultation, one of our experts develops a tailored concept for your new POS system – free, non-binding and customized to your business. Afterwards, you freely decide whether to implement it with us.",
     "privacyNote": "Your information is used exclusively for contact purposes and is not stored.",
-    "languages": ["German", "English", "Italian", "Persian", "Russian", "Sinhalese"],
+    "languages": [
+      "German",
+      "English",
+      "Italian",
+      "Persian",
+      "Russian",
+      "Sinhalese"
+    ],
     "cta": "Request free consultation",
     "teamMembers": [
-      { "name": "René Ebert", "role": "Founder & CEO" },
-      { "name": "Salvatore Anzaldi", "role": "Head of Sales" },
-      { "name": "Andrej Krutsch", "role": "Head of Operations" }
+      {
+        "name": "René Ebert",
+        "role": "Founder & CEO"
+      },
+      {
+        "name": "Salvatore Anzaldi",
+        "role": "Head of Sales"
+      },
+      {
+        "name": "Andrej Krutsch",
+        "role": "Head of Operations"
+      }
     ]
   },
   "faq": {

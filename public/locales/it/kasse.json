@@ -12,8 +12,7 @@
     "subtitleLinkRestaurant": "ristoranti",
     "subtitleLinkLieferdienst": "servizi di consegna",
     "subtitleEnd": "e attività gastronomiche – con certificazione TSE, conformità GoBD, aggiornamenti cloud e supporto diretto dalla Germania.",
-    "cta": "Richieda una consulenza gratuita",
-    "ctaSecondary": "Veda i prezzi",
+    "cta": "Consulenza gratuita",
     "heroImgAlt": "Sistema di cassa Gastro Master – Sistema POS conforme TSE per la ristorazione"
   },
   "trust": {
@@ -21,17 +20,41 @@
     "googleLabel": "Valutazione Google",
     "googleSub": "Oltre 50 recensioni verificate",
     "stats": [
-      { "value": "800+", "label": "clienti attivi" },
-      { "value": "TSE", "label": "certificato e conforme GoBD" },
-      { "value": "0 €", "label": "supplemento per aggiornamenti cloud" },
-      { "value": "Supporto", "label": "direttamente dalla Germania" }
+      {
+        "value": "800+",
+        "label": "clienti attivi"
+      },
+      {
+        "value": "TSE",
+        "label": "certificato e conforme GoBD"
+      },
+      {
+        "value": "0 €",
+        "label": "supplemento per aggiornamenti cloud"
+      },
+      {
+        "value": "Supporto",
+        "label": "direttamente dalla Germania"
+      }
     ]
   },
   "benefits": [
-    { "title": "Obbligo TSE rispettato", "text": "Certificato secondo KassenSichV e GoBD – conforme alla legge dal primo giorno." },
-    { "title": "Aggiornamenti cloud inclusi", "text": "Sempre l'ultima versione – automaticamente, senza costi aggiuntivi." },
-    { "title": "Supporto dalla Germania", "text": "Referente personale, direttamente raggiungibile." },
-    { "title": "Tutte le piattaforme integrate", "text": "Lieferando, Wolt, app propria e shop online in un unico sistema." }
+    {
+      "title": "Obbligo TSE rispettato",
+      "text": "Certificato secondo KassenSichV e GoBD – conforme alla legge dal primo giorno."
+    },
+    {
+      "title": "Aggiornamenti cloud inclusi",
+      "text": "Sempre l'ultima versione – automaticamente, senza costi aggiuntivi."
+    },
+    {
+      "title": "Supporto dalla Germania",
+      "text": "Referente personale, direttamente raggiungibile."
+    },
+    {
+      "title": "Tutte le piattaforme integrate",
+      "text": "Lieferando, Wolt, app propria e shop online in un unico sistema."
+    }
   ],
   "slideshow": {
     "badge": "Funzionalità principali",
@@ -55,8 +78,8 @@
       {
         "label": "Un'unica soluzione per tavolo, bancone e autista",
         "title": "App autisti e zone di consegna",
-        "text": "Veda in tempo reale dove si trovano i Suoi autisti e quale percorso stanno seguendo. Definisca le Sue zone di consegna direttamente sulla mappa, così nessuno sbaglia strada.",
-        "tagline": "Così ha sempre tutto sotto controllo.",
+        "text": "Veda in tempo reale dove si trovano i Suoi autisti e quale percorso stanno seguendo. Definisca le zone di consegna direttamente sulla mappa – con confini precisi e calcolo automatico delle distanze. Così ogni ordine arriva a destinazione senza deviazioni inutili.",
+        "tagline": "Meno errori di percorso, clienti più soddisfatti – e lei ha sempre il pieno controllo.",
         "imgAlt": "Mappa zone di consegna con zone GPS"
       }
     ]
@@ -106,17 +129,46 @@
     "headlineBr": "il Suo sistema completo.",
     "sub": "Add-on hardware modulari e funzionalità software intelligenti che si adattano alla Sua attività.",
     "cards": [
-      { "subtitle": "DIGITALIZZAZIONE CHE HA SENSO", "title": "Terminale self-ordering", "text": "Gli ospiti ordinano direttamente al terminale – intuitivo, senza tempi d'attesa. Il Suo team guadagna tempo. Offriamo anche schermi pick-up." },
-      { "subtitle": "SERVIZIO FLESSIBILE", "title": "Sistema bar con Orderman e codice QR", "text": "Prenda ordini da mobile con Orderman o lasci che gli ospiti ordinino autonomamente tramite codice QR. Rapidissimo e moderno." },
-      { "subtitle": "SEMPLICE ED EFFICIENTE", "title": "Una licenza – fino a 4 casse", "text": "Fino a quattro terminali con un unico pacchetto. Nessun abbonamento extra per cassa – massimo valore senza costi nascosti." },
-      { "subtitle": "INTEGRAZIONE PERFETTA", "title": "Collegamento a qualsiasi terminale di pagamento", "text": "Compatibile con tutti i terminali di pagamento con standard ZVT. Nessun vincolo di fornitore – sicuro e senza intoppi." },
-      { "subtitle": "TUTTO SOTTO CONTROLLO", "title": "Gestione del personale", "text": "Orari di lavoro, fatturato e mance registrati automaticamente. Esportabili in conformità GoBD per il commercialista." }
+      {
+        "subtitle": "DIGITALIZZAZIONE CHE HA SENSO",
+        "title": "Terminale self-ordering",
+        "text": "Gli ospiti ordinano direttamente al terminale – intuitivo, senza tempi d'attesa. Il Suo team guadagna tempo. Offriamo anche schermi pick-up."
+      },
+      {
+        "subtitle": "SERVIZIO FLESSIBILE",
+        "title": "Sistema bar con Orderman e codice QR",
+        "text": "Prenda ordini da mobile con Orderman o lasci che gli ospiti ordinino autonomamente tramite codice QR. Rapidissimo e moderno."
+      },
+      {
+        "subtitle": "SEMPLICE ED EFFICIENTE",
+        "title": "Una licenza – fino a 4 casse",
+        "text": "Fino a quattro terminali con un unico pacchetto. Nessun abbonamento extra per cassa – massimo valore senza costi nascosti."
+      },
+      {
+        "subtitle": "INTEGRAZIONE PERFETTA",
+        "title": "Collegamento a qualsiasi terminale di pagamento",
+        "text": "Compatibile con tutti i terminali di pagamento con standard ZVT. Nessun vincolo di fornitore – sicuro e senza intoppi."
+      },
+      {
+        "subtitle": "TUTTO SOTTO CONTROLLO",
+        "title": "Gestione del personale",
+        "text": "Orari di lavoro, fatturato e mance registrati automaticamente. Esportabili in conformità GoBD per il commercialista."
+      }
     ]
   },
   "featureCards3": [
-    { "title": "Sistema tavoli", "text": "Prenda gli ordini direttamente al tavolo – servizio più rapido, meno errori." },
-    { "title": "App autisti e zone di consegna", "text": "Stato delle consegne in tempo reale, tracciamento GPS e zone di consegna su un'unica mappa." },
-    { "title": "Statistiche e report", "text": "Report giornalieri, settimanali e mensili – sempre tutti i numeri sotto controllo." }
+    {
+      "title": "Sistema tavoli",
+      "text": "Prenda gli ordini direttamente al tavolo – servizio più rapido, meno errori."
+    },
+    {
+      "title": "App autisti e zone di consegna",
+      "text": "Stato delle consegne in tempo reale, tracciamento GPS e zone di consegna su un'unica mappa."
+    },
+    {
+      "title": "Statistiche e report",
+      "text": "Report giornalieri, settimanali e mensili – sempre tutti i numeri sotto controllo."
+    }
   ],
   "hardware": {
     "badge": "Hardware consigliato",
@@ -128,20 +180,48 @@
       {
         "title": "Elo Series-3",
         "desc": "Sistema di cassa all-in-one compatto con touchscreen. Ideale per ristoranti, caffè e gastronomie da asporto.",
-        "features": ["Touchscreen 15,6\"", "Design compatto", "Stampante scontrini integrabile"],
-        "labels": ["Fronte", "Angolata", "Retro", "Porte", "Lato"]
+        "features": [
+          "Touchscreen 15,6\"",
+          "Design compatto",
+          "Stampante scontrini integrabile"
+        ],
+        "labels": [
+          "Fronte",
+          "Angolata",
+          "Retro",
+          "Porte",
+          "Lato"
+        ]
       },
       {
         "title": "Elo Series-3 Doublescreen",
         "desc": "Due schermi: uno per Lei, uno per l'ospite. Perfetto per il servizio al bancone e l'upselling.",
-        "features": ["Display per il cliente", "Possibilità di upselling", "Aspetto professionale"],
-        "labels": ["Fronte", "Angolata", "Retro", "Porte"]
+        "features": [
+          "Display per il cliente",
+          "Possibilità di upselling",
+          "Aspetto professionale"
+        ],
+        "labels": [
+          "Fronte",
+          "Angolata",
+          "Retro",
+          "Porte"
+        ]
       },
       {
         "title": "Microsoft Surface Tablet",
         "desc": "Flessibile e mobile. Porti la Sua cassa ovunque. Ideale per food truck, eventi e piccole attività.",
-        "features": ["Utilizzo mobile", "Leggero e compatto", "Compatibile con Windows"],
-        "labels": ["Fronte", "Angolata", "Retro", "Lato"]
+        "features": [
+          "Utilizzo mobile",
+          "Leggero e compatto",
+          "Compatibile con Windows"
+        ],
+        "labels": [
+          "Fronte",
+          "Angolata",
+          "Retro",
+          "Lato"
+        ]
       }
     ]
   },
@@ -202,12 +282,28 @@
     "expectLabel": "Cosa L'aspetta:",
     "expectText": "Nella consulenza iniziale gratuita, uno dei nostri esperti sviluppa un concetto individuale per il Suo nuovo sistema di cassa – gratuito, senza impegno e su misura per la Sua attività. Dopo deciderà liberamente se realizzarlo con noi.",
     "privacyNote": "Le Sue informazioni vengono utilizzate esclusivamente per il contatto e non vengono memorizzate.",
-    "languages": ["Tedesco", "Inglese", "Italiano", "Persiano", "Russo", "Singalese"],
+    "languages": [
+      "Tedesco",
+      "Inglese",
+      "Italiano",
+      "Persiano",
+      "Russo",
+      "Singalese"
+    ],
     "cta": "Richieda una consulenza gratuita",
     "teamMembers": [
-      { "name": "René Ebert", "role": "Fondatore e Amministratore Delegato" },
-      { "name": "Salvatore Anzaldi", "role": "Head of Sales" },
-      { "name": "Andrej Krutsch", "role": "Head of Operations" }
+      {
+        "name": "René Ebert",
+        "role": "Fondatore e Amministratore Delegato"
+      },
+      {
+        "name": "Salvatore Anzaldi",
+        "role": "Head of Sales"
+      },
+      {
+        "name": "Andrej Krutsch",
+        "role": "Head of Operations"
+      }
     ]
   },
   "faq": {

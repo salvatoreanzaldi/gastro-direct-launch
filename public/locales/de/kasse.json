@@ -12,8 +12,7 @@
     "subtitleLinkRestaurant": "Restaurants",
     "subtitleLinkLieferdienst": "Lieferdienste",
     "subtitleEnd": "und Gastrobetriebe – mit TSE-Zertifizierung, GoBD-Konformität, Cloud-Updates und direktem Support aus Deutschland.",
-    "cta": "Jetzt kostenlos beraten lassen",
-    "ctaSecondary": "Preise ansehen",
+    "cta": "Kostenlose Beratung",
     "heroImgAlt": "Gastro Master Kassensystem – TSE-konformes POS System für Gastronomie"
   },
   "trust": {
@@ -21,17 +20,41 @@
     "googleLabel": "Google Bewertung",
     "googleSub": "Über 50 verifizierte Rezensionen",
     "stats": [
-      { "value": "800+", "label": "Aktive Kunden" },
-      { "value": "TSE", "label": "zertifiziert & GoBD-konform" },
-      { "value": "0 €", "label": "Aufpreis für Cloud-Updates" },
-      { "value": "Support", "label": "direkt aus Deutschland" }
+      {
+        "value": "800+",
+        "label": "Aktive Kunden"
+      },
+      {
+        "value": "TSE",
+        "label": "zertifiziert & GoBD-konform"
+      },
+      {
+        "value": "0 €",
+        "label": "Aufpreis für Cloud-Updates"
+      },
+      {
+        "value": "Support",
+        "label": "direkt aus Deutschland"
+      }
     ]
   },
   "benefits": [
-    { "title": "TSE-Pflicht erfüllt", "text": "Zertifiziert nach KassenSichV & GoBD – rechtssicher ab Tag 1." },
-    { "title": "Cloud-Updates inklusive", "text": "Immer die neueste Version – automatisch, ohne Aufpreis." },
-    { "title": "Support aus Deutschland", "text": "Persönlicher Ansprechpartner, direkt erreichbar." },
-    { "title": "Alle Plattformen integriert", "text": "Lieferando, Wolt, eigene App & Online-Shop in einem System." }
+    {
+      "title": "TSE-Pflicht erfüllt",
+      "text": "Zertifiziert nach KassenSichV & GoBD – rechtssicher ab Tag 1."
+    },
+    {
+      "title": "Cloud-Updates inklusive",
+      "text": "Immer die neueste Version – automatisch, ohne Aufpreis."
+    },
+    {
+      "title": "Support aus Deutschland",
+      "text": "Persönlicher Ansprechpartner, direkt erreichbar."
+    },
+    {
+      "title": "Alle Plattformen integriert",
+      "text": "Lieferando, Wolt, eigene App & Online-Shop in einem System."
+    }
   ],
   "slideshow": {
     "badge": "Kernfunktionen",
@@ -55,8 +78,8 @@
       {
         "label": "Eine Lösung für Tisch, Theke und Fahrer",
         "title": "Fahrer-App & Liefergebiete",
-        "text": "Du siehst in Echtzeit, wo deine Fahrer sind und welche Route sie fahren. Definiere deine Liefergebiete einfach selbst auf der Karte, damit niemand falsch fährt.",
-        "tagline": "So hast du immer alles unter Kontrolle.",
+        "text": "Du siehst in Echtzeit, wo deine Fahrer unterwegs sind und welche Route sie nehmen. Liefergebiete legst du selbst auf der Karte fest – mit klaren Zonengrenzen und automatischer Entfernungsberechnung. So kommt jede Bestellung zuverlässig ans Ziel, ohne unnötige Umwege.",
+        "tagline": "Weniger Fahrfehler, zufriedenere Kunden – und du behältst jederzeit den vollen Überblick.",
         "imgAlt": "Liefergebiete Karte mit GPS-Zonen"
       }
     ]
@@ -106,17 +129,46 @@
     "headlineBr": "dein komplettes System.",
     "sub": "Modulare Hardware-Add-ons und smarte Software-Funktionen, die sich deinem Betrieb anpassen.",
     "cards": [
-      { "subtitle": "DIGITALISIERUNG, DIE SINN MACHT", "title": "Self-Ordering Terminal", "text": "Gäste bestellen direkt am Terminal – intuitiv, ohne Wartezeit. Dein Team gewinnt Zeit. Ergänzend bieten wir auch Pick-Up-Screens an." },
-      { "subtitle": "FLEXIBLER SERVICE", "title": "Bar-System mit Orderman & QR-Code", "text": "Mobil per Orderman aufnehmen oder Gäste per QR-Code selbst bestellen lassen. Blitzschnell und modern." },
-      { "subtitle": "UNKOMPLIZIERT & EFFIZIENT", "title": "Eine Lizenz – bis zu 4 Kassen", "text": "Bis zu vier Terminals mit einem Paket. Kein Extra-Abo je Kasse – maximaler Mehrwert ohne versteckte Kosten." },
-      { "subtitle": "NAHTLOSE VERKNÜPFUNG", "title": "Anbindung an jedes EC-Kartengerät", "text": "Kompatibel mit allen Kartenterminals nach ZVT-Standard. Kein Anbieterzwang – sicher und reibungslos." },
-      { "subtitle": "ALLES IM BLICK", "title": "Mitarbeiterverwaltung", "text": "Arbeitszeiten, Umsätze und Trinkgelder automatisch erfasst. GoBD-konform exportierbar für den Steuerberater." }
+      {
+        "subtitle": "DIGITALISIERUNG, DIE SINN MACHT",
+        "title": "Self-Ordering Terminal",
+        "text": "Gäste bestellen direkt am Terminal – intuitiv, ohne Wartezeit. Dein Team gewinnt Zeit. Ergänzend bieten wir auch Pick-Up-Screens an."
+      },
+      {
+        "subtitle": "FLEXIBLER SERVICE",
+        "title": "Bar-System mit Orderman & QR-Code",
+        "text": "Mobil per Orderman aufnehmen oder Gäste per QR-Code selbst bestellen lassen. Blitzschnell und modern."
+      },
+      {
+        "subtitle": "UNKOMPLIZIERT & EFFIZIENT",
+        "title": "Eine Lizenz – bis zu 4 Kassen",
+        "text": "Bis zu vier Terminals mit einem Paket. Kein Extra-Abo je Kasse – maximaler Mehrwert ohne versteckte Kosten."
+      },
+      {
+        "subtitle": "NAHTLOSE VERKNÜPFUNG",
+        "title": "Anbindung an jedes EC-Kartengerät",
+        "text": "Kompatibel mit allen Kartenterminals nach ZVT-Standard. Kein Anbieterzwang – sicher und reibungslos."
+      },
+      {
+        "subtitle": "ALLES IM BLICK",
+        "title": "Mitarbeiterverwaltung",
+        "text": "Arbeitszeiten, Umsätze und Trinkgelder automatisch erfasst. GoBD-konform exportierbar für den Steuerberater."
+      }
     ]
   },
   "featureCards3": [
-    { "title": "Tisch-System", "text": "Bestellungen direkt am Tisch aufnehmen – schneller Service, weniger Fehler." },
-    { "title": "Fahrer-App & Liefergebiete", "text": "Lieferstatus in Echtzeit, GPS-Tracking und Lieferzonen auf einer Karte." },
-    { "title": "Statistiken & Berichte", "text": "Tages-, Wochen- und Monatsauswertungen – immer alle Zahlen im Griff." }
+    {
+      "title": "Tisch-System",
+      "text": "Bestellungen direkt am Tisch aufnehmen – schneller Service, weniger Fehler."
+    },
+    {
+      "title": "Fahrer-App & Liefergebiete",
+      "text": "Lieferstatus in Echtzeit, GPS-Tracking und Lieferzonen auf einer Karte."
+    },
+    {
+      "title": "Statistiken & Berichte",
+      "text": "Tages-, Wochen- und Monatsauswertungen – immer alle Zahlen im Griff."
+    }
   ],
   "hardware": {
     "badge": "Empfohlene Hardware",
@@ -128,20 +180,48 @@
       {
         "title": "Elo Series-3",
         "desc": "Kompaktes All-in-One Kassensystem mit Touchscreen. Ideal für Restaurants, Cafés und Imbisse.",
-        "features": ["15.6\" Touchscreen", "Kompaktes Design", "Bon-Drucker integrierbar"],
-        "labels": ["Front", "Schräg", "Hinten", "Ports", "Seite"]
+        "features": [
+          "15.6\" Touchscreen",
+          "Kompaktes Design",
+          "Bon-Drucker integrierbar"
+        ],
+        "labels": [
+          "Front",
+          "Schräg",
+          "Hinten",
+          "Ports",
+          "Seite"
+        ]
       },
       {
         "title": "Elo Series-3 Doublescreen",
         "desc": "Zwei Bildschirme: einer für dich, einer für den Gast. Perfekt für Thekenbetrieb und Upselling.",
-        "features": ["Kunden-Display", "Upsell-Möglichkeit", "Professioneller Auftritt"],
-        "labels": ["Front", "Schräg", "Hinten", "Ports"]
+        "features": [
+          "Kunden-Display",
+          "Upsell-Möglichkeit",
+          "Professioneller Auftritt"
+        ],
+        "labels": [
+          "Front",
+          "Schräg",
+          "Hinten",
+          "Ports"
+        ]
       },
       {
         "title": "Microsoft Surface Tablet",
         "desc": "Flexibel und mobil. Nimm deine Kasse überall mit. Ideal für Food-Trucks, Events und kleine Betriebe.",
-        "features": ["Mobil einsetzbar", "Leicht & kompakt", "Windows-kompatibel"],
-        "labels": ["Front", "Schräg", "Hinten", "Seite"]
+        "features": [
+          "Mobil einsetzbar",
+          "Leicht & kompakt",
+          "Windows-kompatibel"
+        ],
+        "labels": [
+          "Front",
+          "Schräg",
+          "Hinten",
+          "Seite"
+        ]
       }
     ]
   },
@@ -202,12 +282,28 @@
     "expectLabel": "Das erwartet dich:",
     "expectText": "Im kostenlosen Erstgespräch entwickelt einer unserer Experten ein individuelles Konzept für dein neues Kassensystem – kostenlos, unverbindlich und auf deinen Betrieb zugeschnitten. Danach entscheidest du frei, ob du es mit uns umsetzen möchtest.",
     "privacyNote": "Deine Informationen werden ausschließlich für die Kontaktaufnahme verwendet und nicht gespeichert.",
-    "languages": ["Deutsch", "Englisch", "Italienisch", "Persisch", "Russisch", "Singhalesisch"],
+    "languages": [
+      "Deutsch",
+      "Englisch",
+      "Italienisch",
+      "Persisch",
+      "Russisch",
+      "Singhalesisch"
+    ],
     "cta": "Kostenlose Beratung",
     "teamMembers": [
-      { "name": "René Ebert", "role": "Gründer & Geschäftsführer" },
-      { "name": "Salvatore Anzaldi", "role": "Head of Sales" },
-      { "name": "Andrej Krutsch", "role": "Head of Operations" }
+      {
+        "name": "René Ebert",
+        "role": "Gründer & Geschäftsführer"
+      },
+      {
+        "name": "Salvatore Anzaldi",
+        "role": "Head of Sales"
+      },
+      {
+        "name": "Andrej Krutsch",
+        "role": "Head of Operations"
+      }
     ]
   },
   "faq": {
