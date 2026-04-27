@@ -1,18 +1,25 @@
-import { useState, useEffect, useRef } from "react";
+import { lazy, Suspense, useState, useEffect, useRef, useCallback } from "react";
 import React from "react";
 import { useSeoMeta } from "@/hooks/useSeoMeta";
 import { motion, AnimatePresence } from "framer-motion";
 import {
-  ArrowRight, ArrowUpRight, ShieldCheck, Cloud, Phone,
-  Link2, Plus, Minus, CheckCircle2, Star, ChevronLeft, ChevronRight,
+  ArrowRight, ShieldCheck, Cloud, Phone,
+  Link2, Plus, Minus, CheckCircle2, ChevronLeft, ChevronRight,
 } from "lucide-react";
 import { Link } from "react-router-dom";
 import { useTranslation } from "react-i18next";
 import { useLangPath } from "@/components/LanguageLayout";
+import ScrollProgressBar from "@/components/ScrollProgressBar";
+import ScrollToTopButton from "@/components/ScrollToTopButton";
 import Navbar from "@/components/landing/Navbar";
-import Footer from "@/components/landing/Footer";
-import { CTASection } from "@/components/CTASection";
 import { getCTAConfig } from "@/data/cta-config";
+
+// Below-the-fold — code-split to shrink the KassePage chunk.
+const Footer = lazy(() => import("@/components/landing/Footer"));
+const GoogleReviewsGrid = lazy(() => import("@/components/GoogleReviewsGrid"));
+const CTASection = lazy(() =>
+  import("@/components/CTASection").then((m) => ({ default: m.CTASection }))
+);
 
 // ─── Assets ──────────────────────────────────────────────────────────────────
 import heroPosImg       from "@/assets/heroes/hero-pos-system.png";
@@ -59,8 +66,8 @@ import logoIlSorriso    from "@/assets/logos/kunden/logo-il-sorriso.png";
 import logoArtemis      from "@/assets/logos/kunden/logo-artemis.png";
 import logoTake         from "@/assets/logos/kunden/logo-take.png";
 import logoBurger       from "@/assets/logos/kunden/logo-burger-brothers.png";
-import POSSection       from "@/components/landing/POSSection";
-import PickUpScreenSection from "@/components/landing/PickUpScreenSection";
+const POSSection = lazy(() => import("@/components/landing/POSSection"));
+const PickUpScreenSection = lazy(() => import("@/components/landing/PickUpScreenSection"));
 
 // ─── FAQ ─────────────────────────────────────────────────────────────────────
 
@@ -117,10 +124,10 @@ const slideImgs = [slideTischImg, slideStatistikImg, slideGpsImg];
 
 const alternatingImgs = [selbstBestellenImg, selfOrderTermImg, ordermanImg, zahlungenImg];
 const alternatingConfig = [
-  { imgLeft: true, bg: "#0A264A", light: false, cta: true },
-  { imgLeft: false, bg: "#081628", light: true, cta: false },
-  { imgLeft: true, bg: "#0A264A", light: false, cta: true },
-  { imgLeft: false, bg: "#081628", light: true, cta: false },
+  { imgLeft: true, bg: "#0A264A", light: false, cta: true, learnMoreSlug: "/produkte/add-ons/qr-code-tischsystem" },
+  { imgLeft: false, bg: "#081628", light: true, cta: false, learnMoreSlug: "/produkte/add-ons/kiosk" },
+  { imgLeft: true, bg: "#0A264A", light: false, cta: true, learnMoreSlug: null },
+  { imgLeft: false, bg: "#081628", light: true, cta: false, learnMoreSlug: null },
 ];
 
 const customerLogos = [
@@ -182,7 +189,7 @@ const FeatureSlideshow = ({ t }: { t: (k: string, o?: any) => any }) => {
     const timer = setInterval(() => {
       setDirection(1);
       setCurrent((c) => (c + 1) % slides.length);
-    }, 4500);
+    }, 10000);
     return () => clearInterval(timer);
   }, [slides.length]);
 
@@ -195,21 +202,22 @@ const FeatureSlideshow = ({ t }: { t: (k: string, o?: any) => any }) => {
   const slide = slides[current];
 
   return (
-    <div className="relative px-10 md:px-16">
+    <div className="relative px-0 lg:px-16">
+      {/* Desktop-only arrows */}
       <button
         onClick={() => go((current - 1 + slides.length) % slides.length)}
-        className="absolute left-0 top-1/2 -translate-y-1/2 z-20 w-12 h-12 rounded-full bg-[#0A264A] dark:bg-white text-white dark:text-[#0A264A] flex items-center justify-center shadow-lg hover:bg-[#0A264A]/80 dark:hover:bg-white/80 transition-colors"
+        className="hidden lg:flex absolute left-0 top-1/2 -translate-y-1/2 z-20 w-12 h-12 rounded-full bg-[#0A264A] dark:bg-white text-white dark:text-[#0A264A] items-center justify-center shadow-lg hover:bg-[#0A264A]/80 dark:hover:bg-white/80 transition-colors"
       >
         <ChevronLeft className="w-5 h-5" />
       </button>
       <button
         onClick={() => go((current + 1) % slides.length)}
-        className="absolute right-0 top-1/2 -translate-y-1/2 z-20 w-12 h-12 rounded-full bg-[#0A264A] dark:bg-white text-white dark:text-[#0A264A] flex items-center justify-center shadow-lg hover:bg-[#0A264A]/80 dark:hover:bg-white/80 transition-colors"
+        className="hidden lg:flex absolute right-0 top-1/2 -translate-y-1/2 z-20 w-12 h-12 rounded-full bg-[#0A264A] dark:bg-white text-white dark:text-[#0A264A] items-center justify-center shadow-lg hover:bg-[#0A264A]/80 dark:hover:bg-white/80 transition-colors"
       >
         <ChevronRight className="w-5 h-5" />
       </button>
 
-      <div className="relative min-h-[520px] sm:min-h-[480px] lg:min-h-[400px]">
+      <div className="relative min-h-[640px] lg:min-h-[400px]">
         <AnimatePresence mode="wait" custom={direction}>
           <motion.div
             key={current}
@@ -219,13 +227,15 @@ const FeatureSlideshow = ({ t }: { t: (k: string, o?: any) => any }) => {
             animate="center"
             exit="exit"
             transition={{ duration: 0.55, ease: [0.25, 0.1, 0.25, 1] }}
-            className="absolute inset-0 grid lg:grid-cols-2 gap-16 md:gap-20 items-center"
+            className="absolute inset-0 grid lg:grid-cols-2 gap-6 lg:gap-20 content-start lg:content-center items-center"
           >
             <div className="relative">
               <div className="absolute -inset-4 bg-[#007DCF]/08 blur-[50px] rounded-3xl" />
               <img
                 src={slideImgs[current]}
                 alt={slide.imgAlt}
+                loading="lazy"
+                decoding="async"
                 className="relative z-10 w-full rounded-2xl shadow-2xl shadow-[#0A264A]/12 border border-[#0A264A]/08"
               />
             </div>
@@ -247,7 +257,15 @@ const FeatureSlideshow = ({ t }: { t: (k: string, o?: any) => any }) => {
         </AnimatePresence>
       </div>
 
-      <div className="flex items-center justify-center gap-3 mt-14">
+      <div className="flex items-center justify-center gap-3 mt-6">
+        {/* Mobile-only arrow left */}
+        <button
+          onClick={() => go((current - 1 + slides.length) % slides.length)}
+          className="lg:hidden w-9 h-9 rounded-full bg-[#0A264A] dark:bg-white text-white dark:text-[#0A264A] flex items-center justify-center shadow-md"
+        >
+          <ChevronLeft className="w-4 h-4" />
+        </button>
+
         {slides.map((_: any, i: number) => (
           <button
             key={i}
@@ -259,6 +277,14 @@ const FeatureSlideshow = ({ t }: { t: (k: string, o?: any) => any }) => {
             }`}
           />
         ))}
+
+        {/* Mobile-only arrow right */}
+        <button
+          onClick={() => go((current + 1) % slides.length)}
+          className="lg:hidden w-9 h-9 rounded-full bg-[#0A264A] dark:bg-white text-white dark:text-[#0A264A] flex items-center justify-center shadow-md"
+        >
+          <ChevronRight className="w-4 h-4" />
+        </button>
       </div>
     </div>
   );
@@ -335,6 +361,8 @@ const TeamCTASection = ({ t, lp }: { t: (k: string, o?: any) => any; lp: (p: str
                 key={current}
                 src={teamMemberImgs[current]}
                 alt={member.name}
+                loading="lazy"
+                decoding="async"
                 initial={{ opacity: 0, scale: 1.04 }}
                 animate={{ opacity: 1, scale: 1 }}
                 exit={{ opacity: 0, scale: 0.97 }}
@@ -376,14 +404,16 @@ const TeamCTASection = ({ t, lp }: { t: (k: string, o?: any) => any; lp: (p: str
 
 // ─── Hardware Section ─────────────────────────────────────────────────────────
 
-const HwCard = ({ product, images, index, lp, inquiryCta }: {
+const HwCard = ({ product, images, index, initialIndex = 0, compact = false, lp, inquiryCta }: {
   product: { title: string; desc: string; features: string[]; labels: string[] };
   images: string[];
   index: number;
+  initialIndex?: number;
+  compact?: boolean;
   lp: (p: string) => string;
   inquiryCta: string;
 }) => {
-  const [current, setCurrent] = useState(0);
+  const [current, setCurrent] = useState(initialIndex);
   const [lightbox, setLightbox] = useState(false);
 
   const prev = () => setCurrent((c) => (c - 1 + images.length) % images.length);
@@ -392,16 +422,18 @@ const HwCard = ({ product, images, index, lp, inquiryCta }: {
   return (
     <>
       <motion.div
-        initial={{ opacity: 0, y: 24 }}
-        whileInView={{ opacity: 1, y: 0 }}
-        viewport={{ once: true }}
-        transition={{ delay: index * 0.1, duration: 0.5 }}
+        initial={compact ? { opacity: 1, y: 0 } : { opacity: 0, y: 24 }}
+        whileInView={compact ? undefined : { opacity: 1, y: 0 }}
+        viewport={compact ? undefined : { once: true }}
+        transition={compact ? undefined : { delay: index * 0.1, duration: 0.5 }}
         className="group rounded-2xl border border-[#0A264A]/[0.08] dark:border-white/[0.08] bg-[#f8fafc] dark:bg-white/[0.04] overflow-hidden hover:border-cyan-brand/30 hover:shadow-xl transition-all duration-300"
       >
-        <div className="relative aspect-square bg-white dark:bg-white/[0.02] p-6 flex items-center justify-center">
+        <div className={`relative bg-white dark:bg-white/[0.02] flex items-center justify-center ${compact ? "h-56 p-4" : "aspect-square p-6"}`}>
           <img
             src={images[current]}
             alt={`${product.title} — ${product.labels[current]}`}
+            loading="lazy"
+            decoding="async"
             className="w-full h-full object-contain cursor-zoom-in transition-transform duration-300 hover:scale-[1.03]"
             onClick={() => setLightbox(true)}
           />
@@ -467,6 +499,8 @@ const HwCard = ({ product, images, index, lp, inquiryCta }: {
               <img
                 src={images[current]}
                 alt={`${product.title} — ${product.labels[current]} (vergrößert)`}
+                loading="lazy"
+                decoding="async"
                 className="w-full h-full object-contain rounded-2xl"
               />
               {images.length > 1 && (
@@ -504,6 +538,24 @@ const HwCard = ({ product, images, index, lp, inquiryCta }: {
 const HardwareSection = ({ t, lp }: { t: (k: string, o?: any) => any; lp: (p: string) => string }) => {
   const arr = (key: string) => { const v = t(key, { returnObjects: true }); return Array.isArray(v) ? v : []; };
   const products = arr("hardware.products") as { title: string; desc: string; features: string[]; labels: string[] }[];
+  const [mobileIdx, setMobileIdx] = useState(0);
+  const mobileTimerRef = useRef<ReturnType<typeof setInterval> | null>(null);
+
+  const startMobileTimer = useCallback(() => {
+    if (mobileTimerRef.current) clearInterval(mobileTimerRef.current);
+    mobileTimerRef.current = setInterval(
+      () => setMobileIdx(i => (i + 1) % products.length),
+      7000,
+    );
+  }, [products.length]);
+
+  useEffect(() => {
+    startMobileTimer();
+    return () => { if (mobileTimerRef.current) clearInterval(mobileTimerRef.current); };
+  }, [startMobileTimer]);
+
+  const goMobile = (idx: number) => { setMobileIdx(idx); startMobileTimer(); };
+
   return (
     <section className="bg-white dark:bg-[#111111] px-5 md:px-8 lg:px-16 py-12 md:py-16">
       <div className="max-w-5xl mx-auto">
@@ -512,12 +564,45 @@ const HardwareSection = ({ t, lp }: { t: (k: string, o?: any) => any; lp: (p: st
           <h2 className="text-3xl md:text-4xl lg:text-5xl font-black text-[#0A264A] dark:text-white">{t("hardware.headline")}</h2>
           <p className="text-[#0A264A]/55 dark:text-white/45 text-lg mt-5 max-w-2xl mx-auto">{t("hardware.sub")}</p>
         </motion.div>
-        <div className="grid grid-cols-1 sm:grid-cols-3 gap-6">
-          {products.map((p, i) => <HwCard key={p.title} product={p} images={HW_IMAGES[i]} index={i} lp={lp} inquiryCta={t("hardware.inquiryCta")} />)}
+
+        {/* Mobile: single card + dots */}
+        {products.length > 0 && (
+          <div className="sm:hidden">
+            <HwCard
+              key={products[mobileIdx]?.title}
+              product={products[mobileIdx]}
+              images={HW_IMAGES[mobileIdx]}
+              index={mobileIdx}
+              initialIndex={mobileIdx === 1 ? 1 : 0}
+              compact
+              lp={lp}
+              inquiryCta={t("hardware.inquiryCta")}
+            />
+            <div className="flex justify-center gap-2 mt-5">
+              {products.map((_, i) => (
+                <button
+                  key={i}
+                  onClick={() => goMobile(i)}
+                  aria-label={`Produkt ${i + 1}`}
+                  className={`rounded-full transition-all duration-300 ${
+                    i === mobileIdx
+                      ? "w-5 h-2 bg-cyan-brand"
+                      : "w-2 h-2 bg-[#0A264A]/20 dark:bg-white/20 hover:bg-cyan-brand/50"
+                  }`}
+                />
+              ))}
+            </div>
+          </div>
+        )}
+
+        {/* Desktop: 3-column grid (unverändert) */}
+        <div className="hidden sm:grid sm:grid-cols-3 gap-6">
+          {products.map((p, i) => <HwCard key={p.title} product={p} images={HW_IMAGES[i]} index={i} initialIndex={i === 1 ? 1 : 0} lp={lp} inquiryCta={t("hardware.inquiryCta")} />)}
         </div>
+
         <div className="text-center mt-10">
-          <Link to={lp("/kontakt")} className="bg-gradient-amber text-[#0A264A] font-bold px-8 py-4 rounded-xl text-base inline-flex items-center gap-2 hover:scale-[1.02] transition-transform shadow-lg shadow-amber-500/20">
-            {t("hardware.cta")} <ArrowRight className="w-4 h-4" />
+          <Link to={lp("/produkte/hardware")} className="bg-[#0A264A] text-white font-bold px-8 py-4 rounded-xl text-base inline-flex items-center gap-2 hover:scale-[1.02] transition-transform shadow-lg shadow-[#0A264A]/30">
+            Mehr Hardware entdecken <ArrowRight className="w-4 h-4" />
           </Link>
         </div>
       </div>
@@ -677,7 +762,7 @@ const WaveFeatureSection = ({ t }: { t: (k: string, o?: any) => any }) => {
                   }}
                 />
                 <div className="absolute inset-0" style={{ background: `radial-gradient(ellipse 80% 70% at 50% 50%, ${glowColor} 0%, transparent 70%)` }} />
-                <img src={featureCard5Imgs[i]} alt={card.title} className="relative z-10 w-full h-full object-contain p-3" />
+                <img src={featureCard5Imgs[i]} alt={card.title} loading="lazy" decoding="async" className="relative z-10 w-full h-full object-contain p-3" />
               </div>
 
               <div className="h-px" style={{ background: sepColor }} />
@@ -705,8 +790,7 @@ const KassePage = () => {
   const arr = (key: string) => { const v = t(key, { returnObjects: true }); return Array.isArray(v) ? v : []; };
   const faqItems = arr("faq.items") as { q: string; a: string }[];
   const benefits = arr("benefits") as { title: string; text: string }[];
-  const trustStats = arr("trust.stats") as { value: string; label: string }[];
-  const tiles = arr("featuresGrid.tiles") as { title: string; text: string; tagline: string }[];
+const tiles = arr("featuresGrid.tiles") as { title: string; text: string; tagline: string }[];
   const alternatingData = arr("alternating") as { headline: string; sub: string; text1: string; text2: string; checks: string[] }[];
 
   const SCHEMA_FAQ_KASSE = {
@@ -727,6 +811,8 @@ const KassePage = () => {
 
   return (
   <div className={`min-h-screen transition-opacity duration-300 ${!ready ? "opacity-0 lg:opacity-100" : "opacity-100"}`} style={{ backgroundColor: "#0A264A" }}>
+    <ScrollProgressBar />
+    <ScrollToTopButton />
     <script type="application/ld+json" dangerouslySetInnerHTML={{ __html: JSON.stringify(SCHEMA_BREADCRUMB) }} />
     <script type="application/ld+json" dangerouslySetInnerHTML={{ __html: JSON.stringify(SCHEMA_FAQ_KASSE) }} />
     <Navbar />
@@ -765,6 +851,8 @@ const KassePage = () => {
             <img
               src={heroPosImg}
               alt={t("hero.heroImgAlt")}
+              fetchPriority="high"
+              decoding="async"
               className="relative z-10 w-full max-w-sm drop-shadow-2xl"
             />
           </motion.div>
@@ -783,22 +871,15 @@ const KassePage = () => {
             initial={{ opacity: 0, y: 20 }}
             animate={{ opacity: 1, y: 0 }}
             transition={{ delay: 0.3, duration: 0.5 }}
-            className="flex flex-col sm:flex-row gap-4"
+            className="flex flex-col items-center sm:flex-row sm:items-start gap-4"
           >
             <button
               onClick={() => { window.location.href = lp("/kontakt"); }}
-              className="bg-gradient-amber text-[#0A264A] font-bold px-8 py-4 rounded-xl text-base inline-flex items-center gap-2 hover:scale-[1.02] transition-transform shadow-lg shadow-[#ED8400]/20"
+              className="bg-gradient-amber text-white font-bold px-8 py-4 rounded-xl text-base inline-flex items-center gap-2 hover:scale-[1.02] transition-transform shadow-lg shadow-[#ED8400]/20"
             >
               {t("hero.cta")}
               <ArrowRight className="w-5 h-5" />
             </button>
-            <a
-              href="/#preise"
-              className="border border-white/15 text-white/70 hover:text-white hover:border-white/30 font-medium px-8 py-4 rounded-xl text-base inline-flex items-center gap-2 transition-all"
-            >
-              {t("hero.ctaSecondary")}
-              <ArrowUpRight className="w-4 h-4" />
-            </a>
           </motion.div>
         </div>
         <motion.div
@@ -811,54 +892,17 @@ const KassePage = () => {
           <img
             src={heroPosImg}
             alt={t("hero.heroImgAlt")}
+            fetchPriority="high"
+            decoding="async"
             className="relative z-10 w-full max-w-lg drop-shadow-2xl"
           />
         </motion.div>
       </div>
     </section>
 
-    {/* ── S2: GOOGLE + TRUST ────────────────────────────────── */}
-    <section className="bg-white dark:bg-[#081628] border-y border-[#0A264A]/[0.06] dark:border-white/[0.06] px-5 md:px-8 lg:px-16 py-12 md:py-14">
-      <div className="max-w-6xl mx-auto flex flex-col md:flex-row items-center gap-10 md:justify-between">
-        <motion.div
-          initial={{ opacity: 0, x: -20 }}
-          whileInView={{ opacity: 1, x: 0 }}
-          viewport={{ once: true }}
-          transition={{ duration: 0.6 }}
-          className="flex items-center gap-4 bg-[#0A264A]/[0.05] dark:bg-white/[0.05] border border-[#0A264A]/10 dark:border-white/10 rounded-2xl px-6 py-4 flex-shrink-0"
-        >
-          <div className="flex flex-col items-center">
-            <span className="text-2xl font-black text-[#0A264A] dark:text-white leading-none">{t("trust.googleRating")}</span>
-            <div className="flex gap-0.5 mt-1">
-              {[...Array(5)].map((_, i) => (
-                <Star key={i} className="w-3.5 h-3.5 fill-[#FBA200] text-[#FBA200]" />
-              ))}
-            </div>
-          </div>
-          <div className="w-px h-10 bg-[#0A264A]/10 dark:bg-white/10" />
-          <div>
-            <p className="text-[#0A264A] dark:text-white text-sm font-semibold">{t("trust.googleLabel")}</p>
-            <p className="text-[#0A264A]/50 dark:text-white/50 text-xs mt-0.5">{t("trust.googleSub")}</p>
-          </div>
-        </motion.div>
-
-        <div className="grid grid-cols-2 md:grid-cols-4 gap-8 md:gap-12">
-          {trustStats.map((s, i) => (
-            <motion.div
-              key={s.label}
-              initial={{ opacity: 0, y: 16 }}
-              whileInView={{ opacity: 1, y: 0 }}
-              viewport={{ once: true }}
-              transition={{ delay: i * 0.07, duration: 0.5 }}
-              className="text-center"
-            >
-              <p className="text-2xl md:text-3xl font-black text-[#0A264A] dark:text-white mb-1">{s.value}</p>
-              <p className="text-[#0A264A]/50 dark:text-white/50 text-xs leading-snug">{s.label}</p>
-            </motion.div>
-          ))}
-        </div>
-      </div>
-    </section>
+    {/* ── S1b: GOOGLE REVIEWS ─────────────────────────────── */}
+    <Suspense fallback={null}>
+    <GoogleReviewsGrid />
 
     {/* ── S3: BENEFITS ──────────────────────────────────────── */}
     <section className="bg-white dark:bg-[#081628] px-5 md:px-8 lg:px-16 py-16 md:py-20">
@@ -898,7 +942,7 @@ const KassePage = () => {
           initial={{ opacity: 0, y: 20 }}
           whileInView={{ opacity: 1, y: 0 }}
           viewport={{ once: true }}
-          className="text-center mb-20 md:mb-28"
+          className="text-center mb-4 md:mb-6"
         >
           <span className="text-cyan-brand text-xs font-bold uppercase tracking-widest mb-5 block">
             {t("slideshow.badge")}
@@ -918,7 +962,7 @@ const KassePage = () => {
           initial={{ opacity: 0, y: 20 }}
           whileInView={{ opacity: 1, y: 0 }}
           viewport={{ once: true }}
-          className="text-center mb-12 md:mb-16"
+          className="text-center mb-4 md:mb-6"
         >
           <span className="text-cyan-brand text-xs font-bold uppercase tracking-widest mb-4 block">
             {t("featuresGrid.badge")}
@@ -948,6 +992,8 @@ const KassePage = () => {
                 <img
                   src={squareTileImgs[i]}
                   alt={tile.title}
+                  loading="lazy"
+                  decoding="async"
                   className="w-full h-full object-cover group-hover:scale-[1.06] group-hover:brightness-110 transition-all duration-500"
                 />
                 <div className="absolute top-2 left-2 w-7 h-7 rounded-lg bg-[#0A264A]/80 backdrop-blur-sm border border-white/10 flex items-center justify-center">
@@ -996,7 +1042,7 @@ const KassePage = () => {
         style={{ background: "radial-gradient(ellipse 70% 50% at 50% 50%, #007DCF22 0%, transparent 70%)" }}
       />
       <div className="absolute inset-0 flex items-center justify-center pointer-events-none select-none">
-        <span className="text-[200px] md:text-[280px] font-black text-white/[0.09] leading-none">
+        <span className="text-[140px] md:text-[280px] font-black text-white/[0.09] leading-none">
           {t("socialProof.watermark")}
         </span>
       </div>
@@ -1030,6 +1076,8 @@ const KassePage = () => {
               key={logo.alt}
               src={logo.src}
               alt={logo.alt}
+              loading="lazy"
+              decoding="async"
               className="h-10 md:h-12 object-contain opacity-50 hover:opacity-80 transition-opacity duration-300 grayscale hover:grayscale-0"
             />
           ))}
@@ -1073,6 +1121,8 @@ const KassePage = () => {
                 <img
                   src={alternatingImgs[idx]}
                   alt={sec.headline}
+                  loading="lazy"
+                  decoding="async"
                   className={`relative z-10 w-full rounded-3xl shadow-2xl ${
                     cfg.light
                       ? "border border-[#0A264A]/10 dark:border-white/10 shadow-black/10 dark:shadow-black/30"
@@ -1103,18 +1153,28 @@ const KassePage = () => {
                     </li>
                   ))}
                 </ul>
-                {cfg.cta && (
-                  <motion.button
-                    onClick={() => { window.location.href = lp("/kontakt"); }}
-                    whileHover={{ scale: 1.04, boxShadow: "0 0 32px 8px rgba(237,132,0,0.55), 0 0 64px 16px rgba(237,132,0,0.25)" }}
-                    whileTap={{ scale: 0.97 }}
-                    transition={{ duration: 0.2 }}
-                    className="bg-[#ED8400] text-white font-bold px-9 py-4 rounded-xl text-base inline-flex items-center gap-3 shadow-lg shadow-[#ED8400]/30 group"
-                  >
-                    {t("teamCta.cta")}
-                    <ArrowRight className="w-5 h-5 transition-transform duration-200 group-hover:translate-x-1" />
-                  </motion.button>
-                )}
+                <div className="flex items-center gap-8">
+                  {cfg.cta && (
+                    <motion.button
+                      onClick={() => { window.location.href = lp("/kontakt"); }}
+                      whileHover={{ scale: 1.04, boxShadow: "0 0 32px 8px rgba(237,132,0,0.55), 0 0 64px 16px rgba(237,132,0,0.25)" }}
+                      whileTap={{ scale: 0.97 }}
+                      transition={{ duration: 0.2 }}
+                      className="bg-[#ED8400] text-white font-bold px-9 py-4 rounded-xl text-base inline-flex items-center gap-3 shadow-lg shadow-[#ED8400]/30 group"
+                    >
+                      {t("teamCta.cta")}
+                      <ArrowRight className="w-5 h-5 transition-transform duration-200 group-hover:translate-x-1" />
+                    </motion.button>
+                  )}
+                  {cfg.learnMoreSlug && (
+                    <Link
+                      to={lp(cfg.learnMoreSlug)}
+                      className="inline-flex items-center gap-1.5 text-sm font-semibold text-cyan-brand hover:gap-2.5 transition-all duration-200"
+                    >
+                      Mehr erfahren <ArrowRight className="w-4 h-4" />
+                    </Link>
+                  )}
+                </div>
               </motion.div>
             </div>
           </div>
@@ -1168,6 +1228,7 @@ const KassePage = () => {
     </section>
 
     <Footer />
+    </Suspense>
   </div>
   );
 };
