@@ -91,20 +91,25 @@ ${xDefault}
 }
 
 // ─── Blog post URLs ───────────────────────────────────────────────────────────
-const blogSlugsPath = resolve(ROOT, "src/config/blog-slugs.json");
-let blogSlugs = [];
-try {
-  blogSlugs = JSON.parse(readFileSync(blogSlugsPath, "utf-8"));
-} catch (e) {
-  console.warn("⚠️  Could not read blog-slugs.json:", e.message);
+// Parse slug + publishedDate from src/data/blog-posts-generated.ts (single source of truth).
+// Blog is DE-only (no hreflang alternates).
+const blogPostsSource = readFileSync(
+  resolve(ROOT, "src/data/blog-posts-generated.ts"),
+  "utf-8",
+);
+
+const blogPostRegex = /slug:\s*"([^"]+)"[\s\S]*?publishedDate:\s*"([^"]+)"/g;
+const blogPosts = [];
+let bp;
+while ((bp = blogPostRegex.exec(blogPostsSource)) !== null) {
+  blogPosts.push({ slug: bp[1], publishedDate: bp[2] });
 }
 
-const BLOG_LASTMOD = "2026-04-23";
-for (const slug of blogSlugs) {
-  // Blog posts are DE-only: no multi-locale content, single canonical URL per post
+for (const { slug, publishedDate } of blogPosts) {
   const loc = `${BASE_URL}/de/blog/${slug}`;
-  const xDefault = `    <xhtml:link rel="alternate" hreflang="x-default" href="${loc}" />`;
-  urlEntries.push(`  <url>\n    <loc>${loc}</loc>\n    <lastmod>${BLOG_LASTMOD}</lastmod>\n    <changefreq>monthly</changefreq>\n    <priority>0.6</priority>\n${xDefault}\n  </url>`);
+  urlEntries.push(
+    `  <url>\n    <loc>${loc}</loc>\n    <lastmod>${publishedDate}</lastmod>\n    <changefreq>monthly</changefreq>\n    <priority>0.7</priority>\n  </url>`,
+  );
 }
 
 const sitemap = `<?xml version="1.0" encoding="UTF-8"?>
@@ -120,6 +125,6 @@ ${urlEntries.join("\n")}
 const outPath = resolve(ROOT, "dist/sitemap.xml");
 writeFileSync(outPath, sitemap, "utf-8");
 
-const blogUrlCount = blogSlugs.length;
+const blogUrlCount = blogPosts.length;
 console.log(`✅ Sitemap generated: ${routes.length} routes × ${LANGUAGES.length} languages = ${routes.length * LANGUAGES.length} route URLs + ${blogUrlCount} blog URLs (DE only) = ${urlEntries.length} total URLs`);
 console.log(`   → ${outPath}`);

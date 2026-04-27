@@ -1,5 +1,7 @@
 import { useSeoMeta } from "@/hooks/useSeoMeta";
 import { useLocation, useNavigate } from "react-router-dom";
+import ScrollProgressBar from "@/components/ScrollProgressBar";
+import ScrollToTopButton from "@/components/ScrollToTopButton";
 import { motion } from "framer-motion";
 import { Link } from "react-router-dom";
 import { useLangPath } from "@/components/LanguageLayout";
@@ -14,6 +16,8 @@ import { useEffect, useState, useMemo } from "react";
 import React from "react";
 import reneFoto from "@/assets/team/ceo-rene-ebert.png";
 import sanjayaFoto from "@/assets/team/team-sanjaya-pattiyage.png";
+import salvatoreFoto from "@/assets/team/team-salvatore-anzaldi.png";
+import { SALVATORE_SLUGS } from "@/config/blog-authors";
 
 // ─── Helpers ──────────────────────────────────────────────────────────────────
 
@@ -56,30 +60,6 @@ function formatDateToGerman(isoDate: string): string {
   return date.toLocaleDateString("de-DE", { year: "numeric", month: "long", day: "numeric" });
 }
 
-// ─── Reading progress bar ─────────────────────────────────────────────────────
-
-const ReadingProgressBar = () => {
-  const [progress, setProgress] = useState(0);
-
-  useEffect(() => {
-    const onScroll = () => {
-      const scrolled = window.scrollY;
-      const total = document.documentElement.scrollHeight - window.innerHeight;
-      setProgress(total > 0 ? Math.min(100, (scrolled / total) * 100) : 0);
-    };
-    window.addEventListener("scroll", onScroll, { passive: true });
-    return () => window.removeEventListener("scroll", onScroll);
-  }, []);
-
-  return (
-    <div className="fixed top-0 left-0 right-0 z-[60] h-[3px] bg-white/5">
-      <div
-        className="h-full bg-cyan-brand transition-[width] duration-100"
-        style={{ width: `${progress}%` }}
-      />
-    </div>
-  );
-};
 
 // ─── TOC Sidebar ─────────────────────────────────────────────────────────────
 
@@ -171,41 +151,63 @@ const AuthorAvatar = ({
   );
 };
 
-const AuthorBox = ({ date }: { date: string }) => (
-  <div className="py-6 border-t border-b border-white/10 mt-12 mb-10">
-    <Link
-      to="/de/uber-uns"
-      className="flex items-center gap-5 group"
-      aria-label="Über René Ebert und Sanjaya Pattiyage — Gründer Gastro Master"
-    >
-      <div className="flex -space-x-3 shrink-0">
-        <AuthorAvatar
-          src={reneFoto}
-          initials="RE"
-          alt="René Ebert — Gründer Gastro Master"
-          ringClass="ring-cyan-500/30 group-hover:ring-cyan-500/70"
-          fallbackGradient="bg-gradient-to-br from-cyan-400 to-blue-600"
-        />
-        <AuthorAvatar
-          src={sanjayaFoto}
-          initials="SP"
-          alt="Sanjaya Pattiyage — Gründer Gastro Master"
-          ringClass="ring-orange-500/30 group-hover:ring-orange-500/70"
-          fallbackGradient="bg-gradient-to-br from-orange-400 to-rose-500"
-        />
-      </div>
-      <div>
-        <p className="text-base font-bold text-white group-hover:text-cyan-brand transition-colors">
-          René Ebert &amp; Sanjaya Pattiyage
-        </p>
-        <p className="text-sm text-white/50 mt-0.5">Gründer Gastro Master · {date}</p>
-        <p className="text-xs text-cyan-brand/80 mt-1 group-hover:text-cyan-brand transition-colors">
-          Mehr über uns →
-        </p>
-      </div>
-    </Link>
-  </div>
-);
+const AuthorBox = ({ date, slug }: { date: string; slug: string }) => {
+  const isSalvatore = SALVATORE_SLUGS.has(slug);
+
+  return (
+    <div className="py-6 border-t border-b border-white/10 mt-12 mb-10">
+      <Link
+        to="/de/uber-uns"
+        className="flex items-center gap-5 group"
+        aria-label={
+          isSalvatore
+            ? "Über Salvatore Anzaldi — Team Gastro Master"
+            : "Über René Ebert und Sanjaya Pattiyage — Gründer Gastro Master"
+        }
+      >
+        <div className={`flex shrink-0 ${isSalvatore ? "" : "-space-x-3"}`}>
+          {isSalvatore ? (
+            <AuthorAvatar
+              src={salvatoreFoto}
+              initials="SA"
+              alt="Salvatore Anzaldi — Team Gastro Master"
+              ringClass="ring-cyan-500/30 group-hover:ring-cyan-500/70"
+              fallbackGradient="bg-gradient-to-br from-cyan-400 to-blue-600"
+            />
+          ) : (
+            <>
+              <AuthorAvatar
+                src={reneFoto}
+                initials="RE"
+                alt="René Ebert — Gründer Gastro Master"
+                ringClass="ring-cyan-500/30 group-hover:ring-cyan-500/70"
+                fallbackGradient="bg-gradient-to-br from-cyan-400 to-blue-600"
+              />
+              <AuthorAvatar
+                src={sanjayaFoto}
+                initials="SP"
+                alt="Sanjaya Pattiyage — Gründer Gastro Master"
+                ringClass="ring-orange-500/30 group-hover:ring-orange-500/70"
+                fallbackGradient="bg-gradient-to-br from-orange-400 to-rose-500"
+              />
+            </>
+          )}
+        </div>
+        <div>
+          <p className="text-base font-bold text-white group-hover:text-cyan-brand transition-colors">
+            {isSalvatore ? "Salvatore Anzaldi" : "René Ebert & Sanjaya Pattiyage"}
+          </p>
+          <p className="text-sm text-white/50 mt-0.5">
+            {isSalvatore ? "Team Gastro Master" : "Gründer Gastro Master"} · {date}
+          </p>
+          <p className="text-xs text-cyan-brand/80 mt-1 group-hover:text-cyan-brand transition-colors">
+            Mehr über uns →
+          </p>
+        </div>
+      </Link>
+    </div>
+  );
+};
 
 // ─── Related Posts ────────────────────────────────────────────────────────────
 
@@ -334,7 +336,34 @@ const BlogPostDetailPage = () => {
     title: post ? `${post.title} | Gastro Master Blog` : "Blog | Gastro Master",
     description: post?.metaDescription || post?.description || "",
     canonical: `https://gastro-master.de/de/blog/${slug}`,
+    ogImage: "https://gastro-master.de/logo-gastro-master.png",
+    type: post ? "article" : "website",
+    publishedTime: post?.publishedDate,
+    modifiedTime: post?.publishedDate,
+    twitterCard: "summary_large_image",
   });
+
+  // Hreflang for DE-only blog: self-canonical + x-default both point to /de/blog/:slug
+  useEffect(() => {
+    if (!slug) return;
+    const canonicalHref = `https://gastro-master.de/de/blog/${slug}`;
+    const linkDe = document.createElement("link");
+    linkDe.rel = "alternate";
+    linkDe.hreflang = "de";
+    linkDe.href = canonicalHref;
+    linkDe.dataset.blogHreflang = "de";
+    const linkX = document.createElement("link");
+    linkX.rel = "alternate";
+    linkX.hreflang = "x-default";
+    linkX.href = canonicalHref;
+    linkX.dataset.blogHreflang = "x-default";
+    document.head.appendChild(linkDe);
+    document.head.appendChild(linkX);
+    return () => {
+      linkDe.remove();
+      linkX.remove();
+    };
+  }, [slug]);
 
   if (!post || !cat) return null;
 
@@ -342,7 +371,8 @@ const BlogPostDetailPage = () => {
 
   return (
     <div className="min-h-screen bg-[#0A264A]">
-      <ReadingProgressBar />
+      <ScrollProgressBar />
+      <ScrollToTopButton />
       <Navbar />
 
       {/* ── Hero ──────────────────────────────────────────────────────────────── */}
@@ -407,7 +437,7 @@ const BlogPostDetailPage = () => {
 
           {/* Article: truly centered in viewport via mx-auto (TOC doesn't push it) */}
           <div className="max-w-[720px] mx-auto">
-              <AuthorBox date={formattedDate} />
+              <AuthorBox date={formattedDate} slug={post.slug} />
 
               {post.bodyHtml ? (
                 <article

@@ -397,49 +397,193 @@ function generateExcerpt(bodyHtml, title) {
   return fallback;
 }
 
+// ─── Schema.org constants ────────────────────────────────────────────────────
+
+const SITE_BASE = "https://gastro-master.de";
+const LOGO_URL = `${SITE_BASE}/logo-gastro-master.png`;
+const LOGO_WIDTH = 1024;
+const LOGO_HEIGHT = 1024;
+
+const AUTHOR_RENE = {
+  "@type": "Person",
+  "name": "René Ebert",
+  "url": `${SITE_BASE}/uber-uns`,
+  "image": `${SITE_BASE}/team/rene-ebert.png`,
+};
+const AUTHOR_SANJAYA = {
+  "@type": "Person",
+  "name": "Sanjaya Pattiyage",
+  "url": `${SITE_BASE}/uber-uns`,
+  "image": `${SITE_BASE}/team/sanjaya-pattiyage.png`,
+};
+const AUTHOR_SALVATORE = {
+  "@type": "Person",
+  "name": "Salvatore Anzaldi",
+  "url": `${SITE_BASE}/uber-uns`,
+  "image": `${SITE_BASE}/team/salvatore-anzaldi.png`,
+};
+
+// Slugs whose Author is Salvatore Anzaldi — parsed from src/config/blog-authors.ts
+// (single source of truth shared with the UI AuthorBox).
+const SALVATORE_SLUGS = (() => {
+  const source = readFileSync(
+    resolve(ROOT, "src/config/blog-authors.ts"),
+    "utf-8",
+  );
+  const match = source.match(/SALVATORE_SLUGS\s*=\s*new\s+Set<string>\(\s*\[([\s\S]*?)\]\s*\)/);
+  if (!match) {
+    throw new Error("Could not parse SALVATORE_SLUGS from src/config/blog-authors.ts");
+  }
+  const slugs = [...match[1].matchAll(/"([^"]+)"/g)].map((m) => m[1]);
+  return new Set(slugs);
+})();
+
+const CONTENT_NODE_TYPES = new Set([
+  "Article",
+  "BlogPosting",
+  "NewsArticle",
+  "TechArticle",
+  "ScholarlyArticle",
+]);
+
+function isContentNode(node) {
+  const t = node["@type"];
+  if (typeof t !== "string") return false;
+  return CONTENT_NODE_TYPES.has(t) || t.endsWith("Article");
+}
+
 /**
- * Extract JSON-LD content from HTML, then fix the author to always be
- * René Ebert + Sanjaya Pattiyage as two Person objects.
+ * Count words in HTML body (strip tags, decode entities, split on whitespace).
+ */
+function countWords(html) {
+  if (!html) return 0;
+  const text = decodeHtmlEntities(
+    html.replace(/<script[\s\S]*?<\/script>/gi, "")
+        .replace(/<style[\s\S]*?<\/style>/gi, "")
+        .replace(/<[^>]+>/g, " ")
+  );
+  const words = text.split(/\s+/).filter((w) => w.length > 0);
+  return words.length;
+}
+
+/**
+ * Extract JSON-LD content from HTML. Returns the raw JSON string,
+ * or "" if no <script type="application/ld+json"> block exists.
+ * (Schema fixes are applied by the caller via fixJsonLdMeta.)
  */
 function extractJsonLd(html) {
   const match = html.match(
     /<script\s+type="application\/ld\+json">([\s\S]*?)<\/script>/i
   );
   if (!match) return "";
-  const raw = match[1].trim();
-  return fixJsonLdAuthors(raw);
+  return match[1].trim();
 }
 
 /**
- * Fix the author field in a JSON-LD string:
- * - Find any Article node in @graph (or top-level)
- * - Replace author with two Person objects: René Ebert + Sanjaya Pattiyage
+ * Build a minimal Article skeleton when the source HTML has no JSON-LD block.
+ * Author/publisher/image/mainEntityOfPage are stubs — fixJsonLdMeta fills them
+ * with deterministic values afterwards.
  */
-function fixJsonLdAuthors(jsonLdStr) {
+function buildFallbackJsonLd({ title, description, datePublished }) {
+  const obj = {
+    "@context": "https://schema.org",
+    "@type": "Article",
+    "headline": title,
+    "description": description,
+    "image": "",
+    "datePublished": datePublished,
+    "dateModified": datePublished,
+    "author": [],
+    "publisher": { "@type": "Organization", "name": "Gastro Master" },
+    "mainEntityOfPage": "",
+  };
+  return JSON.stringify(obj);
+}
+
+/**
+ * Apply all schema corrections to a parsed jsonLd string.
+ * ctx: { slug, bodyHtml, isSalvatore }
+ *
+ * Fixes:
+ *   B.1 publisher.logo → deterministic logo URL with width/height
+ *   B.2 mainEntityOfPage.@id → /de/blog/{slug}
+ *   B.3 image → logo as ImageObject (no per-post covers exist)
+ *   B.4 inLanguage = "de-DE" on Article/BlogPosting nodes
+ *   B.5 wordCount on Article/BlogPosting nodes
+ *   B.6 Person.image for author objects
+ *   B.7 author override based on isSalvatore flag
+ */
+function fixJsonLdMeta(jsonLdStr, ctx) {
   if (!jsonLdStr) return jsonLdStr;
   try {
     const obj = JSON.parse(jsonLdStr);
-    const correctAuthors = [
-      { "@type": "Person", "name": "René Ebert", "url": "https://gastro-master.de/uber-uns" },
-      { "@type": "Person", "name": "Sanjaya Pattiyage", "url": "https://gastro-master.de/uber-uns" },
-    ];
+    const { slug, bodyHtml, isSalvatore } = ctx;
+    const wordCount = countWords(bodyHtml);
+    const correctAuthors = isSalvatore
+      ? [AUTHOR_SALVATORE]
+      : [AUTHOR_RENE, AUTHOR_SANJAYA];
+    const canonicalUrl = `${SITE_BASE}/de/blog/${slug}`;
+
     const nodes = Array.isArray(obj["@graph"]) ? obj["@graph"] : [obj];
+
     for (const node of nodes) {
-      // Fix author on any content-type node (Article, BlogPosting, NewsArticle, etc.)
-      const type = node["@type"];
-      const isContentNode =
-        type === "Article" ||
-        type === "BlogPosting" ||
-        type === "NewsArticle" ||
-        (typeof type === "string" && type.endsWith("Article")) ||
-        // Also fix any node that has an author field with wrong data
-        (node["author"] &&
-          typeof node["author"] === "object" &&
-          !Array.isArray(node["author"]));
-      if (isContentNode) {
-        node["author"] = correctAuthors;
+      // B.1 — publisher.logo (on any node with publisher object)
+      if (node.publisher && typeof node.publisher === "object" && !Array.isArray(node.publisher)) {
+        node.publisher.logo = {
+          "@type": "ImageObject",
+          "url": LOGO_URL,
+          "width": LOGO_WIDTH,
+          "height": LOGO_HEIGHT,
+        };
+      }
+
+      // B.1 (Organization-level logo)
+      if (node["@type"] === "Organization") {
+        if (typeof node.logo === "string" || (node.logo && typeof node.logo === "object")) {
+          node.logo = {
+            "@type": "ImageObject",
+            "url": LOGO_URL,
+            "width": LOGO_WIDTH,
+            "height": LOGO_HEIGHT,
+          };
+        }
+      }
+
+      if (isContentNode(node)) {
+        // B.2 — mainEntityOfPage.@id (always Object format with @type: WebPage)
+        if (typeof node.mainEntityOfPage === "string") {
+          node.mainEntityOfPage = { "@type": "WebPage", "@id": canonicalUrl };
+        } else if (node.mainEntityOfPage && typeof node.mainEntityOfPage === "object") {
+          node.mainEntityOfPage["@id"] = canonicalUrl;
+          node.mainEntityOfPage["@type"] = node.mainEntityOfPage["@type"] || "WebPage";
+        } else {
+          node.mainEntityOfPage = {
+            "@type": "WebPage",
+            "@id": canonicalUrl,
+          };
+        }
+
+        // B.3 — image (replace any string or wp-content URL with logo ImageObject)
+        node.image = {
+          "@type": "ImageObject",
+          "url": LOGO_URL,
+          "width": LOGO_WIDTH,
+          "height": LOGO_HEIGHT,
+        };
+
+        // B.4 — inLanguage
+        node.inLanguage = "de-DE";
+
+        // B.5 — wordCount
+        if (wordCount > 0) {
+          node.wordCount = wordCount;
+        }
+
+        // B.6 + B.7 — author with image
+        node.author = correctAuthors;
       }
     }
+
     return JSON.stringify(obj, null, 2);
   } catch {
     return jsonLdStr;
@@ -539,18 +683,32 @@ for (const batchDir of BATCH_DIRS) {
 
     let bodyHtml = "";
     let jsonLd = "";
+    const isSalvatore = SALVATORE_SLUGS.has(slug);
 
     if (wpFile) {
       try {
         const wpContent = readFileSync(join(batchPath, wpFile), "utf-8");
-        jsonLd = extractJsonLd(wpContent);
         bodyHtml = cleanBodyHtml(wpContent);
+        jsonLd = extractJsonLd(wpContent);
       } catch (e) {
         errors.push(`Failed to read ${wpFile}: ${e.message}`);
       }
     } else {
       errors.push(`No wordpress.html found for slug: ${slug} in ${batchDir}`);
     }
+
+    // Fallback: build a minimal Article skeleton if the source HTML had no JSON-LD.
+    // (fixJsonLdMeta will then enrich it with deterministic author/publisher/image/etc.)
+    if (!jsonLd || jsonLd.trim() === "") {
+      jsonLd = buildFallbackJsonLd({
+        title: getTitle(meta),
+        description: getDescription(meta),
+        datePublished: meta.publish_date || "2026-01-01",
+      });
+    }
+
+    // Apply all schema fixes (B.1–B.7)
+    jsonLd = fixJsonLdMeta(jsonLd, { slug, bodyHtml, isSalvatore });
 
     // Build internalLinks
     const productLinks = extractProductLinks(meta.internal_links || {});
@@ -576,7 +734,7 @@ for (const batchDir of BATCH_DIRS) {
       metaDescription: getDescription(meta),
       bodyHtml,
       jsonLd,
-      author: "René Ebert & Sanjaya Pattiyage",
+      author: isSalvatore ? "Salvatore Anzaldi" : "René Ebert & Sanjaya Pattiyage",
       publishedDate: meta.publish_date || "2026-01-01",
       category: getCategory(meta),
       tags: Array.isArray(meta.tags) ? meta.tags : [],
