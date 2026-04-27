@@ -550,3 +550,85 @@
   background: rgba(245, 158, 11, 0.06) !important;
   color: rgb(244, 244, 245) !important;
 }
+
+/* ── Table of Contents (nav.toc) ─────────────────────────────────────────── */
+/* The nav element has a hardcoded light BG (#f4f6f8) but prose-invert makes
+   headings white → invisible. Override to match the dark blog theme.       */
+.prose nav.toc,
+.prose nav[style*="background:#"],
+.prose nav[style*="background: #"] {
+  background: rgba(255, 255, 255, 0.06) !important;
+  border: 1px solid rgba(255, 255, 255, 0.10) !important;
+  color: rgb(244, 244, 245) !important;
+  box-shadow: none !important;
+}
+.prose nav.toc h2,
+.prose nav[style*="background:#"] h2,
+.prose nav[style*="background: #"] h2 {
+  color: rgba(255, 255, 255, 0.9) !important;
+  font-size: 0.875rem !important;
+  font-weight: 700 !important;
+  text-transform: uppercase !important;
+  letter-spacing: 0.05em !important;
+  margin: 0 0 0.75rem 0 !important;
+}
+.prose nav.toc a,
+.prose nav[style*="background:#"] a,
+.prose nav[style*="background: #"] a {
+  color: rgb(34, 211, 238) !important;
+}
+.prose nav.toc li,
+.prose nav[style*="background:#"] li,
+.prose nav[style*="background: #"] li {
+  color: rgb(212, 212, 216) !important;
+}
+
+/* ── Hide redundant embedded sections ───────────────────────────────────── */
+/* GoogleReviewsGrid component renders reviews below the article — suppress
+   the inline placeholder section that has no real widget content.          */
+.prose section.google-reviews-embed,
+.prose .google-reviews-embed {
+  display: none !important;
+}
+/* AuthorBox component at the top of every article handles author display —
+   hide old WordPress-exported author-box divs embedded in the HTML body.  */
+.prose .author-box,
+.prose .wp-block-group.author-box,
+.prose aside.author-box,
+.prose .gm-author-box,
+.prose aside.gm-author-box,
+.prose .gm-section.gm-author {
+  display: none !important;
+}
+
+/* ── Blog prose: blockquote + table-header mit Inline-Background ────────── */
+/* aside/div/section werden bereits durch Zeile 544 abgedeckt (dark amber).  */
+/* blockquote und tr sind dort NICHT enthalten → gezielter Fix hier.         */
+
+/* blockquote: Inline-BG zu dark-amber konvertieren (konsistent mit aside)  */
+.prose blockquote[style*="background:#"],
+.prose blockquote[style*="background: #"] {
+  background: rgba(245, 158, 11, 0.06) !important;
+  border-left-color: rgba(245, 158, 11, 0.5) !important;
+  color: rgb(244, 244, 245) !important;
+}
+.prose blockquote[style*="background:#"] p,
+.prose blockquote[style*="background: #"] p,
+.prose blockquote[style*="background:#"] strong,
+.prose blockquote[style*="background: #"] strong {
+  color: rgb(244, 244, 245) !important;
+}
+.prose blockquote[style*="background:#"] a,
+.prose blockquote[style*="background: #"] a {
+  color: rgb(34, 211, 238) !important;
+}
+
+/* Tabellen-Kopfzeilen: helles BG → subtiles Weiß-Overlay, weißer Text      */
+.prose tr[style*="background:#"],
+.prose tr[style*="background: #"] {
+  background: rgba(255, 255, 255, 0.08) !important;
+}
+.prose tr[style*="background:#"] th,
+.prose tr[style*="background: #"] th {
+  color: rgb(244, 244, 245) !important;
+}

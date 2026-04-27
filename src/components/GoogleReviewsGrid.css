@@ -53,3 +53,14 @@
 .dark .reviews-scroll-container::-webkit-scrollbar-thumb:hover {
   background: #3b82f6;
 }
+
+/* Mobile: nativen Scrollbar ausblenden — custom Progress-Bar übernimmt */
+@media (max-width: 1023px) {
+  .reviews-scroll-container {
+    scrollbar-width: none;
+  }
+
+  .reviews-scroll-container::-webkit-scrollbar {
+    display: none;
+  }
+}

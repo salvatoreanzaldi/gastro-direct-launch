@@ -393,13 +393,13 @@ const Navbar = () => {
               <Link
                 to={lp("/produkte")}
                 onClick={() => setMobileOpen(false)}
-                className="flex-1 text-primary-foreground/70 hover:text-primary-foreground font-medium py-2"
+                className="text-primary-foreground/70 hover:text-primary-foreground font-medium py-2 pr-3"
               >
                 {t('nav.produkte')}
               </Link>
               <button
                 onClick={() => setProdMobOpen(!prodMobOpen)}
-                className="py-2 px-1"
+                className="flex-1 flex items-center justify-end py-2 px-1"
                 aria-label={`${t('nav.produkte')} Untermenü`}
               >
                 <ChevronDown className={`w-4 h-4 text-primary-foreground/70 transition-transform duration-200 ${prodMobOpen ? "rotate-180" : ""}`} />
@@ -467,13 +467,13 @@ const Navbar = () => {
               <Link
                 to={lp("/loesungen")}
                 onClick={() => setMobileOpen(false)}
-                className="flex-1 text-primary-foreground/70 hover:text-primary-foreground font-medium py-2"
+                className="text-primary-foreground/70 hover:text-primary-foreground font-medium py-2 pr-3"
               >
                 {t('nav.loesungen')}
               </Link>
               <button
                 onClick={() => setLoesMobOpen(!loesMobOpen)}
-                className="py-2 px-1"
+                className="flex-1 flex items-center justify-end py-2 px-1"
                 aria-label={`${t('nav.loesungen')} Untermenü`}
               >
                 <ChevronDown className={`w-4 h-4 text-primary-foreground/70 transition-transform duration-200 ${loesMobOpen ? "rotate-180" : ""}`} />

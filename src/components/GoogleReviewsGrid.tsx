@@ -40,6 +40,8 @@ export default function GoogleReviewsGrid() {
   const isDragging = useRef(false);
   const startX = useRef(0);
   const scrollLeft = useRef(0);
+  const [scrollProgress, setScrollProgress] = useState(0);
+  const [thumbWidth, setThumbWidth] = useState(30);
 
   // Initialize active filter when tabs load
   useEffect(() => {
@@ -51,17 +53,27 @@ export default function GoogleReviewsGrid() {
   // Reset scroll position when filter changes (without animation)
   useEffect(() => {
     if (scrollRef.current) {
-      // Temporarily disable smooth scrolling for instant jump
       scrollRef.current.style.scrollBehavior = 'auto';
       scrollRef.current.scrollLeft = 0;
-      // Re-enable smooth scrolling after the jump
       setTimeout(() => {
         if (scrollRef.current) {
           scrollRef.current.style.scrollBehavior = 'smooth';
         }
       }, 0);
     }
+    setScrollProgress(0);
   }, [activeFilter]);
+
+  // Thumb-Breite nach Review-Laden berechnen
+  useEffect(() => {
+    const el = scrollRef.current;
+    if (!el || !reviews.length) return;
+    setTimeout(() => {
+      if (scrollRef.current) {
+        setThumbWidth(Math.max((scrollRef.current.clientWidth / scrollRef.current.scrollWidth) * 100, 12));
+      }
+    }, 50);
+  }, [reviews]);
 
   // Event handlers for drag-scroll
   const onMouseDown = (e: React.MouseEvent<HTMLDivElement>) => {
@@ -83,6 +95,16 @@ export default function GoogleReviewsGrid() {
     isDragging.current = false;
     if (scrollRef.current) scrollRef.current.style.cursor = 'grab';
   };
+
+  const updateScrollState = () => {
+    const el = scrollRef.current;
+    if (!el) return;
+    const max = el.scrollWidth - el.clientWidth;
+    setScrollProgress(max > 0 ? el.scrollLeft / max : 0);
+    setThumbWidth(Math.max((el.clientWidth / el.scrollWidth) * 100, 12));
+  };
+
+  const onScroll = updateScrollState;
 
   // Get tab label from translation, fallback to sheet name
   const getTabLabel = (tabName: string): string => {
@@ -182,7 +204,8 @@ export default function GoogleReviewsGrid() {
               onMouseMove={onMouseMove}
               onMouseUp={stopDragging}
               onMouseLeave={stopDragging}
-              className="reviews-scroll-container flex gap-5 pb-6 snap-x snap-mandatory max-w-[1225px] mx-auto select-none cursor-grab active:cursor-grabbing"
+              onScroll={onScroll}
+              className="reviews-scroll-container flex gap-5 pb-4 snap-x snap-mandatory max-w-[1225px] mx-auto select-none cursor-grab active:cursor-grabbing"
               style={{ scrollBehavior: 'smooth' }}
             >
               <AnimatePresence mode="wait">
@@ -191,6 +214,19 @@ export default function GoogleReviewsGrid() {
                 ))}
               </AnimatePresence>
             </motion.div>
+
+            {/* Custom scroll progress bar — mobile only (iOS Safari ignores CSS scrollbar styles) */}
+            <div className="lg:hidden max-w-[1225px] mx-auto mt-4 mb-1 px-1">
+              <div className="relative h-1.5 w-full rounded-full bg-[#0A264A]/15 dark:bg-white/10">
+                <div
+                  className="absolute top-0 h-full rounded-full bg-[#0A264A] dark:bg-blue-400 transition-[left] duration-75"
+                  style={{
+                    width: `${thumbWidth}%`,
+                    left: `${scrollProgress * (100 - thumbWidth)}%`,
+                  }}
+                />
+              </div>
+            </div>
 
             {/* Empty State */}
             {reviews.length === 0 && (

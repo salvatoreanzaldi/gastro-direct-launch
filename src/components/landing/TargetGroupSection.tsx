@@ -234,7 +234,7 @@ const TargetGroupSection = ({ getSolutionHref, ctaLabel }: TargetGroupSectionPro
         </div>
 
         {/* Content – fixed-height wrapper prevents layout shift during slide transitions */}
-        <div className="relative max-w-4xl mx-auto h-[520px] sm:h-[480px] md:h-[380px] overflow-hidden rounded-3xl border border-border bg-surface-light">
+        <div className="relative max-w-4xl mx-auto md:h-[380px] overflow-hidden rounded-3xl border border-border bg-surface-light">
           <AnimatePresence mode="wait">
             <motion.div
               key={showSubs ? activeSub : activeGroup}
@@ -242,11 +242,11 @@ const TargetGroupSection = ({ getSolutionHref, ctaLabel }: TargetGroupSectionPro
               animate={{ opacity: 1 }}
               exit={{ opacity: 0 }}
               transition={{ duration: 0.3 }}
-              className="absolute inset-0"
+              className="md:absolute md:inset-0"
             >
-              <div className="grid md:grid-cols-2 gap-0 h-full">
+              <div className="grid md:grid-cols-2 gap-0 md:h-full">
                 {/* Image */}
-                <div className="relative h-[200px] sm:h-[220px] md:h-full overflow-hidden">
+                <div className="relative aspect-[5/4] md:aspect-auto md:h-full overflow-hidden">
                   <img src={displayImg} alt={displayContent?.title ?? ""} loading="lazy" className="w-full h-full object-cover" />
                   <div className="absolute inset-0 bg-gradient-to-r from-transparent to-surface-light/20 hidden md:block" />
                 </div>

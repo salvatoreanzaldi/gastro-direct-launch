@@ -1,21 +1,33 @@
-import { useState, useEffect } from "react";
+import { useState, useEffect, useRef, useCallback } from "react";
 import { motion, AnimatePresence } from "framer-motion";
 import { Tv, Eye, Sparkles, ArrowRight } from "lucide-react";
 import pickupScreen from "@/assets/addons/pickup-screen.jpeg";
 import pickupScreen2 from "@/assets/addons/pickup-screen-2.png";
+import pickupScreen3 from "@/assets/heroes/Hero - Pick Up Screen.png";
 import { useTranslation } from "react-i18next";
 
-const images = [pickupScreen, pickupScreen2];
+const images = [pickupScreen, pickupScreen2, pickupScreen3];
 const featureIcons = [Tv, Eye, Sparkles];
 
 const PickUpScreenSection = () => {
   const { t } = useTranslation("common");
   const [imgIndex, setImgIndex] = useState(0);
+  const timerRef = useRef<ReturnType<typeof setInterval> | null>(null);
+
+  const startTimer = useCallback(() => {
+    if (timerRef.current) clearInterval(timerRef.current);
+    timerRef.current = setInterval(() => setImgIndex(i => (i + 1) % images.length), 5000);
+  }, []);
 
   useEffect(() => {
-    const timer = setInterval(() => setImgIndex(i => (i + 1) % images.length), 5000);
-    return () => clearInterval(timer);
-  }, []);
+    startTimer();
+    return () => { if (timerRef.current) clearInterval(timerRef.current); };
+  }, [startTimer]);
+
+  const goTo = (idx: number) => {
+    setImgIndex(idx);
+    startTimer();
+  };
 
   const scrollToForm = () => {
     window.location.href = "/kontakt";
@@ -46,6 +58,22 @@ const PickUpScreenSection = () => {
                   className="w-full h-full object-cover absolute inset-0"
                 />
               </AnimatePresence>
+
+              {/* Dot navigation – top-right corner */}
+              <div className="absolute top-3 right-3 z-10 flex items-center gap-1.5">
+                {images.map((_, i) => (
+                  <button
+                    key={i}
+                    onClick={() => goTo(i)}
+                    aria-label={`Bild ${i + 1}`}
+                    className={`rounded-full transition-all duration-300 ${
+                      i === imgIndex
+                        ? "w-5 h-2 bg-white"
+                        : "w-2 h-2 bg-white/50 hover:bg-white/80"
+                    }`}
+                  />
+                ))}
+              </div>
             </div>
           </motion.div>
 

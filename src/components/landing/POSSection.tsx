@@ -7,13 +7,16 @@ import selforderTerminals from "@/assets/addons/selfordering-terminals.png";
 import frankfurtGps from "@/assets/addons/addon-frankfurt-gps.png";
 import qrTischsystem from "@/assets/addons/addon-qr-tischsystem.png";
 import { useTranslation } from "react-i18next";
+import { Link } from "react-router-dom";
+import { useLangPath } from "@/components/LanguageLayout";
 
 // ─── Addon card content (shared between carousel & grid) ────────────────────
 
-const AddonCard = ({ icon: Icon, img, imgAlt, imgClass, title, price, features, variant = "light" }: {
+const AddonCard = ({ icon: Icon, img, imgAlt, imgClass, title, price, features, href, variant = "light" }: {
   icon: React.ComponentType<{ className?: string }>;
   img: string; imgAlt: string; imgClass?: string;
   title: string; price: string; features: string[];
+  href?: string;
   variant?: "light" | "navy";
 }) => (
   <div className={`rounded-2xl p-6 md:p-7 flex flex-col h-full ${
@@ -37,12 +40,21 @@ const AddonCard = ({ icon: Icon, img, imgAlt, imgClass, title, price, features, 
         </li>
       ))}
     </ul>
+    {href && (
+      <Link
+        to={href}
+        className={`mt-5 inline-flex items-center gap-1.5 text-sm font-semibold text-cyan-brand hover:gap-2.5 transition-all duration-200`}
+      >
+        Mehr erfahren <ArrowRight className="w-4 h-4" />
+      </Link>
+    )}
   </div>
 );
 
 const AddonCards = ({ t }: { t: (k: string, o?: any) => any }) => {
   const [api, setApi] = useState<CarouselApi>();
   const [current, setCurrent] = useState(0);
+  const lp = useLangPath();
 
   useEffect(() => {
     if (!api) return;
@@ -62,9 +74,9 @@ const AddonCards = ({ t }: { t: (k: string, o?: any) => any }) => {
   }, [api]);
 
   const addons = [
-    { icon: Truck, img: frankfurtGps, imgAlt: t("pos.addon1Title"), imgClass: "w-full h-full object-contain scale-110", title: t("pos.addon1Title"), price: t("pos.addon1Price"), features: t("pos.addon1Features", { returnObjects: true }) as string[], variant: "light" as const },
-    { icon: QrCode, img: qrTischsystem, imgAlt: t("pos.addon2Title"), imgClass: "w-full h-full object-cover", title: t("pos.addon2Title"), price: t("pos.addon2Price"), features: t("pos.addon2Features", { returnObjects: true }) as string[], variant: "light" as const },
-    { icon: ShoppingBag, img: selforderTerminals, imgAlt: t("pos.addon3Title"), imgClass: "w-full h-full object-contain p-4", title: t("pos.addon3Title"), price: t("pos.addon3Price"), features: t("pos.addon3Features", { returnObjects: true }) as string[], variant: "navy" as const },
+    { icon: Truck, img: frankfurtGps, imgAlt: t("pos.addon1Title"), imgClass: "w-full h-full object-contain scale-110", title: t("pos.addon1Title"), price: t("pos.addon1Price"), features: t("pos.addon1Features", { returnObjects: true }) as string[], href: lp("/produkte/add-ons/fahrer-app-gps"), variant: "light" as const },
+    { icon: QrCode, img: qrTischsystem, imgAlt: t("pos.addon2Title"), imgClass: "w-full h-full object-cover", title: t("pos.addon2Title"), price: t("pos.addon2Price"), features: t("pos.addon2Features", { returnObjects: true }) as string[], href: lp("/produkte/add-ons/qr-code-tischsystem"), variant: "light" as const },
+    { icon: ShoppingBag, img: selforderTerminals, imgAlt: t("pos.addon3Title"), imgClass: "w-full h-full object-contain p-4", title: t("pos.addon3Title"), price: t("pos.addon3Price"), features: t("pos.addon3Features", { returnObjects: true }) as string[], href: lp("/produkte/add-ons/kiosk"), variant: "navy" as const },
   ];
 
   return (
