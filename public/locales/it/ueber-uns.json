@@ -102,20 +102,20 @@
     "linkedinLabel": "Profilo LinkedIn",
     "founders": [
       {
-        "key": "rene",
-        "name": "René Ebert",
-        "role": "Fondatore & CEO",
-        "focus": "Vendite & Marketing",
-        "bio": "Dopo la laurea in International Business Management, ha scelto la via imprenditoriale. Il suo focus è su crescita, vendite e sviluppo strategico del mercato.",
-        "linkedin": "https://www.linkedin.com/in/rene-ebert/"
-      },
-      {
         "key": "sanjaya",
         "name": "Sanjaya Pattiyage",
         "role": "Fondatore & CEO",
         "focus": "IT & Tecnologia",
         "bio": "Specialista IT di lunga esperienza con ruoli in tecnologia e leadership presso aziende leader a livello internazionale come Procter & Gamble. Focus su prodotto, sistemi e tecnologia scalabile.",
         "linkedin": "https://www.linkedin.com/in/sanjaya-pattiyage/"
+      },
+      {
+        "key": "rene",
+        "name": "René Ebert",
+        "role": "Fondatore & CEO",
+        "focus": "Vendite & Marketing",
+        "bio": "Dopo la laurea in International Business Management, ha scelto la via imprenditoriale. Il suo focus è su crescita, vendite e sviluppo strategico del mercato.",
+        "linkedin": "https://www.linkedin.com/in/rene-ebert/"
       }
     ],
     "members": [

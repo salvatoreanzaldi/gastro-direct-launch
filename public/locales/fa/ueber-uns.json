@@ -102,20 +102,20 @@
     "linkedinLabel": "پروفایل LinkedIn",
     "founders": [
       {
-        "key": "rene",
-        "name": "René Ebert",
-        "role": "بنیان‌گذار و مدیرعامل",
-        "focus": "فروش و بازاریابی",
-        "bio": "پس از اخذ مدرک لیسانس مدیریت بازرگانی بین‌المللی، مسیر کارآفرینی را انتخاب کرد. تمرکز او بر رشد، فروش و توسعه استراتژیک بازار است.",
-        "linkedin": "https://www.linkedin.com/in/rene-ebert/"
-      },
-      {
         "key": "sanjaya",
         "name": "Sanjaya Pattiyage",
         "role": "بنیان‌گذار و مدیرعامل",
         "focus": "IT و فناوری",
         "bio": "متخصص IT با سابقه طولانی در نقش‌های فناوری و مدیریتی در شرکت‌های پیشرو بین‌المللی مانند Procter & Gamble. تمرکز بر محصول، سیستم‌ها و فناوری مقیاس‌پذیر.",
         "linkedin": "https://www.linkedin.com/in/sanjaya-pattiyage/"
+      },
+      {
+        "key": "rene",
+        "name": "René Ebert",
+        "role": "بنیان‌گذار و مدیرعامل",
+        "focus": "فروش و بازاریابی",
+        "bio": "پس از اخذ مدرک لیسانس مدیریت بازرگانی بین‌المللی، مسیر کارآفرینی را انتخاب کرد. تمرکز او بر رشد، فروش و توسعه استراتژیک بازار است.",
+        "linkedin": "https://www.linkedin.com/in/rene-ebert/"
       }
     ],
     "members": [

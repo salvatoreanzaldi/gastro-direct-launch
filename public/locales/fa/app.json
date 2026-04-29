@@ -238,6 +238,7 @@
     ],
     "cta": "درخواست مشاوره رایگان",
     "teamMembers": [
+      { "name": "Sanjaya Pattiyage", "role": "بنیان‌گذار و مدیرعامل" },
       { "name": "René Ebert", "role": "بنیان‌گذار و مدیرعامل" },
       { "name": "Salvatore Anzaldi", "role": "مدیر فروش" },
       { "name": "Andrej Krutsch", "role": "مدیر عملیات" }

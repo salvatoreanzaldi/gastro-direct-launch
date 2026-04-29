@@ -56,6 +56,7 @@ import socialFacebook  from "@/assets/icons/Icon - Facebook.png";
 import socialTikTok    from "@/assets/icons/Icon - TikTok.png";
 import socialYoutube   from "@/assets/icons/Icon - Youtube.png";
 import teamReneImg      from "@/assets/team/ceo-rene-ebert.png";
+import teamSanjayaImg   from "@/assets/team/team-sanjaya-pattiyage.png";
 import teamSalvatoreImg from "@/assets/team/team-salvatore-anzaldi.png";
 import teamAndrejImg    from "@/assets/team/team-andrej-krutsch.png";
 
@@ -247,7 +248,7 @@ function HeroPhoneSpread() {
 }
 
 // ─── Team CTA ────────────────────────────────────────────────────────────────
-const teamImages = [teamReneImg, teamSalvatoreImg, teamAndrejImg];
+const teamImages = [teamSanjayaImg, teamReneImg, teamSalvatoreImg, teamAndrejImg];
 
 const langColors = [
   "hover:border-yellow-400 hover:bg-yellow-50 hover:text-yellow-900 dark:hover:bg-yellow-400/10 dark:hover:text-yellow-300",

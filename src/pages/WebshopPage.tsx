@@ -35,6 +35,7 @@ import payVisa       from "@/assets/logos/payment/pay-visa.png";
 import payMastercard from "@/assets/logos/payment/pay-mastercard.png";
 import payKlarna     from "@/assets/logos/payment/pay-klarna.png";
 import teamReneImg      from "@/assets/team/ceo-rene-ebert.png";
+import teamSanjayaImg   from "@/assets/team/team-sanjaya-pattiyage.png";
 import teamSalvatoreImg from "@/assets/team/team-salvatore-anzaldi.png";
 import teamAndrejImg    from "@/assets/team/team-andrej-krutsch.png";
 import teamMohammadImg  from "@/assets/team/team-mohammad-motakalemi.png";
@@ -241,10 +242,11 @@ const WebshopTeamCTA = () => {
   const roles = arr("teamCta.roles") as string[];
 
   const teamMembers = [
-    { img: teamReneImg,      name: "René Ebert",         role: roles[0] ?? "" },
-    { img: teamSalvatoreImg, name: "Salvatore Anzaldi",   role: roles[1] ?? "" },
-    { img: teamAndrejImg,    name: "Andrej Krutsch",      role: roles[2] ?? "" },
-    { img: teamMohammadImg,  name: "Mohammad Motakalemi", role: roles[3] ?? "" },
+    { img: teamSanjayaImg,   name: "Sanjaya Pattiyage",   role: roles[0] ?? "" },
+    { img: teamReneImg,      name: "René Ebert",         role: roles[1] ?? "" },
+    { img: teamSalvatoreImg, name: "Salvatore Anzaldi",   role: roles[2] ?? "" },
+    { img: teamAndrejImg,    name: "Andrej Krutsch",      role: roles[3] ?? "" },
+    { img: teamMohammadImg,  name: "Mohammad Motakalemi", role: roles[4] ?? "" },
   ];
 
   const [current, setCurrent] = useState(0);

@@ -36,6 +36,7 @@ import logoIlSorriso    from "@/assets/logos/kunden/logo-il-sorriso.png";
 import logoBurger       from "@/assets/logos/kunden/logo-burger-brothers.png";
 import logoArtemis      from "@/assets/logos/kunden/logo-artemis.png";
 import teamReneImg      from "@/assets/team/ceo-rene-ebert.png";
+import teamSanjayaImg   from "@/assets/team/team-sanjaya-pattiyage.png";
 import teamSalvatoreImg from "@/assets/team/team-salvatore-anzaldi.png";
 import teamAndrejImg    from "@/assets/team/team-andrej-krutsch.png";
 
@@ -78,7 +79,7 @@ const ZIELGRUPPEN = [
 
 const PORTFOLIO_IMGS = [heroGastroMaster, heroBaeckerei, heroEtManus, heroDT, heroDandT];
 const TESTIMONIAL_LOGOS = [logoKojo, logoIlSorriso, logoBurger, logoArtemis];
-const TEAM_IMGS = [teamReneImg, teamSalvatoreImg, teamAndrejImg];
+const TEAM_IMGS = [teamSanjayaImg, teamReneImg, teamSalvatoreImg, teamAndrejImg];
 
 const TRUST_BAR_URLS = [
   "https://aboutus.godaddy.net/newsroom/news-releases/press-release-details/2024/Gen-Z-and-Millennials-to-Small-Businesses-Get-Online-or-Get-Left-Behind/default.aspx",
@@ -214,9 +215,10 @@ const TeamCTA = () => {
 
   const roles = arr("teamCta.roles") as string[];
   const teamRoles = [
-    { img: TEAM_IMGS[0], name: "René Ebert",       role: roles[0] ?? "" },
-    { img: TEAM_IMGS[1], name: "Salvatore Anzaldi", role: roles[1] ?? "" },
-    { img: TEAM_IMGS[2], name: "Andrej Krutsch",    role: roles[2] ?? "" },
+    { img: TEAM_IMGS[0], name: "Sanjaya Pattiyage",  role: roles[0] ?? "" },
+    { img: TEAM_IMGS[1], name: "René Ebert",         role: roles[1] ?? "" },
+    { img: TEAM_IMGS[2], name: "Salvatore Anzaldi",  role: roles[2] ?? "" },
+    { img: TEAM_IMGS[3], name: "Andrej Krutsch",     role: roles[3] ?? "" },
   ];
 
   const [current, setCurrent] = useState(0);

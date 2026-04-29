@@ -238,6 +238,7 @@
     ],
     "cta": "Richieda una consulenza gratuita",
     "teamMembers": [
+      { "name": "Sanjaya Pattiyage", "role": "Fondatore e Amministratore Delegato" },
       { "name": "René Ebert", "role": "Fondatore e Amministratore Delegato" },
       { "name": "Salvatore Anzaldi", "role": "Head of Sales" },
       { "name": "Andrej Krutsch", "role": "Head of Operations" }

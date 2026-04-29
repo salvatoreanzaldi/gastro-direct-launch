@@ -102,20 +102,20 @@
     "linkedinLabel": "Профиль LinkedIn",
     "founders": [
       {
-        "key": "rene",
-        "name": "René Ebert",
-        "role": "Основатель и CEO",
-        "focus": "Продажи и маркетинг",
-        "bio": "После бакалавриата в области International Business Management он выбрал предпринимательский путь. Его фокус — рост, продажи и стратегическое развитие рынка.",
-        "linkedin": "https://www.linkedin.com/in/rene-ebert/"
-      },
-      {
         "key": "sanjaya",
         "name": "Sanjaya Pattiyage",
         "role": "Основатель и CEO",
         "focus": "IT и технологии",
         "bio": "Многолетний IT-специалист с опытом в технологических и управленческих позициях в ведущих международных компаниях, таких как Procter & Gamble. Фокус на продукте, системах и масштабируемых технологиях.",
         "linkedin": "https://www.linkedin.com/in/sanjaya-pattiyage/"
+      },
+      {
+        "key": "rene",
+        "name": "René Ebert",
+        "role": "Основатель и CEO",
+        "focus": "Продажи и маркетинг",
+        "bio": "После бакалавриата в области International Business Management он выбрал предпринимательский путь. Его фокус — рост, продажи и стратегическое развитие рынка.",
+        "linkedin": "https://www.linkedin.com/in/rene-ebert/"
       }
     ],
     "members": [

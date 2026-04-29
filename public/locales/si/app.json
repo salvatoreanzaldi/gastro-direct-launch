@@ -238,6 +238,7 @@
     ],
     "cta": "නොමිලේ උපදේශනය ඉල්ලන්න",
     "teamMembers": [
+      { "name": "Sanjaya Pattiyage", "role": "නිර්මාතා සහ කළමනාකාර අධ්‍යක්ෂ" },
       { "name": "René Ebert", "role": "නිර්මාතා සහ කළමනාකාර අධ්‍යක්ෂ" },
       { "name": "Salvatore Anzaldi", "role": "විකුණුම් ප්‍රධානි" },
       { "name": "Andrej Krutsch", "role": "මෙහෙයුම් ප්‍රධානි" }

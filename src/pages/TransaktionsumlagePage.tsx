@@ -30,6 +30,7 @@ import logoIlSorriso from "@/assets/logos/kunden/logo-il-sorriso.png";
 import logoBurger    from "@/assets/logos/kunden/logo-burger-brothers.png";
 import logoArtemis   from "@/assets/logos/kunden/logo-artemis.png";
 import teamReneImg      from "@/assets/team/ceo-rene-ebert.png";
+import teamSanjayaImg   from "@/assets/team/team-sanjaya-pattiyage.png";
 import teamSalvatoreImg from "@/assets/team/team-salvatore-anzaldi.png";
 import teamAndrejImg    from "@/assets/team/team-andrej-krutsch.png";
 
@@ -151,8 +152,8 @@ const TABLE_ROWS = [
 ];
 
 // ─── Team members (names stay constant) ──────────────────────────────────────
-const TEAM_IMGS = [teamReneImg, teamSalvatoreImg, teamAndrejImg];
-const TEAM_NAMES = ["René Ebert", "Salvatore Anzaldi", "Andrej Krutsch"];
+const TEAM_IMGS = [teamSanjayaImg, teamReneImg, teamSalvatoreImg, teamAndrejImg];
+const TEAM_NAMES = ["Sanjaya Pattiyage", "René Ebert", "Salvatore Anzaldi", "Andrej Krutsch"];
 
 const LANG_META = [
   { flag: "🇩🇪", color: "hover:border-yellow-400 hover:bg-yellow-50 hover:text-yellow-900 dark:hover:bg-yellow-400/10 dark:hover:text-yellow-300" },

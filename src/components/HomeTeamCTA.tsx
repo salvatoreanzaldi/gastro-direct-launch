@@ -5,11 +5,12 @@ import { useLangPath } from "@/components/LanguageLayout";
 
 // Team member images
 import teamReneImg      from "@/assets/team/ceo-rene-ebert.png";
+import teamSanjayaImg   from "@/assets/team/team-sanjaya-pattiyage.png";
 import teamSalvatoreImg from "@/assets/team/team-salvatore-anzaldi.png";
 import teamAndrejImg    from "@/assets/team/team-andrej-krutsch.png";
 import teamMohammadImg  from "@/assets/team/team-mohammad-motakalemi.png";
 
-const teamMemberImgs = [teamReneImg, teamSalvatoreImg, teamAndrejImg, teamMohammadImg];
+const teamMemberImgs = [teamSanjayaImg, teamReneImg, teamSalvatoreImg, teamAndrejImg, teamMohammadImg];
 
 const langFlags = ["🇩🇪", "🇬🇧", "🇮🇹", "🇮🇷", "🇷🇺", "🇱🇰"];
 const langColors = [
@@ -26,6 +27,7 @@ const HomeTeamCTA = () => {
   const [current, setCurrent] = useState(0);
 
   const teamMembers = [
+    { name: "Sanjaya Pattiyage", role: "Gründer & CEO" },
     { name: "René Ebert", role: "Gründer & CEO" },
     { name: "Salvatore Anzaldi", role: "Vertriebsleiter" },
     { name: "Andrej Krutsch", role: "Service Customer Manager" },

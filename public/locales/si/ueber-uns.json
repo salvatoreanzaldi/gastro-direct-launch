@@ -102,20 +102,20 @@
     "linkedinLabel": "LinkedIn පැතිකඩ",
     "founders": [
       {
-        "key": "rene",
-        "name": "René Ebert",
-        "role": "නිර්මාතෘ සහ CEO",
-        "focus": "විකුණුම් සහ අලෙවිකරණය",
-        "bio": "International Business Management හි ඔහුගේ Bachelor උපාධියෙන් පසු ව්‍යවසායකත්ව මාර්ගය තෝරාගත්තේය. ඔහුගේ අවධානය යොමු වන්නේ වර්ධනය, විකුණුම් සහ උපායමාර්ගික වෙළඳපොළ සංවර්ධනය කෙරෙහිය.",
-        "linkedin": "https://www.linkedin.com/in/rene-ebert/"
-      },
-      {
         "key": "sanjaya",
         "name": "Sanjaya Pattiyage",
         "role": "නිර්මාතෘ සහ CEO",
         "focus": "IT සහ තාක්ෂණය",
         "bio": "Procter & Gamble වැනි ජාත්‍යන්තරව ප්‍රමුඛ සමාගම්වල තාක්ෂණ සහ නායකත්ව භූමිකාවන්හි අත්දැකීම් ඇති දීර්ඝකාලීන IT විශේෂඥයෙකි. නිෂ්පාදන, පද්ධති සහ පරිමාණ කළ හැකි තාක්ෂණය කෙරෙහි අවධානය යොමු කරයි.",
         "linkedin": "https://www.linkedin.com/in/sanjaya-pattiyage/"
+      },
+      {
+        "key": "rene",
+        "name": "René Ebert",
+        "role": "නිර්මාතෘ සහ CEO",
+        "focus": "විකුණුම් සහ අලෙවිකරණය",
+        "bio": "International Business Management හි ඔහුගේ Bachelor උපාධියෙන් පසු ව්‍යවසායකත්ව මාර්ගය තෝරාගත්තේය. ඔහුගේ අවධානය යොමු වන්නේ වර්ධනය, විකුණුම් සහ උපායමාර්ගික වෙළඳපොළ සංවර්ධනය කෙරෙහිය.",
+        "linkedin": "https://www.linkedin.com/in/rene-ebert/"
       }
     ],
     "members": [

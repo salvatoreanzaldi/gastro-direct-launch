@@ -59,6 +59,7 @@ import hwSurfaceSchraeg from "@/assets/hardware/Hardware - Microsoft Surface Tab
 import hwSurfaceHinten from "@/assets/hardware/Hardware - Microsoft Surface Tablet Hinten.png";
 import hwSurfaceSeite  from "@/assets/hardware/Hardware - Microsoft Surface Tablet Seite.png";
 import teamReneImg      from "@/assets/team/ceo-rene-ebert.png";
+import teamSanjayaImg   from "@/assets/team/team-sanjaya-pattiyage.png";
 import teamSalvatoreImg from "@/assets/team/team-salvatore-anzaldi.png";
 import teamAndrejImg    from "@/assets/team/team-andrej-krutsch.png";
 import logoKojo         from "@/assets/logos/kunden/logo-kojo-sushi.png";
@@ -138,7 +139,7 @@ const customerLogos = [
   { src: logoBurger,    alt: "Burger Brothers" },
 ];
 
-const teamMemberImgs = [teamReneImg, teamSalvatoreImg, teamAndrejImg];
+const teamMemberImgs = [teamSanjayaImg, teamReneImg, teamSalvatoreImg, teamAndrejImg];
 
 const langFlags = ["🇩🇪", "🇬🇧", "🇮🇹", "🇮🇷", "🇷🇺", "🇱🇰"];
 const langColors = [

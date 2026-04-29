@@ -131,7 +131,7 @@
     "expectText": "In a free initial consultation, one of our experts develops an individual concept for your own online ordering shop — with your branding, your menu and 0% commission. Non-binding and completely free.",
     "expectSub": "Your shop can be live within a few business days. No programming skills needed — we handle everything.",
     "cta": "Request Free Consultation",
-    "roles": ["Founder & CEO", "Head of Sales", "Head of Operations", "Customer Success"]
+    "roles": ["Founder & CEO", "Founder & CEO", "Head of Sales", "Head of Operations", "Customer Success"]
   },
   "faq": {
     "badge": "FAQ",

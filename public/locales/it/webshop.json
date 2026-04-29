@@ -131,7 +131,7 @@
     "expectText": "In una prima consulenza gratuita, uno dei nostri esperti sviluppa un concetto personalizzato per il Suo shop online — con il Suo branding, il Suo menù e 0 % di commissione. Senza impegno e completamente gratuito.",
     "expectSub": "Il Suo shop può essere online già in pochi giorni lavorativi. Nessuna conoscenza di programmazione necessaria — ci occupiamo di tutto noi.",
     "cta": "Richieda una consulenza gratuita",
-    "roles": ["Fondatore e CEO", "Head of Sales", "Head of Operations", "Customer Success"]
+    "roles": ["Fondatore e CEO", "Fondatore e CEO", "Head of Sales", "Head of Operations", "Customer Success"]
   },
   "faq": {
     "badge": "Domande frequenti",
