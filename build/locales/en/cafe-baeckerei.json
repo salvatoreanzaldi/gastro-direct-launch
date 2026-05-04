@@ -1,0 +1,217 @@
+{
+  "meta": {
+    "title": "POS System for Café & Bakery 2026 — TSE-Compliant, Online Pre-Ordering | Gastro Master",
+    "description": "TSE-compliant POS system, online pre-ordering, and QR table ordering for cafés and bakeries. From €69/month. Get your free consultation now.",
+    "canonical": "https://gastro-master.de/loesungen/cafe-baeckerei"
+  },
+  "hero": {
+    "badge": "Café & Bakery · Gastro Master",
+    "h1_1": "Fast checkout.",
+    "h1_highlight": "Online pre-ordering.",
+    "h1_2": "Everything for your café.",
+    "subtitle": "TSE-compliant POS, online pre-ordering, and QR table ordering — easy to set up, ready to go.",
+    "geoTitle": "TSE cash register requirement:",
+    "geoText": "Since January 1, 2020, all POS systems in Germany must be equipped with a certified technical security device (TSE). The tax office can check compliance at any time — violations can result in fines of up to €25,000. Cafés and bakeries that also use online pre-ordering systems reduce wait times and demonstrably increase average order value.",
+    "ctaPrimary": "Free consultation",
+    "ctaSecondary": "View products ↓",
+    "trustPills": ["800+ businesses", "TSE-compliant", "Personal setup", "Personal support"]
+  },
+  "stats": {
+    "title": "The bakery trade is growing — technology must keep up",
+    "subtitle": "Millions of customers shop at bakeries and cafés every day. Those who digitize now are ahead.",
+    "cta": "Set up your POS system now →",
+    "items": [
+      {
+        "value": "€17.92 bn",
+        "label": "Revenue of the German bakery trade 2024",
+        "source": "Central Association of German Bakers",
+        "href": "https://www.baeckerhandwerk.de/baeckerhandwerk/zahlen-fakten/"
+      },
+      {
+        "value": "44,000",
+        "label": "Points of sale in the German bakery trade",
+        "source": "Central Association of German Bakers",
+        "href": "https://www.baeckerhandwerk.de/baeckerhandwerk/zahlen-fakten/"
+      },
+      {
+        "value": "€25,000",
+        "label": "Fine for missing TSE cash register compliance",
+        "source": "Federal Central Tax Office",
+        "href": "https://www.bzst.de/DE/Unternehmen/Aussenpruefungen/DigitaleSchnittstelleFinanzVerwaltungKassen/digitaleschnittstellefinanzverwaltungkassen_node.html"
+      },
+      {
+        "value": "from €69/mo",
+        "label": "Gastro Master POS system — everything included",
+        "source": "Gastro Master",
+        "href": "https://gastro-master.de/kontakt"
+      }
+    ]
+  },
+  "problem": {
+    "badge": "The challenge",
+    "title": "Three problems many cafés and bakeries face",
+    "subtitle": "Technology can help — when it's easy to use.",
+    "items": [
+      {
+        "title": "Long lines at the register",
+        "desc": "Especially in the morning and at lunchtime. Customers don't have time — and go to the competition."
+      },
+      {
+        "title": "No online pre-ordering",
+        "desc": "Those who can't pre-order wait or don't come. Online ordering is expected today."
+      },
+      {
+        "title": "Staff shortages hit the register first",
+        "desc": "Every minute your staff spends at the register is missing elsewhere. Technology can make up for that."
+      }
+    ]
+  },
+  "products": {
+    "badge": "Your products · Gastro Master",
+    "title": "Everything your café needs — from one source",
+    "subtitle": "POS, online shop, website, and app — perfectly coordinated. No patchwork.",
+    "featured": {
+      "badgeRecommended": "Recommended",
+      "badgePrice": "From €69/mo",
+      "title": "POS System",
+      "text": "Our POS system is approved by the tax office — that's called TSE-compliant. QR table ordering and self-checkout terminal are available.",
+      "features": [
+        "TSE-compliant — approved by the tax office",
+        "Scanner integration for baked goods and beverages",
+        "Daily closing at the push of a button",
+        "Self-checkout terminal available",
+        "QR table ordering for café visits available"
+      ],
+      "cta": "View POS system",
+      "imgAlt": "POS system for café and bakery"
+    },
+    "allBranded": "All products are set up in your colors and with your logo.",
+    "smallCards": [
+      {
+        "title": "Online Shop",
+        "tagline": "Customers pre-order cakes, catering, or breakfast packages online.",
+        "features": [
+          "Pre-orders for cakes and catering",
+          "No waiting — you prepare everything in advance",
+          "Orders go directly to your POS"
+        ]
+      },
+      {
+        "title": "Website",
+        "tagline": "Your café online — Google finds you, customers come to you.",
+        "features": [
+          "Update your menu anytime",
+          "Opening hours and location visible to everyone",
+          "More walk-in customers through better visibility"
+        ]
+      },
+      {
+        "title": "App System",
+        "tagline": "Your own ordering app — push notifications included.",
+        "features": [
+          "Inform regulars via notifications",
+          "\"Fresh croissants are here!\" — straight to their phone",
+          "Your logo and your colors in the app"
+        ]
+      },
+      {
+        "title": "Transaction fees",
+        "tagline": "Transaction fees? Your customers can cover them.",
+        "features": [
+          "No deduction from your revenue",
+          "Customers pay the fee directly",
+          "Standard in many European countries"
+        ]
+      }
+    ],
+    "ctaPrimary": "Free consultation",
+    "moreLink": "Learn more"
+  },
+  "compare": {
+    "badge": "Comparison",
+    "title": "Gastro Master vs. other POS systems",
+    "subtitle": "Why more and more cafés and bakeries choose Gastro Master.",
+    "headerCriterion": "Criterion",
+    "headerGM": "Gastro Master",
+    "headerOther": "Other POS",
+    "rows": [
+      { "label": "TSE-compliant (legal requirement)", "gm": "✓ Included", "gmGood": true, "other": "Often expensive add-on", "otherBad": true },
+      { "label": "Online pre-ordering", "gm": "✓ Included", "gmGood": true, "other": "Separate system required", "otherBad": true },
+      { "label": "QR table ordering", "gm": "✓ Available", "gmGood": true, "other": "Usually not available", "otherBad": true },
+      { "label": "Self-checkout terminal", "gm": "✓ Available", "gmGood": true, "other": "Only with large providers", "otherBad": true },
+      { "label": "Monthly costs", "gm": "From €69/mo", "gmGood": true, "other": "€80–200/mo", "otherBad": true },
+      { "label": "Setup time", "gm": "2–3 weeks", "gmGood": true, "other": "4–12 weeks", "otherBad": true },
+      { "label": "Support", "gm": "Personal", "gmGood": true, "other": "Hotline / ticket system", "otherBad": false }
+    ],
+    "ctaText": "Many bakeries pay more than necessary — for systems that do less.",
+    "ctaButton": "Book a free consultation"
+  },
+  "process": {
+    "badge": "How it works",
+    "title": "Go live in 3 steps",
+    "subtitle": "No IT knowledge required. We do it for you.",
+    "steps": [
+      { "num": "01", "title": "Free consultation", "desc": "We explain everything in 30 minutes — online or on-site." },
+      { "num": "02", "title": "Setup in 2–3 weeks", "desc": "We set everything up. You continue business as usual." },
+      { "num": "03", "title": "Start right away", "desc": "Your POS is ready immediately. TSE-compliant. Done." }
+    ]
+  },
+  "trust": {
+    "items": [
+      { "value": "800+", "label": "Gastro businesses trust Gastro Master" },
+      { "value": "5.0 ★", "label": "Customer rating on Google" },
+      { "value": "TSE-compliant", "label": "All systems TSE-certified" },
+      { "value": "Personal support", "label": "Our team helps directly" }
+    ]
+  },
+  "epitPay": {
+    "badge": "Coming soon",
+    "title": "Epit Pay — soon with integrated payment processing",
+    "text": "Soon you won't need a separate payment provider anymore. With Epit Pay you get POS, ordering system, and payment processing from one source.",
+    "cta": "Learn more →"
+  },
+  "faq": {
+    "badge": "FAQ",
+    "title": "Frequently asked questions from café and bakery owners",
+    "subtitle": "Answers to the questions we hear most often.",
+    "items": [
+      {
+        "q": "Does my café need a TSE-compliant cash register?",
+        "a": "Yes. Since 2020, every cash register in Germany is legally required to have TSE certification. The tax office can check this at any time. Violations can result in fines of up to €25,000. The [Gastro Master POS system](/produkte/kassensystem) meets all requirements — we take care of that for you."
+      },
+      {
+        "q": "Can I accept online pre-orders through Gastro Master?",
+        "a": "Yes. Your customers can order and pay in advance through your [online shop](/produkte/webshop) or your [app](/produkte/app). Ideal for lunch breaks or weekend breakfast. You see all orders directly on your POS."
+      },
+      {
+        "q": "How much does a POS system for a bakery cost at Gastro Master?",
+        "a": "The [POS system](/produkte/kassensystem) starts at €69 per month. Included: TSE module, menu management, daily closing, and personal support. Setup is individually tailored to your business."
+      },
+      {
+        "q": "Does the POS work without internet?",
+        "a": "Yes. The Gastro Master [POS](/produkte/kassensystem) also works offline. All data is stored locally and automatically synced once the connection is restored."
+      },
+      {
+        "q": "Can I manage multiple locations through one system?",
+        "a": "Yes. You manage all locations through a central dashboard. Menu, statistics, and settings — all in one place. Ideal if you have or plan multiple locations. For franchise systems, there's the [franchise solution](/loesungen/franchise)."
+      }
+    ]
+  },
+  "cta": {
+    "badge": "Free consultation",
+    "title": "We help you get your café or\nyour bakery ready to go.",
+    "subtitle": "POS system, online pre-ordering, website — everything from one source. No tech stress.",
+    "button": "Book a free consultation",
+    "trustItems": ["0% commission", "800+ businesses", "5.0 ★ Google", "TSE-compliant"]
+  },
+  "schema": {
+    "articleHeadline": "POS System for Café & Bakery 2026 — TSE-Compliant, Online Pre-Ordering",
+    "articleDescription": "TSE-compliant POS system, online pre-ordering, and QR table ordering for cafés and bakeries. From €69/month.",
+    "articleUrl": "https://gastro-master.de/loesungen/cafe-baeckerei",
+    "breadcrumbs": [
+      { "name": "Home", "item": "https://gastro-master.de/" },
+      { "name": "Solutions", "item": "https://gastro-master.de/loesungen" },
+      { "name": "Café & Bakery", "item": "https://gastro-master.de/loesungen/cafe-baeckerei" }
+    ]
+  }
+}

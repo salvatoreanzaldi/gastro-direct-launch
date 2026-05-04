@@ -1,0 +1,217 @@
+{
+  "meta": {
+    "title": "Kassensystem Café & Bäckerei 2026 — TSE-konform, Online-Vorbestellung | Gastro Master",
+    "description": "TSE-konformes Kassensystem, Online-Vorbestellung und QR-Tischbestellung für Café und Bäckerei. Ab 69 €/Monat. Jetzt kostenlose Beratung sichern.",
+    "canonical": "https://gastro-master.de/loesungen/cafe-baeckerei"
+  },
+  "hero": {
+    "badge": "Café & Bäckerei · Gastro Master",
+    "h1_1": "Schnell kassieren.",
+    "h1_highlight": "Online vorbestellen.",
+    "h1_2": "Alles für dein Café.",
+    "subtitle": "TSE-konforme Kasse, Online-Vorbestellung und QR-Tischbestellung — einfach einzurichten, sofort einsatzbereit.",
+    "geoTitle": "TSE-Kassenpflicht:",
+    "geoText": "Seit dem 1. Januar 2020 müssen alle Kassensysteme in Deutschland mit einer zertifizierten technischen Sicherheitseinrichtung (TSE) ausgestattet sein. Das Finanzamt kann die Konformität jederzeit prüfen — bei Verstößen drohen Bußgelder bis zu 25.000 €. Cafés und Bäckereien, die zusätzlich Online-Vorbestellsysteme einsetzen, reduzieren Wartezeiten und erhöhen den durchschnittlichen Bestellwert nachweislich.",
+    "ctaPrimary": "Kostenlose Beratung",
+    "ctaSecondary": "Produkte ansehen ↓",
+    "trustPills": ["800+ Betriebe", "TSE-konform", "Persönliche Einrichtung", "Persönlicher Support"]
+  },
+  "stats": {
+    "title": "Das Bäckerhandwerk wächst — Technik muss mithalten",
+    "subtitle": "Millionen Kunden kaufen täglich in Bäckereien und Cafés. Wer jetzt digitalisiert, ist vorne.",
+    "cta": "Jetzt Kassensystem einrichten →",
+    "items": [
+      {
+        "value": "17,92 Mrd. €",
+        "label": "Umsatz des deutschen Backgewerbes 2024",
+        "source": "Zentralverband des Deutschen Bäckerhandwerks",
+        "href": "https://www.baeckerhandwerk.de/baeckerhandwerk/zahlen-fakten/"
+      },
+      {
+        "value": "44.000",
+        "label": "Verkaufsstellen im deutschen Bäckerhandwerk",
+        "source": "Zentralverband des Deutschen Bäckerhandwerks",
+        "href": "https://www.baeckerhandwerk.de/baeckerhandwerk/zahlen-fakten/"
+      },
+      {
+        "value": "25.000 €",
+        "label": "Bußgeld bei fehlender TSE-Kassenpflicht",
+        "source": "Bundeszentralamt für Steuern",
+        "href": "https://www.bzst.de/DE/Unternehmen/Aussenpruefungen/DigitaleSchnittstelleFinanzVerwaltungKassen/digitaleschnittstellefinanzverwaltungkassen_node.html"
+      },
+      {
+        "value": "ab 69 €/Monat",
+        "label": "Gastro Master Kassensystem — alles inklusive",
+        "source": "Gastro Master",
+        "href": "https://gastro-master.de/kontakt"
+      }
+    ]
+  },
+  "problem": {
+    "badge": "Die Herausforderung",
+    "title": "Drei Probleme, die viele Cafés und Bäckereien kennen",
+    "subtitle": "Technik kann helfen — wenn sie einfach zu bedienen ist.",
+    "items": [
+      {
+        "title": "Lange Schlangen an der Kasse",
+        "desc": "Besonders morgens und mittags. Kunden haben keine Zeit — und gehen zur Konkurrenz."
+      },
+      {
+        "title": "Keine Online-Vorbestellung",
+        "desc": "Wer nicht vorbestellen kann, wartet oder kommt nicht. Online-Bestellung wird heute erwartet."
+      },
+      {
+        "title": "Fachkräftemangel trifft die Kasse zuerst",
+        "desc": "Jede Minute, die dein Personal an der Kasse verbringt, fehlt woanders. Technik kann das auffangen."
+      }
+    ]
+  },
+  "products": {
+    "badge": "Deine Produkte · Gastro Master",
+    "title": "Alles, was dein Café braucht — aus einer Hand",
+    "subtitle": "Kasse, Online-Shop, Webseite und App — aufeinander abgestimmt. Kein Flickenteppich.",
+    "featured": {
+      "badgeRecommended": "Empfohlen",
+      "badgePrice": "Ab 69 €/Monat",
+      "title": "Kassensystem",
+      "text": "Unsere Kasse ist vom Finanzamt zugelassen — das nennt man TSE-konform. QR-Tischbestellung und Self-Checkout Terminal sind verfügbar.",
+      "features": [
+        "TSE-konform — vom Finanzamt zugelassen",
+        "Scannerintegration für Backwaren und Getränke",
+        "Tagesabschluss auf Knopfdruck",
+        "Self-Checkout Terminal verfügbar",
+        "QR-Tischbestellung für Cafébesuche verfügbar"
+      ],
+      "cta": "Kassensystem ansehen",
+      "imgAlt": "Kassensystem für Café und Bäckerei"
+    },
+    "allBranded": "Alle Produkte werden in deinen Farben und mit deinem Logo eingerichtet.",
+    "smallCards": [
+      {
+        "title": "Online Shop",
+        "tagline": "Kunden bestellen Torten, Catering oder Frühstücks-Pakete online vor.",
+        "features": [
+          "Vorbestellungen für Torten und Catering",
+          "Kein Warten — du bereitest alles vor",
+          "Bestellungen kommen direkt auf die Kasse"
+        ]
+      },
+      {
+        "title": "Webseite",
+        "tagline": "Dein Café online — Google findet dich, Kunden kommen zu dir.",
+        "features": [
+          "Speisekarte jederzeit selbst aktualisieren",
+          "Öffnungszeiten und Standort für alle sichtbar",
+          "Mehr Laufkundschaft durch bessere Sichtbarkeit"
+        ]
+      },
+      {
+        "title": "App System",
+        "tagline": "Deine eigene Bestell-App — Push-Nachrichten inklusive.",
+        "features": [
+          "Stammkunden per Nachricht informieren",
+          "\"Frische Croissants da!\" — direkt aufs Handy",
+          "Dein Logo und deine Farben in der App"
+        ]
+      },
+      {
+        "title": "Zahlungsgebühren",
+        "tagline": "Zahlungsgebühren? Können deine Kunden übernehmen.",
+        "features": [
+          "Kein Abzug von deinem Umsatz",
+          "Kunden zahlen die Gebühr direkt",
+          "Standard in vielen europäischen Ländern"
+        ]
+      }
+    ],
+    "ctaPrimary": "Kostenlose Beratung",
+    "moreLink": "Mehr erfahren"
+  },
+  "compare": {
+    "badge": "Vergleich",
+    "title": "Gastro Master vs. andere Kassensysteme",
+    "subtitle": "Warum immer mehr Cafés und Bäckereien auf Gastro Master setzen.",
+    "headerCriterion": "Kriterium",
+    "headerGM": "Gastro Master",
+    "headerOther": "Andere Kassen",
+    "rows": [
+      { "label": "TSE-konform (gesetzliche Pflicht)", "gm": "✓ Inklusive", "gmGood": true, "other": "Oft teurer Extra-Vertrag", "otherBad": true },
+      { "label": "Online-Vorbestellung", "gm": "✓ Inklusive", "gmGood": true, "other": "Separates System nötig", "otherBad": true },
+      { "label": "QR-Tischbestellung", "gm": "✓ Verfügbar", "gmGood": true, "other": "Meist nicht vorhanden", "otherBad": true },
+      { "label": "Self-Checkout Terminal", "gm": "✓ Verfügbar", "gmGood": true, "other": "Nur bei Großanbietern", "otherBad": true },
+      { "label": "Monatliche Kosten", "gm": "Ab 69 €/Monat", "gmGood": true, "other": "80–200 €/Monat", "otherBad": true },
+      { "label": "Einrichtungszeit", "gm": "2–3 Wochen", "gmGood": true, "other": "4–12 Wochen", "otherBad": true },
+      { "label": "Support", "gm": "Persönlich", "gmGood": true, "other": "Hotline / Ticket-System", "otherBad": false }
+    ],
+    "ctaText": "Viele Bäckereien zahlen mehr als nötig — für Systeme, die weniger können.",
+    "ctaButton": "Kostenloses Gespräch buchen"
+  },
+  "process": {
+    "badge": "So geht's",
+    "title": "In 3 Schritten live gehen",
+    "subtitle": "Kein IT-Wissen nötig. Wir machen das für dich.",
+    "steps": [
+      { "num": "01", "title": "Kostenloses Gespräch", "desc": "In 30 Minuten erklären wir dir alles — online oder vor Ort." },
+      { "num": "02", "title": "Einrichtung in 2–3 Wochen", "desc": "Wir richten alles ein. Du machst weiter wie gewohnt." },
+      { "num": "03", "title": "Direkt loslegen", "desc": "Deine Kasse ist sofort bereit. TSE-konform. Fertig." }
+    ]
+  },
+  "trust": {
+    "items": [
+      { "value": "800+", "label": "Gastro-Betriebe vertrauen auf Gastro Master" },
+      { "value": "5,0 ★", "label": "Kundenbewertung auf Google" },
+      { "value": "TSE-konform", "label": "Alle Systeme TSE-zertifiziert" },
+      { "value": "Persönl. Support", "label": "Euer Team hilft direkt" }
+    ]
+  },
+  "epitPay": {
+    "badge": "Bald verfügbar",
+    "title": "Epit Pay — bald mit eigener Zahlungsabwicklung",
+    "text": "Bald brauchst du keinen extra Zahlungsanbieter mehr. Mit Epit Pay bekommst du Kasse, Bestellsystem und Zahlungsabwicklung aus einer Hand.",
+    "cta": "Mehr erfahren →"
+  },
+  "faq": {
+    "badge": "FAQ",
+    "title": "Häufige Fragen von Café- und Bäckerei-Betreibern",
+    "subtitle": "Die Antworten auf die Fragen, die uns am häufigsten erreichen.",
+    "items": [
+      {
+        "q": "Braucht mein Café eine TSE-konforme Kasse?",
+        "a": "Ja. Seit 2020 ist jede Kasse in Deutschland gesetzlich dazu verpflichtet, eine TSE-Zertifizierung zu haben. Das Finanzamt kann das jederzeit prüfen. Bei Verstoß drohen Bußgelder bis zu 25.000 €. Das [Gastro Master Kassensystem](/produkte/kassensystem) erfüllt alle Anforderungen — das regeln wir für dich."
+      },
+      {
+        "q": "Kann ich über Gastro Master Online-Vorbestellungen annehmen?",
+        "a": "Ja. Deine Kunden können über deinen [Online-Shop](/produkte/webshop) oder deine [App](/produkte/app) im Voraus bestellen und bezahlen. Ideal für die Mittagspause oder das Wochenend-Frühstück. Du siehst alle Bestellungen direkt auf deiner Kasse."
+      },
+      {
+        "q": "Was kostet ein Kassensystem für eine Bäckerei bei Gastro Master?",
+        "a": "Das [Kassensystem](/produkte/kassensystem) kostet ab 69 € pro Monat. Darin enthalten: TSE-Modul, Speisekartenverwaltung, Tagesabschluss und persönlicher Support. Die Einrichtung wird individuell auf deinen Betrieb abgestimmt."
+      },
+      {
+        "q": "Funktioniert die Kasse auch ohne Internet?",
+        "a": "Ja. Die Gastro Master [Kasse](/produkte/kassensystem) arbeitet auch offline. Alle Daten werden lokal gespeichert und nach der Verbindung automatisch synchronisiert."
+      },
+      {
+        "q": "Kann ich mehrere Filialen über ein System verwalten?",
+        "a": "Ja. Du verwaltest alle Filialen über ein zentrales Dashboard. Speisekarte, Statistiken und Einstellungen — alles an einem Ort. Ideal wenn du mehrere Standorte hast oder planst. Für Franchise-Systeme gibt es die [Franchise-Lösung](/loesungen/franchise)."
+      }
+    ]
+  },
+  "cta": {
+    "badge": "Kostenloses Beratungsgespräch",
+    "title": "Wir helfen dir, dein Café oder\ndeine Bäckerei startklar zu machen.",
+    "subtitle": "Kassensystem, Online-Vorbestellung, Webseite — alles aus einer Hand. Kein Stress mit Technik.",
+    "button": "Kostenloses Gespräch buchen",
+    "trustItems": ["0 % Provision", "800+ Betriebe", "5,0 ★ Google", "TSE-konform"]
+  },
+  "schema": {
+    "articleHeadline": "Kassensystem für Café & Bäckerei 2026 — TSE-konform, Online-Vorbestellung",
+    "articleDescription": "TSE-konformes Kassensystem, Online-Vorbestellung und QR-Tischbestellung für Café und Bäckerei. Ab 69 €/Monat.",
+    "articleUrl": "https://gastro-master.de/loesungen/cafe-baeckerei",
+    "breadcrumbs": [
+      { "name": "Startseite", "item": "https://gastro-master.de/" },
+      { "name": "Lösungen", "item": "https://gastro-master.de/loesungen" },
+      { "name": "Café & Bäckerei", "item": "https://gastro-master.de/loesungen/cafe-baeckerei" }
+    ]
+  }
+}

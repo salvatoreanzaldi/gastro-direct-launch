@@ -1,0 +1,346 @@
+{
+  "seo": {
+    "title": "Sistema di cassa per ristorazione — conforme TSE | Gastro Master",
+    "description": "Sistema di cassa conforme TSE per la ristorazione da 69 €/mese. App autisti, ordinazione QR e aggiornamenti cloud inclusi. Conforme alla legge (§146a AO). Richieda una consulenza gratuita."
+  },
+  "hero": {
+    "badge": "Sistema di cassa",
+    "h1": "Il sistema di cassa per la Sua",
+    "h1Highlight": "ristorazione",
+    "h1Suffix": "– conforme TSE e nel cloud.",
+    "subtitle": "Il software di cassa più moderno per",
+    "subtitleLinkRestaurant": "ristoranti",
+    "subtitleLinkLieferdienst": "servizi di consegna",
+    "subtitleEnd": "e attività gastronomiche – con certificazione TSE, conformità GoBD, aggiornamenti cloud e supporto diretto dalla Germania.",
+    "cta": "Consulenza gratuita",
+    "heroImgAlt": "Sistema di cassa Gastro Master – Sistema POS conforme TSE per la ristorazione"
+  },
+  "trust": {
+    "googleRating": "5.0",
+    "googleLabel": "Valutazione Google",
+    "googleSub": "Oltre 50 recensioni verificate",
+    "stats": [
+      {
+        "value": "800+",
+        "label": "clienti attivi"
+      },
+      {
+        "value": "TSE",
+        "label": "certificato e conforme GoBD"
+      },
+      {
+        "value": "0 €",
+        "label": "supplemento per aggiornamenti cloud"
+      },
+      {
+        "value": "Supporto",
+        "label": "direttamente dalla Germania"
+      }
+    ]
+  },
+  "benefits": [
+    {
+      "title": "Obbligo TSE rispettato",
+      "text": "Certificato secondo KassenSichV e GoBD – conforme alla legge dal primo giorno."
+    },
+    {
+      "title": "Aggiornamenti cloud inclusi",
+      "text": "Sempre l'ultima versione – automaticamente, senza costi aggiuntivi."
+    },
+    {
+      "title": "Supporto dalla Germania",
+      "text": "Referente personale, direttamente raggiungibile."
+    },
+    {
+      "title": "Tutte le piattaforme integrate",
+      "text": "Lieferando, Wolt, app propria e shop online in un unico sistema."
+    }
+  ],
+  "slideshow": {
+    "badge": "Funzionalità principali",
+    "headline": "Le funzionalità più importanti",
+    "headlineBr": "del Suo sistema di cassa.",
+    "slides": [
+      {
+        "label": "Scansione codice QR e ordine immediato al tavolo",
+        "title": "Massima flessibilità per la Sua attività",
+        "text": "Dimentichi dispositivi extra complicati. Con Gastro Master gestisce l'intera attività centralmente: consegna, ritiro o servizio al tavolo – tutto passa in modo rapido e semplice attraverso questa unica interfaccia di cassa.",
+        "tagline": "Questo crea ordine e rende il servizio impeccabile.",
+        "imgAlt": "Sistema tavoli con ordinazione tramite codice QR"
+      },
+      {
+        "label": "Analisi in tempo reale per decisioni intelligenti",
+        "title": "Comprenda la Sua attività in numeri",
+        "text": "Smetta di fare ipotesi e inizi a sapere. Con le nostre statistiche dettagliate ha sempre sotto controllo il fatturato orario, i 10 prodotti più venduti e le zone di consegna più redditizie.",
+        "tagline": "Così prende decisioni logiche per incrementare strategicamente il Suo successo.",
+        "imgAlt": "Dashboard statistiche con analisi in tempo reale"
+      },
+      {
+        "label": "Un'unica soluzione per tavolo, bancone e autista",
+        "title": "App autisti e zone di consegna",
+        "text": "Veda in tempo reale dove si trovano i Suoi autisti e quale percorso stanno seguendo. Definisca le zone di consegna direttamente sulla mappa – con confini precisi e calcolo automatico delle distanze. Così ogni ordine arriva a destinazione senza deviazioni inutili.",
+        "tagline": "Meno errori di percorso, clienti più soddisfatti – e lei ha sempre il pieno controllo.",
+        "imgAlt": "Mappa zone di consegna con zone GPS"
+      }
+    ]
+  },
+  "featuresGrid": {
+    "badge": "Funzionalità",
+    "headline": "Tutto ciò di cui la Sua cassa per la ristorazione ha bisogno.",
+    "sub": "Un sistema che cresce con la Sua attività – dall'identificazione del chiamante alle statistiche in tempo reale.",
+    "tiles": [
+      {
+        "title": "Tutte le piattaforme a colpo d'occhio",
+        "text": "Lieferando, Wolt, Uber Eats e oltre 15 partner – tutti gli ordini confluiscono automaticamente nel Suo sistema di cassa. Nessun trasferimento manuale, nessun errore, nessuna perdita di tempo.",
+        "tagline": "Risparmia tempo prezioso ogni giorno."
+      },
+      {
+        "title": "Identificazione automatica del chiamante",
+        "text": "Nome, indirizzo e cronologia ordini appaiono sullo schermo al primo squillo. Gli ordini telefonici vengono registrati 3 volte più velocemente – senza domande aggiuntive, senza errori di battitura.",
+        "tagline": "Lei è più veloce."
+      },
+      {
+        "title": "App autisti e zone di consegna GPS",
+        "text": "Ogni autista riceve la propria app con tracciamento GPS in tempo reale. Zone di consegna per distanza, zona o codice postale – definibili direttamente sulla mappa, modificabili in qualsiasi momento.",
+        "tagline": "Ha sempre tutto sotto controllo."
+      },
+      {
+        "title": "Fatturato e statistiche in tempo reale",
+        "text": "Report giornalieri, settimanali e mensili con un clic: prodotti più venduti, zone di consegna, metodi di pagamento. Tutti i report conformi GoBD sono esportabili immediatamente per il commercialista.",
+        "tagline": "La contabilità diventa semplicissima."
+      },
+      {
+        "title": "Tutti i metodi di pagamento accettati",
+        "text": "Contanti, carta di debito, Visa, Mastercard, Apple Pay, Google Pay, PayPal e Klarna – il Suo sistema di cassa accetta ogni tipo di pagamento. Certificato TSE e conforme GoBD – legalmente sicuro dal primo giorno.",
+        "tagline": "Tutti i requisiti legali soddisfatti (TSE/GoBD)."
+      }
+    ]
+  },
+  "socialProof": {
+    "badge": "Fiducia",
+    "headline": "Oltre 800 ristoratori di successo",
+    "headlineBr": "scelgono Gastro Master.",
+    "sub": "Dalla pizzeria al franchising – Gastro Master cresce con ogni attività.",
+    "watermark": "800+"
+  },
+  "waveFeature": {
+    "badge": "Add-on ed estensioni",
+    "headline": "Più di una cassa –",
+    "headlineBr": "il Suo sistema completo.",
+    "sub": "Add-on hardware modulari e funzionalità software intelligenti che si adattano alla Sua attività.",
+    "cards": [
+      {
+        "subtitle": "DIGITALIZZAZIONE CHE HA SENSO",
+        "title": "Terminale self-ordering",
+        "text": "Gli ospiti ordinano direttamente al terminale – intuitivo, senza tempi d'attesa. Il Suo team guadagna tempo. Offriamo anche schermi pick-up."
+      },
+      {
+        "subtitle": "SERVIZIO FLESSIBILE",
+        "title": "Sistema bar con Orderman e codice QR",
+        "text": "Prenda ordini da mobile con Orderman o lasci che gli ospiti ordinino autonomamente tramite codice QR. Rapidissimo e moderno."
+      },
+      {
+        "subtitle": "SEMPLICE ED EFFICIENTE",
+        "title": "Una licenza – fino a 4 casse",
+        "text": "Fino a quattro terminali con un unico pacchetto. Nessun abbonamento extra per cassa – massimo valore senza costi nascosti."
+      },
+      {
+        "subtitle": "INTEGRAZIONE PERFETTA",
+        "title": "Collegamento a qualsiasi terminale di pagamento",
+        "text": "Compatibile con tutti i terminali di pagamento con standard ZVT. Nessun vincolo di fornitore – sicuro e senza intoppi."
+      },
+      {
+        "subtitle": "TUTTO SOTTO CONTROLLO",
+        "title": "Gestione del personale",
+        "text": "Orari di lavoro, fatturato e mance registrati automaticamente. Esportabili in conformità GoBD per il commercialista."
+      }
+    ]
+  },
+  "featureCards3": [
+    {
+      "title": "Sistema tavoli",
+      "text": "Prenda gli ordini direttamente al tavolo – servizio più rapido, meno errori."
+    },
+    {
+      "title": "App autisti e zone di consegna",
+      "text": "Stato delle consegne in tempo reale, tracciamento GPS e zone di consegna su un'unica mappa."
+    },
+    {
+      "title": "Statistiche e report",
+      "text": "Report giornalieri, settimanali e mensili – sempre tutti i numeri sotto controllo."
+    }
+  ],
+  "hardware": {
+    "badge": "Hardware consigliato",
+    "headline": "L'hardware giusto per il Suo sistema di cassa",
+    "sub": "Robusto, affidabile e subito pronto all'uso. Scelga il dispositivo adatto alla Sua attività.",
+    "cta": "Richieda l'hardware",
+    "inquiryCta": "Richieda ora",
+    "products": [
+      {
+        "title": "Elo Series-3",
+        "desc": "Sistema di cassa all-in-one compatto con touchscreen. Ideale per ristoranti, caffè e gastronomie da asporto.",
+        "features": [
+          "Touchscreen 15,6\"",
+          "Design compatto",
+          "Stampante scontrini integrabile"
+        ],
+        "labels": [
+          "Fronte",
+          "Angolata",
+          "Retro",
+          "Porte",
+          "Lato"
+        ]
+      },
+      {
+        "title": "Elo Series-3 Doublescreen",
+        "desc": "Due schermi: uno per Lei, uno per l'ospite. Perfetto per il servizio al bancone e l'upselling.",
+        "features": [
+          "Display per il cliente",
+          "Possibilità di upselling",
+          "Aspetto professionale"
+        ],
+        "labels": [
+          "Fronte",
+          "Angolata",
+          "Retro",
+          "Porte"
+        ]
+      },
+      {
+        "title": "Microsoft Surface Tablet",
+        "desc": "Flessibile e mobile. Porti la Sua cassa ovunque. Ideale per food truck, eventi e piccole attività.",
+        "features": [
+          "Utilizzo mobile",
+          "Leggero e compatto",
+          "Compatibile con Windows"
+        ],
+        "labels": [
+          "Fronte",
+          "Angolata",
+          "Retro",
+          "Lato"
+        ]
+      }
+    ]
+  },
+  "alternating": [
+    {
+      "headline": "I Suoi ospiti ordinano da soli.",
+      "sub": "Codice QR al tavolo – ordine immediato, senza app",
+      "text1": "Nessun cameriere, nessuna attesa, nessun malinteso. I Suoi ospiti scansionano il codice QR al tavolo – e in pochi secondi l'ordine arriva direttamente in cucina. Senza scaricare app, senza registrazione, senza attriti.",
+      "text2": "I ristoratori che utilizzano le ordinazioni tramite codice QR riportano fino al 30 % di fatturato in più al tavolo grazie ai suggerimenti di upselling automatici – e un flusso di servizio notevolmente più rilassato nelle ore di punta.",
+      "checks": [
+        "Codice QR al tavolo – nessuna app necessaria, subito operativo",
+        "L'ordine arriva in cucina e al bar in pochi secondi",
+        "Fino al 30 % di fatturato in più al tavolo grazie agli upsell digitali",
+        "Team di servizio alleggerito – più tavoli con lo stesso personale"
+      ]
+    },
+    {
+      "headline": "Terminale self-ordering.",
+      "sub": "Più fatturato con il self-service",
+      "text1": "Il terminale guida i Suoi ospiti autonomamente attraverso il menu e suggerisce automaticamente extra e upgrade popolari. Nessuna attesa, nessun malinteso – pagamento diretto al terminale, senza errori in cucina.",
+      "text2": "I ristoranti con terminale self-ordering aumentano l'importo medio per ordine fino al 25 % – grazie a suggerimenti di upselling mirati che nessun cameriere può proporre con tanta costanza.",
+      "checks": [
+        "Suggerimenti di upselling automatici aumentano il fatturato fino al 25 %",
+        "Pagamento diretto al terminale – nessuna attesa per il conto",
+        "L'ordine arriva senza errori e immediatamente in cucina e al bar",
+        "Team di servizio alleggerito – stesso numero di tavoli, meno stress"
+      ]
+    },
+    {
+      "headline": "Vantaggio nel servizio con Orderman.",
+      "sub": "Presa ordini mobile – servizio più rapido e senza errori",
+      "text1": "Niente appunti, niente urla verso la cassa: il Suo personale di servizio prende gli ordini direttamente al tavolo tramite palmare – e l'ordine arriva in cucina e al bar in pochi secondi. Nessun errore di trascrizione, nessuna perdita di tempo, nessun caos nelle ore di punta.",
+      "text2": "I ristoranti con sistema Orderman mobile riducono gli errori negli ordini fino all'80 % e realizzano un turnover dei tavoli significativamente maggiore – con lo stesso personale, senza sforzo aggiuntivo.",
+      "checks": [
+        "Presa ordini mobile tramite palmare o tablet al tavolo",
+        "Ordine immediatamente e senza errori in cucina e al bar – senza urla",
+        "Fino all'80 % di errori in meno negli ordini durante il servizio",
+        "Più rotazioni dei tavoli nelle ore di punta – stesso personale"
+      ]
+    },
+    {
+      "headline": "Tutti i pagamenti. Il Suo terminale.",
+      "sub": "Nessun ospite se ne va per problemi di pagamento.",
+      "text1": "Contanti, carta di debito, carta di credito, Apple Pay, Google Pay e Klarna – il sistema di cassa Gastro Master accetta tutti i metodi di pagamento più diffusi. Il collegamento a qualsiasi terminale di pagamento standard è incluso senza costi aggiuntivi.",
+      "text2": "La funzione mancia, la divisione del conto e le ricevute digitali via e-mail sono incluse di serie. I Suoi ospiti pagano come preferiscono – e Lei ha una panoramica di tutti gli incassi in tempo reale.",
+      "checks": [
+        "Tutti i metodi di pagamento accettati",
+        "Collegamento a qualsiasi terminale di pagamento incluso",
+        "Mance e divisione del conto",
+        "Ricevute digitali e chiusura giornaliera"
+      ]
+    }
+  ],
+  "teamCta": {
+    "badge": "Inizi subito",
+    "headline": "Prenoti ora la Sua",
+    "headlineBr": "consulenza gratuita.",
+    "expectLabel": "Cosa L'aspetta:",
+    "expectText": "Nella consulenza iniziale gratuita, uno dei nostri esperti sviluppa un concetto individuale per il Suo nuovo sistema di cassa – gratuito, senza impegno e su misura per la Sua attività. Dopo deciderà liberamente se realizzarlo con noi.",
+    "privacyNote": "Le Sue informazioni vengono utilizzate esclusivamente per il contatto e non vengono memorizzate.",
+    "languages": [
+      "Tedesco",
+      "Inglese",
+      "Italiano",
+      "Persiano",
+      "Russo",
+      "Singalese"
+    ],
+    "cta": "Richieda una consulenza gratuita",
+    "teamMembers": [
+      {
+        "name": "Sanjaya Pattiyage",
+        "role": "Fondatore e Amministratore Delegato"
+      },
+      {
+        "name": "René Ebert",
+        "role": "Fondatore e Amministratore Delegato"
+      },
+      {
+        "name": "Salvatore Anzaldi",
+        "role": "Head of Sales"
+      },
+      {
+        "name": "Andrej Krutsch",
+        "role": "Head of Operations"
+      }
+    ]
+  },
+  "faq": {
+    "badge": "FAQ",
+    "headline": "Domande",
+    "headlineBr": "frequenti.",
+    "sub": "Altre domande? Ci chiami o ci scriva – rispondiamo entro 24 ore.",
+    "cta": "Contattaci direttamente",
+    "items": [
+      {
+        "q": "Perché il mio ristorante ha bisogno di un sistema di cassa moderno?",
+        "a": "Un moderno sistema di cassa per la ristorazione è molto più di un registratore di cassa. Collega la ricezione degli ordini, la gestione della cucina, il servizio di consegna, la gestione del personale e le statistiche in un unico sistema. Soprattutto per i [ristoranti](/loesungen/restaurant) questo fa risparmiare tempo ogni giorno e riduce notevolmente gli errori nella fatturazione."
+      },
+      {
+        "q": "Quali sistemi di cassa sono soggetti all'obbligo TSE in Germania?",
+        "a": "Dal 01.01.2020 tutti i sistemi di cassa elettronici in Germania sono soggetti all'obbligo TSE (§146a AO, KassenSichV — Dispositivo di Sicurezza Tecnica). Le attività senza TSE valido rischiano sanzioni fino a 25.000 €. Il sistema di cassa Gastro Master è completamente certificato e soddisfa tutti i requisiti della KassenSichV e della conformità GoBD."
+      },
+      {
+        "q": "Quanto costa un sistema di cassa cloud per il mio ristorante?",
+        "a": "Il sistema di cassa Gastro Master è disponibile come abbonamento mensile – senza costosi pagamenti una tantum o contratti di manutenzione hardware. Aggiornamenti cloud, supporto e tutte le nuove funzionalità sono inclusi nel prezzo. Tutti i pacchetti e i prezzi sono disponibili nella [panoramica completa dei prezzi](/preise)."
+      },
+      {
+        "q": "Posso utilizzare il sistema di cassa anche per i servizi di consegna?",
+        "a": "Sì. Il sistema di cassa è nativamente collegato con l'app autisti, le zone di consegna e il tracciamento GPS. Gli ordini dal [sistema di ordinazione digitale](/produkte/webshop), dalla [propria app per ordinazioni](/produkte/app) e direttamente dalla cassa confluiscono automaticamente in un unico flusso di lavoro — nessun trasferimento manuale necessario. Ideale per chi desidera [avviare un proprio servizio di consegna](/loesungen/lieferservice-gruenden)."
+      },
+      {
+        "q": "Quanto velocemente viene configurato il sistema di cassa?",
+        "a": "La configurazione richiede di norma 1–2 giorni lavorativi. Il nostro team di supporto dalla Germania La accompagna durante l'intera configurazione e forma il Suo team personalmente – in loco o tramite videochiamata. Si metta semplicemente in contatto tramite il nostro [modulo di contatto](/kontakt)."
+      },
+      {
+        "q": "Il sistema è conforme GoBD e adatto a un'ispezione fiscale?",
+        "a": "Sì. Il sistema di cassa Gastro Master è completamente conforme GoBD. Tutte le transazioni, gli storni e le chiusure giornaliere vengono protocollati in modo immodificabile e possono essere esportati in qualsiasi momento per un'ispezione fiscale."
+      }
+    ]
+  }
+}

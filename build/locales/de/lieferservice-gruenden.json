@@ -1,0 +1,182 @@
+{
+  "seo": {
+    "title": "Lieferdienst gründen 2026 — Kompletter Leitfaden | Gastro Master",
+    "description": "Eigenen Lieferdienst aufbauen ohne Lieferando. Schritt-für-Schritt: Gewerbeanmeldung, Kosten, Bestellsystem — 0 % Provision mit Gastro Master."
+  },
+  "schema": {
+    "articleHeadline": "Eigenen Lieferdienst gründen — der komplette Leitfaden für 2026",
+    "articleDescription": "Schritt-für-Schritt Anleitung zum Aufbau eines eigenen Lieferdienstes ohne Plattformabhängigkeit.",
+    "howToName": "Eigenen Lieferdienst gründen — in 4 Schritten",
+    "howToDescription": "Schritt-für-Schritt Anleitung zum Aufbau eines eigenen Lieferdienstes ohne Plattformabhängigkeit — von der Gewerbeanmeldung bis zum ersten Auftrag.",
+    "howToSteps": [
+      { "name": "Bestellsystem einrichten", "text": "Mit Gastro Master bekommst du Webshop, App und Kassensystem. Kein Vorwissen nötig, live in 2–3 Wochen. 0 % Provision ab dem ersten Auftrag." },
+      { "name": "Eine Nische wählen", "text": "Starte mit einer Küchenkategorie, 8–12 Gerichten und einem Liefergebiet. Fokus schlägt breites Angebot." },
+      { "name": "Geschäftsmodell wählen", "text": "Eigenproduktion, Ghost Kitchen (Küche ohne Gastraum) oder Vermittlung wählen. Eine Ghost Kitchen spart 60–80 % Mietkosten." },
+      { "name": "Gewerbe anmelden", "text": "Die Gewerbeanmeldung kostet 20–60 € und ist in wenigen Tagen erledigt. Zusätzlich: Hygiene-Schulung (HACCP) und Gesundheitszeugnis. Keine Gaststättenerlaubnis nötig." }
+    ],
+    "breadcrumbs": [
+      { "name": "Startseite", "item": "https://gastro-master.de/" },
+      { "name": "Lösungen", "item": "https://gastro-master.de/loesungen" },
+      { "name": "Lieferservice gründen", "item": "https://gastro-master.de/loesungen/lieferservice-gruenden" }
+    ]
+  },
+  "hero": {
+    "breadcrumbSolutions": "Lösungen",
+    "breadcrumbCurrent": "Lieferdienst gründen",
+    "badge": "Lieferdienst gründen 2026",
+    "h1": "Starte deinen eigenen Lieferdienst —",
+    "h1Highlight": "ohne Lieferando, ohne 30\u00a0% Provision",
+    "subline": "Du bekommst dein eigenes Bestellsystem — keine Provision, kein Vorwissen nötig, live in 2–3 Wochen. So wie 800+ Gastronomen vor dir.",
+    "ctaPrimary": "Kostenlose Beratung anfragen",
+    "ctaSecondary": "In 4 Schritten zum Lieferdienst ↓",
+    "trustPills": ["0 % Provision", "800+ Kunden", "In 2–3 Wochen live", "Persönlicher Support"],
+    "definitionLabel": "Definition",
+    "definitionText": "Eigener Lieferdienst bedeutet: Kunden bestellen auf deiner Webseite oder App. Du zahlst keine Provision an Lieferando oder Wolt.",
+    "definitionHighlight": "Du behältst 100\u00a0% deines Umsatzes."
+  },
+  "stats": {
+    "badge": "Marktdaten",
+    "title": "Immer mehr Menschen bestellen online — das ist deine Chance",
+    "subtitle": "Der Markt wächst. Wer jetzt startet, ist früh dabei.",
+    "items": [
+      { "value": "6,1 Mrd. €", "label": "Online-Bestellungen Deutschland (2023)", "source": "Statista", "href": "https://de.statista.com/prognosen/642308/online-food-delivery-umsatz-in-deutschland" },
+      { "value": "9,9 Mrd. €", "label": "Erwarteter Umsatz bis 2028 — 62\u202f% Wachstum", "source": "Statista", "href": "https://de.statista.com/prognosen/642308/online-food-delivery-umsatz-in-deutschland" },
+      { "value": "bis 30 %", "label": "Provision, die Lieferando von dir nimmt", "source": "Berliner Abendblatt", "href": "https://berliner-abendblatt.de/berlin-news/lieferando-hoehere-provisionen-fuer-restaurants-id162852" },
+      { "value": "ab 79 €", "label": "pro Monat — eigenes Bestellsystem, sofort startklar", "source": "Gastro Master", "href": "https://gastro-master.de/produkte/webshop" }
+    ],
+    "sourceLabel": "Quelle:",
+    "cta": "Jetzt eigenen Lieferdienst aufbauen"
+  },
+  "products": {
+    "badge": "Komplettlösung · Gastro Master",
+    "title": "Alles was du brauchst — aus einer Hand",
+    "subtitle": "Fünf Produkte, die perfekt zusammenpassen. Du entscheidest, was du brauchst.",
+    "topCards": [
+      { "title": "Online Shop", "alt": "Online Bestellshop für Gastronomie — 0 % Provision mit Gastro Master", "tagline": "So sieht dein Online Shop aus" },
+      { "title": "Bestell-App", "alt": "Eigene Bestell-App für Restaurants und Lieferdienste — Gastro Master", "tagline": "Deine eigene Bestell-App" },
+      { "title": "Kassensystem", "alt": "TSE-konformes Kassensystem für Gastronomen — Gastro Master POS", "tagline": "Dein Kassensystem — übersichtlich & einfach" }
+    ],
+    "bottomCards": [
+      { "title": "Webseite", "alt": "Professionelle Webseite für Gastronomie — gefunden auf Google", "tagline": "Deine Webseite — gefunden auf Google" },
+      { "title": "Zahlungsgebühren weitergeben", "alt": "Transaktionsumlage — Zahlungsgebühren transparent an Kunden weitergeben", "tagline": "Deine Kunden zahlen die Gebühren — automatisch" }
+    ],
+    "moreLabel": "Mehr erfahren",
+    "cta": "Kostenlos beraten lassen"
+  },
+  "compare": {
+    "badge": "Vergleich",
+    "title": "Was ist besser: Eigenes System oder Lieferando?",
+    "subtitle": "Warum 800+ Gastronomen auf ihr eigenes Bestellsystem gewechselt haben",
+    "thCriterion": "Kriterium",
+    "thRecommended": "Empfohlen",
+    "thOwnLabel": "Eigener Lieferdienst",
+    "thOwnSub": "mit Gastro Master",
+    "thPlatformLabel": "Lieferando / Wolt / Uber Eats",
+    "rows": [
+      { "label": "Provision pro Bestellung", "own": "0 %", "ownGood": true, "platform": "13–30 %", "platformBad": true },
+      { "label": "Kundendaten gehören dir", "own": "✓ Vollständig", "ownGood": true, "platform": "✗ Gehören der Plattform", "platformBad": true },
+      { "label": "Eigene Marke & App", "own": "✓ Eigene Domain & App", "ownGood": true, "platform": "✗ Plattform-Branding", "platformBad": true },
+      { "label": "Preisgestaltung", "own": "✓ Vollständig frei", "ownGood": true, "platform": "Eingeschränkt", "platformBad": false },
+      { "label": "Monatliche Kosten", "own": "ab 79 €/Monat", "ownGood": true, "platform": "% vom Umsatz (variabel)", "platformBad": false },
+      { "label": "Sichtbarkeit", "own": "Eigene Webseite & Werbung", "ownGood": false, "platform": "✓ In der Plattform", "platformBad": false },
+      { "label": "Kundenbewertungen", "own": "✓ Direkt & vollständig", "ownGood": true, "platform": "Nur über Plattform", "platformBad": false },
+      { "label": "Betreuung & Einrichtung", "own": "✓ Persönlich (800+ Kunden)", "ownGood": true, "platform": "Ticket-System", "platformBad": false }
+    ],
+    "savingsLabel": "Rechenbeispiel",
+    "savingsTitle": "Bei 3.000\u00a0€ Monatsumsatz zahlst du an Lieferando",
+    "savingsHighlight": "bis zu 900\u00a0€ Provision",
+    "savingsTitleSuffix": "— jeden Monat.",
+    "savingsText": "Mit Gastro Master: nur 79\u00a0€/Monat, 0\u00a0% Provision auf deine Bestellungen.",
+    "savingsLink": "Alle Kosten im Überblick →",
+    "savingsAmountLabel": "Was du im Jahr sparst",
+    "savingsAmount": "9.852\u00a0€",
+    "savingsAmountSub": "bei 3.000\u00a0€ Monatsumsatz",
+    "savingsCta": "Jetzt starten — 0 % Provision"
+  },
+  "steps": {
+    "headerLabel": "Gründungsanleitung",
+    "title": "In 4 Schritten zum eigenen Lieferdienst",
+    "subtitle": "Von der Idee bis zum ersten Auftrag — was du wirklich brauchst",
+    "items": [
+      {
+        "num": "01",
+        "title": "Dein Bestellsystem einrichten",
+        "text": "Hier entscheidest du: Provision für immer — oder ab jetzt 0 %? Mit Gastro Master bekommst du Webshop, App und Kassensystem. Kein Vorwissen nötig, live in 2–3 Wochen.",
+        "highlight": "0 % Provision ab dem ersten Auftrag. Persönliche Einrichtungsbegleitung.",
+        "featured": true,
+        "products": [
+          { "label": "Webshop (0 % Provision)", "href": "/produkte/webshop" },
+          { "label": "Bestell-App", "href": "/produkte/app" },
+          { "label": "Zahlungsgebühren", "href": "/produkte/transaktionsumlage" },
+          { "label": "Webseite", "href": "/produkte/webseite" }
+        ]
+      },
+      {
+        "num": "02",
+        "title": "Eine Nische wählen — nicht alles anbieten",
+        "text": "Fokus schlägt breites Angebot. Ein Lieferdienst für vegane Bowls gewinnt schneller Stammkunden als ein Rundum-Anbieter. Starte mit einer Küchenkategorie.",
+        "highlight": "Empfehlung zum Start: 1 Küchen-Kategorie, 8–12 Gerichte, 1 Liefergebiet."
+      },
+      {
+        "num": "03",
+        "title": "Geschäftsmodell wählen",
+        "text": "Eigenproduktion, Ghost Kitchen (Küche ohne Gastraum) oder Vermittlung? Eine Ghost Kitchen spart 60–80 % Mietkosten.",
+        "highlight": "Ghost Kitchen: 60–80 % weniger Mietkosten als ein klassisches Restaurant"
+      },
+      {
+        "num": "04",
+        "title": "Gewerbe anmelden",
+        "text": "Die Gewerbeanmeldung kostet 20–60 € und ist in wenigen Tagen erledigt. Du brauchst außerdem eine Hygiene-Schulung (HACCP) und ein Gesundheitszeugnis. Keine Gaststättenerlaubnis nötig.",
+        "highlight": "Kosten: 20–60 €. Dauer: 1–2 Wochen. Kein Führerschein nötig."
+      }
+    ]
+  },
+  "trust": {
+    "items": [
+      { "value": "800+", "label": "Gastro-Betriebe vertrauen auf Gastro Master" },
+      { "value": "5,0 ★", "label": "Kundenbewertung auf Google" },
+      { "value": "TSE-konform", "label": "Alle Systeme TSE-zertifiziert" },
+      { "value": "Persönl. Support", "label": "Euer Team hilft direkt" }
+    ]
+  },
+  "faq": {
+    "badge": "FAQ",
+    "title": "Häufige Fragen zum Thema Lieferdienst gründen",
+    "subtitle": "Die Fragen, die Gründer an Google und KI-Assistenten stellen",
+    "items": [
+      {
+        "q": "Lohnt sich ein eigener Lieferdienst 2026?",
+        "a": "Ja — der Markt wächst laut Statista von 6,1\u202fMrd.\u202f€ (2023) auf 9,9\u202fMrd.\u202f€ bis 2028. Wer früh ein eigenes System aufbaut, zahlt keine Provision mehr. Mit einem [digitalen Bestellsystem für Gastronomie](/produkte/webshop) startest du ab 79\u202f€/Monat — statt bis zu 30\u202f% auf jeden Auftrag."
+      },
+      {
+        "q": "Was kostet es, einen Lieferdienst zu gründen?",
+        "a": "Das hängt davon ab, wie du starten willst. Die Gewerbeanmeldung kostet 20–60 €. Für eine Ghost Kitchen (Küche ohne Gastraum) sind Startkosten ab 2.000–5.000 € realistisch. Das Bestellsystem — [Webshop](/produkte/webshop) und [eigene Bestell-App](/produkte/app) — kostet ab 79 €/Monat. Das meiste Geld sparst du im laufenden Betrieb: keine Gebühren von 13–30 % auf jeden Auftrag. Alle Kosten im Überblick findest du in der [vollständigen Preisübersicht](/preise)."
+      },
+      {
+        "q": "Brauche ich ein Restaurant, um einen Lieferdienst zu starten?",
+        "a": "Nein. Du kannst als Ghost Kitchen starten — das ist eine Küche ohne Gastraum, nur für Lieferungen. Das spart viel Miete und macht den Start günstiger. Du brauchst nur eine Gewerbeanmeldung und musst die Hygiene-Regeln für Lebensmittel einhalten. Wenn du ein bestehendes Restaurant hast, findest du passende Lösungen auf der [Seite für Restaurants](/loesungen/restaurant)."
+      },
+      {
+        "q": "Wie viel Provision nimmt Lieferando?",
+        "a": "Lieferando nimmt 13\u202f% Provision, wenn du eigene Fahrer hast. Mit Lieferando-Fahrern steigt das auf bis zu 30\u202f% pro Bestellung. Bei Wolt und Uber Eats sind es ähnlich 15–30\u202f%. Quelle: Berliner Abendblatt. Mit einem [eigenen Lieferdienst ohne Provision](/loesungen/lieferdienst) zahlst du stattdessen einen festen Monatsbetrag — ohne Abzüge auf jede Bestellung."
+      },
+      {
+        "q": "Welche Genehmigungen brauche ich für einen Lieferdienst?",
+        "a": "Du brauchst: (1) Gewerbeanmeldung beim Gewerbeamt (20–60\u202f€), (2) Hygiene-Schulung (HACCP) — online möglich, ca.\u202f20–50\u202f€, (3) Gesundheitszeugnis für alle, die mit Lebensmitteln arbeiten (ca.\u202f30\u202f€). Eine Gaststättenerlaubnis brauchst du nicht, wenn du nur lieferst. Unser Team berät dich kostenlos — schreib uns einfach über das [Kontaktformular](/kontakt)."
+      }
+    ]
+  },
+  "cta": {
+    "badge": "Kostenlose Beratung",
+    "title": "Wir helfen dir,",
+    "titleHighlight": "deinen Lieferdienst zu starten",
+    "subtitle": "800+ Gastronomen haben aufgehört, Provision zu zahlen. Wir zeigen dir, was du brauchst — kostenlos und unverbindlich.",
+    "button": "Kostenloses Gespräch buchen",
+    "trustItems": [
+      { "value": "0 %", "label": "Provision" },
+      { "value": "800+", "label": "aktive Kunden" },
+      { "value": "5,0 ★", "label": "Google Bewertung" },
+      { "value": "Persönlicher", "label": "Support" }
+    ]
+  }
+}

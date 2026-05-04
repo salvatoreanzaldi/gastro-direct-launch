@@ -1,0 +1,394 @@
+{
+  "seo": {
+    "title": "About Gastro Master — Digital Solutions for Your Restaurant",
+    "description": "Discover our story. A team of 30+ members across 16 German states, providing personal guidance. 0% commission, 24/7 support in German."
+  },
+  "hero": {
+    "headingPre": "This is",
+    "headingHighlight": "Gastro Master",
+    "headingPost": ".",
+    "text": "We help restaurateurs become digitally independent. Personal, fair, and with a team that truly knows you.",
+    "cta": "Request free consultation",
+    "teamLink": "Meet our team ↓"
+  },
+  "trustBar": [
+    {
+      "value": "800+",
+      "label": "Restaurants trust us"
+    },
+    {
+      "value": "16",
+      "label": "Federal states nationwide"
+    },
+    {
+      "value": "30+",
+      "label": "Team members"
+    },
+    {
+      "value": "Since 2021",
+      "label": "Successfully on the market"
+    },
+    {
+      "value": "0%",
+      "label": "Commission on orders"
+    }
+  ],
+  "story": {
+    "badge": "Our Story",
+    "heading": "Digital power for the restaurant industry. That's our mission.",
+    "block1": {
+      "p1": "Sanjaya, our founder and IT expert, recognized the potential: With 15 years of IT experience, he developed an ordering system that works like major delivery platforms. But without excessive commissions.",
+      "p2": "The motto was clear: <strong>Fair collaboration with restaurateurs.</strong> No fine print, no hidden fees. A system that works for you.",
+      "img1Alt": "René Ebert advising a restaurateur on a laptop"
+    },
+    "block2": {
+      "p1": "René Ebert joined, inspired by his USA experiences and the growing need for digitalization. Together, they founded Gastro Master.",
+      "p2": "Today we offer you a comprehensive portfolio: [Apps](/produkte/app), [Order shops](/produkte/webshop), [POS systems](/produkte/kassensystem), and [Payment processing](/produkte/transaktionsumlage). Everything developed to help you work more efficiently, customer-oriented, and successfully.",
+      "img2Alt": "René Ebert and restaurateur sealing partnership with a handshake"
+    }
+  },
+  "location": {
+    "badge": "Location",
+    "heading": "Our location: Usingen near Frankfurt",
+    "subtitle": "This is where Gastro Master was born. With passion for the restaurant industry.",
+    "imgAlt": "Gastro Master location Usingen near Frankfurt, Hesse",
+    "p1": "Our location is in Usingen near Frankfurt. But our area of operation extends across the entire country. With customers in all 16 federal states, we carry out projects nationwide and understand the diverse requirements of the restaurant industry in every region.",
+    "p2": "Would you like to get to know us? We'd love that. Visit us in Usingen for a personal meeting — or we'll talk by phone or video call. Whatever suits you best. Consultation at eye level means you have the choice.",
+    "cta": "Free consultation"
+  },
+  "timeline": {
+    "badge": "Since 2021",
+    "heading": "5 Years of Momentum",
+    "subtitle": "From the first customer to our own payment system – we're building the future of the restaurant industry.",
+    "footer": "We are forward-thinking, flexible, and build software that truly moves restaurateurs forward.",
+    "nextLabel": "Up Next",
+    "milestones": [
+      {
+        "year": "2021",
+        "title": "Day One & Founding",
+        "text": "The foundation for a new era of restaurant digitalization"
+      },
+      {
+        "year": "2022",
+        "title": "First 100 Customers",
+        "text": "Trust built – word by word, customer by customer"
+      },
+      {
+        "year": "2023",
+        "title": "Founding of Epit Global GmbH",
+        "text": "Structures for growth and international scaling"
+      },
+      {
+        "year": "2024",
+        "title": "First 500 Customers",
+        "text": "A strong network of partners in the restaurant industry"
+      },
+      {
+        "year": "2025",
+        "title": "Own POS System",
+        "text": "Cloud POS, self-order, pick-up – everything from one source"
+      },
+      {
+        "year": "2026",
+        "title": "Own Payment Processing (Epit Pay)",
+        "text": "Full control over payments – our next milestone"
+      }
+    ]
+  },
+  "team": {
+    "badge": "The Team Behind Gastro Master",
+    "heading": "Real people.<br/>Real guidance.",
+    "subtitle": "Not an anonymous software provider – but a team of 30+ members that personally guides you.",
+    "linkedinLabel": "LinkedIn Profile",
+    "founders": [
+      {
+        "key": "sanjaya",
+        "name": "Sanjaya Pattiyage",
+        "role": "Founder & CEO",
+        "focus": "IT & Technology",
+        "bio": "Longtime IT specialist with experience in technology and leadership roles at internationally leading companies like Procter & Gamble. Focus on product, systems, and scalable technology.",
+        "linkedin": "https://www.linkedin.com/in/sanjaya-pattiyage/"
+      },
+      {
+        "key": "rene",
+        "name": "René Ebert",
+        "role": "Founder & CEO",
+        "focus": "Sales & Marketing",
+        "bio": "After his Bachelor's in International Business Management, he chose the entrepreneurial path. His focus is on growth, sales, and strategic market development.",
+        "linkedin": "https://www.linkedin.com/in/rene-ebert/"
+      }
+    ],
+    "members": [
+      {
+        "key": "salvatore",
+        "name": "Salvatore Anzaldi",
+        "role": "Sales Director",
+        "focus": "Customer Advisory",
+        "bio": "Years of sales experience. Previously in the sale of mechanical luxury watches at a leading online provider like CHRONEXT – and knows that every single component counts.",
+        "linkedin": "https://www.linkedin.com/in/salvatore-a-a42711208/"
+      },
+      {
+        "key": "andrej",
+        "name": "Andrej Krutsch",
+        "role": "Service Customer Manager",
+        "focus": "Customer Support",
+        "bio": "Previously in leading positions in the food retail sector, including at Rewe. Brings solid experience in customer service and operational organization.",
+        "linkedin": null
+      },
+      {
+        "key": "mohammad",
+        "name": "Mohammad Motakalemi",
+        "role": "Sales",
+        "focus": "Restaurant Expertise",
+        "bio": "A former restaurateur who found his way to the team through his own positive experience as a customer. He knows the challenges of the industry firsthand.",
+        "linkedin": null
+      }
+    ]
+  },
+  "languages": {
+    "heading": "Consultation at eye level. In your language.",
+    "subtitle": "Our consultation is personal, direct, and linguistically close to your everyday life. We speak your language – so you feel understood from the very start.",
+    "items": [
+      {
+        "label": "German",
+        "flag": "de"
+      },
+      {
+        "label": "English",
+        "flag": "gb"
+      },
+      {
+        "label": "Italian",
+        "flag": "it"
+      },
+      {
+        "label": "Persian",
+        "flag": "ir"
+      },
+      {
+        "label": "Russian",
+        "flag": "ru"
+      },
+      {
+        "label": "Sinhalese",
+        "flag": "lk"
+      }
+    ]
+  },
+  "values": {
+    "badge": "Our Values",
+    "heading": "What we believe in",
+    "subtitle": "Our core values are the foundation for everything we do.",
+    "items": [
+      {
+        "icon": "diamond",
+        "title": "Fair",
+        "text": "0% commission, transparent pricing. You don't pay for referrals. You pay for real solutions."
+      },
+      {
+        "icon": "handshake",
+        "title": "Personal",
+        "text": "Direct contact with our 30+ team. No waiting queues, no anonymous hotline."
+      },
+      {
+        "icon": "zap",
+        "title": "Innovation",
+        "text": "Constantly new solutions: POS system, payment processing, self-service. We innovate with you."
+      },
+      {
+        "icon": "shield",
+        "title": "Reliable",
+        "text": "24/7 support. 5 years of success. We're here when you need us."
+      }
+    ]
+  },
+  "why": {
+    "badge": "Why Gastro Master",
+    "heading": "What makes us different",
+    "subtitle": "Why 800+ restaurants choose Gastro Master.",
+    "items": [
+      {
+        "title": "Fair commission model",
+        "text": "0% instead of 25-30% on delivery platforms. We don't earn from your commissions. We earn from the success of your restaurant."
+      },
+      {
+        "title": "German software, direct support",
+        "text": "Developed in Germany. Support in German. No distant servers, no anonymous support. We're close to you."
+      },
+      {
+        "title": "Flexible solutions",
+        "text": "From web apps to online shops to your own POS system. You choose what you need. And can expand at any time."
+      },
+      {
+        "title": "We grow with you",
+        "text": "From 0 to 800+ restaurants. We know the challenges of every size. Whether single operation or chain."
+      }
+    ]
+  },
+  "testimonials": {
+    "badge": "Customer Voices",
+    "heading": "What our partners say",
+    "subtitle": "Real experiences from real restaurants.",
+    "items": [
+      {
+        "name": "Marco Greco",
+        "restaurant": "Pizzeria Il Sorriso",
+        "quote": "With Gastro Master, we completely digitalized our ordering processes.",
+        "videoId": "Qv-YDj9gjPk"
+      },
+      {
+        "name": "Ha Lim Lee",
+        "restaurant": "Kojo Sushi",
+        "quote": "The support is incredible. We truly feel personally cared for.",
+        "videoId": "JkkVyIFewO0"
+      },
+      {
+        "name": "Georgios Madatsidis",
+        "restaurant": "Artemis Grill",
+        "quote": "The best value for money on the market. No hidden fees.",
+        "videoId": "Zx_UJJjQTso"
+      },
+      {
+        "name": "Milad Ismail",
+        "restaurant": "Nevada Burger & Steak",
+        "quote": "I receive the money in my account instantly with every order. Everything at Gastro Master is flexible.",
+        "videoId": "A0K7TJ_dwLM"
+      },
+      {
+        "name": "Sven Heinrich",
+        "restaurant": "61 Burger & More",
+        "quote": "You get fast and great WhatsApp support here and the ability to structure your business.",
+        "videoId": "6dBBN_mohWU"
+      }
+    ]
+  },
+  "process": {
+    "badge": "Our Process",
+    "heading": "How we work with you",
+    "subtitle": "Transparent and personal in 5 steps.",
+    "steps": [
+      {
+        "num": "1",
+        "icon": "messageCircle",
+        "title": "Free Consultation",
+        "text": "We get to know your restaurant. What do you need? What are your requirements? Together we find the right solution."
+      },
+      {
+        "num": "2",
+        "icon": "settings",
+        "title": "Configure Solution",
+        "text": "You decide what you need. Online shop, app, POS system, everything together. We show you the options, you choose."
+      },
+      {
+        "num": "3",
+        "icon": "graduationCap",
+        "title": "Setup & Training",
+        "text": "We set everything up technically. Training for your team, in person or online. You'll be ready at the end."
+      },
+      {
+        "num": "4",
+        "icon": "rocket",
+        "title": "Go Live",
+        "text": "Your restaurant is live. Your new systems are working. Your guests can already order."
+      },
+      {
+        "num": "5",
+        "icon": "headphones",
+        "title": "24/7 Support",
+        "text": "We're here. Questions? Problems? New requirements? Our team supports you around the clock in German."
+      }
+    ]
+  },
+  "faq": {
+    "badge": "FAQ",
+    "heading": "Frequently Asked Questions",
+    "subtitle": "Everything you need to know about Gastro Master.",
+    "items": [
+      {
+        "q": "How long does the setup take?",
+        "a": "That depends on the solution. On average about 2 weeks, depending on which systems you implement. Our team guides you through every step. For faster implementation, [contact us for a free consultation](/kontakt). We'll find the best solution for your restaurant."
+      },
+      {
+        "q": "Are there hidden fees or commissions?",
+        "a": "No. Absolutely not. With Gastro Master, you pay 0% commission. Unlike major delivery platforms that charge 25-30%. All costs are transparent. Check out our [pricing overview](/preise). There you'll see exactly what to expect."
+      },
+      {
+        "q": "Can I add more solutions later?",
+        "a": "Yes, absolute flexibility. You can start with a [website](/produkte/webseite) and later add an [order shop](/produkte/webshop) or a [POS system](/produkte/kassensystem). Changeable at any time. You decide what you need."
+      },
+      {
+        "q": "How is your support? Am I just a number?",
+        "a": "No. Our team of 30+ members provides personal 24/7 support in German. No waiting queues, no automated systems. You speak with real people who understand your restaurant."
+      },
+      {
+        "q": "Is our restaurant too far from Usingen?",
+        "a": "No. While we're based in Usingen near Frankfurt, we work with customers in all 16 federal states. No matter where your restaurant is, our support is available nationwide. Visit us in person or use phone and video calls. [Book your free consultation now](/kontakt)."
+      }
+    ]
+  },
+  "cta": {
+    "headingPre": "Ready to",
+    "headingHighlight": "get started?",
+    "text": "Get free advice from our team. Personal, non-binding, and in your language.",
+    "button": "Get advice now",
+    "stats": [
+      {
+        "value": "0%",
+        "label": "Commission"
+      },
+      {
+        "value": "800+",
+        "label": "Active customers"
+      },
+      {
+        "value": "30+",
+        "label": "Team members"
+      },
+      {
+        "value": "Personal",
+        "label": "Support"
+      }
+    ]
+  },
+  "schema": {
+    "home": "Home",
+    "pageTitle": "About us",
+    "orgDescription": "Digital solutions for the restaurant industry: ordering system, POS system, app, and website. 0% commission, personal support."
+  },
+  "googleReviews": {
+    "title": "Reviews",
+    "reviewCount_one": "Review",
+    "reviewCount_other": "Reviews",
+    "tabLabels": {
+      "Neuste": "Newest",
+      "Alle": "All",
+      "5-Sterne": "5 Stars"
+    },
+    "loading": "Loading reviews...",
+    "noReviews": "No reviews available for this filter.",
+    "expandMore": "Show more",
+    "expandLess": "Show less",
+    "verifiedCustomer": "Verified Customer",
+    "cta": "Review us on Google",
+    "errorTitle": "Honest feedback is important to us",
+    "errorText": "Reviews are currently loading. Please try again later."
+  },
+  "relative_time": {
+    "vor_einem_tag": "1 day ago",
+    "vor_tagen": "{n} days ago",
+    "vor_einer_woche": "1 week ago",
+    "vor_wochen": "{n} weeks ago",
+    "vor_einem_monat": "1 month ago",
+    "vor_2_monaten": "2 months ago",
+    "vor_3_monaten": "3 months ago",
+    "vor_4_monaten": "4 months ago",
+    "vor_5_monaten": "5 months ago",
+    "vor_6_monaten": "6 months ago",
+    "vor_7_monaten": "7 months ago",
+    "vor_8_monaten": "8 months ago",
+    "vor_9_monaten": "9 months ago",
+    "vor_10_monaten": "10 months ago",
+    "vor_11_monaten": "11 months ago",
+    "vor_einem_jahr": "1 year ago"
+  }
+}

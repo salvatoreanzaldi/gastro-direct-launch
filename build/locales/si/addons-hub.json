@@ -1,0 +1,93 @@
+{
+  "seo": {
+    "title": "Gastro Master Add-Ons — Webshop, App & POS පද්ධතිය සඳහා Extensions | Gastro Master",
+    "description": "Gastro Master Add-Ons: QR Code Flyer, GPS Driver App, QR Code Table System, Display Function, Self-Ordering Kiosk සහ තවත්. Cloud POS, webshop සහ app සමඟ සම්පූර්ණයෙන් integrated."
+  },
+  "hero": {
+    "badge": "Add-Ons · Extensions",
+    "headline": "Gastro Master Add-Ons —",
+    "headlineHighlight": "ඔබේ ව්‍යාපාරය සඳහා නිශ්චිත extensions",
+    "sub": "ඔබේ Gastro Master solution හට ඔබේ ව්‍යාපාරයට අවශ්‍ය ක්‍රියාකාරිත්වය add කරන්න — trackable QR Code Flyer සිට live GPS tracking සහ self-ordering kiosks දක්වා. සියලු add-ons webshop, app සහ cloud POS සමඟ සම්පූර්ණයෙන් integrated.",
+    "subSuffix": "අවන්හල්, delivery services, cafés, bakeries, food courts සහ franchise concepts සඳහා."
+  },
+  "addons": [
+    {
+      "badge": "Marketing · Top Seller",
+      "title": "QR Code Flyer",
+      "price": "€65 සිට / 2,500 pieces",
+      "desc": "සෑම paper flyer එකක්ම measurable ordering channel බවට පත් කරන්න. Scan එකකින් ඔබේ webshop හෝ app වෙත කෙලින්ම — platform commission නොමැතිව, campaign ගණනයෙන් live tracking.",
+      "benefits": ["ආරම්භය සඳහා Flyer 2,500 subscription ඇතුළත්", "DIN-A6, double-sided, ඔබේ branding", "Dashboard හි campaign tracking"],
+      "compatibility": "Webshop · App"
+    },
+    {
+      "badge": "Delivery Service",
+      "title": "GPS Driver App",
+      "price": "+€10 / month per driver",
+      "desc": "සෑම delivery සඳහා live GPS tracking, ස්වයංක්‍රීය route optimisation සහ POS system හි dispatcher. Customers driver ඉන්නේ කොතැනදැයි දකිති — ඔබේ team efficiently කරයි.",
+      "benefits": ["සියලු drivers සඳහා real-time GPS", "ස්වයංක්‍රීය route optimisation", "Drivers සඳහා iOS හා Android app"],
+      "compatibility": "POS System"
+    },
+    {
+      "badge": "Table Service",
+      "title": "QR Code Table System",
+      "price": "+€50 / tables 5, +€5 per additional",
+      "desc": "Guests මේසේදී scan කරති, select, order, pay — smartphone හරහා. Order POS සහ kitchen වෙත ක්ෂණිකව. අඩු රැඳීම, වැඩි table turnover, upselling හරහා +18% basket.",
+      "benefits": ["App install නොකොට order", "Multilingual menu (DE/EN/FR/IT/ES/TR)", "මේසේදීම ගෙවීම"],
+      "compatibility": "POS System"
+    },
+    {
+      "badge": "Kitchen & Counter",
+      "title": "Display Function",
+      "price": "ඉල්ලීම මත",
+      "desc": "Guests සඳහා pick-up screen, ඔබේ team සඳහා kitchen monitor. Real-time open orders, product group colour priority, paper chaos නොමැතිව. Fast food, bakeries, food courts.",
+      "benefits": ["Pick-up screen + kitchen monitor", "Order time priority", "Counter, freestanding & outdoor"],
+      "compatibility": "POS System"
+    },
+    {
+      "badge": "Self-Service · නව",
+      "title": "Self-Ordering Kiosk",
+      "price": "ඉල්ලීම මත",
+      "desc": "Terminal counter භාර ගනී. Guests touchscreen හි order කරති සහ ගෙවති — multilingual, active upselling, රැඳීම නොමැතිව. −50% waiting time, +25% average basket.",
+      "benefits": ["Touch operation 6+ languages", "Payment methods සියල්ල integrated", "Counter, freestanding & wall"],
+      "compatibility": "POS System"
+    }
+  ],
+  "valueProps": {
+    "badge": "ඇයි Add-Ons",
+    "headline": "විශේෂඥයන්ගේ Ecosystem එකක්",
+    "sub": "සෑම add-on එකක්ම දෛනික operations හි ලෙස concrete ගැටළුවක් විසඳයි — ඔබ ළඟ දැනටමත් ක්‍රියාත්මක දෙය සමඟ cleanly integrated.",
+    "items": [
+      { "title": "Modular combination", "desc": "සෑම add-on එකක්ම independently ක්‍රියා කරයි — නමුත් webshop, app හෝ POS system සමඟ combination හි සම්පූර්ණ potential open කරයි." },
+      { "title": "Central management", "desc": "සියලු add-ons ඔබේ existing Gastro Master backoffice හරහා manage කෙරේ — third-party services නොමැතිව, additional logins නොමැතිව." },
+      { "title": "ක්ෂණිකව සූදානම්", "desc": "Purchase කළ පසු add-ons hours to days ඇතුළත active. Hardware add-ons (screens, kiosks) ඉල්ලීම මත on-site install කෙරේ." }
+    ]
+  },
+  "grid": {
+    "badge": "සියලු Add-Ons",
+    "headline": "සියලු Add-Ons මුල සිටම — සෑම එකක්ම clear value",
+    "sub": "ඔබේ ව්‍යාපාරයට දැන් වැඩිම leverage දෙන add-on එක select කරන්න. ඕනෑ ම වෙලාවක add කළ හැකිය — restart නොමැතිව, data migration නොමැතිව.",
+    "combinedWith": "Compatible with",
+    "details": "Details",
+    "moreSoon": "ඉදිරියේ දී තවත්"
+  },
+  "combo": {
+    "badge": "Combinations",
+    "headline": "Add-Ons combination හි potential open කරයි",
+    "sub": "බොහෝ add-ons POS system require කරයි — orders, order numbers සහ kitchen status real-time synchronise කරන නිසා. QR Code Flyer webshop හෝ ordering app alone සමඟ ද ක්‍රියා කරයි.",
+    "btnKasse": "POS System වෙත",
+    "btnAlleProdukte": "සියලු products"
+  },
+  "faq": {
+    "badge": "FAQ",
+    "headline": "Add-Ons ගැන නිතර අසන ප්‍රශ්න",
+    "sub": "අපේ extensions ගැන restaurateurs නිතර ඇසෙන ප්‍රශ්නවලට පිළිතුරු.",
+    "items": [
+      { "q": "Gastro Master Add-Ons යනු කුමක්ද?", "a": "Add-Ons ඔබේ existing Gastro Master solution — [Webshop](/produkte/webshop), [App](/produkte/app) හෝ [POS System](/produkte/kassensystem) සඳහා extensions. සෑම එකක්ම concrete ගැටළුවක් solve කරයි සහ fully integrated. ඔබ actually need දේ book කරයි." },
+      { "q": "දැනට available Add-Ons මොනවාද?", "a": "දැනට live: [QR Code Flyer](/add-ons/qr-code-flyer) (Marketing), [GPS Driver App](/add-ons/fahrer-app-gps) (Delivery), [QR Code Table System](/add-ons/qr-code-tischsystem) (Table Service), [Display Function](/add-ons/bildschirmfunktion) (Kitchen & Counter) සහ [Self-Ordering Kiosk](/add-ons/kiosk) (Self-Service). ඉදිරියේ තවත් extensions." },
+      { "q": "Add-Ons සඳහා POS system අවශ්‍ය ද?", "a": "Depends. QR Code Flyer webshop හෝ app alone සමඟ ක්‍රියා කරයි. Driver App, QR Code Table System, Display Function සහ Kiosk add-ons [Gastro Master POS System](/produkte/kassensystem) require කරයි — orders cloud POS, kitchen monitor සහ pick-up screen සමඟ direct sync කරන නිසා." },
+      { "q": "Add-Ons කොපමණ මිල ද?", "a": "Function අනුව varies: QR Code Flyer €65 සිට 2,500 pieces. Driver App +€10 per month per driver, QR Code Table System +€50 per month for 5 tables. Display Function සහ Self-Ordering Kiosk hardware-dependent — free consultation හි individually calculated." },
+      { "q": "Add-On එකක් cancel කළ හෝ add කළ හැකිද?", "a": "ඔව්. Add-ons monthly activate/cancel කළ හැකිය (hardware except). Peak season QR Code Table System use කර winter හි pause කළ හැකිය — හෝ one kiosk start කර business grow වෙද්දී more add කළ හැකිය." },
+      { "q": "Add-Ons කොපමණ ඉක්මනින් සූදානම් ද?", "a": "Software add-ons (QR Code Flyer, Driver App, QR Code Table System) booking කළ hours ඇතුළත active. Hardware add-ons (Display Function, Kiosk) 2–4 weeks delivery, configuration සහ on-site installation." }
+    ]
+  }
+}

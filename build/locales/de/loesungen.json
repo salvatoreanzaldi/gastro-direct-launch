@@ -1,0 +1,115 @@
+{
+  "meta": {
+    "title": "Digitale Lösungen für die Gastronomie 2026 | Gastro Master",
+    "description": "Gastro Master bietet digitale Komplettlösungen für Gastronomie: Kassensystem, Online-Bestellshop, App und Webseite. Für Restaurants, Cafés, Lieferdienste und Franchise. Jetzt kostenlos beraten lassen.",
+    "canonical": "https://gastro-master.de/loesungen"
+  },
+  "hero": {
+    "badge": "Gastronomie Software · Digitale Lösungen",
+    "h1Before": "Finde deine",
+    "h1Highlight": "Lösung.",
+    "subtitle": "Egal ob Restaurant, Café, Lieferdienst oder Franchise — wir haben die passende Lösung für dich.",
+    "geoBlock": "Gastro Master bietet digitale Komplettlösungen für die Gastronomie — vom TSE-konformen Kassensystem über Online-Bestellshops bis zur eigenen Bestell-App. 800+ Gastronomen in Deutschland nutzen Gastro Master für Restaurant, Café, Bäckerei, Lieferdienst und Franchise-Systeme.",
+    "cta": "Kostenlose Beratung",
+    "trustLine": "800+ Gastronomen nutzen Gastro Master — finde heraus warum."
+  },
+  "targetGroup": {
+    "ctaLabel": "Zur Lösung"
+  },
+  "solutions": {
+    "badge": "Lösungen",
+    "title": "Was ist dein Problem?",
+    "subtitle": "Klick auf die Lösung, die zu dir passt. Du siehst sofort alles, was du brauchst.",
+    "geoBlock": "Gastro Master bietet digitale Komplettlösungen für alle Bereiche der Gastronomie — vom Restaurant und Café über den Lieferdienst bis zum Franchise-System. Alle Lösungen nutzen dieselben Produkte: Kassensystem, Online-Bestellshop, App und Webseite. Du kannst einzelne Produkte einsetzen oder kombinieren — je nachdem, was dein Betrieb braucht.",
+    "cta": "Mehr erfahren",
+    "items": [
+      {
+        "label": "Restaurant",
+        "problem": "Du brauchst ein Kassensystem, das einfach funktioniert?",
+        "tagline": "TSE-konforme Kasse, Online-Bestellungen, alles aus einer Hand."
+      },
+      {
+        "label": "Café & Bäckerei",
+        "problem": "Lange Schlangen und keine Online-Vorbestellungen?",
+        "tagline": "Schnell kassieren, Torten vorbestellen, Click & Collect."
+      },
+      {
+        "label": "Lieferdienst gründen",
+        "problem": "Du willst deinen eigenen Lieferdienst starten — ohne Lieferando?",
+        "tagline": "Eigenes Bestellsystem, 0 % Provision, live in 2–3 Wochen."
+      },
+      {
+        "label": "Lieferdienst erweitern",
+        "problem": "Du hast schon ein Lokal und willst auch liefern?",
+        "tagline": "Bestellsystem und Fahrer-App, 0 % Provision, für bestehende Betriebe."
+      },
+      {
+        "label": "Franchise",
+        "problem": "Du willst dein Konzept auf mehrere Standorte ausweiten?",
+        "tagline": "App, Shop, Kasse und Webseite — einheitlich, zentral gesteuert."
+      }
+    ]
+  },
+  "products": {
+    "badge": "Produkte",
+    "title": "Alle Produkte auf einen Blick",
+    "subtitle": "Hinter jeder Lösung stecken diese Produkte. Du kannst sie einzeln oder kombiniert einsetzen.",
+    "moreLabel": "Mehr erfahren",
+    "allProductsLink": "Alle Produkte ansehen →",
+    "items": [
+      { "name": "Kassensystem", "tagline": "TSE-konform, ab 69 €/Monat" },
+      { "name": "Online Shop", "tagline": "0 % Provision, ab 79 €/Monat" },
+      { "name": "App System", "tagline": "iOS & Android, ab 149 €/Monat" },
+      { "name": "Webseite", "tagline": "Professionell, ab 49 €/Monat" },
+      { "name": "Zahlungsgebühren", "tagline": "Kein Abzug vom Umsatz" }
+    ]
+  },
+  "impulse": {
+    "badge": "Nicht sicher, was zu dir passt?",
+    "title": "Wir finden zusammen die richtige Lösung.",
+    "subtitle": "In einem kostenlosen Gespräch schauen wir uns deinen Betrieb an. Du bekommst eine klare Empfehlung — ohne Verpflichtung.",
+    "cta": "Kostenloses Beratungsgespräch buchen"
+  },
+  "trust": {
+    "items": [
+      { "value": "800+", "label": "Gastro-Betriebe vertrauen uns" },
+      { "value": "5,0 ★", "label": "Kundenbewertung auf Google" },
+      { "value": "TSE-konform", "label": "Alle Systeme zertifiziert" },
+      { "value": "Persönl. Support", "label": "Euer Team hilft direkt" }
+    ]
+  },
+  "faq": {
+    "badge": "FAQ",
+    "title": "Häufige Fragen",
+    "subtitle": "Kurze Antworten auf die Fragen, die am häufigsten kommen.",
+    "items": [
+      {
+        "q": "Welche Software brauche ich für mein Restaurant?",
+        "a": "Für ein Restaurant empfehlen wir das [Gastro Master Kassensystem](/produkte/kassensystem) ab 69 €/Monat. Es ist TSE-konform und hat Tischverwaltung. Du kannst zusätzlich einen [Online-Shop](/produkte/webshop) oder eine [App](/produkte/app) dazu nehmen."
+      },
+      {
+        "q": "Was kostet ein digitales Bestellsystem für die Gastronomie?",
+        "a": "Der [Online-Shop](/produkte/webshop) kostet ab 79 €/Monat, die [App](/produkte/app) ab 149 €/Monat, die [Webseite](/produkte/webseite) ab 49 €/Monat und das [Kassensystem](/produkte/kassensystem) ab 69 €/Monat. Die Einrichtung wird individuell besprochen. Du zahlst 0 % Provision."
+      },
+      {
+        "q": "Bietet Gastro Master Lösungen für Cafés und Bäckereien?",
+        "a": "Ja. Wir haben eine [eigene Lösung für Cafés und Bäckereien](/loesungen/cafe-baeckerei). Dazu gehören ein TSE-konformes [Kassensystem](/produkte/kassensystem), ein [Online-Shop für Vorbestellungen](/produkte/webshop) und eine [App für deine Stammkunden](/produkte/app)."
+      },
+      {
+        "q": "Kann ich mit Gastro Master einen eigenen Lieferdienst starten?",
+        "a": "Ja. Du bekommst ein [Bestellsystem](/produkte/webshop), eine [App](/produkte/app) und bei Bedarf eine Fahrer-App. Keine Provision. In 2–3 Wochen bist du live. Alles zur [Lieferdienst-Gründung](/loesungen/lieferservice-gruenden)."
+      },
+      {
+        "q": "Gibt es eine Franchise-Lösung von Gastro Master?",
+        "a": "Ja. Alle Standorte arbeiten mit demselben System — einheitliches Branding, zentrale Verwaltung, 0 % Provision. Details zur [Franchise-Lösung](/loesungen/franchise)."
+      }
+    ]
+  },
+  "schema": {
+    "articleHeadline": "Digitale Lösungen für die Gastronomie 2026 — Restaurant, Café, Lieferdienst, Franchise",
+    "articleDescription": "Gastro Master bietet digitale Komplettlösungen für Gastronomie: Kassensystem, Online-Bestellshop, App und Webseite.",
+    "articleUrl": "https://gastro-master.de/loesungen",
+    "datePublished": "2026-01-01",
+    "dateModified": "2026-04-02"
+  }
+}

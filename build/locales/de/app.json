@@ -1,0 +1,247 @@
+{
+  "seo": {
+    "title": "Bestell-App Gastronomie — eigene App ab 149 € | Gastro Master",
+    "description": "Eigene Bestell-App für die Gastronomie: iOS & Android, eigenes Branding, 0 % Provision, Push-Benachrichtigungen. Ab 149 €/Monat. Jetzt kostenlos beraten lassen."
+  },
+  "hero": {
+    "badge": "Bestell-App für Gastronomie",
+    "title1": "Deine Bestell-App für die Gastronomie –",
+    "titleHighlight": "ohne Provision,",
+    "title2": "ohne Abhängigkeit.",
+    "subtitle": "Über 800 Gastronomen bestellen bereits über ihre eigene App – inklusive iOS & Android App,",
+    "subtitleLinkText": "Webshop",
+    "subtitleEnd": "und eigenem Branding.",
+    "cta": "Kostenlose Beratung"
+  },
+  "trustBar": {
+    "zeroPercent": "0 %",
+    "zeroPercentLabel": "Provision auf Bestellungen",
+    "iosAlt": "Apple App Store",
+    "androidAlt": "Google Play Store",
+    "storesLabel": "App Store & Play Store",
+    "customers": "800+",
+    "customersLabel": "Aktive Kunden"
+  },
+  "video": {
+    "badge": "Deine App in Aktion",
+    "title": "Sieh deine App in\u00a0Aktion.",
+    "text": "Über 800 Gastronomen in Deutschland nutzen bereits ihre eigene Bestell-App – mit eigenem Logo, eigenem Branding und 0\u00a0% Provision. Sieh selbst, wie einfach und überzeugend eine eigene Bestell-App für deine Gäste ist.",
+    "cta": "Kostenlose Beratung"
+  },
+  "features": {
+    "badge": "Funktionsumfang",
+    "title": "Was deine Gastro Master Bestell-App kann.",
+    "text": "Deine App – mit deinem Namen, deinem Branding und den Funktionen, die Restaurants im Alltag wirklich brauchen. Besonders ideal für Betriebe, die",
+    "textLinkText": "einen eigenen Lieferdienst aufbauen",
+    "textEnd": "möchten.",
+    "geoStat": "Laut Statista nutzten 2024 über 36 Millionen Menschen in Deutschland mindestens eine Food-Delivery-App — der direkte Kanal gewinnt. (Quelle: Statista, Online Food Delivery Markt Deutschland 2024)",
+    "cards": [
+      {
+        "title": "Push Notifications",
+        "text": "Erinnere deine Kunden an Angebote, neue Gerichte und Aktionen – direkt auf ihr Smartphone. Kostenlos, in Echtzeit.",
+        "imgAlt": "Gastro Master App – Push Notifications"
+      },
+      {
+        "title": "100 % Dein Branding",
+        "text": "Dein Logo, deine Farben, dein Name – die App sieht aus wie deine Marke. Kein fremdes Logo, kein Fremdbranding. Deine Kunden sehen nur dich.",
+        "imgAlt": "Gastro Master App – Eigenes Branding, Logo und Farben"
+      },
+      {
+        "title": "Lieferung & Abholung",
+        "text": "Kunden wählen selbst. Lieferzonen, Mindestbestellwerte und Öffnungszeiten stellst du einfach selbst ein.",
+        "imgAlt": "Gastro Master App – Lieferung oder Abholung wählen"
+      },
+      {
+        "title": "Mehrere Standorte",
+        "text": "Alle Filialen in einer App. Kunden wählen ihren Standort – du steuerst alles zentral.",
+        "imgAlt": "Gastro Master App – Mehrere Standorte / Filialen"
+      },
+      {
+        "title": "Dynamische Speisekarte",
+        "text": "Preise, Gerichte und Verfügbarkeiten in Echtzeit ändern – kein Entwickler, kein Ticket, kein Warten.",
+        "imgAlt": "Gastro Master App – Dynamische Speisekarte"
+      },
+      {
+        "title": "Kunden-Login & Treue",
+        "text": "Bestellhistorie, Punkte sammeln, Prämien einlösen – direkt in der App. Stammkunden kommen öfter.",
+        "imgAlt": "Gastro Master App – Kunden-Login & Registrierung"
+      },
+      {
+        "title": "Online-Zahlung & Kasse",
+        "text": "Apple Pay, Google Pay, Kreditkarte und PayPal – alle gängigen Zahlungsarten direkt in der App. Sicher, schnell, ohne Umwege.",
+        "imgAlt": "Gastro Master App – Online-Zahlung & Kasse"
+      },
+      {
+        "title": "Deine App im App Store",
+        "text": "Deine App erscheint unter deinem Namen im Apple App Store und Google Play Store – vollständig eigenes Branding, 0 % Gastro Master sichtbar für deine Kunden.",
+        "imgAlt": "Gastro Master App – Eigene App im Apple App Store und Google Play Store"
+      }
+    ]
+  },
+  "demo": {
+    "badge": "Demo verfügbar",
+    "title": "Erlebe die App selbst – einfach herunterladen.",
+    "text": "Unsere Demo-App ist im Apple App Store und Google Play Store verfügbar. Lade sie herunter und erlebe die Bestellerfahrung deiner zukünftigen Kunden – direkt auf deinem Smartphone.",
+    "appStoreAlt": "Download im App Store",
+    "googlePlayAlt": "Jetzt bei Google Play"
+  },
+  "social": {
+    "badge": "Social Media Integration",
+    "title": "Deine Social-Media-Kanäle direkt in deiner App.",
+    "text": "Verbinde Instagram, Facebook und TikTok mit deiner eigenen Bestell-App – und bleib mit deinen Gästen in Kontakt, auch nach der Bestellung. Mehr Reichweite, mehr Stammkunden, mehr Umsatz: Wer dir folgt, bestellt wieder. Eine starke Social-Media-Präsenz erhöht nachweislich die Wiederbestellrate und stärkt deine Marke langfristig."
+  },
+  "comparison": {
+    "badge": "Vergleich",
+    "title": "Alle Vorteile auf einen Blick.",
+    "text": "Wer über Lieferando, Wolt oder Uber Eats verkauft, zahlt bis zu 30 % Provision – jeden Monat, automatisch, ohne Verhandlung. Mit Gastro Master behältst du 100 % deines Umsatzes.",
+    "othersTitle": "Andere Lieferplattformen",
+    "othersItems": [
+      "Lange Vertragsbindung – oft 12 bis 24 Monate",
+      "14–30 % Gewinnverlust durch Provisionen pro Bestellung",
+      "Komplizierter Support, häufig im Ausland",
+      "Vollständig abhängig von Plattform-Regeln und Preisen",
+      "Schwer erreichbar – kein persönlicher Ansprechpartner"
+    ],
+    "gmTitle": "Mit Gastro Master",
+    "gmItems": [
+      "Monatliche Kündigung möglich – keine Mindestlaufzeit",
+      "0 % Provision auf alle Bestellungen – du behältst deinen Umsatz",
+      "100 % unabhängig – volle Kontrolle über dein System und deine Preise",
+      "Support direkt in Deutschland – schnell und persönlich",
+      "Persönliche Hilfe per Telefon und WhatsApp"
+    ]
+  },
+  "testimonials": {
+    "badge": "Social Proof",
+    "title": "800+ Gastronomen, die bereits ihre eigene App betreiben.",
+    "items": [
+      { "initials": "HL", "quote": "In der Zukunft wird immer mehr online bestellt und wir wollen auch dabei sein.", "name": "Ha Lim Lee", "restaurant": "Kojo Sushi" },
+      { "initials": "MG", "quote": "Also der Support ist einfach 1a und den würdest du nirgend wo anders so bekommen!", "name": "Marco Greco", "restaurant": "Pizzeria Il Sorriso" },
+      { "initials": "SH", "quote": "Man hat hier einen schnellen und guten WhatsApp Support und die Möglichkeit seinen Betrieb zu strukturieren.", "name": "Sven Heinrich", "restaurant": "61 Burger & More" },
+      { "initials": "GM", "quote": "Wir haben durch die App viel mehr Kunden und Reichweite gewonnen.", "name": "Georgios Madatsidis", "restaurant": "Artemis Grill" }
+    ],
+    "stats": [
+      { "value": "800+", "label": "aktive Gastro Master Kunden" },
+      { "value": "0 %", "label": "Provision auf Direktbestellungen" },
+      { "value": "2–3 Wo.", "label": "bis zur fertigen App im Store" },
+      { "value": "ab 149 € / Mo", "label": "App + Webshop, netto" }
+    ]
+  },
+  "pricing": {
+    "badge": "Transparente Preise",
+    "title": "Alles inklusive. Keine versteckten Kosten.",
+    "text": "Ein fester Monatsbeitrag – keine Provision, keine Mindestlaufzeit, keine Abhängigkeit.",
+    "mainBadge": "Hauptpaket",
+    "mainTitle": "App + Webshop",
+    "mainPrice": "ab 149 €",
+    "mainPriceSuffix": "/ Monat (netto)",
+    "mainFeatures": [
+      "iOS & Android App",
+      "Webshop",
+      "Push Notifications",
+      "Kundenpunkte-System",
+      "Multi-Standort",
+      "Eigenes Branding",
+      "Support inklusive"
+    ],
+    "mainCta": "Kostenlose Beratung",
+    "websiteBadge": "Add-on",
+    "websiteTitle": "Professionelle Website",
+    "websitePrice": "ab 49 €",
+    "websitePriceSuffix": "/ Monat",
+    "websiteText": "Dein digitales Aushängeschild – eine eigenständige Gastro-Website mit Bildergalerie, Kontaktformular und Google Maps. Anders als der Webshop informiert die Website über dein Restaurant, während der Webshop direkt Bestellungen entgegennimmt.",
+    "websiteLink": "Mehr erfahren",
+    "txBadge": "Add-on",
+    "txTitle": "Transaktions-Umlage",
+    "txText": "Die Transaktionsgebühren der Zahlungsanbieter trägt nicht du als Betreiber – sondern dein Kunde. Die Gebühr wird transparent beim Checkout ausgewiesen. Du erhältst deinen vollen Umsatz, ohne versteckte Kosten.",
+    "txLink": "Mehr erfahren",
+    "flyerBadge": "Add-on",
+    "flyerFree": "2.500 gratis",
+    "flyerTitle": "QR-Code Flyer",
+    "flyerPrice": "ab 65 €",
+    "flyerPriceSuffix": "/ 2.500 Stück",
+    "flyerText": "Flyer sind das wirksamste Mittel, um Kunden zum Scannen deines QR-Codes zu bewegen. Professionell doppelseitig gedruckte DIN-A6-Flyer mit deinem Branding – ideal als Lieferbeigabe, für den Mitnehm-Bereich an der Kasse oder zum Verteilen. Die ersten 2.500 Flyer sind mit jedem Abo kostenfrei, inklusive kostenloser PDF-Vorlage. Wenn du nachbestellst, sobald dein Vorrat zur Neige geht:",
+    "flyerPriceListToggle": "Nachbestell-Preisliste"
+  },
+  "flyerTiers": [
+    { "qty": "2.500 Stück", "price": "65,00 €" },
+    { "qty": "5.000 Stück", "price": "117,00 €" },
+    { "qty": "7.500 Stück", "price": "175,50 €" },
+    { "qty": "10.000 Stück", "price": "234,00 €" },
+    { "qty": "12.500 Stück", "price": "295,50 €" },
+    { "qty": "15.000 Stück", "price": "351,00 €" },
+    { "qty": "20.000 Stück", "price": "468,00 €" },
+    { "qty": "30.000 Stück", "price": "702,00 €" },
+    { "qty": "40.000 Stück", "price": "936,00 €" },
+    { "qty": "50.000 Stück", "price": "1.117,00 €" }
+  ],
+  "steps": {
+    "badge": "So einfach geht's",
+    "title": "In 3 Schritten zu deiner eigenen Gastro-App.",
+    "text": "Du musst kein Entwickler sein. Wir übernehmen alles – du gibst die Richtung vor.",
+    "items": [
+      { "num": "01", "title": "Beratungsgespräch & Konfiguration", "text": "Wir besprechen gemeinsam, wie deine App aussehen soll: Name, Logo, Farben, Speisekarte, Liefergebiete, Zahlungsmethoden. Kein Technik-Vorwissen nötig." },
+      { "num": "02", "title": "Wir richten alles ein", "text": "Unser Team konfiguriert deine App, richtet den Webshop ein und stellt sicher, dass alles reibungslos läuft. Du musst nichts selbst programmieren oder hochladen." },
+      { "num": "03", "title": "Live im App Store & erste Bestellungen", "text": "Nach 2–3 Wochen ist deine App live im Apple App Store und Google Play Store. Ab sofort bestellst du direkt – 0 % Provision, 100 % dein Umsatz." }
+    ]
+  },
+  "faq": {
+    "badge": "FAQ",
+    "title": "Häufige Fragen zur Gastro Master Bestell-App.",
+    "text": "Weitere Fragen? Ruf uns an oder schreib uns – wir antworten innerhalb von 24 Stunden.",
+    "cta": "Direkt anfragen",
+    "items": [
+      {
+        "q": "Wie lange dauert die Einrichtung einer eigenen Bestell-App?",
+        "a": "In der Regel dauert es 2–3 Wochen, bis deine App live im Apple App Store und Google Play Store verfügbar ist. In dieser Zeit konfigurieren wir gemeinsam mit dir das Design, die Speisekarte, Liefergebiete und Zahlungsmethoden. Du musst nichts selbst programmieren — wer danach [seinen eigenen Lieferdienst aufbauen](/loesungen/lieferservice-gruenden) möchte, kann direkt loslegen."
+      },
+      {
+        "q": "Was kostet eine eigene Gastro-App?",
+        "a": "Die Gastro Master App inklusive [Webshop](/produkte/webshop) kostet ab 149 € pro Monat (netto). Darin enthalten sind App-Hosting, App Store-Verwaltung, laufende Updates und Support. Es gibt keine Provision pro Bestellung – nur den festen Monatsbeitrag. Den Webshop ohne App gibt es bereits ab 79 € / Monat. Alle Pakete und Preise findest du auf der [Preisseite](/preise)."
+      },
+      {
+        "q": "Läuft die App unter meinem eigenen Namen im App Store?",
+        "a": "Ja, absolut. Deine App wird unter deinem Betriebsnamen, mit deinem Logo und deinen Farben im Apple App Store und Google Play Store veröffentlicht. Kein Gastro Master-Branding ist für deine Kunden sichtbar."
+      },
+      {
+        "q": "Kann ich die App auch für mehrere Standorte nutzen?",
+        "a": "Ja. Die Gastro Master App ist für Einzelbetriebe und [Franchise-Konzepte](/loesungen/franchise) mit mehreren Standorten geeignet. Kunden wählen direkt in der App ihren Standort aus und bestellen dort. Die Plattform ist auf bis zu 100 Standorte ausgelegt – viele unserer Kunden betreiben bereits 10 oder mehr Filialen über eine einzige eigenbrandete App."
+      },
+      {
+        "q": "Gibt es Push Notifications und ein Kundenbindungsprogramm?",
+        "a": "Ja. Du kannst deinen Kunden jederzeit Push Notifications schicken – für Angebote, neue Gerichte oder Rabattaktionen. Zusätzlich bietet die App ein Kundenpunkte-System: Kunden sammeln Punkte bei jeder Bestellung und lösen sie gegen Prämien ein. Alle enthaltenen Funktionen findest du in der [Preisübersicht](/preise)."
+      },
+      {
+        "q": "Kann ich die App vor dem Kauf testen?",
+        "a": "Ja. Du kannst unsere Demo-App direkt herunterladen und die Nutzererfahrung selbst erleben – im Apple App Store oder Google Play Store (Suche: \"Gastro Master App\")."
+      },
+      {
+        "q": "Brauche ich technisches Know-how, um die App zu betreiben?",
+        "a": "Nein. Die App wird vollständig von uns eingerichtet und gepflegt. Du pflegst deine Speisekarte, Preise und Angebote über ein einfaches Backend – ohne Programmierung. Bei Fragen steht dir unser [Support-Team](/kontakt) direkt zur Verfügung."
+      }
+    ]
+  },
+  "teamCta": {
+    "badge": "Jetzt durchstarten",
+    "title": "Buche jetzt dein",
+    "titleBr": "kostenloses Beratungsgespräch.",
+    "expectTitle": "Das erwartet dich:",
+    "expectText": "In einem kostenlosen Erstgespräch entwickelt einer unserer App-Experten ein individuelles Konzept für deine eigene Bestell-App – mit deinem Branding, deiner Speisekarte und 0 % Provision. Unverbindlich und komplett kostenlos.",
+    "expectSubtext": "Deine App kann bereits in 2–3 Wochen live im Apple App Store und Google Play Store sein. Keine Programmierkenntnisse nötig – wir übernehmen alles.",
+    "languages": [
+      { "label": "Deutsch", "flag": "\ud83c\udde9\ud83c\uddea" },
+      { "label": "Englisch", "flag": "\ud83c\uddec\ud83c\udde7" },
+      { "label": "Italienisch", "flag": "\ud83c\uddee\ud83c\uddf9" },
+      { "label": "Persisch", "flag": "\ud83c\uddee\ud83c\uddf7" },
+      { "label": "Russisch", "flag": "\ud83c\uddf7\ud83c\uddfa" },
+      { "label": "Singhalesisch", "flag": "\ud83c\uddf1\ud83c\uddf0" }
+    ],
+    "cta": "Kostenlose Beratung",
+    "teamMembers": [
+      { "name": "Sanjaya Pattiyage", "role": "Gründer & Geschäftsführer" },
+      { "name": "René Ebert", "role": "Gründer & Geschäftsführer" },
+      { "name": "Salvatore Anzaldi", "role": "Head of Sales" },
+      { "name": "Andrej Krutsch", "role": "Head of Operations" }
+    ]
+  }
+}

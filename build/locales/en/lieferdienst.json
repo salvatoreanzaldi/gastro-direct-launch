@@ -1,0 +1,214 @@
+{
+  "seo": {
+    "title": "Set Up Your Delivery Service Without Lieferando — 0 % Commission | Gastro Master",
+    "description": "You already have your restaurant? Now you deliver too — without Lieferando, without commission. Your own ordering system, driver app, and app in the store. Get free consultation now."
+  },
+  "schema": {
+    "headline": "Your Own Delivery Service Without Lieferando — 0 % Commission for Restaurants and Delivery Services",
+    "description": "Set up delivery without Lieferando: own ordering system, 0 % commission, driver app with GPS. For existing restaurants, takeaways, and pizzerias. From €69/month."
+  },
+  "hero": {
+    "badge": "Delivery Service · Existing Businesses 2026",
+    "title1": "You already have your place.",
+    "titleHighlight": "Now you deliver too.",
+    "subtitle1": "Your kitchen is already there. Your regular customers too.",
+    "subtitle2": "With Gastro Master you reach them at home — without Lieferando, without commission.",
+    "cta": "Free Consultation",
+    "scrollLink": "How it works ↓",
+    "pills": ["800+ Businesses", "0 % Commission", "Own App", "Personal Support"],
+    "geoTitle": "What does own delivery service mean?",
+    "geoText": "Your <strong>own delivery service</strong> means: Your customers order directly from you — through your own ordering shop or your own app. You pay no commission to Lieferando, Wolt, or Uber Eats. The customer data belongs to you. You decide on prices, delivery areas, and opening hours. Gastro Master provides the complete technology — from €69 per month, no hidden fees.",
+    "newcomerText": "Don't have your own place yet?",
+    "newcomerLink": "Here's our startup guide →"
+  },
+  "stats": {
+    "title": "The market is growing — and Lieferando profits from it",
+    "text": "The numbers show: Those who deliver now, win. Those who keep paying commission, lose.",
+    "items": [
+      {
+        "value": "€9.9 bn",
+        "label": "projected revenue in the German online delivery market by 2028",
+        "source": "Statista",
+        "href": "https://de.statista.com/prognosen/642308/online-food-delivery-umsatz-in-deutschland"
+      },
+      {
+        "value": "9.41 %",
+        "label": "annual growth in the online delivery market 2025–2028 — the market keeps growing",
+        "source": "Statista",
+        "href": "https://de.statista.com/outlook/dmo/online-food-delivery/deutschland"
+      },
+      {
+        "value": "up to 30 %",
+        "label": "commission Lieferando takes per order — that's your profit you're giving away",
+        "source": "metro.de",
+        "href": "https://www.metro.de/blog/lieferdienste"
+      },
+      {
+        "value": "0 % Commission",
+        "label": "with your own ordering system — not a cent to Lieferando",
+        "source": "Gastro Master",
+        "href": "/kontakt",
+        "isCta": true
+      }
+    ],
+    "ctaText": "Get free consultation now"
+  },
+  "problem": {
+    "badge": "Many restaurant owners know this",
+    "title": "You have regular customers — but can you reach them at home?",
+    "text": "These three problems stand in the way of your own delivery service.",
+    "items": [
+      {
+        "title": "Phone and paper",
+        "text": "Customers call. You write everything on paper. Mistakes happen. Orders get lost. That costs you time and money."
+      },
+      {
+        "title": "30 % commission to Lieferando",
+        "text": "You're on Lieferando — but the platform keeps 30 % of every order. At €3,000 revenue, you lose up to €900 per month."
+      },
+      {
+        "title": "Technology is unclear",
+        "text": "You want to deliver yourself, but don't know how. Own app, own shop — sounds complicated. It's not. We do it for you."
+      }
+    ]
+  },
+  "products": {
+    "badge": "How to deliver yourself — without Lieferando",
+    "title": "Your own system. Everything from one source.",
+    "text": "From ordering to delivery — we set up everything for you.",
+    "featured": {
+      "badge": "Main Product",
+      "category": "Online Shop",
+      "title": "Your own ordering shop. 0 % commission.",
+      "text": "Your customers order directly from you — through your shop, with your logo. You pay no fees to Lieferando. Every order is 100 % yours. We set up the shop — with your menu, your prices, your delivery areas.",
+      "tags": ["0 % Commission", "Your Branding", "Delivery Areas", "Own Prices", "From €69/month"],
+      "linkText": "View Online Shop",
+      "imgAlt": "Online Ordering Shop"
+    },
+    "cards": [
+      {
+        "title": "App System",
+        "tagline": "Your own app in the App Store. Regular customers order with one click.",
+        "features": [
+          "Push notifications — straight to your customers' phones",
+          "Your logo and colors in the app",
+          "Online payment directly in the app",
+          "Update menu anytime"
+        ]
+      },
+      {
+        "title": "POS System",
+        "tagline": "All orders go directly to the register. With the POS system you can also use the driver app — your drivers see routes and orders directly on their phone."
+      },
+      {
+        "title": "Website",
+        "tagline": "So new customers find your restaurant on Google."
+      },
+      {
+        "title": "Transaction Fees",
+        "tagline": "Transaction fees? Your customers can cover them."
+      }
+    ],
+    "cta": "Request Free Consultation",
+    "moreFeatures": "View all features",
+    "moreInfo": "Learn more"
+  },
+  "compare": {
+    "badge": "Comparison",
+    "title": "Why your own system instead of Lieferando?",
+    "text": "Gastro Master vs. Lieferando, Wolt, and Uber Eats — the direct comparison.",
+    "colHeader": "What matters",
+    "colGmBadge": "Recommended",
+    "colGm": "Gastro Master",
+    "colGmSub": "Own System",
+    "colPlatform": "Lieferando / Wolt / Uber Eats",
+    "rows": [
+      { "label": "Commission per order", "gm": "0 %", "platform": "13 to 30 %" },
+      { "label": "Your own design", "gm": "✓ Yes", "platform": "✗ No" },
+      { "label": "Customer data is yours", "gm": "✓ Yes", "platform": "✗ No" },
+      { "label": "Own app in App Store", "gm": "✓ Available", "platform": "✗ Not possible" },
+      { "label": "You decide everything", "gm": "✓ Always", "platform": "✗ Platform decides" },
+      { "label": "Monthly base costs", "gm": "From €69/month", "platform": "None — but commission" }
+    ],
+    "calcBadge": "Example calculation",
+    "calcTitle": "At €3,000 monthly revenue you pay Lieferando",
+    "calcHighlight": "up to €900",
+    "calcTitleEnd": "commission — every month.",
+    "calcText1": "With Gastro Master:",
+    "calcText2": "€0",
+    "calcText3": "commission. That's",
+    "calcText4": "€10,800 per year",
+    "calcText5": " that you keep.",
+    "calcCta": "Free Consultation"
+  },
+  "process": {
+    "badge": "It's that easy",
+    "title": "3 steps to your own delivery service",
+    "text": "You don't need tech skills. We do it for you.",
+    "steps": [
+      {
+        "num": "01",
+        "title": "Free consultation",
+        "text": "We look at your business. No pressure. No cost."
+      },
+      {
+        "num": "02",
+        "title": "We set everything up",
+        "text": "Shop, app, and POS — all ready with your branding. You don't have to do anything yourself."
+      },
+      {
+        "num": "03",
+        "title": "You start delivering",
+        "text": "Your delivery service is running. We're still here for you when you need us."
+      }
+    ]
+  },
+  "trust": {
+    "headline": "800+ restaurants already deliver with Gastro Master",
+    "items": [
+      { "value": "800+", "label": "Businesses in Germany and Austria" },
+      { "value": "5.0 ★", "label": "Google Rating" },
+      { "value": "0 %", "label": "Commission — every order is yours" },
+      { "value": "Own App", "label": "In the App Store — with your logo" }
+    ]
+  },
+  "epitPay": {
+    "title": "Epit Pay",
+    "badge": "Coming soon",
+    "text": "Soon you won't need a separate payment provider. With Epit Pay you get ordering system and payment processing in one. Everything together — simple."
+  },
+  "faq": {
+    "title": "Frequently asked questions about your own delivery service",
+    "text": "Simple answers — so you can get started right away.",
+    "items": [
+      {
+        "q": "How do I offer a delivery service in my restaurant?",
+        "a": "You need an [online ordering system](/produkte/webshop). With it, your customers can order directly from you. Gastro Master sets it up for you — with your logo, your colors, your menu. Everything runs through your system. No commission to Lieferando. More about the [delivery solution](/loesungen/lieferdienst)."
+      },
+      {
+        "q": "What does an own ordering system for delivery services cost?",
+        "a": "The [ordering shop from Gastro Master](/produkte/webshop) costs from €79 per month. Your shop is set up with your branding. You pay no commission — every order is 100 % yours. We set everything up for you. You don't have to program anything yourself."
+      },
+      {
+        "q": "How much commission does Lieferando take?",
+        "a": "Lieferando takes 13 % if you have your own drivers. With Lieferando drivers, it's up to 30 %. At €3,000 monthly revenue, you pay up to €900 commission — every month. That's money you could keep."
+      },
+      {
+        "q": "Is your own delivery service worth it instead of Lieferando?",
+        "a": "Yes — especially if you already have regular customers. Your regulars are happy to order directly from you. You keep all data, you keep control. And you pay no commission. Especially for dishes with low food costs — like pizza or sushi — your own [delivery service](/loesungen/lieferdienst) is very worthwhile."
+      },
+      {
+        "q": "Do I need my own app for my delivery service?",
+        "a": "Not necessarily. The [ordering shop](/produkte/webshop) works without an app — in the browser, on the phone. But a dedicated [app](/produkte/app) has a big advantage: regular customers order with one click. They see your logo on their phone. That strengthens the bond with your restaurant."
+      }
+    ]
+  },
+  "cta": {
+    "badge": "Free Consultation",
+    "title": "We help you start your delivery service.",
+    "text1": "Shop, app, POS — we set up everything.",
+    "text2": "0 % commission. Your branding. Your customers.",
+    "button": "Book Free Consultation",
+    "pills": ["0 % Commission", "800+ Businesses", "5.0 ★ Google", "Personal Support"]
+  }
+}

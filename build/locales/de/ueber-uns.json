@@ -1,0 +1,394 @@
+{
+  "seo": {
+    "title": "Über Gastro Master — Digitale Lösungen für dein Restaurant",
+    "description": "Erfahre unsere Geschichte. Ein Team mit 30+ Mitarbeitenden in 16 Bundesländern, das dich persönlich begleitet. 0 % Provision, 24/7 Support auf Deutsch."
+  },
+  "hero": {
+    "headingPre": "Das ist",
+    "headingHighlight": "Gastro Master",
+    "headingPost": ".",
+    "text": "Wir helfen Gastronomen, digital unabhängig zu werden. Persönlich, fair und mit einem Team, das dich wirklich kennt.",
+    "cta": "Kostenlose Beratung anfragen",
+    "teamLink": "Unser Team kennenlernen ↓"
+  },
+  "trustBar": [
+    {
+      "value": "800+",
+      "label": "Restaurants vertrauen uns"
+    },
+    {
+      "value": "16",
+      "label": "Bundesländer deutschlandweit"
+    },
+    {
+      "value": "30+",
+      "label": "Team Members"
+    },
+    {
+      "value": "Seit 2021",
+      "label": "Erfolgreich am Markt"
+    },
+    {
+      "value": "0 %",
+      "label": "Provision auf Bestellungen"
+    }
+  ],
+  "story": {
+    "badge": "Unsere Geschichte",
+    "heading": "Digitale Power für die Gastronomie. Das ist unsere Mission.",
+    "block1": {
+      "p1": "Sanjaya, unser Gründer und IT-Experte, erkannte das Potenzial: Mit 15 Jahren IT-Erfahrung entwickelte er ein Bestellsystem, das wie große Lieferplattformen funktioniert. Aber ohne maßlose Provisionen.",
+      "p2": "Die Devise war klar: <strong>Faire Zusammenarbeit mit Gastronomen.</strong> Kein Kleingedrucktes, keine versteckten Gebühren. Ein System, das für dich arbeitet.",
+      "img1Alt": "René Ebert berät einen Gastronomen am Laptop"
+    },
+    "block2": {
+      "p1": "René Ebert stieß hinzu, inspiriert von seinen USA-Erfahrungen und dem wachsenden Bedarf an Digitalisierung. Gemeinsam gründeten sie Gastro Master.",
+      "p2": "Heute bieten wir dir ein umfassendes Portfolio: [Apps](/produkte/app), [Bestellshops](/produkte/webshop), [Kassensysteme](/produkte/kassensystem) und [Zahlungsabwicklung](/produkte/transaktionsumlage). Alles entwickelt, damit du effizienter, kundenorientierter und erfolgreicher arbeitest.",
+      "img2Alt": "René Ebert und Gastronom besiegeln Zusammenarbeit per Handschlag"
+    }
+  },
+  "location": {
+    "badge": "Standort",
+    "heading": "Unser Standort: Usingen bei Frankfurt",
+    "subtitle": "Hier entstand Gastro Master. Mit Leidenschaft für die Gastronomie.",
+    "imgAlt": "Gastro Master Standort Usingen bei Frankfurt, Hessen",
+    "p1": "Unser Standort ist in Usingen bei Frankfurt. Doch unser Wirkungsgebiet erstreckt sich über die gesamte Bundesrepublik. Mit Kunden in allen 16 Bundesländern realisieren wir Projekte deutschlandweit und kennen die unterschiedlichen Anforderungen der gastronomischen Vielfalt in jeder Region.",
+    "p2": "Du möchtest uns kennenlernen? Gerne. Besuche uns gerne in Usingen für ein persönliches Gespräch — oder wir sprechen telefonisch oder per Video Call. Ganz wie es dir am besten passt. Beratung auf Augenhöhe bedeutet für uns, dass du die Wahl hast.",
+    "cta": "Kostenlose Beratung"
+  },
+  "timeline": {
+    "badge": "Seit 2021",
+    "heading": "5 Jahre Momentum",
+    "subtitle": "Vom ersten Kunden bis zum eigenen Zahlungssystem – wir bauen die Zukunft der Gastronomie.",
+    "footer": "Wir sind zukunftsorientiert, flexibel und bauen Software, die Gastronomen wirklich weiterbringt.",
+    "nextLabel": "Als Nächstes",
+    "milestones": [
+      {
+        "year": "2021",
+        "title": "Erster Tag und Gründung",
+        "text": "Der Grundstein für eine neue Ära der Gastro-Digitalisierung"
+      },
+      {
+        "year": "2022",
+        "title": "Erste 100 Kunden",
+        "text": "Vertrauen aufgebaut – Wort für Wort, Kunde für Kunde"
+      },
+      {
+        "year": "2023",
+        "title": "Gründung der Epit Global GmbH",
+        "text": "Strukturen für Wachstum und internationale Skalierung"
+      },
+      {
+        "year": "2024",
+        "title": "Erste 500 Kunden",
+        "text": "Ein starkes Netzwerk aus Partnern in der Gastronomie"
+      },
+      {
+        "year": "2025",
+        "title": "Eigenes Kassensystem und erste 700 Kunden",
+        "text": "Cloud-Kasse, Self-Order, Pick-Up – alles aus einer Hand"
+      },
+      {
+        "year": "2026",
+        "title": "Eigene Zahlungsabwicklung (Epit Pay)",
+        "text": "Volle Kontrolle über Zahlungen – unser nächster Meilenstein"
+      }
+    ]
+  },
+  "team": {
+    "badge": "Das Team hinter Gastro Master",
+    "heading": "Echte Menschen.<br/>Echte Begleitung.",
+    "subtitle": "Kein anonymer Softwareanbieter – sondern ein Team mit 30+ Mitarbeitenden, das dich persönlich begleitet.",
+    "linkedinLabel": "LinkedIn Profil",
+    "founders": [
+      {
+        "key": "sanjaya",
+        "name": "Sanjaya Pattiyage",
+        "role": "Gründer & CEO",
+        "focus": "IT & Technologie",
+        "bio": "Langjähriger IT-Spezialist mit Erfahrung in Technologie- und Führungsrollen bei international führenden Unternehmen wie Procter & Gamble. Fokus auf Produkt, Systeme und skalierbare Technologie.",
+        "linkedin": "https://www.linkedin.com/in/sanjaya-pattiyage/"
+      },
+      {
+        "key": "rene",
+        "name": "René Ebert",
+        "role": "Gründer & CEO",
+        "focus": "Vertrieb & Marketing",
+        "bio": "Nach seinem Bachelor in International Business Management entschied er sich für den unternehmerischen Weg. Sein Fokus liegt auf Wachstum, Vertrieb und strategischer Marktentwicklung.",
+        "linkedin": "https://www.linkedin.com/in/rene-ebert/"
+      }
+    ],
+    "members": [
+      {
+        "key": "salvatore",
+        "name": "Salvatore Anzaldi",
+        "role": "Vertriebsleiter",
+        "focus": "Kundenberatung",
+        "bio": "Mehrjährige Vertriebserfahrung. Zuvor im Verkauf mechanischer Luxusuhren bei einem führenden Online-Anbieter wie CHRONEXT tätig – und weiß, dass jede einzelne Komponente zählt.",
+        "linkedin": "https://www.linkedin.com/in/salvatore-a-a42711208/"
+      },
+      {
+        "key": "andrej",
+        "name": "Andrej Krutsch",
+        "role": "Service Customer Manager",
+        "focus": "Kundenbetreuung",
+        "bio": "Zuvor in leitenden Positionen im Lebensmitteleinzelhandel tätig, unter anderem bei Rewe. Bringt fundierte Erfahrung in Kundenservice und Betriebsorganisation mit.",
+        "linkedin": null
+      },
+      {
+        "key": "mohammad",
+        "name": "Mohammad Motakalemi",
+        "role": "Vertrieb",
+        "focus": "Gastronomie-Expertise",
+        "bio": "Ehemaliger Gastronom, der durch seine eigene positive Erfahrung als Kunde den Weg ins Team fand. Er kennt die Herausforderungen der Branche aus erster Hand.",
+        "linkedin": null
+      }
+    ]
+  },
+  "languages": {
+    "heading": "Beratung auf Augenhöhe. In deiner Sprache.",
+    "subtitle": "Unsere Beratung ist persönlich, direkt und auch sprachlich nah an deinem Alltag. Wir sprechen deine Sprache – damit du dich von Anfang an verstanden fühlst.",
+    "items": [
+      {
+        "label": "Deutsch",
+        "flag": "de"
+      },
+      {
+        "label": "Englisch",
+        "flag": "gb"
+      },
+      {
+        "label": "Italienisch",
+        "flag": "it"
+      },
+      {
+        "label": "Persisch",
+        "flag": "ir"
+      },
+      {
+        "label": "Russisch",
+        "flag": "ru"
+      },
+      {
+        "label": "Singhalesisch",
+        "flag": "lk"
+      }
+    ]
+  },
+  "values": {
+    "badge": "Unsere Werte",
+    "heading": "Das glauben wir an",
+    "subtitle": "Unsere Core Values sind die Grundlage für alles, was wir tun.",
+    "items": [
+      {
+        "icon": "diamond",
+        "title": "Fair",
+        "text": "0 % Provision, transparente Preise. Du zahlst nicht für Vermittlung. Du zahlst für echte Lösungen."
+      },
+      {
+        "icon": "handshake",
+        "title": "Persönlich",
+        "text": "Direkter Kontakt mit unserem 30+ Team. Keine Warteschleifen, keine anonyme Hotline."
+      },
+      {
+        "icon": "zap",
+        "title": "Innovation",
+        "text": "Ständig neue Lösungen: Kassensystem, Zahlungsabwicklung, Self-Service. Wir innovieren mit dir."
+      },
+      {
+        "icon": "shield",
+        "title": "Zuverlässig",
+        "text": "24/7 Support. 5 Jahre erfolgreich. Wir sind da, wenn du uns brauchst."
+      }
+    ]
+  },
+  "why": {
+    "badge": "Warum Gastro Master",
+    "heading": "Das macht uns anders",
+    "subtitle": "Warum 800+ Restaurants sich für Gastro Master entscheiden.",
+    "items": [
+      {
+        "title": "Faires Provisionsmodell",
+        "text": "0 % statt 25-30 % bei Lieferplattformen. Wir verdienen nicht an deinen Provisionen. Wir verdienen am Erfolg deines Restaurants."
+      },
+      {
+        "title": "Deutsche Software, direkter Support",
+        "text": "Entwickelt in Deutschland. Support auf Deutsch. Keine fernen Server, kein anonymer Support. Wir sind nah bei dir."
+      },
+      {
+        "title": "Flexible Lösungen",
+        "text": "Von der Web-App über Webshops bis zum eigenen Kassensystem. Du wählst, was du brauchst. Und kannst jederzeit erweitern."
+      },
+      {
+        "title": "Wir wachsen mit dir",
+        "text": "Von 0 bis 800+ Restaurants. Wir kennen die Herausforderungen jeder Größe. Egal ob Einzelbetrieb oder Kette."
+      }
+    ]
+  },
+  "testimonials": {
+    "badge": "Kundenstimmen",
+    "heading": "Was unsere Partner sagen",
+    "subtitle": "Echte Erfahrungen von echten Restaurants.",
+    "items": [
+      {
+        "name": "Marco Greco",
+        "restaurant": "Pizzeria Il Sorriso",
+        "quote": "Mit Gastro Master haben wir unsere Bestell-Prozesse komplett digitalisiert.",
+        "videoId": "Qv-YDj9gjPk"
+      },
+      {
+        "name": "Ha Lim Lee",
+        "restaurant": "Kojo Sushi",
+        "quote": "Der Support ist unglaublich. Wir fühlen uns wirklich persönlich betreut.",
+        "videoId": "JkkVyIFewO0"
+      },
+      {
+        "name": "Georgios Madatsidis",
+        "restaurant": "Artemis Grill",
+        "quote": "Das beste Preis-Leistungs-Verhältnis am Markt. Keine versteckten Gebühren.",
+        "videoId": "Zx_UJJjQTso"
+      },
+      {
+        "name": "Milad Ismail",
+        "restaurant": "Nevada Burger & Steak",
+        "quote": "Ich bekomme bei jeder Bestellung sofort das Geld auf mein Konto. Bei Gastro Master ist alles Flexibel.",
+        "videoId": "A0K7TJ_dwLM"
+      },
+      {
+        "name": "Sven Heinrich",
+        "restaurant": "61 Burger & More",
+        "quote": "Man hat hier einen schnellen und guten WhatsApp Support und die Möglichkeit seinen Betrieb zu strukturieren.",
+        "videoId": "6dBBN_mohWU"
+      }
+    ]
+  },
+  "process": {
+    "badge": "Unser Prozess",
+    "heading": "So arbeiten wir mit dir zusammen",
+    "subtitle": "Transparent und persönlich in 5 Schritten.",
+    "steps": [
+      {
+        "num": "1",
+        "icon": "messageCircle",
+        "title": "Kostenlose Beratung",
+        "text": "Wir lernen dein Restaurant kennen. Was brauchst du? Welche Anforderungen hast du? Gemeinsam finden wir die richtige Lösung."
+      },
+      {
+        "num": "2",
+        "icon": "settings",
+        "title": "Lösung konfigurieren",
+        "text": "Du entscheidest, was du brauchst. Webshop, App, Kassensystem, alles zusammen. Wir zeigen dir die Optionen, du wählst."
+      },
+      {
+        "num": "3",
+        "icon": "graduationCap",
+        "title": "Setup & Training",
+        "text": "Wir richten alles technisch ein. Training für dein Team, persönlich oder online. Du bist am Ende bereit."
+      },
+      {
+        "num": "4",
+        "icon": "rocket",
+        "title": "Go Live",
+        "text": "Dein Restaurant ist live. Deine neuen Systeme funktionieren. Deine Gäste können bereits bestellen."
+      },
+      {
+        "num": "5",
+        "icon": "headphones",
+        "title": "24/7 Support",
+        "text": "Wir sind da. Fragen? Probleme? Neue Anforderungen? Unser Team unterstützt dich rund um die Uhr auf Deutsch."
+      }
+    ]
+  },
+  "faq": {
+    "badge": "FAQ",
+    "heading": "Häufig gestellte Fragen",
+    "subtitle": "Alles was du über Gastro Master wissen musst.",
+    "items": [
+      {
+        "q": "Wie lange dauert das Setup?",
+        "a": "Das hängt von der Lösung ab. Im Durchschnitt ca. 2 Wochen, abhängig davon, welche Systeme du implementierst. Unser Team begleitet dich durch jeden Schritt. Für schnellere Implementierung [kontaktiere uns für eine kostenlose Beratung](/kontakt). Wir finden die beste Lösung für dein Restaurant."
+      },
+      {
+        "q": "Gibt es versteckte Gebühren oder Provisionen?",
+        "a": "Nein. Absolut nicht. Bei Gastro Master zahlst du 0 % Provision. Anders als bei großen Lieferplattformen, die 25-30 % verlangen. Alle Kosten sind transparent. Schau dir unsere [Preisübersicht](/preise) an. Dort siehst du genau, was dich erwartet."
+      },
+      {
+        "q": "Kann ich später noch weitere Lösungen hinzufügen?",
+        "a": "Ja, absolute Flexibilität. Du kannst mit einer [Webseite](/produkte/webseite) starten und später einen [Bestellshop](/produkte/webshop) oder ein [Kassensystem](/produkte/kassensystem) hinzufügen. Jederzeit änderbar. Du entscheidest, was du brauchst."
+      },
+      {
+        "q": "Wie ist euer Support? Bin ich nur eine Nummer?",
+        "a": "Nein. Unser Team mit 30+ Mitarbeitern bietet persönlichen 24/7 Support auf Deutsch. Keine Warteschleifen, keine automatisierten Systeme. Du sprichst mit echten Menschen, die dein Restaurant verstehen."
+      },
+      {
+        "q": "Sind wir als Restaurant zu weit entfernt von Usingen?",
+        "a": "Nein. Wir sind zwar in Usingen bei Frankfurt, arbeiten aber mit Kunden in allen 16 Bundesländern. Egal wo dein Restaurant ist, unser Support ist deutschlandweit verfügbar. Besuche uns gerne persönlich oder nutze Telefon und Video Call. [Buche jetzt deine kostenlose Beratung](/kontakt)."
+      }
+    ]
+  },
+  "cta": {
+    "headingPre": "Bereit,",
+    "headingHighlight": "durchzustarten?",
+    "text": "Lass dich von unserem Team kostenlos beraten. Persönlich, unverbindlich und in deiner Sprache.",
+    "button": "Jetzt beraten lassen",
+    "stats": [
+      {
+        "value": "0 %",
+        "label": "Provision"
+      },
+      {
+        "value": "800+",
+        "label": "aktive Kunden"
+      },
+      {
+        "value": "30+",
+        "label": "Mitarbeitende"
+      },
+      {
+        "value": "Persönlicher",
+        "label": "Support"
+      }
+    ]
+  },
+  "schema": {
+    "home": "Startseite",
+    "pageTitle": "Über uns",
+    "orgDescription": "Digitale Lösungen für die Gastronomie: Bestellsystem, Kassensystem, App und Webseite. 0 % Provision, persönlicher Support."
+  },
+  "googleReviews": {
+    "title": "Bewertungen",
+    "reviewCount_one": "Bewertung",
+    "reviewCount_other": "Bewertungen",
+    "tabLabels": {
+      "Neuste": "Neueste",
+      "Alle": "Alle",
+      "5-Sterne": "5 Sterne"
+    },
+    "loading": "Bewertungen werden geladen...",
+    "noReviews": "Keine Bewertungen für diesen Filter verfügbar.",
+    "expandMore": "Mehr anzeigen",
+    "expandLess": "Weniger anzeigen",
+    "verifiedCustomer": "Verifizierter Kunde",
+    "cta": "Bewerte uns auf Google",
+    "errorTitle": "Ehrliches Feedback ist uns wichtig",
+    "errorText": "Bewertungen werden derzeit geladen. Bitte versuchen Sie es später erneut."
+  },
+  "relative_time": {
+    "vor_einem_tag": "vor 1 Tag",
+    "vor_tagen": "vor {n} Tagen",
+    "vor_einer_woche": "vor 1 Woche",
+    "vor_wochen": "vor {n} Wochen",
+    "vor_einem_monat": "vor 1 Monat",
+    "vor_2_monaten": "vor 2 Monaten",
+    "vor_3_monaten": "vor 3 Monaten",
+    "vor_4_monaten": "vor 4 Monaten",
+    "vor_5_monaten": "vor 5 Monaten",
+    "vor_6_monaten": "vor 6 Monaten",
+    "vor_7_monaten": "vor 7 Monaten",
+    "vor_8_monaten": "vor 8 Monaten",
+    "vor_9_monaten": "vor 9 Monaten",
+    "vor_10_monaten": "vor 10 Monaten",
+    "vor_11_monaten": "vor 11 Monaten",
+    "vor_einem_jahr": "vor einem Jahr"
+  }
+}

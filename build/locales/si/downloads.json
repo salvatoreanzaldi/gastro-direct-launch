@@ -1,0 +1,40 @@
+{
+  "meta": {
+    "title": "බාගත කිරීම් — ධාවක සහ මෘදුකාංග | Gastro Master",
+    "description": "Gastro Master බාගත කිරීම්: මුද්‍රණ ධාවක, මෘදුකාංග සහ කාසු පද්ධතිය හා ඇණවුම් පද්ධතිය සඳහා උපදෙස්. නොමිලේ බාගත කරන්න.",
+    "canonical": "https://gastro-master.de/downloads"
+  },
+  "title": "බාගත කිරීම්",
+  "subtitle": "සියලුම Gastro Master යෙදුම් සහ මෘදුකාංග පැකේජ එක බැල්මකින්.",
+  "printerCard": {
+    "badge": "Windows",
+    "title": "මුද්‍රණ ධාවක",
+    "description": "Epson, Star, Metapace, Citizen සහ අනෙකුත් POS මුද්‍රණ යන්ත්‍ර සඳහා ධාවක",
+    "cta": "විවෘත කරන්න"
+  },
+  "storeLabel": "Store",
+  "categories": [
+    {
+      "category": "Windows",
+      "items": [
+        { "label": "GM Windows", "ext": ".zip" },
+        { "label": "GM Windows Client", "ext": ".zip" }
+      ]
+    },
+    {
+      "category": "Android",
+      "items": [
+        { "label": "GM Terminal – Android", "ext": ".apk" },
+        { "label": "Fully Single APK", "ext": ".apk" },
+        { "label": "GM Merchant – Playstore", "ext": null }
+      ]
+    },
+    {
+      "category": "iOS",
+      "items": [
+        { "label": "GM Terminal – iOS", "ext": null },
+        { "label": "GM Merchant – App Store", "ext": null }
+      ]
+    }
+  ]
+}

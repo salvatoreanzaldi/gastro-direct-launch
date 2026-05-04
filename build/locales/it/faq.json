@@ -1,0 +1,175 @@
+{
+  "seo": {
+    "title": "FAQ — Domande frequenti su Gastro Master | Gastro Master",
+    "description": "Domande frequenti su sistema di cassa (da 69 €/mese), shop online (0 % commissione), app e servizio di consegna — con dati di settore 2025/2026 e fonti. 800+ ristoratori si affidano a Gastro Master."
+  },
+  "hero": {
+    "badge": "{{count}} Domande · {{catCount}} Categorie",
+    "lastUpdate": "Ultimo aggiornamento: marzo 2026",
+    "title1": "Domande frequenti su",
+    "title2": "Gastro Master",
+    "subtitle": "Tutto ciò che deve sapere — chiaramente organizzato in un'unica pagina. Cerchi semplicemente la Sua domanda.",
+    "searchPlaceholder": "Cerchi una domanda…"
+  },
+  "breadcrumb": {
+    "home": "Home",
+    "faq": "FAQ"
+  },
+  "trustBar": [
+    { "value": "800+", "label": "Attività di ristorazione si affidano a noi" },
+    { "value": "5,0 ★", "label": "Valutazione clienti su Google" },
+    { "value": "Conforme TSE", "label": "Tutti i sistemi certificati" },
+    { "value": "Supporto pers.", "label": "Nessun bot — persone reali" }
+  ],
+  "search": {
+    "noResults": "Nessun risultato per \u201c{{query}}\u201d",
+    "results": "{{count}} risultato per \u201c{{query}}\u201d",
+    "resultsPlural": "{{count}} risultati per \u201c{{query}}\u201d",
+    "noMatch": "Nessuna domanda corrispondente trovata.",
+    "askDirectly": "Chieda direttamente",
+    "questionsCount": "{{count}} Domande"
+  },
+  "cta": {
+    "badge": "La Sua domanda non era presente?",
+    "title": "Rispondiamo personalmente.",
+    "subtitle": "Ci scriva — Le rispondiamo entro un giorno lavorativo. Gratuito, senza impegno.",
+    "button": "Richieda una consulenza gratuita",
+    "phone": "+49 (0) 6081 9128913",
+    "email": "info@gastro-master.de"
+  },
+  "categories": [
+    {
+      "id": "allgemein",
+      "label": "Generale e introduzione",
+      "items": [
+        { "id": "was-macht-gastro-master", "q": "Cosa fa Gastro Master?", "a": "Gastro Master Le offre il Suo sistema digitale — con app, shop online, sistema di cassa e sito web. Paga 0 % di commissione e mantiene tutti i dati dei clienti. Oltre 800 attività in Germania si affidano a Gastro Master. Scopra tutti i [prodotti Gastro Master](/produkte)." },
+        { "id": "unterschied-lieferando", "q": "Come si distingue Gastro Master da Lieferando & Co.?", "a": "Lieferando addebita il 13–30 % di commissione su ogni ordine — con Gastro Master paga 0 %. Ottiene il Suo sistema: la Sua app, il Suo shop online, il Suo branding. Nessun algoritmo decide se Lei è visibile. Trovi il confronto sulla nostra [pagina soluzioni](/loesungen)." },
+        { "id": "kosten-allgemein", "q": "Quanto costa l'utilizzo di Gastro Master?", "a": "Lo shop online costa da 79 €/mese, il sistema di cassa da 69 €/mese, il sito web da 49 €/mese (contratto 12 mesi). L'app costa da 149 €/mese. I costi di configurazione vengono discussi individualmente. Tutte le informazioni sulle [pagine prodotti](/produkte)." },
+        { "id": "mindestvertragslaufzeit", "q": "Esiste una durata contrattuale minima?", "a": "Per lo shop online, l'app e il sistema di cassa c'è un preavviso di disdetta di 3 mesi, con possibilità di disdetta mensile. Il sito web ha una durata contrattuale minima di 12 mesi. Per domande ci contatti direttamente tramite la [pagina contatti](/kontakt)." },
+        { "id": "wie-schnell-live", "q": "In quanto tempo ottengo il mio sistema?", "a": "Di norma è online in 2–3 settimane. Questo vale per lo shop online e l'app. Il sistema di cassa viene configurato individualmente. La accompagniamo personalmente dal primo giorno." },
+        { "id": "welche-software-restaurant", "q": "Di quale software ho bisogno per il mio ristorante?", "a": "Dipende dalla Sua attività. Per gli ordini online serve uno [shop online](/produkte/webshop), per la fatturazione un [sistema di cassa](/produkte/kassensystem). Entrambi si possono combinare. Scopra la nostra [soluzione ristorante](/loesungen/restaurant)." },
+        { "id": "kosten-bestellsystem", "q": "Quanto costa un sistema di ordinazione digitale per la ristorazione?", "a": "Uno shop online proprio costa da 79 €/mese — con 0 % di commissione. Con Lieferando paga il 13–30 % su ogni ordine: con 5.000 € di fatturato mensile sono fino a 1.500 € in più. Maggiori informazioni sulla [soluzione delivery](/loesungen/lieferdienst)." },
+        { "id": "fuer-wen-geeignet", "q": "Per chi è adatto Gastro Master?", "a": "Per ristoranti, caffè, panetterie, servizi di consegna e sistemi di franchising — nuove attività o attività esistenti. Panoramica sulla [pagina soluzioni](/loesungen)." }
+      ]
+    },
+    {
+      "id": "lieferdienst-gruenden",
+      "label": "Avviare un servizio di consegna",
+      "items": [
+        { "id": "kosten-gruendung", "q": "Quanto costa avviare un servizio di consegna?", "a": "Il costo maggiore è la tecnologia. Con Gastro Master ottiene shop online e app senza commissioni. In più vengono alimenti, imballaggi ed eventualmente fattorini. Tutti i dettagli su [avviare un servizio di consegna](/loesungen/lieferservice-gruenden)." },
+        { "id": "ohne-restaurant", "q": "Ho bisogno di un ristorante per avviare un servizio di consegna?", "a": "No. Può iniziare anche come ghost kitchen — senza sala per gli ospiti. Ciò che serve: una cucina commerciale, una licenza di esercizio e un sistema di ordinazione. Maggiori informazioni sulla pagina [avviare un servizio di consegna](/loesungen/lieferservice-gruenden)." },
+        { "id": "provision-lieferando", "q": "Quanta commissione addebita Lieferando?", "a": "Lieferando addebita ai ristoranti il 14 % del valore dell'ordine più 0,69 € per transazione online (modello marketplace, stato 2025). Con 500 ordini da 20 € al mese, sono circa 1.745 € — solo per la piattaforma, ogni mese. Se utilizza anche il servizio di consegna proprio di Lieferando, la commissione sale fino al 30 %. Con il proprio [shop online](/produkte/webshop) paga 0 %.", "source": "Lieferfabrik, modello commissioni Lieferando 2024/2025" },
+        { "id": "lohnt-sich-2026", "q": "Conviene un proprio servizio di consegna nel 2026?", "a": "Sì — se utilizza il Suo sistema. Secondo Statista, nel 2024 oltre 20 milioni di tedeschi hanno utilizzato regolarmente ordinazioni online di cibo. Chi si affida al proprio sistema mantiene il margine. Dettagli su [avviare un servizio di consegna nel 2026](/loesungen/lieferservice-gruenden).", "source": "Statista, Online Food Delivery Germania 2024" },
+        { "id": "genehmigungen", "q": "Quali autorizzazioni servono per un servizio di consegna?", "a": "Serve una registrazione dell'attività e un'autorizzazione dell'ufficio sanitario. Per un servizio di consegna proprio serve anche un'autorizzazione al trasporto. Tutti i passaggi sulla pagina [avviare un servizio di consegna](/loesungen/lieferservice-gruenden)." }
+      ]
+    },
+    {
+      "id": "lieferdienst-erweitern",
+      "label": "Espandere il servizio di consegna",
+      "items": [
+        { "id": "lieferservice-anbieten", "q": "Come posso offrire un servizio di consegna?", "a": "Serve un sistema di ordinazione che riceve gli ordini e li inoltra alla cucina. Con Gastro Master ottiene il proprio [shop online](/produkte/webshop) e, se necessario, un'[app](/produkte/app). I clienti ordinano direttamente da Lei — senza intermediari." },
+        { "id": "bestellsystem-kosten", "q": "Quanto costa un proprio sistema di ordinazione?", "a": "Lo shop online costa da 79 €/mese — paga 0 % di commissione. Con Lieferando paga il 13–30 % su ogni ordine. Maggiori informazioni sulla pagina [espandere il servizio di consegna](/loesungen/lieferdienst)." },
+        { "id": "lieferando-vs-eigen", "q": "Conviene un servizio di consegna proprio rispetto a Lieferando?", "a": "Sì — soprattutto a partire da un fatturato mensile di 3.000 €. Con 5.000 € di fatturato risparmia fino a 1.500 € al mese rispetto a Lieferando. Guardi il confronto sulla nostra [pagina delivery](/loesungen/lieferdienst)." },
+        { "id": "eigene-app-lieferdienst", "q": "Ho bisogno di un'app propria per il mio servizio di consegna?", "a": "Non necessariamente. Il proprio [shop online](/produkte/webshop) è sufficiente per molte attività. Un'[app](/produkte/app) dedicata conviene quando si vogliono fidelizzare i clienti abituali con notifiche push. La consigliamo volentieri gratuitamente." },
+        { "id": "wechsel-von-lieferando", "q": "Come passo da Lieferando al mio sistema di ordinazione?", "a": "Il passaggio richiede 2–3 settimane: configuriamo il Suo shop online, Lei comunica il nuovo link ai Suoi clienti abituali — tramite adesivi, e-mail e social media. Menù e immagini li trasferiamo direttamente. Molte attività ricevono i primi ordini propri già nella prima settimana. Dettagli sulla [soluzione delivery](/loesungen/lieferdienst)." }
+      ]
+    },
+    {
+      "id": "restaurant-kassensystem",
+      "label": "Ristorante e sistema di cassa",
+      "items": [
+        { "id": "kassensystem-restaurant", "q": "Quale sistema di cassa serve per il mio ristorante?", "a": "Serve un sistema di cassa conforme TSE — obbligatorio in Germania dal 2020. Il [sistema di cassa](/produkte/kassensystem) Gastro Master include gestione tavoli, collegamento stampante scontrini e TSE integrata. Da 69 €/mese — maggiori informazioni sulla [soluzione ristorante](/loesungen/restaurant)." },
+        { "id": "was-ist-tse", "q": "Cos'è la TSE e ne ho bisogno?", "a": "TSE sta per Technische Sicherheitseinrichtung (dispositivo tecnico di sicurezza) — obbligatorio per tutti i sistemi di cassa elettronici in Germania da marzo 2021 (KassenSichV, §146a AO). Novità dal 1° luglio 2025: tutti i registratori di cassa devono essere inoltre registrati presso l'ufficio delle imposte tramite ELSTER. Il [sistema di cassa](/produkte/kassensystem) Gastro Master è certificato TSE e supporta la registrazione.", "source": "Kassensicherungsverordnung (KassenSichV), BMF; § 146a comma 4 AO, stato luglio 2025" },
+        { "id": "kassensystem-kosten", "q": "Quanto costa un sistema di cassa per la ristorazione?", "a": "Il sistema di cassa Gastro Master costa da 69 €/mese — inclusi TSE, collegamento stampante scontrini e supporto personale. Dettagli sulla [pagina sistema di cassa](/produkte/kassensystem)." },
+        { "id": "restaurant-online-sichtbar", "q": "Come rendo visibile online il mio ristorante?", "a": "Con un proprio [sito web](/produkte/webseite) e uno [shop online per ordinazioni](/produkte/webshop). Entrambi i prodotti sono ottimizzati per la visibilità su Google. Maggiori informazioni sulla nostra [soluzione ristorante](/loesungen/restaurant)." },
+        { "id": "kassensystem-pflicht", "q": "Come ristoratore devo avere un sistema di cassa?", "a": "Sì. Dal 2021 l'ufficio delle imposte richiede una cassa certificata TSE. Le attività senza sistema di cassa TSE rischiano sanzioni fino a 25.000 €. Il nostro [sistema di cassa](/produkte/kassensystem) è conforme TSE e immediatamente operativo.", "source": "Abgabenordnung §146a; KassenSichV" },
+        { "id": "kassenmeldepflicht-2025", "q": "Cos'è l'obbligo di registrazione cassa 2025 — sono coinvolto?", "a": "Sì. Dal 1° luglio 2025 tutti i ristoratori con sistemi di cassa elettronici devono registrare la loro cassa presso l'ufficio delle imposte tramite ELSTER (§ 146a comma 4 Abgabenordnung). Le casse esistenti dovevano essere registrate entro il 31 luglio 2025, le nuove casse entro un mese dall'acquisto. Il [sistema di cassa](/produkte/kassensystem) Gastro Master La supporta — certificato TSE e pronto per la registrazione.", "source": "Bundesministerium der Finanzen, § 146a comma 4 AO; stato luglio 2025" }
+      ]
+    },
+    {
+      "id": "cafe-baeckerei",
+      "label": "Caffè e panetteria",
+      "items": [
+        { "id": "kassensystem-baeckerei", "q": "Quale sistema di cassa serve per la mia panetteria?", "a": "Un sistema di cassa conforme TSE — è obbligatorio per legge. Il [sistema di cassa](/produkte/kassensystem) Gastro Master è certificato TSE, veloce nell'elaborazione e costa da 69 €/mese. Maggiori informazioni sulla [soluzione caffè e panetteria](/loesungen/cafe-baeckerei)." },
+        { "id": "torten-vorbestellung", "q": "Posso offrire torte per la preordinazione online?", "a": "Sì. Con lo [shop online](/produkte/webshop) Gastro Master, i clienti possono preordinare torte, catering e altri prodotti online. Vede tutti gli ordini centralmente — nessun telefono necessario. Dettagli sulla pagina [caffè e panetteria](/loesungen/cafe-baeckerei)." },
+        { "id": "kassensystem-cafe", "q": "Quanto costa un sistema di cassa per caffè?", "a": "Il sistema di cassa Gastro Master costa da 69 €/mese — inclusi TSE e supporto personale. Tutti i dettagli nella [panoramica sistema di cassa](/produkte/kassensystem)." },
+        { "id": "tse-baeckerei", "q": "Come panetteria ho bisogno di una cassa TSE?", "a": "Sì. Tutte le attività in Germania con sistema di cassa necessitano dal 2020 di una cassa certificata TSE — panetteria, caffè e ristorante inclusi. Il nostro [sistema di cassa](/produkte/kassensystem) soddisfa tutti i requisiti." },
+        { "id": "online-bestellungen-cafe", "q": "Come posso accettare ordini online come caffè?", "a": "Con lo [shop online](/produkte/webshop) Gastro Master. I clienti ordinano online in anticipo, Lei prepara tutto — nessuna attesa, nessuno stress. Ideale per torte, pacchetti colazione e catering — maggiori informazioni sulla [soluzione caffè e panetteria](/loesungen/cafe-baeckerei)." }
+      ]
+    },
+    {
+      "id": "franchise",
+      "label": "Franchising",
+      "items": [
+        { "id": "franchise-aufbauen", "q": "Come creo un sistema di franchising nella ristorazione?", "a": "Un franchising gastronomico necessita di branding uniforme, processi standardizzati e un'infrastruttura tecnologica centrale. Gastro Master fornisce app, shop online, sistema di cassa e sito web — gestiti centralmente, con branding uniforme. Tutti i dettagli sulla [soluzione franchising](/loesungen/franchise)." },
+        { "id": "software-franchise", "q": "Quale software serve per un franchising gastronomico?", "a": "Serve un sistema che gestisce tutte le sedi con lo stesso sistema di ordinazione, la stessa app e lo stesso sistema di cassa. Gastro Master offre esattamente questo — gestione centralizzata, 0 % di commissione. Alla [pagina franchising](/loesungen/franchise)." },
+        { "id": "kosten-franchise", "q": "Quanto costa l'infrastruttura digitale per un sistema di franchising?", "a": "Il prezzo dipende dal numero di sedi e dai prodotti desiderati. Creiamo un'offerta individuale — guardi prima la [soluzione franchising](/loesungen/franchise) o ci scriva tramite la [pagina contatti](/kontakt)." },
+        { "id": "mehrere-standorte", "q": "Come gestisco gli ordini su più sedi di franchising?", "a": "Con Gastro Master ogni sede ottiene il proprio sistema — configurato centralmente, gestito localmente. Tutti gli ordini passano dallo stesso backend. Dettagli sulla [pagina franchising](/loesungen/franchise)." },
+        { "id": "eine-app-franchise", "q": "Ogni sede di franchising ha bisogno di un'app propria?", "a": "No. Ha un'unica app per tutte le sedi — i clienti scelgono la sede all'apertura. Branding uniforme, gestione centralizzata. Maggiori informazioni sulla [soluzione franchising](/loesungen/franchise)." }
+      ]
+    },
+    {
+      "id": "produkte-technik",
+      "label": "Prodotti e tecnologia",
+      "items": [
+        { "id": "zahlungsmethoden", "q": "Quali metodi di pagamento sono supportati?", "a": "Gastro Master supporta tutti i metodi di pagamento comuni: carta di credito, bancomat, PayPal, Apple Pay e Google Pay. Dettagli sulla [pagina shop online](/produkte/webshop)." },
+        { "id": "eigene-domain", "q": "Posso utilizzare il mio dominio?", "a": "Sì. Può utilizzare il Suo dominio esistente o configurarne uno nuovo — La supportiamo noi. Maggiori informazioni sulla [pagina shop online](/produkte/webshop)." },
+        { "id": "webshop-ohne-app", "q": "Posso usare lo shop online senza l'app?", "a": "Sì. [Shop online](/produkte/webshop) e [app](/produkte/app) sono prodotti separati. Molte attività iniziano con lo shop online e aggiungono l'app in seguito. Entrambi funzionano indipendentemente." },
+        { "id": "seo-webseite", "q": "Ci sono opzioni aggiuntive per SEO o un sito web?", "a": "Sì. Gastro Master offre [siti web](/produkte/webseite) personalizzati — dal one-pager a 49 €/mese fino a realizzazioni individuali. Tutti i siti web sono ottimizzati per la visibilità su Google." },
+        { "id": "mehrere-standorte-technik", "q": "Il sistema è adatto per più sedi?", "a": "Sì. Gastro Master funziona per singole attività e sistemi di franchising con molte sedi. Gestione centralizzata, branding uniforme. Dettagli sull'[infrastruttura franchising](/loesungen/franchise)." },
+        { "id": "design-anpassen", "q": "Posso personalizzare il design e il menù da solo?", "a": "Sì. Menù, immagini, prezzi e categorie — può modificare tutto da solo, in qualsiasi momento, senza conoscenze tecniche. Il Suo branding viene integrato durante la configurazione. Maggiori informazioni sulle [personalizzazioni dello shop online](/produkte/webshop)." },
+        { "id": "bilder-gerichte", "q": "È possibile integrare le immagini dei piatti?", "a": "Sì. Può caricare un'immagine per ogni piatto. Secondo gli studi, i piatti con immagini vengono ordinati fino al 30 % più spesso. Dettagli nell'[app per ordinazioni](/produkte/app).", "source": "Studio sulla progettazione visiva dei menù, 2023" },
+        { "id": "keine-werbung", "q": "Nel mio shop o nell'app c'è pubblicità di terzi?", "a": "No. Il Suo shop online e la Sua app sono privi di pubblicità — nessun logo di terzi, nessuna pubblicità esterna. Lei è il marchio. Questa è la differenza rispetto a Lieferando. Maggiori informazioni sulla [pagina app](/produkte/app)." },
+        { "id": "umsatz-pruefen", "q": "Come verifico il mio fatturato?", "a": "Tramite la Sua dashboard personale può visualizzare tutti gli ordini, il fatturato e le statistiche in tempo reale. I report possono essere esportati. Dettagli sulla [pagina sistema di cassa](/produkte/kassensystem)." },
+        { "id": "epit-pay", "q": "Cos'è Epit Pay?", "a": "Epit Pay è la soluzione di pagamento propria di Gastro Master — sviluppata specificamente per la ristorazione. Collega cassa, sistema di ordinazione e gestione dei pagamenti da un'unica fonte. Epit Pay è già integrato in tutti i prodotti Gastro Master. Maggiori informazioni sulla [pagina supplemento transazione](/produkte/transaktionsumlage)." },
+        { "id": "transaktionsumlage", "q": "Come funziona il supplemento transazione?", "a": "Il supplemento transazione Le permette di trasferire le commissioni di pagamento ai Suoi clienti — invece di sostenerle Lei stesso. In molti Paesi europei è uno standard. Le condizioni individuali vengono discusse in sede di consulenza. Maggiori informazioni sulla [pagina supplemento transazione](/produkte/transaktionsumlage)." }
+      ]
+    },
+    {
+      "id": "bestellung-betrieb",
+      "label": "Ordini e operatività",
+      "items": [
+        { "id": "zubereitungszeit", "q": "Come posso impostare il tempo di preparazione per gli ordini?", "a": "Nel backend imposta il tempo di preparazione standard — ad es. 30 minuti. I clienti vedono il tempo di consegna stimato direttamente al momento dell'ordine. Dettagli sulla [pagina app](/produkte/app)." },
+        { "id": "verlaengerte-zubereitungszeit", "q": "Come viene informato il cliente di un tempo di preparazione prolungato?", "a": "Tramite notifica push nell'app e via e-mail — direttamente dal Suo backend. I clienti restano informati senza che Lei debba chiamare. Maggiori informazioni nella [panoramica app](/produkte/app)." },
+        { "id": "klingelton", "q": "Posso personalizzare il suono di notifica per gli ordini?", "a": "Sì. Nel backend imposta come viene notificato dei nuovi ordini — forte, discreto o vibrazione. Dettagli sulla [configurazione del sistema di ordinazione](/produkte/webshop)." },
+        { "id": "rabattaktionen", "q": "Come posso impostare promozioni e sconti?", "a": "Nel backend c'è una sezione dedicata agli sconti. Può impostare sconti percentuali, importi minimi d'ordine e periodi di validità. Tutte le funzionalità dell'[app per la ristorazione](/produkte/app)." },
+        { "id": "coupon-codes", "q": "Come funzionano i codici coupon digitali?", "a": "Crea codici coupon direttamente nel backend — con importo fisso o sconto percentuale. I clienti inseriscono il codice al checkout. Maggiori informazioni sul [sistema di ordinazione](/produkte/webshop)." },
+        { "id": "push-nachrichten", "q": "I clienti possono essere informati tramite l'app? (Notifiche push)", "a": "Sì. Può inviare notifiche push direttamente dal backend a tutti gli utenti dell'app — ad es. \"Offerta speciale oggi!\". Funziona su iOS e Android. Dettagli su [app e notifiche push](/produkte/app)." },
+        { "id": "tagesgerichte", "q": "Posso mostrare piatti del giorno nell'app?", "a": "Sì. Può attivare o disattivare piatti del giorno, offerte speciali e prodotti stagionali in qualsiasi momento — senza supporto. Dettagli sulle [funzionalità dell'app](/produkte/app)." },
+        { "id": "speisekarte-uhrzeiten", "q": "Posso gestire il menù per fasce orarie?", "a": "Sì. Categorie e prodotti possono essere mostrati e nascosti in orari specifici — ad es. colazione solo fino alle 11. Maggiori informazioni nel [sistema di ordinazione online](/produkte/webshop)." }
+      ]
+    },
+    {
+      "id": "bondrucker-hardware",
+      "label": "Stampante scontrini e hardware",
+      "items": [
+        { "id": "drucker-kein-internet", "q": "Cosa succede se la stampante perde la connessione internet?", "a": "Gli ordini vengono memorizzati temporaneamente e stampati non appena la connessione viene ristabilita. In caso di emergenza può visualizzare tutti gli ordini sullo schermo. Dettagli su [stampante scontrini e cassa](/produkte/kassensystem)." },
+        { "id": "bluetooth-drucker", "q": "Posso collegare la stampante scontrini via Bluetooth?", "a": "Sì. Le nostre stampanti scontrini supportano WiFi e Bluetooth — ideale per caffè o banconi senza cablaggio fisso. Maggiori informazioni nella [sezione sistema di cassa](/produkte/kassensystem)." },
+        { "id": "tagesbericht-drucken", "q": "Come posso stampare il rapporto giornaliero?", "a": "Nel backend sotto \"Report\" stampa il rapporto giornaliero con un clic — direttamente tramite la stampante scontrini collegata. Dettagli sul [software cassa](/produkte/kassensystem)." },
+        { "id": "ersatzteile", "q": "Cosa faccio se ho bisogno di pezzi di ricambio?", "a": "Contatti il nostro supporto — consegniamo i pezzi di ricambio di norma entro 1–2 giorni lavorativi. Contatto tramite il nostro [modulo di contatto](/kontakt)." },
+        { "id": "drucker-ausfall", "q": "Cosa succede se la stampante si guasta durante l'attività?", "a": "Gli ordini restano visibili su tablet o smartphone e può confermarli. Il nostro supporto è raggiungibile direttamente. Maggiori informazioni sull'[integrazione stampante scontrini](/produkte/kassensystem)." }
+      ]
+    },
+    {
+      "id": "zahlen-trends",
+      "label": "Numeri e tendenze del settore",
+      "items": [
+        { "id": "liefermarkt-deutschland-2025", "q": "Quanto è grande il mercato del delivery online in Germania nel 2025?", "a": "Il mercato del delivery online in Germania è stimato secondo Statista a circa 18,75 miliardi di euro nel 2025 — con una crescita annua del 9,4 % fino al 2028. Circa il 38,9 % delle famiglie tedesche utilizza il delivery di cibo online. Con il proprio [sistema di ordinazione](/produkte/webshop) beneficia direttamente della crescita del mercato — senza commissioni.", "source": "Statista, Online Food Delivery Outlook Germania 2025", "sourceHref": "https://www.statista.com/outlook/emo/online-food-delivery/germany" },
+        { "id": "lieferando-provision-kalkulation", "q": "Quanto costa realmente Lieferando ai ristoranti al mese?", "a": "Lieferando addebita il 14 % del valore dell'ordine più 0,69 € per transazione. In concreto: con 500 ordini da 20 € al mese paga circa 1.745 € — ogni mese. Con 1.000 ordini sono già circa 3.490 €. Un proprio [shop online](/produkte/webshop) con sistema di ordinazione integrato costa da 79 €/mese — con 0 % di commissione. La differenza può superare i 40.000 € all'anno.", "source": "Condizioni partner Lieferando, stato 2025; calcolo proprio", "sourceHref": "https://www.lieferando.de/partner" },
+        { "id": "gastronomiebetriebe-deutschland", "q": "Quante attività di ristorazione ci sono in Germania?", "a": "In Germania ci sono secondo DEHOGA circa 153.545 ristoranti e bar (stato 2024). L'intero settore alberghiero e della ristorazione comprende 206.105 attività con circa 2,2 milioni di dipendenti. Il fatturato annuo della ristorazione è di 64,3 miliardi di euro — tuttavia i fatturati reali nel 2025 sono ancora circa il 15 % al di sotto dei livelli pre-crisi del 2019. Gastro Master supporta già oltre 800 di queste attività con [soluzioni digitali per la ristorazione](/loesungen).", "source": "DEHOGA Bundesverband; Statistisches Bundesamt, 2025/2026", "sourceHref": "https://www.dehoga-bundesverband.de/zahlen-fakten/" },
+        { "id": "kassenmeldepflicht-fakten", "q": "Cosa cambia per i ristoratori nel 2025 riguardo al sistema di cassa?", "a": "Due novità importanti: primo, dal 1° luglio 2025 è in vigore l'obbligo di registrazione della cassa — tutti i registratori devono essere registrati tramite ELSTER (§ 146a comma 4 AO). Secondo, le violazioni della KassenSichV e dell'Abgabenordnung comportano sanzioni fino a 25.000 €. Il [sistema di cassa](/produkte/kassensystem) Gastro Master è certificato TSE, pronto per la registrazione e conforme alla legge.", "source": "Bundesministerium der Finanzen; § 146a AO; KassenSichV, stato 2025", "sourceHref": "https://www.gesetze-im-internet.de/ao_1977/__146a.html" },
+        { "id": "digitalisierung-gastronomie-2026", "q": "Quali tendenze dominano la ristorazione nel 2026?", "a": "Il 59 % dei ristoratori intende investire nella digitalizzazione secondo DEHOGA. Gli ordini online crescono a circa il 9,4 % all'anno — più velocemente di qualsiasi altro tipo di ordine. Le ghost kitchen — cucine senza sala per gli ospiti che producono esclusivamente per le consegne — diventano sempre più popolari come modello a basso costo. Chi introduce ora una propria [app](/produkte/app) o un [shop online](/produkte/webshop) è in vantaggio sulla concorrenza.", "source": "DEHOGA Branchenbericht 2024/2025; Statista, Online Food Delivery Outlook Germania 2025", "sourceHref": "https://www.dehoga-bundesverband.de/zahlen-fakten/" },
+        { "id": "eigener-shop-vs-lieferando-vergleich", "q": "Quali sono i vantaggi strategici di uno shop online proprio rispetto a Lieferando?", "a": "I costi parlano da soli (vedi domanda sopra) — ma i vantaggi strategici sono altrettanto importanti: i dati dei clienti appartengono a Lei, non alla piattaforma. Può contattare i clienti abituali direttamente via e-mail o [app](/produkte/app) per il remarketing. Decide Lei zone di consegna, orari di apertura e prezzi — senza obbligo di parità di prezzo. Ed è indipendente dagli algoritmi che decidono quanto è visibile. Maggiori informazioni sulla [pagina soluzione delivery](/loesungen/lieferdienst).", "source": "Contratto partner Lieferando, condizioni parità prezzo 2025", "sourceHref": "https://www.lieferando.de/partner" }
+      ]
+    }
+  ],
+  "schema": {
+    "breadcrumb": {
+      "home": "Home",
+      "faq": "FAQ"
+    },
+    "org": {
+      "name": "Gastro Master"
+    }
+  }
+}

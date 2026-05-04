@@ -1,0 +1,186 @@
+{
+  "seo": {
+    "title": "Gastronomie Software Preise 2026 — ab 49 € | Gastro Master",
+    "description": "Webshop ab 79 €, Webseite ab 49 €, Kasse ab 69 € — 0 % Provision, persönliche Einrichtungsbegleitung. Jetzt kostenlos beraten lassen."
+  },
+  "hero": {
+    "badge": "Preise 2026 · Gastro Master",
+    "title1": "Gastro Master Preise —",
+    "titleHighlight": "transparent, fair & klar.",
+    "desc1": "Alle Pakete inklusive Einrichtung, Support und Updates.",
+    "desc2": "Keine Provision, keine Überraschungen.",
+    "pills": [
+      "Persönliche Einrichtungsbegleitung",
+      "3 Monate Kündigungsfrist",
+      "800+ Betriebe",
+      "Persönlicher Support"
+    ],
+    "cta": "Kostenloses Beratungsgespräch"
+  },
+  "referral": {
+    "badge": "Empfehlungsprogramm",
+    "title1": "Empfiehl",
+    "title2": "uns weiter — spare jeden Monat.",
+    "desc": "Für jede erfolgreiche Empfehlung bekommst du einen kompletten Monat gratis.",
+    "steps": [
+      { "num": "1", "title": "Empfehlen", "text": "Du empfiehlst Gastro Master an einen anderen Gastronomen." },
+      { "num": "2", "title": "Vertrag", "text": "Deine Empfehlung schließt einen Vertrag ab und nennt deinen Namen." },
+      { "num": "3", "title": "Gratis-Monat", "text": "Du bekommst einen kompletten Monat gratis. Automatisch." }
+    ],
+    "stepLabel": "Schritt",
+    "notice": "Wichtig: ",
+    "noticeText": "Dein Gratis-Monat wird erst gutgeschrieben, wenn deine Empfehlung einen Vertrag abschließt. Eine Empfehlung allein reicht nicht.",
+    "noLimit": "Kein Limit.",
+    "noLimitText": "5 Empfehlungen = 5 Gratis-Monate. Je mehr du empfiehlst, desto mehr sparst du.",
+    "cta": "Du kennst jemanden? Schreib uns einfach"
+  },
+  "addonsOrder": {
+    "badge": "Add-ons · Bestellsystem",
+    "title": "Bestellsystem erweitern",
+    "desc": "Ergänze dein Bestellsystem nach Bedarf — jederzeit zuschaltbar.",
+    "txBadge": "Add-on · Top-Seller",
+    "txTitle": "Transaktionsumlage",
+    "txDesc": "Gib Zahlungsgebühren automatisch und transparent an deine Kunden weiter — du behältst 100 % deines Nettoumsatzes.",
+    "calcLabel": "Gebühren-Rechner",
+    "calcOrdersLabel": "Bestellungen / Monat",
+    "calcCartLabel": "Ø Warenkorbwert",
+    "calcResult": "Zahlungsgebühren pro Monat",
+    "calcPaypal": "PayPal: 2,99 % + 0,39 € pro Transaktion",
+    "calcStripe": "Stripe (Apple Pay, Visa, MC, Klarna): 1,5 % + 0,25 €",
+    "calcSaving": "Mit Umlage trägst du davon 0 €.",
+    "txMore": "Mehr erfahren",
+    "flyerBadge": "Add-on · App & Webshop",
+    "flyerTitle": "QR-Code Flyer",
+    "flyerPrice": "ab 65 €",
+    "flyerPriceDetail": "/ 2.500 Stück",
+    "flyerHighlight": "Die ersten 2.500 Flyer sind bei jedem Abo-Abschluss kostenlos inklusive.",
+    "flyerFeatures": [
+      "DIN-A6, doppelseitig gedruckt",
+      "Eigenes Branding inklusive",
+      "Weitere Mengen jederzeit nachbestellbar"
+    ],
+    "flyerPricelistLabel": "Preisliste"
+  },
+  "kasse": {
+    "badge": "Kassensystem",
+    "title": "Die Gastro Master Cloud-Kasse",
+    "desc": "TSE-konform, GoBD-zertifiziert — für Restaurant, Lieferdienst und Abholung.",
+    "legalNote": "TSE-Pflicht seit 01.01.2020 (§146a AO, KassenSichV) — Bußgelder bis 25.000 € bei fehlendem Nachweis.",
+    "cardBadge": "Cloud-Kassensoftware",
+    "price": "ab 69 €",
+    "priceDetail": "/ Monat (netto)",
+    "priceSub": "3 Monate Kündigungsfrist · persönliche Einrichtungsbegleitung",
+    "features": [
+      "TSE-konforme Cloud-Kassensoftware",
+      "GoBD-konform — rechtssicher für Betriebsprüfungen",
+      "Bis zu 4 Kassen pro Lizenz",
+      "Tisch-, Liefer- & Abholbetrieb",
+      "Cloud-Backoffice & Statistiken",
+      "Persönlicher Support per WhatsApp",
+      "3 Monate Kündigungsfrist"
+    ],
+    "cta": "Kostenlose Beratung",
+    "imgAlt": "Gastro Master Cloud-Kassensystem Hardware"
+  },
+  "addonsKasse": {
+    "badge": "Add-ons · Kassensystem",
+    "title": "Kassensystem erweitern",
+    "desc": "Modulare Add-ons für deinen Betrieb — nur was du wirklich brauchst.",
+    "items": [
+      {
+        "badge": "Add-on",
+        "title": "Fahrer-App mit GPS",
+        "price": "+ 10 €",
+        "priceDetail": "/ Monat pro Fahrer (netto)",
+        "features": [
+          "Live-GPS-Tracking für Fahrer",
+          "Automatische Routen-Optimierung",
+          "Direkte Kommunikation mit Küche",
+          "Lieferzeit-Schätzung für Kunden"
+        ]
+      },
+      {
+        "badge": "Add-on",
+        "title": "QR-Tischsystem",
+        "price": "+ 50 €",
+        "priceDetail": "/ Monat für 5 Tische, +5 € je weiteren",
+        "features": [
+          "Bestellen per QR-Code am Tisch",
+          "Kein App-Download nötig",
+          "Direkt in Kassensystem integriert",
+          "Bar-System inklusive"
+        ]
+      },
+      {
+        "badge": "Add-on",
+        "title": "Self-Ordering Terminal",
+        "price": "Auf Anfrage",
+        "priceDetail": "Hardware individuell konfigurierbar",
+        "features": [
+          "Kiosk-System für Selbstbestellung",
+          "Reduziert Wartezeiten",
+          "Voll integriert in POS",
+          "Individuell gebrandetes Display"
+        ]
+      }
+    ],
+    "footnote": "Alle Preise zzgl. MwSt. · Hardware und Sonderanforderungen nach Bedarf."
+  },
+  "integration": {
+    "badge": "Integration",
+    "title": "So arbeiten die Produkte zusammen",
+    "desc": "Alle Produkte sind nativ miteinander verknüpft — kein manuelles Übertragen, kein Chaos.",
+    "hubLabel": "Zentral",
+    "items": [
+      { "title": "Webseite", "text": "Deine digitale Visitenkarte – Google-optimiert, professionell." },
+      { "title": "Bestellsystem", "text": "Online-Shop mit 0 % Provision auf deiner eigenen Domain." },
+      { "title": "App", "text": "Deine eigene App unter deinem Namen im App Store." },
+      { "title": "Kassensystem", "text": "TSE-konforme Cloud-Kasse für Tisch, Abholung & Lieferung." }
+    ],
+    "connTitle": "Alles in einem System — zentral gesteuert",
+    "connDesc": "Bestellungen aus dem Webshop, der App und der Kasse laufen in einem zentralen Dashboard zusammen. Alle Statistiken, alle Standorte, ein Login."
+  },
+  "faq": {
+    "badge": "FAQ",
+    "title": "Häufige Fragen zu den Preisen",
+    "desc": "Weitere Fragen? Unser Team antwortet innerhalb von 24 Stunden.",
+    "items": [
+      {
+        "q": "Was kostet das Kassensystem von Gastro Master?",
+        "a": "Das [Gastro Master Kassensystem](/produkte/kassensystem) ist ab 69 € pro Monat (netto) erhältlich. Die Cloud-Kassensoftware ist monatlich kündbar mit 3 Monaten Kündigungsfrist. Sie läuft auf Windows-Computern und beinhaltet TSE-Zertifizierung (§146a AO), GoBD-Konformität sowie persönlichen Support via WhatsApp."
+      },
+      {
+        "q": "Wie hoch sind die Einrichtungskosten?",
+        "a": "Die Einrichtungskosten besprechen wir individuell in einem persönlichen Beratungsgespräch — je nach Umfang deines Betriebs. Die Webseite hat eine Mindestvertragslaufzeit von 12 Monaten. Webshop, App und Kassensystem sind monatlich kündbar mit 3 Monaten Kündigungsfrist. Ohne Provision, ohne Überraschungen."
+      },
+      {
+        "q": "Was ist der Unterschied zwischen Webseite und Bestellsystem?",
+        "a": "Die Webseite (ab 49 €/Monat) ist eine professionelle Restaurant-Website ohne Bestellfunktion – dein digitales Aushängeschild für Google und Neukunden. Das Bestellsystem (ab 79 €/Monat) enthält zusätzlich den [Online-Bestellshop mit 0 % Provision](/produkte/webshop), über den deine Kunden direkt bestellen können."
+      },
+      {
+        "q": "Kann ich mit einem Paket mehrere Standorte betreiben?",
+        "a": "Ja. Die Pakete unterstützen mehrere Standorte und Filialen. Beim Kassensystem sind bis zu 4 Kassen mit einer Lizenz inklusive – ohne Aufpreis. Für Franchise-Systeme mit vielen Standorten entwickeln wir individuelle Infrastrukturen."
+      },
+      {
+        "q": "Fallen Transaktionsgebühren an?",
+        "a": "Gastro Master erhebt 0 % Provision. Die Zahlungsanbieter (Stripe, PayPal, Klarna etc.) erheben eigene Transaktionsgebühren. Mit der optionalen Transaktions-Umlage kannst du diese transparent und rechtssicher an deine Kunden weitergeben – so trägst du keinen Eigenanteil."
+      },
+      {
+        "q": "Welches Paket ist das Richtige für meinen Betrieb?",
+        "a": "Für eine reine Online-Präsenz eignet sich die Webseite (ab 49 €/Monat). Willst du online Bestellungen entgegennehmen, ist das Bestellsystem (ab 79 €/Monat) die richtige Wahl. Für eine [eigene Bestell-App](/produkte/app) empfehlen wir App + Bestellsystem ab 149 €/Monat. Das Kassensystem (ab 69 €/Monat) ergänzt alle Pakete für den stationären Betrieb. Wer seinen [eigenen Lieferdienst aufbauen](/loesungen/lieferservice-gruenden) möchte, findet in unserem Ratgeber alle Schritte. Im kostenlosen Beratungsgespräch finden wir gemeinsam die passende Kombination."
+      }
+    ]
+  },
+  "cta": {
+    "badge": "Kostenloses Beratungsgespräch",
+    "title": "Nicht sicher, welches Paket passt?",
+    "desc": "In einem 20-minütigen Gespräch zeigen wir dir die beste Kombination für deinen Betrieb — kostenlos, unverbindlich und auf dich zugeschnitten.",
+    "button": "Beratungsgespräch vereinbaren",
+    "trust": [
+      "0 % Provision",
+      "800+ Betriebe",
+      "5,0 ★ Google",
+      "3 Monate Kündigungsfrist"
+    ]
+  }
+}

@@ -1,0 +1,526 @@
+{
+  "meta": {
+    "title": "Privacy Policy | Gastro Master",
+    "description": "Privacy policy of Epit Global GmbH – GDPR-compliant. Information on the collection and processing of personal data.",
+    "canonical": "https://gastro-master.de/datenschutz"
+  },
+  "title": "Privacy Policy",
+  "stand": "Last updated: March 2026",
+  "alleOeffnen": "Expand all",
+  "alleSchliessen": "Collapse all",
+  "rolleVerantwortlicher": "▸ Epit as Controller (Art. 4 No. 7 GDPR)",
+  "rolleAuftragsverarbeiter": "▸ On behalf of the restaurant business – Epit as Processor (Art. 28 GDPR)",
+
+  "s0": {
+    "title": "1. Controller",
+    "p1": "The controller within the meaning of the General Data Protection Regulation (GDPR) and other national data protection laws as well as other data protection regulations is:",
+    "p2Company": "Epit Global GmbH",
+    "p2Street": "Herzbergstr. 9",
+    "p2City": "61250 Usingen, Germany",
+    "p2Phone": "Phone: +49 6081 9128913",
+    "p2EmailLabel": "Email:",
+    "p2EmailText": "datenschutz@epitglobal.de",
+    "p2Website": "Website: www.gastro-master.de",
+    "p2Register": "Commercial register: Amtsgericht Bad Homburg, HRB No.: 16336",
+    "p2Tax": "VAT ID: DE363847623",
+    "p2Management": "Managing directors: Sanjaya Pattiyage, René Ebert",
+    "p3": "This privacy policy applies to all apps (Google Android, Apple iOS), online shops, websites and other digital services operated by Epit Global GmbH under the brand 'Gastro Master' for its own purposes (in particular www.gastro-master.de), as well as to the contractual relationship with our business clients (restaurant businesses).",
+    "h1": "Note on role allocation – Data processing for restaurant platforms",
+    "p4": "Epit Global GmbH assumes different data protection roles depending on the context. For better orientation, the respective sections of this policy are marked with a role label:",
+    "rolle1Label": "▸ Epit as Controller (Art. 4 No. 7 GDPR)",
+    "rolle1Text": "Applies to: own website (gastro-master.de), contact form, newsletter, WhatsApp marketing, social media presences, web analytics, B2B customer relationships (business clients/restaurant businesses), payment processing for own subscriptions.",
+    "rolle2Label": "▸ On behalf of the restaurant business – Epit as Processor (Art. 28 GDPR)",
+    "rolle2Text": "Applies to: operation of ordering platforms, online shops and POS systems on behalf of restaurant businesses. In this context, the respective restaurant business is the controller (Art. 4 No. 7 GDPR) for the processing of end-customer data. Data protection requests from end customers of these platforms should be directed to the respective restaurant business.",
+    "p5": "The data processing relationship between Epit Global GmbH and the respective restaurant business is governed by a data processing agreement pursuant to Art. 28 GDPR."
+  },
+
+  "s1": {
+    "title": "2. Data Protection Officer",
+    "p1": "We are not legally required to appoint a data protection officer. For all data protection inquiries, you can contact us at any time:",
+    "p2Company": "Epit Global GmbH – Data Protection",
+    "p2EmailLabel": "Email:",
+    "p2EmailText": "datenschutz@epitglobal.de",
+    "p2Phone": "Phone: +49 6081 9128913",
+    "p2Address": "Herzbergstr. 9, 61250 Usingen"
+  },
+
+  "s2": {
+    "title": "3. Overview of Processing Activities",
+    "p1": "We process personal data only to the extent necessary for providing our services, fulfilling contractual obligations, based on your consent or on the basis of legitimate interests.",
+    "h1": "3.1 Types of data processed",
+    "items1": {
+      "i1": "Master data (e.g. name, address, company name)",
+      "i2": "Contact data (e.g. email address, phone number)",
+      "i3": "Content data (e.g. order information, message texts, comments)",
+      "i4": "Contract data (e.g. subject of contract, term, payment information)",
+      "i5": "Usage data (e.g. pages visited, access times)",
+      "i6": "Meta/communication data (e.g. device information, IP addresses, browser type)",
+      "i7": "Location data (e.g. when using map services, only with consent or for contract fulfilment)",
+      "i8": "Onboarding documents from business clients (e.g. ID card/passport, business registration – B2B context only)"
+    },
+    "h2": "3.2 Purposes of processing",
+    "items2": {
+      "i1": "Provision and operation of our websites, apps and ordering platforms",
+      "i2": "Execution and processing of orders and contracts",
+      "i3": "Onboarding and setup of restaurant customer platforms",
+      "i4": "Customer account management and customer service",
+      "i5": "Sending newsletters and marketing communications (email, WhatsApp)",
+      "i6": "Web analytics and optimization of our services",
+      "i7": "Ensuring IT security and abuse prevention",
+      "i8": "Compliance with statutory retention obligations"
+    }
+  },
+
+  "s3": {
+    "title": "4. Legal Bases for Processing",
+    "p1": "We process personal data on the basis of the following legal grounds under the GDPR:",
+    "items": {
+      "i1Label": "Consent (Art. 6(1)(a) GDPR):",
+      "i1Text": "The data subject has given consent to the processing, e.g. for newsletter delivery, WhatsApp marketing or the use of non-essential cookies.",
+      "i2Label": "Performance of a contract (Art. 6(1)(b) GDPR):",
+      "i2Text": "Processing is necessary for the performance of a contract or for pre-contractual measures, e.g. for order processing, onboarding of business clients or setup of payment accounts.",
+      "i3Label": "Legal obligation (Art. 6(1)(c) GDPR):",
+      "i3Text": "Processing is necessary for compliance with a legal obligation, e.g. tax and commercial retention obligations (§ 147 AO, § 257 HGB).",
+      "i4Label": "Legitimate interests (Art. 6(1)(f) GDPR):",
+      "i4Text": "Processing serves our legitimate interests, e.g. IT security, operational stability, abuse prevention or direct marketing by email for our own similar products pursuant to § 7(3) UWG."
+    }
+  },
+
+  "s4": {
+    "title": "5. Security Measures",
+    "p1": "Pursuant to Art. 32 GDPR, taking into account the state of the art, the costs of implementation, and the nature, scope, circumstances and purposes of processing, we implement appropriate technical and organizational measures to ensure a level of protection appropriate to the risk. These include in particular:",
+    "items": {
+      "i1": "SSL/TLS encryption of all data transmissions between browser/app and server",
+      "i2": "Regular security updates and patches for server systems",
+      "i3": "Access control systems with role-based authorization (need-to-know principle)",
+      "i4": "IP anonymization/IP masking for web analytics services",
+      "i5": "Pseudonymization of data where possible given the processing purpose",
+      "i6": "Regular data backups",
+      "i7": "Data processing agreements (DPA) pursuant to Art. 28 GDPR with all service providers that process personal data exclusively on our instructions (processors). Payment service providers and platform operators acting as independent controllers are not covered by this."
+    }
+  },
+
+  "s5": {
+    "title": "6. Data Transfers to Third Countries",
+    "p1": "In the course of our business activities and the use of third-party services as well as the involvement of our developers and employees, personal data may be transferred to recipients in third countries (outside the European Economic Area, EEA). This concerns in particular:",
+    "items": {
+      "i1Label": "USA:",
+      "i1Text": "For data transfers to the USA, we rely on the adequacy decision of the European Commission of July 10, 2023 regarding the EU-U.S. Data Privacy Framework (DPF), insofar as the respective recipient is certified under the DPF (e.g. Google LLC, Meta Platforms, Inc., Atlassian, Inc.). For services without active DPF certification – in particular Zoho Corporation (US) – Standard Contractual Clauses (SCCs) pursuant to Art. 46(2)(c) GDPR are used.",
+      "i2Label": "Sri Lanka (intra-group transfer):",
+      "i2Text": "We employ developers and technical staff at our subsidiary Epit Global PVT Ltd. in Sri Lanka, which acts as an affiliated company exclusively under the instructions of Epit Global GmbH. There is no adequacy decision of the European Commission for Sri Lanka. The intra-group transfer of personal data is therefore based on Standard Contractual Clauses (SCCs) pursuant to Art. 46(2)(c) GDPR as well as additional technical and organizational safeguards (e.g. access restrictions, need-to-know principle). Employees only have access to data that is strictly necessary for the performance of their respective tasks."
+    },
+    "p2": "If, in individual cases, no appropriate safeguards are in place, you will be separately informed and, if applicable, your consent will be obtained (Art. 49 GDPR)."
+  },
+
+  "s6": {
+    "title": "7. Storage Duration and Deletion",
+    "p1": "We store personal data only for as long as is necessary for the respective processing purpose or as required by statutory retention obligations. Where no specific statutory deadlines apply, we follow the principle of data minimization and delete or anonymize data once the purpose of their processing ceases to apply.",
+    "items": {
+      "i1Label": "Commercial and tax retention obligations:",
+      "i1Text": "Where data is subject to tax or commercial retention obligations (§ 147 AO, § 257 HGB), it is retained for the statutory period of 6 or 10 years.",
+      "i2Label": "Contract data:",
+      "i2Text": "For the duration of the contractual relationship and subsequently in accordance with statutory retention periods.",
+      "i3Label": "Marketing data (newsletter, WhatsApp):",
+      "i3Text": "Until withdrawal of consent or unsubscription. After unsubscription, only data required for compliance with statutory proof obligations is retained.",
+      "i4Label": "Technical log data (server log files, security logs):",
+      "i4Text": "Only for as long as necessary for operational security and abuse prevention. Data is deleted once the purpose ceases to apply.",
+      "i5Label": "Onboarding documents (ID, business registration):",
+      "i5Text": "For the duration of the contractual relationship with the restaurant client and subsequently in accordance with statutory retention obligations. Deletion upon request by the client is carried out unless a statutory retention obligation precludes this."
+    },
+    "p2": "Unless a specific storage duration is stated in this privacy policy, the above general framework applies. The criterion for determining the storage duration is in any case the cessation of the processing purpose or the applicability of statutory retention periods."
+  },
+
+  "s7": {
+    "title": "8. Rights of Data Subjects",
+    "p1": "As a data subject, you are entitled to the following rights under the GDPR:",
+    "items": {
+      "i1Label": "Right of access (Art. 15 GDPR):",
+      "i1Text": "You have the right to obtain confirmation as to whether personal data concerning you is being processed, and to access such data as well as further information and a copy of the data.",
+      "i2Label": "Right to rectification (Art. 16 GDPR):",
+      "i2Text": "You have the right to request the completion or rectification of inaccurate personal data concerning you.",
+      "i3Label": "Right to erasure (Art. 17 GDPR):",
+      "i3Text": "You have the right to request the immediate erasure of personal data concerning you, provided the legal requirements are met.",
+      "i4Label": "Right to restriction (Art. 18 GDPR):",
+      "i4Text": "You have the right to request the restriction of the processing of your personal data.",
+      "i5Label": "Right to data portability (Art. 20 GDPR):",
+      "i5Text": "You have the right to receive the personal data concerning you in a structured, commonly used and machine-readable format and to transmit this data to another controller.",
+      "i6Label": "Right of withdrawal (Art. 7(3) GDPR):",
+      "i6Text": "You have the right to withdraw any consent given at any time with effect for the future. The lawfulness of the processing carried out on the basis of the consent until withdrawal remains unaffected.",
+      "i7Label": "Right to object (Art. 21 GDPR):",
+      "i7Text": "You have the right to object at any time, on grounds relating to your particular situation, to the processing of your data based on Art. 6(1)(e) or (f) GDPR. If your data is processed for direct marketing purposes, you may object at any time without giving reasons.",
+      "i8Label": "Right to lodge a complaint (Art. 77 GDPR):",
+      "i8Text": "You have the right to lodge a complaint with a data protection supervisory authority, in particular in the Member State of your habitual residence, your place of work or the place of the alleged infringement."
+    },
+    "p2": "To exercise your rights, please contact:",
+    "p2LinkText": "datenschutz@epitglobal.de",
+    "p3Label": "Note for end customers of restaurant businesses:",
+    "p3Text": "If you wish to exercise your rights in connection with order data on a platform operated by a restaurant business, please contact the respective restaurant business as the controller directly."
+  },
+
+  "s8": {
+    "title": "9. Server Log Files",
+    "p1": "Each time our website is accessed, general technical information is automatically collected and stored in server log files. This includes:",
+    "items": {
+      "i1": "Name and URL of the accessed page",
+      "i2": "Date and time of access",
+      "i3": "Amount of data transferred",
+      "i4": "Notification of successful retrieval (HTTP status code)",
+      "i5": "Browser type and version",
+      "i6": "User's operating system",
+      "i7": "Referrer URL (previously visited page)",
+      "i8": "IP address of the requesting device",
+      "i9": "Requesting provider"
+    },
+    "p2": "This data is used exclusively to ensure trouble-free operation, IT security and optimization of our website. It is generally not possible for us to attribute this data to a specific person, nor do we seek to do so.",
+    "rechtsgrundlageLabel": "Legal basis:",
+    "rechtsgrundlageText": "Art. 6(1)(f) GDPR (legitimate interest in the security and functionality of the website).",
+    "speicherdauerLabel": "Storage duration:",
+    "speicherdauerText": "Log files are deleted once their purpose has been fulfilled and no security or abuse review requires longer retention."
+  },
+
+  "s9": {
+    "title": "10. Cookies and Consent Management",
+    "p1": "Our website and apps use cookies and comparable technologies (e.g. local storage, fingerprinting). Cookies are small text files stored on your device.",
+    "h1": "10.1 Technically necessary cookies",
+    "h1p1": "These cookies are essential for the operation of the website/app (e.g. session cookies for the shopping cart, login status). They are set without your consent.",
+    "h1RechtsgrundlageLabel": "Legal basis:",
+    "h1RechtsgrundlageText": "§ 25(2) No. 2 TDDDG in conjunction with Art. 6(1)(b) GDPR (performance of a contract).",
+    "h2": "10.2 Analytics and marketing cookies",
+    "h2p1": "Cookies that go beyond technical necessity (e.g. for web analytics, reach measurement or personalized advertising) are only used with your explicit consent.",
+    "h2RechtsgrundlageLabel": "Legal basis:",
+    "h2RechtsgrundlageText": "§ 25(1) TDDDG in conjunction with Art. 6(1)(a) GDPR (consent). You can withdraw your consent at any time via our cookie banner or the cookie settings on our website.",
+    "h3": "10.3 Cookie management in the browser",
+    "h3p1": "Furthermore, you can manage, restrict or delete cookies at any time via your browser settings. Please note that this may limit the functionality of the website.",
+    "h4": "10.4 Cookiebot – Cookie Consent Management",
+    "h4p1": "We use the cookie consent manager Cookiebot to obtain, document and manage your consent to the use of cookies and similar technologies.",
+    "h4AnbieterLabel": "Provider:",
+    "h4AnbieterText": "Cybot A/S, Havnegade 39, 1058 Copenhagen, Denmark.",
+    "h4p2": "Cookiebot records your consent (time, selected cookie preferences, page views) for proof purposes pursuant to Art. 7(1) GDPR. The consent records are stored on servers in the EU and automatically deleted after 12 months.",
+    "h4RechtsgrundlageLabel": "Legal basis:",
+    "h4RechtsgrundlageText": "§ 25(2) No. 2 TDDDG in conjunction with Art. 6(1)(c) GDPR (legal obligation to document consent).",
+    "h4LinkText": "Cookiebot Privacy Policy"
+  },
+
+  "s10": {
+    "title": "11. Orders and Contract Processing",
+    "p1": "This section concerns orders placed via platforms operated by Epit Global GmbH on behalf of restaurant businesses. The platform (online shop, app, POS system) is a software solution developed by Epit Global GmbH. The controller for the processing of end-customer data in this context is the respective restaurant business.",
+    "p2": "The following personal data may be processed when placing an order:",
+    "items": {
+      "i1": "First and last name",
+      "i2": "Delivery address and, if applicable, billing address",
+      "i3": "Email address and phone number",
+      "i4": "Order contents, order time",
+      "i5": "Payment information (depending on payment method)"
+    },
+    "p3": "Providing this data is necessary for concluding a contract with the restaurant business. Failure to provide it means that no order can be placed.",
+    "rechtsgrundlageLabel": "Legal basis",
+    "rechtsgrundlageText": "for processing by the restaurant business as controller: Art. 6(1)(b) GDPR (performance of a contract).",
+    "p4": "Payment service providers (Stripe, PayPal, GoCardless) are integrated as independent controllers pursuant to Art. 4 No. 7 GDPR in the order processing and process payment data in accordance with their own privacy policies. Other technical service providers that process data exclusively on instructions are contractually bound as processors pursuant to Art. 28 GDPR."
+  },
+
+  "s11": {
+    "title": "12. Customer Account",
+    "p1": "Where end customers create a customer account on a restaurant platform operated by Epit Global GmbH, this is done on behalf of the respective restaurant business as controller. Name, email address, address and, if applicable, phone number are processed to simplify future orders and for account management.",
+    "rechtsgrundlageLabel": "Legal basis",
+    "rechtsgrundlageText": "(on the part of the restaurant business as controller): Art. 6(1)(b) GDPR (performance of a contract) within the scope of the order relationship.",
+    "p2": "End customers may request the deletion of their customer account from the respective restaurant business at any time. Statutory retention periods remain unaffected."
+  },
+
+  "s12": {
+    "title": "13. Contact Form and Email Contact",
+    "p1": "When using our contact form on gastro-master.de or when contacting us directly by email, we collect the data you provide (name, email address, message content) exclusively for the purpose of processing your inquiry.",
+    "rechtsgrundlageLabel": "Legal basis:",
+    "rechtsgrundlageText": "Art. 6(1)(b) GDPR for pre-contractual or contract-related inquiries; Art. 6(1)(f) GDPR (legitimate interest in responding to inquiries) for general inquiries without a contractual connection.",
+    "p2": "Your data will be deleted after final processing, unless statutory retention obligations apply."
+  },
+
+  "s13": {
+    "title": "14. Newsletter and Email Marketing",
+    "h1": "14.1 Newsletter delivery with consent via Zoho Campaigns",
+    "h1p1": "If you have given us your explicit consent, we use your email address to send information about our products, services, offers and promotions.",
+    "h1RechtsgrundlageLabel": "Legal basis:",
+    "h1RechtsgrundlageText": "Art. 6(1)(a) GDPR (consent).",
+    "h1p2": "We use the service Zoho Campaigns (Zoho Corporation B.V., Beneluxlaan 4B, 3527 HT Utrecht, Netherlands) for email delivery. Zoho Corporation B.V. is based in the EU; for any transfers to the US parent company, SCCs pursuant to Art. 46 GDPR apply. Further information can be found in Section 20f of this privacy policy.",
+    "h1p3": "You can withdraw your consent at any time, e.g. via the unsubscribe link in each email or by contacting",
+    "h1p3LinkText": "datenschutz@epitglobal.de",
+    "h1p3Suffix": ". The lawfulness of the processing carried out until withdrawal remains unaffected.",
+    "h2": "14.2 Email advertising for existing customers (§ 7(3) UWG)",
+    "h2p1": "If we received your email address in connection with the purchase of goods or services, we use it pursuant to § 7(3) UWG for direct marketing of our own similar goods and services, provided you have not objected to such use.",
+    "h2RechtsgrundlageLabel": "Legal basis:",
+    "h2RechtsgrundlageText": "Art. 6(1)(f) GDPR (legitimate interest) in conjunction with § 7(3) UWG.",
+    "h2p2": "You can object to the use of your email address at any time. Please use the unsubscribe link in the respective email or contact",
+    "h2p2LinkText": "datenschutz@epitglobal.de",
+    "h3": "14.3 Performance measurement (newsletter tracking)",
+    "h3p1": "Our newsletters may contain tracking pixels (web beacons) that enable us to detect whether and when an email was opened and which links were clicked. This data is used for statistical evaluation and optimization of our newsletter campaigns.",
+    "h3RechtsgrundlageLabel": "Legal basis:",
+    "h3RechtsgrundlageText": "Art. 6(1)(a) GDPR (consent as part of the newsletter subscription). Consent can be withdrawn at any time."
+  },
+
+  "s14": {
+    "title": "15. WhatsApp Newsletter and Marketing via Superchat",
+    "p1": "We offer you the option of receiving marketing messages, offers, promotions and information via the messaging service WhatsApp. Delivery is handled via the platform Superchat (Superchat GmbH, Berlin, Germany).",
+    "h1": "15.1 Registration (keyword opt-in)",
+    "h1p1": "Registration for our WhatsApp newsletter is done via keyword opt-in: you send the registration word",
+    "h1p1Keyword": "'Subscribe'",
+    "h1p1Mid": "to our WhatsApp business number",
+    "h1p1Number": "+49 160 92944536",
+    "h1p1Rest": ". By actively sending this message, you give your explicit consent to receive marketing messages via WhatsApp. You will then automatically receive a confirmation message that also informs you of the unsubscribe keyword",
+    "h1p1Unsub": "'Unsubscribe'",
+    "h1p1End": ".",
+    "h2": "15.2 Data processed",
+    "h2Items": {
+      "i1": "Mobile phone number (WhatsApp number)",
+      "i2": "Name (if listed in the WhatsApp profile and captured by Superchat)",
+      "i3": "Message interactions (e.g. read/delivered, captured by Superchat)"
+    },
+    "h3": "15.3 Legal basis",
+    "h3RechtsgrundlageLabel": "Legal basis:",
+    "h3RechtsgrundlageText": "Art. 6(1)(a) GDPR (explicit consent). Receiving WhatsApp marketing messages requires your explicit consent, which you can withdraw at any time.",
+    "h4": "15.4 Processor: Superchat",
+    "h4p1": "Superchat GmbH, Berlin, Germany, acts as a processor pursuant to Art. 28 GDPR. A corresponding data processing agreement has been concluded. Superchat uses the WhatsApp Business API from Meta Platforms Ireland Limited.",
+    "h4LinkText": "Superchat Privacy Policy",
+    "h5": "15.5 Data transfer to Meta (WhatsApp)",
+    "h5p1": "WhatsApp is operated by Meta Platforms Ireland Limited (4 Grand Canal Square, Dublin 2, Ireland). Message transmissions are end-to-end encrypted. Metadata (e.g. phone number, timestamps) may be transferred to Meta Platforms, Inc., 1 Hacker Way, Menlo Park, CA 94025, USA. Meta Platforms, Inc. is certified under the EU-U.S. Data Privacy Framework; Standard Contractual Clauses pursuant to Art. 46(2)(c) GDPR exist between Meta Platforms Ireland Limited and Meta Platforms, Inc.",
+    "h5LinkText": "WhatsApp Privacy Policy",
+    "h6": "15.6 Withdrawal and unsubscription",
+    "h6p1": "You can withdraw your consent at any time by sending the unsubscribe keyword",
+    "h6p1Keyword": "'Unsubscribe'",
+    "h6p1Mid": "to our WhatsApp business number +49 160 92944536 or by contacting",
+    "h6p1LinkText": "datenschutz@epitglobal.de",
+    "h6p1End": "directly. After withdrawal, you will no longer receive marketing messages. The lawfulness of the processing carried out until withdrawal remains unaffected."
+  },
+
+  "s15": {
+    "title": "16. Google reCAPTCHA",
+    "p1": "We use the Google reCAPTCHA service to distinguish whether inputs are made by natural persons or by automated machine processing (bots).",
+    "anbieterLabel": "Provider:",
+    "anbieterText": "Google Ireland Limited, Gordon House, Barrow Street, Dublin 4, Ireland; parent company and DPF certificate: Google LLC, 1600 Amphitheatre Parkway, Mountain View, CA 94043, USA.",
+    "p2": "Your IP address and possibly other data are transferred via Google Ireland Limited (EU) to Google LLC, Mountain View, CA, USA. Google LLC is certified under the EU-U.S. Data Privacy Framework.",
+    "rechtsgrundlageLabel": "Legal basis:",
+    "rechtsgrundlageText": "Art. 6(1)(f) GDPR (legitimate interest in protection against abuse and spam) in conjunction with § 25(2) No. 2 TDDDG.",
+    "linkText": "Google Privacy Policy"
+  },
+
+  "s16": {
+    "title": "17. Google Analytics",
+    "p1": "We use Google Analytics, a web analytics service of Google Ireland Limited, Gordon House, Barrow Street, Dublin 4, Ireland. Google Analytics uses cookies and comparable technologies that enable analysis of website usage.",
+    "p2": "IP anonymization is activated. Your IP address is truncated within the EU/EEA before it is potentially transmitted to Google LLC, Mountain View, CA, USA. Google LLC is certified under the EU-U.S. Data Privacy Framework; appropriate transfer mechanisms pursuant to Art. 46 GDPR exist between Google Ireland Limited and Google LLC.",
+    "rechtsgrundlageLabel": "Legal basis:",
+    "rechtsgrundlageText": "Art. 6(1)(a) GDPR (consent) in conjunction with § 25(1) TDDDG. Consent can be withdrawn at any time via the cookie banner.",
+    "p3": "Alternatively, you can prevent data collection by installing the browser add-on:",
+    "link1Text": "Google Analytics Opt-out Browser Add-on",
+    "link2Text": "Google Privacy Policy"
+  },
+
+  "s17": {
+    "title": "18. Google Maps – Delivery Area Management",
+    "p1": "We use the Google Maps API (programming interface) from Google Ireland Limited exclusively for delivery area management on our restaurant customer platforms. The respective restaurant business is responsible for the associated processing operations. The three possible configurations:",
+    "h1": "Option 1 – Delivery areas by postal code",
+    "h1p1": "With this option, delivery areas are defined purely based on postal codes. No data is transmitted to Google.",
+    "h2": "Option 2 – Delivery area by radius (road kilometers)",
+    "h2p1": "With this option, the Google Maps API is used to calculate the delivery area based on the restaurant location and a radius. End customers can enter their delivery address manually or use automatic address recognition via Google Maps. In the latter case, the entered address is transmitted to Google for address validation.",
+    "h2RechtsgrundlageLabel": "Legal basis:",
+    "h2RechtsgrundlageText": "Art. 6(1)(b) GDPR (performance of a contract – address verification for order processing) in conjunction with § 25(2) No. 2 TDDDG.",
+    "h3": "Option 3 – Custom polygon maps (POS system only)",
+    "h3p1": "Exclusively in the POS system, restaurant customers can define delivery areas by drawing custom polygons on the Google Maps interface. This function is used by the restaurant customer during setup; no end-customer data is transmitted.",
+    "h3RechtsgrundlageLabel": "Legal basis:",
+    "h3RechtsgrundlageText": "Art. 6(1)(b) GDPR (performance of a contract) in conjunction with Art. 6(1)(f) GDPR (legitimate interest in precise delivery area configuration).",
+    "anbieterLabel": "Provider:",
+    "anbieterText": "Google Ireland Limited, Gordon House, Barrow Street, Dublin 4, Ireland. DPF-certified US entity: Google LLC, 1600 Amphitheatre Parkway, Mountain View, CA 94043, USA.",
+    "linkText": "Google Privacy Policy"
+  },
+
+  "s18": {
+    "title": "19. Payment Service Providers",
+    "h1": "19.1 PayPal – Payment Processing and Account Support",
+    "h1p1": "Our restaurant customers have the option of offering PayPal as an optional payment method in their online shops. The integration of PayPal is not a mandatory service; integration is carried out exclusively at the express request of the customer. Only a business PayPal Business account is used for this purpose.",
+    "h1Items": {
+      "i1Label": "No PayPal:",
+      "i1Text": "The customer decides against PayPal – no PayPal data is processed.",
+      "i2Label": "Existing PayPal Business account:",
+      "i2Text": "The customer provides the required API credentials themselves. Epit Global GmbH does not process any identity or bank data in this case.",
+      "i3Label": "New PayPal Business account:",
+      "i3Text": "At the express request and sole instruction of the customer, we assist with the setup. Company data provided by the customer is transmitted to PayPal."
+    },
+    "h1p2": "PayPal processes payment data as an independent controller pursuant to Art. 4 No. 7 GDPR. Epit Global GmbH has no access to revenue funds or bank accounts of customers.",
+    "h1AnbieterLabel": "Provider and controller for payment data processing:",
+    "h1AnbieterText": "PayPal (Europe) S.à r.l. et Cie, S.C.A., 22–24 Boulevard Royal, L-2449 Luxembourg.",
+    "h1RechtsgrundlageLabel": "Legal basis",
+    "h1RechtsgrundlageText": "(insofar as Epit Global GmbH processes any data): Art. 6(1)(b) GDPR (performance of a contract for setup at customer request).",
+    "h1LinkText": "PayPal Privacy Policy",
+    "h2": "19.2 Other payment methods",
+    "h2p1": "Depending on the payment method offered, payment data is transmitted to the respective payment service provider. Payment service providers (in particular Stripe, GoCardless, PayPal) are independent controllers within the meaning of Art. 4 No. 7 GDPR and process data in accordance with their own privacy policies. No data processing agreements pursuant to Art. 28 GDPR exist with payment service providers, as they do not process data exclusively on the instructions of Epit Global GmbH."
+  },
+
+  "s19": {
+    "title": "20a. Hosting and Own Platform Infrastructure",
+    "p1": "Epit Global GmbH operates a self-developed software platform for its restaurant customers. Each restaurant business receives its own technically separated instance with a dedicated API and its own dashboard, through which the business can view and manage its orders and customer data. This infrastructure is hosted via All-Inkl.com.",
+    "p2": "For our own website (gastro-master.de), Epit Global GmbH is the controller. All-Inkl.com – Neue Medien Münnich, Hauptstraße 68, 02742 Friedersdorf, Germany, acts as a processor pursuant to Art. 28 GDPR. A corresponding data processing agreement has been concluded. The servers are located exclusively in Germany; no transfer to third countries occurs through the hosting at All-Inkl.com itself.",
+    "p3": "Order data and customer data of end customers (e.g. name, delivery address, order history) are stored in the respective databases of the restaurant businesses on the All-Inkl servers. Epit Global GmbH processes this end-customer data exclusively on behalf of the respective restaurant business as a processor pursuant to Art. 28 GDPR. A data processing agreement between Epit Global GmbH and the respective restaurant business is in place.",
+    "rechtsgrundlageLabel": "Legal basis",
+    "rechtsgrundlageText": "(own operation of the infrastructure): Art. 6(1)(b) and (f) GDPR (performance of a contract and legitimate interest in secure, stable operation)."
+  },
+
+  "s20": {
+    "title": "20b. Processing of Customer Documents (Onboarding and Contractual Basis)",
+    "p1": "In the course of setting up and operating our platforms for business clients (restaurant businesses), we collect and process various types of documents. These are distinguished by their function:",
+    "h1": "Identification and contract documents",
+    "h1Items": {
+      "i1": "ID card or passport of the owner/managing director (for identity verification during account setup with payment service providers such as Stripe and as part of the contract documentation)",
+      "i2": "Business registration (as commercial proof of business status and basis of the contractual relationship)"
+    },
+    "h1p1": "These documents form the contractual basis and are stored for the duration of the business relationship and subsequently in accordance with statutory retention obligations (§ 147 AO, § 257 HGB).",
+    "h1RechtsgrundlageLabel": "Legal basis:",
+    "h1RechtsgrundlageText": "Art. 6(1)(b) GDPR (performance of a contract) and Art. 6(1)(c) GDPR (statutory retention obligation).",
+    "h2": "Setup and operational documents",
+    "h2Items": {
+      "i1": "Company logo (for setup and ongoing display on the platform, online shops and apps)",
+      "i2": "Menu including allergens and additives (for populating the platform; completeness and accuracy are the responsibility of the customer)"
+    },
+    "h2p1": "These documents are processed for the duration of the contractual relationship and deleted after contract termination, unless statutory reasons prevent this.",
+    "h2RechtsgrundlageLabel": "Legal basis:",
+    "h2RechtsgrundlageText": "Art. 6(1)(b) GDPR (performance of a contract).",
+    "h3": "Storage locations and access",
+    "h3p1": "The aforementioned documents are stored internally in the following systems:",
+    "h3Items": {
+      "i1": "Google Drive (Google Ireland Limited, Dublin, Ireland; data transfer to Google LLC, Mountain View, CA 94043, USA, DPF-certified, DPA concluded)",
+      "i2": "Trello (Atlassian, Inc., 350 Bush Street, Floor 13, San Francisco, CA 94104, USA; DPF-certified, DPA pursuant to Art. 28 GDPR concluded)"
+    },
+    "h3p2": "Access is limited exclusively to employees responsible for the respective onboarding or customer consulting (need-to-know principle). Disclosure to third parties occurs only in the context of account setup with payment service providers and only insofar as this is necessary for order processing. Customers can request information about stored documents at any time and request deletion, unless a statutory retention obligation precludes this."
+  },
+
+  "s21": {
+    "title": "20c. Stripe – Payment Processing and Account Setup",
+    "p1": "We work with Stripe as a payment service provider and within the framework of a Stripe Express partnership. During account opening for our business customers, we transmit identification data (ID card, business registration, bank details) to Stripe at the customer's request and on their behalf. Stripe acts as an independent controller for the actual payment processing.",
+    "anbieterLabel": "Provider:",
+    "anbieterText": "Stripe Payments Europe, Ltd., 1 Grand Canal Street Lower, Grand Canal Dock, Dublin, Ireland.",
+    "rechtsgrundlageLabel": "Legal basis",
+    "rechtsgrundlageText": "for the transfer by Epit: Art. 6(1)(b) GDPR (performance of a contract). Stripe is certified under the EU-U.S. Data Privacy Framework.",
+    "linkText": "Stripe Privacy Policy"
+  },
+
+  "s22": {
+    "title": "20d. GoCardless – SEPA Direct Debit / Subscriptions",
+    "p1": "For the collection of subscription payments from our business customers via SEPA direct debit, we use GoCardless. GoCardless acts as an independent controller for payment processing.",
+    "anbieterLabel": "Provider:",
+    "anbieterText": "GoCardless Ltd., Sutton Yard, 65 Goswell Road, London, EC1V 7EN, United Kingdom. The United Kingdom has an adequacy decision from the European Commission pursuant to Art. 45 GDPR (last confirmed December 2025). Transfer of personal data to GoCardless is therefore permissible without additional safeguards.",
+    "verarbeiteteDatenLabel": "Data processed:",
+    "verarbeiteteDatenText": "Name, IBAN, BIC, address of the payer.",
+    "rechtsgrundlageLabel": "Legal basis:",
+    "rechtsgrundlageText": "Art. 6(1)(b) GDPR (performance of a contract).",
+    "linkText": "GoCardless Privacy Policy"
+  },
+
+  "s23": {
+    "title": "20e. Process Automation – Make",
+    "p1": "For the automation of internal business processes (e.g. data synchronization between systems, automated workflows), we use Make (formerly Integromat).",
+    "anbieterLabel": "Provider:",
+    "anbieterText": "Make s.r.o., Jiříčnova 1904/3, Prague 4, Czech Republic (EU). No third-country transfer required.",
+    "p2": "Only internally required business process data is processed within these automations. End-customer data is not permanently stored in Make.",
+    "rechtsgrundlageLabel": "Legal basis:",
+    "rechtsgrundlageText": "Art. 6(1)(b) and (f) GDPR (performance of a contract and legitimate interest in efficient business processes).",
+    "linkText": "Make Privacy Policy"
+  },
+
+  "s24": {
+    "title": "20f. Zoho – Business Software",
+    "p1": "For core areas of our business, we use the following products of Zoho Corporation B.V., Beneluxlaan 4B, 3527 HT Utrecht, Netherlands:",
+    "items": {
+      "i1Label": "Zoho CRM:",
+      "i1Text": "Customer management and sales management for our B2B business clients.",
+      "i2Label": "Zoho Sign:",
+      "i2Text": "Digital contract signing.",
+      "i3Label": "Zoho Books / Zoho Billing:",
+      "i3Text": "Accounting, invoicing and subscription management.",
+      "i4Label": "Zoho Vault:",
+      "i4Text": "Password management (no access to customer data).",
+      "i5Label": "Zoho Desk:",
+      "i5Text": "Customer support ticket system.",
+      "i6Label": "Zoho Campaigns:",
+      "i6Text": "Email marketing delivery (newsletter)."
+    },
+    "p2": "Zoho Corporation B.V. is based in the European Union (Netherlands). For any intra-group data transfers to the US parent company Zoho Corporation, 4141 Hacienda Drive, Pleasanton, CA 94588, USA, Zoho relies on Standard Contractual Clauses (SCCs) pursuant to Art. 46(2)(c) GDPR. A data processing agreement pursuant to Art. 28 GDPR has been concluded.",
+    "p3": "Depending on the application, the following data is processed: contact and contract data of our business clients (CRM, support, contract signing), accounting and invoicing data, and email addresses for newsletter delivery. End-customer data of restaurant businesses is not permanently stored in any Zoho product, except for accounting-relevant invoice data.",
+    "rechtsgrundlageLabel": "Legal basis:",
+    "rechtsgrundlageText": "Art. 6(1)(b) GDPR (performance of a contract), Art. 6(1)(c) GDPR (legal obligation for accounting data), Art. 6(1)(a) and (f) GDPR (consent and legitimate interest for email marketing).",
+    "linkText": "Zoho Privacy Policy"
+  },
+
+  "s25": {
+    "title": "20g. Project Management and Document Storage",
+    "p1": "For internal coordination of customer projects and storage of onboarding documents of our business clients, we use:",
+    "items": {
+      "i1Label": "Trello",
+      "i1Text": "(Atlassian, Inc., 350 Bush Street, Floor 13, San Francisco, CA 94104, USA): Task management and project tracking. Atlassian is certified under the EU-U.S. Data Privacy Framework. A DPA pursuant to Art. 28 GDPR has been concluded.",
+      "i2Label": "Google Drive",
+      "i2Text": "(Google Ireland Limited, Dublin, Ireland; data transfer to Google LLC, Mountain View, CA, USA, DPF-certified, DPA concluded): Document storage and sharing internally and in the onboarding process with business clients."
+    },
+    "p2": "Project-related data as well as the onboarding documents mentioned in Section 20b are processed in these systems. Access is restricted to the respectively responsible employees (need-to-know principle).",
+    "rechtsgrundlageLabel": "Legal basis:",
+    "rechtsgrundlageText": "Art. 6(1)(b) and (f) GDPR (performance of a contract and legitimate interest in coordinated project management). Third-country transfer: EU-U.S. Data Privacy Framework."
+  },
+
+  "s26": {
+    "title": "20i. Social Media Presences",
+    "p1": "We maintain public presences on the following social media platforms:",
+    "h1": "20i.1 WhatsApp Channel",
+    "h1p1": "We operate a WhatsApp channel through which we unilaterally inform subscribers about news. This is not a chat tool. The operator is Meta Platforms Ireland Limited (EU); data may be transferred to Meta Platforms, Inc., 1 Hacker Way, Menlo Park, CA 94025, USA. Meta Platforms, Inc. is certified under the EU-U.S. Data Privacy Framework.",
+    "h1LinkText": "WhatsApp/Meta Privacy Policy",
+    "h2": "20i.2 Instagram",
+    "h2p1": "We maintain a company page on Instagram (Meta Platforms Ireland Limited, 4 Grand Canal Square, Dublin 2, Ireland). Data may be transferred to Meta Platforms, Inc., Menlo Park, CA 94025, USA. Meta Platforms, Inc. is certified under the EU-U.S. Data Privacy Framework.",
+    "h2LinkText": "Instagram/Meta Privacy Policy",
+    "h3": "20i.3 Facebook",
+    "h3p1": "We maintain a company page on Facebook (Meta Platforms Ireland Limited). As joint controllers pursuant to Art. 26 GDPR, we have entered into an agreement with Meta regarding the processing of page statistics (Page Insights).",
+    "h3LinkText": "Facebook/Meta Privacy Policy",
+    "h4": "20i.4 YouTube",
+    "h4p1": "We maintain a YouTube channel (Google Ireland Limited, Dublin, Ireland). Data may be transferred to Google LLC, Mountain View, CA 94043, USA. Google LLC is certified under the EU-U.S. Data Privacy Framework.",
+    "h4LinkText": "Google/YouTube Privacy Policy",
+    "rechtsgrundlageLabel": "Legal basis",
+    "rechtsgrundlageText": "for our presences: Art. 6(1)(f) GDPR (legitimate interest in public communication and reach). We have no influence on the processing by platform operators for their own purposes."
+  },
+
+  "s27": {
+    "title": "21. Recipients and Processors",
+    "p1": "Your personal data is disclosed exclusively within the framework of legal requirements. The following list distinguishes by role:",
+    "h1": "Processors pursuant to Art. 28 GDPR",
+    "h1Sub": "(process data exclusively on our instructions)",
+    "h1Items": {
+      "i1": "All-Inkl.com – Neue Medien Münnich, Hauptstraße 68, 02742 Friedersdorf, Germany (hosting)",
+      "i2": "Zoho Corporation B.V., Beneluxlaan 4B, 3527 HT Utrecht, Netherlands (CRM, Sign, Books, Billing, Vault, Desk, Campaigns; potential US transfers via SCCs pursuant to Art. 46 GDPR)",
+      "i3": "Superchat GmbH, Berlin, Germany (WhatsApp marketing)",
+      "i4": "Cybot A/S, Havnegade 39, 1058 Copenhagen, Denmark (Cookiebot – Cookie Consent Management)",
+      "i5": "Trello / Atlassian, Inc., 350 Bush Street, Floor 13, San Francisco, CA 94104, USA (project management, DPF-certified)",
+      "i6": "Google Drive / Google LLC, 1600 Amphitheatre Parkway, Mountain View, CA 94043, USA (document storage, DPF-certified)",
+      "i7": "Make s.r.o., Jiříčnova 1904/3, Prague 4, Czech Republic (process automation)",
+      "i8": "Google Ireland Limited, Gordon House, Barrow Street, Dublin 4, Ireland (reCAPTCHA, Google Analytics, Google Maps API; data transfer to Google LLC, Mountain View, CA 94043, USA, DPF-certified)"
+    },
+    "h2": "Independent Controllers pursuant to Art. 4 No. 7 GDPR",
+    "h2Sub": "(process data according to their own privacy policies)",
+    "h2Items": {
+      "i1": "Stripe Payments Europe, Ltd., Dublin, Ireland (payment processing, DPF-certified for US transfer)",
+      "i2": "GoCardless Ltd., London, United Kingdom (SEPA direct debit; UK adequacy decision Art. 45 GDPR)",
+      "i3": "PayPal (Europe) S.à r.l. et Cie, S.C.A., Luxembourg (payment processing, optional)",
+      "i4": "Meta Platforms Ireland Limited / Meta Platforms, Inc., Menlo Park, CA 94025, USA (WhatsApp Business API, Instagram, Facebook; DPF-certified)",
+      "i5": "Google Ireland Limited / Google LLC (YouTube; DPF-certified)",
+      "i6": "Public authorities and courts (in case of legal obligation)"
+    },
+    "h3": "Intra-group third-country transfer",
+    "h3Items": {
+      "i1": "Epit Global PVT Ltd., Sri Lanka (subsidiary, acts exclusively on the instructions of Epit Global GmbH; legal basis: SCCs pursuant to Art. 46(2)(c) GDPR – see Section 6 for details)"
+    },
+    "p2": "Where service providers process personal data exclusively on our instructions (processors), we conclude data processing agreements pursuant to Art. 28 GDPR."
+  },
+
+  "s28": {
+    "title": "22. Right to Object pursuant to Art. 21 GDPR",
+    "p1": "If the processing of your personal data is based on Art. 6(1)(f) GDPR (legitimate interests), you have the right to object to the processing at any time on grounds relating to your particular situation.",
+    "p2": "If your personal data is processed for direct marketing purposes, you have the right to object to the processing at any time and without giving reasons. After your objection, your data will no longer be processed for direct marketing purposes.",
+    "p3": "To exercise your right to object, an email to the following address is sufficient:",
+    "p3LinkText": "datenschutz@epitglobal.de"
+  },
+
+  "s29": {
+    "title": "23. Amendment of this Privacy Policy",
+    "p1": "We reserve the right to amend this privacy policy to adapt it to changes in the legal situation, technical developments or changed business processes. The current version is always available on our website. If changes require renewed consent, we will inform you separately."
+  }
+}

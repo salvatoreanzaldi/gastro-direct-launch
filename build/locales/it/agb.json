@@ -1,0 +1,423 @@
+{
+  "meta": {
+    "title": "CGV — Condizioni Generali di Vendita | Gastro Master",
+    "description": "Condizioni Generali di Vendita della Epit Global GmbH / Gastro Master.",
+    "canonical": "https://gastro-master.de/it/agb"
+  },
+  "title": "Condizioni Generali di Vendita",
+  "subtitle": "Epit Global GmbH · Herzbergstr. 9 · 61250 Usingen",
+
+  "s0": {
+    "title": "Contratto di acquisto — Sistema di ordinazione online",
+
+    "praeambel": {
+      "heading": "Preambolo",
+      "text": "Le parti stipulano un contratto di acquisto per la realizzazione di un negozio online e di un'app (iOS e Android). L'offerta è rivolta al gestore indicato. Oggetto del contratto è lo sviluppo dell'app e del webshop da parte di Epit Global GmbH. Il Fornitore inserisce i prodotti secondo l'elenco prodotti. Dopo il completamento del progetto, il gestore può gestire i prodotti in autonomia. Il ristoratore può facoltativamente acquistare il dispositivo Gastro Master. Tramite questo dispositivo, gli ordini in arrivo vengono stampati automaticamente, anziché essere recuperati via e-mail."
+    },
+
+    "p1": {
+      "heading": "§ 1 Parti contraenti",
+      "text": "Le parti contraenti esclusive sono la Epit Global GmbH (di seguito denominata «Fornitore») e il cliente finale indicato nel modulo d'ordine (di seguito denominato «Cliente»)."
+    },
+
+    "p2": {
+      "heading": "§ 2 Oggetto del contratto",
+      "a": {
+        "label": "(a) App, Webshop",
+        "text": "Oggetto del contratto è la configurazione e la cessione a tempo illimitato dei diritti d'uso per app Android/iOS e/o webshop ai sensi del contratto di acquisto. L'oggetto è l'acquisizione di un sistema di ordinazione online che appare come app nei rispettivi app store e come webshop online. Ciò include il caricamento iniziale dei contenuti forniti dal Fornitore nonché l'archiviazione dei dati derivanti dall'operatività. Il cliente finale accede all'app/al webshop tramite una connessione internet o di telecomunicazione. Con l'acquisto, il sistema diventa proprietà del Cliente. Qualora l'acquirente decida di archiviare il sistema su altri server, assume la responsabilità esclusiva per eventuali complicazioni nell'elaborazione dei dati o per la perdita di dati, compresi i dati dei clienti e lo storico degli ordini."
+      },
+      "b": {
+        "label": "(b) Rappresentazione esemplificativa",
+        "text": "Prima della stipula del contratto, il Cliente ha ricevuto un esempio di un webshop/un'app già configurati. Il webshop/le app del Cliente possono corrispondere a questo esempio in termini di design e layout. Lo stesso vale per la homepage esemplificativa, la presentazione dei prodotti e il processo di ordinazione."
+      },
+      "c": {
+        "label": "(c) Accesso del Cliente",
+        "text": "Il Cliente riceve un accesso separato e può modificare in autonomia i contenuti dell'app/del webshop."
+      },
+      "d": {
+        "label": "(d) Documenti legali",
+        "text": "Il Fornitore mette a disposizione CGV modello, un'informativa sulla privacy e una pagina di informazioni legali (Impressum). Il Cliente è espressamente invitato ad adattare questi testi e a farli verificare da un consulente legale. Il Fornitore non fornisce consulenza legale."
+      },
+      "e": {
+        "label": "(e) Responsabilità dei contenuti",
+        "text": "Il Fornitore non assume alcuna responsabilità per la liceità dei contenuti dell'app/del webshop. La responsabilità legale esclusiva ricade unicamente sul rispettivo Cliente. Ai sensi del § 5 comma 1 TMG, nell'Impressum è indicato esclusivamente il Cliente. Si richiama espressamente l'attenzione sulle disposizioni legislative speciali relative alla vendita di alimenti e bevande, in particolare la tutela dei minori."
+      }
+    },
+
+    "p3": {
+      "heading": "§ 3 Prezzi / Pagamento",
+      "sub1": {
+        "label": "(1) Canoni d'uso e acquisto",
+        "text": "I canoni mensili d'uso per app/webshop sono indicati nel modulo d'ordine. Con l'acquisto vengono meno i canoni mensili. Il prezzo di acquisto (secondo l'offerta precedente) può essere pagato in un massimo di 4 rate. Anticipo: 25%. L'importo residuo viene suddiviso in un massimo di 4 rate mensili. In assenza di mandato SEPA, si raccomanda l'impostazione di un bonifico permanente."
+      },
+      "sub2": {
+        "label": "(2) Costi di attivazione",
+        "text": "I costi di attivazione vengono concordati individualmente in base all'entità dell'attività. La configurazione delle filiali avviene in modalità digitale."
+      },
+      "sub3": {
+        "label": "(3) Trasmissione degli ordini",
+        "text": "La trasmissione degli ordini avviene tramite programma di posta elettronica. Al termine, il Fornitore fornisce una spiegazione completa."
+      }
+    },
+
+    "p4": {
+      "heading": "§ 4 Diritti d'uso",
+      "text": "Il Fornitore concede al Cliente diritti d'uso semplici, non trasferibili e a tempo illimitato per l'utilizzo delle app/del webshop nell'ambito contrattuale. Il Cliente non può trasferire i diritti d'uso a terzi senza il consenso del Fornitore."
+    },
+
+    "p5": {
+      "heading": "§ 5 Obblighi di collaborazione",
+      "text": "Il Cliente è tenuto a segnalare tempestivamente al Fornitore eventuali difetti del software."
+    },
+
+    "p6": {
+      "heading": "§ 6 Limitazione di responsabilità",
+      "sub1": {
+        "label": "(1) Responsabilità illimitata",
+        "text": "Il Fornitore risponde senza limitazioni ai sensi delle disposizioni di legge per danni derivanti dalla lesione della vita, dell'integrità fisica o della salute a causa di violazioni dolose o colpose degli obblighi, nonché per comportamenti dolosi o gravemente colposi del Fornitore, dei suoi rappresentanti legali o ausiliari, per l'assenza o la perdita di caratteristiche garantite, nonché per danni derivanti da violazioni dolose o gravemente colpose degli obblighi."
+      },
+      "sub2": {
+        "label": "(2) Responsabilità limitata",
+        "text": "Per danni derivanti da violazioni lievemente colpose di obblighi essenziali, la responsabilità del Fornitore è limitata al danno tipico e prevedibile del contratto. Gli obblighi essenziali sono quelli che rendono possibile la corretta esecuzione del contratto e sul cui adempimento il Cliente può fare affidamento."
+      },
+      "sub3": {
+        "label": "(3) Responsabilità del prodotto",
+        "text": "Restano impregiudicate le disposizioni della legge sulla responsabilità del prodotto."
+      }
+    },
+
+    "p7": {
+      "heading": "§ 7 Supporto / Aggiornamenti",
+      "text": "Il contratto di acquisto include un supporto gratuito di 6 mesi e aggiornamenti mensili."
+    },
+
+    "p8": {
+      "heading": "§ 8 Protezione dei dati",
+      "a": {
+        "label": "(a) Titolare del trattamento",
+        "text": "Ai sensi del GDPR, il Fornitore è il Titolare del trattamento."
+      },
+      "b": {
+        "label": "(b) Raccolta e trattamento",
+        "text": "Il Fornitore raccoglie e tratta dati personali solo nella misura necessaria all'adempimento del contratto, in presenza di consenso o di interessi legittimi. Il trattamento dei dati personali del Cliente è finalizzato esclusivamente all'adempimento del contratto. Per quanto riguarda il trattamento dei dati personali degli ospiti, le parti stipulano un contratto di trattamento dei dati per conto terzi."
+      }
+    },
+
+    "p10": {
+      "heading": "§ 10 Disposizioni varie",
+      "sub1": {
+        "label": "(1) Requisito di forma scritta",
+        "text": "Le modifiche al presente contratto richiedono la forma scritta. La deroga al requisito di forma scritta richiede a sua volta la forma scritta. Non sono stati conclusi accordi verbali accessori."
+      },
+      "sub2": {
+        "label": "(2) Clausola di salvaguardia",
+        "text": "L'invalidità o l'incompletezza di singole disposizioni contrattuali non pregiudica la validità giuridica delle restanti disposizioni."
+      },
+      "sub3": {
+        "label": "(3) Foro competente",
+        "text": "Per tutte le controversie è convenuto come foro competente la sede del Fornitore."
+      },
+      "sub4": {
+        "label": "(4) Servizi inclusi nel prezzo di acquisto",
+        "text": "Il prezzo di acquisto include 2.500 volantini con codici QR per filiale."
+      }
+    }
+  },
+
+  "s1": {
+    "title": "Contratto di acquisto — Sito web",
+
+    "p1": {
+      "heading": "§ 1 Oggetto del contratto",
+      "text": "Oggetto del contratto è la configurazione e la cessione a tempo illimitato dei diritti d'uso per un sito web ai sensi del contratto di acquisto. Il cliente finale accede al sito web tramite una connessione internet o di telecomunicazione. Con l'acquisto, il sistema diventa proprietà del Cliente. Qualora l'acquirente decida di archiviare il sistema su altri server, assume la responsabilità esclusiva per eventuali complicazioni nell'elaborazione dei dati o per la perdita di dati, compresi i dati dei clienti e lo storico degli ordini."
+    },
+
+    "p2": {
+      "heading": "§ 2 Accesso del Cliente e documenti legali",
+      "item1": "Il Cliente riceve un accesso separato e può modificare in autonomia i contenuti del sito web.",
+      "item2": "Il Fornitore mette a disposizione CGV modello, un'informativa sulla privacy e una pagina di informazioni legali (Impressum).",
+      "item3": "Il Cliente è espressamente invitato ad adattare questi testi e a farli verificare da un consulente legale.",
+      "item4": "Il Fornitore non fornisce consulenza legale.",
+      "item5": "Il Fornitore non assume alcuna responsabilità per la liceità dei contenuti del sito web.",
+      "item6": "La responsabilità legale esclusiva ricade unicamente sul Cliente.",
+      "item7": "Ai sensi del § 5 comma 1 TMG, nell'Impressum è indicato esclusivamente il Cliente."
+    },
+
+    "p3": {
+      "heading": "§ 3 Prezzi / Pagamento",
+      "text": "Con l'acquisto vengono meno i canoni mensili. Il prezzo di acquisto (secondo l'offerta precedente) può essere pagato in un massimo di 5 rate."
+    },
+
+    "p4": {
+      "heading": "§ 4 Trasferimento dei diritti",
+      "text": "Il Fornitore trasferisce al Cliente tutti i diritti sulla piattaforma. In caso di supporto continuativo per aggiornamenti/manutenzione mensili, tutte le modifiche vengono effettuate con il consenso del Cliente."
+    },
+
+    "p5": {
+      "heading": "§ 5 Obblighi di collaborazione",
+      "text": "Il Cliente è tenuto a segnalare tempestivamente al Fornitore eventuali difetti del sito web."
+    },
+
+    "p6": {
+      "heading": "§ 6 Limitazione di responsabilità",
+      "sub1": {
+        "label": "(1) Responsabilità illimitata",
+        "text": "Il Fornitore risponde senza limitazioni ai sensi delle disposizioni di legge per danni derivanti dalla lesione della vita, dell'integrità fisica o della salute a causa di violazioni dolose o colpose degli obblighi, nonché per danni derivanti da atti dolosi o gravemente colposi del Fornitore, dei suoi rappresentanti legali o ausiliari."
+      },
+      "sub2": {
+        "label": "(2) Responsabilità limitata",
+        "text": "Per danni derivanti da violazioni lievemente colpose di obblighi essenziali, la responsabilità del Fornitore è limitata al danno tipico e prevedibile del contratto."
+      },
+      "sub3": {
+        "label": "(3) Responsabilità del prodotto",
+        "text": "Restano impregiudicate le disposizioni della legge sulla responsabilità del prodotto."
+      }
+    },
+
+    "p7": {
+      "heading": "§ 7 Supporto / Aggiornamenti",
+      "text": "Il contratto di acquisto costituisce una prestazione conclusa che non richiede ulteriore consulenza. Qualora le parti concordino una collaborazione continuativa, questa sarà remunerata e documentata contrattualmente. Successivamente verrà stabilita una tariffa mensile forfettaria per le modifiche (sviluppo) e il supporto tecnico."
+    },
+
+    "p8": {
+      "heading": "§ 8 Protezione dei dati",
+      "a": {
+        "label": "(a) Titolare del trattamento",
+        "text": "Ai sensi del GDPR, il Fornitore è il Titolare del trattamento."
+      },
+      "b": {
+        "label": "(b) Raccolta",
+        "text": "Il Fornitore raccoglie e tratta dati personali solo nella misura necessaria all'adempimento del contratto, in presenza di consenso o di interessi legittimi. Il trattamento dei dati personali del Cliente è finalizzato esclusivamente all'adempimento del contratto."
+      }
+    },
+
+    "p9": {
+      "heading": "§ 9 Disposizioni varie",
+      "sub1": {
+        "label": "(1) Requisito di forma scritta",
+        "text": "Le modifiche richiedono la forma scritta. La deroga al requisito di forma scritta richiede a sua volta la forma scritta. Non sono stati conclusi accordi verbali accessori."
+      },
+      "sub2": {
+        "label": "(2) Clausola di salvaguardia",
+        "text": "L'invalidità di singole disposizioni non pregiudica la validità giuridica delle restanti disposizioni."
+      },
+      "sub3": {
+        "label": "(3) Foro competente",
+        "text": "Per tutte le controversie è convenuto come foro competente la sede del Fornitore."
+      }
+    }
+  },
+
+  "s2": {
+    "title": "Contratto di leasing — Sito web",
+
+    "praeambel": {
+      "heading": "Preambolo",
+      "text": "Le parti stipulano un contratto di leasing per la realizzazione di un sito web. L'offerta è rivolta al gestore indicato. Oggetto del contratto è lo sviluppo del sito web da parte di Epit Global GmbH (di seguito denominata «Fornitore»). Il Fornitore inserisce i contenuti, le immagini e le descrizioni forniti dal Cliente e garantisce il funzionamento continuativo del sito web."
+    },
+
+    "p1": {
+      "heading": "§ 1 Parti contraenti",
+      "text": "Le parti contraenti esclusive sono la Epit Global GmbH (di seguito denominata «Fornitore») e il cliente indicato nell'offerta (di seguito denominato «Cliente»)."
+    },
+
+    "p2": {
+      "heading": "§ 2 Oggetto del contratto",
+      "a1": {
+        "label": "(a)(1) Ambito",
+        "text": "Oggetto del contratto è la configurazione e l'utilizzo a tempo determinato di un sito web ai sensi del contratto di leasing. La durata minima del sito web è di 12 mesi. Successivamente, il contratto può essere disdetto in qualsiasi momento con un preavviso di tre mesi a fine mese. Il cliente finale accede al sito web tramite una connessione internet o di telecomunicazione."
+      },
+      "a2": {
+        "label": "(a)(2) Rappresentazione esemplificativa",
+        "text": "Prima della stipula del contratto, il Cliente ha ricevuto un esempio di un sito web già configurato. Il sito web del Cliente è simile a questo esempio, ma consente personalizzazioni individuali di design e layout. Lo stesso vale per la homepage esemplificativa e la presentazione dei prodotti."
+      },
+      "a3": {
+        "label": "(a)(3) Accesso del Cliente",
+        "text": "Il Cliente riceve un accesso separato e può modificare in autonomia i contenuti del sito web."
+      },
+      "a4": {
+        "label": "(a)(4) Documenti legali",
+        "text": "Il Fornitore mette a disposizione CGV modello, un'informativa sulla privacy e una pagina di informazioni legali (Impressum). Il Cliente è espressamente invitato ad adattare questi testi e a farli verificare da un consulente legale. Il Fornitore non fornisce consulenza legale."
+      },
+      "a5": {
+        "label": "(a)(5) Responsabilità dei contenuti",
+        "text": "Il Fornitore non assume alcuna responsabilità per la liceità dei contenuti del sito web. La responsabilità legale esclusiva ricade unicamente sul Cliente. Ai sensi del § 5 comma 1 TMG, nell'Impressum è indicato esclusivamente il Cliente."
+      }
+    },
+
+    "p3": {
+      "heading": "§ 3 Prezzi / Pagamento",
+      "text": "Il canone mensile d'uso per il sito web è indicato nel modulo d'ordine."
+    },
+
+    "p4": {
+      "heading": "§ 4 Diritti d'uso",
+      "text": "Il Fornitore concede al Cliente diritti d'uso semplici, non trasferibili e a tempo determinato per l'utilizzo del sito web nell'ambito contrattuale."
+    },
+
+    "p5": {
+      "heading": "§ 5 Obblighi di collaborazione",
+      "text": "Il Cliente è tenuto a segnalare tempestivamente al Fornitore eventuali difetti del software."
+    },
+
+    "p6": {
+      "heading": "§ 6 Limitazione di responsabilità",
+      "sub1": {
+        "label": "(1) Responsabilità illimitata",
+        "text": "Il Fornitore risponde senza limitazioni ai sensi delle disposizioni di legge per danni derivanti dalla lesione della vita, dell'integrità fisica o della salute a causa di violazioni dolose o colpose degli obblighi, nonché per danni derivanti da atti dolosi o gravemente colposi."
+      },
+      "sub2": {
+        "label": "(2) Responsabilità limitata",
+        "text": "Per danni derivanti da violazioni lievemente colpose di obblighi essenziali, la responsabilità del Fornitore è limitata al danno tipico e prevedibile del contratto."
+      },
+      "sub3": {
+        "label": "(3) Responsabilità del prodotto",
+        "text": "Restano impregiudicate le disposizioni della legge sulla responsabilità del prodotto."
+      }
+    },
+
+    "p7": {
+      "heading": "§ 7 Supporto / Aggiornamenti",
+      "sub1": {
+        "label": "(1) Aggiornamenti inclusi",
+        "text": "Il contratto di leasing include aggiornamenti e adeguamenti del sito web gratuiti. Le modifiche vengono effettuate con il previo consenso del Cliente conformemente al contratto."
+      },
+      "sub2": {
+        "label": "(2) Integrazione di filiali",
+        "text": "Il supporto include l'integrazione gratuita di ulteriori filiali per l'acquirente."
+      }
+    },
+
+    "p8": {
+      "heading": "§ 8 Protezione dei dati",
+      "a": {
+        "label": "(a) Titolare del trattamento",
+        "text": "Ai sensi del GDPR, il Fornitore è il Titolare del trattamento."
+      },
+      "b": {
+        "label": "(b) Raccolta",
+        "text": "Il Fornitore raccoglie e tratta dati personali solo nella misura necessaria all'adempimento del contratto, in presenza di consenso o di interessi legittimi. Il trattamento dei dati personali del Cliente è finalizzato esclusivamente all'adempimento del contratto. Per quanto riguarda il trattamento dei dati personali degli ospiti, le parti stipulano un contratto di trattamento dei dati per conto terzi."
+      }
+    },
+
+    "p9": {
+      "heading": "§ 9 Disposizioni varie",
+      "sub1": {
+        "label": "(1) Requisito di forma scritta",
+        "text": "Le modifiche richiedono la forma scritta. La deroga al requisito di forma scritta richiede a sua volta la forma scritta. Non sono stati conclusi accordi verbali accessori."
+      },
+      "sub2": {
+        "label": "(2) Clausola di salvaguardia",
+        "text": "L'invalidità di singole disposizioni non pregiudica la validità giuridica delle restanti disposizioni."
+      },
+      "sub3": {
+        "label": "(3) Foro competente",
+        "text": "Per tutte le controversie è convenuto come foro competente la sede del Fornitore."
+      }
+    }
+  },
+
+  "s3": {
+    "title": "Contratto di leasing — Shop online & App",
+
+    "praeambel": {
+      "heading": "Preambolo",
+      "text": "Le parti stipulano un contratto di leasing per la realizzazione di un sistema di app basato su Ionic. L'offerta è rivolta al gestore indicato. Oggetto del contratto è lo sviluppo del sistema di app da parte di Epit Global GmbH (di seguito denominata «Fornitore»). I clienti finali ordinano i prodotti del gestore tramite le app e sono tenuti al pagamento. Il Fornitore inserisce i contenuti, le immagini e le descrizioni forniti dal Cliente e garantisce il funzionamento continuativo dell'app. Il Cliente riceve accesso autonomo all'app e può modificare i contenuti (prodotti, sconti, categorie, descrizioni) in autonomia."
+    },
+
+    "p1": {
+      "heading": "§ 1 Parti contraenti",
+      "text": "Le parti contraenti esclusive sono la Epit Global GmbH (di seguito denominata «Fornitore») e il cliente indicato nell'offerta (di seguito denominato «Cliente»)."
+    },
+
+    "p2": {
+      "heading": "§ 2 Oggetto del contratto",
+      "a1": {
+        "label": "(a)(1) Ambito",
+        "text": "Oggetto del contratto è la configurazione e l'utilizzo, limitato a 12 mesi, di un sistema di ordinazione online che appare come app nei rispettivi app store e come webshop online. Ciò include il caricamento iniziale dei contenuti forniti dal Fornitore nonché l'archiviazione dei dati derivanti dall'operatività. Il cliente finale accede all'app/al webshop tramite una connessione internet o di telecomunicazione. Con l'acquisto, il sistema diventa proprietà del Cliente. Qualora l'acquirente decida di archiviare il sistema su altri server, assume la responsabilità esclusiva per eventuali complicazioni nell'elaborazione dei dati o per la perdita di dati."
+      },
+      "a2": {
+        "label": "(a)(2) Rappresentazione esemplificativa",
+        "text": "Prima della stipula del contratto, il Cliente ha ricevuto un esempio di un webshop/un'app già configurati. Il webshop/le app del Cliente sono simili a questo esempio, ma consentono personalizzazioni individuali di design e layout."
+      },
+      "a3": {
+        "label": "(a)(3) Accesso del Cliente",
+        "text": "Il Cliente riceve un accesso separato e può modificare in autonomia i contenuti dell'app/del webshop."
+      },
+      "a4": {
+        "label": "(a)(4) Documenti legali",
+        "text": "Il Fornitore mette a disposizione CGV modello, un'informativa sulla privacy e una pagina di informazioni legali (Impressum). Il Cliente è espressamente invitato ad adattare questi testi e a farli verificare da un consulente legale. Il Fornitore non fornisce consulenza legale."
+      },
+      "a5": {
+        "label": "(a)(5) Responsabilità dei contenuti",
+        "text": "Il Fornitore non assume alcuna responsabilità per la liceità dei contenuti dell'app/del webshop. La responsabilità legale esclusiva ricade unicamente sul Cliente. Ai sensi del § 5 comma 1 TMG, nell'Impressum è indicato esclusivamente il Cliente."
+      }
+    },
+
+    "p3": {
+      "heading": "§ 3 Prezzi / Pagamento",
+      "sub1": {
+        "label": "(1) Canoni e condizioni",
+        "text": "I canoni mensili d'uso per app/webshop sono indicati nel modulo d'ordine. La durata contrattuale è a tempo indeterminato con un periodo di preavviso di tre mesi per entrambe le parti. Con l'acquisto vengono meno i canoni mensili. Il prezzo di acquisto (secondo l'offerta precedente) può essere pagato in un massimo di 4 rate. Le quattro rate devono essere versate entro il terzo giorno lavorativo del mese sul conto del Fornitore in via anticipata. In assenza di mandato SEPA, si raccomanda l'impostazione di un bonifico permanente."
+      },
+      "sub2": {
+        "label": "(2) Costi di attivazione",
+        "text": "I costi di attivazione vengono concordati individualmente in base all'entità dell'attività. La configurazione delle filiali avviene in modalità digitale."
+      }
+    },
+
+    "p4": {
+      "heading": "§ 4 Diritti d'uso",
+      "text": "Il Fornitore concede al Cliente diritti d'uso semplici, non trasferibili e a tempo illimitato per l'utilizzo delle app/del webshop nell'ambito contrattuale. Il Cliente non può trasferire i diritti d'uso a terzi senza il consenso del Fornitore."
+    },
+
+    "p5": {
+      "heading": "§ 5 Obblighi di collaborazione",
+      "text": "Il Cliente è tenuto a segnalare tempestivamente al Fornitore eventuali difetti del software."
+    },
+
+    "p6": {
+      "heading": "§ 6 Limitazione di responsabilità",
+      "sub1": {
+        "label": "(1) Responsabilità illimitata",
+        "text": "Il Fornitore risponde senza limitazioni ai sensi delle disposizioni di legge per danni derivanti dalla lesione della vita, dell'integrità fisica o della salute a causa di violazioni dolose o colpose degli obblighi, nonché per danni derivanti da atti dolosi o gravemente colposi."
+      },
+      "sub2": {
+        "label": "(2) Responsabilità limitata",
+        "text": "Per danni derivanti da violazioni lievemente colpose di obblighi essenziali, la responsabilità del Fornitore è limitata al danno tipico e prevedibile del contratto."
+      },
+      "sub3": {
+        "label": "(3) Responsabilità del prodotto",
+        "text": "Restano impregiudicate le disposizioni della legge sulla responsabilità del prodotto."
+      }
+    },
+
+    "p7": {
+      "heading": "§ 7 Protezione dei dati",
+      "a": {
+        "label": "(a) Titolare del trattamento",
+        "text": "Ai sensi del GDPR, il Fornitore è il Titolare del trattamento."
+      },
+      "b": {
+        "label": "(b) Raccolta",
+        "text": "Il Fornitore raccoglie e tratta dati personali solo nella misura necessaria all'adempimento del contratto, in presenza di consenso o di interessi legittimi. Il trattamento dei dati personali del Cliente è finalizzato esclusivamente all'adempimento del contratto. Per quanto riguarda il trattamento dei dati personali degli ospiti, le parti stipulano un contratto di trattamento dei dati per conto terzi."
+      }
+    },
+
+    "p8": {
+      "heading": "§ 8 Disposizioni varie",
+      "sub1": {
+        "label": "(1) Requisito di forma scritta",
+        "text": "Le modifiche richiedono la forma scritta. La deroga al requisito di forma scritta richiede a sua volta la forma scritta. Non sono stati conclusi accordi verbali accessori."
+      },
+      "sub2": {
+        "label": "(2) Clausola di salvaguardia",
+        "text": "L'invalidità di singole disposizioni non pregiudica la validità giuridica delle restanti disposizioni."
+      },
+      "sub3": {
+        "label": "(3) Foro competente",
+        "text": "Per tutte le controversie è convenuto come foro competente la sede del Fornitore."
+      }
+    }
+  }
+}

@@ -1,0 +1,91 @@
+{
+  "meta": {
+    "title": "Self-Ordering Kiosk für Gastronomie — Bestellterminal & Self-Service | Gastro Master",
+    "description": "Self-Ordering Kiosk von Gastro Master: Gäste bestellen und bezahlen direkt am Terminal — ohne Warteschlange, ohne Theken-Stress. Mehrsprachig, 24/7, Upselling automatisch, voll integriert ins Kassensystem. Für Schnellrestaurants, Bäckereien, Food Courts und Franchise.",
+    "breadcrumbName": "Self-Ordering Kiosk"
+  },
+  "hero": {
+    "badge": "Add-On · Self-Ordering Terminal",
+    "headline": "Self-Ordering Kiosk — Schluss mit der Warteschlange",
+    "subline": "Das Terminal übernimmt die Theke. Gäste wählen, konfigurieren und bezahlen direkt am Bildschirm — mehrsprachig, mit aktivem Upselling und ohne Wartezeit. Bestellung landet in Echtzeit in Kasse und Küche. Dein Personal arbeitet, statt zu kassieren."
+  },
+  "problem": {
+    "title": "Das Problem an der klassischen Theke",
+    "points": [
+      "Zu Stoßzeiten staut sich alles vor der Theke — Gäste warten 8–12 Minuten, viele drehen wieder ab und kommen nicht zurück.",
+      "Personalmangel in der Gastronomie: Schon ein fehlender Mitarbeiter an der Kasse senkt den Umsatz pro Schicht spürbar.",
+      "Die manuelle Bestellaufnahme dauert pro Gast 90–120 Sekunden — Zeit, die in der Mittagspause oder zur Rush Hour direkt fehlt.",
+      "Upselling klappt nur, wenn das Personal Zeit und Lust hat — in der Praxis bleiben Größen, Beilagen und Getränke regelmäßig liegen."
+    ]
+  },
+  "solution": {
+    "title": "Die Lösung: Self-Ordering Kiosk",
+    "points": [
+      "Gäste bestellen selbst am Touchscreen — in 60–90 Sekunden komplett durch, mit klaren Bildern, Mengen und Zusatzoptionen.",
+      "Bezahlung direkt am Terminal: Karte, Apple Pay, Google Pay, Bargeld optional. Kein zusätzlicher Schritt an der Kasse.",
+      "Aktives Upselling im Bestellflow: Pommes als große Portion? Getränk dazu? +20–30 % Durchschnittsbon, ganz ohne Personal.",
+      "Bestellung landet sofort in Kasse und Küche, mit Bestellnummer für den Pick-Up Screen. Kein Doppeltippen, keine Missverständnisse."
+    ]
+  },
+  "features": {
+    "headline": "Alles drin für Self-Ordering, das wirklich entlastet",
+    "sub": "Sechs Funktionen, die aus dem Terminal einen vollwertigen Bestell- und Kassen-Kanal machen.",
+    "items": [
+      { "title": "Intuitive Touch-Bedienung", "description": "Große Buttons, klare Bilder, deutsche und internationale Symbolsprache. Auch ältere Gäste und Kinder kommen ohne Hilfe durch — keine Erklärung nötig." },
+      { "title": "Automatisches Upselling", "description": "Pro Artikel hinterlegst du Empfehlungen — Größen-Upgrade, Beilagen, Getränke, Desserts. Erscheint automatisch im Bestellflow und steigert den Bon nachweislich um 20–30 %." },
+      { "title": "Mehrsprachiges Menü", "description": "Deutsch und Englisch — Gast wählt seine Sprache beim Start. Weitere Sprachen folgen in den nächsten Releases." },
+      { "title": "Alle Zahlungsarten integriert", "description": "EC-Karte, Visa, Mastercard, Apple Pay, Google Pay — direkt am Terminal. Alle Zahlungsarten werden automatisch durch Epit Pay bedient. Bargeld-Modul auf Wunsch nachrüstbar." },
+      { "title": "24/7-Betrieb möglich", "description": "Für Tankstellen-Bistros, Hotel-Lobbys oder unbemannte Selbstbedienung: Das Terminal nimmt Bestellungen rund um die Uhr an, auch wenn niemand an der Theke steht." },
+      { "title": "Live-Sync mit Kasse & Küche", "description": "Jede Bestellung landet sofort in der Cloud-Kasse und auf dem Küchenmonitor. Pick-Up Screen ruft Bestellnummer auf. Kein Doppeleingeben, keine verlorenen Orders." }
+    ]
+  },
+  "useCases": {
+    "headline": "So setzen Gastronomen den Self-Ordering Kiosk ein",
+    "sub": "Drei reale Szenarien aus unserem Kundenkreis — vom Schnellrestaurant bis zum Food Court.",
+    "items": [
+      { "title": "FastFood-Kette mit Mittagsstoss", "story": "Ein Burger-Konzept in Berlin-Kreuzberg ersetzte zwei Kassenplätze durch vier Self-Ordering Kiosks. Die durchschnittliche Wartezeit fiel von 8 auf unter 4 Minuten — Mittagsumsatz stieg um 28 %, ohne zusätzliches Personal." },
+      { "title": "Bäckerei mit Take-Away", "story": "Eine Bäckerei-Filiale am Hamburger Hauptbahnhof installierte zwei Kiosks neben der Theke. Gäste mit eiligem Take-Away-Bedarf bestellen am Terminal, Personal kann sich auf Beratung und belegte Brötchen konzentrieren — +35 % Bestellungen pro Stunde." },
+      { "title": "Food Court mit mehreren Konzepten", "story": "Ein Betreiber mehrerer Food-Stationen in einem Münchner Einkaufszentrum stellte vor jedem Stand ein Kiosk-Terminal auf. Gäste bestellen am Terminal und erhalten direkt eine Bestellnummer. Ein großer Pick-Up Screen zeigt die Nummern an, sobald die Bestellungen fertig sind — Personal ruft auf, Gäste holen ab. Theke wurde zur reinen Ausgabestation, Personalkosten pro Schicht um 1,5 FTE gesenkt." }
+    ]
+  },
+  "trust": {
+    "stats": [
+      { "value": "−50 %", "label": "kürzere Wartezeit pro Gast in der Rush Hour" },
+      { "value": "+25 %", "label": "höherer Durchschnittsbon durch aktives Upselling" },
+      { "value": "24/7", "label": "Bestellungen ohne Personal an der Theke" }
+    ],
+    "testimonial": {
+      "quote": "Wir hatten in der Mittagspause regelmäßig 15 Leute Schlange — viele sind wieder gegangen. Seit den vier Kiosks bedienen wir den gleichen Andrang in der halben Zeit, und der durchschnittliche Bon ist um 4,80 € gestiegen, weil das Terminal jedem ein Getränk und einen Nachtisch vorschlägt. Für meine Crew an der Theke der größte Stress-Killer der letzten Jahre.",
+      "author": "Tarek B.",
+      "role": "Inhaber Burger-Restaurant, Berlin-Kreuzberg"
+    }
+  },
+  "pricing": {
+    "headline": "Preis & Verfügbarkeit",
+    "price": "Auf Anfrage",
+    "note": "Kassen-Add-On für Schnellrestaurants, Bäckereien, Food Courts und Franchise-Konzepte. Der Preis hängt von Bauform (Counter, Freestanding, Wandmontage), Anzahl der Terminals, Kartenleser-Integration und optionalem Bargeld-Modul ab. In einer kostenlosen Beratung bauen wir das passende Setup für deinen Betrieb zusammen — inklusive Hardware, Montage, Konfiguration und Anbindung an deine Cloud-Kasse."
+  },
+  "internalLinks": {
+    "headline": "Funktioniert perfekt mit",
+    "intro": "Der Self-Ordering Kiosk entfaltet seine volle Wirkung als Teil des Gastro-Master-Ökosystems — von der Bestellung am Terminal bis zur Übergabe an den Gast.",
+    "items": [
+      { "title": "Kassensystem", "description": "Das Herzstück. Jede Kiosk-Bestellung landet automatisch in der Cloud-Kasse, im Küchenmonitor und auf dem Pick-Up Screen — mit Bestellnummer, Artikeln und Sonderwünschen." },
+      { "title": "Lösung für Restaurants", "description": "Komplettpaket aus Kasse, Self-Ordering, Bildschirmfunktion und Küchenmonitor — speziell für Schnellrestaurants, FastFood-Konzepte und Betriebe mit hohem Vor-Ort-Durchsatz." }
+    ]
+  },
+  "faq": {
+    "headline": "Häufige Fragen zum Self-Ordering Kiosk",
+    "sub": "Antworten auf die Fragen, die uns Schnellrestaurants, Bäckereien, Food Courts und Franchise-Betriebe am häufigsten stellen.",
+    "items": [
+      { "q": "Was kostet ein Self-Ordering Kiosk für meinen Betrieb?", "a": "Der Preis hängt von Bauform (Counter, Freestanding, Wandmontage), Anzahl der Terminals und gewählten Modulen (Kartenleser, optional Bargeld-Akzeptanz) ab. Wir bieten den Kiosk nicht als Listenpreis an, sondern erstellen nach einer kostenlosen Beratung ein konkretes Angebot. Die Zahlung kann flexibel auch in Raten erfolgen. In den meisten Schnellrestaurants und Bäckereien amortisiert sich ein Kiosk innerhalb von 6–12 Monaten." },
+      { "q": "Für welche Betriebe lohnt sich ein Self-Ordering Kiosk?", "a": "Besonders für Betriebe mit hohem Bestellaufkommen und kurzen Verweilzeiten: FastFood-Konzepte, Burger- und Pizza-Ketten, Bäckereien mit Mittagstisch, Cafes mit Take-Away, Food Courts, Franchise-Systeme, Tankstellen-Bistros, Hotel-Lobbys. Faustregel: Ab 80–100 Bestellungen pro Tag oder regelmäßigen Stosszeiten mit Warteschlange amortisiert sich der erste Kiosk schnell." },
+      { "q": "Wie viele Kiosks brauche ich für meinen Betrieb?", "a": "Faustregel: Ein Kiosk ersetzt etwa eine Kassenkraft zu Stoßzeiten. Für ein Schnellrestaurant mit 60–80 Sitzplätzen empfehlen wir 2–3 Terminals, für eine Bäckerei-Filiale mit Mittagsgeschäft 1–2 Terminals, für einen Food-Court-Stand mit Pick-Up 1 Terminal pro Konzept. Die genaue Anzahl klären wir nach Sichtung deiner Tagesumsatz-Verteilung in der Beratung." },
+      { "q": "Welche Bauformen gibt es?", "a": "Drei Hauptvarianten: Counter (Aufstellterminal für Theke oder Tresen, kompakt), Freestanding (bodenstehende Säule mit großem Display, ideal für Eingangsbereich oder Mittelinsel) und Wandmontage (platzsparend, perfekt für enge Verkaufsflächen wie Bäckereien). Alle Bauformen sind mit Kartenleser ausgestattet, Bargeld-Modul optional." },
+      { "q": "Welche Zahlungsarten unterstützt das Terminal?", "a": "EC-Karte (girocard), Visa, Mastercard, American Express, Apple Pay und Google Pay sind standardmäßig integriert. Alle Zahlungsmethoden werden automatisch durch Epit Pay bedient. Optional ist ein Bargeld-Modul mit Wechselgeld-Ausgabe verfügbar — sinnvoll für Betriebe mit hohem Bargeldanteil." },
+      { "q": "Wie funktioniert das Upselling am Kiosk genau?", "a": "Pro Artikel kannst du im Backoffice passende Empfehlungen hinterlegen — zum Burger eine größere Pommes, dazu ein Getränk, am Ende ein Dessert. Der Kiosk zeigt diese Vorschläge im Bestellflow automatisch an. Im Branchenschnitt steigert das den Durchschnittsbon um 20–30 % — ohne dass Personal aktiv verkaufen muss." },
+      { "q": "Welche Sprachen unterstützt das Kiosk-Menü?", "a": "Aktuell unterstützen wir Deutsch und Englisch. Weitere Sprachen werden in den kommenden Releases hinzugefügt. Der Gast wählt seine Sprache beim Start mit einem Tipp." },
+      { "q": "Wird der Kiosk an mein Kassensystem angebunden?", "a": "Wenn du bereits ein Gastro-Master-Kassensystem nutzt, ist der Kiosk sofort einsatzbereit. Bestellungen aus dem Terminal landen automatisch in der Cloud-Kasse, auf dem Küchenmonitor und auf dem Pick-Up Screen — mit Bestellnummer, Artikeln, Sonderwünschen und Zahlstatus. Kein separates Setup, keine Drittanbieter-Schnittstelle, keine Entwickler notwendig." },
+      { "q": "Was passiert bei einem Internet- oder Stromausfall?", "a": "Das Terminal benötigt eine stabile Internetverbindung. Wir empfehlen daher eine LAN-Kabel-Verbindung, um kurzfristige WLAN-Probleme zu vermeiden. Eine optionale WLAN-Funktion ist ebenfalls möglich. Bei Stromausfall startet das Display nach Wiederherstellung automatisch neu und lädt den letzten Zustand aus der Cloud." }
+    ]
+  }
+}

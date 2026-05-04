@@ -1,0 +1,346 @@
+{
+  "seo": {
+    "title": "POS System for Restaurants — TSE-compliant | Gastro Master",
+    "description": "TSE-compliant POS system for restaurants from €69/month. Driver app, QR ordering & cloud updates included. Legally compliant (§146a AO). Get a free consultation now."
+  },
+  "hero": {
+    "badge": "POS System",
+    "h1": "The POS system for your",
+    "h1Highlight": "restaurant",
+    "h1Suffix": "– TSE-compliant & cloud-based.",
+    "subtitle": "State-of-the-art POS software for",
+    "subtitleLinkRestaurant": "restaurants",
+    "subtitleLinkLieferdienst": "delivery services",
+    "subtitleEnd": "and hospitality businesses – with TSE certification, GoBD compliance, cloud updates and direct support from Germany.",
+    "cta": "Free Consultation",
+    "heroImgAlt": "Gastro Master POS System – TSE-compliant point of sale for restaurants"
+  },
+  "trust": {
+    "googleRating": "5.0",
+    "googleLabel": "Google Rating",
+    "googleSub": "Over 50 verified reviews",
+    "stats": [
+      {
+        "value": "800+",
+        "label": "active customers"
+      },
+      {
+        "value": "TSE",
+        "label": "certified & GoBD-compliant"
+      },
+      {
+        "value": "€0",
+        "label": "surcharge for cloud updates"
+      },
+      {
+        "value": "Support",
+        "label": "directly from Germany"
+      }
+    ]
+  },
+  "benefits": [
+    {
+      "title": "TSE requirement met",
+      "text": "Certified to KassenSichV & GoBD – legally compliant from day one."
+    },
+    {
+      "title": "Cloud updates included",
+      "text": "Always the latest version – automatically, at no extra cost."
+    },
+    {
+      "title": "Support from Germany",
+      "text": "Personal contact person, directly reachable."
+    },
+    {
+      "title": "All platforms integrated",
+      "text": "Lieferando, Wolt, own app & online shop in one system."
+    }
+  ],
+  "slideshow": {
+    "badge": "Core features",
+    "headline": "The key features",
+    "headlineBr": "of your POS system.",
+    "slides": [
+      {
+        "label": "Scan QR code and order at the table instantly",
+        "title": "Full flexibility for your business",
+        "text": "Forget complicated extra devices. With Gastro Master you manage your entire business centrally: delivery, pickup or table service – everything runs quickly and easily through this single POS interface.",
+        "tagline": "This creates order and makes service seamless.",
+        "imgAlt": "Table system with QR code ordering"
+      },
+      {
+        "label": "Real-time analytics for smart decisions",
+        "title": "Understand your business in numbers",
+        "text": "Stop guessing and start knowing. With our detailed statistics you always have your hourly revenue, top 10 bestsellers and most profitable delivery zones at your fingertips.",
+        "tagline": "Make logical decisions to strategically grow your success.",
+        "imgAlt": "Statistics dashboard with real-time analytics"
+      },
+      {
+        "label": "One solution for table, counter and driver",
+        "title": "Driver app & delivery zones",
+        "text": "See in real time where your drivers are and which route they're taking. Set your delivery zones directly on the map – with clear zone boundaries and automatic distance calculation. That way every order arrives reliably, without unnecessary detours.",
+        "tagline": "Fewer wrong turns, happier customers – and you stay in full control at all times.",
+        "imgAlt": "Delivery zones map with GPS zones"
+      }
+    ]
+  },
+  "featuresGrid": {
+    "badge": "Features",
+    "headline": "Everything your restaurant POS needs.",
+    "sub": "A system that grows with your business – from caller ID to real-time analytics.",
+    "tiles": [
+      {
+        "title": "All platforms at a glance",
+        "text": "Lieferando, Wolt, Uber Eats and 15+ more partners – all orders automatically flow into your POS. No manual transfers, no errors, no time wasted.",
+        "tagline": "You save valuable time every day."
+      },
+      {
+        "title": "Automatic caller ID",
+        "text": "Name, address and order history appear on screen at the first ring. Phone orders are taken 3× faster – no follow-up questions, no typos.",
+        "tagline": "You finish faster."
+      },
+      {
+        "title": "Driver app & GPS delivery zones",
+        "text": "Every driver gets their own app with real-time GPS tracking. Delivery zones by distance, zone or postal code – definable directly on the map, adjustable anytime.",
+        "tagline": "You're always in full control."
+      },
+      {
+        "title": "Revenue & real-time statistics",
+        "text": "Daily, weekly and monthly reports at the push of a button: top products, delivery zones, payment methods. All GoBD-compliant reports are instantly exportable for your accountant.",
+        "tagline": "Bookkeeping becomes effortless."
+      },
+      {
+        "title": "All payment methods accepted",
+        "text": "Cash, debit card, Visa, Mastercard, Apple Pay, Google Pay, PayPal and Klarna – your POS accepts every payment type. TSE-certified and GoBD-compliant – legally secure from day one.",
+        "tagline": "All legal requirements met (TSE/GoBD)."
+      }
+    ]
+  },
+  "socialProof": {
+    "badge": "Trust",
+    "headline": "Over 800 successful restaurateurs",
+    "headlineBr": "trust Gastro Master.",
+    "sub": "From pizzerias to franchises – Gastro Master grows with every business.",
+    "watermark": "800+"
+  },
+  "waveFeature": {
+    "badge": "Add-ons & Extensions",
+    "headline": "More than a POS –",
+    "headlineBr": "your complete system.",
+    "sub": "Modular hardware add-ons and smart software features that adapt to your business.",
+    "cards": [
+      {
+        "subtitle": "DIGITIZATION THAT MAKES SENSE",
+        "title": "Self-ordering terminal",
+        "text": "Guests order directly at the terminal – intuitive, no waiting. Your team gains time. We also offer pick-up screens."
+      },
+      {
+        "subtitle": "FLEXIBLE SERVICE",
+        "title": "Bar system with Orderman & QR code",
+        "text": "Take orders via Orderman or let guests order themselves by QR code. Lightning fast and modern."
+      },
+      {
+        "subtitle": "SIMPLE & EFFICIENT",
+        "title": "One license – up to 4 registers",
+        "text": "Up to four terminals with one package. No extra subscription per register – maximum value without hidden costs."
+      },
+      {
+        "subtitle": "SEAMLESS INTEGRATION",
+        "title": "Connection to any card terminal",
+        "text": "Compatible with all card terminals using ZVT standard. No vendor lock-in – secure and seamless."
+      },
+      {
+        "subtitle": "EVERYTHING AT A GLANCE",
+        "title": "Employee management",
+        "text": "Working hours, revenue and tips automatically recorded. GoBD-compliant export for your accountant."
+      }
+    ]
+  },
+  "featureCards3": [
+    {
+      "title": "Table system",
+      "text": "Take orders directly at the table – faster service, fewer errors."
+    },
+    {
+      "title": "Driver app & delivery zones",
+      "text": "Delivery status in real time, GPS tracking and delivery zones on one map."
+    },
+    {
+      "title": "Statistics & reports",
+      "text": "Daily, weekly and monthly reports – always have all the numbers at hand."
+    }
+  ],
+  "hardware": {
+    "badge": "Recommended Hardware",
+    "headline": "The right hardware for your POS system",
+    "sub": "Robust, reliable and ready to use immediately. Choose the device that fits your business.",
+    "cta": "Request hardware",
+    "inquiryCta": "Request now",
+    "products": [
+      {
+        "title": "Elo Series-3",
+        "desc": "Compact all-in-one POS system with touchscreen. Ideal for restaurants, cafés and takeaways.",
+        "features": [
+          "15.6\" touchscreen",
+          "Compact design",
+          "Receipt printer compatible"
+        ],
+        "labels": [
+          "Front",
+          "Angled",
+          "Back",
+          "Ports",
+          "Side"
+        ]
+      },
+      {
+        "title": "Elo Series-3 Doublescreen",
+        "desc": "Two screens: one for you, one for the guest. Perfect for counter service and upselling.",
+        "features": [
+          "Customer display",
+          "Upsell opportunity",
+          "Professional appearance"
+        ],
+        "labels": [
+          "Front",
+          "Angled",
+          "Back",
+          "Ports"
+        ]
+      },
+      {
+        "title": "Microsoft Surface Tablet",
+        "desc": "Flexible and mobile. Take your POS anywhere. Ideal for food trucks, events and small businesses.",
+        "features": [
+          "Mobile use",
+          "Light & compact",
+          "Windows-compatible"
+        ],
+        "labels": [
+          "Front",
+          "Angled",
+          "Back",
+          "Side"
+        ]
+      }
+    ]
+  },
+  "alternating": [
+    {
+      "headline": "Your guests order themselves.",
+      "sub": "QR code at the table – order instantly, no app needed",
+      "text1": "No waiter, no waiting, no misunderstanding. Your guests scan the QR code at the table – and within seconds the order lands directly in the kitchen. No app download, no sign-up, no friction.",
+      "text2": "Restaurateurs using QR code ordering report up to 30% higher table revenue through automatic upsell suggestions – and a noticeably more relaxed service flow during rush hours.",
+      "checks": [
+        "QR code at the table – no app needed, ready instantly",
+        "Order reaches kitchen & bar in seconds",
+        "Up to 30% higher table revenue through digital upsells",
+        "Service team relieved – more tables with the same staff"
+      ]
+    },
+    {
+      "headline": "Self-ordering terminal.",
+      "sub": "More revenue with self-service",
+      "text1": "The terminal guides your guests independently through your menu and automatically suggests popular extras and upgrades. No waiting, no misunderstandings – payment directly at the terminal, error-free in the kitchen.",
+      "text2": "Restaurants with self-ordering terminals increase the average order amount by up to 25% – through targeted upsell suggestions that no waiter can deliver as consistently.",
+      "checks": [
+        "Automatic upsell suggestions increase revenue by up to 25%",
+        "Direct payment at the terminal – no waiting for the bill",
+        "Order goes error-free and immediately to kitchen & bar",
+        "Service team relieved – same tables, less stress"
+      ]
+    },
+    {
+      "headline": "Service advantage through Orderman.",
+      "sub": "Mobile order taking – faster, error-free service",
+      "text1": "No notepad, no shouting to the counter: Your service staff takes orders directly at the table via handheld – and the order lands in the kitchen and bar within seconds. No transfer errors, no time lost, no chaos during rush hours.",
+      "text2": "Restaurants with mobile Orderman systems reduce order errors by up to 80% and achieve significantly more table turnovers – with the same staff, no extra effort.",
+      "checks": [
+        "Mobile order taking via handheld or tablet at the table",
+        "Order instantly error-free in kitchen & bar – no shouting",
+        "Up to 80% fewer order errors in daily operations",
+        "More table turnovers during rush hours – same staff"
+      ]
+    },
+    {
+      "headline": "All payments. Your terminal.",
+      "sub": "No guest leaves because of payment problems.",
+      "text1": "Cash, debit card, credit card, Apple Pay, Google Pay and Klarna – the Gastro Master POS accepts all common payment methods. Connection to any standard card terminal is included at no extra charge.",
+      "text2": "Tip function, bill splitting and digital receipts by email are included as standard. Your guests pay how they want – and you have an overview of all revenue in real time.",
+      "checks": [
+        "All payment methods accepted",
+        "Connection to any card terminal included",
+        "Tips & bill splitting",
+        "Digital receipts & daily closing"
+      ]
+    }
+  ],
+  "teamCta": {
+    "badge": "Get started now",
+    "headline": "Book your",
+    "headlineBr": "free consultation now.",
+    "expectLabel": "What to expect:",
+    "expectText": "In the free initial consultation, one of our experts develops a tailored concept for your new POS system – free, non-binding and customized to your business. Afterwards, you freely decide whether to implement it with us.",
+    "privacyNote": "Your information is used exclusively for contact purposes and is not stored.",
+    "languages": [
+      "German",
+      "English",
+      "Italian",
+      "Persian",
+      "Russian",
+      "Sinhalese"
+    ],
+    "cta": "Request free consultation",
+    "teamMembers": [
+      {
+        "name": "Sanjaya Pattiyage",
+        "role": "Founder & CEO"
+      },
+      {
+        "name": "René Ebert",
+        "role": "Founder & CEO"
+      },
+      {
+        "name": "Salvatore Anzaldi",
+        "role": "Head of Sales"
+      },
+      {
+        "name": "Andrej Krutsch",
+        "role": "Head of Operations"
+      }
+    ]
+  },
+  "faq": {
+    "badge": "FAQ",
+    "headline": "Frequently",
+    "headlineBr": "asked questions.",
+    "sub": "More questions? Call us or write to us – we respond within 24 hours.",
+    "cta": "Contact us directly",
+    "items": [
+      {
+        "q": "Why does my restaurant need a modern POS system?",
+        "a": "A modern POS system for restaurants is far more than a cash register. It connects order intake, kitchen management, delivery service, employee management and statistics in one single system. Especially for [restaurants](/loesungen/restaurant) this saves time daily and significantly reduces billing errors."
+      },
+      {
+        "q": "Which POS systems require TSE in Germany?",
+        "a": "Since 01.01.2020, all electronic POS systems in Germany require TSE (§146a AO, KassenSichV — Technical Security Device). Businesses without valid TSE risk fines of up to €25,000. The Gastro Master POS system is fully certified and meets all requirements of KassenSichV and GoBD compliance."
+      },
+      {
+        "q": "How much does a cloud POS system cost for my restaurant?",
+        "a": "The Gastro Master POS system is available as a monthly subscription – without expensive one-time payments or hardware maintenance contracts. Cloud updates, support and all new features are included in the price. You can find all packages and prices in the [complete pricing overview](/preise)."
+      },
+      {
+        "q": "Can I also use the POS system for delivery services?",
+        "a": "Yes. The POS system is natively linked with the driver app, delivery zones and GPS tracking. Orders from the [digital ordering system](/produkte/webshop), the [own ordering app](/produkte/app) and directly at the register automatically flow into one workflow — no manual transfer needed. Ideal for anyone looking to [build their own delivery service](/loesungen/lieferservice-gruenden)."
+      },
+      {
+        "q": "How quickly is the POS system set up?",
+        "a": "Setup typically takes 1–2 business days. Our support team from Germany guides you through the entire setup and trains your team personally – on-site or via video call. Simply reach out through our [contact form](/kontakt)."
+      },
+      {
+        "q": "Is the system GoBD-compliant and suitable for tax audits?",
+        "a": "Yes. The Gastro Master POS system is fully GoBD-compliant. All transactions, cancellations and daily closings are immutably logged and can be exported at any time for a tax audit."
+      }
+    ]
+  }
+}

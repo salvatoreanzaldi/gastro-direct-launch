@@ -1,0 +1,142 @@
+{
+  "seo": {
+    "title": "Start a Ghost Kitchen — 0 % Commission, Multi-Brand | Gastro Master",
+    "description": "Launch your ghost kitchen without platform dependency. Multi-brand, your own app, your own online shop. 0 % commission. Personal support in German."
+  },
+  "hero": {
+    "breadcrumbParent": "Solutions",
+    "breadcrumbCurrent": "Ghost Kitchen",
+    "badge": "Ghost Kitchen · Cloud Kitchen · Dark Kitchen",
+    "h1Line1": "Your Ghost Kitchen. Your System.",
+    "h1Highlight": "Zero Commission.",
+    "subtitle": "Multi-brand, multi-channel, one POS. Everything you need to run your ghost kitchen profitably. Without platform dependency.",
+    "cta": "Free Consultation",
+    "ctaSecondary": "View Products ↓",
+    "trustPills": ["0 % Commission", "Multi-Brand", "Own App", "Personal Support"]
+  },
+  "stats": {
+    "badge": "Market Data",
+    "title": "The Ghost Kitchen Market Is Growing Rapidly",
+    "subtitle": "The opportunity is huge. So is the risk if you rely on commission models.",
+    "ctaLabel": "Get Started Now",
+    "items": [
+      { "value": "$197 B", "label": "Global Ghost Kitchen Market by 2032", "source": "Precedence Research", "href": "https://www.precedenceresearch.com/ghost-kitchen-market" },
+      { "value": "19 %", "label": "Annual growth in Europe. Germany is the largest market", "source": "Statista", "href": "https://de.statista.com/outlook/dmo/online-food-delivery/deutschland" },
+      { "value": "up to 30 %", "label": "Commission to delivery platforms like Lieferando or Uber Eats", "source": "metro.de", "href": "https://www.metro.de/blog/lieferdienste" },
+      { "value": "from €79", "label": "per month with Gastro Master. 0 % commission. Full control", "source": "Gastro Master", "href": "/kontakt", "isCta": true }
+    ]
+  },
+  "problem": {
+    "badge": "The Challenge",
+    "title": "Without the Right System You Lose Margin and Control",
+    "subtitle": "Every ghost kitchen knows these three problems.",
+    "items": [
+      { "title": "Platform Dependency", "text": "Lieferando and Uber Eats take 25 to 30 % commission. You lose margin on every order. You're dependent on their algorithm and rules." },
+      { "title": "No Own Branding", "text": "On platforms you're one of thousands. Your brand gets lost. Customers remember Lieferando, not you." },
+      { "title": "Multi-Brand Chaos", "text": "Managing multiple brands across different systems and tablets is inefficient. Orders come from 5 channels, but nothing runs centrally." }
+    ]
+  },
+  "products": {
+    "badge": "Your Ghost Kitchen Infrastructure",
+    "title": "Everything From One Source",
+    "subtitle": "Five products that work perfectly together. Multi-brand ready.",
+    "moreLabel": "Learn More",
+    "items": [
+      { "title": "Own Online Shop", "tagline": "0 % commission, your own brand. Your customers order directly from you." },
+      { "title": "Multi-Brand App", "tagline": "Different brands, one kitchen, one app. Or a separate app per brand." },
+      { "title": "POS System", "tagline": "All orders from all brands centrally on one POS. TSE-compliant." },
+      { "title": "Payment Processing", "tagline": "Pass payment fees transparently to customers. Full control over your money." },
+      { "title": "Website", "tagline": "A professional online presence for each brand. Found on Google." }
+    ]
+  },
+  "concept": {
+    "badge": "The Concept",
+    "title": "What Is a Ghost Kitchen? The Future of Gastronomy.",
+    "subtitle": "Also known as Cloud Kitchen or Dark Kitchen. The concept revolutionizing the food industry.",
+    "cards": [
+      { "title": "The Multi-Brand Concept", "text": "Multiple restaurants can operate simultaneously from a single ghost kitchen. Pizza, bowls, burgers, and sushi all come from the same kitchen — each under its own brand. The advantage: you cover different niches without renting a new location for each concept." },
+      { "title": "Radical Cost Optimization", "text": "No service staff for the dining area. Low rents in B-locations. Workflows are purely geared towards speed and efficiency. A ghost kitchen needs 60 to 80 % less space than a traditional restaurant." },
+      { "title": "Data-Driven Menu Adaptation", "text": "A ghost kitchen sees what's trending in the data, creates digital branding within 48 hours, and goes live. Flops are simply deleted, successes scaled immediately. No renovation, no new menu to print." },
+      { "title": "Decoupled From Atmosphere", "text": "In the ghost kitchen, only the product and logistics matter. The focus is 100 % on how the food arrives at the customer. Gastronomy like a software startup: fast, scalable, and extremely data-driven." }
+    ],
+    "compareTitle": "Restaurant vs. Delivery Service vs. Ghost Kitchen",
+    "compareHeaders": { "feature": "Feature", "restaurant": "Restaurant", "lieferdienst": "Delivery Service", "ghost": "Ghost Kitchen", "recommended": "Recommended" },
+    "compareRows": [
+      { "label": "Presence", "restaurant": "Physical dining room", "lieferdienst": "Restaurant with delivery focus", "ghost": "Kitchen only" },
+      { "label": "Location", "restaurant": "Expensive A-location", "lieferdienst": "Good accessibility", "ghost": "Affordable B-location" },
+      { "label": "Customer Contact", "restaurant": "In person on-site", "lieferdienst": "Phone / App", "ghost": "Purely digital" },
+      { "label": "Brands", "restaurant": "One fixed brand", "lieferdienst": "One brand", "ghost": "Multi-brand possible" },
+      { "label": "Cost Structure", "restaurant": "High (staff, rent)", "lieferdienst": "Medium", "ghost": "Low (kitchen only)" },
+      { "label": "Scalability", "restaurant": "Limited", "lieferdienst": "Medium", "ghost": "High" },
+      { "label": "Flexibility", "restaurant": "Low (renovation needed)", "lieferdienst": "Medium", "ghost": "Very high (digital)" }
+    ]
+  },
+  "comparison": {
+    "badge": "Comparison",
+    "title": "Gastro Master vs. Delivery Platforms",
+    "subtitle": "Why ghost kitchen operators choose Gastro Master.",
+    "headers": { "feature": "Feature", "gm": "Gastro Master", "gmRecommended": "Recommended", "platform": "Lieferando / Uber Eats" },
+    "rows": [
+      { "label": "Commission per Order", "gm": "0 %", "gmGood": true, "platform": "25 to 30 %", "platformBad": true },
+      { "label": "Own Brand", "gm": "✓ Full Control", "gmGood": true, "platform": "✗ Platform Branding", "platformBad": true },
+      { "label": "Multi-Brand", "gm": "✓ Multiple Brands Possible", "gmGood": true, "platform": "Limited", "platformBad": true },
+      { "label": "Own App", "gm": "✓ In App Store", "gmGood": true, "platform": "✗ Not Possible", "platformBad": true },
+      { "label": "Customer Data", "gm": "✓ Full Control", "gmGood": true, "platform": "✗ Platform Keeps Everything", "platformBad": true },
+      { "label": "Order System", "gm": "✓ Own System", "gmGood": true, "platform": "Platform-dependent", "platformBad": true },
+      { "label": "Support", "gm": "✓ Personal, German", "gmGood": true, "platform": "Ticket System", "platformBad": false }
+    ],
+    "savingsTitle": "At €3,000 monthly revenue you pay Lieferando <highlight>up to €900 in commission</highlight>. Every month.",
+    "savingsSubtitle": "With Gastro Master: from €79/month, 0 % commission.",
+    "savingsCta": "Free Consultation"
+  },
+  "onboarding": {
+    "overline": "How to Get Started",
+    "title": "Your Own Ghost Kitchen in 4 Steps",
+    "subtitle": "We make it easy. From consultation to go-live.",
+    "steps": [
+      { "num": "01", "title": "Free Consultation", "text": "We get to know your concept. How many brands? Which channels? What do you need?" },
+      { "num": "02", "title": "Configure Brands & Systems", "text": "We set up your brands and configure online shops, apps, and the POS system." },
+      { "num": "03", "title": "Setup & Go Live", "text": "Everything is set up technically. Training for your team. Then you go live." },
+      { "num": "04", "title": "Ongoing Support", "text": "24/7 support in German. New brands? New features? We're here." }
+    ]
+  },
+  "trust": {
+    "items": [
+      { "value": "800+", "label": "Gastro businesses trust Gastro Master" },
+      { "value": "5.0 ★", "label": "Customer rating on Google" },
+      { "value": "0 %", "label": "Commission on all orders" },
+      { "value": "Multi-Brand", "label": "Multiple brands, one system" }
+    ]
+  },
+  "faq": {
+    "badge": "FAQ",
+    "title": "Frequently Asked Questions About Ghost Kitchens",
+    "subtitle": "The questions ghost kitchen founders ask.",
+    "items": [
+      { "q": "What is a ghost kitchen and how does it work?", "a": "A ghost kitchen (also cloud kitchen or dark kitchen) is a kitchen without a dining area. You produce food exclusively for delivery and pickup. Multiple brands can be operated from one kitchen. This reduces costs and increases flexibility." },
+      { "q": "Do I need a separate app or online shop for each brand?", "a": "No. With Gastro Master you can manage multiple brands through one system. Each brand gets its own [order shop](/produkte/webshop) and optionally its own [app](/produkte/app). All orders come together centrally in one [POS system](/produkte/kassensystem)." },
+      { "q": "How much do I save without Lieferando?", "a": "At €3,000 monthly revenue you pay Lieferando up to €900 in commission per month. With Gastro Master: €0 commission. You only pay the fixed monthly fee. Find all pricing details in the [pricing overview](/preise)." },
+      { "q": "Can I start with one brand and expand later?", "a": "Yes, absolute flexibility. You start with one brand and add more online shops, apps, or brands at any time. No new system needed, everything runs through your existing Gastro Master setup." },
+      { "q": "What technology do I need for a ghost kitchen?", "a": "Just a tablet or laptop and an internet connection. The [POS system](/produkte/kassensystem) runs cloud-based. Optionally a printer for order receipts. We set everything up for you and train your team." }
+    ]
+  },
+  "cta": {
+    "title": "We Help You Get Your Ghost Kitchen",
+    "titleHighlight": "Ready to Launch",
+    "subtitle": "Online shop, app, POS system. Everything from one source. 0 % commission. Personal support.",
+    "button": "Free Consultation",
+    "trustItems": [
+      ["0 %", "Commission"],
+      ["800+", "Restaurants"],
+      ["5.0 ★", "Google Rating"],
+      ["Personal", "Support"]
+    ]
+  },
+  "schema": {
+    "breadcrumbHome": "Home",
+    "breadcrumbParent": "Solutions",
+    "breadcrumbCurrent": "Ghost Kitchen",
+    "howToName": "Your Own Ghost Kitchen in 4 Steps",
+    "howToDescription": "How to start your ghost kitchen with Gastro Master. From consultation to go-live."
+  }
+}

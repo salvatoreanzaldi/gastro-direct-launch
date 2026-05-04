@@ -1,0 +1,292 @@
+{
+  "seo": {
+    "title": "Sito web per ristorazione — da 49 €/mese | Gastro Master",
+    "description": "Sito web professionale per la ristorazione — da 49 €/mese. Dominio proprio, conforme al GDPR, hosting e supporto inclusi. Online in pochi giorni. Richieda una consulenza gratuita."
+  },
+  "hero": {
+    "badge": "Sito web professionale · da 49 €/mese",
+    "title1": "Il Suo sito web per la ristorazione –",
+    "titleHighlight": "online",
+    "title2": "in pochi giorni",
+    "desc": "Un sito web professionale è la base di ogni presenza digitale. Le offre la possibilità di raggiungere nuovi clienti ben oltre la Sua sede – tramite Google, social media e passaparola. Per la ristorazione, l'artigianato, le scuole e tutti gli altri settori.",
+    "subdesc": "Conforme al GDPR. Dominio proprio. Hosting e supporto inclusi.",
+    "pills": [
+      "Dominio proprio",
+      "Conforme al GDPR",
+      "Per tutti i settori",
+      "Nessuna competenza tecnica necessaria"
+    ],
+    "cta": "Consulenza gratuita"
+  },
+  "hero_b": {
+    "badge": "Web Design · da 49 €/mese",
+    "title1": "Il tuo",
+    "titleHighlight": "sito web professionale",
+    "title2": "Visibile in tutto il mondo",
+    "desc": "Creiamo il tuo sito web – veloce, conforme al GDPR e per qualsiasi settore. Dalla ristorazione all'artigianato ai servizi: più visibilità, più clienti.",
+    "subdesc": "Dominio proprio. Hosting e supporto inclusi. Nessuna competenza tecnica necessaria.",
+    "pills": [
+      "Dominio proprio",
+      "Conforme al GDPR",
+      "Per tutti i settori",
+      "Nessuna competenza tecnica necessaria"
+    ],
+    "cta": "Consulenza gratuita"
+  },
+  "trustBar": {
+    "items": [
+      {
+        "value": "80 %",
+        "label": "dei consumatori ricerca un'azienda online prima di acquistare. Un sito web professionale aumenta la credibilità",
+        "source": "GoDaddy Consumer Survey, 2024"
+      },
+      {
+        "value": "97 %",
+        "label": "dei consumatori cerca online attività e servizi locali",
+        "source": "Google Consumer Insights"
+      },
+      {
+        "value": "800+",
+        "label": "aziende si affidano già a Gastro Master per la loro presenza digitale",
+        "source": null
+      }
+    ]
+  },
+  "onlinePresence": {
+    "badge": "Visibilità online",
+    "title": "Chi non è online, perde<br/>nuovi clienti ogni giorno.",
+    "desc": "Un sito web Le apre l'accesso a clienti che cercano i Suoi servizi ben oltre la Sua sede. I nuovi clienti La trovano tramite Google – non solo tramite passaparola. Questo vale soprattutto per i ristoratori che desiderano",
+    "descLink": "avviare un proprio servizio di consegna",
+    "descAfter": "— così come per artigiani, scuole o fornitori di servizi.",
+    "stats": [
+      {
+        "value": "88 %",
+        "desc": "degli utenti non torna più dopo un'esperienza negativa sul sito web.",
+        "source": "HubSpot Research",
+        "color": "text-red-500"
+      },
+      {
+        "value": "46 %",
+        "desc": "di tutte le ricerche Google hanno un intento locale — i Suoi clienti La stanno cercando.",
+        "source": "Google Search Statistics",
+        "color": "text-cyan-brand"
+      },
+      {
+        "value": "2,8×",
+        "desc": "maggiore crescita del fatturato per le aziende con una forte presenza online.",
+        "source": "Deloitte Digital",
+        "color": "text-emerald-500"
+      }
+    ],
+    "cta": "Costruisca ora la Sua visibilità"
+  },
+  "features": {
+    "badge": "Funzionalità",
+    "title": "Tutto ciò di cui la Sua presenza online ha bisogno.",
+    "tiles": [
+      {
+        "title": "Galleria fotografica",
+        "desc": "Galleria fotografica e video professionale che convince i visitatori. Mostri il Suo ambiente, i Suoi piatti o i Suoi servizi nella migliore luce."
+      },
+      {
+        "title": "Feed Instagram",
+        "desc": "Il Suo feed Instagram attuale sincronizzato direttamente sul sito web – sempre aggiornato."
+      },
+      {
+        "title": "Modulo di contatto",
+        "desc": "Le richieste dei clienti arrivano direttamente nella Sua casella di posta – conforme al GDPR e semplice."
+      },
+      {
+        "title": "Chi siamo",
+        "desc": "La Sua storia, il Suo team, i Suoi valori. Crei fiducia in ogni visitatore."
+      },
+      {
+        "title": "Pagina carriera",
+        "desc": "Posizioni aperte e modulo di candidatura – trovi i collaboratori giusti."
+      },
+      {
+        "title": "Pagina franchising",
+        "desc": "Convinca potenziali partner in franchising con una pagina dedicata professionale – incluso modulo di candidatura e tutte le informazioni importanti sul Suo concetto di franchising."
+      },
+      {
+        "title": "Collegabile con Webshop e App",
+        "desc": "Il Suo sito web e il Suo sistema di ordinazione Gastro Master perfettamente integrati. I clienti arrivano sul Suo sito web e possono effettuare un ordine direttamente – senza cambiare piattaforma."
+      }
+    ]
+  },
+  "zielgruppen": {
+    "texts": [
+      "Il tuo ristorante merita un sito web che entusiasmi gli ospiti – con menù, prenotazioni e visibilità su Google. Più prenotazioni ai tavoli, meno posti vuoti.",
+      "Carta cocktail, eventi e orari di apertura – tutto a colpo d'occhio. Mostra alla tua città perché il tuo bar è il posto dove stare.",
+      "Immagine del marchio uniforme per tutte le sedi – gestita centralmente, adattata localmente. Scala il tuo franchising in modo digitale.",
+      "Il pane fresco merita un sito web fresco. Mostra il tuo assortimento, le tue filiali e la tua storia – e conquista nuovi clienti abituali.",
+      "Dall'iscrizione all'orario scolastico: un sito web scolastico moderno crea fiducia tra genitori, studenti e insegnanti.",
+      "Che si tratti di artigianato, consulenza o agenzia – presenta i tuoi servizi in modo professionale e fatti trovare da nuovi clienti.",
+      "Esposé, referenze e modulo di contatto – tutto ciò che acquirenti e venditori si aspettano da un moderno studio immobiliare.",
+      "La fiducia è il tuo capitale. Un sito web serio con una struttura chiara convince i clienti prima ancora del primo colloquio."
+    ]
+  },
+  "portfolio": {
+    "badge": "Portfolio",
+    "title": "Siti web che abbiamo realizzato.",
+    "desc": "Per la ristorazione, panetterie e altri settori – ogni sito web personalizzato individualmente per l'attività.",
+    "items": [
+      { "label": "Ristorazione", "name": "Gastro Master", "alt": "Sito web professionale per la ristorazione — esempio Gastro Master" },
+      { "label": "Panetteria", "name": "Bäckerei Zimmer", "alt": "Sito web per Bäckerei Zimmer — esempio sito web ristorante" },
+      { "label": "Ristorante", "name": "Et Manus", "alt": "Sito web ristorante Et Manus — sito web professionale per la ristorazione" },
+      { "label": "Fornitore di servizi", "name": "D&T", "alt": "Sito web professionale per fornitore di servizi D&T — far realizzare un sito web" },
+      { "label": "Ristorazione", "name": "D&T Gastro", "alt": "Sito web ristorazione D&T Gastro — sito web proprio per ristorante" }
+    ],
+    "cta": "Richieda il Suo sito web"
+  },
+  "branchen": {
+    "badge": "Gruppo target",
+    "title": "Non solo per la ristorazione.",
+    "desc": "Il nostro focus è sulla ristorazione, ma realizziamo siti web per ogni settore. Ogni sito web viene personalizzato individualmente per l'attività e il suo gruppo target.",
+    "items": [
+      "Ristorante",
+      "Caffè e panetteria",
+      "Artigiani",
+      "Scuola e formazione",
+      "Fornitori di servizi",
+      "Franchising",
+      "Hotel e pensione",
+      "Commercio al dettaglio"
+    ]
+  },
+  "process": {
+    "badge": "Come funziona",
+    "title": "Il Suo sito web professionale in 3 passaggi.",
+    "steps": [
+      { "num": "01", "title": "Consulenza gratuita", "desc": "Discutiamo i Suoi desideri, obiettivi, gruppo target e la portata desiderata – e creiamo un'offerta personalizzata." },
+      { "num": "02", "title": "Design e realizzazione", "desc": "Il nostro team realizza il Suo sito web professionalmente, conforme al GDPR e ottimizzato per tutti i dispositivi. Lei sarà coinvolto durante tutto il processo." },
+      { "num": "03", "title": "Go-Live", "desc": "Il Suo nuovo sito web è online in pochi giorni – con dominio proprio, hosting e supporto completo dal nostro team." }
+    ]
+  },
+  "pricing": {
+    "badge": "Prezzi trasparenti",
+    "title": "Scelga Lei come iniziare.",
+    "desc": "Abbonamento o acquisto una tantum – entrambe le opzioni portano alla Sua presenza online professionale.",
+    "abo": {
+      "popular": "Popolare",
+      "label": "Abbonamento mensile",
+      "price": "da 49 €",
+      "per": "/mese",
+      "note": "IVA esclusa · durata minima contrattuale 12 mesi",
+      "features": [
+        "Web design professionale",
+        "Dominio proprio incluso",
+        "Hosting affidabile",
+        "2 caselle e-mail",
+        "Configurazione conforme al GDPR",
+        "Supporto tecnico",
+        "Aggiornamenti continui"
+      ],
+      "cta": "Inizi ora"
+    },
+    "simple": {
+      "label": "Sito web semplice · Acquisto una tantum",
+      "price": "da 990 €",
+      "note": "una tantum · IVA esclusa",
+      "raten": "Disponibile anche in 3 comode rate",
+      "desc": "Ideale per le attività che desiderano essere visibili online rapidamente e a buon prezzo. Un onepager professionale con tutto il necessario:",
+      "features": [
+        "Homepage con tutte le informazioni chiave",
+        "Modulo di contatto",
+        "Note legali e privacy policy",
+        "Design ottimizzato per mobile",
+        "Conforme al GDPR"
+      ],
+      "cta": "Richieda un preventivo"
+    },
+    "individual": {
+      "label": "Sito web personalizzato · Multipagina",
+      "price": "Su richiesta",
+      "note": "Prezzo in base alla portata · una tantum o abbonamento",
+      "desc": "Per progetti più ampi con più pagine e funzionalità personalizzate. Il prezzo viene stabilito insieme durante la consulenza.",
+      "features": [
+        "Più pagine",
+        "Galleria fotografica",
+        "Integrazione feed Instagram",
+        "Pagina carriera e franchising",
+        "Integrazione video",
+        "Funzionalità personalizzate su richiesta"
+      ],
+      "cta": "Richieda un preventivo"
+    }
+  },
+  "testimonials": {
+    "badge": "Testimonianze",
+    "title": "+800 aziende<br/>si affidano già a Gastro Master.",
+    "items": [
+      { "initials": "HL", "quote": "In futuro si ordinerà sempre di più online e noi vogliamo farne parte.", "name": "Ha Lim Lee", "restaurant": "Kojo Sushi" },
+      { "initials": "MG", "quote": "Il supporto è semplicemente di prima classe e non lo troverebbe così da nessun'altra parte!", "name": "Marco Greco", "restaurant": "Pizzeria Il Sorriso" },
+      { "initials": "SH", "quote": "Qui si ha un supporto WhatsApp veloce ed eccellente e la possibilità di strutturare la propria attività.", "name": "Sven Heinrich", "restaurant": "61 Burger & More" },
+      { "initials": "GM", "quote": "Grazie all'app abbiamo acquisito molti più clienti e visibilità.", "name": "Georgios Madatsidis", "restaurant": "Artemis Grill" }
+    ],
+    "stats": [
+      { "value": "800+", "label": "Aziende si affidano a Gastro Master" },
+      { "value": "Giorni", "label": "Non settimane – così velocemente sarà online" },
+      { "value": "Tutti", "label": "I settori e le dimensioni aziendali" },
+      { "value": "Inclusi", "label": "Supporto, hosting e dominio nell'abbonamento" }
+    ]
+  },
+  "faq": {
+    "badge": "FAQ",
+    "title": "Domande frequenti sul sito web Gastro Master",
+    "desc": "Ha altre domande? La consigliamo volentieri di persona – gratuitamente e senza impegno.",
+    "cta": "Richieda una consulenza",
+    "items": [
+      {
+        "q": "Quanto tempo richiede la creazione di un sito web?",
+        "a": "Un sito web semplice (onepager) è di norma online in pochi giorni. Per siti multipagina completi con funzionalità personalizzate pianifichiamo insieme un calendario realistico nella [consulenza gratuita](/kontakt). Lo sviluppo inizia immediatamente dopo l'approvazione dei contenuti."
+      },
+      {
+        "q": "Qual è la differenza tra abbonamento (49 €/mese) e acquisto una tantum?",
+        "a": "Con l'abbonamento mensile (da 49 €/mese, durata minima contrattuale 12 mesi) ci occupiamo permanentemente di hosting, dominio, supporto tecnico e aggiornamenti. Con l'acquisto una tantum (da 990 €) acquista il sito web completo e lo gestisce autonomamente. Tutte le opzioni sono disponibili nella [panoramica prezzi](/preise)."
+      },
+      {
+        "q": "Servono competenze tecniche per gestire il mio sito web?",
+        "a": "No. Con l'abbonamento mensile ci occupiamo noi di tutti gli aspetti tecnici. Le modifiche ai contenuti (testi, immagini, orari di apertura) vengono coordinate semplicemente con il nostro team – rapidamente e senza complicazioni via WhatsApp o e-mail."
+      },
+      {
+        "q": "Posso collegare il mio sito web con il Webshop o l'app Gastro Master?",
+        "a": "Sì. Il Suo sito web Gastro Master può essere collegato perfettamente con il [sistema di ordinazione digitale per la ristorazione](/produkte/webshop) e la [propria app per ordinazioni](/produkte/app). Inoltre è possibile integrare un [sistema di cassa per la ristorazione](/produkte/kassensystem). I clienti arrivano sul Suo sito web e possono effettuare un ordine direttamente – senza cambiare piattaforma."
+      },
+      {
+        "q": "Cosa significa conforme al GDPR e perché è importante?",
+        "a": "Conforme al GDPR significa che il Suo sito web soddisfa tutti i requisiti del Regolamento Generale sulla Protezione dei Dati europeo: note legali corrette, informativa sulla privacy, avviso sui cookie e trattamento sicuro dei dati del modulo di contatto. Senza conformità al GDPR si rischiano diffide e sanzioni. Con noi tutto è preconfigurato e legalmente impeccabile."
+      },
+      {
+        "q": "Per quali settori Gastro Master realizza siti web?",
+        "a": "Il nostro focus è sulla ristorazione — in particolare per [ristoranti](/loesungen/restaurant) e [caffè e panetterie](/loesungen/cafe-baeckerei) — ma realizziamo siti web per ogni settore: artigiani, scuole, istituti di formazione, hotel, fornitori di servizi, commercio al dettaglio e aziende in franchising. Ogni sito web viene personalizzato individualmente per il settore e l'attività."
+      },
+      {
+        "q": "Cosa è incluso nell'abbonamento mensile?",
+        "a": "L'abbonamento mensile (da 49 €/mese netto, durata minima contrattuale 12 mesi) comprende: web design professionale, dominio proprio (es. lasuaattivita.it), hosting affidabile, 2 caselle e-mail, configurazione conforme al GDPR, supporto tecnico e aggiornamenti continui. Nessun costo nascosto."
+      }
+    ]
+  },
+  "teamCta": {
+    "badge": "Inizi subito",
+    "title": "Prenoti ora la Sua<br/>consulenza gratuita.",
+    "expectTitle": "Cosa L'aspetta:",
+    "expectDesc": "In una prima consulenza gratuita discutiamo i Suoi desideri, obiettivi e la portata del Suo nuovo sito web – e creiamo un'offerta personalizzata che si adatta perfettamente alla Sua attività e al Suo budget.",
+    "afterDesc": "Dopo si procede rapidamente: di norma il Suo sito web è online in pochi giorni.",
+    "languages": [
+      "Tedesco",
+      "Inglese",
+      "Italiano",
+      "Persiano",
+      "Russo",
+      "Singalese"
+    ],
+    "roles": [
+      "Fondatore e Amministratore Delegato",
+      "Fondatore e Amministratore Delegato",
+      "Head of Sales",
+      "Head of Operations"
+    ],
+    "cta": "Consulenza gratuita"
+  }
+}

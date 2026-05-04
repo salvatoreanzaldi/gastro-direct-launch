@@ -1,0 +1,91 @@
+{
+  "meta": {
+    "title": "Bildschirmfunktion für Gastronomie — Küchenmonitor & Pick-Up Screen | Gastro Master",
+    "description": "Bildschirmfunktion von Gastro Master: Pick-Up Screen für Gäste und Küchenmonitor fürs Team. Alle Bestellungen in Echtzeit, farblich priorisiert, ohne Papierchaos. Für Schnellrestaurants, Lieferdienste, Cafes und Bäckereien.",
+    "breadcrumbName": "Bildschirmfunktion"
+  },
+  "hero": {
+    "badge": "Add-On · Küchenmonitor & Pick-Up Screen",
+    "headline": "Bildschirmfunktion — Küche und Theke immer im Bild",
+    "subline": "Zwei Displays, ein Ziel: volle Übersicht. Der Pick-Up Screen zeigt Abholkunden ihre Bestellnummer in Echtzeit, der Küchenmonitor priorisiert alle offenen Bestellungen nach Zeit und Kategorie. Keine Zettel, keine Bons, keine vergessenen Bestellungen."
+  },
+  "problem": {
+    "title": "Das Problem bei vielen Bestellungen",
+    "points": [
+      "Zu Stoßzeiten verliert die Küche die Übersicht — Bons stapeln sich, Sonderwünsche gehen unter, Gäste warten unnötig lang.",
+      "Papier-Bons flattern weg, werden feucht, verblättern sich — und keiner weiß mehr, welche Bestellung zuerst fertig sein muss.",
+      "Abholkunden fragen dauernd ob ihre Bestellung fertig ist — Personal muss ständig abgleichen, statt zu produzieren oder zu kassieren.",
+      "Ohne klare Priorisierung landen 20-Minuten-Gerichte neben 3-Minuten-Snacks — alles wird gleichzeitig fertig oder gar nicht."
+    ]
+  },
+  "solution": {
+    "title": "Die Lösung: Bildschirmfunktion",
+    "points": [
+      "Der Küchenmonitor zeigt jede Bestellung sofort mit Tischnummer, Artikeln, Sonderwünschen und Zeit — farblich kategorisiert nach Warengruppe.",
+      "Der Pick-Up Screen ruft Abholkunden per Bestellnummer auf. Gäste schauen selbst — Personal muss nicht mehr rufen oder suchen.",
+      "Priorisierung nach Bestellzeit: Älteste Bestellung oben, rote Markierung bei drohender Verzögerung. Kein Gericht wird mehr vergessen.",
+      "Auto-Refresh in Echtzeit. Jede neue Bestellung aus Kasse, Webshop, App oder QR-Code Tischsystem erscheint sofort — ohne Knopfdruck."
+    ]
+  },
+  "features": {
+    "headline": "Alles drin für Küche und Theke, die nichts mehr übersehen",
+    "sub": "Sechs Funktionen, die Bons ersetzen und aus Chaos Taktung machen.",
+    "items": [
+      { "title": "Küchenmonitor", "description": "Alle offenen Bestellungen im Blick — mit Tischnummer, Artikeln, Sonderwünschen, Uhrzeit und Status. Mit einem Tipp als fertig markieren." },
+      { "title": "Pick-Up Screen für Gäste", "description": "Großes Display im Abholbereich zeigt Bestellnummern — In Arbeit vs. Abholbereit. Gäste sehen selbst, wann sie dran sind." },
+      { "title": "Farbliche Kategorisierung", "description": "Pizza rot, Salat grün, Getränke blau — jede Warengruppe hat ihre Farbe. Einzelne Stationen sehen auf einen Blick, was für sie zu tun ist." },
+      { "title": "Priorisierung nach Zeit", "description": "Älteste Bestellung zuerst. Automatische Warnung per Farbe, wenn eine Bestellung zu lange offen ist — kein verlorenes Gericht, kein genervter Gast." },
+      { "title": "Auto-Refresh & Live-Sync", "description": "Jede Bestellung aus Kasse, Webshop, App, Lieferdienst oder QR-Code Tischsystem landet sofort auf dem Bildschirm. Keine Verzögerung, keine Aktualisierung nötig." },
+      { "title": "Counter, Freestanding & Outdoor", "description": "Drei Bauformen für jeden Einsatzort — Thekenaufsteller, freistehendes Display oder wetterfestes Outdoor-Modell für Drive-In und Biergarten." }
+    ]
+  },
+  "useCases": {
+    "headline": "So setzen Gastronomen die Bildschirmfunktion ein",
+    "sub": "Drei reale Szenarien aus unserem Kundenkreis — vom Schnellrestaurant bis zur Stadt-Bäckerei mit Drive-In.",
+    "items": [
+      { "title": "Schnellrestaurant mit Lieferdienst", "story": "Eine Pizzeria in Hamburg mit Abholung, Lieferung und Gastraum verarbeitet zu Stoßzeiten 60 Bestellungen pro Stunde. Seit Einführung des Küchenmonitors werden pro Tag 20 % mehr Bestellungen produziert — bei gleichem Küchenteam." },
+      { "title": "Bäckerei mit Counter-Abholung", "story": "Eine Bäckerei-Kette in Köln nutzt Pick-Up Screens im Abholbereich. Kunden bestellen per App, holen während der Mittagspause ab und sehen ihre Nummer auf dem Display — Warteschlangen an der Theke sind um 40 % geschrumpft." },
+      { "title": "Food Court mit mehreren Stationen", "story": "Ein Betreiber mehrerer Food-Konzepte in einem Münchner Einkaufszentrum setzt Outdoor-Monitore vor jedem Stand ein. Gäste sehen auf einen Blick, wo ihre Bestellung steht — Personalanfragen pro Schicht sind von 80 auf unter 15 gefallen." }
+    ]
+  },
+  "trust": {
+    "stats": [
+      { "value": "+20 %", "label": "mehr Bestellungen pro Schicht bei gleicher Küchenbesetzung" },
+      { "value": "−40 %", "label": "weniger Warteschlangen im Abholbereich" },
+      { "value": "0 Bons", "label": "kein Papier, keine verlorenen Bestellungen mehr" }
+    ],
+    "testimonial": {
+      "quote": "Am Samstagabend produzieren wir 80 Pizzen pro Stunde. Ohne den Küchenmonitor wäre das undenkbar — früher haben wir ständig Bons verloren oder Bestellungen doppelt gemacht. Jetzt steht jede Order in ihrer Farbe, mit Zeit und Priorität. Meine Köche lieben es, meine Gäste warten weniger.",
+      "author": "Marco D.",
+      "role": "Inhaber Pizzeria, Hamburg-Altona"
+    }
+  },
+  "pricing": {
+    "headline": "Preis & Verfügbarkeit",
+    "price": "Auf Anfrage",
+    "note": "Kassen-Add-On für Restaurants, Lieferdienste, Bäckereien und Food Courts. Der Preis hängt von Bauform und Anzahl der Bildschirme ab — Counter, Freestanding oder Outdoor. In einer kostenlosen Beratung bauen wir das passende Setup für deinen Betrieb zusammen und nennen dir den Fixpreis inklusive Montage."
+  },
+  "internalLinks": {
+    "headline": "Funktioniert perfekt mit",
+    "intro": "Die Bildschirmfunktion entfaltet ihre volle Wirkung als Teil des Gastro-Master-Ökosystems — von der Bestellung bis zur Übergabe an den Gast.",
+    "items": [
+      { "title": "Kassensystem", "description": "Das Herzstück. Jede Bestellung aus Kasse, Webshop, App oder QR-Code landet automatisch auf dem Küchenmonitor — mit Tischnummer, Artikeln und Sonderwünschen." },
+      { "title": "Lösung für Restaurants", "description": "Komplettpaket aus Kasse, Tischverwaltung, Bildschirmfunktion und QR-Bestellung — speziell für Restaurants, Cafes und Bars mit hohem Bestellaufkommen." }
+    ]
+  },
+  "faq": {
+    "headline": "Häufige Fragen zur Bildschirmfunktion",
+    "sub": "Antworten auf die Fragen, die uns Restaurants, Lieferdienste, Bäckereien und Food Courts am häufigsten stellen.",
+    "items": [
+      { "q": "Was kostet der Selbstbedienungskiosk für meinen Betrieb?", "a": "Der Preis hängt von der Bauform (Counter, Freestanding, Outdoor) und der Anzahl der Bildschirme ab. Wir bieten die Bildschirmfunktion nicht als Listenpreis an, sondern erstellen nach einer kostenlosen Beratung ein konkretes Angebot. In vielen Betrieben amortisiert sich das Setup innerhalb von 3–6 Monaten über Zeit- und Personalersparnis." },
+      { "q": "Was ist der Unterschied zwischen Pick-Up Screen und Küchenmonitor?", "a": "Der Küchenmonitor hängt in der Küche oder an der Theke und zeigt dem Team alle offenen Bestellungen mit Tischnummer, Artikeln, Sonderwünschen und Zeit. Der Pick-Up Screen hängt im Gastbereich oder am Abholtresen und zeigt Abholkunden ihre Bestellnummer und den Status — In Arbeit oder Abholbereit. Beide Bildschirme lassen sich einzeln oder kombiniert einsetzen." },
+      { "q": "Welche Bauformen gibt es?", "a": "Drei: Counter (zum Aufstellen auf Theke oder Tresen, schmal und kompakt), Freestanding (bodenstehendes Display, ideal für Abholbereiche und Food Courts) und Outdoor (wetterfest, für Drive-In, Biergarten oder Terrasse). Wir beraten dich zum passenden Modell für deinen Betrieb." },
+      { "q": "Wie werden die Bildschirme mit meinem Kassensystem verbunden?", "a": "Wenn du bereits ein Gastro-Master-Kassensystem nutzt, sind die Bildschirme sofort einsatzbereit. Bestellungen aus Kasse, Webshop, App, Lieferdienst oder QR-Code Tischsystem landen automatisch in Echtzeit auf dem Küchenmonitor und Pick-Up Screen. Kein separates Setup, keine Drittanbieter, keine Entwickler notwendig." },
+      { "q": "Wie funktioniert die Priorisierung nach Zeit?", "a": "Jede Bestellung wird mit ihrer Bestellnummer und Kategorisierung versehen — ob es eine Bestellung für jetzt oder eine Vorbestellung ist. Auf dem Küchenmonitor erscheinen sie nach Priorität sortiert. Je länger eine Bestellung offen ist, desto stärker wird sie farblich hervorgehoben (Gelb, dann Rot). So sieht die Küche sofort, welche Bestellung drohend zu kippen ist, und kann gegensteuern, bevor ein Gast beschwert wird." },
+      { "q": "Welche Warengruppen werden farblich kategorisiert?", "a": "Die Farben sind frei konfigurierbar — typischerweise eine Farbe pro Station: Warme Küche, Kalte Küche, Pizza, Getränke, Desserts, Beilagen. Jede Station sieht auf einen Blick, was für sie ansteht, und kann ihre Artikel direkt als fertig markieren — ohne dass der Rest der Küche abgeglichen werden muss." },
+      { "q": "Für welche Betriebe lohnt sich die Bildschirmfunktion?", "a": "Für alle Betriebe mit hohem Bestellaufkommen oder mehreren Küchenstationen: Schnellrestaurants, Pizzerien, Burgerläden, Lieferdienste, Food Courts, Bäckereien mit Mittagstisch, Cafes mit Take-Away, Drive-Ins. Besonders wirksam ab 50 Bestellungen pro Tag oder wenn es mehrere Bestellkanäle parallel gibt." },
+      { "q": "Ersetzt der Pick-Up Screen den Personalkontakt mit dem Gast?", "a": "Nein — er entlastet ihn. Gäste schauen selbst auf den Screen und sehen, ob ihre Bestellung fertig ist. Personal muss nicht mehr rufen oder suchen und hat Zeit für Beratung, neue Bestellungen oder das Einpacken. Die persönliche Übergabe bleibt — sie wird nur effizienter." },
+      { "q": "Kann ich Bildschirme nachträglich erweitern, wenn mein Betrieb wächst?", "a": "Ja. Du kannst jederzeit weitere Küchenmonitore oder Pick-Up Screens ergänzen — zum Beispiel wenn du einen zweiten Standort eröffnest, einen Drive-In hinzufügst oder eine neue Station in der Küche einrichtest. Alle Bildschirme werden bei Einrichtung korrekt konfiguriert." }
+    ]
+  }
+}

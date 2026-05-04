@@ -1,0 +1,115 @@
+{
+  "meta": {
+    "title": "Soluzioni digitali per la ristorazione 2026 | Gastro Master",
+    "description": "Gastro Master offre soluzioni digitali complete per la ristorazione: sistema di cassa, shop di ordinazione online, app e sito web. Per ristoranti, caffetterie, servizi di consegna e franchise. Richieda ora una consulenza gratuita.",
+    "canonical": "https://gastro-master.de/it/loesungen"
+  },
+  "hero": {
+    "badge": "Software per la ristorazione · Soluzioni digitali",
+    "h1Before": "Trovi la Sua",
+    "h1Highlight": "Soluzione.",
+    "subtitle": "Che si tratti di ristorante, caffetteria, servizio di consegna o franchise — abbiamo la soluzione giusta per Lei.",
+    "geoBlock": "Gastro Master offre soluzioni digitali complete per la ristorazione — dal sistema di cassa conforme TSE allo shop di ordinazione online fino alla Sua app di ordinazione personale. Oltre 800 ristoratori in Germania utilizzano Gastro Master per ristoranti, caffetterie, panetterie, servizi di consegna e sistemi franchise.",
+    "cta": "Consulenza gratuita",
+    "trustLine": "Oltre 800 ristoratori si affidano a Gastro Master — scopra perché."
+  },
+  "targetGroup": {
+    "ctaLabel": "Alla soluzione"
+  },
+  "solutions": {
+    "badge": "Soluzioni",
+    "title": "Qual è la Sua sfida?",
+    "subtitle": "Clicchi sulla soluzione adatta a Lei. Vedrà subito tutto ciò di cui ha bisogno.",
+    "geoBlock": "Gastro Master offre soluzioni digitali complete per tutti i settori della ristorazione — dal ristorante e la caffetteria al servizio di consegna fino al sistema franchise. Tutte le soluzioni utilizzano gli stessi prodotti: sistema di cassa, shop di ordinazione online, app e sito web. Può utilizzare singoli prodotti o combinarli — a seconda delle esigenze della Sua attività.",
+    "cta": "Scopra di più",
+    "items": [
+      {
+        "label": "Ristorante",
+        "problem": "Ha bisogno di un sistema di cassa che funzioni semplicemente?",
+        "tagline": "Cassa conforme TSE, ordinazioni online, tutto da un unico fornitore."
+      },
+      {
+        "label": "Caffetteria & Panetteria",
+        "problem": "Lunghe code e nessun preordine online?",
+        "tagline": "Incasso rapido, preordine torte, click & collect."
+      },
+      {
+        "label": "Avviare un servizio di consegna",
+        "problem": "Vuole avviare il Suo servizio di consegna — senza piattaforme?",
+        "tagline": "Sistema di ordinazione proprio, 0 % commissione, operativo in 2–3 settimane."
+      },
+      {
+        "label": "Ampliare le consegne",
+        "problem": "Ha già un locale e vuole anche consegnare?",
+        "tagline": "Sistema di ordinazione e app per i rider, 0 % commissione, per attività esistenti."
+      },
+      {
+        "label": "Franchise",
+        "problem": "Vuole espandere il Suo concetto su più sedi?",
+        "tagline": "App, shop, cassa e sito web — uniformi, gestiti centralmente."
+      }
+    ]
+  },
+  "products": {
+    "badge": "Prodotti",
+    "title": "Tutti i prodotti in un colpo d'occhio",
+    "subtitle": "Dietro ogni soluzione ci sono questi prodotti. Li utilizzi singolarmente o in combinazione.",
+    "moreLabel": "Scopra di più",
+    "allProductsLink": "Veda tutti i prodotti →",
+    "items": [
+      { "name": "Sistema di cassa", "tagline": "Conforme TSE, da 69 €/mese" },
+      { "name": "Shop Online", "tagline": "0 % commissione, da 79 €/mese" },
+      { "name": "Sistema App", "tagline": "iOS & Android, da 149 €/mese" },
+      { "name": "Sito Web", "tagline": "Professionale, da 49 €/mese" },
+      { "name": "Commissioni di pagamento", "tagline": "Nessuna detrazione dal fatturato" }
+    ]
+  },
+  "impulse": {
+    "badge": "Non sa cosa fa al caso Suo?",
+    "title": "Troviamo insieme la soluzione giusta.",
+    "subtitle": "In una consulenza gratuita analizziamo la Sua attività. Riceverà una raccomandazione chiara — senza impegno.",
+    "cta": "Prenoti una consulenza gratuita"
+  },
+  "trust": {
+    "items": [
+      { "value": "800+", "label": "Attività gastronomiche si fidano di noi" },
+      { "value": "5,0 ★", "label": "Valutazione clienti su Google" },
+      { "value": "Conforme TSE", "label": "Tutti i sistemi certificati" },
+      { "value": "Supporto pers.", "label": "Il nostro team aiuta direttamente" }
+    ]
+  },
+  "faq": {
+    "badge": "FAQ",
+    "title": "Domande frequenti",
+    "subtitle": "Risposte brevi alle domande più comuni.",
+    "items": [
+      {
+        "q": "Quale software mi serve per il mio ristorante?",
+        "a": "Per un ristorante consigliamo il [sistema di cassa Gastro Master](/produkte/kassensystem) a partire da 69 €/mese. È conforme TSE e include la gestione dei tavoli. Può aggiungere anche uno [shop online](/produkte/webshop) o un'[app](/produkte/app)."
+      },
+      {
+        "q": "Quanto costa un sistema di ordinazione digitale per la ristorazione?",
+        "a": "Lo [shop online](/produkte/webshop) costa da 79 €/mese, l'[app](/produkte/app) da 149 €/mese, il [sito web](/produkte/webseite) da 49 €/mese e il [sistema di cassa](/produkte/kassensystem) da 69 €/mese. La configurazione viene discussa individualmente. Paga 0 % di commissione."
+      },
+      {
+        "q": "Gastro Master offre soluzioni per caffetterie e panetterie?",
+        "a": "Sì. Abbiamo una [soluzione dedicata per caffetterie e panetterie](/loesungen/cafe-baeckerei). Include un [sistema di cassa](/produkte/kassensystem) conforme TSE, uno [shop online per preordini](/produkte/webshop) e un'[app per i Suoi clienti abituali](/produkte/app)."
+      },
+      {
+        "q": "Posso avviare il mio servizio di consegna con Gastro Master?",
+        "a": "Sì. Ottiene un [sistema di ordinazione](/produkte/webshop), un'[app](/produkte/app) e, se necessario, un'app per i rider. Nessuna commissione. In 2–3 settimane è operativo. Tutto su come [avviare un servizio di consegna](/loesungen/lieferservice-gruenden)."
+      },
+      {
+        "q": "Esiste una soluzione franchise di Gastro Master?",
+        "a": "Sì. Tutte le sedi lavorano con lo stesso sistema — branding uniforme, gestione centralizzata, 0 % commissione. Dettagli sulla [soluzione franchise](/loesungen/franchise)."
+      }
+    ]
+  },
+  "schema": {
+    "articleHeadline": "Soluzioni digitali per la ristorazione 2026 — Ristorante, caffetteria, servizio di consegna, franchise",
+    "articleDescription": "Gastro Master offre soluzioni digitali complete per la ristorazione: sistema di cassa, shop di ordinazione online, app e sito web.",
+    "articleUrl": "https://gastro-master.de/it/loesungen",
+    "datePublished": "2026-01-01",
+    "dateModified": "2026-04-02"
+  }
+}

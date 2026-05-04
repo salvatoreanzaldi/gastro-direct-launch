@@ -1,0 +1,27 @@
+{
+  "meta": {
+    "title": "Gastro Master කාසු පද්ධතිය සඳහා මුද්‍රණ ධාවක | Gastro Master",
+    "description": "Gastro Master වෙතින් බොන් මුද්‍රණ යන්ත්‍ර සහ කාසු පද්ධති දෘඩාංග සඳහා මුද්‍රණ ධාවක. සියලුම ප්‍රචලිත තාප බොන් මුද්‍රණ යන්ත්‍ර ආකෘති සමඟ අනුකූලයි. නොමිලේ බාගත කරන්න.",
+    "canonical": "https://gastro-master.de/downloads/druckertreiber"
+  },
+  "breadcrumbParent": "බාගත කිරීම්",
+  "breadcrumbCurrent": "මුද්‍රණ ධාවක",
+  "title": "මුද්‍රණ ධාවක",
+  "subtitle": "මෙහිදී ඔබට වැදගත්ම මුද්‍රණ ධාවක බාගත කළ හැකිය. සියලුම ධාවක Windows සඳහා වේ.",
+  "drivers": [
+    { "label": "Gastro Master Drucker", "version": "Windows", "ext": ".zip" },
+    { "label": "Epson TM-T20III", "version": "v6.07", "ext": ".exe" },
+    { "label": "Epson TM-T20II", "version": "v5.13", "ext": ".exe" },
+    { "label": "Epson TM-T20IV", "version": "v6.10", "ext": ".exe" },
+    { "label": "Metapace T-3III", "version": "v1.00", "ext": ".exe" },
+    { "label": "Metapace T-3II", "version": "v1.07", "ext": ".exe" },
+    { "label": "Metapace T-40", "version": "v1.01", "ext": ".zip" },
+    { "label": "Star TSP 143IV", "version": "v3.9.1", "ext": ".exe" },
+    { "label": "Star TSP 143II / 143III", "version": "v7.70", "ext": ".exe" },
+    { "label": "Citizen CT-S4000", "version": "v3.6.1.0", "ext": ".exe" },
+    { "label": "Citizen CT-S4500", "version": "v3.6.1.0", "ext": ".exe" }
+  ],
+  "contactPrefix": "ස්ථාපනය පිළිබඳ ප්‍රශ්න සඳහා අපි සඳුදා–සිකුරාදා 08:00–17:00 වේලාව තුළ",
+  "contactMiddle": "හෝ",
+  "contactSuffix": "හරහා සම්බන්ධ විය හැකිය."
+}

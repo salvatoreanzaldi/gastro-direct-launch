@@ -1,0 +1,186 @@
+{
+  "seo": {
+    "title": "Prezzi software per ristorazione 2026 — da 49 € | Gastro Master",
+    "description": "Shop online da 79 €, sito web da 49 €, cassa da 69 € — 0 % di commissione, accompagnamento personalizzato nella configurazione. Richieda ora una consulenza gratuita."
+  },
+  "hero": {
+    "badge": "Prezzi 2026 · Gastro Master",
+    "title1": "Prezzi Gastro Master —",
+    "titleHighlight": "trasparenti, equi e chiari.",
+    "desc1": "Tutti i pacchetti includono configurazione, supporto e aggiornamenti.",
+    "desc2": "Nessuna commissione, nessuna sorpresa.",
+    "pills": [
+      "Accompagnamento personale nella configurazione",
+      "3 mesi di preavviso per la disdetta",
+      "800+ attività",
+      "Supporto personale"
+    ],
+    "cta": "Consulenza gratuita"
+  },
+  "referral": {
+    "badge": "Programma referral",
+    "title1": "Ci",
+    "title2": "raccomandi — risparmi ogni mese.",
+    "desc": "Per ogni referral andato a buon fine riceve un mese completo gratuito.",
+    "steps": [
+      { "num": "1", "title": "Raccomandare", "text": "Raccomandi Gastro Master a un altro ristoratore." },
+      { "num": "2", "title": "Contratto", "text": "Il Suo referral sottoscrive un contratto e menziona il Suo nome." },
+      { "num": "3", "title": "Mese gratuito", "text": "Riceve un mese completo gratuito. Automaticamente." }
+    ],
+    "stepLabel": "Passo",
+    "notice": "Importante: ",
+    "noticeText": "Il Suo mese gratuito viene accreditato solo quando il Suo referral sottoscrive un contratto. Una raccomandazione da sola non è sufficiente.",
+    "noLimit": "Nessun limite.",
+    "noLimitText": "5 referral = 5 mesi gratuiti. Più raccomanda, più risparmia.",
+    "cta": "Conosce qualcuno? Ci scriva semplicemente"
+  },
+  "addonsOrder": {
+    "badge": "Add-on · Sistema di ordinazione",
+    "title": "Estenda il Suo sistema di ordinazione",
+    "desc": "Aggiunga funzionalità al Suo sistema di ordinazione secondo necessità — attivabili in qualsiasi momento.",
+    "txBadge": "Add-on · Top seller",
+    "txTitle": "Supplemento transazione",
+    "txDesc": "Trasferisca le commissioni di pagamento automaticamente e in modo trasparente ai Suoi clienti — Lei mantiene il 100 % del Suo fatturato netto.",
+    "calcLabel": "Calcolatore commissioni",
+    "calcOrdersLabel": "Ordini / mese",
+    "calcCartLabel": "Valore medio carrello",
+    "calcResult": "Commissioni di pagamento al mese",
+    "calcPaypal": "PayPal: 2,99 % + 0,39 € per transazione",
+    "calcStripe": "Stripe (Apple Pay, Visa, MC, Klarna): 1,5 % + 0,25 €",
+    "calcSaving": "Con il supplemento Lei non paga nulla di tutto questo.",
+    "txMore": "Scopra di più",
+    "flyerBadge": "Add-on · App e shop online",
+    "flyerTitle": "Volantino con codice QR",
+    "flyerPrice": "da 65 €",
+    "flyerPriceDetail": "/ 2.500 pezzi",
+    "flyerHighlight": "I primi 2.500 volantini sono inclusi gratuitamente con ogni abbonamento.",
+    "flyerFeatures": [
+      "DIN A6, stampa fronte-retro",
+      "Branding personalizzato incluso",
+      "Quantità aggiuntive ordinabili in qualsiasi momento"
+    ],
+    "flyerPricelistLabel": "Listino prezzi"
+  },
+  "kasse": {
+    "badge": "Sistema di cassa",
+    "title": "La cassa cloud Gastro Master",
+    "desc": "Conforme TSE, certificata GoBD — per ristorante, servizio di consegna e ritiro.",
+    "legalNote": "Obbligo TSE dal 01.01.2020 (§146a AO, KassenSichV) — sanzioni fino a 25.000 € in caso di mancata conformità.",
+    "cardBadge": "Software cassa cloud",
+    "price": "da 69 €",
+    "priceDetail": "/ mese (netto)",
+    "priceSub": "3 mesi di preavviso per la disdetta · accompagnamento personale nella configurazione",
+    "features": [
+      "Software cassa cloud conforme TSE",
+      "Conforme GoBD — sicurezza legale per le verifiche fiscali",
+      "Fino a 4 casse per licenza",
+      "Servizio al tavolo, consegna e ritiro",
+      "Backoffice cloud e statistiche",
+      "Supporto personale via WhatsApp",
+      "3 mesi di preavviso per la disdetta"
+    ],
+    "cta": "Consulenza gratuita",
+    "imgAlt": "Hardware sistema di cassa cloud Gastro Master"
+  },
+  "addonsKasse": {
+    "badge": "Add-on · Sistema di cassa",
+    "title": "Estenda il Suo sistema di cassa",
+    "desc": "Add-on modulari per la Sua attività — solo ciò di cui ha realmente bisogno.",
+    "items": [
+      {
+        "badge": "Add-on",
+        "title": "App fattorino con GPS",
+        "price": "+ 10 €",
+        "priceDetail": "/ mese per fattorino (netto)",
+        "features": [
+          "Tracciamento GPS in tempo reale per i fattorini",
+          "Ottimizzazione automatica dei percorsi",
+          "Comunicazione diretta con la cucina",
+          "Stima dei tempi di consegna per i clienti"
+        ]
+      },
+      {
+        "badge": "Add-on",
+        "title": "Sistema QR al tavolo",
+        "price": "+ 50 €",
+        "priceDetail": "/ mese per 5 tavoli, +5 € per ogni ulteriore",
+        "features": [
+          "Ordinazione tramite codice QR al tavolo",
+          "Nessun download di app necessario",
+          "Integrato direttamente nel sistema di cassa",
+          "Sistema bar incluso"
+        ]
+      },
+      {
+        "badge": "Add-on",
+        "title": "Terminale self-ordering",
+        "price": "Su richiesta",
+        "priceDetail": "Hardware configurabile individualmente",
+        "features": [
+          "Sistema kiosk per ordinazioni self-service",
+          "Riduce i tempi di attesa",
+          "Completamente integrato nel POS",
+          "Display con branding personalizzato"
+        ]
+      }
+    ],
+    "footnote": "Tutti i prezzi IVA esclusa · Hardware e requisiti speciali su richiesta."
+  },
+  "integration": {
+    "badge": "Integrazione",
+    "title": "Come funzionano insieme i prodotti",
+    "desc": "Tutti i prodotti sono collegati nativamente — nessun trasferimento manuale, nessun caos.",
+    "hubLabel": "Centrale",
+    "items": [
+      { "title": "Sito web", "text": "Il Suo biglietto da visita digitale — ottimizzato per Google, professionale." },
+      { "title": "Sistema di ordinazione", "text": "Shop online con 0 % di commissione sul Suo dominio." },
+      { "title": "App", "text": "La Sua app sotto il Suo nome nell'App Store." },
+      { "title": "Sistema di cassa", "text": "Cassa cloud conforme TSE per servizio al tavolo, ritiro e consegna." }
+    ],
+    "connTitle": "Tutto in un unico sistema — gestione centralizzata",
+    "connDesc": "Gli ordini dallo shop online, dall'app e dalla cassa confluiscono in un unico dashboard centrale. Tutte le statistiche, tutte le sedi, un solo login."
+  },
+  "faq": {
+    "badge": "FAQ",
+    "title": "Domande frequenti sui prezzi",
+    "desc": "Altre domande? Il nostro team risponde entro 24 ore.",
+    "items": [
+      {
+        "q": "Quanto costa il sistema di cassa Gastro Master?",
+        "a": "Il [sistema di cassa Gastro Master](/produkte/kassensystem) è disponibile da 69 € al mese (netto). Il software cassa cloud è disdettabile mensilmente con 3 mesi di preavviso. Funziona su computer Windows e include la certificazione TSE (§146a AO), la conformità GoBD e supporto personale via WhatsApp."
+      },
+      {
+        "q": "Quali sono i costi di configurazione?",
+        "a": "I costi di configurazione vengono discussi individualmente in una consulenza personale — in base alle dimensioni della Sua attività. Il sito web ha una durata contrattuale minima di 12 mesi. Shop online, app e sistema di cassa sono disdettabili mensilmente con 3 mesi di preavviso. Senza commissioni, senza sorprese."
+      },
+      {
+        "q": "Qual è la differenza tra sito web e sistema di ordinazione?",
+        "a": "Il sito web (da 49 €/mese) è un sito professionale per il ristorante senza funzione di ordinazione — il Suo biglietto da visita digitale per Google e nuovi clienti. Il sistema di ordinazione (da 79 €/mese) include inoltre lo [shop online con 0 % di commissione](/produkte/webshop), tramite il quale i Suoi clienti possono ordinare direttamente."
+      },
+      {
+        "q": "Posso gestire più sedi con un unico pacchetto?",
+        "a": "Sì. I pacchetti supportano più sedi e filiali. Il sistema di cassa include fino a 4 casse per licenza — senza costi aggiuntivi. Per sistemi di franchising con molte sedi sviluppiamo soluzioni personalizzate."
+      },
+      {
+        "q": "Ci sono commissioni sulle transazioni?",
+        "a": "Gastro Master applica 0 % di commissione. I provider di pagamento (Stripe, PayPal, Klarna ecc.) applicano le proprie commissioni sulle transazioni. Con il supplemento transazione opzionale può trasferirle in modo trasparente e legalmente corretto ai Suoi clienti — così non ha alcun costo a Suo carico."
+      },
+      {
+        "q": "Qual è il pacchetto giusto per la mia attività?",
+        "a": "Per una pura presenza online il sito web (da 49 €/mese) è ideale. Se desidera ricevere ordini online, il sistema di ordinazione (da 79 €/mese) è la scelta giusta. Per una [propria app per ordinazioni](/produkte/app) consigliamo app + sistema di ordinazione da 149 €/mese. Il sistema di cassa (da 69 €/mese) integra tutti i pacchetti per l'attività in sede. Chi desidera [avviare il proprio servizio di consegna](/loesungen/lieferservice-gruenden) trova nella nostra guida tutti i passaggi. Nella consulenza gratuita troviamo insieme la combinazione perfetta."
+      }
+    ]
+  },
+  "cta": {
+    "badge": "Consulenza gratuita",
+    "title": "Non è sicuro quale pacchetto è adatto?",
+    "desc": "In una conversazione di 20 minuti Le mostriamo la migliore combinazione per la Sua attività — gratuita, senza impegno e su misura per Lei.",
+    "button": "Prenoti una consulenza",
+    "trust": [
+      "0 % di commissione",
+      "800+ attività",
+      "5,0 ★ Google",
+      "3 mesi di preavviso per la disdetta"
+    ]
+  }
+}

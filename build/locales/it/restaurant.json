@@ -1,0 +1,175 @@
+{
+  "meta": {
+    "title": "Sistema di cassa per ristoranti 2026 — conforme TSE e gestione tavoli | Gastro Master",
+    "description": "Il sistema di cassa giusto per il Suo ristorante: conforme TSE, con gestione tavoli, monitor cucina e sistema di ordinazione online. A partire da 49 EUR/mese. Richieda una consulenza gratuita.",
+    "canonical": "https://gastro-master.de/it/loesungen/restaurant"
+  },
+  "hero": {
+    "badge": "Ristorante · Gastronomia 2026",
+    "title1": "Il Suo ristorante.",
+    "title2": "La tecnologia giusta.",
+    "subtitle1": "Sistema di cassa, sito web, online shop — tutto da un unico fornitore.",
+    "subtitle2": "Configurazione semplice. Pronto per iniziare.",
+    "cta": "Consulenza gratuita",
+    "anchor": "Cosa riceve ↓",
+    "trustPills": ["800+ attivita", "Conforme TSE", "Da 69 EUR/mese", "Supporto personale"],
+    "geo": {
+      "label": "Cos'e Gastro Master per i ristoranti?",
+      "text": "Gastro Master offre ai ristoratori un sistema digitale completo: sistema di cassa conforme TSE con gestione tavoli e monitor cucina, un sistema di ordinazione online senza commissioni, oltre a sito web e app di ordinazione — tutto da un unico fornitore, a partire da 69 EUR al mese. Dal 2023 un registratore di cassa certificato TSE e obbligatorio per legge in Germania (Kassensicherungsverordnung)."
+    }
+  },
+  "stats": {
+    "title": "Cosa dovrebbe sapere — prima di iniziare",
+    "subtitle": "Numeri che influenzano direttamente il Suo successo come ristoratore.",
+    "items": [
+      {
+        "value": "72 %",
+        "label": "degli ospiti si aspettano servizi digitali — ordinazione online o pagamento mobile",
+        "source": "g-wie-gastro.de",
+        "href": "https://g-wie-gastro.de/top-themen/digitalisierung/digitalisierung-in-der-gastronomie-der-ultimative-guide-fuer-2026/"
+      },
+      {
+        "value": "7 % IVA",
+        "label": "sui cibi da gennaio 2026 — l'aliquota ridotta si applica in modo permanente",
+        "source": "DEHOGA Bundesverband",
+        "href": "https://www.dehoga-bundesverband.de/zahlen-fakten/"
+      },
+      {
+        "value": "25.000 EUR",
+        "label": "di multa per mancanza di cassa TSE — puo evitarlo",
+        "source": "get-sides.de",
+        "href": "https://www.get-sides.de/blog/kassensicherungsverordnung-gastronomie/"
+      },
+      {
+        "value": "da 69 EUR",
+        "label": "al mese — il Suo sistema di cassa completo, conforme TSE e pronto all'uso",
+        "source": "Gastro Master",
+        "href": "/kontakt",
+        "isCta": true
+      }
+    ],
+    "ctaLabel": "Richieda una consulenza gratuita"
+  },
+  "problem": {
+    "badge": "Molti ristoranti lo conoscono bene",
+    "title": "Senza il sistema giusto perde denaro e tempo",
+    "subtitle": "Gastro Master risolve questi problemi — cosi puo concentrarsi sulla Sua cucina.",
+    "items": [
+      {
+        "title": "Caos negli ordini",
+        "text": "Foglietti, grida, errori. Gli ordini vanno persi. Gli ospiti aspettano troppo. Le costa denaro e stress."
+      },
+      {
+        "title": "Nessuna panoramica sui numeri",
+        "text": "A fine giornata non sa quanto ha guadagnato. Nessun report. Nessuna panoramica. Decisioni basate sul caso."
+      },
+      {
+        "title": "Problemi con il fisco",
+        "text": "Senza cassa TSE rischia multe fino a 25.000 EUR. La TSE e obbligatoria dal 2023 — e molte casse non la rispettano."
+      }
+    ]
+  },
+  "products": {
+    "badge": "Tutto cio di cui il Suo ristorante ha bisogno",
+    "title": "Cinque prodotti. Tutto da un unico fornitore.",
+    "subtitle": "Dalla cassa al sito web — riceve tutto configurato e pronto.",
+    "featured": {
+      "badgeLabel": "Prodotto principale",
+      "iconLabel": "Sistema di cassa",
+      "title": "Cassa conforme TSE. Tutto incluso.",
+      "text": "La nostra cassa e approvata dall'ufficio delle imposte — si chiama conforme TSE. E obbligatorio dal 2023. La gestione tavoli e inclusa. Monitor cucina e app per i corrieri si aggiungono quando servono. Puo anche collegare terminali self-checkout — i Suoi ospiti ordinano e pagano autonomamente.",
+      "tags": ["Conforme TSE", "Gestione tavoli", "Monitor cucina", "App corrieri", "Da 69 EUR/mese"],
+      "linkLabel": "Visualizza il sistema di cassa"
+    },
+    "items": [
+      { "title": "Sistema di cassa", "tagline": "Conforme TSE. Con gestione tavoli, monitor cucina e app per i corrieri." },
+      { "title": "Online Shop", "tagline": "Gli ospiti ordinano direttamente da Lei — 0 % di commissione." },
+      { "title": "Sito web", "tagline": "Affinche il Suo ristorante venga trovato su Google." },
+      { "title": "Sistema App", "tagline": "La Sua app di ordinazione per clienti abituali fedeli." },
+      { "title": "Commissioni di pagamento", "tagline": "Commissioni di pagamento? Possono essere a carico dei Suoi ospiti." }
+    ],
+    "moreLabel": "Scopra di piu",
+    "cta": "Richieda una consulenza — gratuita"
+  },
+  "process": {
+    "badge": "E cosi semplice",
+    "title": "Pronto in 3 passi",
+    "subtitle": "Non serve essere un esperto di tecnologia. Facciamo tutto noi per Lei.",
+    "steps": [
+      { "num": "01", "title": "Colloquio gratuito", "text": "Analizziamo insieme cio di cui ha bisogno. Nessuna pressione. Nessun costo." },
+      { "num": "02", "title": "Configuriamo tutto noi", "text": "Cassa, sito web, shop — tutto pronto. Non deve configurare nulla da solo." },
+      { "num": "03", "title": "Lei inizia", "text": "Il Suo ristorante e pronto. Continuiamo ad assisterLa quando ne ha bisogno." }
+    ]
+  },
+  "compare": {
+    "badge": "Confronto",
+    "title": "Gastro Master vs. altri sistemi di cassa",
+    "subtitle": "Molti sistemi di cassa sanno solo incassare. Gastro Master fa di piu.",
+    "thLabel": "Cosa Le serve",
+    "thGm": "Gastro Master",
+    "thGmBadge": "Consigliato",
+    "thOther": "Altri sistemi di cassa",
+    "rows": [
+      { "label": "Conforme TSE", "gm": "✓ Sempre incluso", "other": "Spesso a costo aggiuntivo" },
+      { "label": "Gestione tavoli", "gm": "✓ Inclusa", "other": "Di solito a pagamento" },
+      { "label": "Ordinazioni online", "gm": "✓ Direttamente integrato", "other": "Generalmente non incluso" },
+      { "label": "Monitor cucina", "gm": "✓ Disponibile", "other": "Prenotabile separatamente" },
+      { "label": "App per i corrieri", "gm": "✓ Disponibile", "other": "Non inclusa" },
+      { "label": "Supporto", "gm": "✓ Personale", "other": "Solo tramite hotline" },
+      { "label": "Costi mensili", "gm": "Da 69 EUR/mese", "other": "Spesso molto di piu" }
+    ],
+    "cta": "Richieda una consulenza gratuita"
+  },
+  "trust": {
+    "headline": "Oltre 800 ristoranti e attivita gastronomiche utilizzano Gastro Master",
+    "items": [
+      { "value": "800+", "label": "Attivita in Germania e Austria" },
+      { "value": "5,0 ★", "label": "Valutazione Google" },
+      { "value": "Conforme TSE", "label": "Certificato per legge — nessun rischio di multe" },
+      { "value": "da 69 EUR", "label": "al mese — sistema di cassa pronto all'uso" }
+    ]
+  },
+  "epitPay": {
+    "title": "Epit Pay",
+    "badge": "In arrivo",
+    "text": "Presto non avra piu bisogno di un fornitore di pagamenti esterno. Con Epit Pay riceve cassa, sistema di ordinazione e gestione dei pagamenti da un unico fornitore. Tutto insieme — semplice."
+  },
+  "faq": {
+    "title": "Domande frequenti sul sistema di cassa",
+    "subtitle": "Risposte semplici alle domande piu importanti.",
+    "items": [
+      {
+        "q": "Quale sistema di cassa mi serve per il mio ristorante?",
+        "a": "Ha bisogno di un [sistema di cassa](/produkte/kassensystem) conforme TSE. E obbligatorio da gennaio 2023. La gestione tavoli e inclusa nel pacchetto base. Monitor cucina e app per i corrieri sono aggiungibili. Gastro Master ha tutto — a partire da 69 EUR al mese."
+      },
+      {
+        "q": "Cos'e la TSE e ne ho bisogno?",
+        "a": "TSE sta per Technische Sicherheitseinrichtung (dispositivo tecnico di sicurezza). E una tecnologia che protegge il Suo registratore di cassa. Tutte le transazioni vengono archiviate in modo sicuro. L'ufficio delle imposte puo verificarle. Dal 1 gennaio 2023 la TSE e obbligatoria. Senza TSE si rischiano multe fino a 25.000 EUR. Tutti i [sistemi di cassa di Gastro Master](/produkte/kassensystem) sono conformi TSE."
+      },
+      {
+        "q": "Quanto costa un sistema di cassa per la gastronomia?",
+        "a": "Il [sistema di cassa di Gastro Master](/produkte/kassensystem) costa a partire da 69 EUR al mese. TSE e gestione tavoli sono incluse. Monitor cucina e app per i corrieri sono aggiungibili. Nessun costo nascosto. Nessun vincolo a lungo termine."
+      },
+      {
+        "q": "Come rendo il mio ristorante visibile online?",
+        "a": "Ha bisogno di un [sito web](/produkte/webseite) — affinche gli ospiti La trovino su Google. E di un [sistema di ordinazione online](/produkte/webshop) — affinche possano ordinare direttamente da Lei. Gastro Master fa entrambe le cose per Lei. Non paga commissioni a Lieferando o ad altre piattaforme."
+      },
+      {
+        "q": "Come ristorante devo avere un sistema di cassa?",
+        "a": "Si. Dal 2023 in Germania si applica la Kassensicherungsverordnung (regolamento sulla sicurezza dei registratori di cassa). Ha bisogno di una [cassa](/produkte/kassensystem) conforme TSE e deve emettere scontrini. Chi non rispetta queste regole rischia multe elevate. Gastro Master La aiuta a configurare tutto in modo rapido e corretto."
+      }
+    ]
+  },
+  "cta": {
+    "badge": "Consulenza gratuita",
+    "title": "La aiutiamo a rendere il Suo ristorante pronto per il futuro.",
+    "subtitle1": "Cassa, sito web, shop — configuriamo tutto per Lei.",
+    "subtitle2": "Non serve esperienza tecnica.",
+    "button": "Prenoti un colloquio gratuito",
+    "trustItems": ["Conforme TSE", "800+ attivita", "5,0 ★ Google", "Supporto personale"]
+  },
+  "schema": {
+    "articleHeadline": "Sistema di cassa per ristoranti 2026 — conforme TSE, gestione tavoli e online shop | Gastro Master",
+    "articleDescription": "Il sistema di cassa giusto per il Suo ristorante: conforme TSE, con gestione tavoli, monitor cucina e sistema di ordinazione online. A partire da 49 EUR/mese. Richieda una consulenza gratuita."
+  }
+}

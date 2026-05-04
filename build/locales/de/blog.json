@@ -1,0 +1,15 @@
+{
+  "seo": {
+    "title": "Blog — Praxistipps für Restaurantinhaber & Lieferdienste | Gastro Master",
+    "description": "Ehrliche Ratgeber und Vergleiche für Gastronomen: Lieferando-Alternativen, Kosten von Bestellsystemen, Fehler beim Lieferdienst-Start und mehr."
+  },
+  "hero": {
+    "badge": "Gastro Master Blog",
+    "title": "Wissen für deinen Betrieb",
+    "subtitle": "Kein Werbetext. Kein Bullshit. Nur das, was du als Restaurantinhaber oder Lieferdienstbetreiber wirklich wissen musst."
+  },
+  "breadcrumb": {
+    "home": "Startseite",
+    "blog": "Blog"
+  }
+}

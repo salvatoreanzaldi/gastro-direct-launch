@@ -1,0 +1,346 @@
+{
+  "seo": {
+    "title": "Kassensystem Gastronomie — TSE-konform | Gastro Master",
+    "description": "TSE-konformes Kassensystem für Gastronomie ab 69 €/Monat. Fahrer-App, QR-Bestellung & Cloud-Updates inklusive. Gesetzeskonform (§146a AO). Jetzt kostenlos beraten."
+  },
+  "hero": {
+    "badge": "Kassensystem",
+    "h1": "Das Kassensystem für deine",
+    "h1Highlight": "Gastronomie",
+    "h1Suffix": "– TSE-konform & in der Cloud.",
+    "subtitle": "Modernste Kassensoftware für",
+    "subtitleLinkRestaurant": "Restaurants",
+    "subtitleLinkLieferdienst": "Lieferdienste",
+    "subtitleEnd": "und Gastrobetriebe – mit TSE-Zertifizierung, GoBD-Konformität, Cloud-Updates und direktem Support aus Deutschland.",
+    "cta": "Kostenlose Beratung",
+    "heroImgAlt": "Gastro Master Kassensystem – TSE-konformes POS System für Gastronomie"
+  },
+  "trust": {
+    "googleRating": "5.0",
+    "googleLabel": "Google Bewertung",
+    "googleSub": "Über 50 verifizierte Rezensionen",
+    "stats": [
+      {
+        "value": "800+",
+        "label": "Aktive Kunden"
+      },
+      {
+        "value": "TSE",
+        "label": "zertifiziert & GoBD-konform"
+      },
+      {
+        "value": "0 €",
+        "label": "Aufpreis für Cloud-Updates"
+      },
+      {
+        "value": "Support",
+        "label": "direkt aus Deutschland"
+      }
+    ]
+  },
+  "benefits": [
+    {
+      "title": "TSE-Pflicht erfüllt",
+      "text": "Zertifiziert nach KassenSichV & GoBD – rechtssicher ab Tag 1."
+    },
+    {
+      "title": "Cloud-Updates inklusive",
+      "text": "Immer die neueste Version – automatisch, ohne Aufpreis."
+    },
+    {
+      "title": "Support aus Deutschland",
+      "text": "Persönlicher Ansprechpartner, direkt erreichbar."
+    },
+    {
+      "title": "Alle Plattformen integriert",
+      "text": "Lieferando, Wolt, eigene App & Online-Shop in einem System."
+    }
+  ],
+  "slideshow": {
+    "badge": "Kernfunktionen",
+    "headline": "Die wichtigsten Funktionen",
+    "headlineBr": "deines Kassensystems.",
+    "slides": [
+      {
+        "label": "QR-Code scannen und sofort am Tisch bestellen",
+        "title": "Volle Flexibilität für dein Geschäft",
+        "text": "Vergiss komplizierte Extra-Geräte. Mit Gastro Master steuerst du dein gesamtes Geschäft zentral: Lieferung, Abholung oder Bedienung im Restaurant – alles läuft schnell und einfach über diese eine Kassenoberfläche.",
+        "tagline": "Das schafft Ordnung und macht den Service reibungslos.",
+        "imgAlt": "Tischsystem mit QR-Code Bestellung"
+      },
+      {
+        "label": "Echtzeitauswertungen für kluge Entscheidungen",
+        "title": "Dein Geschäft in Zahlen verstehen",
+        "text": "Hör auf zu raten und fang an zu wissen. Mit unseren detaillierten Statistiken hast du deinen stündlichen Umsatz, die Top 10 Bestseller und deine lukrativsten Liefergebiete jederzeit im Blick.",
+        "tagline": "So triffst du logische Entscheidungen, um deinen Erfolg strategisch zu steigern.",
+        "imgAlt": "Statistik Dashboard mit Echtzeitauswertungen"
+      },
+      {
+        "label": "Eine Lösung für Tisch, Theke und Fahrer",
+        "title": "Fahrer-App & Liefergebiete",
+        "text": "Du siehst in Echtzeit, wo deine Fahrer unterwegs sind und welche Route sie nehmen. Liefergebiete legst du selbst auf der Karte fest – mit klaren Zonengrenzen und automatischer Entfernungsberechnung. So kommt jede Bestellung zuverlässig ans Ziel, ohne unnötige Umwege.",
+        "tagline": "Weniger Fahrfehler, zufriedenere Kunden – und du behältst jederzeit den vollen Überblick.",
+        "imgAlt": "Liefergebiete Karte mit GPS-Zonen"
+      }
+    ]
+  },
+  "featuresGrid": {
+    "badge": "Features",
+    "headline": "Alles, was deine Gastronomiekasse braucht.",
+    "sub": "Ein System, das mit deinem Betrieb wächst – von der Anruferkennung bis zur Echtzeit-Statistik.",
+    "tiles": [
+      {
+        "title": "Alle Plattformen auf einen Blick",
+        "text": "Lieferando, Wolt, Uber Eats und +15 weitere Partner – alle Bestellungen laufen automatisch in deinem Kassensystem zusammen. Kein manuelles Übertragen, keine Fehler, kein Zeitverlust.",
+        "tagline": "Du sparst täglich wertvolle Zeit."
+      },
+      {
+        "title": "Automatische Anruferkennung",
+        "text": "Name, Adresse und Bestellhistorie erscheinen beim ersten Klingeln auf dem Bildschirm. Telefon-Bestellungen werden 3× schneller aufgenommen – ohne Nachfragen, ohne Tippfehler.",
+        "tagline": "Du bist schneller fertig."
+      },
+      {
+        "title": "Fahrer-App & GPS-Liefergebiete",
+        "text": "Jeder Fahrer erhält eine eigene App mit Echtzeit-GPS-Tracking. Liefergebiete nach Entfernung, Zone oder Postleitzahl – direkt auf der Karte definierbar, jederzeit anpassbar.",
+        "tagline": "Du hast immer alles unter Kontrolle."
+      },
+      {
+        "title": "Umsatz & Statistiken in Echtzeit",
+        "text": "Tages-, Wochen- und Monatsauswertungen auf Knopfdruck: Top-Produkte, Liefergebiete, Zahlungsarten. Alle GoBD-konformen Berichte sind sofort für den Steuerberater exportierbar.",
+        "tagline": "Buchführung wird kinderleicht."
+      },
+      {
+        "title": "Alle Zahlungsmethoden akzeptiert",
+        "text": "Bar, EC-Karte, Visa, Mastercard, Apple Pay, Google Pay, PayPal und Klarna – dein Kassensystem akzeptiert jede Zahlungsart. TSE-zertifiziert und GoBD-konform – rechtssicher ab Tag 1.",
+        "tagline": "Alle Gesetze erfüllt (TSE/GoBD)."
+      }
+    ]
+  },
+  "socialProof": {
+    "badge": "Vertrauen",
+    "headline": "Über 800 erfolgreiche Gastronomen",
+    "headlineBr": "setzen auf Gastro Master.",
+    "sub": "Von der Pizzeria bis zum Franchise – Gastro Master wächst mit jedem Betrieb.",
+    "watermark": "800+"
+  },
+  "waveFeature": {
+    "badge": "Add-ons & Erweiterungen",
+    "headline": "Mehr als eine Kasse –",
+    "headlineBr": "dein komplettes System.",
+    "sub": "Modulare Hardware-Add-ons und smarte Software-Funktionen, die sich deinem Betrieb anpassen.",
+    "cards": [
+      {
+        "subtitle": "DIGITALISIERUNG, DIE SINN MACHT",
+        "title": "Self-Ordering Terminal",
+        "text": "Gäste bestellen direkt am Terminal – intuitiv, ohne Wartezeit. Dein Team gewinnt Zeit. Ergänzend bieten wir auch Pick-Up-Screens an."
+      },
+      {
+        "subtitle": "FLEXIBLER SERVICE",
+        "title": "Bar-System mit Orderman & QR-Code",
+        "text": "Mobil per Orderman aufnehmen oder Gäste per QR-Code selbst bestellen lassen. Blitzschnell und modern."
+      },
+      {
+        "subtitle": "UNKOMPLIZIERT & EFFIZIENT",
+        "title": "Eine Lizenz – bis zu 4 Kassen",
+        "text": "Bis zu vier Terminals mit einem Paket. Kein Extra-Abo je Kasse – maximaler Mehrwert ohne versteckte Kosten."
+      },
+      {
+        "subtitle": "NAHTLOSE VERKNÜPFUNG",
+        "title": "Anbindung an jedes EC-Kartengerät",
+        "text": "Kompatibel mit allen Kartenterminals nach ZVT-Standard. Kein Anbieterzwang – sicher und reibungslos."
+      },
+      {
+        "subtitle": "ALLES IM BLICK",
+        "title": "Mitarbeiterverwaltung",
+        "text": "Arbeitszeiten, Umsätze und Trinkgelder automatisch erfasst. GoBD-konform exportierbar für den Steuerberater."
+      }
+    ]
+  },
+  "featureCards3": [
+    {
+      "title": "Tisch-System",
+      "text": "Bestellungen direkt am Tisch aufnehmen – schneller Service, weniger Fehler."
+    },
+    {
+      "title": "Fahrer-App & Liefergebiete",
+      "text": "Lieferstatus in Echtzeit, GPS-Tracking und Lieferzonen auf einer Karte."
+    },
+    {
+      "title": "Statistiken & Berichte",
+      "text": "Tages-, Wochen- und Monatsauswertungen – immer alle Zahlen im Griff."
+    }
+  ],
+  "hardware": {
+    "badge": "Empfohlene Hardware",
+    "headline": "Die passende Hardware für dein Kassensystem",
+    "sub": "Robust, zuverlässig und sofort einsatzbereit. Wähle das Gerät, das zu deinem Betrieb passt.",
+    "cta": "Hardware anfragen",
+    "inquiryCta": "Jetzt anfragen",
+    "products": [
+      {
+        "title": "Elo Series-3",
+        "desc": "Kompaktes All-in-One Kassensystem mit Touchscreen. Ideal für Restaurants, Cafés und Imbisse.",
+        "features": [
+          "15.6\" Touchscreen",
+          "Kompaktes Design",
+          "Bon-Drucker integrierbar"
+        ],
+        "labels": [
+          "Front",
+          "Schräg",
+          "Hinten",
+          "Ports",
+          "Seite"
+        ]
+      },
+      {
+        "title": "Elo Series-3 Doublescreen",
+        "desc": "Zwei Bildschirme: einer für dich, einer für den Gast. Perfekt für Thekenbetrieb und Upselling.",
+        "features": [
+          "Kunden-Display",
+          "Upsell-Möglichkeit",
+          "Professioneller Auftritt"
+        ],
+        "labels": [
+          "Front",
+          "Schräg",
+          "Hinten",
+          "Ports"
+        ]
+      },
+      {
+        "title": "Microsoft Surface Tablet",
+        "desc": "Flexibel und mobil. Nimm deine Kasse überall mit. Ideal für Food-Trucks, Events und kleine Betriebe.",
+        "features": [
+          "Mobil einsetzbar",
+          "Leicht & kompakt",
+          "Windows-kompatibel"
+        ],
+        "labels": [
+          "Front",
+          "Schräg",
+          "Hinten",
+          "Seite"
+        ]
+      }
+    ]
+  },
+  "alternating": [
+    {
+      "headline": "Deine Gäste bestellen selbst.",
+      "sub": "QR-Code am Tisch – sofort bestellen, ohne App",
+      "text1": "Kein Kellner, keine Wartezeit, kein Missverständnis. Deine Gäste scannen den QR-Code am Tisch – und in Sekunden liegt die Bestellung direkt in der Küche. Ohne App-Download, ohne Anmeldung, ohne Reibung.",
+      "text2": "Gastronomen, die auf QR-Code-Bestellungen setzen, berichten von bis zu 30 % höheren Tischumsätzen durch automatische Upsell-Vorschläge – und einem deutlich entspannteren Serviceablauf in der Stoßzeit.",
+      "checks": [
+        "QR-Code am Tisch – keine App nötig, sofort startklar",
+        "Bestellung landet in Sekunden in Küche & Bar",
+        "Bis zu 30 % höhere Tischumsätze durch digitale Upsells",
+        "Serviceteam entlastet – mehr Tische mit gleichem Personal"
+      ]
+    },
+    {
+      "headline": "Self-Ordering Terminal.",
+      "sub": "Mehr Umsatz mit Selbstbedienung",
+      "text1": "Das Terminal führt deine Gäste eigenständig durch dein Menü und schlägt automatisch beliebte Extras und Upgrades vor. Keine Wartezeit, keine Missverständnisse – Bezahlung direkt am Terminal, fehlerfrei in der Küche.",
+      "text2": "Restaurants mit Self-Ordering Terminal steigern den Durchschnittsbetrag pro Bestellung um bis zu 25 % – durch gezielte Upsell-Vorschläge, die kein Kellner so konsequent liefern kann.",
+      "checks": [
+        "Automatische Upsell-Vorschläge steigern den Umsatz um bis zu 25 %",
+        "Direktzahlung am Terminal – kein Warten auf die Rechnung",
+        "Bestellung geht fehlerfrei und sofort in Küche & Bar",
+        "Serviceteam entlastet – gleich viele Tische, weniger Stress"
+      ]
+    },
+    {
+      "headline": "Service-Vorteil durch Orderman.",
+      "sub": "Mobile Bestellaufnahme – schneller, fehlerfreier Service",
+      "text1": "Kein Zettel, kein Rufen zur Kasse: Dein Servicepersonal nimmt Bestellungen direkt am Tisch per Handheld auf – und die Bestellung landet in Sekunden in Küche und Bar. Keine Übertragungsfehler, kein Zeitverlust, kein Chaos in der Stoßzeit.",
+      "text2": "Restaurants mit mobilem Orderman-System reduzieren Bestellfehler um bis zu 80 % und schaffen deutlich mehr Tischumschläge – mit demselben Personal, ohne Mehraufwand.",
+      "checks": [
+        "Mobile Bestellaufnahme per Handheld oder Tablet am Tisch",
+        "Bestellung sofort fehlerfrei in Küche & Bar – kein Rufen",
+        "Bis zu 80 % weniger Bestellfehler im laufenden Betrieb",
+        "Mehr Tischumschläge in der Stoßzeit – gleiches Personal"
+      ]
+    },
+    {
+      "headline": "Alle Zahlungen. Dein Terminal.",
+      "sub": "Kein Gast geht wegen Zahlungsproblemen verloren.",
+      "text1": "Bar, EC-Karte, Kreditkarte, Apple Pay, Google Pay und Klarna – das Gastro Master Kassensystem akzeptiert alle gängigen Zahlungsmethoden. Die Anbindung an jedes handelsübliche EC-Gerät ist ohne Aufpreis inklusive.",
+      "text2": "Trinkgeld-Funktion, Splitten von Rechnungen und digitale Quittungen per E-Mail sind standardmäßig enthalten. Deine Gäste zahlen, wie sie möchten – und du hast den Überblick über alle Einnahmen in Echtzeit.",
+      "checks": [
+        "Alle Zahlungsmethoden akzeptiert",
+        "Anbindung an jedes EC-Gerät inklusive",
+        "Trinkgeld & Rechnungssplitting",
+        "Digitale Quittungen & Tagesabschluss"
+      ]
+    }
+  ],
+  "teamCta": {
+    "badge": "Jetzt durchstarten",
+    "headline": "Buche jetzt dein",
+    "headlineBr": "kostenloses Beratungsgespräch.",
+    "expectLabel": "Das erwartet dich:",
+    "expectText": "Im kostenlosen Erstgespräch entwickelt einer unserer Experten ein individuelles Konzept für dein neues Kassensystem – kostenlos, unverbindlich und auf deinen Betrieb zugeschnitten. Danach entscheidest du frei, ob du es mit uns umsetzen möchtest.",
+    "privacyNote": "Deine Informationen werden ausschließlich für die Kontaktaufnahme verwendet und nicht gespeichert.",
+    "languages": [
+      "Deutsch",
+      "Englisch",
+      "Italienisch",
+      "Persisch",
+      "Russisch",
+      "Singhalesisch"
+    ],
+    "cta": "Kostenlose Beratung",
+    "teamMembers": [
+      {
+        "name": "Sanjaya Pattiyage",
+        "role": "Gründer & Geschäftsführer"
+      },
+      {
+        "name": "René Ebert",
+        "role": "Gründer & Geschäftsführer"
+      },
+      {
+        "name": "Salvatore Anzaldi",
+        "role": "Head of Sales"
+      },
+      {
+        "name": "Andrej Krutsch",
+        "role": "Head of Operations"
+      }
+    ]
+  },
+  "faq": {
+    "badge": "FAQ",
+    "headline": "Häufige",
+    "headlineBr": "Fragen.",
+    "sub": "Weitere Fragen? Ruf uns an oder schreib uns – wir antworten innerhalb von 24 Stunden.",
+    "cta": "Direkt anfragen",
+    "items": [
+      {
+        "q": "Warum braucht mein Restaurant ein modernes Kassensystem?",
+        "a": "Ein modernes Kassensystem für Gastronomie ist weit mehr als eine Registrierkasse. Es verbindet Bestelleingang, Küchenmanagement, Lieferservice, Mitarbeiterverwaltung und Statistiken in einem einzigen System. Besonders für [Restaurants](/loesungen/restaurant) spart das täglich Zeit und reduziert Fehler bei der Abrechnung erheblich."
+      },
+      {
+        "q": "Welches Kassensystem ist TSE-pflichtig in Deutschland?",
+        "a": "Seit dem 01.01.2020 sind alle elektronischen Kassensysteme in Deutschland TSE-pflichtig (§146a AO, KassenSichV — Technische Sicherheitseinrichtung). Betriebe ohne gültige TSE riskieren Bußgelder von bis zu 25.000 €. Das Gastro Master Kassensystem ist vollständig zertifiziert und erfüllt alle Anforderungen der KassenSichV sowie GoBD-Konformität."
+      },
+      {
+        "q": "Was kostet ein Cloud-Kassensystem für mein Restaurant?",
+        "a": "Das Gastro Master Kassensystem ist als Monatsabo verfügbar – ohne teure Einmalzahlungen oder Hardware-Wartungsverträge. Cloud-Updates, Support und alle neuen Features sind im Preis inklusive. Alle Pakete und Preise findest du in der [vollständigen Preisübersicht](/preise)."
+      },
+      {
+        "q": "Kann ich das Kassensystem auch für Lieferdienste nutzen?",
+        "a": "Ja. Das Kassensystem ist nativ mit der Fahrer-App, Liefergebieten und GPS-Tracking verknüpft. Bestellungen aus dem [digitalen Bestellsystem](/produkte/webshop), der [eigenen Bestell-App](/produkte/app) und direkt an der Kasse landen automatisch in einem Workflow — kein manuelles Übertragen nötig. Ideal für alle, die [einen eigenen Lieferdienst aufbauen](/loesungen/lieferservice-gruenden) möchten."
+      },
+      {
+        "q": "Wie schnell ist das Kassensystem eingerichtet?",
+        "a": "Die Einrichtung dauert in der Regel 1–2 Werktage. Unser Support-Team aus Deutschland begleitet dich durch die gesamte Einrichtung und schult dein Team persönlich – vor Ort oder per Videocall. Melde dich einfach über unser [Kontaktformular](/kontakt)."
+      },
+      {
+        "q": "Ist das System GoBD-konform und für eine Betriebsprüfung geeignet?",
+        "a": "Ja. Das Gastro Master Kassensystem ist vollständig GoBD-konform. Alle Buchungen, Stornierungen und Tagesabschlüsse werden unveränderbar protokolliert und können jederzeit für eine Betriebsprüfung exportiert werden."
+      }
+    ]
+  }
+}

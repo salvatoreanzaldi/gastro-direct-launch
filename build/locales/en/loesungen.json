@@ -1,0 +1,115 @@
+{
+  "meta": {
+    "title": "Digital Solutions for the Food Industry 2026 | Gastro Master",
+    "description": "Gastro Master offers complete digital solutions for the food industry: POS system, online ordering, app and website. For restaurants, cafés, delivery services and franchises. Get a free consultation now.",
+    "canonical": "https://gastro-master.de/loesungen"
+  },
+  "hero": {
+    "badge": "Restaurant Software · Digital Solutions",
+    "h1Before": "Find your",
+    "h1Highlight": "Solution.",
+    "subtitle": "Whether restaurant, café, delivery service or franchise — we have the right solution for you.",
+    "geoBlock": "Gastro Master offers complete digital solutions for the food industry — from TSE-compliant POS systems and online ordering shops to your own ordering app. 800+ restaurants in Germany use Gastro Master for restaurants, cafés, bakeries, delivery services and franchise systems.",
+    "cta": "Free Consultation",
+    "trustLine": "800+ restaurants trust Gastro Master — find out why."
+  },
+  "targetGroup": {
+    "ctaLabel": "View Solution"
+  },
+  "solutions": {
+    "badge": "Solutions",
+    "title": "What's your challenge?",
+    "subtitle": "Click the solution that fits you. You'll see everything you need right away.",
+    "geoBlock": "Gastro Master offers complete digital solutions for all areas of the food industry — from restaurants and cafés to delivery services and franchise systems. All solutions use the same products: POS system, online ordering shop, app and website. You can use individual products or combine them — depending on what your business needs.",
+    "cta": "Learn more",
+    "items": [
+      {
+        "label": "Restaurant",
+        "problem": "Need a POS system that just works?",
+        "tagline": "TSE-compliant POS, online ordering, everything from one source."
+      },
+      {
+        "label": "Café & Bakery",
+        "problem": "Long queues and no online pre-ordering?",
+        "tagline": "Fast checkout, cake pre-orders, click & collect."
+      },
+      {
+        "label": "Start a Delivery Service",
+        "problem": "Want to start your own delivery service — without platforms?",
+        "tagline": "Your own ordering system, 0% commission, live in 2–3 weeks."
+      },
+      {
+        "label": "Expand Delivery",
+        "problem": "Already have a restaurant and want to deliver too?",
+        "tagline": "Ordering system and driver app, 0% commission, for existing businesses."
+      },
+      {
+        "label": "Franchise",
+        "problem": "Want to expand your concept to multiple locations?",
+        "tagline": "App, shop, POS and website — unified, centrally managed."
+      }
+    ]
+  },
+  "products": {
+    "badge": "Products",
+    "title": "All Products at a Glance",
+    "subtitle": "Behind every solution are these products. Use them individually or combined.",
+    "moreLabel": "Learn more",
+    "allProductsLink": "View all products →",
+    "items": [
+      { "name": "POS System", "tagline": "TSE-compliant, from €69/month" },
+      { "name": "Online Shop", "tagline": "0% commission, from €79/month" },
+      { "name": "App System", "tagline": "iOS & Android, from €149/month" },
+      { "name": "Website", "tagline": "Professional, from €49/month" },
+      { "name": "Payment Fees", "tagline": "No deduction from revenue" }
+    ]
+  },
+  "impulse": {
+    "badge": "Not sure what fits?",
+    "title": "We'll find the right solution together.",
+    "subtitle": "In a free consultation, we'll look at your business. You'll get a clear recommendation — no obligation.",
+    "cta": "Book a Free Consultation"
+  },
+  "trust": {
+    "items": [
+      { "value": "800+", "label": "Restaurants trust us" },
+      { "value": "5.0 ★", "label": "Customer rating on Google" },
+      { "value": "TSE-compliant", "label": "All systems certified" },
+      { "value": "Personal Support", "label": "Our team helps directly" }
+    ]
+  },
+  "faq": {
+    "badge": "FAQ",
+    "title": "Frequently Asked Questions",
+    "subtitle": "Short answers to the most common questions.",
+    "items": [
+      {
+        "q": "What software do I need for my restaurant?",
+        "a": "For a restaurant, we recommend the [Gastro Master POS System](/produkte/kassensystem) from €69/month. It's TSE-compliant and includes table management. You can also add an [Online Shop](/produkte/webshop) or an [App](/produkte/app)."
+      },
+      {
+        "q": "How much does a digital ordering system cost?",
+        "a": "The [Online Shop](/produkte/webshop) costs from €79/month, the [App](/produkte/app) from €149/month, the [Website](/produkte/webseite) from €49/month and the [POS System](/produkte/kassensystem) from €69/month. Setup is discussed individually. You pay 0% commission."
+      },
+      {
+        "q": "Does Gastro Master offer solutions for cafés and bakeries?",
+        "a": "Yes. We have a [dedicated solution for cafés and bakeries](/loesungen/cafe-baeckerei). This includes a TSE-compliant [POS system](/produkte/kassensystem), an [online shop for pre-orders](/produkte/webshop) and an [app for your regular customers](/produkte/app)."
+      },
+      {
+        "q": "Can I start my own delivery service with Gastro Master?",
+        "a": "Yes. You get an [ordering system](/produkte/webshop), an [app](/produkte/app) and if needed a driver app. No commission. You'll be live in 2–3 weeks. Everything about [starting a delivery service](/loesungen/lieferservice-gruenden)."
+      },
+      {
+        "q": "Is there a franchise solution from Gastro Master?",
+        "a": "Yes. All locations work with the same system — unified branding, central management, 0% commission. Details about the [franchise solution](/loesungen/franchise)."
+      }
+    ]
+  },
+  "schema": {
+    "articleHeadline": "Digital Solutions for the Food Industry 2026 — Restaurant, Café, Delivery Service, Franchise",
+    "articleDescription": "Gastro Master offers complete digital solutions for the food industry: POS system, online ordering, app and website.",
+    "articleUrl": "https://gastro-master.de/loesungen",
+    "datePublished": "2026-01-01",
+    "dateModified": "2026-04-02"
+  }
+}

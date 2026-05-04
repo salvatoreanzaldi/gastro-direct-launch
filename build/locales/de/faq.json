@@ -1,0 +1,175 @@
+{
+  "seo": {
+    "title": "FAQ — Häufige Fragen zu Gastro Master | Gastro Master",
+    "description": "Häufige Fragen zu Kassensystem (ab 69 €/Mon.), Webshop (0 % Provision), App & Lieferdienst — mit Branchendaten 2025/2026 und Quellenangaben. 800+ Gastronomen vertrauen Gastro Master."
+  },
+  "hero": {
+    "badge": "{{count}} Fragen · {{catCount}} Kategorien",
+    "lastUpdate": "Letzte Aktualisierung: März 2026",
+    "title1": "Häufige Fragen zu",
+    "title2": "Gastro Master",
+    "subtitle": "Alles was du wissen musst — übersichtlich in einer Seite. Such dir einfach deine Frage.",
+    "searchPlaceholder": "Frage suchen…"
+  },
+  "breadcrumb": {
+    "home": "Startseite",
+    "faq": "FAQ"
+  },
+  "trustBar": [
+    { "value": "800+", "label": "Gastro-Betriebe vertrauen uns" },
+    { "value": "5,0 ★", "label": "Kundenbewertung auf Google" },
+    { "value": "TSE-konform", "label": "Alle Systeme zertifiziert" },
+    { "value": "Persönl. Support", "label": "Kein Bot — echte Menschen" }
+  ],
+  "search": {
+    "noResults": "Keine Ergebnisse f\u00fcr \u201e{{query}}\u201c",
+    "results": "{{count}} Ergebnis f\u00fcr \u201e{{query}}\u201c",
+    "resultsPlural": "{{count}} Ergebnisse f\u00fcr \u201e{{query}}\u201c",
+    "noMatch": "Keine passende Frage gefunden.",
+    "askDirectly": "Direkt fragen",
+    "questionsCount": "{{count}} Fragen"
+  },
+  "cta": {
+    "badge": "Deine Frage war nicht dabei?",
+    "title": "Wir antworten persönlich.",
+    "subtitle": "Schreib uns — wir melden uns innerhalb eines Werktages. Kostenlos, unverbindlich.",
+    "button": "Kostenlose Beratung anfragen",
+    "phone": "+49 (0) 6081 9128913",
+    "email": "info@gastro-master.de"
+  },
+  "categories": [
+    {
+      "id": "allgemein",
+      "label": "Allgemein & Einstieg",
+      "items": [
+        { "id": "was-macht-gastro-master", "q": "Was macht Gastro Master?", "a": "Gastro Master gibt dir dein eigenes digitales System — mit App, Webshop, Kassensystem und Webseite. Du zahlst 0 % Provision und behältst alle Kundendaten. Über 800 Betriebe in Deutschland setzen auf Gastro Master. Schau dir alle [Produkte von Gastro Master](/produkte) an." },
+        { "id": "unterschied-lieferando", "q": "Wie unterscheidet sich Gastro Master von Lieferando & Co.?", "a": "Lieferando nimmt 13–30 % Provision auf jede Bestellung — bei Gastro Master zahlst du 0 %. Du bekommst dein eigenes System: eigene App, eigener Webshop, eigenes Branding. Kein Algorithmus entscheidet, ob du sichtbar bist. Den Vergleich findest du auf unserer [Lösungsseite](/loesungen)." },
+        { "id": "kosten-allgemein", "q": "Wie viel kostet die Nutzung von Gastro Master?", "a": "Der Webshop kostet ab 79 €/Monat, das Kassensystem ab 69 €/Monat, die Webseite ab 49 €/Monat (12-Monats-Vertrag). Die App kostet ab 149 €/Monat. Die Einrichtungskosten werden individuell besprochen. Alle Infos auf den [Produktseiten](/produkte)." },
+        { "id": "mindestvertragslaufzeit", "q": "Gibt es eine Mindestvertragslaufzeit?", "a": "Bei Webshop, App und Kassensystem gibt es eine 3-monatige Kündigungsfrist, du kannst monatlich kündigen. Die Webseite hat eine Mindestvertragslaufzeit von 12 Monaten. Bei Fragen erreichst du uns direkt über die [Kontaktseite](/kontakt)." },
+        { "id": "wie-schnell-live", "q": "Wie schnell erhalte ich mein eigenes System?", "a": "In der Regel bist du in 2–3 Wochen live. Das gilt für Webshop und App. Das Kassensystem wird individuell eingerichtet. Wir begleiten dich vom ersten Tag an persönlich." },
+        { "id": "welche-software-restaurant", "q": "Welche Software brauche ich für mein Restaurant?", "a": "Das hängt von deinem Betrieb ab. Für Online-Bestellungen brauchst du einen [Webshop](/produkte/webshop), für die Abrechnung ein [Kassensystem](/produkte/kassensystem). Beides lässt sich kombinieren. Schau dir unsere [Restaurantlösung](/loesungen/restaurant) an." },
+        { "id": "kosten-bestellsystem", "q": "Was kostet ein digitales Bestellsystem für die Gastronomie?", "a": "Ein eigener Webshop kostet ab 79 €/Monat — mit 0 % Provision. Bei Lieferando zahlst du 13–30 % auf jede Bestellung: bei 5.000 € Monatsumsatz sind das bis zu 1.500 € extra. Mehr zur [Lieferdienst-Lösung](/loesungen/lieferdienst)." },
+        { "id": "fuer-wen-geeignet", "q": "Für wen ist Gastro Master geeignet?", "a": "Für Restaurants, Cafés, Bäckereien, Lieferdienste und Franchise-Systeme — Neugründung oder bestehender Betrieb. Überblick auf der [Lösungsseite](/loesungen)." }
+      ]
+    },
+    {
+      "id": "lieferdienst-gruenden",
+      "label": "Lieferdienst gründen",
+      "items": [
+        { "id": "kosten-gruendung", "q": "Was kostet es, einen Lieferdienst zu gründen?", "a": "Der größte Kostenblock ist die Technik. Mit Gastro Master bekommst du Webshop und App ohne Provision. Dazu kommen Lebensmittel, Verpackung und ggf. Fahrer. Alle Details zur [Lieferdienst-Gründung](/loesungen/lieferservice-gruenden)." },
+        { "id": "ohne-restaurant", "q": "Brauche ich ein Restaurant, um einen Lieferdienst zu starten?", "a": "Nein. Du kannst auch als Ghost Kitchen starten — ohne eigenen Gastraum. Was du brauchst: eine Gewerbeküche, eine Betriebserlaubnis und ein Bestellsystem. Mehr auf der Seite [Lieferdienst gründen](/loesungen/lieferservice-gruenden)." },
+        { "id": "provision-lieferando", "q": "Wie viel Provision nimmt Lieferando?", "a": "Lieferando berechnet Restaurants 14 % des Bestellwerts plus 0,69 € je Online-Transaktion (Marketplace-Modell, Stand 2025). Bei 500 Bestellungen à 20 € im Monat macht das rund 1.745 € — nur für die Plattform, jeden Monat. Nutzt du zusätzlich Lieferandos eigenen Fahrdienst, steigt die Provision auf bis zu 30 %. Mit einem eigenen [Webshop](/produkte/webshop) zahlst du 0 %.", "source": "Lieferfabrik, Lieferando Gebührenmodell 2024/2025" },
+        { "id": "lohnt-sich-2026", "q": "Lohnt sich ein eigener Lieferdienst 2026?", "a": "Ja — wenn du dein eigenes System nutzt. Laut Statista nutzten 2024 über 20 Mio. Deutsche regelmäßig Online-Essensbestellungen. Wer auf ein eigenes System setzt, behält die Marge. Details zur [Lieferdienst-Gründung 2026](/loesungen/lieferservice-gruenden).", "source": "Statista, Online Food Delivery Germany 2024" },
+        { "id": "genehmigungen", "q": "Welche Genehmigungen brauche ich für einen Lieferdienst?", "a": "Du brauchst eine Gewerbeanmeldung und eine Betriebserlaubnis vom Gesundheitsamt. Bei eigenem Fahrservice kommt eine Transportgenehmigung dazu. Alle Schritte auf der Seite [Lieferdienst gründen](/loesungen/lieferservice-gruenden)." }
+      ]
+    },
+    {
+      "id": "lieferdienst-erweitern",
+      "label": "Lieferdienst erweitern",
+      "items": [
+        { "id": "lieferservice-anbieten", "q": "Wie biete ich einen Lieferservice an?", "a": "Du brauchst ein Bestellsystem, das Bestellungen entgegennimmt und an deine Küche weiterleitet. Mit Gastro Master bekommst du einen eigenen [Webshop](/produkte/webshop) und bei Bedarf eine [App](/produkte/app). Kunden bestellen direkt bei dir — ohne Zwischenhändler." },
+        { "id": "bestellsystem-kosten", "q": "Was kostet ein eigenes Bestellsystem?", "a": "Der Webshop kostet ab 79 €/Monat — du zahlst 0 % Provision. Bei Lieferando zahlst du 13–30 % auf jede Bestellung. Mehr auf der Seite [Lieferdienst erweitern](/loesungen/lieferdienst)." },
+        { "id": "lieferando-vs-eigen", "q": "Lohnt sich ein eigener Lieferservice statt Lieferando?", "a": "Ja — besonders ab einem Monatsumsatz von 3.000 €. Bei 5.000 € Umsatz sparst du bis zu 1.500 € im Monat gegenüber Lieferando. Schau dir den Vergleich auf unserer [Lieferdienstseite](/loesungen/lieferdienst) an." },
+        { "id": "eigene-app-lieferdienst", "q": "Brauche ich eine eigene App für meinen Lieferdienst?", "a": "Nicht unbedingt. Ein eigener [Webshop](/produkte/webshop) reicht für viele Betriebe aus. Eine eigene [App](/produkte/app) lohnt sich, wenn du Stammkunden mit Push-Nachrichten binden willst. Wir beraten dich gern kostenlos." },
+        { "id": "wechsel-von-lieferando", "q": "Wie wechsle ich von Lieferando zu einem eigenen Bestellsystem?", "a": "Der Umstieg dauert 2–3 Wochen: Wir richten deinen Webshop ein, du kommunizierst den neuen Link an deine Stammkunden — per Aufkleber, E-Mail und Social Media. Speisekarte und Bilder übernehmen wir direkt. Viele Betriebe erhalten erste eigene Bestellungen noch in der ersten Woche. Details auf der [Lieferdienst-Lösung](/loesungen/lieferdienst)." }
+      ]
+    },
+    {
+      "id": "restaurant-kassensystem",
+      "label": "Restaurant & Kassensystem",
+      "items": [
+        { "id": "kassensystem-restaurant", "q": "Welches Kassensystem brauche ich für mein Restaurant?", "a": "Du brauchst ein TSE-konformes Kassensystem — das ist in Deutschland seit 2020 Pflicht. Das Gastro Master [Kassensystem](/produkte/kassensystem) hat Tischverwaltung, Bon-Drucker-Anbindung und TSE eingebaut. Ab 69 €/Monat — mehr auf der [Restaurantlösung](/loesungen/restaurant)." },
+        { "id": "was-ist-tse", "q": "Was ist eine TSE und brauche ich sie?", "a": "TSE steht für Technische Sicherheitseinrichtung — seit März 2021 für alle elektronischen Kassensysteme in Deutschland Pflicht (KassenSichV, §146a AO). Neu ab 1. Juli 2025: Alle Kassen müssen zusätzlich über ELSTER beim Finanzamt gemeldet werden. Das Gastro Master [Kassensystem](/produkte/kassensystem) ist TSE-zertifiziert und unterstützt die Meldung.", "source": "Kassensicherungsverordnung (KassenSichV), BMF; § 146a Abs. 4 AO, Stand Juli 2025" },
+        { "id": "kassensystem-kosten", "q": "Was kostet ein Kassensystem für die Gastronomie?", "a": "Das Gastro Master Kassensystem kostet ab 69 €/Monat — inklusive TSE, Bon-Drucker-Anbindung und persönlichem Support. Details auf der [Kassensystem-Seite](/produkte/kassensystem)." },
+        { "id": "restaurant-online-sichtbar", "q": "Wie mache ich mein Restaurant online sichtbar?", "a": "Mit einer eigenen [Webseite](/produkte/webseite) und einem [Online-Bestellshop](/produkte/webshop). Beide Produkte sind auf Google-Sichtbarkeit optimiert. Mehr dazu auf unserer [Restaurantlösung](/loesungen/restaurant)." },
+        { "id": "kassensystem-pflicht", "q": "Muss ich als Gastronom ein Kassensystem haben?", "a": "Ja. Seit 2021 schreibt das Finanzamt eine TSE-zertifizierte Kasse vor. Betriebe ohne TSE-Kassensystem riskieren Bußgelder bis zu 25.000 €. Unser [Kassensystem](/produkte/kassensystem) ist TSE-konform und sofort einsatzbereit.", "source": "Abgabenordnung §146a; KassenSichV" },
+        { "id": "kassenmeldepflicht-2025", "q": "Was ist die Kassenmeldepflicht 2025 — bin ich betroffen?", "a": "Ja. Seit dem 1. Juli 2025 müssen alle Gastronomen mit elektronischen Kassensystemen ihre Kasse beim Finanzamt über ELSTER melden (§ 146a Absatz 4 Abgabenordnung). Bestandskassen mussten bis 31. Juli 2025 gemeldet sein, neue Kassen müssen innerhalb eines Monats nach Kauf gemeldet werden. Das Gastro Master [Kassensystem](/produkte/kassensystem) unterstützt dich dabei — TSE-zertifiziert und meldereif.", "source": "Bundesministerium der Finanzen, § 146a Abs. 4 AO; Stand Juli 2025" }
+      ]
+    },
+    {
+      "id": "cafe-baeckerei",
+      "label": "Café & Bäckerei",
+      "items": [
+        { "id": "kassensystem-baeckerei", "q": "Welches Kassensystem brauche ich für meine Bäckerei?", "a": "Ein TSE-konformes Kassensystem — das ist gesetzlich vorgeschrieben. Das Gastro Master [Kassensystem](/produkte/kassensystem) ist TSE-zertifiziert, schnell in der Abwicklung und kostet ab 69 €/Monat. Mehr auf der [Café & Bäckerei-Lösung](/loesungen/cafe-baeckerei)." },
+        { "id": "torten-vorbestellung", "q": "Kann ich Torten online zur Vorbestellung anbieten?", "a": "Ja. Mit dem Gastro Master [Webshop](/produkte/webshop) können Kunden Torten, Catering und andere Produkte online vorbestellen. Du siehst alle Bestellungen zentral — kein Telefon nötig. Details auf der Seite [Café & Bäckerei](/loesungen/cafe-baeckerei)." },
+        { "id": "kassensystem-cafe", "q": "Was kostet ein Kassensystem für Cafés?", "a": "Das Gastro Master Kassensystem kostet ab 69 €/Monat — inklusive TSE und persönlichem Support. Alle Details im [Kassensystem-Überblick](/produkte/kassensystem)." },
+        { "id": "tse-baeckerei", "q": "Brauche ich als Bäckerei eine TSE-Kasse?", "a": "Ja. Alle Betriebe in Deutschland mit Kassensystem brauchen seit 2020 eine TSE-zertifizierte Kasse — Bäckerei, Café und Restaurant eingeschlossen. Unser [Kassensystem](/produkte/kassensystem) erfüllt alle Anforderungen." },
+        { "id": "online-bestellungen-cafe", "q": "Wie kann ich als Café Online-Bestellungen annehmen?", "a": "Mit dem Gastro Master [Webshop](/produkte/webshop). Kunden bestellen online vor, du bereitest alles vor — kein Warten, kein Stress. Für Torten, Frühstückspakete und Catering ideal — mehr in der [Café & Bäckerei-Lösung](/loesungen/cafe-baeckerei)." }
+      ]
+    },
+    {
+      "id": "franchise",
+      "label": "Franchise",
+      "items": [
+        { "id": "franchise-aufbauen", "q": "Wie baue ich ein Franchise-System in der Gastronomie auf?", "a": "Ein Gastro-Franchise braucht einheitliches Branding, standardisierte Prozesse und eine zentrale Technikinfrastruktur. Gastro Master liefert App, Webshop, Kassensystem und Webseite — zentral verwaltet, einheitlich gebrandet. Alle Details auf der [Franchise-Lösung](/loesungen/franchise)." },
+        { "id": "software-franchise", "q": "Welche Software braucht man für ein Gastro-Franchise?", "a": "Du brauchst ein System, das alle Standorte mit demselben Bestellsystem, derselben App und demselben Kassensystem betreibt. Gastro Master bietet genau das — zentral verwaltet, 0 % Provision. Zur [Franchise-Seite](/loesungen/franchise)." },
+        { "id": "kosten-franchise", "q": "Was kostet die digitale Infrastruktur für ein Franchise-System?", "a": "Der Preis hängt von der Anzahl der Standorte und den gewünschten Produkten ab. Wir erstellen ein individuelles Angebot — schau dir zuerst die [Franchise-Lösung](/loesungen/franchise) an oder schreib uns über die [Kontaktseite](/kontakt)." },
+        { "id": "mehrere-standorte", "q": "Wie manage ich Bestellungen über mehrere Franchise-Standorte?", "a": "Mit Gastro Master bekommt jeder Standort sein eigenes System — zentral konfiguriert, lokal betrieben. Alle Bestellungen laufen über dasselbe Backend. Details auf der [Franchise-Seite](/loesungen/franchise)." },
+        { "id": "eine-app-franchise", "q": "Braucht jeder Franchise-Standort eine eigene App?", "a": "Nein. Du hast eine App für alle Standorte — Kunden wählen ihren Standort beim Öffnen. Einheitliches Branding, zentrale Verwaltung. Mehr dazu auf der [Franchise-Lösung](/loesungen/franchise)." }
+      ]
+    },
+    {
+      "id": "produkte-technik",
+      "label": "Produkte & Technik",
+      "items": [
+        { "id": "zahlungsmethoden", "q": "Welche Zahlungsmethoden werden unterstützt?", "a": "Gastro Master unterstützt alle gängigen Zahlungsmethoden: Kreditkarte, EC-Karte, PayPal, Apple Pay und Google Pay. Details auf der [Webshop-Seite](/produkte/webshop)." },
+        { "id": "eigene-domain", "q": "Kann ich meine eigene Domain verwenden?", "a": "Ja. Du kannst deine bestehende Domain nutzen oder eine neue einrichten — wir unterstützen dich dabei. Mehr auf der [Webshop-Seite](/produkte/webshop)." },
+        { "id": "webshop-ohne-app", "q": "Kann ich den Webshop ohne die App nutzen?", "a": "Ja. [Webshop](/produkte/webshop) und [App](/produkte/app) sind separate Produkte. Viele Betriebe starten mit dem Webshop und fügen die App später hinzu. Beide funktionieren unabhängig voneinander." },
+        { "id": "seo-webseite", "q": "Gibt es Zusatzoptionen für SEO oder eine Webseite?", "a": "Ja. Gastro Master bietet eigene [Webseiten](/produkte/webseite) — vom Onepager ab 49 €/Monat bis zur individuellen Umsetzung. Alle Webseiten sind auf Google-Sichtbarkeit optimiert." },
+        { "id": "mehrere-standorte-technik", "q": "Ist das System für mehrere Standorte geeignet?", "a": "Ja. Gastro Master funktioniert für einzelne Betriebe und Franchise-Systeme mit vielen Standorten. Zentrale Verwaltung, einheitliches Branding. Details zur [Franchise-Infrastruktur](/loesungen/franchise)." },
+        { "id": "design-anpassen", "q": "Kann ich das Design und die Speisekarte selbst anpassen?", "a": "Ja. Speisekarte, Bilder, Preise und Kategorien kannst du selbst anpassen — jederzeit, ohne Technik-Kenntnisse. Dein Branding wird beim Setup eingebaut. Mehr über [Webshop-Anpassungen](/produkte/webshop)." },
+        { "id": "bilder-gerichte", "q": "Können Bilder von Gerichten integriert werden?", "a": "Ja. Du kannst für jedes Gericht ein Bild hochladen. Gerichte mit Bildern werden laut Studien bis zu 30 % häufiger bestellt. Details in der [Bestell-App](/produkte/app).", "source": "Studie zur visuellen Menügestaltung, 2023" },
+        { "id": "keine-werbung", "q": "Gibt es in meinem Webshop oder der App Werbung von Drittanbietern?", "a": "Nein. Dein Webshop und deine App sind werbefrei — kein Fremd-Logo, keine Drittanbieter-Werbung. Du bist der Absender. Das ist der Unterschied zu Lieferando. Mehr auf der [App-Seite](/produkte/app)." },
+        { "id": "umsatz-pruefen", "q": "Wie überprüfe ich meinen Umsatz?", "a": "Über dein persönliches Dashboard siehst du alle Bestellungen, Umsätze und Statistiken in Echtzeit. Berichte lassen sich exportieren. Details auf der [Kassensystem-Seite](/produkte/kassensystem)." },
+        { "id": "epit-pay", "q": "Was ist Epit Pay?", "a": "Epit Pay ist die eigene Zahlungslösung von Gastro Master — entwickelt speziell für die Gastronomie. Sie verbindet Kasse, Bestellsystem und Zahlungsabwicklung aus einer Hand. Epit Pay ist bereits in alle Gastro Master Produkte integriert. Mehr auf der [Transaktionsumlage-Seite](/produkte/transaktionsumlage)." },
+        { "id": "transaktionsumlage", "q": "Wie funktioniert die Transaktionsumlage?", "a": "Die Transaktionsumlage ermöglicht es dir, Zahlungsgebühren auf deine Kunden umzulegen — statt sie selbst zu tragen. Das ist in vielen europäischen Ländern Standard. Individuelle Konditionen besprechen wir im Gespräch. Mehr auf der [Transaktionsumlage-Seite](/produkte/transaktionsumlage)." }
+      ]
+    },
+    {
+      "id": "bestellung-betrieb",
+      "label": "Bestellung & Betrieb",
+      "items": [
+        { "id": "zubereitungszeit", "q": "Wie kann ich die Zubereitungszeit bei Bestellungen einstellen?", "a": "Im Backend stellst du die Standardzubereitungszeit ein — z.B. 30 Minuten. Kunden sehen die voraussichtliche Lieferzeit direkt beim Bestellen. Details auf der [App-Seite](/produkte/app)." },
+        { "id": "verlaengerte-zubereitungszeit", "q": "Wie wird der Kunde über eine verlängerte Zubereitungszeit informiert?", "a": "Per Push-Nachricht in der App und per E-Mail — direkt aus deinem Backend. Kunden bleiben informiert, ohne dass du anrufen musst. Mehr im [App-Überblick](/produkte/app)." },
+        { "id": "klingelton", "q": "Kann ich den Klingelton für Bestellungen anpassen?", "a": "Ja. Im Backend stellst du ein, wie du bei neuen Bestellungen benachrichtigt wirst — laut, dezent oder Vibration. Details zur [Bestellsystem-Konfiguration](/produkte/webshop)." },
+        { "id": "rabattaktionen", "q": "Wie kann ich Rabattaktionen einstellen?", "a": "Im Backend gibt es eine eigene Rubrik für Rabatte. Du kannst prozentuale Rabatte, Mindestbestellwerte und Zeiträume einstellen. Alle Features der [Gastro-App](/produkte/app)." },
+        { "id": "coupon-codes", "q": "Wie funktionieren die digitalen Coupon-Codes?", "a": "Du erstellst Coupon-Codes direkt im Backend — mit festem Betrag oder prozentualem Rabatt. Kunden geben den Code beim Checkout ein. Mehr zum [Bestellsystem](/produkte/webshop)." },
+        { "id": "push-nachrichten", "q": "Können Kunden über die App informiert werden? (Push-Nachrichten)", "a": "Ja. Du kannst Push-Nachrichten direkt aus dem Backend an alle App-Nutzer schicken — z.B. \"Heute Sonderangebot!\". Das funktioniert auf iOS und Android. Details zur [App und Push-Nachrichten](/produkte/app)." },
+        { "id": "tagesgerichte", "q": "Kann ich spezielle Tagesgerichte in der App anzeigen lassen?", "a": "Ja. Du kannst Tagesgerichte, Sonderangebote und saisonale Produkte jederzeit aktivieren oder deaktivieren — ohne Support. Details zu [App-Funktionen](/produkte/app)." },
+        { "id": "speisekarte-uhrzeiten", "q": "Kann ich die Speisekarte nach Uhrzeiten steuern?", "a": "Ja. Kategorien und Produkte lassen sich zu bestimmten Uhrzeiten ein- und ausblenden — z.B. Frühstück nur bis 11 Uhr. Mehr im [Online-Bestellsystem](/produkte/webshop)." }
+      ]
+    },
+    {
+      "id": "bondrucker-hardware",
+      "label": "Bondrucker & Hardware",
+      "items": [
+        { "id": "drucker-kein-internet", "q": "Was passiert, wenn der Drucker nicht mit dem Internet verbunden ist?", "a": "Bestellungen werden zwischengespeichert und gedruckt, sobald die Verbindung wieder besteht. Im Notfall siehst du alle Bestellungen am Bildschirm. Details zu [Bondrucker und Kasse](/produkte/kassensystem)." },
+        { "id": "bluetooth-drucker", "q": "Kann ich den Bon-Drucker auch über Bluetooth verbinden?", "a": "Ja. Unsere Bondrucker unterstützen WLAN und Bluetooth — ideal für Cafés oder Theken ohne feste Verkabelung. Mehr im [Kassensystem-Bereich](/produkte/kassensystem)." },
+        { "id": "tagesbericht-drucken", "q": "Wie kann ich den Tagesbericht ausdrucken?", "a": "Im Backend unter \"Berichte\" druckst du den Tagesbericht auf Knopfdruck — direkt über den angeschlossenen Bondrucker. Details zur [Kassen-Software](/produkte/kassensystem)." },
+        { "id": "ersatzteile", "q": "Was mache ich, wenn ich Ersatzteile benötige?", "a": "Meld dich bei unserem Support — wir liefern Ersatzteile in der Regel innerhalb von 1–2 Werktagen. Kontakt über unser [Kontaktformular](/kontakt)." },
+        { "id": "drucker-ausfall", "q": "Was passiert, wenn der Drucker während des Betriebs ausfällt?", "a": "Bestellungen siehst du weiterhin am Tablet oder Smartphone und kannst sie bestätigen. Unser Support ist direkt erreichbar. Mehr zur [Bondrucker-Integration](/produkte/kassensystem)." }
+      ]
+    },
+    {
+      "id": "zahlen-trends",
+      "label": "Zahlen & Branchentrends",
+      "items": [
+        { "id": "liefermarkt-deutschland-2025", "q": "Wie groß ist der Online-Liefermarkt in Deutschland 2025?", "a": "Der Online-Liefermarkt in Deutschland wird laut Statista 2025 auf rund 18,75 Milliarden Euro geschätzt — mit einem jährlichen Wachstum von 9,4 % bis 2028. Rund 38,9 % der deutschen Haushalte nutzen Essenslieferungen online. Mit einem eigenen [Bestellsystem](/produkte/webshop) profitierst du direkt vom Marktwachstum — ohne Provision.", "source": "Statista, Online Food Delivery Outlook Deutschland 2025", "sourceHref": "https://www.statista.com/outlook/emo/online-food-delivery/germany" },
+        { "id": "lieferando-provision-kalkulation", "q": "Was kostet Lieferando Restaurants wirklich pro Monat?", "a": "Lieferando berechnet 14 % des Bestellwerts plus 0,69 € je Transaktion. Konkret: Bei 500 Bestellungen à 20 € im Monat zahlst du ca. 1.745 € — jeden Monat. Bei 1.000 Bestellungen sind es bereits ca. 3.490 €. Ein eigener [Webshop](/produkte/webshop) mit integriertem Bestellsystem kostet ab 79 €/Monat — bei 0 % Provision. Die Differenz kann über 40.000 € pro Jahr betragen.", "source": "Lieferando Partnerkonditionen, Stand 2025; eigene Kalkulation", "sourceHref": "https://www.lieferando.de/partner" },
+        { "id": "gastronomiebetriebe-deutschland", "q": "Wie viele Gastronomiebetriebe gibt es in Deutschland?", "a": "In Deutschland gibt es laut DEHOGA rund 153.545 Restaurants und Bars (Stand 2024). Das gesamte Gastgewerbe umfasst 206.105 Betriebe mit rund 2,2 Millionen Beschäftigten. Der Jahresumsatz der Gastronomie beträgt 64,3 Milliarden Euro — trotzdem liegen die realen Umsätze 2025 noch rund 15 % unter dem Vorkrisenniveau von 2019. Gastro Master unterstützt bereits über 800 dieser Betriebe mit [digitalen Lösungen für die Gastronomie](/loesungen).", "source": "DEHOGA Bundesverband; Statistisches Bundesamt, 2025/2026", "sourceHref": "https://www.dehoga-bundesverband.de/zahlen-fakten/" },
+        { "id": "kassenmeldepflicht-fakten", "q": "Was ändert sich 2025 für Gastronomen beim Kassensystem?", "a": "Zwei wichtige Neuerungen: Erstens gilt seit 1. Juli 2025 die Kassenmeldepflicht — alle Kassen müssen über ELSTER gemeldet werden (§ 146a Abs. 4 AO). Zweitens drohen bei Verstößen gegen KassenSichV und Abgabenordnung Bußgelder bis 25.000 €. Das Gastro Master [Kassensystem](/produkte/kassensystem) ist TSE-zertifiziert, meldereif und gesetzeskonform.", "source": "Bundesministerium der Finanzen; § 146a AO; KassenSichV, Stand 2025", "sourceHref": "https://www.gesetze-im-internet.de/ao_1977/__146a.html" },
+        { "id": "digitalisierung-gastronomie-2026", "q": "Welche Gastronomie-Trends dominieren 2026?", "a": "59 % der Gastronomen wollen laut DEHOGA in Digitalisierung investieren. Online-Bestellungen wachsen mit rund 9,4 % pro Jahr — schneller als jede andere Bestellart. Ghost Kitchens — also Küchen ohne eigenen Gastraum, die ausschließlich für Lieferungen produzieren — werden als kostengünstiges Modell beliebter. Wer jetzt eine eigene [App](/produkte/app) oder einen [Webshop](/produkte/webshop) einführt, ist dem Wettbewerb voraus.", "source": "DEHOGA Branchenbericht 2024/2025; Statista, Online Food Delivery Outlook Deutschland 2025", "sourceHref": "https://www.dehoga-bundesverband.de/zahlen-fakten/" },
+        { "id": "eigener-shop-vs-lieferando-vergleich", "q": "Was sind die strategischen Vorteile eines eigenen Webshops gegenüber Lieferando?", "a": "Die Kosten sprechen für sich (siehe Frage oben) — aber die strategischen Vorteile sind genauso wichtig: Kundendaten gehören dir, nicht der Plattform. Du kannst Stammkunden per E-Mail oder [App](/produkte/app) direkt ansprechen und Remarketing betreiben. Du bestimmst Liefergebiet, Öffnungszeiten und Preise selbst — ohne Preisparitätszwang. Und du bist unabhängig von Algorithmen, die entscheiden, wie sichtbar du bist. Mehr auf der [Lieferdienst-Lösungsseite](/loesungen/lieferdienst).", "source": "Lieferando Partnervertrag, Preisparitätsbedingungen 2025", "sourceHref": "https://www.lieferando.de/partner" }
+      ]
+    }
+  ],
+  "schema": {
+    "breadcrumb": {
+      "home": "Startseite",
+      "faq": "FAQ"
+    },
+    "org": {
+      "name": "Gastro Master"
+    }
+  }
+}

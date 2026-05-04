@@ -1,0 +1,40 @@
+{
+  "meta": {
+    "title": "Downloads — Drivers & Software | Gastro Master",
+    "description": "Gastro Master downloads: printer drivers, software and guides for POS and ordering systems. Free download.",
+    "canonical": "https://gastro-master.de/downloads"
+  },
+  "title": "Downloads",
+  "subtitle": "All Gastro Master apps and software packages at a glance.",
+  "printerCard": {
+    "badge": "Windows",
+    "title": "Printer Drivers",
+    "description": "Drivers for Epson, Star, Metapace, Citizen and other POS printers",
+    "cta": "Open"
+  },
+  "storeLabel": "Store",
+  "categories": [
+    {
+      "category": "Windows",
+      "items": [
+        { "label": "GM Windows", "ext": ".zip" },
+        { "label": "GM Windows Client", "ext": ".zip" }
+      ]
+    },
+    {
+      "category": "Android",
+      "items": [
+        { "label": "GM Terminal – Android", "ext": ".apk" },
+        { "label": "Fully Single APK", "ext": ".apk" },
+        { "label": "GM Merchant – Play Store", "ext": null }
+      ]
+    },
+    {
+      "category": "iOS",
+      "items": [
+        { "label": "GM Terminal – iOS", "ext": null },
+        { "label": "GM Merchant – App Store", "ext": null }
+      ]
+    }
+  ]
+}

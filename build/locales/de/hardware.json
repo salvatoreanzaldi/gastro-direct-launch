@@ -1,0 +1,275 @@
+{
+  "seo": {
+    "title": "Kassenhardware für Restaurants | Gastro Master",
+    "description": "Professionelle Kassenhardware: POS-Terminals, Bondrucker, EC-Kartenterminals & Zubehör. Direkt von Gastro Master — inkl. Installation für Berlin, München, Hamburg, Köln & Frankfurt."
+  },
+  "hero": {
+    "badge": "Professionelle Kassenhardware",
+    "h1": "Hardware, die",
+    "h1Highlight": "einfach funktioniert",
+    "h1Suffix": "— für jede Gastronomie",
+    "sub": "Von kompakten Kassensystemen über robuste Bondrucker bis hin zu smarten Zahlungsterminals. Alle Geräte sind sofort einsatzbereit und perfekt auf Gastro Master abgestimmt.",
+    "cta1": "Jetzt anfragen",
+    "cta2": "Alle Produkte",
+    "heroImgAlt": "Gastro Master Kassenhardware — POS-Systeme, Drucker und Zubehör"
+  },
+  "sections": {
+    "kasse": {
+      "badge": "Kasse & POS",
+      "headline": "Kassensysteme & Displays",
+      "sub": "Professionelle Lösungen für Ihren Thekenbereich — robust, schnell und sofort einsatzbereit.",
+      "products": [
+        {
+          "title": "Elo Series-3",
+          "desc": "All-in-One Kassensystem mit 15,6\" Touchscreen. Kompakt, leistungsstark und sofort einsatzbereit — ideal für Restaurants, Cafés und Imbisse.",
+          "features": [
+            "15,6\" Touchscreen",
+            "All-in-One Design",
+            "Drucker integrierbar",
+            "Langlebig & robust"
+          ],
+          "labels": [
+            "Front",
+            "Schräg",
+            "Hinten",
+            "Ports",
+            "Seite"
+          ]
+        },
+        {
+          "title": "Elo Series-3 Doublescreen",
+          "desc": "Zwei Bildschirme: einer für Sie, einer für den Gast. Das Kundendisplay sorgt für mehr Transparenz am Tresen und bietet Upselling-Potenzial.",
+          "features": [
+            "Kundendisplay 10\"",
+            "Upselling-Anzeige",
+            "Professioneller Auftritt",
+            "Für Thekenbetrieb"
+          ],
+          "labels": [
+            "Front",
+            "Schräg",
+            "Hinten",
+            "Ports"
+          ]
+        },
+        {
+          "title": "Microsoft Surface Tablet",
+          "desc": "Flexibel und mobil. Das Surface Tablet ist ideal für Food-Trucks, Events und kleine Betriebe — bringen Sie Ihre Kasse überall hin.",
+          "features": [
+            "Mobil einsetzbar",
+            "Leicht & kompakt",
+            "Windows 11 Pro",
+            "Touchscreen"
+          ],
+          "labels": [
+            "Front",
+            "Schräg",
+            "Hinten",
+            "Seite"
+          ]
+        }
+      ]
+    },
+    "terminals": {
+      "badge": "POS-Terminals",
+      "headline": "Kartenlesegeräte & Thermo-Bondrucker",
+      "sub": "Kartenterminals und kompakte Bondrucker — alles, was Sie für ein vollständiges POS-Setup brauchen.",
+      "products": [
+        {
+          "title": "Adyen POS-Terminal S1F2L",
+          "desc": "Kompaktes Kartenterminal mit Touchscreen und integriertem Belegdrucker für Bestellannahme des Kellners am Tisch. Unterstützt alle gängigen Zahlungsmethoden — EC, Kreditkarte, Apple Pay und Google Pay.",
+          "features": [
+            "EC & Kreditkarte",
+            "Kontaktlos (NFC)",
+            "Apple / Google Pay",
+            "Integrierter Drucker"
+          ],
+          "labels": [
+            "Frontansicht",
+            "Lieferumfang",
+            "Schräg"
+          ]
+        },
+        {
+          "title": "Adyen AMS1 Terminal",
+          "desc": "Schlankes Tisch-Terminal für schnelle Kartenzahlungen. Ideal für den mobilen Einsatz am Tisch oder direkt an der Theke.",
+          "features": [
+            "EC & Kreditkarte",
+            "Kontaktlos (NFC)",
+            "Kabelloses Design",
+            "Schnelle Abwicklung"
+          ],
+          "labels": [
+            "Frontansicht",
+            "Schräg"
+          ]
+        },
+        {
+          "title": "Gastro Master 58mm Bondrucker",
+          "desc": "Unser kompakter 58mm Thermodrucker für die Bestellannahme des Online Shops und der App, wenn keine Kassensoftware genutzt wird. Integrierte SIM-Karte optional möglich, für reibungslose Bestellübermittlung",
+          "features": [
+            "58mm Druckbreite",
+            "USB-Anschluss",
+            "Kompaktes Format",
+            "Sofort einsatzbereit"
+          ],
+          "labels": [
+            "Frontansicht",
+            "Ansicht 2",
+            "Ansicht 3"
+          ]
+        }
+      ]
+    },
+    "printers": {
+      "badge": "Bondrucker",
+      "headline": "80mm Thermobondrucker",
+      "sub": "Schnelle und zuverlässige Belegdrucker für Küche, Bar und Kasse — wartungsarm und für den Dauerbetrieb ausgelegt.",
+      "products": [
+        {
+          "title": "Gastro Master 80mm Drucker",
+          "desc": "Unser eigener Bondrucker mit 80mm Druckbreite. Schnell, leise und wartungsarm — ideal für den Dauerbetrieb in der Gastronomie.",
+          "features": [
+            "80mm Druckbreite",
+            "USB & LAN",
+            "Auto-Papierschneider",
+            "Leise im Betrieb",
+            "Bon & Küchendruck"
+          ],
+          "labels": [
+            "Frontansicht",
+            "Draufsicht",
+            "Offen",
+            "Offen Schräg",
+            "Offen Seite",
+            "Unterseite"
+          ]
+        },
+        {
+          "title": "Epson Bondrucker TM-M30III",
+          "desc": "Der zuverlässige Epson TM-M30III überzeugt durch kompaktes Design und hohe Druckgeschwindigkeit. Unterstützt Cloud-Printing für moderne Gastro-Systeme.",
+          "features": [
+            "250 mm/s Druckgeschwindigkeit",
+            "USB, LAN & WLAN",
+            "Cloud-Printing",
+            "Kompaktes Design",
+            "Bluetooth"
+          ],
+          "labels": [
+            "Frontansicht",
+            "Frontal",
+            "Seite"
+          ]
+        },
+        {
+          "title": "Epson Bondrucker TM-T20III",
+          "desc": "Kompakter und bewährter Bon-Drucker für den täglichen Einsatz. Der TM-T20III bietet zuverlässige 80mm-Thermotechnik zu einem hervorragenden Preis-Leistungs-Verhältnis.",
+          "features": [
+            "80mm Druckbreite",
+            "USB & LAN",
+            "200 mm/s Druckgeschwindigkeit",
+            "Für Dauerbetrieb"
+          ],
+          "labels": [
+            "Frontansicht",
+            "Ansicht 2",
+            "Ansicht 3"
+          ]
+        }
+      ]
+    },
+    "accessories": {
+      "badge": "Zubehör",
+      "headline": "Zubehör",
+      "sub": "Ergänzende Hardware für ein vollständiges, professionelles Setup — von der Kassenschublade bis zum Netzwerkkabel.",
+      "products": [
+        {
+          "title": "APG ECD410 Kassenschublade",
+          "desc": "Robuste Kassenschublade mit 5 Münzfächern und 3 Scheinfächern. Maße: B 410mm, H 103mm, T 420mm. Direkt per RJ11-Kabel an Ihren Bondrucker anschließbar.",
+          "features": [
+            "5 Münzfächer",
+            "3 Scheinfächer",
+            "RJ11-Anschluss",
+            "Stabile Metallkonstruktion"
+          ],
+          "labels": [
+            "Geschlossen",
+            "Geöffnet"
+          ]
+        },
+        {
+          "title": "Tablet Ständer",
+          "desc": "Verstellbarer Aluminium-Ständer für Tablets im Kassenbereich. Höhenverstellbar und kippsicher — kompatibel mit Surface und ähnlichen Geräten.",
+          "features": [
+            "Höhenverstellbar",
+            "Aluminium-Konstruktion",
+            "Kippsicher",
+            "Für 7\"–13\" Tablets"
+          ],
+          "labels": [
+            "Standard",
+            "Seite",
+            "Ausgefahren"
+          ]
+        },
+        {
+          "title": "Surface Pro Schutzhülle",
+          "desc": "Schlanke Schutzhülle für das Microsoft Surface Pro. Ideal für den mobilen Einsatz in der Gastronomie — schützt vor Stößen und Schäden.",
+          "features": [
+            "Integrierte Tastatur",
+            "Schlankes Design",
+            "Stoßschutz",
+            "Für Surface Pro 9 / 10"
+          ],
+          "labels": [
+            "Ansicht 1",
+            "Ansicht 2",
+            "Ansicht 3"
+          ]
+        },
+        {
+          "title": "LAN-Kabel",
+          "desc": "Hochwertiges Cat 6 Netzwerk Patchkabel (RJ45) für eine stabile, kabelgebundene Verbindung Ihrer POS-Geräte. Erhältlich in den Längen 3m, 5m und 10m.",
+          "features": [
+            "Cat 6 Standard",
+            "RJ45 vergoldet",
+            "3m / 5m / 10m",
+            "Schnelle Übertragung"
+          ],
+          "labels": [
+            "Netzwerk Patchkabel"
+          ]
+        }
+      ]
+    }
+  },
+  "cta": {
+    "badge": "Auf Anfrage",
+    "headline": "Konfigurieren Sie Ihr Setup",
+    "sub": "Individuell abgestimmt auf Ihren Betrieb. Wir beraten Sie kostenlos und erstellen Ihnen ein passendes Angebot.",
+    "button": "Jetzt anfragen"
+  },
+  "faq": {
+    "headline": "Häufige Fragen zur Hardware",
+    "sub": "Antworten auf die häufigsten Fragen rund um Gastro Master Hardware.",
+    "items": [
+      {
+        "q": "Liefert Gastro Master die Hardware direkt?",
+        "a": "Ja, wir liefern alle aufgeführten Produkte direkt an Ihren Betrieb in Deutschland."
+      },
+      {
+        "q": "Wie lange ist die Garantiezeit auf die Hardware?",
+        "a": "Wir bieten 12 Monate Garantie auf alle Geräte. Ausnahme: Elo Produkte (Kassen) haben 3 Jahre Softwaregarantie. Bei Eigenverschuldung entfällt die Garantie."
+      },
+      {
+        "q": "Bietet Gastro Master Finanzierung oder Leasing an?",
+        "a": "Ja, sprechen Sie uns auf unsere Leasing- und Ratenzahlungsoptionen an. Wir finden gemeinsam eine Lösung, die zu Ihrem Budget passt — ohne hohe Anfangsinvestition."
+      },
+      {
+        "q": "Wie erfolgt die Installation und Einrichtung der Geräte?",
+        "a": "Alle Geräte werden von uns vorkonfiguriert geliefert und sind sofort einsatzbereit. Sobald unsere Hardware angekommen ist, können wir einen Termin für die Einrichtung vereinbaren. Wir verbinden uns dann per Fernschaltung auf die Hardware und helfen Ihnen beim Start."
+      }
+    ]
+  },
+  "inquiryCta": "Auf Anfrage"
+}

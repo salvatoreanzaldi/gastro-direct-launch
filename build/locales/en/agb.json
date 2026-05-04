@@ -1,0 +1,423 @@
+{
+  "meta": {
+    "title": "Terms & Conditions | Gastro Master",
+    "description": "General Terms and Conditions of Epit Global GmbH / Gastro Master.",
+    "canonical": "https://gastro-master.de/agb"
+  },
+  "title": "General Terms and Conditions",
+  "subtitle": "Epit Global GmbH · Herzbergstr. 9 · 61250 Usingen",
+
+  "s0": {
+    "title": "Purchase Agreement — Online Ordering System",
+
+    "praeambel": {
+      "heading": "Preamble",
+      "text": "The parties enter into a purchase agreement for the creation of an online shop and an app (iOS & Android). The offer is directed at the named operator. The subject of the contract is the app and web shop development by Epit Global GmbH. The Provider populates the products according to the product list. After completion of the project, the operator can manage the products independently. The restaurant operator may optionally purchase the Gastro Master device. This device automatically prints incoming orders instead of requiring them to be retrieved via email."
+    },
+
+    "p1": {
+      "heading": "§ 1 Contracting Parties",
+      "text": "The exclusive contracting parties are Epit Global GmbH (hereinafter referred to as \"Provider\") and the end customer named in the order form (hereinafter referred to as \"Customer\")."
+    },
+
+    "p2": {
+      "heading": "§ 2 Subject of the Contract",
+      "a": {
+        "label": "(a) App, Web Shop",
+        "text": "The subject of the contract is the setup and the transfer of unlimited usage rights for Android/iOS apps and/or web shops pursuant to the purchase agreement. The object is the acquisition of an online ordering system that appears as app(s) in the respective app stores and as a web shop online. This includes the initial population with provider-supplied content as well as data storage from operations. The end customer gains access to the app/web shop via an internet or telecommunications connection. Upon purchase, the system becomes the property of the Customer. If the buyer decides to store the system on other servers, they assume exclusive liability for complications in data processing or data loss, including customer data and order history."
+      },
+      "b": {
+        "label": "(b) Example Representation",
+        "text": "Prior to concluding the contract, the Customer received an example of an already configured web shop/app. The Customer's web shop/apps may correspond to this example in terms of design and layout. The same applies to the exemplary homepage, product presentations, and the ordering process."
+      },
+      "c": {
+        "label": "(c) Customer Access",
+        "text": "The Customer receives separate access and can independently edit the content of the app/web shop."
+      },
+      "d": {
+        "label": "(d) Legal Documents",
+        "text": "The Provider supplies sample terms and conditions, a privacy policy, and a legal notice (Impressum). The Customer is expressly advised to adapt these texts and have them reviewed by legal counsel. The Provider does not provide legal advice."
+      },
+      "e": {
+        "label": "(e) Content Responsibility",
+        "text": "The Provider assumes no responsibility for the legality of the content of the app/web shop. Sole legal responsibility rests exclusively with the respective Customer. Pursuant to § 5 (1) TMG, only the Customer is listed in the legal notice (Impressum). Special legal provisions for the sale of food and beverages, in particular youth protection laws, are expressly noted."
+      }
+    },
+
+    "p3": {
+      "heading": "§ 3 Prices / Payment",
+      "sub1": {
+        "label": "(1) Usage Fees and Purchase",
+        "text": "The monthly usage fees for apps/web shops are listed in the order form. Purchase eliminates the monthly fees. The purchase price (per prior offer) may be paid in a maximum of 4 installments. Advance payment: 25%. The remaining balance is divided into up to 4 monthly installments. Without a SEPA mandate, the setup of a standing order is recommended."
+      },
+      "sub2": {
+        "label": "(2) Setup Fees",
+        "text": "Setup fees are individually agreed depending on the scope of the business. Branch setup is carried out digitally."
+      },
+      "sub3": {
+        "label": "(3) Order Transmission",
+        "text": "Order transmission is carried out via email program. Upon completion, the Provider explains everything comprehensively."
+      }
+    },
+
+    "p4": {
+      "heading": "§ 4 Usage Rights",
+      "text": "The Provider grants the Customer unlimited, simple, non-transferable rights to use the apps/web shop within the contractual scope. The Customer may not transfer the usage rights to third parties without the Provider's consent."
+    },
+
+    "p5": {
+      "heading": "§ 5 Cooperation Obligations",
+      "text": "The Customer is obligated to report software defects to the Provider without delay."
+    },
+
+    "p6": {
+      "heading": "§ 6 Limitation of Liability",
+      "sub1": {
+        "label": "(1) Unlimited Liability",
+        "text": "The Provider is liable without limitation in accordance with statutory provisions for damages arising from injury to life, body, or health caused by intentional or negligent breach of duty as well as intentional or negligent conduct by the Provider, its legal representatives, or vicarious agents, for the absence or loss of guaranteed characteristics, and for damages arising from intentional or grossly negligent breaches of duty."
+      },
+      "sub2": {
+        "label": "(2) Limited Liability",
+        "text": "For damages arising from slightly negligent breaches of material obligations, the Provider's liability is limited to the typical, foreseeable damage under the contract. Material obligations are those that enable proper contract performance and on whose fulfillment the Customer may rely."
+      },
+      "sub3": {
+        "label": "(3) Product Liability",
+        "text": "The provisions of the Product Liability Act remain unaffected."
+      }
+    },
+
+    "p7": {
+      "heading": "§ 7 Support / Updates",
+      "text": "The purchase agreement includes free 6-month support as well as monthly updates."
+    },
+
+    "p8": {
+      "heading": "§ 8 Data Protection",
+      "a": {
+        "label": "(a) Controller",
+        "text": "Within the meaning of the GDPR, the Provider is the controller."
+      },
+      "b": {
+        "label": "(b) Collection and Processing",
+        "text": "The Provider collects and processes personal data only insofar as this is necessary for contract fulfillment, consent has been given, or legitimate interests justify it. The processing of the Customer's personal data serves exclusively for contract fulfillment. With regard to the processing of personal data of guests, the parties conclude a data processing agreement."
+      }
+    },
+
+    "p10": {
+      "heading": "§ 10 Miscellaneous Provisions",
+      "sub1": {
+        "label": "(1) Written Form Requirement",
+        "text": "Amendments to this contract require written form. Deviations from the written form requirement themselves require written form. No verbal side agreements have been made."
+      },
+      "sub2": {
+        "label": "(2) Severability Clause",
+        "text": "The invalidity or incompleteness of individual contractual provisions does not affect the legal validity of the remaining provisions."
+      },
+      "sub3": {
+        "label": "(3) Jurisdiction",
+        "text": "The registered office of the Provider is agreed as the place of jurisdiction for all disputes."
+      },
+      "sub4": {
+        "label": "(4) Services Included in the Purchase Price",
+        "text": "Included in the purchase price are 2,500 flyers with QR codes per branch."
+      }
+    }
+  },
+
+  "s1": {
+    "title": "Purchase Agreement — Website",
+
+    "p1": {
+      "heading": "§ 1 Subject of the Contract",
+      "text": "The subject of the contract is the setup and the transfer of unlimited usage rights for a website pursuant to the purchase agreement. The end customer gains access to the website via an internet or telecommunications connection. Upon purchase, the system becomes the property of the Customer. If the buyer decides to store the system on other servers, they assume exclusive liability for complications in data processing or data loss, including customer data and order history."
+    },
+
+    "p2": {
+      "heading": "§ 2 Customer Access and Legal Documents",
+      "item1": "The Customer receives separate access and can independently edit the content of the website.",
+      "item2": "The Provider supplies sample terms and conditions, a privacy policy, and a legal notice (Impressum).",
+      "item3": "The Customer is expressly advised to adapt these texts and have them reviewed by legal counsel.",
+      "item4": "The Provider does not provide legal advice.",
+      "item5": "The Provider assumes no responsibility for the legality of the website content.",
+      "item6": "Sole legal responsibility rests exclusively with the Customer.",
+      "item7": "Pursuant to § 5 (1) TMG, only the Customer is listed in the legal notice (Impressum)."
+    },
+
+    "p3": {
+      "heading": "§ 3 Prices / Payment",
+      "text": "Purchase eliminates the monthly fees. The purchase price (per prior offer) may be paid in a maximum of 5 installments."
+    },
+
+    "p4": {
+      "heading": "§ 4 Transfer of Rights",
+      "text": "The Provider transfers all rights to the platform to the Customer. For ongoing support for monthly updates/maintenance, all changes are made with the Customer's consent."
+    },
+
+    "p5": {
+      "heading": "§ 5 Cooperation Obligations",
+      "text": "The Customer is obligated to report defects of the website to the Provider without delay."
+    },
+
+    "p6": {
+      "heading": "§ 6 Limitation of Liability",
+      "sub1": {
+        "label": "(1) Unlimited Liability",
+        "text": "The Provider is liable without limitation in accordance with statutory provisions for damages arising from injury to life, body, or health caused by intentional or negligent breach of duty as well as for damages arising from intentional or grossly negligent acts by the Provider, its legal representatives, or vicarious agents."
+      },
+      "sub2": {
+        "label": "(2) Limited Liability",
+        "text": "For damages arising from slightly negligent breaches of material obligations, the Provider's liability is limited to the typical, foreseeable damage under the contract."
+      },
+      "sub3": {
+        "label": "(3) Product Liability",
+        "text": "The provisions of the Product Liability Act remain unaffected."
+      }
+    },
+
+    "p7": {
+      "heading": "§ 7 Support / Updates",
+      "text": "The purchase agreement constitutes a completed service that requires no further consultation. Should the parties agree on ongoing collaboration, this shall be remunerated and documented contractually. Subsequently, a monthly flat rate for changes (development) and technical support shall be determined."
+    },
+
+    "p8": {
+      "heading": "§ 8 Data Protection",
+      "a": {
+        "label": "(a) Controller",
+        "text": "Within the meaning of the GDPR, the Provider is the controller."
+      },
+      "b": {
+        "label": "(b) Collection",
+        "text": "The Provider collects and processes personal data only insofar as this is necessary for contract fulfillment, consent has been given, or legitimate interests justify it. The processing of the Customer's personal data serves exclusively for contract fulfillment."
+      }
+    },
+
+    "p9": {
+      "heading": "§ 9 Miscellaneous Provisions",
+      "sub1": {
+        "label": "(1) Written Form Requirement",
+        "text": "Amendments require written form. Deviations from the written form requirement themselves require written form. No verbal side agreements have been made."
+      },
+      "sub2": {
+        "label": "(2) Severability Clause",
+        "text": "The invalidity of individual provisions does not affect the legal validity of the remaining provisions."
+      },
+      "sub3": {
+        "label": "(3) Jurisdiction",
+        "text": "The registered office of the Provider is agreed as the place of jurisdiction for all disputes."
+      }
+    }
+  },
+
+  "s2": {
+    "title": "Leasing Agreement — Website",
+
+    "praeambel": {
+      "heading": "Preamble",
+      "text": "The parties enter into a leasing agreement for the creation of a website. The offer is directed at the named operator. The subject of the contract is the website development by Epit Global GmbH (hereinafter referred to as \"Provider\"). The Provider populates the content, images, and descriptions supplied by the Customer and ensures the ongoing operation of the website."
+    },
+
+    "p1": {
+      "heading": "§ 1 Contracting Parties",
+      "text": "The exclusive contracting parties are Epit Global GmbH (hereinafter referred to as \"Provider\") and the customer named in the offer (hereinafter referred to as \"Customer\")."
+    },
+
+    "p2": {
+      "heading": "§ 2 Subject of the Contract",
+      "a1": {
+        "label": "(a)(1) Scope",
+        "text": "The subject of the contract is the setup and the time-limited use of a website pursuant to the leasing agreement. The minimum term for the website is 12 months. Thereafter, the contract may be terminated at any time with three months' notice to the end of the month. The end customer gains access to the website via an internet or telecommunications connection."
+      },
+      "a2": {
+        "label": "(a)(2) Example Representation",
+        "text": "Prior to concluding the contract, the Customer received an example of an already configured website. The Customer's website resembles this example but allows for individual design and layout adjustments. The same applies to the exemplary homepage and product presentations."
+      },
+      "a3": {
+        "label": "(a)(3) Customer Access",
+        "text": "The Customer receives separate access and can independently edit the content of the website."
+      },
+      "a4": {
+        "label": "(a)(4) Legal Documents",
+        "text": "The Provider supplies sample terms and conditions, a privacy policy, and a legal notice (Impressum). The Customer is expressly advised to adapt these texts and have them reviewed by legal counsel. The Provider does not provide legal advice."
+      },
+      "a5": {
+        "label": "(a)(5) Content Responsibility",
+        "text": "The Provider assumes no responsibility for the legality of the website content. Sole legal responsibility rests exclusively with the Customer. Pursuant to § 5 (1) TMG, only the Customer is listed in the legal notice (Impressum)."
+      }
+    },
+
+    "p3": {
+      "heading": "§ 3 Prices / Payment",
+      "text": "The monthly usage fee for the website is listed in the order form."
+    },
+
+    "p4": {
+      "heading": "§ 4 Usage Rights",
+      "text": "The Provider grants the Customer time-limited, simple, non-transferable rights to use the website within the contractual scope."
+    },
+
+    "p5": {
+      "heading": "§ 5 Cooperation Obligations",
+      "text": "The Customer is obligated to report software defects to the Provider without delay."
+    },
+
+    "p6": {
+      "heading": "§ 6 Limitation of Liability",
+      "sub1": {
+        "label": "(1) Unlimited Liability",
+        "text": "The Provider is liable without limitation in accordance with statutory provisions for damages arising from injury to life, body, or health caused by intentional or negligent breach of duty as well as for damages arising from intentional or grossly negligent acts."
+      },
+      "sub2": {
+        "label": "(2) Limited Liability",
+        "text": "For damages arising from slightly negligent breaches of material obligations, the Provider's liability is limited to the typical, foreseeable damage under the contract."
+      },
+      "sub3": {
+        "label": "(3) Product Liability",
+        "text": "The provisions of the Product Liability Act remain unaffected."
+      }
+    },
+
+    "p7": {
+      "heading": "§ 7 Support / Updates",
+      "sub1": {
+        "label": "(1) Included Updates",
+        "text": "The leasing agreement includes free updates and website adjustments. Changes are made with the Customer's prior consent in accordance with the contract."
+      },
+      "sub2": {
+        "label": "(2) Branch Integration",
+        "text": "Support includes the free integration of additional branches for the buyer."
+      }
+    },
+
+    "p8": {
+      "heading": "§ 8 Data Protection",
+      "a": {
+        "label": "(a) Controller",
+        "text": "Within the meaning of the GDPR, the Provider is the controller."
+      },
+      "b": {
+        "label": "(b) Collection",
+        "text": "The Provider collects and processes personal data only insofar as this is necessary for contract fulfillment, consent has been given, or legitimate interests justify it. The processing of the Customer's personal data serves exclusively for contract fulfillment. With regard to the processing of personal data of guests, the parties conclude a data processing agreement."
+      }
+    },
+
+    "p9": {
+      "heading": "§ 9 Miscellaneous Provisions",
+      "sub1": {
+        "label": "(1) Written Form Requirement",
+        "text": "Amendments require written form. Deviations from the written form requirement themselves require written form. No verbal side agreements have been made."
+      },
+      "sub2": {
+        "label": "(2) Severability Clause",
+        "text": "The invalidity of individual provisions does not affect the legal validity of the remaining provisions."
+      },
+      "sub3": {
+        "label": "(3) Jurisdiction",
+        "text": "The registered office of the Provider is agreed as the place of jurisdiction for all disputes."
+      }
+    }
+  },
+
+  "s3": {
+    "title": "Leasing Agreement — Online Shop & App",
+
+    "praeambel": {
+      "heading": "Preamble",
+      "text": "The parties enter into a leasing agreement for the creation of an Ionic-based app system. The offer is directed at the named operator. The subject of the contract is the app system development by Epit Global GmbH (hereinafter referred to as \"Provider\"). End customers order the operator's products via the apps and are obligated to pay. The Provider populates the content, images, and descriptions supplied by the Customer and ensures the ongoing operation of the app. The Customer receives independent access to the app and can edit content (products, discounts, categories, descriptions) independently."
+    },
+
+    "p1": {
+      "heading": "§ 1 Contracting Parties",
+      "text": "The exclusive contracting parties are Epit Global GmbH (hereinafter referred to as \"Provider\") and the customer named in the offer (hereinafter referred to as \"Customer\")."
+    },
+
+    "p2": {
+      "heading": "§ 2 Subject of the Contract",
+      "a1": {
+        "label": "(a)(1) Scope",
+        "text": "The subject of the contract is the setup and the use, limited to 12 months, of an online ordering system that appears as app(s) in the respective app stores and as a web shop online. This includes the initial population with provider-supplied content as well as data storage from operations. The end customer gains access to the app/web shop via an internet or telecommunications connection. Upon purchase, the system becomes the property of the Customer. If the buyer decides to store the system on other servers, they assume exclusive liability for complications in data processing or data loss."
+      },
+      "a2": {
+        "label": "(a)(2) Example Representation",
+        "text": "Prior to concluding the contract, the Customer received an example of an already configured web shop/app. The Customer's web shop/apps resemble this example but allow for individual design and layout adjustments."
+      },
+      "a3": {
+        "label": "(a)(3) Customer Access",
+        "text": "The Customer receives separate access and can independently edit the content of the app/web shop."
+      },
+      "a4": {
+        "label": "(a)(4) Legal Documents",
+        "text": "The Provider supplies sample terms and conditions, a privacy policy, and a legal notice (Impressum). The Customer is expressly advised to adapt these texts and have them reviewed by legal counsel. The Provider does not provide legal advice."
+      },
+      "a5": {
+        "label": "(a)(5) Content Responsibility",
+        "text": "The Provider assumes no responsibility for the legality of the content of the app/web shop. Sole legal responsibility rests exclusively with the Customer. Pursuant to § 5 (1) TMG, only the Customer is listed in the legal notice (Impressum)."
+      }
+    },
+
+    "p3": {
+      "heading": "§ 3 Prices / Payment",
+      "sub1": {
+        "label": "(1) Fees and Terms",
+        "text": "The monthly usage fees for apps/web shops are listed in the order form. The contract term is indefinite with a three-month notice period for both parties. Purchase eliminates the monthly fees. The purchase price (per prior offer) may be paid in a maximum of 4 installments. The four installments are to be transferred to the Provider's account by the third business day of each month in advance. Without a SEPA mandate, the setup of a standing order is recommended."
+      },
+      "sub2": {
+        "label": "(2) Setup Fees",
+        "text": "Setup fees are individually agreed depending on the scope of the business. Branch setup is carried out digitally."
+      }
+    },
+
+    "p4": {
+      "heading": "§ 4 Usage Rights",
+      "text": "The Provider grants the Customer unlimited, simple, non-transferable rights to use the apps/web shop within the contractual scope. The Customer may not transfer the usage rights to third parties without the Provider's consent."
+    },
+
+    "p5": {
+      "heading": "§ 5 Cooperation Obligations",
+      "text": "The Customer is obligated to report software defects to the Provider without delay."
+    },
+
+    "p6": {
+      "heading": "§ 6 Limitation of Liability",
+      "sub1": {
+        "label": "(1) Unlimited Liability",
+        "text": "The Provider is liable without limitation in accordance with statutory provisions for damages arising from injury to life, body, or health caused by intentional or negligent breach of duty as well as for damages arising from intentional or grossly negligent acts."
+      },
+      "sub2": {
+        "label": "(2) Limited Liability",
+        "text": "For damages arising from slightly negligent breaches of material obligations, the Provider's liability is limited to the typical, foreseeable damage under the contract."
+      },
+      "sub3": {
+        "label": "(3) Product Liability",
+        "text": "The provisions of the Product Liability Act remain unaffected."
+      }
+    },
+
+    "p7": {
+      "heading": "§ 7 Data Protection",
+      "a": {
+        "label": "(a) Controller",
+        "text": "Within the meaning of the GDPR, the Provider is the controller."
+      },
+      "b": {
+        "label": "(b) Collection",
+        "text": "The Provider collects and processes personal data only insofar as this is necessary for contract fulfillment, consent has been given, or legitimate interests justify it. The processing of the Customer's personal data serves exclusively for contract fulfillment. With regard to the processing of personal data of guests, the parties conclude a data processing agreement."
+      }
+    },
+
+    "p8": {
+      "heading": "§ 8 Miscellaneous Provisions",
+      "sub1": {
+        "label": "(1) Written Form Requirement",
+        "text": "Amendments require written form. Deviations from the written form requirement themselves require written form. No verbal side agreements have been made."
+      },
+      "sub2": {
+        "label": "(2) Severability Clause",
+        "text": "The invalidity of individual provisions does not affect the legal validity of the remaining provisions."
+      },
+      "sub3": {
+        "label": "(3) Jurisdiction",
+        "text": "The registered office of the Provider is agreed as the place of jurisdiction for all disputes."
+      }
+    }
+  }
+}

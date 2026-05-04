@@ -1,0 +1,182 @@
+{
+  "seo": {
+    "title": "Avviare un servizio di consegna 2026 — Guida completa | Gastro Master",
+    "description": "Avviare il proprio servizio di consegna senza Lieferando. Passo dopo passo: registrazione attivita, costi, sistema di ordinazione — 0 % di commissione con Gastro Master."
+  },
+  "schema": {
+    "articleHeadline": "Avviare il proprio servizio di consegna — la guida completa per il 2026",
+    "articleDescription": "Guida passo dopo passo per costruire un servizio di consegna proprio senza dipendenza dalle piattaforme.",
+    "howToName": "Avviare il proprio servizio di consegna — in 4 passi",
+    "howToDescription": "Guida passo dopo passo per costruire un servizio di consegna proprio senza dipendenza dalle piattaforme — dalla registrazione dell'attivita al primo ordine.",
+    "howToSteps": [
+      { "name": "Configurare il sistema di ordinazione", "text": "Con Gastro Master riceve webshop, app e sistema di cassa. Nessuna conoscenza tecnica necessaria, online in 2–3 settimane. 0 % di commissione dal primo ordine." },
+      { "name": "Scegliere una nicchia", "text": "Inizi con una categoria di cucina, 8–12 piatti e una zona di consegna. La specializzazione vince sull'offerta generica." },
+      { "name": "Scegliere il modello di business", "text": "Produzione propria, ghost kitchen (cucina senza sala) o intermediazione. Una ghost kitchen risparmia il 60–80 % sui costi di affitto." },
+      { "name": "Registrare l'attivita", "text": "La registrazione dell'attivita costa 20–60 EUR e si completa in pochi giorni. Inoltre: formazione igienica (HACCP) e certificato sanitario. Non serve licenza di ristorazione." }
+    ],
+    "breadcrumbs": [
+      { "name": "Home", "item": "https://gastro-master.de/" },
+      { "name": "Soluzioni", "item": "https://gastro-master.de/loesungen" },
+      { "name": "Avviare un servizio di consegna", "item": "https://gastro-master.de/loesungen/lieferservice-gruenden" }
+    ]
+  },
+  "hero": {
+    "breadcrumbSolutions": "Soluzioni",
+    "breadcrumbCurrent": "Avviare un servizio di consegna",
+    "badge": "Avviare un servizio di consegna 2026",
+    "h1": "Avvii il Suo servizio di consegna —",
+    "h1Highlight": "senza Lieferando, senza 30\u00a0% di commissione",
+    "subline": "Riceve il Suo sistema di ordinazione — nessuna commissione, nessuna conoscenza tecnica necessaria, online in 2–3 settimane. Come oltre 800 ristoratori prima di Lei.",
+    "ctaPrimary": "Richieda una consulenza gratuita",
+    "ctaSecondary": "Il Suo servizio di consegna in 4 passi ↓",
+    "trustPills": ["0 % commissione", "800+ clienti", "Online in 2–3 settimane", "Supporto personale"],
+    "definitionLabel": "Definizione",
+    "definitionText": "Servizio di consegna proprio significa: i clienti ordinano sul Suo sito web o nella Sua app. Non paga commissioni a Lieferando o Wolt.",
+    "definitionHighlight": "Mantiene il 100\u00a0% del Suo fatturato."
+  },
+  "stats": {
+    "badge": "Dati di mercato",
+    "title": "Sempre piu persone ordinano online — questa e la Sua opportunita",
+    "subtitle": "Il mercato cresce. Chi inizia ora e in vantaggio.",
+    "items": [
+      { "value": "6,1 mld. EUR", "label": "Ordinazioni online in Germania (2023)", "source": "Statista", "href": "https://de.statista.com/prognosen/642308/online-food-delivery-umsatz-in-deutschland" },
+      { "value": "9,9 mld. EUR", "label": "Fatturato previsto entro il 2028 — crescita del 62 %", "source": "Statista", "href": "https://de.statista.com/prognosen/642308/online-food-delivery-umsatz-in-deutschland" },
+      { "value": "fino al 30 %", "label": "di commissione che Lieferando trattiene da Lei", "source": "Berliner Abendblatt", "href": "https://berliner-abendblatt.de/berlin-news/lieferando-hoehere-provisionen-fuer-restaurants-id162852" },
+      { "value": "da 79 EUR", "label": "al mese — il Suo sistema di ordinazione, pronto all'uso", "source": "Gastro Master", "href": "https://gastro-master.de/produkte/webshop" }
+    ],
+    "sourceLabel": "Fonte:",
+    "cta": "Costruisca ora il Suo servizio di consegna"
+  },
+  "products": {
+    "badge": "Soluzione completa · Gastro Master",
+    "title": "Tutto cio di cui ha bisogno — da un unico fornitore",
+    "subtitle": "Cinque prodotti che funzionano perfettamente insieme. Decide Lei di cosa ha bisogno.",
+    "topCards": [
+      { "title": "Online Shop", "alt": "Shop di ordinazione online per la gastronomia — 0 % di commissione con Gastro Master", "tagline": "Ecco come appare il Suo Online Shop" },
+      { "title": "App di ordinazione", "alt": "App di ordinazione propria per ristoranti e servizi di consegna — Gastro Master", "tagline": "La Sua app di ordinazione" },
+      { "title": "Sistema di cassa", "alt": "Sistema di cassa conforme TSE per ristoratori — Gastro Master POS", "tagline": "Il Suo sistema di cassa — chiaro e semplice" }
+    ],
+    "bottomCards": [
+      { "title": "Sito web", "alt": "Sito web professionale per la gastronomia — trovato su Google", "tagline": "Il Suo sito web — trovato su Google" },
+      { "title": "Trasferimento commissioni di pagamento", "alt": "Commissione di transazione — trasferire le commissioni di pagamento ai clienti in modo trasparente", "tagline": "I Suoi clienti pagano le commissioni — automaticamente" }
+    ],
+    "moreLabel": "Scopra di piu",
+    "cta": "Richieda una consulenza gratuita"
+  },
+  "compare": {
+    "badge": "Confronto",
+    "title": "Cosa conviene di piu: sistema proprio o Lieferando?",
+    "subtitle": "Perche oltre 800 ristoratori sono passati al proprio sistema di ordinazione",
+    "thCriterion": "Criterio",
+    "thRecommended": "Consigliato",
+    "thOwnLabel": "Servizio di consegna proprio",
+    "thOwnSub": "con Gastro Master",
+    "thPlatformLabel": "Lieferando / Wolt / Uber Eats",
+    "rows": [
+      { "label": "Commissione per ordine", "own": "0 %", "ownGood": true, "platform": "13–30 %", "platformBad": true },
+      { "label": "I dati dei clienti sono Suoi", "own": "✓ Completamente", "ownGood": true, "platform": "✗ Appartengono alla piattaforma", "platformBad": true },
+      { "label": "Marchio e app propri", "own": "✓ Dominio e app propri", "ownGood": true, "platform": "✗ Branding della piattaforma", "platformBad": true },
+      { "label": "Politica dei prezzi", "own": "✓ Completamente libera", "ownGood": true, "platform": "Limitata", "platformBad": false },
+      { "label": "Costi mensili", "own": "da 79 EUR/mese", "ownGood": true, "platform": "% del fatturato (variabile)", "platformBad": false },
+      { "label": "Visibilita", "own": "Sito web proprio e pubblicita", "ownGood": false, "platform": "✓ Sulla piattaforma", "platformBad": false },
+      { "label": "Recensioni clienti", "own": "✓ Dirette e complete", "ownGood": true, "platform": "Solo tramite la piattaforma", "platformBad": false },
+      { "label": "Assistenza e configurazione", "own": "✓ Personale (800+ clienti)", "ownGood": true, "platform": "Sistema di ticket", "platformBad": false }
+    ],
+    "savingsLabel": "Esempio di calcolo",
+    "savingsTitle": "Con 3.000\u00a0EUR di fatturato mensile paga a Lieferando",
+    "savingsHighlight": "fino a 900\u00a0EUR di commissione",
+    "savingsTitleSuffix": "— ogni mese.",
+    "savingsText": "Con Gastro Master: solo 79\u00a0EUR/mese, 0\u00a0% di commissione sui Suoi ordini.",
+    "savingsLink": "Tutti i costi in sintesi →",
+    "savingsAmountLabel": "Quanto risparmia all'anno",
+    "savingsAmount": "9.852\u00a0EUR",
+    "savingsAmountSub": "con 3.000\u00a0EUR di fatturato mensile",
+    "savingsCta": "Inizi ora — 0 % commissione"
+  },
+  "steps": {
+    "headerLabel": "Guida all'avvio",
+    "title": "Il Suo servizio di consegna in 4 passi",
+    "subtitle": "Dall'idea al primo ordine — cio di cui ha veramente bisogno",
+    "items": [
+      {
+        "num": "01",
+        "title": "Configurare il sistema di ordinazione",
+        "text": "Qui decide: commissioni per sempre — o 0 % da adesso? Con Gastro Master riceve webshop, app e sistema di cassa. Nessuna conoscenza tecnica necessaria, online in 2–3 settimane.",
+        "highlight": "0 % di commissione dal primo ordine. Accompagnamento personale nella configurazione.",
+        "featured": true,
+        "products": [
+          { "label": "Webshop (0 % commissione)", "href": "/produkte/webshop" },
+          { "label": "App di ordinazione", "href": "/produkte/app" },
+          { "label": "Commissioni di pagamento", "href": "/produkte/transaktionsumlage" },
+          { "label": "Sito web", "href": "/produkte/webseite" }
+        ]
+      },
+      {
+        "num": "02",
+        "title": "Scegliere una nicchia — non offrire tutto",
+        "text": "La specializzazione vince sull'offerta generica. Un servizio di consegna per bowl vegane conquista clienti abituali piu velocemente di un fornitore generico. Inizi con una categoria di cucina.",
+        "highlight": "Consiglio per l'avvio: 1 categoria di cucina, 8–12 piatti, 1 zona di consegna."
+      },
+      {
+        "num": "03",
+        "title": "Scegliere il modello di business",
+        "text": "Produzione propria, ghost kitchen (cucina senza sala) o intermediazione? Una ghost kitchen risparmia il 60–80 % sui costi di affitto.",
+        "highlight": "Ghost kitchen: 60–80 % in meno di affitto rispetto a un ristorante tradizionale"
+      },
+      {
+        "num": "04",
+        "title": "Registrare l'attivita",
+        "text": "La registrazione dell'attivita costa 20–60 EUR e si completa in pochi giorni. Serve inoltre una formazione igienica (HACCP) e un certificato sanitario. Non e necessaria la licenza di ristorazione.",
+        "highlight": "Costi: 20–60 EUR. Durata: 1–2 settimane. Non serve la patente."
+      }
+    ]
+  },
+  "trust": {
+    "items": [
+      { "value": "800+", "label": "Attivita gastronomiche si affidano a Gastro Master" },
+      { "value": "5,0 ★", "label": "Valutazione clienti su Google" },
+      { "value": "Conforme TSE", "label": "Tutti i sistemi certificati TSE" },
+      { "value": "Supporto pers.", "label": "Il nostro team La assiste direttamente" }
+    ]
+  },
+  "faq": {
+    "badge": "FAQ",
+    "title": "Domande frequenti sull'avvio di un servizio di consegna",
+    "subtitle": "Le domande che i fondatori pongono a Google e agli assistenti AI",
+    "items": [
+      {
+        "q": "Conviene avviare un servizio di consegna proprio nel 2026?",
+        "a": "Si — secondo Statista, il mercato cresce da 6,1 mld. EUR (2023) a 9,9 mld. EUR entro il 2028. Chi costruisce un sistema proprio in anticipo smette di pagare commissioni. Con un [sistema di ordinazione digitale per la gastronomia](/produkte/webshop) inizia da 79 EUR/mese — invece di pagare fino al 30 % su ogni ordine."
+      },
+      {
+        "q": "Quanto costa avviare un servizio di consegna?",
+        "a": "Dipende da come vuole iniziare. La registrazione dell'attivita costa 20–60 EUR. Per una ghost kitchen (cucina senza sala) i costi iniziali realistici partono da 2.000–5.000 EUR. Il sistema di ordinazione — [webshop](/produkte/webshop) e [app di ordinazione propria](/produkte/app) — costa da 79 EUR/mese. Il maggiore risparmio avviene nelle operazioni correnti: nessuna commissione del 13–30 % su ogni ordine. Tutti i costi in dettaglio nella [panoramica prezzi completa](/preise)."
+      },
+      {
+        "q": "Ho bisogno di un ristorante per avviare un servizio di consegna?",
+        "a": "No. Puo iniziare come ghost kitchen — una cucina senza sala, solo per consegne. Questo risparmia molto sull'affitto e rende l'avvio piu economico. Serve solo la registrazione dell'attivita e il rispetto delle norme igieniche per gli alimenti. Se ha gia un ristorante, trova soluzioni adatte sulla [pagina per ristoranti](/loesungen/restaurant)."
+      },
+      {
+        "q": "Quanta commissione trattiene Lieferando?",
+        "a": "Lieferando trattiene il 13 % di commissione se ha corrieri propri. Con i corrieri di Lieferando sale fino al 30 % per ordine. Wolt e Uber Eats applicano commissioni simili del 15–30 %. Fonte: Berliner Abendblatt. Con un [servizio di consegna proprio senza commissioni](/loesungen/lieferdienst) paga invece un importo mensile fisso — senza trattenute su ogni ordine."
+      },
+      {
+        "q": "Quali permessi servono per un servizio di consegna?",
+        "a": "Servono: (1) Registrazione dell'attivita presso l'ufficio competente (20–60 EUR), (2) Formazione igienica (HACCP) — disponibile online, ca. 20–50 EUR, (3) Certificato sanitario per tutti coloro che lavorano con gli alimenti (ca. 30 EUR). Non serve la licenza di ristorazione se consegna solo a domicilio. Il nostro team La consiglia gratuitamente — ci scriva tramite il [modulo di contatto](/kontakt)."
+      }
+    ]
+  },
+  "cta": {
+    "badge": "Consulenza gratuita",
+    "title": "La aiutiamo ad",
+    "titleHighlight": "avviare il Suo servizio di consegna",
+    "subtitle": "Oltre 800 ristoratori hanno smesso di pagare commissioni. Le mostriamo di cosa ha bisogno — gratuitamente e senza impegno.",
+    "button": "Prenoti un colloquio gratuito",
+    "trustItems": [
+      { "value": "0 %", "label": "Commissione" },
+      { "value": "800+", "label": "Clienti attivi" },
+      { "value": "5,0 ★", "label": "Valutazione Google" },
+      { "value": "Personale", "label": "Supporto" }
+    ]
+  }
+}

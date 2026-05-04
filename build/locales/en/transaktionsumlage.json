@@ -1,0 +1,171 @@
+{
+  "seo": {
+    "title": "Transaction Surcharge for Restaurants — 0 € Fees | Gastro Master",
+    "description": "Pass payment fees (PayPal, credit card, Klarna) transparently to customers — legally compliant and automated. Top-selling add-on for restaurant owners. Learn more."
+  },
+  "hero": {
+    "badge": "Add-On #1 · Transaction Surcharge",
+    "title1": "Transaction Surcharge",
+    "title2": " –\nPass Payment Fees\nTransparently",
+    "desc": "The transaction surcharge is an add-on for restaurant owners that automatically and transparently passes payment fees from PayPal, credit card, Apple Pay, Google Pay, and Klarna as a separate line item to customers. You receive your full net revenue.",
+    "cta": "Free Consultation"
+  },
+  "trustBar": [
+    { "value": "Top Seller", "label": "Most Popular Add-On" },
+    { "value": "7", "label": "Supported Payment Methods" },
+    { "value": "800+", "label": "Restaurants use Gastro Master" }
+  ],
+  "howItWorks": {
+    "badge": "How It Works",
+    "title": "Zero fee burden in 3 simple steps.",
+    "desc": "Fully automated, transparent, and legally compliant — no extra effort for you or your staff. The transaction surcharge is directly integrated into the",
+    "descLinkShop": "Gastro Master order shop",
+    "descMid": "and the",
+    "descLinkApp": "custom ordering app",
+    "descEnd": ".",
+    "steps": [
+      {
+        "num": "01",
+        "title": "Fee arises at checkout",
+        "text": "Your customer selects a payment method — e.g. PayPal (2.99% + €0.35) or credit card via Stripe (1.5% + €0.25). The exact fee is calculated in real time."
+      },
+      {
+        "num": "02",
+        "title": "Surcharge shown transparently at checkout",
+        "text": "Before paying, the customer sees the fee as a separate line item — clearly labeled and comprehensible. No hidden charges, fully compliant."
+      },
+      {
+        "num": "03",
+        "title": "You receive 100% of your revenue",
+        "text": "Not a cent is lost. Your PayPal Business or Stripe account receives the full amount — the payment fee was covered by the customer."
+      }
+    ]
+  },
+  "calculator": {
+    "badge": "Fee Calculator",
+    "title": "How much do you save with the transaction surcharge?",
+    "desc": "Select your payment provider and adjust the values to match your business.",
+    "ordersLabel": "Orders per month",
+    "avgCartLabel": "Avg. order value",
+    "revenueLabel": "Monthly revenue",
+    "feesLabel": "Fees / month",
+    "savingsLabel": "Savings / year",
+    "sourceLabel": "Source:",
+    "savingsText1": "With the transaction surcharge you save",
+    "savingsText2": "per year — your customers cover these fees.",
+    "cta": "Request a Custom Quote"
+  },
+  "comparison": {
+    "badge": "Comparison · 300 orders × €30",
+    "title": "How much does a restaurant pay monthly without the transaction surcharge?",
+    "desc": "At 300 orders with an average value of €30, the following monthly costs arise — costs you bear yourself without the transaction surcharge.",
+    "thProvider": "Provider",
+    "thFees": "Fees",
+    "thWithout": "Without surcharge",
+    "thWith": "With surcharge",
+    "sources": "Sources:"
+  },
+  "features": {
+    "badge": "Features",
+    "title": "Your margin. Fully protected.",
+    "desc": "With the transaction surcharge, you no longer pay fees — your customers do.",
+    "items": [
+      { "title": "Your Own PayPal Business", "text": "Payments go directly to your own PayPal Business account — no middleman, no detours. You keep full control and have immediate access to your money." },
+      { "title": "Your Own Stripe Account", "text": "Credit card, Apple Pay, Google Pay — directly to your account." },
+      { "title": "Transparent Surcharge", "text": "Customers pay the fees — clearly and professionally communicated." },
+      { "title": "All Payment Methods", "text": "PayPal, Visa, Mastercard, Klarna, Apple Pay, Google Pay." },
+      { "title": "Full Margin Retained", "text": "Instead of paying fees from your profit, they are transparently shown as a separate line item. Your calculations stay clean — 100% of your net revenue stays with you." },
+      { "title": "Legally Compliant", "text": "The surcharge is legally permissible and clearly communicated." },
+      { "title": "Quick Setup", "text": "Activated in just a few steps — we guide you through it." }
+    ]
+  },
+  "requirements": {
+    "badge": "Requirements",
+    "title": "The transaction surcharge is an add-on.",
+    "desc": "It works exclusively in combination with one of the following Gastro Master packages.",
+    "webshop": {
+      "label": "Package",
+      "name": "Online Shop",
+      "price": "€79",
+      "priceSuffix": "/ month (net)",
+      "features": ["Online ordering system", "Custom branding", "All payment methods", "Support included"],
+      "link": "Learn more"
+    },
+    "appWebshop": {
+      "label": "Main Package",
+      "name": "App + Online Shop",
+      "price": "€149",
+      "priceSuffix": "/ month (net)",
+      "features": ["iOS & Android app", "Online shop", "Push notifications", "Multi-location", "Support included"],
+      "link": "Learn more"
+    },
+    "addon": {
+      "label": "Add-On · Top Seller",
+      "name": "Transaction Surcharge",
+      "desc": "The price is individually calculated based on your payment methods, number of locations, and transaction volume. In a brief consultation, we create a custom quote tailored to your business.",
+      "cta": "Request Consultation"
+    }
+  },
+  "testimonials": {
+    "badge": "Social Proof",
+    "title": "800+ restaurant owners already working with Gastro Master.",
+    "quotes": [
+      { "initials": "HL", "quote": "In the future, more and more orders will be placed online and we want to be part of it.", "name": "Ha Lim Lee", "restaurant": "Kojo Sushi" },
+      { "initials": "MG", "quote": "The support is simply first-class and you wouldn't get it anywhere else like this!", "name": "Marco Greco", "restaurant": "Pizzeria Il Sorriso" },
+      { "initials": "SH", "quote": "You get fast and great WhatsApp support here and the ability to structure your business.", "name": "Sven Heinrich", "restaurant": "61 Burger & More" },
+      { "initials": "GM", "quote": "Through the app, we've gained many more customers and reach.", "name": "Georgios Madatsidis", "restaurant": "Artemis Grill" }
+    ],
+    "stats": [
+      { "value": "800+", "label": "active Gastro Master customers" },
+      { "value": "0%", "label": "commission on direct orders" },
+      { "value": "Top Seller", "label": "most booked add-on" },
+      { "value": "7", "label": "supported payment methods" }
+    ]
+  },
+  "faq": {
+    "badge": "FAQ",
+    "title": "Frequently asked questions about the transaction surcharge for restaurants.",
+    "desc": "More questions? Call us or write to us — we respond within 24 hours.",
+    "cta": "Contact us",
+    "items": [
+      {
+        "q": "Am I allowed to pass credit card fees to customers?",
+        "a": "Yes. In Germany and the EU, passing on payment fees as a transparent service charge (transaction surcharge) is permitted, provided it is clearly displayed at checkout. The EU Directive 2015/2366 (PSD2) only prohibits hidden surcharges — an openly communicated fee is perfectly legal. The transaction surcharge is fully integrated into the [Gastro Master POS system](/produkte/kassensystem)."
+      },
+      {
+        "q": "How does a transaction surcharge work in a restaurant?",
+        "a": "When a customer pays (e.g. via PayPal), the applicable fee (e.g. 2.99% + €0.35) is automatically added as a separate line item to the order total and transparently displayed at checkout. The restaurant owner receives the full net amount — without deductions. The feature is directly integrated into the [Gastro Master order shop](/produkte/webshop)."
+      },
+      {
+        "q": "How much does PayPal cost restaurants per transaction?",
+        "a": "PayPal charges 2.99% of the transaction amount plus €0.35 per transaction for online payments in Germany (source: paypal.com/de/webapps/mpp/merchant-fees). At 300 orders with an average value of €30, this amounts to approximately €374 per month — fees that are fully passed on to customers with the transaction surcharge. The add-on is especially worthwhile for [restaurant owners starting their own delivery service](/loesungen/lieferservice-gruenden)."
+      },
+      {
+        "q": "Is the transaction surcharge for credit cards legal?",
+        "a": "Yes. Credit card fees may be passed on as a transparent surcharge, as long as they are clearly visible during the ordering process. The Gastro Master platform automatically displays the fee at checkout, meeting all legal requirements. All prices and add-on conditions can be found in the [full pricing overview](/preise)."
+      },
+      {
+        "q": "Which payment methods can be surcharged?",
+        "a": "All common payment methods are covered: PayPal, Visa, Mastercard, Apple Pay, Google Pay, and Klarna. You can choose which methods to activate — the surcharge only applies to those. Setup is done directly in your [Gastro Master order shop](/produkte/webshop) or your [custom ordering app](/produkte/app)."
+      },
+      {
+        "q": "Does the transaction surcharge work across multiple locations?",
+        "a": "Yes. The transaction surcharge can be set up across locations. Each location can be linked to its own payment accounts (PayPal Business, Stripe) — the surcharge is then automatically applied to all activated locations. Learn more on the [franchise page](/loesungen/franchise)."
+      },
+      {
+        "q": "Do I need my own PayPal and Stripe accounts?",
+        "a": "Yes. Payments go directly to your own PayPal Business and/or Stripe account — no middleman, no delays. This is a key advantage over third-party platforms: you always have access to your money. If you need help with setup, our team is happy to assist — just reach out via the [contact form](/kontakt)."
+      }
+    ]
+  },
+  "teamCta": {
+    "badge": "Get Started",
+    "title": "Book your free\nconsultation now.",
+    "expectLabel": "What to expect:",
+    "expectText": "In a free initial consultation, we analyze your payment structure together — payment methods, locations, and accounts — and create a custom quote tailored to your business.",
+    "setupText": "Setup typically takes just a few days. After that, you'll never pay payment fees out of your own pocket again.",
+    "langs": ["German", "English", "Italian", "Persian", "Russian", "Sinhalese"],
+    "cta": "Request Free Consultation",
+    "teamRoles": ["Founder & CEO", "Founder & CEO", "Head of Sales", "Head of Operations"]
+  }
+}

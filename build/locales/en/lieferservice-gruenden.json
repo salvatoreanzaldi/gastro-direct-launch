@@ -1,0 +1,182 @@
+{
+  "seo": {
+    "title": "Start a Delivery Service 2026 — Complete Guide | Gastro Master",
+    "description": "Build your own delivery service without Lieferando. Step by step: business registration, costs, ordering system — 0% commission with Gastro Master."
+  },
+  "schema": {
+    "articleHeadline": "Start Your Own Delivery Service — The Complete Guide for 2026",
+    "articleDescription": "Step-by-step guide to building your own delivery service without platform dependency.",
+    "howToName": "Start Your Own Delivery Service — in 4 Steps",
+    "howToDescription": "Step-by-step guide to building your own delivery service without platform dependency — from business registration to your first order.",
+    "howToSteps": [
+      { "name": "Set up your ordering system", "text": "With Gastro Master you get an online shop, app and POS system. No prior knowledge needed, live in 2–3 weeks. 0% commission from the first order." },
+      { "name": "Choose a niche", "text": "Start with one cuisine category, 8–12 dishes and one delivery area. Focus beats a broad offering." },
+      { "name": "Choose a business model", "text": "In-house production, ghost kitchen (kitchen without dining room) or intermediary. A ghost kitchen saves 60–80% on rent." },
+      { "name": "Register your business", "text": "Business registration costs €20–60 and takes just a few days. Additionally: hygiene training (HACCP) and health certificate. No restaurant license needed." }
+    ],
+    "breadcrumbs": [
+      { "name": "Home", "item": "https://gastro-master.de/" },
+      { "name": "Solutions", "item": "https://gastro-master.de/loesungen" },
+      { "name": "Start a Delivery Service", "item": "https://gastro-master.de/loesungen/lieferservice-gruenden" }
+    ]
+  },
+  "hero": {
+    "breadcrumbSolutions": "Solutions",
+    "breadcrumbCurrent": "Start a Delivery Service",
+    "badge": "Start a Delivery Service 2026",
+    "h1": "Start your own delivery service —",
+    "h1Highlight": "without Lieferando, without 30% commission",
+    "subline": "Get your own ordering system — no commission, no prior knowledge needed, live in 2–3 weeks. Just like 800+ restaurant owners before you.",
+    "ctaPrimary": "Request free consultation",
+    "ctaSecondary": "Start a delivery service in 4 steps ↓",
+    "trustPills": ["0% Commission", "800+ Customers", "Live in 2–3 Weeks", "Personal Support"],
+    "definitionLabel": "Definition",
+    "definitionText": "Your own delivery service means: customers order on your website or app. You pay no commission to Lieferando or Wolt.",
+    "definitionHighlight": "You keep 100% of your revenue."
+  },
+  "stats": {
+    "badge": "Market Data",
+    "title": "More and more people order online — this is your opportunity",
+    "subtitle": "The market is growing. Those who start now are ahead of the game.",
+    "items": [
+      { "value": "€6.1B", "label": "Online orders in Germany (2023)", "source": "Statista", "href": "https://de.statista.com/prognosen/642308/online-food-delivery-umsatz-in-deutschland" },
+      { "value": "€9.9B", "label": "Expected revenue by 2028 — 62% growth", "source": "Statista", "href": "https://de.statista.com/prognosen/642308/online-food-delivery-umsatz-in-deutschland" },
+      { "value": "up to 30%", "label": "Commission that Lieferando takes from you", "source": "Berliner Abendblatt", "href": "https://berliner-abendblatt.de/berlin-news/lieferando-hoehere-provisionen-fuer-restaurants-id162852" },
+      { "value": "from €79", "label": "per month — your own ordering system, ready to go", "source": "Gastro Master", "href": "https://gastro-master.de/produkte/webshop" }
+    ],
+    "sourceLabel": "Source:",
+    "cta": "Build your own delivery service now"
+  },
+  "products": {
+    "badge": "Complete Solution · Gastro Master",
+    "title": "Everything you need — from one source",
+    "subtitle": "Five products that work perfectly together. You decide what you need.",
+    "topCards": [
+      { "title": "Online Shop", "alt": "Online ordering shop for gastronomy — 0% commission with Gastro Master", "tagline": "This is what your online shop looks like" },
+      { "title": "Ordering App", "alt": "Custom ordering app for restaurants and delivery services — Gastro Master", "tagline": "Your own ordering app" },
+      { "title": "POS System", "alt": "TSE-compliant POS system for restaurant owners — Gastro Master POS", "tagline": "Your POS system — clear & simple" }
+    ],
+    "bottomCards": [
+      { "title": "Website", "alt": "Professional website for gastronomy — found on Google", "tagline": "Your website — found on Google" },
+      { "title": "Pass on payment fees", "alt": "Transaction surcharge — transparently pass payment fees to customers", "tagline": "Your customers pay the fees — automatically" }
+    ],
+    "moreLabel": "Learn more",
+    "cta": "Get free advice"
+  },
+  "compare": {
+    "badge": "Comparison",
+    "title": "What's better: Your own system or Lieferando?",
+    "subtitle": "Why 800+ restaurant owners switched to their own ordering system",
+    "thCriterion": "Criterion",
+    "thRecommended": "Recommended",
+    "thOwnLabel": "Own Delivery Service",
+    "thOwnSub": "with Gastro Master",
+    "thPlatformLabel": "Lieferando / Wolt / Uber Eats",
+    "rows": [
+      { "label": "Commission per order", "own": "0%", "ownGood": true, "platform": "13–30%", "platformBad": true },
+      { "label": "Customer data belongs to you", "own": "✓ Completely", "ownGood": true, "platform": "✗ Belongs to the platform", "platformBad": true },
+      { "label": "Own brand & app", "own": "✓ Own domain & app", "ownGood": true, "platform": "✗ Platform branding", "platformBad": true },
+      { "label": "Pricing", "own": "✓ Fully flexible", "ownGood": true, "platform": "Limited", "platformBad": false },
+      { "label": "Monthly costs", "own": "from €79/month", "ownGood": true, "platform": "% of revenue (variable)", "platformBad": false },
+      { "label": "Visibility", "own": "Own website & advertising", "ownGood": false, "platform": "✓ On the platform", "platformBad": false },
+      { "label": "Customer reviews", "own": "✓ Direct & complete", "ownGood": true, "platform": "Only via platform", "platformBad": false },
+      { "label": "Support & setup", "own": "✓ Personal (800+ customers)", "ownGood": true, "platform": "Ticket system", "platformBad": false }
+    ],
+    "savingsLabel": "Calculation example",
+    "savingsTitle": "With €3,000 monthly revenue you pay Lieferando",
+    "savingsHighlight": "up to €900 in commission",
+    "savingsTitleSuffix": "— every month.",
+    "savingsText": "With Gastro Master: only €79/month, 0% commission on your orders.",
+    "savingsLink": "See all costs →",
+    "savingsAmountLabel": "What you save per year",
+    "savingsAmount": "€9,852",
+    "savingsAmountSub": "with €3,000 monthly revenue",
+    "savingsCta": "Start now — 0% commission"
+  },
+  "steps": {
+    "headerLabel": "Startup Guide",
+    "title": "Start your own delivery service in 4 steps",
+    "subtitle": "From idea to first order — what you really need",
+    "items": [
+      {
+        "num": "01",
+        "title": "Set up your ordering system",
+        "text": "This is where you decide: commission forever — or 0% from now on? With Gastro Master you get an online shop, app and POS system. No prior knowledge needed, live in 2–3 weeks.",
+        "highlight": "0% commission from the first order. Personal setup assistance.",
+        "featured": true,
+        "products": [
+          { "label": "Online Shop (0% Commission)", "href": "/produkte/webshop" },
+          { "label": "Ordering App", "href": "/produkte/app" },
+          { "label": "Payment Fees", "href": "/produkte/transaktionsumlage" },
+          { "label": "Website", "href": "/produkte/webseite" }
+        ]
+      },
+      {
+        "num": "02",
+        "title": "Choose a niche — don't offer everything",
+        "text": "Focus beats a broad offering. A delivery service for vegan bowls wins regular customers faster than an all-rounder. Start with one cuisine category.",
+        "highlight": "Recommendation: 1 cuisine category, 8–12 dishes, 1 delivery area."
+      },
+      {
+        "num": "03",
+        "title": "Choose a business model",
+        "text": "In-house production, ghost kitchen (kitchen without dining room) or intermediary? A ghost kitchen saves 60–80% on rent.",
+        "highlight": "Ghost kitchen: 60–80% less rent than a traditional restaurant"
+      },
+      {
+        "num": "04",
+        "title": "Register your business",
+        "text": "Business registration costs €20–60 and takes just a few days. You also need hygiene training (HACCP) and a health certificate. No restaurant license needed.",
+        "highlight": "Cost: €20–60. Duration: 1–2 weeks. No driver's license needed."
+      }
+    ]
+  },
+  "trust": {
+    "items": [
+      { "value": "800+", "label": "Gastro businesses trust Gastro Master" },
+      { "value": "5.0 ★", "label": "Customer rating on Google" },
+      { "value": "TSE-compliant", "label": "All systems TSE-certified" },
+      { "value": "Personal Support", "label": "Our team helps directly" }
+    ]
+  },
+  "faq": {
+    "badge": "FAQ",
+    "title": "Frequently asked questions about starting a delivery service",
+    "subtitle": "The questions founders ask Google and AI assistants",
+    "items": [
+      {
+        "q": "Is starting your own delivery service worth it in 2026?",
+        "a": "Yes — according to Statista, the market is growing from €6.1B (2023) to €9.9B by 2028. Those who build their own system early stop paying commission. With a [digital ordering system for gastronomy](/produkte/webshop) you start from €79/month — instead of up to 30% on every order."
+      },
+      {
+        "q": "How much does it cost to start a delivery service?",
+        "a": "That depends on how you want to start. Business registration costs €20–60. For a ghost kitchen (kitchen without dining room), startup costs from €2,000–5,000 are realistic. The ordering system — [online shop](/produkte/webshop) and [your own ordering app](/produkte/app) — costs from €79/month. You save the most money in ongoing operations: no fees of 13–30% on every order. Find all costs in the [complete pricing overview](/preise)."
+      },
+      {
+        "q": "Do I need a restaurant to start a delivery service?",
+        "a": "No. You can start as a ghost kitchen — a kitchen without a dining room, only for deliveries. This saves a lot of rent and makes starting cheaper. You only need a business registration and must comply with food hygiene regulations. If you have an existing restaurant, find suitable solutions on the [restaurant page](/loesungen/restaurant)."
+      },
+      {
+        "q": "How much commission does Lieferando charge?",
+        "a": "Lieferando charges 13% commission if you have your own drivers. With Lieferando drivers, it goes up to 30% per order. Wolt and Uber Eats charge similarly at 15–30%. Source: Berliner Abendblatt. With your [own delivery service without commission](/loesungen/lieferdienst) you pay a fixed monthly fee instead — no deductions on every order."
+      },
+      {
+        "q": "What permits do I need for a delivery service?",
+        "a": "You need: (1) Business registration at the trade office (€20–60), (2) Hygiene training (HACCP) — available online, approx. €20–50, (3) Health certificate for everyone who works with food (approx. €30). You don't need a restaurant license if you only deliver. Our team advises you for free — just contact us via the [contact form](/kontakt)."
+      }
+    ]
+  },
+  "cta": {
+    "badge": "Free Consultation",
+    "title": "We'll help you",
+    "titleHighlight": "start your delivery service",
+    "subtitle": "800+ restaurant owners stopped paying commission. We'll show you what you need — free and without obligation.",
+    "button": "Book a free consultation",
+    "trustItems": [
+      { "value": "0%", "label": "Commission" },
+      { "value": "800+", "label": "Active Customers" },
+      { "value": "5.0 ★", "label": "Google Rating" },
+      { "value": "Personal", "label": "Support" }
+    ]
+  }
+}

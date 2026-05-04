@@ -1,0 +1,214 @@
+{
+  "seo": {
+    "title": "Servizio di consegna senza Lieferando — 0 % di commissione | Gastro Master",
+    "description": "Ha gia il Suo ristorante? Ora consegna anche a domicilio — senza Lieferando e senza commissioni. Sistema di ordinazione proprio, app per i corrieri e app nello store. Richieda una consulenza gratuita."
+  },
+  "schema": {
+    "headline": "Servizio di consegna proprio senza Lieferando — 0 % di commissione per ristoranti e servizi di consegna",
+    "description": "Configurare il servizio di consegna senza Lieferando: sistema di ordinazione proprio, 0 % di commissione, app per i corrieri con GPS. Per ristoranti, tavole calde e pizzerie esistenti. A partire da 69 EUR/mese."
+  },
+  "hero": {
+    "badge": "Servizio di consegna · Attivita esistenti 2026",
+    "title1": "Ha gia il Suo locale.",
+    "titleHighlight": "Ora consegna anche a domicilio.",
+    "subtitle1": "La Sua cucina e gia pronta. I Suoi clienti abituali anche.",
+    "subtitle2": "Con Gastro Master li raggiunge anche a casa — senza Lieferando, senza commissioni.",
+    "cta": "Consulenza gratuita",
+    "scrollLink": "Come funziona ↓",
+    "pills": ["800+ attivita", "0 % commissione", "App propria", "Supporto personale"],
+    "geoTitle": "Cosa significa servizio di consegna proprio?",
+    "geoText": "Un <strong>servizio di consegna proprio</strong> significa: i Suoi clienti ordinano direttamente da Lei — tramite il Suo shop di ordinazione o la Sua app. Non paga commissioni a Lieferando, Wolt o Uber Eats. I dati dei clienti appartengono a Lei. Decide autonomamente prezzi, zone di consegna e orari di apertura. Gastro Master fornisce l'intera tecnologia — a partire da 69 EUR al mese, senza costi nascosti.",
+    "newcomerText": "Non ha ancora un locale proprio?",
+    "newcomerLink": "Ecco la nostra guida per fondatori →"
+  },
+  "stats": {
+    "title": "Il mercato cresce — e Lieferando ne approfitta",
+    "text": "I numeri parlano chiaro: chi consegna ora, vince. Chi continua a pagare commissioni, perde.",
+    "items": [
+      {
+        "value": "9,9 mld. EUR",
+        "label": "fatturato previsto nel mercato delle consegne online in Germania entro il 2028",
+        "source": "Statista",
+        "href": "https://de.statista.com/prognosen/642308/online-food-delivery-umsatz-in-deutschland"
+      },
+      {
+        "value": "9,41 %",
+        "label": "crescita annuale nel mercato delle consegne online 2025–2028 — il mercato continua a crescere",
+        "source": "Statista",
+        "href": "https://de.statista.com/outlook/dmo/online-food-delivery/deutschland"
+      },
+      {
+        "value": "fino al 30 %",
+        "label": "di commissione trattiene Lieferando per ogni ordine — e il Suo profitto che sta cedendo",
+        "source": "metro.de",
+        "href": "https://www.metro.de/blog/lieferdienste"
+      },
+      {
+        "value": "0 % commissione",
+        "label": "con il Suo sistema di ordinazione — nemmeno un centesimo a Lieferando",
+        "source": "Gastro Master",
+        "href": "/kontakt",
+        "isCta": true
+      }
+    ],
+    "ctaText": "Richieda una consulenza gratuita"
+  },
+  "problem": {
+    "badge": "Molti ristoratori lo conoscono bene",
+    "title": "Ha gia clienti abituali — ma li raggiunge anche a casa?",
+    "text": "Questi tre problemi ostacolano il Suo servizio di consegna.",
+    "items": [
+      {
+        "title": "Telefono e foglietti",
+        "text": "I clienti chiamano. Lei scrive tutto su foglietti. Si verificano errori. Gli ordini vanno persi. Questo Le costa tempo e denaro."
+      },
+      {
+        "title": "30 % di commissione a Lieferando",
+        "text": "E su Lieferando — ma la piattaforma trattiene il 30 % di ogni ordine. Con 3.000 EUR di fatturato perde fino a 900 EUR al mese."
+      },
+      {
+        "title": "La tecnologia e poco chiara",
+        "text": "Vuole consegnare autonomamente, ma non sa come. App propria, shop proprio — sembra complicato. Non lo e. Lo facciamo noi per Lei."
+      }
+    ]
+  },
+  "products": {
+    "badge": "Come consegnare autonomamente — senza Lieferando",
+    "title": "Il Suo sistema. Tutto da un unico fornitore.",
+    "text": "Dall'ordinazione alla consegna — configuriamo tutto per Lei.",
+    "featured": {
+      "badge": "Prodotto principale",
+      "category": "Online Shop",
+      "title": "Il Suo shop di ordinazione. 0 % di commissione.",
+      "text": "I Suoi clienti ordinano direttamente da Lei — tramite il Suo shop, con il Suo logo. Non paga commissioni a Lieferando. Ogni ordine e Suo al 100 %. Configuriamo lo shop — con il Suo menu, i Suoi prezzi, le Sue zone di consegna.",
+      "tags": ["0 % commissione", "Il Suo branding", "Zone di consegna", "Prezzi propri", "Da 69 EUR/mese"],
+      "linkText": "Visualizza l'Online Shop",
+      "imgAlt": "Shop di ordinazione online"
+    },
+    "cards": [
+      {
+        "title": "Sistema App",
+        "tagline": "La Sua app nell'App Store. I clienti abituali ordinano con un clic.",
+        "features": [
+          "Notifiche push — direttamente sullo smartphone dei Suoi clienti",
+          "Il Suo logo e i Suoi colori nell'app",
+          "Pagamento online direttamente nell'app",
+          "Menu aggiornabile in qualsiasi momento"
+        ]
+      },
+      {
+        "title": "Sistema di cassa",
+        "tagline": "Tutti gli ordini arrivano direttamente in cassa. Con il sistema di cassa puo utilizzare anche l'app per i corrieri — i Suoi corrieri vedono percorsi e ordini direttamente sullo smartphone."
+      },
+      {
+        "title": "Sito web",
+        "tagline": "Affinche i nuovi clienti trovino il Suo ristorante su Google."
+      },
+      {
+        "title": "Commissioni di pagamento",
+        "tagline": "Commissioni di pagamento? Possono essere a carico dei Suoi clienti."
+      }
+    ],
+    "cta": "Richieda una consulenza gratuita",
+    "moreFeatures": "Visualizza tutte le funzionalita",
+    "moreInfo": "Scopra di piu"
+  },
+  "compare": {
+    "badge": "Confronto",
+    "title": "Perche un sistema proprio invece di Lieferando?",
+    "text": "Gastro Master vs. Lieferando, Wolt e Uber Eats — il confronto diretto.",
+    "colHeader": "Cosa conta",
+    "colGmBadge": "Consigliato",
+    "colGm": "Gastro Master",
+    "colGmSub": "Sistema proprio",
+    "colPlatform": "Lieferando / Wolt / Uber Eats",
+    "rows": [
+      { "label": "Commissione per ordine", "gm": "0 %", "platform": "dal 13 al 30 %" },
+      { "label": "Il Suo design", "gm": "✓ Si", "platform": "✗ No" },
+      { "label": "I dati dei clienti sono Suoi", "gm": "✓ Si", "platform": "✗ No" },
+      { "label": "App propria nell'App Store", "gm": "✓ Disponibile", "platform": "✗ Non possibile" },
+      { "label": "Decide tutto Lei", "gm": "✓ Sempre", "platform": "✗ Decide la piattaforma" },
+      { "label": "Costi mensili di base", "gm": "Da 69 EUR/mese", "platform": "Nessuno — ma commissioni" }
+    ],
+    "calcBadge": "Esempio di calcolo",
+    "calcTitle": "Con 3.000 EUR di fatturato mensile paga a Lieferando",
+    "calcHighlight": "fino a 900 EUR",
+    "calcTitleEnd": "di commissione — ogni mese.",
+    "calcText1": "Con Gastro Master:",
+    "calcText2": "0 EUR",
+    "calcText3": "di commissione. Sono",
+    "calcText4": "10.800 EUR all'anno",
+    "calcText5": " che restano a Lei.",
+    "calcCta": "Consulenza gratuita"
+  },
+  "process": {
+    "badge": "E cosi semplice",
+    "title": "Il Suo servizio di consegna in 3 passi",
+    "text": "Non servono competenze tecniche. Facciamo tutto noi per Lei.",
+    "steps": [
+      {
+        "num": "01",
+        "title": "Colloquio gratuito",
+        "text": "Analizziamo la Sua attivita. Nessuna pressione. Nessun costo."
+      },
+      {
+        "num": "02",
+        "title": "Configuriamo tutto noi",
+        "text": "Shop, app e cassa — tutto pronto con il Suo branding. Non deve fare nulla da solo."
+      },
+      {
+        "num": "03",
+        "title": "Inizia a consegnare",
+        "text": "Il Suo servizio di consegna e attivo. Continuiamo ad assisterLa quando ne ha bisogno."
+      }
+    ]
+  },
+  "trust": {
+    "headline": "Oltre 800 attivita gastronomiche consegnano gia con Gastro Master",
+    "items": [
+      { "value": "800+", "label": "Attivita in Germania e Austria" },
+      { "value": "5,0 ★", "label": "Valutazione Google" },
+      { "value": "0 %", "label": "Commissione — ogni ordine e Suo" },
+      { "value": "App propria", "label": "Nell'App Store — con il Suo logo" }
+    ]
+  },
+  "epitPay": {
+    "title": "Epit Pay",
+    "badge": "In arrivo",
+    "text": "Presto non avra piu bisogno di un fornitore di pagamenti esterno. Con Epit Pay riceve sistema di ordinazione e gestione dei pagamenti da un unico fornitore. Tutto insieme — semplice."
+  },
+  "faq": {
+    "title": "Domande frequenti sul servizio di consegna proprio",
+    "text": "Risposte semplici — per iniziare subito.",
+    "items": [
+      {
+        "q": "Come posso offrire un servizio di consegna nel mio ristorante?",
+        "a": "Ha bisogno di un [sistema di ordinazione online](/produkte/webshop). Con esso i Suoi clienti possono ordinare direttamente da Lei. Gastro Master lo configura per Lei — con il Suo logo, i Suoi colori, il Suo menu. Tutto funziona tramite il Suo sistema. Nessuna commissione a Lieferando. Maggiori informazioni sulla [soluzione per il servizio di consegna](/loesungen/lieferdienst)."
+      },
+      {
+        "q": "Quanto costa un sistema di ordinazione proprio per servizi di consegna?",
+        "a": "Lo [shop di ordinazione di Gastro Master](/produkte/webshop) costa a partire da 79 EUR al mese. Il Suo shop e configurato con il Suo branding. Non paga commissioni — ogni ordine e Suo al 100 %. Configuriamo tutto per Lei. Non deve programmare nulla."
+      },
+      {
+        "q": "Quanta commissione trattiene Lieferando?",
+        "a": "Lieferando trattiene il 13 % se ha corrieri propri. Con i corrieri di Lieferando si arriva fino al 30 %. Con 3.000 EUR di fatturato mensile paga fino a 900 EUR di commissione — ogni mese. Sono soldi che potrebbe tenere per se."
+      },
+      {
+        "q": "Conviene un servizio di consegna proprio invece di Lieferando?",
+        "a": "Si — soprattutto se ha gia clienti abituali. I Suoi clienti abituali ordinano volentieri direttamente da Lei. Mantiene tutti i dati, mantiene il controllo. E non paga commissioni. Soprattutto per piatti con basso costo delle materie prime — ad esempio pizza o sushi — un [servizio di consegna](/loesungen/lieferdienst) proprio conviene molto."
+      },
+      {
+        "q": "Ho bisogno di un'app propria per il mio servizio di consegna?",
+        "a": "Non necessariamente. Lo [shop di ordinazione](/produkte/webshop) funziona anche senza app — nel browser, sullo smartphone. Ma un'[app](/produkte/app) propria ha un grande vantaggio: i clienti abituali ordinano con un clic. Vedono il Suo logo sul loro smartphone. Questo rafforza il legame con il Suo ristorante."
+      }
+    ]
+  },
+  "cta": {
+    "badge": "Consulenza gratuita",
+    "title": "La aiutiamo ad avviare il Suo servizio di consegna.",
+    "text1": "Shop, app, cassa — configuriamo tutto noi.",
+    "text2": "0 % commissione. Il Suo branding. I Suoi clienti.",
+    "button": "Prenoti un colloquio gratuito",
+    "pills": ["0 % commissione", "800+ attivita", "5,0 ★ Google", "Supporto personale"]
+  }
+}

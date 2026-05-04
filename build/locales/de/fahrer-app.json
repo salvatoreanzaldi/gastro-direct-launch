@@ -1,0 +1,87 @@
+{
+  "meta": {
+    "title": "Fahrer-App mit GPS für Lieferdienste — Live-Tracking & Routenplanung | Gastro Master",
+    "description": "Die Fahrer-App von Gastro Master: Live-GPS-Tracking, Routen-Optimierung, Push-Benachrichtigungen und Offline-Modus. Für Pizzerien, Lieferdienste & Restaurants in Berlin, München, Hamburg, Frankfurt. Spart bis zu 2 Stunden pro Fahrer und Tag.",
+    "breadcrumbName": "Fahrer-App mit GPS"
+  },
+  "hero": {
+    "badge": "Add-On · Lieferdienst",
+    "headline": "Fahrer-App mit GPS — jede Lieferung in deiner Kasse verfolgen",
+    "subline": "Live-GPS-Tracking, optimierte Routen und Push-Benachrichtigungen in einer App. Dein Team liefert schneller, deine Kunden sehen den Fahrer in Echtzeit — und du sparst bis zu 2 Stunden pro Fahrer und Tag."
+  },
+  "problem": {
+    "title": "Das Problem klassischer Lieferdienste",
+    "points": [
+      "Fahrer suchen sich Routen selbst — Umwege, doppelte Strecken, kalte Pizza beim Kunden. Dabei sind die Lieferkosten unnötig hoch.",
+      "Fahrer machen Pausen auf deine Kosten — du hast keine Kontrolle über die Auslastung und Effizienz deines Teams.",
+      "Disposition per Zettel oder WhatsApp. Fehler, Missverständnisse, verlorene Bestellungen."
+    ]
+  },
+  "solution": {
+    "title": "Die Lösung: Fahrer-App mit GPS",
+    "points": [
+      "Automatische Routenplanung — die App bündelt Bestellungen und optimiert die Reihenfolge.",
+      "Kunde sieht den Fahrer live auf der Karte. Keine Nachfragen, weniger Support-Aufwand.",
+      "Klare Zuordnung: Jede Bestellung wird genau dem Fahrer zugeordnet. Sicherheit für Restaurant und Fahrer. Kein Streit über verdiente Vergütung."
+    ]
+  },
+  "features": {
+    "headline": "Alles drin für einen Lieferdienst, der wirklich skaliert",
+    "sub": "Acht Funktionen, die aus deinem Team einen durchgetakteten Liefer-Apparat machen.",
+    "items": [
+      { "title": "Live-GPS-Tracking", "description": "Jeder Fahrer in Echtzeit auf der Karte — für Disposition, Kunde und Auswertung. Genauigkeit auf wenige Meter." },
+      { "title": "Routen-Optimierung", "description": "Mehrere Bestellungen werden automatisch nach Richtung gebündelt. Bis zu 30 % weniger Kilometer pro Tour." },
+      { "title": "Turn-by-Turn Navigation", "description": "Eingebaute Navigation mit Google Maps — Fahrer navigiert mit der bewährten Mapping-Lösung." },
+      { "title": "Fahrer-Disposition", "description": "Dispatcher sieht alle Fahrer, ihre Routen und Auslastung auf einem zentralen Dashboard. Volle Kontrolle über dein Team." },
+      { "title": "Transparente Fahrerabrechnung", "description": "Kilometergeld, Auftragsvergütung und Stundenlohn werden individuell pro Fahrer eingetragen und automatisch ausgerechnet. Klare Abrechnung am Abend — keine Diskussionen." },
+      { "title": "WhatsApp Benachrichtigungen", "description": "Fahrer erhalten sofort eine WhatsApp-Nachricht, wenn eine neue Fahrt ansteht. Schnelle, zuverlässige Kommunikation — niemand verpasst einen Auftrag." }
+    ]
+  },
+  "useCases": {
+    "headline": "So setzen Gastronomen die Fahrer-App ein",
+    "sub": "Drei reale Szenarien aus unserem Kundenkreis — vom Familien-Lieferdienst bis zur Multi-Standort-Kette.",
+    "items": [
+      { "title": "Pizzeria mit 3 Fahrern", "story": "Eine Münchner Pizzeria nutzt die Fahrer-App. Ergebnis: 20 % mehr Bestellungen pro Abend — weil Fahrer effizientere Touren fahren und Kunden weniger stornieren." },
+      { "title": "Multi-Standort Betrieb", "story": "Ein Lieferdienst mit mehreren Filialen aktiviert die Fahrer-App und erhält für jeden Standort einen separaten Zugang. Zentrale Kontrolle aller Fahrer und Standorte auf einem Dashboard — perfekt für Wachstum ohne Komplexität." },
+      { "title": "Fahrrad-Kurier im Innenstadtbereich", "story": "Ein Veggie-Lieferdienst in Berlin-Mitte fährt mit E-Bikes. Die GPS-App optimiert Routen nach Fahrradwegen — Fahrer schaffen 6 statt 4 Lieferungen pro Stunde, ohne gestresst zu sein." }
+    ]
+  },
+  "trust": {
+    "stats": [
+      { "value": "2 h", "label": "Zeitersparnis pro Fahrer und Tag" },
+      { "value": "−30 %", "label": "weniger gefahrene Kilometer dank Routen-Bündelung" },
+      { "value": "98 %", "label": "der Kunden nutzen das Live-Tracking statt Rückruf" }
+    ],
+    "testimonial": {}
+  },
+  "pricing": {
+    "headline": "Preis & Verfügbarkeit",
+    "price": "+10 € / Monat pro Fahrer",
+    "note": "Kassen-Add-On für Betriebe mit eigenem Lieferdienst. Abgerechnet pro aktivem Fahrer-Account und Monat, zzgl. MwSt. Inklusive Echtzeit-GPS-Tracking, automatischer Routenoptimierung und Dispositionsübersicht direkt im Kassensystem — ohne Gebühren pro Lieferung oder gefahrenem Kilometer."
+  },
+  "appDownload": {
+    "appName": "GastroMaster Fahrer",
+    "headline": "Fahrer-App jetzt kostenlos laden",
+    "sub": "Die App läuft auf jedem iOS- und Android-Smartphone — kein neues Gerät nötig. Einloggen, Route sehen, losfahren."
+  },
+  "internalLinks": {
+    "headline": "Funktioniert perfekt mit",
+    "intro": "Die Fahrer-App entfaltet ihre volle Wirkung als Teil des Gastro-Master-Ökosystems — vom ersten Click bis zur Übergabe an der Haustür.",
+    "items": [
+      { "title": "Kassensystem", "description": "Bestellung geht direkt vom Kassensystem in die Fahrer-App — ohne manuelles Zuweisen, ohne Zettelwirtschaft." },
+      { "title": "Lösung für Lieferdienste", "description": "Komplettpaket aus Webshop, Kasse, Fahrer-App und Dispatcher-Dashboard — speziell für Pizza-, Sushi- und Burger-Lieferdienste." }
+    ]
+  },
+  "faq": {
+    "headline": "Häufige Fragen zur Fahrer-App mit GPS",
+    "sub": "Antworten auf die Fragen, die uns Lieferdienste aus Berlin, München, Hamburg, Köln, Frankfurt, Stuttgart und dem gesamten DACH-Raum am häufigsten stellen.",
+    "items": [
+      { "q": "Was kostet die Fahrer-App für mein Restaurant?", "a": "Die Fahrer-App mit GPS ist ein Kassen-Add-On und kostet 10 € pro Monat und aktivem Fahrer (zzgl. MwSt.). Inklusive Echtzeit-GPS-Tracking, automatischer Routenoptimierung und Dispositionsübersicht direkt im Kassensystem. Es fallen keine zusätzlichen Gebühren pro Lieferung oder pro gefahrenem Kilometer an — du zahlst ausschließlich für tatsächlich aktive Fahrer." },
+      { "q": "Auf welchen Geräten läuft die Fahrer-App?", "a": "Die App läuft auf allen aktuellen iOS- und Android-Smartphones. Kein spezielles Gerät nötig — die Fahrer können ihr privates Handy nutzen. Empfohlen wird iOS 14+ oder Android 9+, damit GPS-Tracking und Push-Benachrichtigungen zuverlässig funktionieren." },
+      { "q": "Wie genau ist das GPS-Tracking?", "a": "Das Live-GPS ist auf wenige Meter genau und aktualisiert die Fahrerposition alle 5–15 Sekunden (abhängig von Netzqualität und Batterie-Einstellung). In der Fahrer-App landen alle Bestellungen zentral — ob sie von Lieferando, Wolt, Uber Eats oder direkt aus Gastro Master kommen. Ein einziges System für alle Plattformen." },
+      { "q": "Wie wird die Fahrer-App mit meinem Kassensystem verbunden?", "a": "Wenn du bereits ein Gastro-Master-Kassensystem nutzt, ist die Fahrer-App sofort einsatzbereit — Bestellungen landen automatisch in der App, sobald sie an der Kasse als Lieferung markiert werden. Kein separates Setup, keine Integration, keine Entwickler notwendig." },
+      { "q": "Kann ich sehen, wie viele Kilometer meine Fahrer gefahren sind?", "a": "Ja. Im Dispatcher-Dashboard findest du detaillierte Auswertungen pro Fahrer, pro Schicht und pro Lieferung: Kilometer, Fahrtzeit und Anzahl Lieferungen. Ideal für Abrechnung, Bonus-Systeme und Kostenkontrolle." },
+      { "q": "Ist die Nutzung der App DSGVO-konform?", "a": "Ja. Die Fahrer-App ist vollständig DSGVO-konform. Standortdaten werden nur während aktiver Schichten erfasst und nach Schichtende gelöscht oder anonymisiert. Datenverarbeitung erfolgt auf deutschen Servern." }
+    ]
+  }
+}

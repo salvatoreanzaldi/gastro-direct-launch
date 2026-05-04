@@ -1,0 +1,1 @@
+const s="/assets/Hero%20-%20Webshop-CiX9vKHP.png",e="/assets/Loesung%20-%20Bestell-App-C64WZbjH.png",n="/assets/Loesung%20-%20Kasse-CqkydtSS.png",a="/assets/Loesung%20-%20Webpage-D7h9AbvH.png",g="/assets/Loesung%20-%20Zahlungsgebu%CC%88hren-YsoHritf.png";export{e as a,n as b,a as c,g as d,s as i};

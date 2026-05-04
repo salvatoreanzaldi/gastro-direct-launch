@@ -1,0 +1,889 @@
+{
+  "sourceLabel": "Source",
+  "nav": {
+    "produkte": "Products",
+    "loesungen": "Solutions",
+    "preise": "Pricing",
+    "ueberUns": "About Us",
+    "rechner": "Calculator",
+    "referenzen": "Results",
+    "faq": "FAQ",
+    "cta": "Get Free Consultation",
+    "alleProdukte": "All Products",
+    "prodCategories": [
+      {
+        "label": "Packages",
+        "desc": "Shop, App, Website & POS"
+      },
+      {
+        "label": "Add-Ons",
+        "desc": "Extensions for your setup"
+      },
+      {
+        "label": "Hardware",
+        "desc": "Devices, printers & displays"
+      }
+    ],
+    "prodSubPakete": [
+      {
+        "label": "Online Shop",
+        "desc": "0% commission, own domain"
+      },
+      {
+        "label": "App System",
+        "desc": "iOS & Android App"
+      },
+      {
+        "label": "Website",
+        "desc": "Professional & fast"
+      },
+      {
+        "label": "POS System",
+        "desc": "TSE-compliant, cloud POS"
+      }
+    ],
+    "prodSubAddons": [
+      {
+        "label": "Transaction Fee",
+        "desc": "Pass fees to customers"
+      },
+      {
+        "label": "QR-Code Flyer",
+        "desc": "Order flyers for tables"
+      },
+      {
+        "label": "Driver App GPS",
+        "desc": "Track deliveries live"
+      },
+      {
+        "label": "QR Table System",
+        "desc": "Order straight from the table"
+      },
+      {
+        "label": "Kitchen Display",
+        "desc": "Kitchen & pickup screens"
+      },
+      {
+        "label": "Kiosk",
+        "desc": "Self-order terminal"
+      }
+    ],
+    "loesItems": [
+      {
+        "label": "Start Delivery Service",
+        "desc": "Build your own service"
+      },
+      {
+        "label": "Franchise",
+        "desc": "Your brand, your system"
+      },
+      {
+        "label": "Restaurant",
+        "desc": "Table, bar & POS combined"
+      },
+      {
+        "label": "Delivery Service",
+        "desc": "Driver app & delivery zones"
+      },
+      {
+        "label": "Café & Bakery",
+        "desc": "Quick & easy start"
+      },
+      {
+        "label": "Ghost Kitchen",
+        "desc": "Multi-brand, 0% commission"
+      }
+    ]
+  },
+  "seo": {
+    "indexTitle": "Gastro Master – More Profit Through Direct Orders",
+    "indexDescription": "Your own webshop & app for the restaurant industry. 0% commission. More direct orders. 800+ happy clients."
+  },
+  "heroScroll": {
+    "badge": "The Next-Gen Restaurant System",
+    "title1": "Your Restaurant.",
+    "title2": "Zero Commission.",
+    "cyclingWords": [
+      "Your Rules.",
+      "Your Profit.",
+      "Your Revenue.",
+      "Your Freedom.",
+      "Your Success.",
+      "Your Future."
+    ],
+    "subPrefix": "Gastro Master gives you full control —",
+    "linkWebshop": "online ordering system",
+    "linkKasse": "POS",
+    "subSuffix": "pickup screen and more. All in one. No hidden fees.",
+    "discoverMore": "↓ Discover More ↓"
+  },
+  "hero": {
+    "headline": "Stop Paying Commission on Your Own Revenue.",
+    "sub": "Your own branded online shop & app — so customers order directly from you. Zero platform fees. More profit from day one.",
+    "cta": "Get Free Consultation",
+    "trust1": "5.0 Stars on Google",
+    "trust2": "800+ Clients",
+    "trust3": "0% Commission"
+  },
+  "problem": {
+    "headline1": "You Do All the Work.",
+    "headline2": "The Platform Keeps the Profit.",
+    "sub": "Every order through Deliveroo, Uber Eats, or Just Eat costs you money. You take the risk, do the work — and a huge chunk of your revenue goes straight to the platform.",
+    "items": [
+      "You pay up to 30% commission — on your own revenue.",
+      "Your customer data belongs to the platform, not you.",
+      "You're just one of thousands of competing listings.",
+      "You have zero control over pricing, marketing or visibility.",
+      "Your margins shrink while the platform keeps growing."
+    ]
+  },
+  "solution": {
+    "badge": "The Solution",
+    "headline1": "Your Own Shop.",
+    "headline2": "Your Own App.",
+    "sub": "With Gastro Master you get a complete ordering system under your own brand — with 0% commission on every single order.",
+    "cta": "Get Free Consultation",
+    "learnMore": "Learn More",
+    "features": [
+      {
+        "title": "Your Own Webshop",
+        "text": "Your branding, your domain, your design — fully customised to your restaurant."
+      },
+      {
+        "title": "Your Own App",
+        "text": "Native iOS & Android app on the App Store & Google Play with push notifications."
+      },
+      {
+        "title": "Your Own Payments",
+        "text": "PayPal, Stripe, card payments — you stay in full control of your money."
+      },
+      {
+        "title": "Your Brand, Front & Centre",
+        "text": "No platform logo. Customers order from you — not from a marketplace."
+      }
+    ]
+  },
+  "diff": {
+    "headline": "Why Gastro Master?",
+    "sub": "We're not just another software vendor. We're your dedicated partner — with real support, flexibility and complete control in your hands.",
+    "features": [
+      {
+        "title": "WhatsApp Support",
+        "text": "A dedicated point of contact — no ticket queues, no waiting."
+      },
+      {
+        "title": "Phone Support",
+        "text": "Call us whenever you need help. A real person answers."
+      },
+      {
+        "title": "Cancel Anytime",
+        "text": "3-month notice period. No long-term lock-in."
+      },
+      {
+        "title": "Pay Only After Launch",
+        "text": "Your first payment isn't due until your system is live."
+      },
+      {
+        "title": "PayPal & Stripe Setup",
+        "text": "We handle the full payment provider setup for you."
+      },
+      {
+        "title": "Full Control",
+        "text": "Your logins, your data, your payments — always."
+      }
+    ]
+  },
+  "positioning": {
+    "headline1": "You Do the Work.",
+    "headline2": "The Platform Takes a Cut.",
+    "sub": "Delivery platforms cost you thousands every month in commissions. Every direct order through your own shop is pure profit that stays with you.",
+    "items": [
+      {
+        "title": "The Platform Always Takes a Cut",
+        "text": "Every Deliveroo or Uber Eats order costs you 15–30% in commission. That's your profit — and you've earned it."
+      },
+      {
+        "title": "Same Effort, Lower Margins",
+        "text": "You cook, you deliver, you take the risk — but the platform profits from every order. It doesn't have to be this way."
+      },
+      {
+        "title": "Direct Orders = Pure Profit",
+        "text": "Every order through your own shop stays 100% with you. No commission. No dependency. More profit per order."
+      }
+    ]
+  },
+  "process": {
+    "badge": "How It Works",
+    "headline": "Our Process",
+    "sub": "From your first conversation to a fully live system — we guide you personally through every single step.",
+    "cta": "Book Your Free Call",
+    "steps": [
+      {
+        "title": "Free Strategy Call",
+        "text": "Get in touch — we'll learn about your restaurant and give you honest, no-obligation advice."
+      },
+      {
+        "title": "Strategy & Planning",
+        "text": "Together we plan your setup: webshop, app, POS — tailored exactly to your business."
+      },
+      {
+        "title": "Menu & Setup",
+        "text": "Send us your menu and details — we handle the entire setup from start to finish."
+      },
+      {
+        "title": "Your System Goes Live",
+        "text": "Typically live within 2–3 weeks — fully set up and ready to take orders."
+      }
+    ]
+  },
+  "trust": {
+    "reviews": "5.0 from 130 Google Reviews",
+    "headline": "800+ Restaurants Trust Gastro Master",
+    "sub": "From single-location independents to multi-brand chains — Gastro Master is the ordering system for restaurants that want to own their success."
+  },
+  "references": {
+    "badge": "What Our Clients Say",
+    "headline": "Real results from restaurants that made the switch.",
+    "items": [
+      {
+        "name": "TAKE – The Good Food",
+        "type": "Multi-Location, Düsseldorf & Mönchengladbach",
+        "quote": "Since switching to Gastro Master, we've seen significantly more direct orders. The app and webshop work flawlessly — and the personal support is worth its weight in gold."
+      },
+      {
+        "name": "Pizzeria Il Sorriso",
+        "type": "Single Location",
+        "quote": "Finally — no more platform commissions. Setup was fast and smooth. We can't recommend Gastro Master enough."
+      },
+      {
+        "name": "Kojo Sushi",
+        "type": "Premium Delivery",
+        "quote": "Our customers now order directly through our app. It saves us real money every month and we have full control over our business."
+      }
+    ]
+  },
+  "momentum": {
+    "badge": "Since 2021",
+    "headline": "5 Years of Momentum",
+    "sub": "From our first client to our own payment system — we're building the future of the restaurant industry.",
+    "outro": "We're forward-thinking, agile and building software that genuinely moves restaurants forward.",
+    "outroLabel": "Up Next",
+    "milestones": [
+      {
+        "year": "2021",
+        "title": "Day One & Founded",
+        "text": "Laying the foundation for a new era of restaurant technology"
+      },
+      {
+        "year": "2022",
+        "title": "First 100 Clients",
+        "text": "Building trust — one restaurant at a time"
+      },
+      {
+        "year": "2023",
+        "title": "Epit Global GmbH Founded",
+        "text": "Structures for growth and international scaling"
+      },
+      {
+        "year": "2024",
+        "title": "First 500 Clients",
+        "text": "A strong network of hospitality partners across Germany"
+      },
+      {
+        "year": "2025",
+        "title": "Our Own POS System",
+        "text": "Cloud POS, self-order, pick-up screen — all in one platform"
+      },
+      {
+        "year": "2026",
+        "title": "Own Payment Processing (Epit Pay)",
+        "text": "Full control over payments — our next major milestone"
+      }
+    ]
+  },
+  "risk": {
+    "headline": "Switching Is Easier Than You Think",
+    "sub": "We remove all the risk and personally guide you through every step of the process.",
+    "cta": "Get Free Consultation",
+    "items": [
+      {
+        "title": "Zero Risk to Get Started",
+        "text": "Your first payment isn't due until your system is live. You pay nothing beforehand."
+      },
+      {
+        "title": "Fast Go-Live",
+        "text": "We handle setup, design and configuration. You stay focused on running your restaurant."
+      },
+      {
+        "title": "Personal Guidance",
+        "text": "From day one you have a dedicated contact — no anonymous ticket system, ever."
+      }
+    ]
+  },
+  "switchOffer": {
+    "badge": "Switch Offer",
+    "headline": "50% Off When You Switch",
+    "sub": "Still locked into a contract with another provider? No problem — pay just half price with us while your old subscription runs out.",
+    "cta": "Claim This Offer"
+  },
+  "partner": {
+    "badge": "Integrations & Infrastructure",
+    "headline": "Trusted Partners for Payments & Operations",
+    "sub": "Seamlessly connected with the most important payment, delivery and POS systems in the industry."
+  },
+  "mockup": {
+    "badge": "Live in Action",
+    "headline": "This Is What Your App Looks Like",
+    "sub": "Real screenshots from TAKE – The Good Food. Multi-location, branded app, own webshop — powered by Gastro Master.",
+    "tabs": [
+      "Home Screen",
+      "Menu & Ordering",
+      "Location Overview",
+      "Order Type",
+      "Customer Account"
+    ]
+  },
+  "pickup": {
+    "badge": "Digital Experience",
+    "headline1": "Your Screen.",
+    "headline2": "Your Appetite Starter.",
+    "sub": "Show your guests current offers, daily specials and highlights directly on your TV monitor. Visually compelling, always up to date — all controlled through your POS system.",
+    "featureTitle": "Pick-Up Screen & Digital Menu",
+    "features": [
+      "Drive attention and increase revenue",
+      "Visually highlight offers & deals"
+    ],
+    "cta": "Learn More"
+  },
+  "video": {
+    "badge": "Client Stories",
+    "headline": "What Our Partners Say",
+    "sub": "Real restaurateurs. Real results. Real recommendations.",
+    "items": [
+      {
+        "name": "Kojo Sushi",
+        "person": "Ha Lim Lee",
+        "quote": "Online ordering is the future — and we want to be part of it on our own terms."
+      },
+      {
+        "name": "Pizzeria il Sorriso",
+        "person": "Marco Greco",
+        "quote": "The support is simply outstanding — you won't find anything like it anywhere else!"
+      },
+      {
+        "name": "Artemis Grill",
+        "person": "Georgios Madatsidis",
+        "quote": "Every order, the money hits my account immediately. With Gastro Master everything is flexible."
+      },
+      {
+        "name": "Nevada Burger & Steak",
+        "person": "Milad Ismail",
+        "quote": "I receive the money in my account instantly with every order. Everything at Gastro Master is flexible."
+      },
+      {
+        "name": "61 Burger & More",
+        "person": "Sven Heinrich",
+        "quote": "You get fast and great WhatsApp support here and the ability to structure your business."
+      }
+    ]
+  },
+  "transaktion": {
+    "badge": "Optional Add-on for Shop & App",
+    "headline": "Protect Your Margins with Transaction Pass-Through",
+    "sub": "Strategically pass on payment fees to customers — and protect every euro of your margin. Your own PayPal and Stripe account, full control over your money.",
+    "cta": "Get Free Consultation",
+    "features": [
+      "Your own PayPal Business account",
+      "Your own Stripe account",
+      "You keep full control over your revenue",
+      "Strategically pass payment fees to customers",
+      "More payment methods without losing margin"
+    ],
+    "calcBadge": "Fee Calculator",
+    "calcOrders": "Orders / Month",
+    "calcCart": "Avg. Basket Value",
+    "calcResult": "Estimated monthly payment fees",
+    "calcNote": "→ With the Transaction Pass-Through add-on, you can pass these fees on strategically.",
+    "feePaypal": "PayPal: 2.99% + €0.39 per transaction",
+    "feeStripe": "Stripe (Apple Pay, Google Pay, Visa, MC, Klarna): 1.5% + €0.25 per order"
+  },
+  "calculator": {
+    "badge": "Commission Calculator",
+    "headline": "See Exactly What the Platform Is Costing You",
+    "sub": "Calculate how much profit you're losing to delivery platforms every single month.",
+    "labelOrders": "Orders / Month",
+    "labelCart": "Avg. Basket (€)",
+    "labelCommission": "Commission (%)",
+    "cardRevenue": "Monthly Revenue",
+    "cardMonth": "Commission / Month",
+    "cardYear": "Commission / Year",
+    "savingsText": "With Gastro Master you save up to",
+    "savingsSuffix": "per year — at 0% commission.",
+    "cta": "Get Free Consultation"
+  },
+  "pricing": {
+    "headline": "From First Steps to Complete Solution.",
+    "sub": "Clear plans. Clear differences. Choose the model that fits your business.",
+    "vatNote": "excl. VAT",
+    "setupNote": "All prices excl. VAT. One-time setup fee from €400–€1,600 net depending on scope. Payment fees (PayPal / Stripe) charged separately. Hardware and special requirements discussed individually.",
+    "durationLabel": "Go-Live",
+    "ctaPrimary": "Get Free Consultation",
+    "ctaSecondary": "Request a Quote",
+    "showComparison": "Compare All Features in Detail",
+    "hideComparison": "Hide Comparison",
+    "perMonth": "/month",
+    "from": "from",
+    "badgePopular": "Most Popular",
+    "onRequest": "Custom Pricing",
+    "badge": "Transparent Pricing",
+    "billingMonthly": "Monthly",
+    "billingMonthlyNote": "3-month notice period",
+    "billingYearly": "Yearly",
+    "billingYearlyNote": "Monthly billing",
+    "yearlyNote": "Billed monthly · 12-month term",
+    "monthlyNote": "3-month notice period",
+    "slimPlans": [
+      {
+        "id": "webseite",
+        "name": "Website",
+        "tagline": "Professional Online Presence",
+        "priceMonthly": "49",
+        "priceYearly": "49",
+        "duration": "7–10 days",
+        "monthlyNote": "Minimum contract 12 months",
+        "yearlyNote": "Minimum contract 12 months"
+      },
+      {
+        "id": "basic",
+        "name": "Starter",
+        "tagline": "Online Shop Only",
+        "priceMonthly": "79",
+        "priceYearly": "69",
+        "duration": "10–14 days"
+      },
+      {
+        "id": "standard",
+        "name": "Business",
+        "tagline": "Shop + App",
+        "priceMonthly": "149",
+        "priceYearly": "129",
+        "duration": "2–3 weeks",
+        "popular": true
+      },
+      {
+        "id": "enterprise",
+        "name": "Enterprise",
+        "tagline": "Franchise / Multi-Location",
+        "priceMonthly": null,
+        "priceYearly": null,
+        "duration": "By project scope"
+      }
+    ],
+    "packageFeatures": {
+      "beginner": [
+        "Website + Sub-pages",
+        "1 Custom Domain",
+        "2 Mailboxes"
+      ],
+      "webseite": [
+        "Professional restaurant website",
+        "Custom domain included",
+        "Photo gallery & menu",
+        "Contact form & Google Maps",
+        "Mobile-optimised & SEO-ready",
+        "SSL & hosting included"
+      ],
+      "basic": [
+        "Webshop (commission-free)",
+        "Custom domain included",
+        "Digital Menu",
+        "Unlimited Orders",
+        "2,500 Flyers with QR Code",
+        "Customer Loyalty Points",
+        "Up to 3 Mailboxes"
+      ],
+      "standard": [
+        "Webshop + Native App",
+        "Custom domain included",
+        "Digital Menu",
+        "Push Notifications",
+        "Unlimited Orders",
+        "5,000 Flyers with QR Code",
+        "Up to 4 Mailboxes"
+      ],
+      "pro": [
+        "Everything in Standard",
+        "Cloud POS (TSE-compliant)",
+        "Transaction Pass-Through incl.",
+        "10,000 Flyers with QR Code",
+        "Up to 5 Mailboxes"
+      ],
+      "enterprise": [
+        "Custom Design",
+        "Custom domain included",
+        "Digital Menu",
+        "Kiosk Self-Ordering Terminal, Pick Up Screens optional",
+        "On-site Photographer Optional",
+        "Cloud POS incl.",
+        "Transaction Pass-Through incl.",
+        "Framework Agreement"
+      ]
+    },
+    "plans": [
+      {
+        "id": "beginner",
+        "name": "Beginner",
+        "tagline": "Your First Online Presence",
+        "price": "49",
+        "duration": "7–10 days"
+      },
+      {
+        "id": "basic",
+        "name": "Basic",
+        "tagline": "Online Shop Only",
+        "price": "79",
+        "duration": "10–14 days"
+      },
+      {
+        "id": "standard",
+        "name": "Standard",
+        "tagline": "Shop + App",
+        "price": "149",
+        "duration": "2–3 weeks",
+        "popular": true
+      },
+      {
+        "id": "pro",
+        "name": "Pro",
+        "tagline": "Shop + App + POS",
+        "price": "219",
+        "duration": "2–3 weeks"
+      },
+      {
+        "id": "enterprise",
+        "name": "Enterprise",
+        "tagline": "Franchise / Multi-Location",
+        "price": "Custom",
+        "duration": "By project scope"
+      }
+    ]
+  },
+  "faq": {
+    "badge": "Frequently Asked Questions",
+    "sub": "Still have questions? Find your answers here — or just give us a call.",
+    "items": [
+      {
+        "q": "How quickly can I get started?",
+        "a": "Your shop is typically live within a few weeks. We handle setup, design and configuration for you."
+      },
+      {
+        "q": "Do I have to pay upfront?",
+        "a": "No. Your first payment isn't due until your system is live. There are no costs beforehand."
+      },
+      {
+        "q": "Do you help set up PayPal and Stripe?",
+        "a": "Yes — we handle the complete setup of your payment providers, including verification."
+      },
+      {
+        "q": "How does support work?",
+        "a": "Via WhatsApp, phone or email. You have a dedicated personal contact — no anonymous ticket system."
+      },
+      {
+        "q": "Am I locked into a long contract?",
+        "a": "No. You can cancel at any time with 3 months' notice. No long-term lock-in."
+      },
+      {
+        "q": "What if I'm switching from another provider?",
+        "a": "We make switching as easy as possible — including 50% off while your old subscription is still running."
+      },
+      {
+        "q": "Can I add a POS system later?",
+        "a": "Yes, at any time. Gastro Master offers everything from one place — shop, app and POS."
+      }
+    ]
+  },
+  "contact": {
+    "headline": "Ready to Unlock More Profit?",
+    "sub": "Let us show you in a free strategy call how Gastro Master drives more direct orders and puts more money back in your pocket.",
+    "trust1": "5.0 Stars on Google — 130 Reviews",
+    "trust2": "800+ Happy Clients",
+    "trust3": "0% Commission on Direct Orders",
+    "labelName": "Your Name *",
+    "placeholderName": "John Smith",
+    "labelBusiness": "Restaurant Name *",
+    "placeholderBusiness": "The Golden Fork",
+    "labelZip": "Postcode",
+    "placeholderZip": "W1A 1AA",
+    "labelPhone": "Phone Number *",
+    "placeholderPhone": "+44 7700 900000",
+    "labelMessage": "Your Message",
+    "placeholderMessage": "I'd like to...",
+    "labelInterest": "I'm interested in:",
+    "interests": [
+      "Webshop",
+      "App",
+      "POS System",
+      "Website",
+      "Transaction Pass-Through"
+    ],
+    "cta": "Request Free Consultation",
+    "success": "Thank you! We'll be in touch shortly.",
+    "teamRoles": [
+      "CEO & Founder",
+      "Sales & Onboarding",
+      "Tech & Support",
+      "Customer Success"
+    ],
+    "languageLabels": [
+      "German",
+      "English",
+      "Italian",
+      "Persian",
+      "Russian",
+      "Sinhalese"
+    ],
+    "promises": [
+      "You'll receive a response within 12 hours.",
+      "Our team will develop a suitable strategy for your situation.",
+      "Your information will only be used for contacting you."
+    ],
+    "seoTitle": "Contact — Free Consultation for Restaurateurs | Gastro Master",
+    "seoDesc": "Contact Gastro Master — free consultation for restaurateurs. Online shop, app, POS system and website for gastronomy. We'll get back to you within 24 hours.",
+    "heroTitle": "Book your free initial consultation now",
+    "heroSub": "In a free initial consultation, one of our experts will present Gastro Master in detail and address your questions.",
+    "placeholderEmail": "your@email.com",
+    "privacyPrefix": "I agree to the",
+    "privacyLink": "data processing and privacy agreement",
+    "privacySuffix": ". *",
+    "recaptchaLabel": "I'm not a robot (reCAPTCHA). *",
+    "submitBtn": "Yes, I'd like to be contacted",
+    "submitting": "Sending...",
+    "error": "An error occurred. Please try again later.",
+    "required": "* Required field",
+    "languageTitle": "We speak your language",
+    "promiseTitle": "Our Promise"
+  },
+  "footer": {
+    "produkte": "Products",
+    "loesungen": "Solutions",
+    "weiteres": "More",
+    "ueberUns": "About Us",
+    "impressum": "Imprint",
+    "datenschutz": "Privacy Policy",
+    "agb": "Terms & Conditions",
+    "kontakt": "Contact",
+    "downloads": "Downloads",
+    "rights": "All rights reserved."
+  },
+  "sticky": {
+    "cta": "Get Free Consultation"
+  },
+  "founder": {
+    "badge": "The Team Behind Gastro Master",
+    "headline1": "Real People.",
+    "headline2": "Real Guidance.",
+    "sub": "Not an anonymous software vendor — a dedicated team of 30+ professionals who support you personally every step of the way.",
+    "langTitle": "Consulting That Speaks Your Language.",
+    "langSub": "Our consulting is personal, direct and linguistically close to your everyday life. We speak your language — so you feel understood from day one.",
+    "linkedin": "LinkedIn Profile",
+    "languages": [
+      "German",
+      "English",
+      "Italian",
+      "Persian",
+      "Russian",
+      "Sinhalese"
+    ],
+    "people": {
+      "rene": {
+        "role": "Founder & CEO",
+        "focus": "Sales & Marketing",
+        "bio": "After completing his Bachelor's in International Business Management, he chose the entrepreneurial path. His focus is on growth, sales and strategic market development."
+      },
+      "sanjaya": {
+        "role": "Founder & CEO",
+        "focus": "IT & Technology",
+        "bio": "Long-standing IT specialist with experience in technology and leadership roles at globally leading companies including Procter & Gamble. Focused on product, systems and scalable technology."
+      },
+      "salvatore": {
+        "role": "Head of Sales",
+        "focus": "Client Consulting",
+        "bio": "Several years of sales experience. Previously in luxury watch sales at a leading online retailer such as CHRONEXT — and knows that every single detail matters."
+      },
+      "andrej": {
+        "role": "Service Customer Manager",
+        "focus": "Client Support",
+        "bio": "Previously in management positions in food retail, including at Rewe. Brings solid experience in customer service and operational organisation."
+      },
+      "mohammad": {
+        "role": "Sales",
+        "focus": "Hospitality Expertise",
+        "bio": "Former restaurateur who found his way onto the team through his own positive experience as a customer. He knows the industry's challenges first-hand."
+      }
+    }
+  },
+  "target": {
+    "badge": "For Every Restaurant",
+    "headline": "Your Business. Your Solution.",
+    "sub": "Whether it's a pizzeria, franchise or ghost kitchen — find the model that fits your business perfectly.",
+    "cta": "Get a Consultation",
+    "customerLogosLabel": "Our Customers",
+    "startDelivery": "start your own delivery service",
+    "groups": [
+      {
+        "id": "lieferdienst",
+        "label": "Delivery Service",
+        "content": {
+          "title": "More Profit Per Delivery",
+          "subtitle": "Your own ordering channel — zero platform commission",
+          "text": "With your own webshop and app you reach customers directly. No commissions, full control over your delivery business."
+        }
+      },
+      {
+        "id": "franchise",
+        "label": "Franchise",
+        "content": {
+          "title": "One System for All Locations",
+          "subtitle": "Central control, local flexibility",
+          "text": "Manage multiple locations through a single dashboard. Consistent branding, central menu management and individual adjustments per site."
+        }
+      },
+      {
+        "id": "ghost",
+        "label": "Ghost Kitchen",
+        "content": {
+          "title": "Maximum Margin Without a Storefront",
+          "subtitle": "Delivery-first — without platform dependency",
+          "text": "As a ghost kitchen, every cent counts. Your own ordering system cuts out high platform commissions and builds direct customer relationships."
+        }
+      },
+      {
+        "id": "einzelhandel",
+        "label": "Retail Shop",
+        "content": {
+          "title": "Your Shop — Now Online Too",
+          "subtitle": "Click & collect and direct orders",
+          "text": "Give your customers a modern online ordering experience. Perfect for delis, butchers, drinks retailers and local specialty shops."
+        }
+      },
+      {
+        "id": "baeckerei",
+        "label": "Bakery",
+        "content": {
+          "title": "Order Fresh, Pick Up Locally",
+          "subtitle": "Pre-orders and branch pickup made simple",
+          "text": "Let your customers pre-order rolls, cakes and snacks conveniently — through your own webshop or app."
+        }
+      }
+    ],
+    "subs": [
+      {
+        "id": "pizzeria",
+        "label": "Pizzeria",
+        "content": {
+          "title": "The No. 1 in Delivery",
+          "subtitle": "Pizza orders directly through your app",
+          "text": "Pizzerias benefit most from direct orders. Save up to 30% commission per order."
+        }
+      },
+      {
+        "id": "asiatisch",
+        "label": "Asian",
+        "content": {
+          "title": "Asian Food, Your Own Orders",
+          "subtitle": "Sushi, wok & more — ordered direct",
+          "text": "Whether sushi, pad thai or ramen — with your own webshop customers order directly from you."
+        }
+      },
+      {
+        "id": "indisch",
+        "label": "Indian",
+        "content": {
+          "title": "Indian Specialities Ordered Direct",
+          "subtitle": "Curry, tandoori & more — commission-free",
+          "text": "Your customers love your food — why should a platform take a cut?"
+        }
+      },
+      {
+        "id": "burger",
+        "label": "Burger & Chicken",
+        "content": {
+          "title": "Burger & Chicken Without Commission",
+          "subtitle": "Fast-food orders direct through you",
+          "text": "Burger restaurants and chicken shops are among the strongest delivery categories. Take back your margin."
+        }
+      },
+      {
+        "id": "eis",
+        "label": "Ice Cream & Desserts",
+        "content": {
+          "title": "Sweet Orders, Full Profit",
+          "subtitle": "Ice cream, waffles & desserts delivered direct",
+          "text": "Ice cream parlours and dessert shops with delivery are booming. Use your own webshop for pre-orders."
+        }
+      },
+      {
+        "id": "baeckerei-sub",
+        "label": "Bakery",
+        "content": {
+          "title": "Bakery With Delivery Service",
+          "subtitle": "Let customers pre-order rolls, cakes & more",
+          "text": "Let customers conveniently pre-order in the morning and deliver fresh — or offer click & collect."
+        }
+      }
+    ]
+  },
+  "pos": {
+    "badge": "Available Standalone",
+    "headline": "The Gastro Master Cloud POS",
+    "sub": "TSE-compliant POS software for restaurants, delivery services and hospitality businesses — also available without a webshop or app.",
+    "posTag": "Cloud POS Software",
+    "posPrice": "from €69 / month",
+    "posVat": "excl. VAT",
+    "posCta": "Get POS Consultation",
+    "posFeatures": [
+      "TSE-compliant cloud POS software",
+      "Cancel monthly",
+      "Runs on Windows computers",
+      "Cloud back-office & reporting",
+      "Table service, delivery & collection",
+      "Personal support via WhatsApp",
+      "Modular extensions via add-ons"
+    ],
+    "addon1Title": "Driver App with GPS",
+    "addon1Price": "+€10 / month per driver excl. VAT",
+    "addon1Features": [
+      "GPS tracking for all drivers",
+      "Full transparency in your delivery operation",
+      "Ideal for businesses with their own delivery team"
+    ],
+    "addon2Title": "Bar System / QR Code Table Ordering",
+    "addon2Price": "+€50 / month for 5 tables, +€5 per additional table excl. VAT",
+    "addon2Features": [
+      "QR code ordering at the table",
+      "Modern in-house dining experience",
+      "Perfect for restaurants with table service"
+    ],
+    "addon3Title": "Self-Ordering & Hardware",
+    "addon3Price": "Hardware on request",
+    "addon3Features": [
+      "Pick-up screen & kitchen display",
+      "Self-checkout terminals",
+      "Counter, freestanding & outdoor variants",
+      "Software functionality already included"
+    ],
+    "note": "All prices excl. VAT. Hardware and special requirements on request."
+  },
+  "contactCTA": {
+    "badge": "Free Consultation Call",
+    "title": "Ready for More Profit?",
+    "desc": "In a 20-minute call, we'll show you the best combination for your business – free, no obligation, and tailored just for you.",
+    "button": "Book a Consultation",
+    "trust": [
+      "0% Commission",
+      "800+ Restaurants",
+      "5.0 ★ Google",
+      "3-month Notice Period"
+    ]
+  }
+}

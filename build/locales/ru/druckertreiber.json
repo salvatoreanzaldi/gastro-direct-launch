@@ -1,0 +1,27 @@
+{
+  "meta": {
+    "title": "Драйверы принтеров для кассовой системы Gastro Master | Gastro Master",
+    "description": "Драйверы принтеров для чековых принтеров и кассового оборудования Gastro Master. Совместимы со всеми распространёнными моделями термопринтеров. Скачать бесплатно.",
+    "canonical": "https://gastro-master.de/downloads/druckertreiber"
+  },
+  "breadcrumbParent": "Загрузки",
+  "breadcrumbCurrent": "Драйверы принтеров",
+  "title": "Драйверы принтеров",
+  "subtitle": "Здесь вы можете скачать основные драйверы принтеров. Все драйверы предназначены для Windows.",
+  "drivers": [
+    { "label": "Gastro Master Drucker", "version": "Windows", "ext": ".zip" },
+    { "label": "Epson TM-T20III", "version": "v6.07", "ext": ".exe" },
+    { "label": "Epson TM-T20II", "version": "v5.13", "ext": ".exe" },
+    { "label": "Epson TM-T20IV", "version": "v6.10", "ext": ".exe" },
+    { "label": "Metapace T-3III", "version": "v1.00", "ext": ".exe" },
+    { "label": "Metapace T-3II", "version": "v1.07", "ext": ".exe" },
+    { "label": "Metapace T-40", "version": "v1.01", "ext": ".zip" },
+    { "label": "Star TSP 143IV", "version": "v3.9.1", "ext": ".exe" },
+    { "label": "Star TSP 143II / 143III", "version": "v7.70", "ext": ".exe" },
+    { "label": "Citizen CT-S4000", "version": "v3.6.1.0", "ext": ".exe" },
+    { "label": "Citizen CT-S4500", "version": "v3.6.1.0", "ext": ".exe" }
+  ],
+  "contactPrefix": "По вопросам установки мы доступны Пн–Пт 08:00–17:00 по телефону",
+  "contactMiddle": "или",
+  "contactSuffix": "."
+}

@@ -1,0 +1,189 @@
+{
+  "seo": {
+    "title": "Franchise Restaurant Software — Centralized | Gastro Master",
+    "description": "Build your franchise system digitally: unified app, online shop, and POS for all locations. Centrally managed, 0% commission. Get your free consultation now."
+  },
+  "hero": {
+    "badge": "Franchise · Gastronomy 2026",
+    "h1Line1": "Your Concept.",
+    "h1Line2": "Every Location.",
+    "h1Highlight": "Uniformly digitized — centrally managed.",
+    "subtitle": "Gastro Master delivers the complete digital infrastructure for your franchise system — app, online shop, POS system, and website, centrally managed, uniformly branded.",
+    "cta": "Free Consultation",
+    "ctaSecondary": "View your infrastructure ↓",
+    "trustPills": ["800+ Businesses", "Nationwide", "Central Management", "Personal Support"],
+    "geoLabel": "Definition",
+    "geoText": "A <strong>franchise system in the gastronomy industry</strong> enables successful restaurateurs to scale their proven concept across multiple locations — with uniform branding, central management, and standardized processes. The franchise industry generated a total revenue of €149.2 billion in Germany in 2024, with 193,920 active businesses (Source: German Franchise Association)."
+  },
+  "stats": {
+    "title": "The Market Is Growing — Your System Must Keep Up",
+    "subtitle": "Franchise gastronomy is one of the most stable growth segments in the German economy — also for restaurateurs who want to [build their own delivery service](/loesungen/lieferservice-gruenden) and scale.",
+    "items": [
+      {
+        "value": "€149.2 Bn",
+        "label": "Total revenue of the franchise industry 2024",
+        "source": "German Franchise Association",
+        "href": "https://www.franchiseverband.com/services-nutzen/studien-und-statistiken"
+      },
+      {
+        "value": "193,920",
+        "label": "Active franchise businesses in Germany — +2.0% year-over-year",
+        "source": "German Franchise Association",
+        "href": "https://www.franchiseverband.com/services-nutzen/studien-und-statistiken"
+      },
+      {
+        "value": "€35 Bn",
+        "label": "System gastronomy revenue 2024 — 40% of total gastronomy",
+        "source": "Federal Association of System Gastronomy",
+        "href": "https://www.bundesverband-systemgastronomie.de/die-systemgastronomie/branchendaten.html"
+      },
+      {
+        "value": "All-in-One Solution",
+        "label": "App, shop, POS, website — centralized for all locations",
+        "source": "Gastro Master",
+        "href": "/kontakt",
+        "isCta": true
+      }
+    ],
+    "ctaLabel": "Build your franchise system now"
+  },
+  "problem": {
+    "badge": "The Challenge",
+    "title": "Without Unified Technology: No Real Franchise System",
+    "subtitle": "Scaling without scaling the infrastructure means losing control.",
+    "items": [
+      {
+        "title": "Fragmented Systems",
+        "text": "Every location uses a different system — no uniform branding, no central control over menus, prices, or opening hours. A [unified POS system for all locations](/produkte/kassensystem) creates the foundation."
+      },
+      {
+        "title": "No Overall View",
+        "text": "No consolidated revenue data — analytics only available per location, strategic decisions become guesswork."
+      },
+      {
+        "title": "Growth Blocked",
+        "text": "Every new location means new setup effort. Technology becomes a brake instead of a lever for scaling."
+      }
+    ]
+  },
+  "products": {
+    "badge": "Your Franchise Infrastructure · Gastro Master",
+    "title": "All From One Source — For Every Location",
+    "subtitle": "Five coordinated products. Uniformly branded. Centrally managed.",
+    "items": [
+      {
+        "title": "App System",
+        "alt": "Custom ordering app for franchise gastronomy — uniformly branded for all locations",
+        "tagline": "Your own ordering app — uniformly branded for all locations"
+      },
+      {
+        "title": "Online Shop",
+        "alt": "Central ordering system for franchise locations — 0% commission with Gastro Master",
+        "tagline": "Central ordering system for all locations — 0% commission to third parties"
+      },
+      {
+        "title": "POS System",
+        "alt": "TSE-compliant POS system for all franchise locations — unified POS solution",
+        "tagline": "Unified POS system for all locations — consolidated analytics"
+      },
+      {
+        "title": "Website",
+        "alt": "Professional website for franchise gastronomy — uniform branding for all locations",
+        "tagline": "Professional online presence for your entire franchise network"
+      },
+      {
+        "title": "Payment Fees",
+        "alt": "Transaction fees for franchise systems — manage payment fees across locations",
+        "tagline": "Manage transaction fees transparently — configurable across all locations"
+      }
+    ],
+    "brandingNote": "The mockups shown illustrate example branding. Your app, shop, and website will appear fully in your corporate design — uniform across all locations.",
+    "ctaLink": "In a personal meeting, we develop your infrastructure",
+    "moreLabel": "Learn more"
+  },
+  "compare": {
+    "badge": "Comparison",
+    "title": "Gastro Master vs. Custom Development vs. Multi-Vendor Mix",
+    "subtitle": "Why leading franchise owners choose an integrated solution",
+    "headerRecommended": "Recommended",
+    "headerGm": "Gastro Master",
+    "headerGmSub": "Your franchise infrastructure",
+    "headerEigen": "Custom Development",
+    "headerMix": "Multi-Vendor Mix",
+    "headerKriterium": "Criterion",
+    "rows": [
+      { "label": "Setup Time",             "gm": "2–3 Weeks",            "gmGood": true,  "eigen": "6–18 Months",          "eigenBad": true,  "mix": "1–3 Months",         "mixBad": false },
+      { "label": "Running Costs",          "gm": "Fixed Monthly Fee",    "gmGood": true,  "eigen": "High Maintenance Costs","eigenBad": true,  "mix": "Multiple Subscriptions","mixBad": true  },
+      { "label": "Uniform Branding",       "gm": "✓ All Locations",      "gmGood": true,  "eigen": "✓ Possible",            "eigenBad": false, "mix": "✗ Inconsistent",     "mixBad": true  },
+      { "label": "Central Management",     "gm": "✓ One Dashboard",      "gmGood": true,  "eigen": "✓ Possible",            "eigenBad": false, "mix": "✗ No Overview",      "mixBad": true  },
+      { "label": "Scalability",            "gm": "✓ Unlimited",          "gmGood": true,  "eigen": "Complex",               "eigenBad": false, "mix": "Limited",            "mixBad": true  },
+      { "label": "Customer Data Control",  "gm": "✓ Complete",           "gmGood": true,  "eigen": "✓ Complete",             "eigenBad": false, "mix": "Fragmented",         "mixBad": true  },
+      { "label": "Support & Maintenance",  "gm": "✓ Personal",           "gmGood": true,  "eigen": "Own IT Team Required",  "eigenBad": true,  "mix": "Multiple Vendors",   "mixBad": true  },
+      { "label": "Commissions",            "gm": "0%",                   "gmGood": true,  "eigen": "0%",                    "eigenBad": false, "mix": "Often % per Order",  "mixBad": true  }
+    ],
+    "calloutText": "Franchise owners who choose custom development invest on average <strong>6–18 months of development time</strong> and need their own IT team for maintenance and further development — before the first new location goes live. [View all pricing options →](/preise)",
+    "calloutCta": "Analyze infrastructure now"
+  },
+  "onboarding": {
+    "badge": "How the Collaboration Works",
+    "title": "Four Steps to Your Digital Franchise Infrastructure",
+    "subtitle": "Clearly structured. Personally guided. No technical effort on your part.",
+    "steps": [
+      { "num": "01", "title": "Consultation", "text": "We analyze your concept, your location structure, and jointly develop the right digital infrastructure." },
+      { "num": "02", "title": "Setup & Branding", "text": "We set up app, online shop, POS system, and website — fully in your corporate design, uniform for all locations." },
+      { "num": "03", "title": "Rollout", "text": "Location by location goes live. Every franchisee is personally introduced and supported." },
+      { "num": "04", "title": "Ongoing Support", "text": "A personal contact at Gastro Master. Central dashboard, regular updates, no IT effort on your part." }
+    ],
+    "cta": "Schedule Consultation"
+  },
+  "trust": {
+    "items": [
+      { "value": "800+", "label": "Businesses trust Gastro Master" },
+      { "value": "5.0 ★", "label": "Google Rating" },
+      { "value": "1 Partner", "label": "Personal contact for your entire franchise network" },
+      { "value": "Rollout", "label": "Quickly scalable — location by location goes live" }
+    ]
+  },
+  "faq": {
+    "title": "Frequently Asked Questions About Gastro Franchising",
+    "subtitle": "The questions franchise owners ask — and our answers",
+    "items": [
+      {
+        "q": "How do I build a franchise system in the gastronomy industry?",
+        "a": "Building a gastro franchise system starts with a proven concept that can be standardized. You need a uniform brand concept, standardized processes, and a digital infrastructure that connects all locations. Gastro Master provides the technical foundation: [App](/produkte/app), [Online Shop](/produkte/webshop), [POS System](/produkte/kassensystem), and [Website](/produkte/webseite) — centrally managed, uniformly branded. You focus on the concept, we handle the technology."
+      },
+      {
+        "q": "What software does a gastro franchise need?",
+        "a": "For a professional gastro franchise system, you need at minimum: a central [POS system](/produkte/kassensystem) for all locations, a custom [ordering app](/produkte/app) or [online shop](/produkte/webshop) (0% commission), a uniform [web presence](/produkte/webseite), and a management system for menus, prices, and analytics. Gastro Master offers all of this from one source — without multiple subscriptions and without technical fragmentation."
+      },
+      {
+        "q": "What does the digital infrastructure for a franchise system cost?",
+        "a": "Costs depend on the number of locations and the desired feature set. Gastro Master works with a fixed monthly fee per location — no hidden fees, no commissions. Unlike custom development (6–18 months, own IT team) or a multi-vendor mix (multiple subscriptions, no central control), you get everything from one source. All options and pricing can be found in the [pricing overview](/preise) or contact us for a custom quote."
+      },
+      {
+        "q": "How do I manage orders across multiple franchise locations?",
+        "a": "With Gastro Master, you manage all locations through a central dashboard. Menus, prices, and opening hours can be controlled across all locations or individually. Orders go directly into the respective [POS system](/produkte/kassensystem) — no third parties, no commission. Consolidated analytics give you a complete overview of your entire franchise network at any time."
+      },
+      {
+        "q": "Does every franchise location need its own app?",
+        "a": "No. With Gastro Master, all locations in your franchise system use the same [App](/produkte/app) platform — uniformly branded but with location-specific menus and prices. Your customers download the app once and can order from any location. This strengthens brand loyalty and prevents each franchisee from building their own technical solution."
+      }
+    ]
+  },
+  "cta": {
+    "badge": "Free Consultation",
+    "title": "We Develop the Infrastructure for Your Franchise System",
+    "subtitle": "In a personal meeting, we analyze your concept and develop the right digital infrastructure — app, online shop, POS, website, uniform for all locations.",
+    "button": "Schedule Consultation",
+    "trustRow": ["Central Management of All Locations", "800+ Businesses", "5.0 ★ Google", "Personal Contact"]
+  },
+  "schema": {
+    "articleHeadline": "Digitize Gastro Franchise 2026 — App, Shop & POS for All Locations",
+    "articleDescription": "Scale your franchise system in gastronomy: unified app, online shop, and POS for all locations. 0% commission, central management.",
+    "breadcrumbHome": "Home",
+    "breadcrumbParent": "Solutions",
+    "breadcrumbCurrent": "Franchise",
+    "howToName": "Four Steps to Your Digital Franchise Infrastructure",
+    "howToDescription": "Gastro Master sets up the complete digital infrastructure for your gastro franchise — from consultation to ongoing support."
+  }
+}

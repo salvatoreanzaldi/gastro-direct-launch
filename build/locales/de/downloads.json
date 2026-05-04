@@ -1,0 +1,40 @@
+{
+  "meta": {
+    "title": "Downloads — Treiber & Software | Gastro Master",
+    "description": "Gastro Master Downloads: Druckertreiber, Software und Anleitungen für Kassensystem und Bestellsystem. Kostenlos herunterladen.",
+    "canonical": "https://gastro-master.de/downloads"
+  },
+  "title": "Downloads",
+  "subtitle": "Alle Gastro Master Apps und Software-Pakete auf einen Blick.",
+  "printerCard": {
+    "badge": "Windows",
+    "title": "Druckertreiber",
+    "description": "Treiber für Epson, Star, Metapace, Citizen und weitere POS-Drucker",
+    "cta": "Öffnen"
+  },
+  "storeLabel": "Store",
+  "categories": [
+    {
+      "category": "Windows",
+      "items": [
+        { "label": "GM Windows", "ext": ".zip" },
+        { "label": "GM Windows Client", "ext": ".zip" }
+      ]
+    },
+    {
+      "category": "Android",
+      "items": [
+        { "label": "GM Terminal – Android", "ext": ".apk" },
+        { "label": "Fully Single APK", "ext": ".apk" },
+        { "label": "GM Merchant – Playstore", "ext": null }
+      ]
+    },
+    {
+      "category": "iOS",
+      "items": [
+        { "label": "GM Terminal – iOS", "ext": null },
+        { "label": "GM Merchant – App Store", "ext": null }
+      ]
+    }
+  ]
+}

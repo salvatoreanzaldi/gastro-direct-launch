@@ -1,0 +1,27 @@
+{
+  "meta": {
+    "title": "درایور چاپگر برای سیستم صندوق Gastro Master | Gastro Master",
+    "description": "درایور چاپگر برای چاپگرهای فیش و سخت‌افزار سیستم صندوق Gastro Master. سازگار با تمامی مدل‌های متداول چاپگر حرارتی فیش. دانلود رایگان.",
+    "canonical": "https://gastro-master.de/downloads/druckertreiber"
+  },
+  "breadcrumbParent": "دانلودها",
+  "breadcrumbCurrent": "درایور چاپگر",
+  "title": "درایور چاپگر",
+  "subtitle": "در اینجا می‌توانید مهم‌ترین درایورهای چاپگر را دانلود کنید. تمامی درایورها برای Windows هستند.",
+  "drivers": [
+    { "label": "Gastro Master Drucker", "version": "Windows", "ext": ".zip" },
+    { "label": "Epson TM-T20III", "version": "v6.07", "ext": ".exe" },
+    { "label": "Epson TM-T20II", "version": "v5.13", "ext": ".exe" },
+    { "label": "Epson TM-T20IV", "version": "v6.10", "ext": ".exe" },
+    { "label": "Metapace T-3III", "version": "v1.00", "ext": ".exe" },
+    { "label": "Metapace T-3II", "version": "v1.07", "ext": ".exe" },
+    { "label": "Metapace T-40", "version": "v1.01", "ext": ".zip" },
+    { "label": "Star TSP 143IV", "version": "v3.9.1", "ext": ".exe" },
+    { "label": "Star TSP 143II / 143III", "version": "v7.70", "ext": ".exe" },
+    { "label": "Citizen CT-S4000", "version": "v3.6.1.0", "ext": ".exe" },
+    { "label": "Citizen CT-S4500", "version": "v3.6.1.0", "ext": ".exe" }
+  ],
+  "contactPrefix": "در صورت داشتن سؤال درباره نصب، تیم ما از دوشنبه تا جمعه ساعت ۰۸:۰۰ تا ۱۷:۰۰ از طریق",
+  "contactMiddle": "یا",
+  "contactSuffix": "در خدمت شماست."
+}

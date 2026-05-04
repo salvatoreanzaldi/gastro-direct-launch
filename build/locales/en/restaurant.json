@@ -1,0 +1,175 @@
+{
+  "meta": {
+    "title": "Restaurant POS System 2026 — TSE-Compliant & Table Management | Gastro Master",
+    "description": "The right POS system for your restaurant: TSE-compliant, with table management, kitchen display, and online ordering. From €49/month. Get a free consultation now.",
+    "canonical": "https://gastro-master.de/loesungen/restaurant"
+  },
+  "hero": {
+    "badge": "Restaurant · Gastronomy 2026",
+    "title1": "Your Restaurant.",
+    "title2": "The Right Technology.",
+    "subtitle1": "POS system, website, online shop — all from one provider.",
+    "subtitle2": "Easy to set up. Ready to go.",
+    "cta": "Free Consultation",
+    "anchor": "What you get ↓",
+    "trustPills": ["800+ Businesses", "TSE-Compliant", "From €69/Month", "Personal Support"],
+    "geo": {
+      "label": "What is Gastro Master for Restaurants?",
+      "text": "Gastro Master provides restaurant owners with a complete digital system: TSE-compliant POS with table management and kitchen display, a commission-free online ordering system, plus website and ordering app — all from one provider, starting at €69 per month. Since 2023, a TSE-certified POS system has been legally required in Germany (Kassensicherungsverordnung)."
+    }
+  },
+  "stats": {
+    "title": "What You Should Know — Before You Start",
+    "subtitle": "Numbers that directly impact your success as a restaurant owner.",
+    "items": [
+      {
+        "value": "72%",
+        "label": "of guests expect digital services — online ordering or mobile payment",
+        "source": "g-wie-gastro.de",
+        "href": "https://g-wie-gastro.de/top-themen/digitalisierung/digitalisierung-in-der-gastronomie-der-ultimative-guide-fuer-2026/"
+      },
+      {
+        "value": "7% VAT",
+        "label": "on food since January 2026 — the reduced tax rate applies permanently",
+        "source": "DEHOGA Bundesverband",
+        "href": "https://www.dehoga-bundesverband.de/zahlen-fakten/"
+      },
+      {
+        "value": "€25,000",
+        "label": "fine for missing TSE — you can avoid this",
+        "source": "get-sides.de",
+        "href": "https://www.get-sides.de/blog/kassensicherungsverordnung-gastronomie/"
+      },
+      {
+        "value": "from €69",
+        "label": "per month — your complete POS system, TSE-compliant and ready to go",
+        "source": "Gastro Master",
+        "href": "/kontakt",
+        "isCta": true
+      }
+    ],
+    "ctaLabel": "Get a free consultation now"
+  },
+  "problem": {
+    "badge": "Many Restaurants Know This",
+    "title": "Without the Right System You Lose Money and Time",
+    "subtitle": "Gastro Master solves these problems — so you can focus on your food.",
+    "items": [
+      {
+        "title": "Order Chaos",
+        "text": "Paper slips, shouting, mistakes. Orders get lost. Guests wait too long. It costs you money and nerves."
+      },
+      {
+        "title": "No Overview of Your Numbers",
+        "text": "At the end of the day, you don't know what you earned. No reports. No overview. Decisions based on guesswork."
+      },
+      {
+        "title": "Trouble with Tax Authorities",
+        "text": "Without a TSE POS system, fines up to €25,000 apply. TSE has been mandatory since 2023 — and many POS systems don't comply."
+      }
+    ]
+  },
+  "products": {
+    "badge": "Everything Your Restaurant Needs",
+    "title": "Five Products. All From One Provider.",
+    "subtitle": "From POS to website — you get everything set up and ready.",
+    "featured": {
+      "badgeLabel": "Main Product",
+      "iconLabel": "POS System",
+      "title": "TSE-Compliant POS. Everything Included.",
+      "text": "Our POS system is approved by the tax office — that's called TSE-compliant. It's been mandatory since 2023. Table management is included. Kitchen display and driver app can be added when you need them. You can even connect self-checkout terminals — your guests order and pay on their own.",
+      "tags": ["TSE-Compliant", "Table Management", "Kitchen Display", "Driver App", "From €69/Month"],
+      "linkLabel": "View POS System"
+    },
+    "items": [
+      { "title": "POS System", "tagline": "TSE-compliant. With table management, kitchen display, and driver app." },
+      { "title": "Online Shop", "tagline": "Guests order directly from you — 0% commission." },
+      { "title": "Website", "tagline": "So your restaurant gets found on Google." },
+      { "title": "App System", "tagline": "Your own ordering app for loyal regulars." },
+      { "title": "Transaction Fee", "tagline": "Transaction fees? Your guests can cover them." }
+    ],
+    "moreLabel": "Learn more",
+    "cta": "Get a Consultation — Free"
+  },
+  "process": {
+    "badge": "It's That Easy",
+    "title": "Ready in 3 Steps",
+    "subtitle": "You don't need to be a tech expert. We do it for you.",
+    "steps": [
+      { "num": "01", "title": "Free Consultation", "text": "We look at what you need together. No pressure. No cost." },
+      { "num": "02", "title": "We Set Everything Up", "text": "POS, website, shop — all ready. You don't have to set up anything yourself." },
+      { "num": "03", "title": "You Launch", "text": "Your restaurant is ready to go. We're still here for you whenever you need us." }
+    ]
+  },
+  "compare": {
+    "badge": "Comparison",
+    "title": "Gastro Master vs. Other POS Systems",
+    "subtitle": "Many POS systems can only handle payments. Gastro Master does more.",
+    "thLabel": "What You Need",
+    "thGm": "Gastro Master",
+    "thGmBadge": "Recommended",
+    "thOther": "Other POS Systems",
+    "rows": [
+      { "label": "TSE-Compliant", "gm": "✓ Always included", "other": "Often extra cost" },
+      { "label": "Table Management", "gm": "✓ Included", "other": "Usually a paid add-on" },
+      { "label": "Online Ordering", "gm": "✓ Directly integrated", "other": "Usually not included" },
+      { "label": "Kitchen Display", "gm": "✓ Available", "other": "Extra booking required" },
+      { "label": "Driver App", "gm": "✓ Available", "other": "Not included" },
+      { "label": "Support", "gm": "✓ Personal", "other": "Hotline only" },
+      { "label": "Monthly Cost", "gm": "From €69/month", "other": "Often significantly more" }
+    ],
+    "cta": "Request Free Consultation"
+  },
+  "trust": {
+    "headline": "800+ Restaurants and Gastro Businesses Use Gastro Master",
+    "items": [
+      { "value": "800+", "label": "Businesses in Germany and Austria" },
+      { "value": "5.0 ★", "label": "Google Rating" },
+      { "value": "TSE-Compliant", "label": "Legally certified — no fine risk" },
+      { "value": "from €69", "label": "per month — POS system ready to go" }
+    ]
+  },
+  "epitPay": {
+    "title": "Epit Pay",
+    "badge": "Coming Soon",
+    "text": "Soon you won't need a separate payment provider. With Epit Pay you get POS, ordering system, and payment processing from one source. Everything together — simple."
+  },
+  "faq": {
+    "title": "Frequently Asked Questions About POS Systems",
+    "subtitle": "Simple answers to the most important questions.",
+    "items": [
+      {
+        "q": "Which POS system do I need for my restaurant?",
+        "a": "You need a [POS system](/produkte/kassensystem) that is TSE-compliant. This has been mandatory since January 2023. Table management is included in the base package. Kitchen display and driver app can be added. Gastro Master has everything — from €69 per month."
+      },
+      {
+        "q": "What is a TSE and do I need one?",
+        "a": "TSE stands for Technical Security Device (Technische Sicherheitseinrichtung). It's technology that secures your POS system. All transactions are stored securely. The tax office can audit them. Since January 1, 2023, TSE has been mandatory. Without TSE, fines up to €25,000 apply. All [Gastro Master POS systems](/produkte/kassensystem) are TSE-compliant."
+      },
+      {
+        "q": "How much does a POS system for gastronomy cost?",
+        "a": "The [Gastro Master POS system](/produkte/kassensystem) costs from €69 per month. TSE and table management are included. Kitchen display and driver app can be added. No hidden costs. No long-term commitment."
+      },
+      {
+        "q": "How do I make my restaurant visible online?",
+        "a": "You need a [website](/produkte/webseite) — so guests can find you on Google. And an [online ordering system](/produkte/webshop) — so they can order directly from you. Gastro Master does both for you. You pay no commission to Lieferando or other platforms."
+      },
+      {
+        "q": "Do I need a POS system as a restaurant?",
+        "a": "Yes. Since 2023, Germany's POS security regulation (Kassensicherungsverordnung) applies. You need a TSE-compliant [POS system](/produkte/kassensystem) and must issue receipts. Those who don't comply risk high fines. Gastro Master helps you set everything up quickly and correctly."
+      }
+    ]
+  },
+  "cta": {
+    "badge": "Free Consultation",
+    "title": "We Help You Get Your Restaurant Ready.",
+    "subtitle1": "POS, website, shop — we set everything up for you.",
+    "subtitle2": "No tech experience needed.",
+    "button": "Book a Free Consultation",
+    "trustItems": ["TSE-Compliant", "800+ Businesses", "5.0 ★ Google", "Personal Support"]
+  },
+  "schema": {
+    "articleHeadline": "Restaurant POS System 2026 — TSE-Compliant, Table Management & Online Shop | Gastro Master",
+    "articleDescription": "The right POS system for your restaurant: TSE-compliant, with table management, kitchen display, and online ordering. From €49/month. Get a free consultation now."
+  }
+}

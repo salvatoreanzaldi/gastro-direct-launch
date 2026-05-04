@@ -1,0 +1,186 @@
+{
+  "seo": {
+    "title": "Restaurant Software Pricing 2026 — from €49 | Gastro Master",
+    "description": "Online ordering from €79, website from €49, POS from €69 — 0% commission, personal onboarding. Get a free consultation now."
+  },
+  "hero": {
+    "badge": "Pricing 2026 · Gastro Master",
+    "title1": "Gastro Master Pricing —",
+    "titleHighlight": "transparent, fair & clear.",
+    "desc1": "All plans include setup, support and updates.",
+    "desc2": "No commission, no surprises.",
+    "pills": [
+      "Personal onboarding",
+      "3-month cancellation period",
+      "800+ businesses",
+      "Personal support"
+    ],
+    "cta": "Free consultation"
+  },
+  "referral": {
+    "badge": "Referral program",
+    "title1": "Refer",
+    "title2": "us — save every month.",
+    "desc": "For every successful referral you get a full month for free.",
+    "steps": [
+      { "num": "1", "title": "Refer", "text": "Recommend Gastro Master to another restaurant owner." },
+      { "num": "2", "title": "Contract", "text": "Your referral signs a contract and mentions your name." },
+      { "num": "3", "title": "Free month", "text": "You get a full month for free. Automatically." }
+    ],
+    "stepLabel": "Step",
+    "notice": "Important: ",
+    "noticeText": "Your free month is credited only after your referral signs a contract. A recommendation alone is not enough.",
+    "noLimit": "No limit.",
+    "noLimitText": "5 referrals = 5 free months. The more you refer, the more you save.",
+    "cta": "Know someone? Just message us"
+  },
+  "addonsOrder": {
+    "badge": "Add-ons · Ordering system",
+    "title": "Extend your ordering system",
+    "desc": "Add features to your ordering system as needed — activate anytime.",
+    "txBadge": "Add-on · Best seller",
+    "txTitle": "Transaction surcharge",
+    "txDesc": "Pass payment fees automatically and transparently to your customers — you keep 100% of your net revenue.",
+    "calcLabel": "Fee calculator",
+    "calcOrdersLabel": "Orders / month",
+    "calcCartLabel": "Avg. cart value",
+    "calcResult": "Payment fees per month",
+    "calcPaypal": "PayPal: 2.99% + €0.39 per transaction",
+    "calcStripe": "Stripe (Apple Pay, Visa, MC, Klarna): 1.5% + €0.25",
+    "calcSaving": "With surcharge you pay €0 of this.",
+    "txMore": "Learn more",
+    "flyerBadge": "Add-on · App & Online shop",
+    "flyerTitle": "QR code flyer",
+    "flyerPrice": "from €65",
+    "flyerPriceDetail": "/ 2,500 pieces",
+    "flyerHighlight": "The first 2,500 flyers are included free with every subscription.",
+    "flyerFeatures": [
+      "DIN A6, double-sided print",
+      "Custom branding included",
+      "Reorder anytime"
+    ],
+    "flyerPricelistLabel": "Price list"
+  },
+  "kasse": {
+    "badge": "POS system",
+    "title": "The Gastro Master Cloud POS",
+    "desc": "TSE-compliant, GoBD-certified — for restaurants, delivery and pickup.",
+    "legalNote": "TSE mandatory since 01/01/2020 (§146a AO, KassenSichV) — fines up to €25,000 for non-compliance.",
+    "cardBadge": "Cloud POS software",
+    "price": "from €69",
+    "priceDetail": "/ month (net)",
+    "priceSub": "3-month cancellation period · personal onboarding",
+    "features": [
+      "TSE-compliant cloud POS software",
+      "GoBD-compliant — audit-proof for tax inspections",
+      "Up to 4 registers per license",
+      "Dine-in, delivery & pickup",
+      "Cloud back office & analytics",
+      "Personal support via WhatsApp",
+      "3-month cancellation period"
+    ],
+    "cta": "Free consultation",
+    "imgAlt": "Gastro Master Cloud POS system hardware"
+  },
+  "addonsKasse": {
+    "badge": "Add-ons · POS system",
+    "title": "Extend your POS system",
+    "desc": "Modular add-ons for your business — only what you really need.",
+    "items": [
+      {
+        "badge": "Add-on",
+        "title": "Driver app with GPS",
+        "price": "+ €10",
+        "priceDetail": "/ month per driver (net)",
+        "features": [
+          "Live GPS tracking for drivers",
+          "Automatic route optimization",
+          "Direct communication with kitchen",
+          "Delivery time estimates for customers"
+        ]
+      },
+      {
+        "badge": "Add-on",
+        "title": "QR table ordering",
+        "price": "+ €50",
+        "priceDetail": "/ month for 5 tables, +€5 each additional",
+        "features": [
+          "Order via QR code at the table",
+          "No app download required",
+          "Directly integrated into POS",
+          "Bar system included"
+        ]
+      },
+      {
+        "badge": "Add-on",
+        "title": "Self-ordering terminal",
+        "price": "On request",
+        "priceDetail": "Hardware individually configurable",
+        "features": [
+          "Kiosk system for self-ordering",
+          "Reduces wait times",
+          "Fully integrated into POS",
+          "Custom-branded display"
+        ]
+      }
+    ],
+    "footnote": "All prices excl. VAT · Hardware and special requirements on request."
+  },
+  "integration": {
+    "badge": "Integration",
+    "title": "How the products work together",
+    "desc": "All products are natively connected — no manual transfers, no chaos.",
+    "hubLabel": "Central",
+    "items": [
+      { "title": "Website", "text": "Your digital business card — Google-optimized, professional." },
+      { "title": "Ordering system", "text": "Online shop with 0% commission on your own domain." },
+      { "title": "App", "text": "Your own app under your name in the App Store." },
+      { "title": "POS system", "text": "TSE-compliant cloud POS for dine-in, pickup & delivery." }
+    ],
+    "connTitle": "Everything in one system — centrally managed",
+    "connDesc": "Orders from the online shop, app and POS come together in one central dashboard. All analytics, all locations, one login."
+  },
+  "faq": {
+    "badge": "FAQ",
+    "title": "Frequently asked questions about pricing",
+    "desc": "More questions? Our team responds within 24 hours.",
+    "items": [
+      {
+        "q": "How much does the Gastro Master POS system cost?",
+        "a": "The [Gastro Master POS system](/produkte/kassensystem) starts at €69 per month (net). The cloud POS software has a 3-month cancellation period. It runs on Windows computers and includes TSE certification (§146a AO), GoBD compliance and personal support via WhatsApp."
+      },
+      {
+        "q": "What are the setup costs?",
+        "a": "Setup costs are discussed individually in a personal consultation — depending on the size of your business. The website has a minimum contract term of 12 months. Online shop, app and POS can be cancelled monthly with a 3-month notice period. No commission, no surprises."
+      },
+      {
+        "q": "What is the difference between website and ordering system?",
+        "a": "The website (from €49/month) is a professional restaurant website without ordering functionality — your digital storefront for Google and new customers. The ordering system (from €79/month) additionally includes the [online ordering shop with 0% commission](/produkte/webshop), where your customers can order directly."
+      },
+      {
+        "q": "Can I operate multiple locations with one plan?",
+        "a": "Yes. The plans support multiple locations and branches. The POS system includes up to 4 registers per license — at no extra cost. For franchise systems with many locations we develop custom solutions."
+      },
+      {
+        "q": "Are there transaction fees?",
+        "a": "Gastro Master charges 0% commission. Payment providers (Stripe, PayPal, Klarna etc.) charge their own transaction fees. With the optional transaction surcharge you can pass these transparently and legally to your customers — so you bear no cost."
+      },
+      {
+        "q": "Which plan is right for my business?",
+        "a": "For a pure online presence the website (from €49/month) is ideal. If you want to accept online orders, the ordering system (from €79/month) is the right choice. For your [own ordering app](/produkte/app) we recommend app + ordering system from €149/month. The POS system (from €69/month) complements all plans for on-site operations. If you want to [start your own delivery service](/loesungen/lieferservice-gruenden), our guide covers all the steps. In a free consultation we find the right combination together."
+      }
+    ]
+  },
+  "cta": {
+    "badge": "Free consultation",
+    "title": "Not sure which plan fits?",
+    "desc": "In a 20-minute call we show you the best combination for your business — free, no obligation and tailored to you.",
+    "button": "Book a consultation",
+    "trust": [
+      "0% commission",
+      "800+ businesses",
+      "5.0 ★ Google",
+      "3-month cancellation period"
+    ]
+  }
+}

@@ -1,0 +1,48 @@
+{
+  "meta": {
+    "title": "Note legali | Gastro Master",
+    "description": "Note legali di Gastro Master / Epit Global GmbH ai sensi del § 5 TMG.",
+    "canonical": "https://gastro-master.de/it/impressum"
+  },
+  "title": "Note legali",
+  "subtitle": "Informazioni ai sensi del § 5 TMG",
+  "anbieter": {
+    "heading": "Fornitore",
+    "text": "Epit Global GmbH\nHerzbergstr. 9\n61250 Usingen\nGermania"
+  },
+  "kontakt": {
+    "heading": "Contatti",
+    "text": "Telefono: +49 6081 9128913\nE-mail: info@epitglobal.de\nWeb: www.gastro-master.de"
+  },
+  "geschaeftsfuehrung": {
+    "heading": "Amministratori delegati",
+    "text": "Sanjaya Pattiyage\nRené Ebert"
+  },
+  "handelsregister": {
+    "heading": "Registro delle imprese",
+    "text": "Tribunale di Bad Homburg\nN. HRB: 16336"
+  },
+  "ustId": {
+    "heading": "Partita IVA",
+    "text": "Numero di identificazione IVA ai sensi del § 27 a della legge tedesca sull'imposta sul valore aggiunto:\nDE363847623"
+  },
+  "bank": {
+    "heading": "Coordinate bancarie",
+    "text": "Frankfurter Volksbank\nIBAN: DE21 5019 0000 6000 0921 83\nSwift-BIC: FFVBDEFFXXX"
+  },
+  "haftung": {
+    "heading": "Esclusione di responsabilità",
+    "inhalte": {
+      "heading": "Responsabilità per i contenuti",
+      "text": "In qualità di fornitore di servizi, siamo responsabili dei nostri contenuti su queste pagine ai sensi del § 7, comma 1, TMG, secondo le leggi generali. Ai sensi dei §§ 8–10 TMG, tuttavia, non siamo obbligati a monitorare le informazioni di terzi trasmesse o memorizzate né a indagare su circostanze che indichino un'attività illecita. Gli obblighi di rimozione o blocco dell'utilizzo delle informazioni secondo le leggi generali restano impregiudicati. Una responsabilità al riguardo è tuttavia possibile solo dal momento in cui si venga a conoscenza di una specifica violazione. Non appena verremo a conoscenza di tali violazioni, provvederemo alla rimozione immediata dei contenuti in questione."
+    },
+    "links": {
+      "heading": "Responsabilità per i link",
+      "text": "Il nostro sito contiene link a siti web esterni di terzi, sui cui contenuti non abbiamo alcuna influenza. Pertanto, non possiamo assumerci alcuna responsabilità per tali contenuti di terzi. Il rispettivo fornitore o gestore delle pagine è sempre responsabile dei contenuti delle pagine collegate. Le pagine collegate sono state verificate al momento dell'inserimento del link per eventuali violazioni di legge. Contenuti illeciti non erano riconoscibili al momento dell'inserimento del link. Un controllo permanente dei contenuti delle pagine collegate non è tuttavia ragionevole senza indizi concreti di una violazione. Non appena verremo a conoscenza di violazioni, provvederemo alla rimozione immediata dei link in questione."
+    },
+    "urheberrecht": {
+      "heading": "Diritto d'autore",
+      "text": "I contenuti e le opere creati dai gestori del sito su queste pagine sono soggetti al diritto d'autore tedesco. La riproduzione, l'elaborazione, la distribuzione e qualsiasi forma di utilizzo al di fuori dei limiti del diritto d'autore richiedono il consenso scritto del rispettivo autore o creatore. Il download e la copia di queste pagine sono consentiti solo per uso privato e non commerciale. Nella misura in cui i contenuti di queste pagine non siano stati creati dal gestore, vengono rispettati i diritti d'autore di terzi. In particolare, i contenuti di terzi sono contrassegnati come tali. Qualora venisse comunque a conoscenza di una violazione del diritto d'autore, La preghiamo di comunicarcelo. Non appena verremo a conoscenza di violazioni, provvederemo alla rimozione immediata dei contenuti in questione."
+    }
+  }
+}

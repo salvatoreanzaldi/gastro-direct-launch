@@ -1,0 +1,189 @@
+{
+  "seo": {
+    "title": "Software per franchising gastronomico — gestione centralizzata | Gastro Master",
+    "description": "Costruisca il Suo sistema di franchising digitale: app unificata, webshop e sistema di cassa per tutte le sedi. Gestione centralizzata, 0 % di commissione. Richieda una consulenza ora."
+  },
+  "hero": {
+    "badge": "Franchising · Gastronomia 2026",
+    "h1Line1": "Il Suo concetto.",
+    "h1Line2": "Ogni sede.",
+    "h1Highlight": "Digitalizzazione uniforme — gestione centralizzata.",
+    "subtitle": "Gastro Master fornisce l'intera infrastruttura digitale per il Suo sistema di franchising — app, shop di ordinazione, sistema di cassa e sito web, gestiti centralmente, con branding uniforme.",
+    "cta": "Consulenza gratuita",
+    "ctaSecondary": "Visualizzi la Sua infrastruttura ↓",
+    "trustPills": ["800+ attivita", "In tutta la Germania", "Gestione centralizzata", "Supporto personale"],
+    "geoLabel": "Definizione",
+    "geoText": "Un <strong>sistema di franchising nella gastronomia</strong> consente ai ristoratori di successo di scalare il loro concetto collaudato su piu sedi — con branding uniforme, gestione centralizzata e processi standardizzati. Il settore del franchising ha generato un fatturato complessivo di 149,2 miliardi di euro in Germania nel 2024, con 193.920 attivita attive (Fonte: Deutscher Franchise-Verband)."
+  },
+  "stats": {
+    "title": "Il mercato cresce — il Suo sistema deve tenere il passo",
+    "subtitle": "La ristorazione in franchising e uno dei segmenti di crescita piu stabili dell'economia tedesca — anche per i ristoratori che vogliono [creare un proprio servizio di consegna](/loesungen/lieferservice-gruenden) e scalare.",
+    "items": [
+      {
+        "value": "149,2 mld. EUR",
+        "label": "Fatturato complessivo del settore franchising 2024",
+        "source": "Deutscher Franchise-Verband",
+        "href": "https://www.franchiseverband.com/services-nutzen/studien-und-statistiken"
+      },
+      {
+        "value": "193.920",
+        "label": "Attivita in franchising attive in Germania — +2,0 % rispetto all'anno precedente",
+        "source": "Deutscher Franchise-Verband",
+        "href": "https://www.franchiseverband.com/services-nutzen/studien-und-statistiken"
+      },
+      {
+        "value": "35 mld. EUR",
+        "label": "Fatturato ristorazione sistematica 2024 — 40 % dell'intera gastronomia",
+        "source": "Bundesverband Systemgastronomie",
+        "href": "https://www.bundesverband-systemgastronomie.de/die-systemgastronomie/branchendaten.html"
+      },
+      {
+        "value": "Tutto da un unico fornitore",
+        "label": "App, shop, cassa, sito web — centralizzato per tutte le sedi",
+        "source": "Gastro Master",
+        "href": "/kontakt",
+        "isCta": true
+      }
+    ],
+    "ctaLabel": "Costruisca ora il Suo sistema di franchising"
+  },
+  "problem": {
+    "badge": "La sfida",
+    "title": "Senza tecnologia uniforme: nessun vero sistema di franchising",
+    "subtitle": "Chi scala senza scalare l'infrastruttura, perde il controllo.",
+    "items": [
+      {
+        "title": "Sistemi frammentati",
+        "text": "Ogni sede con un sistema diverso — nessun branding uniforme, nessun controllo centrale su menu, prezzi o orari di apertura. Un [sistema di cassa uniforme per tutte le filiali](/produkte/kassensystem) crea la base."
+      },
+      {
+        "title": "Nessuna visione d'insieme",
+        "text": "Nessun dato di fatturato consolidato — le analisi sono possibili solo per singola sede, le decisioni strategiche diventano un gioco d'ipotesi."
+      },
+      {
+        "title": "Crescita bloccata",
+        "text": "Ogni nuova sede significa nuovo lavoro di configurazione. La tecnologia diventa un freno invece che una leva per la scalabilita."
+      }
+    ]
+  },
+  "products": {
+    "badge": "La Sua infrastruttura di franchising · Gastro Master",
+    "title": "Tutto da un unico fornitore — per ogni sede",
+    "subtitle": "Cinque prodotti coordinati. Branding uniforme. Gestione centralizzata.",
+    "items": [
+      {
+        "title": "Sistema App",
+        "alt": "App di ordinazione propria per franchising gastronomico — branding uniforme per tutte le sedi",
+        "tagline": "La Sua app di ordinazione — branding uniforme per tutte le sedi"
+      },
+      {
+        "title": "Online Shop",
+        "alt": "Sistema di ordinazione centralizzato per sedi in franchising — 0 % di commissione con Gastro Master",
+        "tagline": "Sistema di ordinazione centralizzato per tutte le sedi — 0 % di commissione a terzi"
+      },
+      {
+        "title": "Sistema di cassa",
+        "alt": "Sistema di cassa conforme TSE per tutte le filiali in franchising — soluzione POS uniforme",
+        "tagline": "Sistema POS uniforme per tutte le filiali — analisi consolidate"
+      },
+      {
+        "title": "Sito web",
+        "alt": "Sito web professionale per franchising gastronomico — branding uniforme per tutte le sedi",
+        "tagline": "Presenza online professionale per l'intera rete di franchising"
+      },
+      {
+        "title": "Commissioni di pagamento",
+        "alt": "Commissioni di transazione per sistemi di franchising — gestione delle commissioni di pagamento tra le sedi",
+        "tagline": "Gestione trasparente delle commissioni di transazione — configurabile per tutte le sedi"
+      }
+    ],
+    "brandingNote": "I mockup mostrati illustrano un branding di esempio. La Sua app, il Suo shop e il Suo sito web appariranno completamente nel Suo design aziendale — uniforme per tutte le sedi.",
+    "ctaLink": "In un colloquio personale sviluppiamo la Sua infrastruttura",
+    "moreLabel": "Scopra di piu"
+  },
+  "compare": {
+    "badge": "Confronto",
+    "title": "Gastro Master vs. sviluppo personalizzato vs. mix di fornitori",
+    "subtitle": "Perche i principali franchisor scelgono una soluzione integrata",
+    "headerRecommended": "Consigliato",
+    "headerGm": "Gastro Master",
+    "headerGmSub": "La Sua infrastruttura di franchising",
+    "headerEigen": "Sviluppo personalizzato",
+    "headerMix": "Mix di fornitori",
+    "headerKriterium": "Criterio",
+    "rows": [
+      { "label": "Tempi di configurazione",  "gm": "2–3 settimane",          "gmGood": true,  "eigen": "6–18 mesi",              "eigenBad": true,  "mix": "1–3 mesi",             "mixBad": false },
+      { "label": "Costi correnti",           "gm": "Importo mensile fisso",  "gmGood": true,  "eigen": "Elevati costi di manutenzione", "eigenBad": true,  "mix": "Abbonamenti multipli", "mixBad": true  },
+      { "label": "Branding uniforme",        "gm": "✓ Tutte le sedi",       "gmGood": true,  "eigen": "✓ Possibile",            "eigenBad": false, "mix": "✗ Disomogeneo",        "mixBad": true  },
+      { "label": "Gestione centralizzata",   "gm": "✓ Una dashboard",       "gmGood": true,  "eigen": "✓ Possibile",            "eigenBad": false, "mix": "✗ Nessuna visione d'insieme", "mixBad": true  },
+      { "label": "Scalabilita",              "gm": "✓ Sedi illimitate",     "gmGood": true,  "eigen": "Complesso",              "eigenBad": false, "mix": "Limitato",             "mixBad": true  },
+      { "label": "Controllo dati clienti",   "gm": "✓ Completo",            "gmGood": true,  "eigen": "✓ Completo",             "eigenBad": false, "mix": "Frammentato",          "mixBad": true  },
+      { "label": "Supporto e manutenzione",  "gm": "✓ Personale",           "gmGood": true,  "eigen": "Team IT proprio necessario", "eigenBad": true,  "mix": "Fornitori multipli",   "mixBad": true  },
+      { "label": "Commissioni",              "gm": "0 %",                   "gmGood": true,  "eigen": "0 %",                    "eigenBad": false, "mix": "Spesso % per ordine",  "mixBad": true  }
+    ],
+    "calloutText": "I franchisor che scelgono lo sviluppo personalizzato investono in media <strong>6–18 mesi di tempo di sviluppo</strong> e necessitano di un team IT proprio per manutenzione e aggiornamenti — prima che la prima nuova sede vada online. [Tutte le condizioni in sintesi →](/preise)",
+    "calloutCta": "Analizzi ora la Sua infrastruttura"
+  },
+  "onboarding": {
+    "badge": "Come funziona la collaborazione",
+    "title": "In quattro passi all'infrastruttura digitale per il franchising",
+    "subtitle": "Struttura chiara. Accompagnamento personale. Nessun impegno tecnico da parte Sua.",
+    "steps": [
+      { "num": "01", "title": "Colloquio di consulenza", "text": "Analizziamo il Suo concetto, la Sua struttura di sedi e sviluppiamo insieme l'infrastruttura digitale adeguata." },
+      { "num": "02", "title": "Setup e branding", "text": "Configuriamo app, shop di ordinazione, sistema di cassa e sito web — completamente nel Suo design aziendale, uniforme per tutte le sedi." },
+      { "num": "03", "title": "Rollout", "text": "Sede dopo sede viene attivata. Ogni franchisee viene introdotto e accompagnato personalmente." },
+      { "num": "04", "title": "Supporto continuativo", "text": "Un referente personale presso Gastro Master. Dashboard centralizzata, aggiornamenti regolari, nessun impegno IT da parte Sua." }
+    ],
+    "cta": "Fissi un colloquio di consulenza"
+  },
+  "trust": {
+    "items": [
+      { "value": "800+", "label": "Attivita si affidano a Gastro Master" },
+      { "value": "5,0 ★", "label": "Valutazione Google" },
+      { "value": "1 partner", "label": "Referente personale per l'intera rete di franchising" },
+      { "value": "Rollout", "label": "Rapidamente scalabile — sede dopo sede online" }
+    ]
+  },
+  "faq": {
+    "title": "Domande frequenti sul franchising gastronomico",
+    "subtitle": "Le domande che i franchisor pongono — e le nostre risposte",
+    "items": [
+      {
+        "q": "Come costruisco un sistema di franchising nella gastronomia?",
+        "a": "La costruzione di un sistema di franchising gastronomico inizia con un concetto collaudato che puo essere standardizzato. Sono necessari un concetto di marchio uniforme, processi standardizzati e un'infrastruttura digitale che colleghi tutte le sedi. Gastro Master fornisce la base tecnica: [App](/produkte/app), [shop di ordinazione](/produkte/webshop), [sistema di cassa](/produkte/kassensystem) e [sito web](/produkte/webseite) — gestiti centralmente, con branding uniforme. Lei si concentra sul concetto, noi ci occupiamo della tecnologia."
+      },
+      {
+        "q": "Quale software serve per un franchising gastronomico?",
+        "a": "Per un sistema di franchising gastronomico professionale servono come minimo: un [sistema di cassa](/produkte/kassensystem) centralizzato per tutte le filiali, un'[app di ordinazione](/produkte/app) propria o un [webshop](/produkte/webshop) (0 % di commissione), una [presenza web](/produkte/webseite) uniforme e un sistema di gestione per menu, prezzi e analisi. Gastro Master offre tutto questo da un unico fornitore — senza abbonamenti multipli e senza frammentazione tecnica."
+      },
+      {
+        "q": "Quanto costa l'infrastruttura digitale per un sistema di franchising?",
+        "a": "I costi dipendono dal numero di sedi e dalle funzionalita desiderate. Gastro Master opera con un importo mensile fisso per sede — nessun costo nascosto, nessuna commissione. A differenza dello sviluppo personalizzato (6–18 mesi, team IT proprio) o di un mix di fornitori (abbonamenti multipli, nessun controllo centrale), riceve tutto da un unico fornitore. Tutte le opzioni e le condizioni sono disponibili nella [panoramica prezzi](/preise) oppure ci contatti per un'offerta personalizzata."
+      },
+      {
+        "q": "Come gestisco gli ordini su piu sedi in franchising?",
+        "a": "Con Gastro Master gestisce tutte le sedi tramite una dashboard centralizzata. Menu, prezzi e orari di apertura possono essere controllati in modo trasversale o individuale per sede. Gli ordini confluiscono direttamente nel rispettivo [sistema di cassa](/produkte/kassensystem) — senza intermediari, senza commissioni. Le analisi consolidate Le offrono in qualsiasi momento una panoramica completa dell'intera rete di franchising."
+      },
+      {
+        "q": "Ogni sede in franchising ha bisogno di un'app propria?",
+        "a": "No. Con Gastro Master, tutte le sedi del Suo sistema di franchising utilizzano la stessa piattaforma [App](/produkte/app) — branding uniforme ma con menu e prezzi specifici per sede. I Suoi clienti scaricano l'app una sola volta e possono ordinare da qualsiasi sede. Questo rafforza la fidelizzazione al marchio e impedisce che ogni franchisee sviluppi una propria soluzione tecnica."
+      }
+    ]
+  },
+  "cta": {
+    "badge": "Consulenza gratuita",
+    "title": "Sviluppiamo l'infrastruttura per il Suo sistema di franchising",
+    "subtitle": "In un colloquio personale analizziamo il Suo concetto e sviluppiamo l'infrastruttura digitale adeguata — app, shop di ordinazione, cassa, sito web, uniforme per tutte le sedi.",
+    "button": "Fissi un colloquio di consulenza",
+    "trustRow": ["Gestione centralizzata di tutte le sedi", "800+ attivita", "5,0 ★ Google", "Referente personale"]
+  },
+  "schema": {
+    "articleHeadline": "Digitalizzare il franchising gastronomico 2026 — App, Shop e cassa per tutte le sedi",
+    "articleDescription": "Scalare il sistema di franchising nella gastronomia: app unificata, webshop e sistema di cassa per tutte le sedi. 0 % di commissione, gestione centralizzata.",
+    "breadcrumbHome": "Home",
+    "breadcrumbParent": "Soluzioni",
+    "breadcrumbCurrent": "Franchising",
+    "howToName": "In quattro passi all'infrastruttura digitale per il franchising",
+    "howToDescription": "Gastro Master configura l'intera infrastruttura digitale per il Suo franchising gastronomico — dalla consulenza al supporto continuativo."
+  }
+}

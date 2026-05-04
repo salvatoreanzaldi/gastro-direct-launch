@@ -1,0 +1,292 @@
+{
+  "seo": {
+    "title": "Webseite Gastronomie — ab 49 €/Monat | Gastro Master",
+    "description": "Professionelle Webseite für Gastronomie — ab 49 €/Monat. Eigene Domain, DSGVO-konform, Hosting & Support inklusive. In wenigen Tagen online. Jetzt beraten lassen."
+  },
+  "hero": {
+    "badge": "Professionelle Webseite · ab 49 €/Monat",
+    "title1": "Deine Webseite für die Gastronomie –",
+    "titleHighlight": "online",
+    "title2": "in wenigen Tagen",
+    "desc": "Eine professionelle Webseite ist die Grundlage jeder digitalen Präsenz. Sie eröffnet dir die Möglichkeit, weit über deinen Standort hinaus neue Kunden zu erreichen – über Google, Social Media und Weiterempfehlungen. Für Gastronomie, Handwerk, Schulen und alle weiteren Branchen.",
+    "subdesc": "DSGVO-konform. Eigene Domain. Inkl. Hosting & Support.",
+    "pills": [
+      "Eigene Domain",
+      "DSGVO-konform",
+      "Für alle Branchen",
+      "Kein Technik-Know-how nötig"
+    ],
+    "cta": "Kostenlose Beratung"
+  },
+  "hero_b": {
+    "badge": "Webdesign · ab 49 €/Monat",
+    "title1": "Deine",
+    "titleHighlight": "professionelle Webseite",
+    "title2": "Weltweit sichtbar",
+    "desc": "Wir erstellen deine Webseite – schnell, DSGVO-konform und für jede Branche. Von Gastronomie über Handwerk bis Dienstleistung: mehr Sichtbarkeit, mehr Kunden.",
+    "subdesc": "Eigene Domain. Hosting & Support inklusive. Kein Technik-Know-how nötig.",
+    "pills": [
+      "Eigene Domain",
+      "DSGVO-konform",
+      "Für alle Branchen",
+      "Kein Technik-Know-how nötig"
+    ],
+    "cta": "Kostenlose Beratung"
+  },
+  "trustBar": {
+    "items": [
+      {
+        "value": "80 %",
+        "label": "der Konsumenten recherchieren ein Unternehmen online, bevor sie kaufen. Eine professionelle Webseite steigert die Glaubwürdigkeit",
+        "source": "GoDaddy Consumer Survey, 2024"
+      },
+      {
+        "value": "97 %",
+        "label": "der Verbraucher suchen online nach lokalen Unternehmen und Dienstleistungen",
+        "source": "Google Consumer Insights"
+      },
+      {
+        "value": "800+",
+        "label": "Unternehmen setzen bereits auf Gastro Master für ihre digitale Präsenz",
+        "source": null
+      }
+    ]
+  },
+  "onlinePresence": {
+    "badge": "Online-Sichtbarkeit",
+    "title": "Wer nicht online ist, verliert<br/>jeden Tag Neukunden.",
+    "desc": "Eine Webseite öffnet dir den Zugang zu Kunden, die weit über deinen Standort hinaus nach deinen Leistungen suchen. Neukunden finden dich über Google – nicht nur durch Mundpropaganda. Das gilt besonders für Gastronomen, die",
+    "descLink": "einen eigenen Lieferdienst aufbauen",
+    "descAfter": "möchten — genauso wie für Handwerker, Schulen oder Dienstleister.",
+    "stats": [
+      {
+        "value": "88 %",
+        "desc": "der Nutzer kehren nach einem schlechten Website-Erlebnis nicht mehr zurück.",
+        "source": "HubSpot Research",
+        "color": "text-red-500"
+      },
+      {
+        "value": "46 %",
+        "desc": "aller Google-Suchen haben einen lokalen Bezug – deine Kunden suchen dich.",
+        "source": "Google Search Statistics",
+        "color": "text-cyan-brand"
+      },
+      {
+        "value": "2,8×",
+        "desc": "mehr Umsatzwachstum erzielen Unternehmen mit starker Online-Präsenz.",
+        "source": "Deloitte Digital",
+        "color": "text-emerald-500"
+      }
+    ],
+    "cta": "Jetzt Sichtbarkeit aufbauen"
+  },
+  "features": {
+    "badge": "Funktionsumfang",
+    "title": "Alles, was deine Online-Präsenz braucht.",
+    "tiles": [
+      {
+        "title": "Bildergalerie",
+        "desc": "Professionelle Foto- und Videogalerie, die Besucher überzeugt. Zeige dein Ambiente, deine Gerichte oder deine Leistungen in bestem Licht."
+      },
+      {
+        "title": "Instagram-Feed",
+        "desc": "Dein aktueller Instagram-Feed direkt auf der Webseite synchronisiert – immer aktuell."
+      },
+      {
+        "title": "Kontaktformular",
+        "desc": "Kundenanfragen landen direkt in deinem Postfach – DSGVO-konform und einfach."
+      },
+      {
+        "title": "Über uns",
+        "desc": "Deine Geschichte, dein Team, deine Werte. Schaffe Vertrauen bei jedem Besucher."
+      },
+      {
+        "title": "Karriere-Seite",
+        "desc": "Offene Stellen und Bewerbungsformular – finde die richtigen Mitarbeiter."
+      },
+      {
+        "title": "Franchise-Seite",
+        "desc": "Überzeuge potenzielle Franchise-Partner mit einer professionellen eigenen Unterseite – inklusive Bewerbungsformular und allen wichtigen Informationen zu deinem Franchise-Konzept."
+      },
+      {
+        "title": "Mit Webshop & App verknüpfbar",
+        "desc": "Deine Webseite und dein Gastro Master Bestell-System aus einem Guss. Kunden landen auf deiner Webseite und können direkt eine Bestellung aufgeben – nahtlos, ohne Plattformwechsel."
+      }
+    ]
+  },
+  "zielgruppen": {
+    "texts": [
+      "Dein Restaurant verdient eine Webseite, die Gäste begeistert – mit Speisekarte, Reservierung und Google-Sichtbarkeit. Mehr Tischbuchungen, weniger leere Plätze.",
+      "Cocktailkarte, Events und Öffnungszeiten – alles auf einen Blick. Zeig deiner Stadt, warum deine Bar der Place to be ist.",
+      "Einheitlicher Markenauftritt für alle Standorte – zentral gesteuert, lokal angepasst. Skaliere dein Franchise digital.",
+      "Frische Brötchen verdienen eine frische Webseite. Zeig dein Sortiment, deine Filialen und deine Geschichte – und gewinne neue Stammkunden.",
+      "Von der Anmeldung bis zum Stundenplan: Eine moderne Schulwebseite schafft Vertrauen bei Eltern, Schülern und Lehrkräften.",
+      "Ob Handwerk, Beratung oder Agentur – präsentiere deine Leistungen professionell und werde von neuen Kunden gefunden.",
+      "Exposés, Referenzen und Kontaktformular – alles, was Käufer und Verkäufer von einem modernen Immobilienbüro erwarten.",
+      "Vertrauen ist dein Kapital. Eine seriöse Webseite mit klarer Struktur überzeugt Mandanten, bevor das erste Gespräch stattfindet."
+    ]
+  },
+  "portfolio": {
+    "badge": "Portfolio",
+    "title": "Websites, die wir gebaut haben.",
+    "desc": "Für Gastronomie, Bäckereien und weitere Branchen – jede Webseite individuell auf den Betrieb zugeschnitten.",
+    "items": [
+      { "label": "Gastronomie", "name": "Gastro Master", "alt": "Professionelle Webseite für Gastronomie — Beispiel Gastro Master" },
+      { "label": "Bäckerei", "name": "Bäckerei Zimmer", "alt": "Website für Bäckerei Zimmer — Restaurant Webseite Beispiel" },
+      { "label": "Restaurant", "name": "Et Manus", "alt": "Restaurant Webseite Et Manus — professionelle Gastronomie Website" },
+      { "label": "Dienstleister", "name": "D&T", "alt": "Professionelle Website für Dienstleister D&T — Webseite erstellen lassen" },
+      { "label": "Gastronomie", "name": "D&T Gastro", "alt": "Gastronomie Website D&T Gastro — eigene Restaurant Webseite" }
+    ],
+    "cta": "Deine Webseite anfragen"
+  },
+  "branchen": {
+    "badge": "Zielgruppe",
+    "title": "Nicht nur für die Gastronomie.",
+    "desc": "Unser Schwerpunkt liegt auf der Gastronomie, aber wir bauen Webseiten für jede Branche. Jede Website wird individuell auf den Betrieb und seine Zielgruppe zugeschnitten.",
+    "items": [
+      "Restaurant",
+      "Café & Bäckerei",
+      "Handwerker",
+      "Schule & Bildung",
+      "Dienstleister",
+      "Franchise",
+      "Hotel & Pension",
+      "Einzelhandel"
+    ]
+  },
+  "process": {
+    "badge": "So läuft's ab",
+    "title": "In 3 Schritten zu deiner professionellen Webseite.",
+    "steps": [
+      { "num": "01", "title": "Kostenloses Beratungsgespräch", "desc": "Wir besprechen deine Wünsche, Ziele, Zielgruppe und den gewünschten Umfang – und erstellen ein individuelles Angebot." },
+      { "num": "02", "title": "Design & Umsetzung", "desc": "Unser Team baut deine Webseite professionell, DSGVO-konform und optimiert für alle Geräte. Du wirst während des Prozesses eingebunden." },
+      { "num": "03", "title": "Go-Live", "desc": "Deine neue Webseite ist in wenigen Tagen online – mit eigener Domain, Hosting und vollem Support von unserem Team." }
+    ]
+  },
+  "pricing": {
+    "badge": "Transparente Preise",
+    "title": "Du entscheidest, wie du starten willst.",
+    "desc": "Abo oder Einmalkauf – beide Wege führen zu deiner professionellen Online-Präsenz.",
+    "abo": {
+      "popular": "Beliebt",
+      "label": "Monatliches Abo",
+      "price": "ab 49 €",
+      "per": "/Monat",
+      "note": "zzgl. MwSt. · Mindestvertragslaufzeit 12 Monate",
+      "features": [
+        "Professionelles Webdesign",
+        "Eigene Domain inklusive",
+        "Zuverlässiges Hosting",
+        "2 E-Mail-Postfächer",
+        "DSGVO-konform eingerichtet",
+        "Technischer Support",
+        "Laufende Updates"
+      ],
+      "cta": "Jetzt starten"
+    },
+    "simple": {
+      "label": "Simple Website · Einmalkauf",
+      "price": "ab 990 €",
+      "note": "einmalig · zzgl. MwSt.",
+      "raten": "Auch in 3 bequemen Raten möglich",
+      "desc": "Ideal für Betriebe, die schnell und günstig online sichtbar sein wollen. Ein professioneller Onepager mit allem, was du brauchst:",
+      "features": [
+        "Startseite mit allen wichtigen Infos",
+        "Kontaktformular",
+        "Impressum & Datenschutz",
+        "Mobiloptimiertes Design",
+        "DSGVO-konform"
+      ],
+      "cta": "Angebot anfragen"
+    },
+    "individual": {
+      "label": "Individuelle Website · Mehrseiter",
+      "price": "Auf Anfrage",
+      "note": "Preis je nach Umfang · Einmalkauf oder Abo",
+      "desc": "Für umfangreichere Projekte mit mehreren Unterseiten und individuellen Funktionen. Der Preis wird gemeinsam im Beratungsgespräch ermittelt.",
+      "features": [
+        "Mehrere Unterseiten",
+        "Bildergalerie",
+        "Instagram-Feed-Integration",
+        "Karriere- & Franchise-Seite",
+        "Video-Einbindung",
+        "Individuelle Features auf Anfrage"
+      ],
+      "cta": "Angebot anfragen"
+    }
+  },
+  "testimonials": {
+    "badge": "Kundenstimmen",
+    "title": "+800 Unternehmen,<br/>die bereits auf Gastro Master vertrauen.",
+    "items": [
+      { "initials": "HL", "quote": "In der Zukunft wird immer mehr online bestellt und wir wollen auch dabei sein.", "name": "Ha Lim Lee", "restaurant": "Kojo Sushi" },
+      { "initials": "MG", "quote": "Also der Support ist einfach 1a und den würdest du nirgend wo anders so bekommen!", "name": "Marco Greco", "restaurant": "Pizzeria Il Sorriso" },
+      { "initials": "SH", "quote": "Man hat hier einen schnellen und guten WhatsApp Support und die Möglichkeit seinen Betrieb zu strukturieren.", "name": "Sven Heinrich", "restaurant": "61 Burger & More" },
+      { "initials": "GM", "quote": "Wir haben durch die App viel mehr Kunden und Reichweite gewonnen.", "name": "Georgios Madatsidis", "restaurant": "Artemis Grill" }
+    ],
+    "stats": [
+      { "value": "800+", "label": "Unternehmen vertrauen Gastro Master" },
+      { "value": "Tage", "label": "Nicht Wochen – so schnell bist du online" },
+      { "value": "Alle", "label": "Branchen & Betriebsgrößen" },
+      { "value": "Inkl.", "label": "Support, Hosting & Domain im Abo" }
+    ]
+  },
+  "faq": {
+    "badge": "FAQ",
+    "title": "Häufige Fragen zur Gastro Master Webseite",
+    "desc": "Du hast weitere Fragen? Wir beraten dich gern persönlich – kostenlos und unverbindlich.",
+    "cta": "Beratung anfragen",
+    "items": [
+      {
+        "q": "Wie lange dauert die Erstellung einer Webseite?",
+        "a": "Eine einfache Webseite (Onepager) ist in der Regel innerhalb weniger Tage online. Für umfangreiche Mehrseiter mit individuellen Funktionen planen wir gemeinsam einen realistischen Zeitrahmen im [kostenlosen Beratungsgespräch](/kontakt). Die Entwicklung startet sofort nach Freigabe der Inhalte."
+      },
+      {
+        "q": "Was ist der Unterschied zwischen Abo (49 €/Monat) und Einmalkauf?",
+        "a": "Beim monatlichen Abo (ab 49 €/Monat, Mindestvertragslaufzeit 12 Monate) übernehmen wir dauerhaft Hosting, Domain, technischen Support und Updates. Beim Einmalkauf (ab 990 €) erwirbst du die vollständige Webseite und betreibst sie eigenständig. Alle Optionen findest du in der [Preisübersicht](/preise)."
+      },
+      {
+        "q": "Brauche ich Technikkenntnisse, um meine Webseite zu pflegen?",
+        "a": "Nein. Im monatlichen Abo kümmern wir uns um alle technischen Aspekte. Inhaltliche Änderungen (Texte, Bilder, Öffnungszeiten) koordinierst du einfach mit unserem Team – schnell und unkompliziert per WhatsApp oder E-Mail."
+      },
+      {
+        "q": "Kann ich meine Webseite mit dem Gastro Master Webshop oder der App verknüpfen?",
+        "a": "Ja. Deine Gastro Master Webseite lässt sich nahtlos mit dem [digitalen Bestellsystem für die Gastronomie](/produkte/webshop) und der [eigenen Bestell-App](/produkte/app) verknüpfen. Außerdem lässt sich ein [Kassensystem für die Gastronomie](/produkte/kassensystem) ergänzen. Kunden landen auf deiner Webseite und können von dort direkt eine Bestellung aufgeben – ohne Plattformwechsel."
+      },
+      {
+        "q": "Was bedeutet DSGVO-konform, und warum ist das wichtig?",
+        "a": "DSGVO-konform bedeutet, dass deine Webseite alle Anforderungen der europäischen Datenschutz-Grundverordnung erfüllt: korrektes Impressum, Datenschutzerklärung, Cookie-Hinweis und sichere Verarbeitung von Kontaktformulardaten. Ohne DSGVO-Konformität riskierst du Abmahnungen und Bußgelder. Bei uns ist alles voreingestellt und rechtlich einwandfrei."
+      },
+      {
+        "q": "Für welche Branchen baut Gastro Master Webseiten?",
+        "a": "Unser Schwerpunkt liegt auf der Gastronomie — speziell für [Restaurants](/loesungen/restaurant) und [Cafés und Bäckereien](/loesungen/cafe-baeckerei) — aber wir bauen Webseiten für jede Branche: Handwerker, Schulen, Bildungseinrichtungen, Hotels, Dienstleister, Einzelhandel und Franchise-Unternehmen. Jede Webseite wird individuell auf die Branche und den Betrieb zugeschnitten."
+      },
+      {
+        "q": "Was ist im monatlichen Abo enthalten?",
+        "a": "Das monatliche Abo (ab 49 €/Monat netto, Mindestvertragslaufzeit 12 Monate) umfasst: professionelles Webdesign, eigene Domain (z.B. deinbetrieb.de), zuverlässiges Hosting, 2 E-Mail-Postfächer, DSGVO-konforme Einrichtung, technischen Support und laufende Updates. Keine versteckten Kosten."
+      }
+    ]
+  },
+  "teamCta": {
+    "badge": "Jetzt durchstarten",
+    "title": "Buche jetzt dein<br/>kostenloses Beratungsgespräch.",
+    "expectTitle": "Das erwartet dich:",
+    "expectDesc": "In einem kostenlosen Erstgespräch besprechen wir deine Wünsche, Ziele und den Umfang deiner neuen Webseite – und erstellen ein individuelles Angebot, das genau zu deinem Betrieb und Budget passt.",
+    "afterDesc": "Danach geht es schnell: In der Regel ist deine Webseite innerhalb weniger Tage online.",
+    "languages": [
+      "Deutsch",
+      "Englisch",
+      "Italienisch",
+      "Persisch",
+      "Russisch",
+      "Singhalesisch"
+    ],
+    "roles": [
+      "Gründer & Geschäftsführer",
+      "Gründer & Geschäftsführer",
+      "Head of Sales",
+      "Head of Operations"
+    ],
+    "cta": "Kostenlose Beratung"
+  }
+}

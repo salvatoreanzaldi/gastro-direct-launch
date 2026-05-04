@@ -1,0 +1,149 @@
+{
+  "seo": {
+    "title": "Bestellsystem Gastronomie — eigener Webshop ab 79 € | Gastro Master",
+    "description": "Digitales Bestellsystem für die Gastronomie ab 79 €/Monat — 0 % Provision, eigenes Branding. Unabhängig von Lieferando. Jetzt kostenlos beraten lassen."
+  },
+  "hero": {
+    "badge": "Online-Bestellshop für Gastronomie",
+    "h1": "Dein Bestellsystem für die Gastronomie –",
+    "h1Highlight": "ohne App, ohne Provision.",
+    "subtitle": "Ab 79 € pro Monat. Sofort online. Kein App-Download. Eigene Domain. Deine Kunden bestellen direkt – 0 % Provision, 100 % dein Umsatz.",
+    "cta": "Kostenlose Beratung",
+    "trustPills": [
+      "800+ aktive Kunden",
+      "Kein Einrichtungsaufwand",
+      "Ab 79 € / Monat",
+      "Kein App-Download nötig"
+    ]
+  },
+  "trustBar": {
+    "stat1Value": "0 %",
+    "stat1Label": "Provision auf Bestellungen",
+    "stat2Label": "Kein App-Download nötig",
+    "stat3Value": "800+",
+    "stat3Label": "Aktive Kunden"
+  },
+  "features": {
+    "badge": "Funktionsumfang",
+    "headline": "Was dein Gastro Master Webshop kann.",
+    "sub": "Dein Webshop – mit deinem Namen, deinem Branding und den Funktionen, die Gastronomen im Alltag wirklich brauchen. Kein App-Download, direkt im Browser.",
+    "cards": [
+      { "title": "Deine eigene Bestellseite", "text": "Deine Kunden bestellen direkt auf deiner Seite – z.B. pizza-xyz.de/bestellen. Keine App, kein Umweg über Drittanbieter." },
+      { "title": "Kein App-Download nötig", "text": "Der Webshop öffnet direkt im Browser – auf Smartphone, Tablet oder Desktop. Einfach Link teilen, fertig bestellt." },
+      { "title": "Lieferung & Abholung", "text": "Deine Kunden wählen selbst: direkt nach Hause liefern oder im Restaurant abholen. Lieferzonen und Öffnungszeiten stellst du selbst ein." },
+      { "title": "Multi-Standort & Filialen", "text": "Mehrere Standorte? Kein Problem. Verwalte alle Filialen zentral über eine Oberfläche – ideal für Franchise-Konzepte." },
+      { "title": "Online-Zahlung", "text": "Apple Pay, Google Pay, Kreditkarte und PayPal – alle gängigen Zahlungsarten direkt im Shop. Sicher, schnell, ohne Umwege." },
+      { "title": "Eigenes Branding", "text": "Dein Logo, deine Farben, dein Name – der Webshop erscheint vollständig unter deiner Marke. 0 % Gastro Master sichtbar für deine Kunden." },
+      { "title": "Speisekarte selbst verwalten", "text": "Preise, Artikel und Kategorien jederzeit in Echtzeit ändern – kein Entwickler nötig, kein Warten auf Support." }
+    ]
+  },
+  "seo_section": {
+    "badge": "Online-Sichtbarkeit",
+    "headline": "Wer nicht online ist, verliert jeden Tag Umsatz.",
+    "sub": "9 von 10 Kunden suchen ein Restaurant zuerst bei Google, bevor sie bestellen. Restaurants ohne eigene Bestellseite sind für diese Kunden unsichtbar – und verlieren täglich Bestellungen an Wettbewerber, die online präsent sind. Mit deinem Gastro Master Webshop änderst du das.",
+    "linkText": "eigenen Lieferdienst aufbauen",
+    "stats": [
+      { "stat": "91 %", "desc": "der Kunden suchen ein Restaurant zuerst bei Google, bevor sie bestellen" },
+      { "stat": "+ 40 %", "desc": "mehr Bestellungen erzielen Restaurants mit eigener Online-Bestellseite im Vergleich zu solchen ohne" },
+      { "stat": "28 %", "desc": "aller Google-Klicks entfallen auf den ersten Treffer – dein SEO-optimierter Webshop hilft dir dorthin" }
+    ],
+    "sources": "Quellen: Think with Google Consumer Insights, Statista Online Food Delivery Outlook Deutschland 2025",
+    "bullets": [
+      { "title": "SEO-optimierte Bestellseite", "text": "Dein Webshop ist von Google vollständig indexierbar – mit Titel-Tags, Meta-Beschreibungen und strukturierten Daten. Kunden finden dich direkt über die Suchmaschine." },
+      { "title": "Google Business Profile", "text": "Wir helfen dir, deinen Google-Unternehmenseintrag zu optimieren, damit Kunden aus der Google-Suche direkt auf deinen Bestellshop klicken können." },
+      { "title": "Eigene Domain", "text": "Deine Bestellseite unter deiner eigenen Adresse – z.B. pizza-xyz.de/bestellen. Eine eigene Domain steigert das Vertrauen deiner Kunden und verbessert dein Google-Ranking." }
+    ],
+    "cta": "Jetzt Sichtbarkeit steigern"
+  },
+  "compare": {
+    "badge": "Vergleich",
+    "headline": "Alle Vorteile auf einen Blick.",
+    "sub": "Wer über Lieferando, Wolt oder Uber Eats verkauft, zahlt bis zu 30 % Provision – jeden Monat, automatisch, ohne Verhandlung. Mit Gastro Master behältst du 100 % deines Umsatzes.",
+    "platformTitle": "Andere Lieferplattformen",
+    "platformItems": [
+      "Lange Vertragsbindung – oft 12 bis 24 Monate",
+      "14–30 % Gewinnverlust durch Provisionen pro Bestellung",
+      "Komplizierter Support, häufig im Ausland",
+      "Vollständig abhängig von Plattform-Regeln und Preisen",
+      "Kein Google-SEO-Vorteil für dein Restaurant"
+    ],
+    "gmTitle": "Mit Gastro Master Webshop",
+    "gmItems": [
+      "Monatliche Kündigung möglich – keine Mindestlaufzeit",
+      "0 % Provision auf alle Bestellungen – du behältst deinen Umsatz",
+      "100 % unabhängig – volle Kontrolle über dein System und deine Preise",
+      "Support direkt in Deutschland – schnell und persönlich",
+      "SEO-optimiert – dein Webshop wird von Google gefunden"
+    ],
+    "calcLabelLeft": "Mit Lieferando",
+    "calcLabelRight": "Mit Gastro Master"
+  },
+  "testimonials": {
+    "badge": "Social Proof",
+    "headline": "800+ Gastronomen, die bereits direkt online bestellen lassen.",
+    "stats": [
+      { "value": "800+", "label": "aktive Gastro Master Kunden" },
+      { "value": "0 %", "label": "Provision auf Direktbestellungen" },
+      { "value": "3–7 Tage", "label": "bis der Webshop live ist" },
+      { "value": "ab 79 € / Mo", "label": "Online-Bestellshop, netto" }
+    ]
+  },
+  "steps": {
+    "badge": "So funktioniert's",
+    "headline": "In 3 Schritten zu deinem eigenen Webshop.",
+    "sub": "Von der Beratung bis zum ersten Online-Auftrag – wir begleiten dich persönlich.",
+    "items": [
+      { "num": "01", "title": "Kostenlose Beratung", "text": "Wir besprechen gemeinsam, wie dein Webshop aussehen soll: Name, Logo, Farben, Speisekarte, Liefergebiete und Zahlungsmethoden. Kein Technik-Vorwissen nötig." },
+      { "num": "02", "title": "Wir richten alles ein", "text": "Unser Team konfiguriert deinen Webshop, richtet dein Branding ein und stellt sicher, dass alles reibungslos läuft. Du musst nichts selbst programmieren." },
+      { "num": "03", "title": "Live – Kunden bestellen direkt", "text": "Nach wenigen Werktagen ist dein Webshop live. Kunden bestellen direkt über den Link – kein Download, 0 % Provision, 100 % dein Umsatz." }
+    ]
+  },
+  "pricing": {
+    "badge": "Transparente Preise",
+    "headline": "Alles inklusive. Keine versteckten Kosten.",
+    "sub": "Ein fester Monatsbeitrag – keine Provision, keine Mindestlaufzeit, keine Abhängigkeit.",
+    "kasseLinkText": "TSE-konforme Kassensystem",
+    "mainPackage": {
+      "badge": "Hauptpaket",
+      "title": "Online-Bestellshop",
+      "priceLabel": "/ Monat (netto)",
+      "features": [
+        "Eigene Bestellseite (deine Domain)",
+        "Eigenes Branding (Logo, Farben, Name)",
+        "Alle gängigen Zahlungsarten",
+        "Lieferung & Abholung",
+        "Multi-Standort & Filialen",
+        "SEO-optimiert für Google",
+        "Support inklusive"
+      ],
+      "cta": "Kostenlose Beratung"
+    },
+    "addons": [
+      { "badge": "Upgrade", "title": "iOS & Android App", "price": "+ 70 €", "priceLabel": "/ Monat", "text": "Upgrade auf die vollständige App-Lösung: deine eigene App erscheint unter deinem Namen im Apple App Store und Google Play Store. Gemeinsam mit dem Webshop für 149 € / Monat.", "cta": "Mehr erfahren" },
+      { "badge": "Add-on", "title": "Professionelle Website", "price": "ab 49 €", "priceLabel": "/ Monat", "text": "Dein digitales Aushängeschild – eine eigenständige Restaurant-Website mit Bildergalerie, Kontaktformular und Google Maps. Informiert Besucher, während der Webshop Bestellungen entgegennimmt.", "cta": "Mehr erfahren" },
+      { "badge": "Add-on", "title": "Transaktions-Umlage", "price": "Variabel", "priceLabel": "", "text": "Die Transaktionsgebühren der Zahlungsanbieter trägt nicht du als Betreiber – sondern dein Kunde. Die Gebühr wird transparent beim Checkout ausgewiesen.", "cta": "Mehr erfahren" }
+    ]
+  },
+  "teamCta": {
+    "badge": "Jetzt durchstarten",
+    "headline": "Bereit für deinen eigenen\nOnline-Bestellshop?",
+    "expectTitle": "Das erwartet dich:",
+    "expectText": "In einem kostenlosen Erstgespräch entwickelt einer unserer Experten ein individuelles Konzept für deinen eigenen Online-Bestellshop – mit deinem Branding, deiner Speisekarte und 0 % Provision. Unverbindlich und komplett kostenlos.",
+    "expectSub": "Dein Webshop kann bereits in wenigen Werktagen live sein. Keine Programmierkenntnisse nötig – wir übernehmen alles.",
+    "cta": "Kostenlose Beratung",
+    "roles": ["Gründer & Geschäftsführer", "Gründer & Geschäftsführer", "Head of Sales", "Head of Operations", "Customer Success"]
+  },
+  "faq": {
+    "badge": "Häufige Fragen",
+    "headline": "Alles was du über den Gastro Master Webshop wissen musst.",
+    "items": [
+      { "q": "Brauche ich eine eigene Domain für meinen Webshop?", "a": "Nein, eine eigene Domain ist keine Voraussetzung. Du kannst deinen Webshop direkt über eine Gastro Master Subdomain starten. Wenn du jedoch eine eigene Domain nutzen möchtest – z.B. pizza-xyz.de/bestellen – richten wir das für dich ein. Eine eigene Domain stärkt dein Branding und verbessert dein Google-Ranking." },
+      { "q": "Kann ich die Speisekarte jederzeit selbst ändern?", "a": "Ja. Preise, Gerichte, Kategorien und Verfügbarkeiten kannst du jederzeit über das einfache Backend in Echtzeit ändern – ohne Programmierkenntnisse und ohne Wartezeit. Kein Ticket, kein Support nötig." },
+      { "q": "Welche Zahlungsmethoden werden unterstützt?", "a": "Dein Webshop unterstützt alle gängigen Zahlungsmethoden: Apple Pay, Google Pay, Kreditkarte (Visa, Mastercard), PayPal und Klarna. Die Transaktionsgebühren können optional über die Transaktions-Umlage an den Kunden weitergegeben werden." },
+      { "q": "Wie lange dauert die Einrichtung des Webshops?", "a": "In der Regel dauert die Einrichtung 3–7 Werktage. In dieser Zeit konfigurieren wir gemeinsam dein Design, die Speisekarte, Liefergebiete und Zahlungsmethoden. Du musst nichts selbst programmieren – wir übernehmen alles." },
+      { "q": "Gibt es einen Vertrag mit Mindestlaufzeit?", "a": "Der Webshop ist monatlich kündbar mit 3 Monaten Kündigungsfrist. Es gibt keine versteckten Gebühren und keine Provision pro Bestellung. Nur der feste Monatsbeitrag ab 79 € (netto). Eine Übersicht aller Pakete findest du auf der [Preisseite](/preise)." },
+      { "q": "Was ist der Unterschied zwischen Webshop und App?", "a": "Der Webshop öffnet direkt im Browser – deine Kunden müssen nichts herunterladen. Die [eigene Bestell-App](/produkte/app) erscheint dagegen unter deinem Namen im Apple App Store und Google Play Store. Beide Produkte nutzen dasselbe Bestellsystem. Viele unserer Kunden starten mit dem Webshop und upgraden später auf die App. App + Webshop zusammen gibt es ab 149 € / Monat." },
+      { "q": "Helft ihr mir auch dabei, auf Google besser gefunden zu werden?", "a": "Ja. Dein Webshop ist technisch SEO-optimiert – mit Titel-Tags, Meta-Beschreibungen und strukturierten Daten, die Google versteht. Wir unterstützen dich außerdem beim Einrichten oder Optimieren deines Google Business Profils, sodass Kunden deinen Shop direkt aus der Google-Suche aufrufen können." }
+    ]
+  }
+}

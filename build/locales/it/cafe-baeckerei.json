@@ -1,0 +1,217 @@
+{
+  "meta": {
+    "title": "Sistema di cassa per caffetteria e panetteria 2026 — Conforme TSE, preordini online | Gastro Master",
+    "description": "Sistema di cassa conforme TSE, preordini online e ordinazione QR al tavolo per caffetterie e panetterie. A partire da 69 €/mese. Richieda ora la Sua consulenza gratuita.",
+    "canonical": "https://gastro-master.de/it/loesungen/cafe-baeckerei"
+  },
+  "hero": {
+    "badge": "Caffetteria & Panetteria · Gastro Master",
+    "h1_1": "Incassi rapidi.",
+    "h1_highlight": "Preordini online.",
+    "h1_2": "Tutto per la Sua caffetteria.",
+    "subtitle": "Cassa conforme TSE, preordini online e ordinazione QR al tavolo — facile da configurare, subito operativa.",
+    "geoTitle": "Obbligo di cassa TSE:",
+    "geoText": "Dal 1° gennaio 2020, tutti i sistemi di cassa in Germania devono essere dotati di un dispositivo tecnico di sicurezza certificato (TSE). L'ufficio delle imposte può verificare la conformità in qualsiasi momento — in caso di violazione sono previste sanzioni fino a 25.000 €. Caffetterie e panetterie che utilizzano anche sistemi di preordine online riducono i tempi di attesa e aumentano comprovabilmente il valore medio degli ordini.",
+    "ctaPrimary": "Consulenza gratuita",
+    "ctaSecondary": "Scopra i prodotti ↓",
+    "trustPills": ["800+ attività", "Conforme TSE", "Configurazione personalizzata", "Supporto personale"]
+  },
+  "stats": {
+    "title": "Il settore della panificazione cresce — la tecnologia deve stare al passo",
+    "subtitle": "Milioni di clienti acquistano ogni giorno in panetterie e caffetterie. Chi digitalizza ora è in vantaggio.",
+    "cta": "Configuri ora il Suo sistema di cassa →",
+    "items": [
+      {
+        "value": "17,92 mld. €",
+        "label": "Fatturato del settore della panificazione tedesco 2024",
+        "source": "Zentralverband des Deutschen Bäckerhandwerks",
+        "href": "https://www.baeckerhandwerk.de/baeckerhandwerk/zahlen-fakten/"
+      },
+      {
+        "value": "44.000",
+        "label": "Punti vendita nel settore della panificazione tedesco",
+        "source": "Zentralverband des Deutschen Bäckerhandwerks",
+        "href": "https://www.baeckerhandwerk.de/baeckerhandwerk/zahlen-fakten/"
+      },
+      {
+        "value": "25.000 €",
+        "label": "Sanzione per mancata conformità TSE della cassa",
+        "source": "Bundeszentralamt für Steuern",
+        "href": "https://www.bzst.de/DE/Unternehmen/Aussenpruefungen/DigitaleSchnittstelleFinanzVerwaltungKassen/digitaleschnittstellefinanzverwaltungkassen_node.html"
+      },
+      {
+        "value": "da 69 €/mese",
+        "label": "Sistema di cassa Gastro Master — tutto incluso",
+        "source": "Gastro Master",
+        "href": "https://gastro-master.de/kontakt"
+      }
+    ]
+  },
+  "problem": {
+    "badge": "La sfida",
+    "title": "Tre problemi che molte caffetterie e panetterie conoscono",
+    "subtitle": "La tecnologia può aiutare — quando è semplice da usare.",
+    "items": [
+      {
+        "title": "Lunghe code alla cassa",
+        "desc": "Soprattutto al mattino e a pranzo. I clienti non hanno tempo — e vanno dalla concorrenza."
+      },
+      {
+        "title": "Nessun preordine online",
+        "desc": "Chi non può preordinare aspetta o non viene. L'ordinazione online è ormai un'aspettativa."
+      },
+      {
+        "title": "La carenza di personale colpisce prima la cassa",
+        "desc": "Ogni minuto che il Suo personale trascorre alla cassa manca altrove. La tecnologia può compensare."
+      }
+    ]
+  },
+  "products": {
+    "badge": "I Suoi prodotti · Gastro Master",
+    "title": "Tutto ciò di cui la Sua caffetteria ha bisogno — da un unico fornitore",
+    "subtitle": "Cassa, shop online, sito web e app — perfettamente coordinati. Nessun rattoppo.",
+    "featured": {
+      "badgeRecommended": "Consigliato",
+      "badgePrice": "Da 69 €/mese",
+      "title": "Sistema di cassa",
+      "text": "La nostra cassa è approvata dall'ufficio delle imposte — questo si chiama conforme TSE. Ordinazione QR al tavolo e terminale self-checkout disponibili.",
+      "features": [
+        "Conforme TSE — approvato dall'ufficio delle imposte",
+        "Integrazione scanner per prodotti da forno e bevande",
+        "Chiusura giornaliera con un clic",
+        "Terminale self-checkout disponibile",
+        "Ordinazione QR al tavolo per visite in caffetteria disponibile"
+      ],
+      "cta": "Scopra il sistema di cassa",
+      "imgAlt": "Sistema di cassa per caffetteria e panetteria"
+    },
+    "allBranded": "Tutti i prodotti vengono configurati con i Suoi colori e il Suo logo.",
+    "smallCards": [
+      {
+        "title": "Shop Online",
+        "tagline": "I clienti preordinano torte, catering o pacchetti colazione online.",
+        "features": [
+          "Preordini per torte e catering",
+          "Nessuna attesa — Lei prepara tutto in anticipo",
+          "Gli ordini arrivano direttamente alla cassa"
+        ]
+      },
+      {
+        "title": "Sito Web",
+        "tagline": "La Sua caffetteria online — Google La trova, i clienti vengono da Lei.",
+        "features": [
+          "Aggiorni il menu in qualsiasi momento",
+          "Orari di apertura e posizione visibili a tutti",
+          "Più clienti di passaggio grazie a una maggiore visibilità"
+        ]
+      },
+      {
+        "title": "Sistema App",
+        "tagline": "La Sua app di ordinazione personale — notifiche push incluse.",
+        "features": [
+          "Informi i clienti abituali tramite notifiche",
+          "\"Croissant freschi disponibili!\" — direttamente sullo smartphone",
+          "Il Suo logo e i Suoi colori nell'app"
+        ]
+      },
+      {
+        "title": "Commissioni di pagamento",
+        "tagline": "Commissioni di pagamento? Possono essere a carico dei Suoi clienti.",
+        "features": [
+          "Nessuna detrazione dal Suo fatturato",
+          "I clienti pagano la commissione direttamente",
+          "Standard in molti Paesi europei"
+        ]
+      }
+    ],
+    "ctaPrimary": "Consulenza gratuita",
+    "moreLink": "Scopra di più"
+  },
+  "compare": {
+    "badge": "Confronto",
+    "title": "Gastro Master vs. altri sistemi di cassa",
+    "subtitle": "Perché sempre più caffetterie e panetterie scelgono Gastro Master.",
+    "headerCriterion": "Criterio",
+    "headerGM": "Gastro Master",
+    "headerOther": "Altre casse",
+    "rows": [
+      { "label": "Conforme TSE (obbligo legale)", "gm": "✓ Incluso", "gmGood": true, "other": "Spesso contratto extra costoso", "otherBad": true },
+      { "label": "Preordini online", "gm": "✓ Incluso", "gmGood": true, "other": "Sistema separato necessario", "otherBad": true },
+      { "label": "Ordinazione QR al tavolo", "gm": "✓ Disponibile", "gmGood": true, "other": "Generalmente non disponibile", "otherBad": true },
+      { "label": "Terminale self-checkout", "gm": "✓ Disponibile", "gmGood": true, "other": "Solo con grandi fornitori", "otherBad": true },
+      { "label": "Costi mensili", "gm": "Da 69 €/mese", "gmGood": true, "other": "80–200 €/mese", "otherBad": true },
+      { "label": "Tempo di configurazione", "gm": "2–3 settimane", "gmGood": true, "other": "4–12 settimane", "otherBad": true },
+      { "label": "Supporto", "gm": "Personale", "gmGood": true, "other": "Hotline / sistema di ticket", "otherBad": false }
+    ],
+    "ctaText": "Molte panetterie pagano più del necessario — per sistemi che offrono meno.",
+    "ctaButton": "Prenoti una consulenza gratuita"
+  },
+  "process": {
+    "badge": "Come funziona",
+    "title": "Operativi in 3 passaggi",
+    "subtitle": "Nessuna competenza IT necessaria. Facciamo tutto noi per Lei.",
+    "steps": [
+      { "num": "01", "title": "Consulenza gratuita", "desc": "In 30 minuti Le spieghiamo tutto — online o di persona." },
+      { "num": "02", "title": "Configurazione in 2–3 settimane", "desc": "Configuriamo tutto noi. Lei continua la Sua attività come sempre." },
+      { "num": "03", "title": "Subito operativi", "desc": "La Sua cassa è immediatamente pronta. Conforme TSE. Fatto." }
+    ]
+  },
+  "trust": {
+    "items": [
+      { "value": "800+", "label": "Attività gastronomiche si affidano a Gastro Master" },
+      { "value": "5,0 ★", "label": "Valutazione clienti su Google" },
+      { "value": "Conforme TSE", "label": "Tutti i sistemi certificati TSE" },
+      { "value": "Supporto pers.", "label": "Il nostro team aiuta direttamente" }
+    ]
+  },
+  "epitPay": {
+    "badge": "Disponibile a breve",
+    "title": "Epit Pay — presto con elaborazione pagamenti integrata",
+    "text": "Presto non avrà più bisogno di un fornitore di pagamenti separato. Con Epit Pay ottiene cassa, sistema di ordinazione e elaborazione pagamenti da un unico fornitore.",
+    "cta": "Scopra di più →"
+  },
+  "faq": {
+    "badge": "FAQ",
+    "title": "Domande frequenti di gestori di caffetterie e panetterie",
+    "subtitle": "Le risposte alle domande che ci vengono poste più spesso.",
+    "items": [
+      {
+        "q": "La mia caffetteria ha bisogno di una cassa conforme TSE?",
+        "a": "Sì. Dal 2020, ogni cassa in Germania è obbligata per legge ad avere la certificazione TSE. L'ufficio delle imposte può verificarlo in qualsiasi momento. In caso di violazione sono previste sanzioni fino a 25.000 €. Il [sistema di cassa Gastro Master](/produkte/kassensystem) soddisfa tutti i requisiti — ce ne occupiamo noi per Lei."
+      },
+      {
+        "q": "Posso accettare preordini online tramite Gastro Master?",
+        "a": "Sì. I Suoi clienti possono ordinare e pagare in anticipo tramite il Suo [shop online](/produkte/webshop) o la Sua [app](/produkte/app). Ideale per la pausa pranzo o la colazione del fine settimana. Lei vede tutti gli ordini direttamente sulla Sua cassa."
+      },
+      {
+        "q": "Quanto costa un sistema di cassa per una panetteria con Gastro Master?",
+        "a": "Il [sistema di cassa](/produkte/kassensystem) parte da 69 € al mese. Inclusi: modulo TSE, gestione del menu, chiusura giornaliera e supporto personale. La configurazione viene adattata individualmente alla Sua attività."
+      },
+      {
+        "q": "La cassa funziona anche senza internet?",
+        "a": "Sì. La [cassa](/produkte/kassensystem) Gastro Master funziona anche offline. Tutti i dati vengono salvati localmente e sincronizzati automaticamente al ripristino della connessione."
+      },
+      {
+        "q": "Posso gestire più filiali con un unico sistema?",
+        "a": "Sì. Gestisce tutte le filiali tramite una dashboard centralizzata. Menu, statistiche e impostazioni — tutto in un unico posto. Ideale se ha o prevede più sedi. Per i sistemi in franchising è disponibile la [soluzione franchise](/loesungen/franchise)."
+      }
+    ]
+  },
+  "cta": {
+    "badge": "Consulenza gratuita",
+    "title": "L'aiutiamo a preparare la Sua caffetteria\no panetteria per il successo.",
+    "subtitle": "Sistema di cassa, preordini online, sito web — tutto da un unico fornitore. Nessuno stress tecnologico.",
+    "button": "Prenoti una consulenza gratuita",
+    "trustItems": ["0 % commissione", "800+ attività", "5,0 ★ Google", "Conforme TSE"]
+  },
+  "schema": {
+    "articleHeadline": "Sistema di cassa per caffetteria e panetteria 2026 — Conforme TSE, preordini online",
+    "articleDescription": "Sistema di cassa conforme TSE, preordini online e ordinazione QR al tavolo per caffetterie e panetterie. A partire da 69 €/mese.",
+    "articleUrl": "https://gastro-master.de/it/loesungen/cafe-baeckerei",
+    "breadcrumbs": [
+      { "name": "Home", "item": "https://gastro-master.de/it/" },
+      { "name": "Soluzioni", "item": "https://gastro-master.de/it/loesungen" },
+      { "name": "Caffetteria & Panetteria", "item": "https://gastro-master.de/it/loesungen/cafe-baeckerei" }
+    ]
+  }
+}

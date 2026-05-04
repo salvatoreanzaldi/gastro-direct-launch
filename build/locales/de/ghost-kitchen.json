@@ -1,0 +1,142 @@
+{
+  "seo": {
+    "title": "Ghost Kitchen starten — 0 % Provision, Multi-Brand | Gastro Master",
+    "description": "Starte deine Ghost Kitchen ohne Plattform-Abhängigkeit. Multi-Brand, eigene App, eigener Webshop. 0 % Provision. Persönlicher Support auf Deutsch."
+  },
+  "hero": {
+    "breadcrumbParent": "Lösungen",
+    "breadcrumbCurrent": "Ghost Kitchen",
+    "badge": "Ghost Kitchen · Cloud Kitchen · Dark Kitchen",
+    "h1Line1": "Deine Ghost Kitchen. Dein System.",
+    "h1Highlight": "Null Provision.",
+    "subtitle": "Multi-Brand, Multi-Channel, eine Kasse. Alles was du brauchst, um deine Ghost Kitchen profitabel zu betreiben. Ohne Plattform-Abhängigkeit.",
+    "cta": "Kostenlose Beratung",
+    "ctaSecondary": "Produkte ansehen ↓",
+    "trustPills": ["0 % Provision", "Multi-Brand", "Eigene App", "Persönlicher Support"]
+  },
+  "stats": {
+    "badge": "Marktdaten",
+    "title": "Der Ghost Kitchen Markt wächst rasant",
+    "subtitle": "Die Chance ist riesig. Das Risiko auch, wenn du auf Provisionsmodelle setzt.",
+    "ctaLabel": "Jetzt starten",
+    "items": [
+      { "value": "$197 Mrd.", "label": "Globaler Ghost Kitchen Markt bis 2032", "source": "Precedence Research", "href": "https://www.precedenceresearch.com/ghost-kitchen-market" },
+      { "value": "19 %", "label": "Jährliches Wachstum in Europa. Deutschland ist der größte Markt", "source": "Statista", "href": "https://de.statista.com/outlook/dmo/online-food-delivery/deutschland" },
+      { "value": "bis 30 %", "label": "Provision an Lieferplattformen wie Lieferando oder Uber Eats", "source": "metro.de", "href": "https://www.metro.de/blog/lieferdienste" },
+      { "value": "ab 79 €", "label": "pro Monat mit Gastro Master. 0 % Provision. Volle Kontrolle", "source": "Gastro Master", "href": "/kontakt", "isCta": true }
+    ]
+  },
+  "problem": {
+    "badge": "Die Herausforderung",
+    "title": "Ohne das richtige System verlierst du Marge und Kontrolle",
+    "subtitle": "Diese drei Probleme kennt jede Ghost Kitchen.",
+    "items": [
+      { "title": "Plattform-Abhängigkeit", "text": "Lieferando und Uber Eats nehmen 25 bis 30 % Provision. Bei jedem Auftrag verlierst du Marge. Du bist abhängig von deren Algorithmus und Regeln." },
+      { "title": "Kein eigenes Branding", "text": "Auf Plattformen bist du einer von tausenden. Deine Marke geht unter. Kunden erinnern sich an Lieferando, nicht an dich." },
+      { "title": "Multi-Brand Chaos", "text": "Mehrere Marken über verschiedene Systeme und Tablets managen ist ineffizient. Bestellungen kommen aus 5 Kanälen, aber nichts läuft zentral." }
+    ]
+  },
+  "products": {
+    "badge": "Deine Ghost Kitchen Infrastruktur",
+    "title": "Alles aus einer Hand",
+    "subtitle": "Fünf Produkte, die perfekt zusammenpassen. Multi-Brand ready.",
+    "moreLabel": "Mehr erfahren",
+    "items": [
+      { "title": "Eigener Webshop", "tagline": "0 % Provision, eigene Marke. Deine Kunden bestellen direkt bei dir." },
+      { "title": "Multi-Brand App", "tagline": "Verschiedene Marken, eine Küche, eine App. Oder pro Marke eine eigene App." },
+      { "title": "Kassensystem", "tagline": "Alle Bestellungen aller Marken zentral auf einer Kasse. TSE-konform." },
+      { "title": "Zahlungsabwicklung", "tagline": "Zahlungsgebühren transparent an Kunden weitergeben. Volle Kontrolle über dein Geld." },
+      { "title": "Webseite", "tagline": "Für jede Marke eine professionelle Online-Präsenz. Gefunden auf Google." }
+    ]
+  },
+  "concept": {
+    "badge": "Das Konzept",
+    "title": "Was ist eine Ghost Kitchen? Die Zukunft der Gastronomie.",
+    "subtitle": "Auch bekannt als Cloud Kitchen oder Dark Kitchen. Das Konzept, das die Gastronomie revolutioniert.",
+    "cards": [
+      { "title": "Das Multi-Brand-Konzept", "text": "In einer einzigen Ghost Kitchen können mehrere Restaurants gleichzeitig betrieben werden. Aus derselben Küche kommen Pizza, Bowls, Burger und Sushi. Jeweils unter einer eigenen Marke. Der Vorteil: Du deckst verschiedene Nischen ab, ohne für jedes Konzept ein neues Lokal mieten zu müssen." },
+      { "title": "Radikale Kostenoptimierung", "text": "Kein Servicepersonal für den Gastraum. Geringe Mieten in B-Lagen. Arbeitsabläufe sind rein auf Geschwindigkeit und Effizienz getrimmt. Eine Ghost Kitchen braucht 60 bis 80 % weniger Fläche als ein klassisches Restaurant." },
+      { "title": "Datenbasierte Menü-Anpassung", "text": "Eine Ghost Kitchen sieht in den Daten, was gerade trendet, erstellt innerhalb von 48 Stunden ein digitales Branding und geht live. Flops werden einfach gelöscht, Erfolge sofort skaliert. Kein Umbau, keine neue Speisekarte drucken." },
+      { "title": "Entkopplung von der Atmosphäre", "text": "In der Ghost Kitchen zählt nur das Produkt und die Logistik. Der Fokus liegt zu 100 % darauf, wie das Essen beim Kunden ankommt. Gastronomie wie ein Software-Startup: schnell, skalierbar und extrem datenfokussiert." }
+    ],
+    "compareTitle": "Restaurant vs. Lieferdienst vs. Ghost Kitchen",
+    "compareHeaders": { "feature": "Merkmal", "restaurant": "Restaurant", "lieferdienst": "Lieferdienst", "ghost": "Ghost Kitchen", "recommended": "Empfohlen" },
+    "compareRows": [
+      { "label": "Präsenz", "restaurant": "Physischer Gastraum", "lieferdienst": "Restaurant mit Versand-Fokus", "ghost": "Nur Küche" },
+      { "label": "Lage", "restaurant": "Teure A-Lage", "lieferdienst": "Gute Erreichbarkeit", "ghost": "Günstige B-Lage" },
+      { "label": "Kundenkontakt", "restaurant": "Persönlich vor Ort", "lieferdienst": "Telefon / App", "ghost": "Rein digital" },
+      { "label": "Marken", "restaurant": "Eine feste Marke", "lieferdienst": "Eine Marke", "ghost": "Multi-Brand möglich" },
+      { "label": "Kostenstruktur", "restaurant": "Hoch (Personal, Miete)", "lieferdienst": "Mittel", "ghost": "Niedrig (nur Küche)" },
+      { "label": "Skalierbarkeit", "restaurant": "Begrenzt", "lieferdienst": "Mittel", "ghost": "Hoch" },
+      { "label": "Flexibilität", "restaurant": "Gering (Umbau nötig)", "lieferdienst": "Mittel", "ghost": "Sehr hoch (digital)" }
+    ]
+  },
+  "comparison": {
+    "badge": "Vergleich",
+    "title": "Gastro Master vs. Lieferplattformen",
+    "subtitle": "Warum Ghost Kitchen Betreiber auf Gastro Master setzen.",
+    "headers": { "feature": "Merkmal", "gm": "Gastro Master", "gmRecommended": "Empfohlen", "platform": "Lieferando / Uber Eats" },
+    "rows": [
+      { "label": "Provision pro Bestellung", "gm": "0 %", "gmGood": true, "platform": "25 bis 30 %", "platformBad": true },
+      { "label": "Eigene Marke", "gm": "✓ Volle Kontrolle", "gmGood": true, "platform": "✗ Plattform-Branding", "platformBad": true },
+      { "label": "Multi-Brand", "gm": "✓ Mehrere Marken möglich", "gmGood": true, "platform": "Eingeschränkt", "platformBad": true },
+      { "label": "Eigene App", "gm": "✓ Im App Store", "gmGood": true, "platform": "✗ Nicht möglich", "platformBad": true },
+      { "label": "Kundendaten", "gm": "✓ Volle Kontrolle", "gmGood": true, "platform": "✗ Plattform behält alles", "platformBad": true },
+      { "label": "Bestellsystem", "gm": "✓ Eigenes System", "gmGood": true, "platform": "Plattform-abhängig", "platformBad": true },
+      { "label": "Support", "gm": "✓ Persönlich, Deutsch", "gmGood": true, "platform": "Ticket-System", "platformBad": false }
+    ],
+    "savingsTitle": "Bei 3.000 € Monatsumsatz zahlst du an Lieferando <highlight>bis zu 900 € Provision</highlight>. Jeden Monat.",
+    "savingsSubtitle": "Mit Gastro Master: ab 79 €/Monat, 0 % Provision.",
+    "savingsCta": "Kostenlose Beratung"
+  },
+  "onboarding": {
+    "overline": "So startest du",
+    "title": "In 4 Schritten zur eigenen Ghost Kitchen",
+    "subtitle": "Wir machen es dir einfach. Von der Beratung bis zum Go Live.",
+    "steps": [
+      { "num": "01", "title": "Kostenloses Beratungsgespräch", "text": "Wir lernen dein Konzept kennen. Wie viele Marken? Welche Kanäle? Was brauchst du?" },
+      { "num": "02", "title": "Marken & Systeme konfigurieren", "text": "Wir richten deine Marken ein und konfigurieren Webshops, Apps und das Kassensystem." },
+      { "num": "03", "title": "Setup & Go Live", "text": "Alles wird technisch eingerichtet. Training für dein Team. Dann gehst du live." },
+      { "num": "04", "title": "Laufender Support", "text": "24/7 Support auf Deutsch. Neue Marken? Neue Features? Wir sind da." }
+    ]
+  },
+  "trust": {
+    "items": [
+      { "value": "800+", "label": "Gastro-Betriebe vertrauen auf Gastro Master" },
+      { "value": "5,0 ★", "label": "Kundenbewertung auf Google" },
+      { "value": "0 %", "label": "Provision auf alle Bestellungen" },
+      { "value": "Multi-Brand", "label": "Mehrere Marken, ein System" }
+    ]
+  },
+  "faq": {
+    "badge": "FAQ",
+    "title": "Häufige Fragen zum Thema Ghost Kitchen",
+    "subtitle": "Die Fragen, die Ghost Kitchen Gründer stellen.",
+    "items": [
+      { "q": "Was ist eine Ghost Kitchen und wie funktioniert sie?", "a": "Eine Ghost Kitchen (auch Cloud Kitchen oder Dark Kitchen) ist eine Küche ohne Gastraum. Du produzierst Essen ausschließlich für Lieferung und Abholung. Mehrere Marken können aus einer Küche betrieben werden. Das senkt Kosten und erhöht die Flexibilität." },
+      { "q": "Brauche ich für jede Marke eine eigene App oder einen eigenen Webshop?", "a": "Nein. Mit Gastro Master kannst du mehrere Marken über ein System verwalten. Jede Marke bekommt ihren eigenen [Bestellshop](/produkte/webshop) und optional eine eigene [App](/produkte/app). Die Bestellungen laufen zentral in einem [Kassensystem](/produkte/kassensystem) zusammen." },
+      { "q": "Wie viel spare ich ohne Lieferando?", "a": "Bei 3.000 € Monatsumsatz zahlst du an Lieferando bis zu 900 € Provision pro Monat. Mit Gastro Master: 0 € Provision. Du zahlst nur den festen Monatsbeitrag. Alle Konditionen findest du in der [Preisübersicht](/preise)." },
+      { "q": "Kann ich mit einer Marke starten und später erweitern?", "a": "Ja, absolute Flexibilität. Du startest mit einer Marke und fügst jederzeit weitere Webshops, Apps oder Marken hinzu. Kein neues System nötig, alles läuft über dein bestehendes Gastro Master Setup." },
+      { "q": "Welche Technik brauche ich für eine Ghost Kitchen?", "a": "Nur ein Tablet oder Laptop und eine Internetverbindung. Das [Kassensystem](/produkte/kassensystem) läuft cloudbasiert. Dazu optional einen Drucker für Bestellbons. Wir richten alles für dich ein und schulen dein Team." }
+    ]
+  },
+  "cta": {
+    "title": "Wir helfen dir, deine Ghost Kitchen",
+    "titleHighlight": "startklar zu machen",
+    "subtitle": "Webshop, App, Kassensystem. Alles aus einer Hand. 0 % Provision. Persönlicher Support.",
+    "button": "Kostenlose Beratung",
+    "trustItems": [
+      ["0 %", "Provision"],
+      ["800+", "Restaurants"],
+      ["5,0 ★", "Google Bewertung"],
+      ["Persönlicher", "Support"]
+    ]
+  },
+  "schema": {
+    "breadcrumbHome": "Startseite",
+    "breadcrumbParent": "Lösungen",
+    "breadcrumbCurrent": "Ghost Kitchen",
+    "howToName": "In 4 Schritten zur eigenen Ghost Kitchen",
+    "howToDescription": "So startest du deine Ghost Kitchen mit Gastro Master. Von der Beratung bis zum Go Live."
+  }
+}

@@ -1,0 +1,40 @@
+{
+  "meta": {
+    "title": "Загрузки — Драйверы и программы | Gastro Master",
+    "description": "Загрузки Gastro Master: драйверы принтеров, программное обеспечение и инструкции для кассовой и заказной системы. Скачать бесплатно.",
+    "canonical": "https://gastro-master.de/downloads"
+  },
+  "title": "Загрузки",
+  "subtitle": "Все приложения и программные пакеты Gastro Master в одном месте.",
+  "printerCard": {
+    "badge": "Windows",
+    "title": "Драйверы принтеров",
+    "description": "Драйверы для принтеров Epson, Star, Metapace, Citizen и других POS-принтеров",
+    "cta": "Открыть"
+  },
+  "storeLabel": "Store",
+  "categories": [
+    {
+      "category": "Windows",
+      "items": [
+        { "label": "GM Windows", "ext": ".zip" },
+        { "label": "GM Windows Client", "ext": ".zip" }
+      ]
+    },
+    {
+      "category": "Android",
+      "items": [
+        { "label": "GM Terminal – Android", "ext": ".apk" },
+        { "label": "Fully Single APK", "ext": ".apk" },
+        { "label": "GM Merchant – Playstore", "ext": null }
+      ]
+    },
+    {
+      "category": "iOS",
+      "items": [
+        { "label": "GM Terminal – iOS", "ext": null },
+        { "label": "GM Merchant – App Store", "ext": null }
+      ]
+    }
+  ]
+}

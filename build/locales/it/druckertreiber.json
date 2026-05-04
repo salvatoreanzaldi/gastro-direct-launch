@@ -1,0 +1,27 @@
+{
+  "meta": {
+    "title": "Driver stampante per il sistema di cassa Gastro Master | Gastro Master",
+    "description": "Driver per stampanti di scontrini e hardware POS di Gastro Master. Compatibili con tutti i principali modelli di stampanti termiche. Download gratuito.",
+    "canonical": "https://gastro-master.de/it/downloads/druckertreiber"
+  },
+  "breadcrumbParent": "Download",
+  "breadcrumbCurrent": "Driver stampante",
+  "title": "Driver stampante",
+  "subtitle": "Qui può scaricare i driver per stampanti più importanti. Tutti i driver sono per Windows.",
+  "drivers": [
+    { "label": "Gastro Master Drucker", "version": "Windows", "ext": ".zip" },
+    { "label": "Epson TM-T20III", "version": "v6.07", "ext": ".exe" },
+    { "label": "Epson TM-T20II", "version": "v5.13", "ext": ".exe" },
+    { "label": "Epson TM-T20IV", "version": "v6.10", "ext": ".exe" },
+    { "label": "Metapace T-3III", "version": "v1.00", "ext": ".exe" },
+    { "label": "Metapace T-3II", "version": "v1.07", "ext": ".exe" },
+    { "label": "Metapace T-40", "version": "v1.01", "ext": ".zip" },
+    { "label": "Star TSP 143IV", "version": "v3.9.1", "ext": ".exe" },
+    { "label": "Star TSP 143II / 143III", "version": "v7.70", "ext": ".exe" },
+    { "label": "Citizen CT-S4000", "version": "v3.6.1.0", "ext": ".exe" },
+    { "label": "Citizen CT-S4500", "version": "v3.6.1.0", "ext": ".exe" }
+  ],
+  "contactPrefix": "Per domande sull'installazione siamo a Sua disposizione lun–ven 08:00–17:00 al numero",
+  "contactMiddle": "oppure",
+  "contactSuffix": "."
+}
