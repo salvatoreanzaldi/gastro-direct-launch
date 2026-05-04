@@ -1,0 +1,48 @@
+# Gastro Master
+
+> Kassensystem, eigene Lieferservice-App, Webshop und Webseite für deutsche
+> Restaurants. Direktbestellungen mit 0 % Provision, monatlich kündbar.
+> Sitz in Usingen (Hessen), 30+ Mitarbeitende, gegründet 2021.
+
+## Pakete (Preise in EUR, monatlich, netto)
+
+- [Webseite](https://gastro-master.de/produkte/pakete/webseite): ab 49 €/Monat — Professionelle Restaurant-Website ohne Bestellfunktion. Mindestvertragslaufzeit 12 Monate.
+- [Starter / Bestellsystem](https://gastro-master.de/produkte/pakete/online-bestellshop): ab 79 €/Monat — Webshop mit 0 % Provision, eigene Domain, digitale Speisekarte, unbegrenzte Bestellungen, 2.500 Flyer mit QR-Code.
+- [Business / App + Bestellsystem](https://gastro-master.de/produkte/pakete/bestell-app): ab 149 €/Monat — Webshop + native App, Push-Benachrichtigungen, 5.000 Flyer mit QR-Code.
+- [Kassensystem](https://gastro-master.de/produkte/pakete/kassensystem): ab 69 €/Monat — TSE-zertifiziert, GoBD-konform, bis zu 4 Kassen mit einer Lizenz, Cloud-Updates.
+- Enterprise (Franchise / Mehr-Standorte): Preis nach Projektumfang — individuelles Design, Cloud-Kasse, Transaktionsumlage inklusive.
+
+Alle Pakete: monatlich kündbar mit 3 Monaten Kündigungsfrist (Webseite ausgenommen). Vergleich + Details auf [/preise](https://gastro-master.de/preise).
+
+## Add-Ons
+
+- [QR-Code-Flyer](https://gastro-master.de/produkte/add-ons/qr-code-flyer): Gedruckte Flyer mit QR-Code direkt in den Webshop. Funktioniert mit Webshop oder App alleine. Tier-Preise ab 65 € für 2.500 Stück.
+- [Fahrer-App mit GPS](https://gastro-master.de/produkte/add-ons/fahrer-app-gps): Live-GPS-Tracking, Routen-Optimierung, Lieferzeit-Messung. +10 €/Monat pro Fahrer. Erfordert Bestellsystem oder Kassensystem.
+- [QR-Code-Tischsystem](https://gastro-master.de/produkte/add-ons/qr-code-tischsystem): QR-Code am Tisch, Gäste bestellen über das Smartphone. Bestellung landet direkt in der Kasse. Erfordert Kassensystem oder Business.
+- [Bildschirmfunktion (Kitchen Display)](https://gastro-master.de/produkte/add-ons/bildschirmfunktion): Küchen- und Pick-Up-Screen. Ersetzt Bonpapier, beschleunigt Tresen-Workflow. Erfordert Kassensystem oder Business.
+- [Kiosk Self-Ordering](https://gastro-master.de/produkte/add-ons/kiosk): Self-Ordering-Terminal für Restaurants und Schnellgastronomie. Erfordert Kassensystem oder Business.
+
+Add-Ons sind monatlich aktivierbar/kündbar (Hardware ausgenommen). Software-Add-Ons sind nach Buchung in wenigen Stunden aktiv.
+
+## Lösungen nach Branche / Anwendungsfall
+
+- [Lieferdienst](https://gastro-master.de/loesungen/lieferdienst): Eigener Lieferservice statt Lieferando, Wolt, Uber Eats — 0 % Provision.
+- [Lieferservice gründen](https://gastro-master.de/loesungen/lieferservice-gruenden): Komplettpaket für Restaurant-Betreiber, die neu in die Lieferung einsteigen.
+- [Restaurant](https://gastro-master.de/loesungen/restaurant): Voll-Stack für Restaurants mit Tisch-Service.
+- [Café & Bäckerei](https://gastro-master.de/loesungen/cafe-baeckerei): Branchenspezifisch.
+- [Franchise](https://gastro-master.de/loesungen/franchise): Multi-Standort-Setup.
+- [Ghost Kitchen](https://gastro-master.de/loesungen/ghost-kitchen): Reine Liefer-Konzepte ohne Tresen.
+
+## Über
+
+[Gastro Master](https://gastro-master.de/uber-uns) — gegründet 2021 in Usingen (Hessen), DACH-fokussiert, 30+ Mitarbeitende, > 700 betreute Restaurants. Founder: René Ebert, Sanjaya Pattiyage. Persönlicher Support per Telefon, E-Mail, WhatsApp aus Deutschland — keine Hotline.
+
+## Blog
+
+[Blog-Index](https://gastro-master.de/blog) mit > 100 Posts zu Themen: Provisionsfreie Bestellsysteme, TSE/Kassengesetz, Lieferdienst-Aufbau, Marketing für Restaurants, Vergleiche zu Lieferando/Wolt/Uber Eats, Steuer/HACCP/DSGVO/Arbeitsrecht in der Gastronomie.
+
+## Kontakt
+
+- Anschrift: Herzbergstr. 9, 61250 Usingen, Deutschland
+- Web: https://gastro-master.de
+- Sitemap: https://gastro-master.de/sitemap.xml

@@ -66,6 +66,12 @@ const FranchisePage = () => {
   const lp = useLangPath();
   const arr = (key: string) => { const v = t(key, { returnObjects: true }); return Array.isArray(v) ? v : []; };
 
+  useSeoMeta({
+    title: t("seo.title"),
+    description: t("seo.description"),
+    canonical: "https://gastro-master.de/loesungen/franchise",
+  });
+
   // ─── Schema ────────────────────────────────────────────────────────────
   const faqItems = arr("faq.items") as { q: string; a: string }[];
   const onboardingSteps = arr("onboarding.steps") as { num: string; title: string; text: string }[];

@@ -59,6 +59,12 @@ const GhostKitchenPage = () => {
   const lp = useLangPath();
   const arr = (key: string) => { const v = t(key, { returnObjects: true }); return Array.isArray(v) ? v : []; };
 
+  useSeoMeta({
+    title: t("seo.title"),
+    description: t("seo.description"),
+    canonical: "https://gastro-master.de/loesungen/ghost-kitchen",
+  });
+
   // ─── Data from i18n ─────────────────────────────────────────────────────
   const statsItems = arr("stats.items") as { value: string; label: string; source: string; href: string; isCta?: boolean }[];
   const problemItems = arr("problem.items") as { title: string; text: string }[];
