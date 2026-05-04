@@ -13,6 +13,11 @@ import ScrollProgressBar from "@/components/ScrollProgressBar";
 import ScrollToTopButton from "@/components/ScrollToTopButton";
 import Navbar from "@/components/landing/Navbar";
 import { getCTAConfig } from "@/data/cta-config";
+import { buildOrgGraph } from "@/data/schemaOrg";
+import { PACKAGES, buildPackageSoftwareNode } from "@/data/packages";
+
+const KASSE_PACKAGE = PACKAGES.find((p) => p.slug === "/produkte/pakete/kassensystem")!;
+const KASSE_GRAPH = buildOrgGraph([buildPackageSoftwareNode(KASSE_PACKAGE)]);
 
 // Below-the-fold — code-split to shrink the KassePage chunk.
 const Footer = lazy(() => import("@/components/landing/Footer"));
@@ -816,6 +821,7 @@ const tiles = arr("featuresGrid.tiles") as { title: string; text: string; taglin
     <ScrollToTopButton />
     <script type="application/ld+json" dangerouslySetInnerHTML={{ __html: JSON.stringify(SCHEMA_BREADCRUMB) }} />
     <script type="application/ld+json" dangerouslySetInnerHTML={{ __html: JSON.stringify(SCHEMA_FAQ_KASSE) }} />
+    <script type="application/ld+json" dangerouslySetInnerHTML={{ __html: JSON.stringify(KASSE_GRAPH) }} />
     <Navbar />
 
     {/* ── S1: HERO ──────────────────────────────────────────── */}

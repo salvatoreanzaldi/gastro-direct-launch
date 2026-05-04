@@ -12,6 +12,11 @@ import { useTranslation } from "react-i18next";
 import { useLangPath } from "@/components/LanguageLayout";
 import Navbar from "@/components/landing/Navbar";
 import { getCTAConfig } from "@/data/cta-config";
+import { buildOrgGraph } from "@/data/schemaOrg";
+import { PACKAGES, buildPackageSoftwareNode } from "@/data/packages";
+
+const WEBSHOP_PACKAGE = PACKAGES.find((p) => p.slug === "/produkte/pakete/online-bestellshop")!;
+const WEBSHOP_GRAPH = buildOrgGraph([buildPackageSoftwareNode(WEBSHOP_PACKAGE)]);
 
 // Below-the-fold — code-split to shrink the WebshopPage chunk.
 const Footer = lazy(() => import("@/components/landing/Footer"));
@@ -394,6 +399,7 @@ const WebshopPage = () => {
       <ScrollToTopButton />
       <script type="application/ld+json" dangerouslySetInnerHTML={{ __html: JSON.stringify(SCHEMA_BREADCRUMB) }} />
       <script type="application/ld+json" dangerouslySetInnerHTML={{ __html: JSON.stringify(SCHEMA_FAQ_WEBSHOP) }} />
+      <script type="application/ld+json" dangerouslySetInnerHTML={{ __html: JSON.stringify(WEBSHOP_GRAPH) }} />
       <Navbar />
 
       {/* ── S1: HERO ────────────────────────────────────────────── */}

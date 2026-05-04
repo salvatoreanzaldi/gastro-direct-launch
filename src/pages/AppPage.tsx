@@ -13,6 +13,11 @@ import { useTranslation } from "react-i18next";
 import { useLangPath } from "@/components/LanguageLayout";
 import Navbar from "@/components/landing/Navbar";
 import { getCTAConfig } from "@/data/cta-config";
+import { buildOrgGraph } from "@/data/schemaOrg";
+import { PACKAGES, buildPackageSoftwareNode } from "@/data/packages";
+
+const APP_PACKAGE = PACKAGES.find((p) => p.slug === "/produkte/pakete/bestell-app")!;
+const APP_GRAPH = buildOrgGraph([buildPackageSoftwareNode(APP_PACKAGE)]);
 
 // Below-the-fold — code-split to shrink the AppPage chunk.
 const Footer = lazy(() => import("@/components/landing/Footer"));
@@ -406,6 +411,7 @@ const AppPage = () => {
       <ScrollToTopButton />
       <script type="application/ld+json" dangerouslySetInnerHTML={{ __html: JSON.stringify(SCHEMA_BREADCRUMB) }} />
       <script type="application/ld+json" dangerouslySetInnerHTML={{ __html: JSON.stringify(SCHEMA_FAQ_APP) }} />
+      <script type="application/ld+json" dangerouslySetInnerHTML={{ __html: JSON.stringify(APP_GRAPH) }} />
       <Navbar />
 
       {/* ── S1: HERO ────────────────────────────────────────────── */}

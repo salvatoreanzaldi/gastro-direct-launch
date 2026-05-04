@@ -6,6 +6,26 @@ import { useTranslation } from "react-i18next";
 import Navbar from "@/components/landing/Navbar";
 import HeroScrollSection from "@/components/landing/HeroScrollSection";
 import { getCTAConfig } from "@/data/cta-config";
+import { buildOrgGraph, SITE_URL, ORG_ID } from "@/data/schemaOrg";
+
+const HOME_GRAPH = buildOrgGraph([
+  {
+    "@type": "BreadcrumbList",
+    "@id": `${SITE_URL}/#breadcrumb`,
+    itemListElement: [
+      { "@type": "ListItem", position: 1, name: "Gastro Master", item: SITE_URL },
+    ],
+  },
+  {
+    "@type": "WebPage",
+    "@id": `${SITE_URL}/#webpage`,
+    url: `${SITE_URL}/`,
+    name: "Gastro Master – Mehr Gewinn durch Direktbestellungen",
+    isPartOf: { "@id": `${SITE_URL}/#website` },
+    about: { "@id": ORG_ID },
+    inLanguage: "de-DE",
+  },
+]);
 
 // Below-the-fold sections — code-split to keep the initial bundle small.
 const GoogleReviewsGrid = lazy(() => import("@/components/GoogleReviewsGrid"));
@@ -69,6 +89,10 @@ const Index = () => {
 
   return (
     <div className="min-h-screen bg-background">
+      <script
+        type="application/ld+json"
+        dangerouslySetInnerHTML={{ __html: JSON.stringify(HOME_GRAPH) }}
+      />
       <ScrollProgressBar />
       <ScrollToTopButton />
       <Navbar />

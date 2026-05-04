@@ -47,6 +47,14 @@ import payGoogle      from "@/assets/logos/payment/pay-google.png";
 import payVisa        from "@/assets/logos/payment/pay-visa.png";
 import payMastercard  from "@/assets/logos/payment/pay-mastercard.png";
 import payKlarna      from "@/assets/logos/payment/pay-klarna.png";
+import { buildOrgGraph, SITE_URL } from "@/data/schemaOrg";
+import { PACKAGES, buildPackageSoftwareNode, buildPackagesItemListNode } from "@/data/packages";
+
+const PRICING_GRAPH_NODES = [
+  ...PACKAGES.map(buildPackageSoftwareNode),
+  buildPackagesItemListNode(),
+];
+
 
 // ─── SEO / Schema ───────────────────────────────────────────────────────────
 
@@ -256,6 +264,12 @@ const PreisePage = () => {
       <script
         type="application/ld+json"
         dangerouslySetInnerHTML={{ __html: JSON.stringify(SCHEMA_FAQ) }}
+      />
+      <script
+        type="application/ld+json"
+        dangerouslySetInnerHTML={{
+          __html: JSON.stringify(buildOrgGraph(PRICING_GRAPH_NODES)),
+        }}
       />
 
       <Navbar />

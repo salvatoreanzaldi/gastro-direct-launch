@@ -17,6 +17,11 @@ import Navbar from "@/components/landing/Navbar";
 import { GlobeStickers } from "@/components/ui/cobe-globe-stickers";
 import { useIsMobile } from "@/hooks/use-mobile";
 import { getCTAConfig } from "@/data/cta-config";
+import { buildOrgGraph } from "@/data/schemaOrg";
+import { PACKAGES, buildPackageSoftwareNode } from "@/data/packages";
+
+const WEBSEITE_PACKAGE = PACKAGES.find((p) => p.slug === "/produkte/pakete/webseite")!;
+const WEBSEITE_GRAPH = buildOrgGraph([buildPackageSoftwareNode(WEBSEITE_PACKAGE)]);
 
 // Below-the-fold — code-split to shrink the WebseitePage chunk.
 const Footer = lazy(() => import("@/components/landing/Footer"));
@@ -373,6 +378,7 @@ const WebseitePage = () => {
       <script type="application/ld+json" dangerouslySetInnerHTML={{ __html: JSON.stringify(SCHEMA_PRODUCT) }} />
       <script type="application/ld+json" dangerouslySetInnerHTML={{ __html: JSON.stringify(SCHEMA_FAQ) }} />
       <script type="application/ld+json" dangerouslySetInnerHTML={{ __html: JSON.stringify(SCHEMA_BREADCRUMB) }} />
+      <script type="application/ld+json" dangerouslySetInnerHTML={{ __html: JSON.stringify(WEBSEITE_GRAPH) }} />
 
       <div className="min-h-screen bg-background">
         <Navbar />
