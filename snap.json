@@ -1,0 +1,42 @@
+{
+  "source": "dist",
+  "destination": "dist",
+  "crawl": true,
+  "include": [
+    "/",
+    "/preise",
+    "/produkte/pakete/kassensystem",
+    "/produkte/pakete/bestell-app",
+    "/produkte/pakete/webseite",
+    "/produkte/pakete/online-bestellshop",
+    "/loesungen/lieferdienst",
+    "/loesungen/lieferservice-gruenden",
+    "/loesungen/restaurant",
+    "/loesungen/cafe-baeckerei",
+    "/loesungen/ghost-kitchen",
+    "/loesungen/franchise",
+    "/produkte/add-ons",
+    "/produkte/add-ons/qr-code-flyer",
+    "/produkte/add-ons/fahrer-app-gps",
+    "/produkte/add-ons/qr-code-tischsystem",
+    "/produkte/add-ons/bildschirmfunktion",
+    "/produkte/add-ons/kiosk",
+    "/produkte/hardware",
+    "/blog",
+    "/ueber-uns",
+    "/impressum",
+    "/datenschutz",
+    "/agb"
+  ],
+  "checkInterval": 5000,
+  "timeout": 30000,
+  "externalServer": false,
+  "skipThirdPartyRequests": true,
+  "asyncScriptTags": false,
+  "minifyHtml": {
+    "collapseWhitespace": false,
+    "removeComments": false
+  },
+  "preconnectThirdParty": false,
+  "userAgent": "ReactSnap"
+}
