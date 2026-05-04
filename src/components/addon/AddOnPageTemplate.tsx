@@ -12,6 +12,7 @@ import HomeTeamCTA from "@/components/HomeTeamCTA";
 import { CTASection } from "@/components/CTASection";
 import { getCTAConfig } from "@/data/cta-config";
 import { useSeoMeta } from "@/hooks/useSeoMeta";
+import { ADD_ONS, buildAddOnProductNode } from "@/data/addOns";
 
 // ─── Config Interface ────────────────────────────────────────────────────────
 export interface AddOnProblemPoint { icon: LucideIcon; text: string }
@@ -598,8 +599,25 @@ const AddOnPageTemplate = ({ config, hardwareSections }: AddOnPageTemplateProps)
   useBreadcrumbSchema(config.meta.breadcrumb.name, config.meta.breadcrumb.path);
   useFaqSchema(config.faq?.items);
 
+  // Product-Schema for the current add-on (lookup by canonical path).
+  // Provides isAccessoryOrSparePartFor links to host packages so LLMs can
+  // resolve the cross-sell relationship.
+  const addOnNode = ADD_ONS.find((a) => a.slug === config.meta.breadcrumb.path);
+  const productSchema = addOnNode ? buildAddOnProductNode(addOnNode) : null;
+
   return (
     <div className="min-h-screen bg-background">
+      {productSchema && (
+        <script
+          type="application/ld+json"
+          dangerouslySetInnerHTML={{
+            __html: JSON.stringify({
+              "@context": "https://schema.org",
+              ...productSchema,
+            }),
+          }}
+        />
+      )}
       <Navbar />
 
       <HeroSection {...config.hero} />

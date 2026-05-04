@@ -17,6 +17,7 @@ import Navbar from "@/components/landing/Navbar";
 import Footer from "@/components/landing/Footer";
 import { Carousel, CarouselContent, CarouselItem, CarouselPrevious, CarouselNext, type CarouselApi } from "@/components/ui/carousel";
 import GoogleReviewsGrid from "@/components/GoogleReviewsGrid";
+import { ORG_NODE } from "@/data/schemaOrg";
 
 import imgUsingen from "@/assets/ueber-uns/Über uns - Usingen.png";
 import heroUeberUns from "@/assets/heroes/Hero - Über Uns.png";
@@ -350,16 +351,11 @@ const UeberUnsPage = () => {
     ],
   };
 
+  // Single Source of Truth: src/data/schemaOrg.ts. Locale-aware description override.
   const SCHEMA_ORG = {
     "@context": "https://schema.org",
-    "@type": "Organization",
-    name: "Gastro Master",
-    url: "https://gastro-master.de",
-    foundingDate: "2021",
+    ...ORG_NODE,
     description: t("schema.orgDescription"),
-    address: { "@type": "PostalAddress", addressLocality: "Usingen", addressRegion: "Hessen", addressCountry: "DE" },
-    numberOfEmployees: { "@type": "QuantitativeValue", value: "30+" },
-    areaServed: { "@type": "Country", name: "Deutschland" },
   };
 
   const SCHEMA_FAQ = {

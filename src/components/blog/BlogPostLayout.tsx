@@ -5,6 +5,7 @@ import { useLangPath } from "@/components/LanguageLayout";
 import Navbar from "@/components/landing/Navbar";
 import Footer from "@/components/landing/Footer";
 import { ChevronRight, Clock, ArrowLeft, ArrowRight } from "lucide-react";
+import { FOUNDERS, ORG_ID } from "@/data/schemaOrg";
 
 const CATEGORY_COLORS: Record<string, string> = {
   "Meinung":       "bg-orange-500/15 text-orange-400 border border-orange-500/25",
@@ -55,6 +56,20 @@ export const BlogPostLayout = ({
     description,
     datePublished: "2026-04-20",
     author: { "@type": "Organization", name: "Gastro Master" },
+    contributor: [
+      {
+        "@type": "Person",
+        name: FOUNDERS.reneEbert.name,
+        sameAs: [FOUNDERS.reneEbert.linkedin],
+        worksFor: { "@id": ORG_ID },
+      },
+      {
+        "@type": "Person",
+        name: FOUNDERS.sanjayaPattiyage.name,
+        sameAs: [FOUNDERS.sanjayaPattiyage.linkedin],
+        worksFor: { "@id": ORG_ID },
+      },
+    ],
     publisher: {
       "@type": "Organization",
       name: "Gastro Master",

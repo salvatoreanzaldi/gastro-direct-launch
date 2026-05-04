@@ -16,6 +16,13 @@ import HomeTeamCTA from "@/components/HomeTeamCTA";
 import { CTASection } from "@/components/CTASection";
 import { getCTAConfig } from "@/data/cta-config";
 import { useSeoMeta } from "@/hooks/useSeoMeta";
+import { buildOrgGraph } from "@/data/schemaOrg";
+import { ADD_ONS, buildAddOnProductNode, buildAddOnsCatalogNode } from "@/data/addOns";
+
+const ADDON_HUB_GRAPH = buildOrgGraph([
+  ...ADD_ONS.map(buildAddOnProductNode),
+  buildAddOnsCatalogNode(),
+]);
 
 import imgQrFlyer       from "@/assets/mockups/Mock Up - Flyer.png";
 import imgFahrerApp     from "@/assets/addons/addon-frankfurt-gps.png";
@@ -174,6 +181,7 @@ const AddOnsPage = () => {
       <script type="application/ld+json" dangerouslySetInnerHTML={{ __html: JSON.stringify(SCHEMA_BREADCRUMB) }} />
       <script type="application/ld+json" dangerouslySetInnerHTML={{ __html: JSON.stringify(SCHEMA_ITEMLIST) }} />
       <script type="application/ld+json" dangerouslySetInnerHTML={{ __html: JSON.stringify(SCHEMA_FAQ) }} />
+      <script type="application/ld+json" dangerouslySetInnerHTML={{ __html: JSON.stringify(ADDON_HUB_GRAPH) }} />
 
       <div className="min-h-screen bg-background">
         <Navbar />

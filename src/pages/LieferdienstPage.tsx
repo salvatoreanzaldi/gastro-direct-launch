@@ -43,6 +43,28 @@ import imgApp         from "@/assets/loesungen/Loesung - Bestell-App.png";
 import imgKasse       from "@/assets/loesungen/Loesung - Kasse.png";
 import imgWebseite    from "@/assets/loesungen/Loesung - Webpage.png";
 import imgTransaktion from "@/assets/loesungen/Loesung - Zahlungsgebühren.png";
+import { buildOrgGraph, SITE_URL, ORG_ID } from "@/data/schemaOrg";
+import { PACKAGES } from "@/data/packages";
+
+const LIEFERDIENST_SERVICE_NODE = {
+  "@type": "Service",
+  "@id": `${SITE_URL}/loesungen/lieferdienst#service`,
+  serviceType: "Eigener Lieferservice für Restaurants",
+  name: "Eigener Lieferservice statt Lieferando — 0 % Provision",
+  provider: { "@id": ORG_ID },
+  areaServed: { "@type": "Country", name: "Deutschland" },
+  url: `${SITE_URL}/loesungen/lieferdienst`,
+  hasOfferCatalog: {
+    "@type": "OfferCatalog",
+    name: "Pakete für Lieferdienste",
+    itemListElement: PACKAGES.filter((p) =>
+      ["Starter (Bestellsystem)", "Business (App + Bestellsystem)", "Kassensystem"].includes(p.name),
+    ).map((p) => ({
+      "@type": "Offer",
+      itemOffered: { "@id": p.id },
+    })),
+  },
+};
 
 // ─── Static image / icon maps (order must match JSON cards) ─────────────────
 const cardImages = [imgApp, imgKasse, imgWebseite, imgTransaktion];
@@ -111,6 +133,12 @@ const LieferdienstPage = () => {
       <script
         type="application/ld+json"
         dangerouslySetInnerHTML={{ __html: JSON.stringify(SCHEMA_ARTICLE) }}
+      />
+      <script
+        type="application/ld+json"
+        dangerouslySetInnerHTML={{
+          __html: JSON.stringify(buildOrgGraph([LIEFERDIENST_SERVICE_NODE])),
+        }}
       />
 
       <Navbar />
