@@ -436,9 +436,10 @@ const ROOT_TITLE = baseTitleMatch ? baseTitleMatch[1] : 'Gastro Master';
 const ROOT_DESC = baseDescMatch ? baseDescMatch[1] : '';
 
 // Per-language home meta from the i18n bundles (`seo.indexTitle`/`indexDescription`)
-// + hero strings for the static crawler-fallback markup.
+// + hero strings for the static crawler-fallback markup + nav labels for breadcrumbs.
 const i18nMeta = {};
 const i18nHero = {};
+const i18nNav = {};
 for (const lang of LANGUAGES) {
   try {
     const bundle = JSON.parse(
@@ -449,11 +450,31 @@ for (const lang of LANGUAGES) {
       description: bundle?.seo?.indexDescription ?? ROOT_DESC,
     };
     i18nHero[lang] = bundle?.hero ?? null;
+    i18nNav[lang] = bundle?.nav ?? null;
   } catch {
     i18nMeta[lang] = { title: ROOT_TITLE, description: ROOT_DESC };
     i18nHero[lang] = null;
+    i18nNav[lang] = null;
   }
 }
+
+// IETF BCP 47 lang→locale mapping (e.g. de→de-DE, fa→fa-IR). Used for
+// inLanguage on WebPage and other locale-tagged Schema.org fields.
+const LOCALE_BY_LANG = {
+  de: 'de-DE', en: 'en-US', it: 'it-IT', fa: 'fa-IR', si: 'si-LK', ru: 'ru-RU',
+};
+const localeOf = (lang) => LOCALE_BY_LANG[lang] ?? `${lang}-${lang.toUpperCase()}`;
+
+// Localised breadcrumb labels — sourced from i18n nav.* keys per language.
+// Falls back to DE labels for languages where the i18n nav block is incomplete.
+const navLabel = (lang, key) => {
+  const nav = i18nNav[lang] ?? i18nNav.de;
+  if (key === 'produkte') return nav?.produkte ?? 'Produkte';
+  if (key === 'pakete') return nav?.prodCategories?.[0]?.label ?? 'Pakete';
+  if (key === 'add-ons') return nav?.prodCategories?.[1]?.label ?? 'Add-Ons';
+  if (key === 'hardware') return nav?.prodCategories?.[2]?.label ?? 'Hardware';
+  return key;
+};
 
 // Build the per-language static hero block (lives inside #root, replaced by
 // createRoot() on mount). JS-less AI crawlers see headline + subtitle + the
@@ -532,22 +553,180 @@ const buildStaticHero = (lang) => {
     .join('');
 };
 
+// ─── Product-page enrichment helpers (Sprint: Pakete + Hub + Hardware) ───────
+// PACKAGES_BY_URL enables route → package lookup inside the per-language loop.
+const PACKAGES_BY_URL = new Map(PACKAGES.filter((p) => p.url).map((p) => [p.url, p]));
+
+// Split the package description into 3-6 feature bullets for the static fallback.
+// LLMs prefer enumerated facts over prose paragraphs.
+const splitFeatures = (description) =>
+  String(description ?? '')
+    .split(/[,;]\s+/)
+    .map((s) => s.trim().replace(/\.$/, ''))
+    .filter((s) => s.length > 0)
+    .slice(0, 6);
+
+// Generic page-level WebPage schema builder. AI engines use this to anchor
+// the page entity (mainEntity), the language, and what the page is *about*.
+const buildPageWebPageSchema = ({ canonicalUrl, name, description, lang, mainEntityId }) => ({
+  "@context": "https://schema.org",
+  "@type": "WebPage",
+  "@id": `${canonicalUrl}#webpage`,
+  url: canonicalUrl,
+  name,
+  description,
+  inLanguage: localeOf(lang),
+  isPartOf: { "@id": `${SITE_URL}/#website` },
+  about: { "@id": `${SITE_URL}/#organization` },
+  ...(mainEntityId ? { mainEntity: { "@id": mainEntityId } } : {}),
+  primaryImageOfPage: `${SITE_URL}/logo-gastro-master.png`,
+  speakable: {
+    "@type": "SpeakableSpecification",
+    cssSelector: ['h1', 'section p:first-of-type'],
+  },
+});
+
+// BreadcrumbList for a page. `crumbs` is [{ name, url }, ...] with the final
+// item being the current page. AI engines use this to understand site
+// hierarchy and to produce inline breadcrumb hints in answers.
+const buildBreadcrumbList = (canonicalUrl, crumbs) => ({
+  "@context": "https://schema.org",
+  "@type": "BreadcrumbList",
+  "@id": `${canonicalUrl}#breadcrumb`,
+  itemListElement: crumbs.map((c, i) => ({
+    "@type": "ListItem",
+    position: i + 1,
+    name: c.name,
+    item: c.url,
+  })),
+});
+
+// Per-package Product schema. Reuses the existing Service.offers @id from
+// the global @graph (so Offers don't duplicate; AI engines see one canonical
+// price node referenced from both Service and Product).
+const buildProductSchema = (pkg, canonicalUrl, lang) => ({
+  "@context": "https://schema.org",
+  "@type": "Product",
+  "@id": `${canonicalUrl}#product`,
+  name: pkg.name,
+  description: pkg.description,
+  brand: { "@id": `${SITE_URL}/#organization` },
+  category: 'Restaurant Software',
+  url: canonicalUrl,
+  image: `${SITE_URL}/logo-gastro-master.png`,
+  inLanguage: localeOf(lang),
+  offers: { "@id": `${SITE_URL}${pkg.url}#offer` },
+  aggregateRating: {
+    "@type": "AggregateRating",
+    ratingValue: String(REVIEW_META.totalRating || 5),
+    reviewCount: REVIEW_META.totalCount || 0,
+    bestRating: '5',
+    worstRating: '1',
+  },
+});
+
+// Static crawler fallback for a single package page.
+const buildPackagePageStatic = (pkg, lang) => {
+  const fromLabel = PACKAGES_PRICE_LABEL[lang] ?? PACKAGES_PRICE_LABEL.de;
+  const perMonth = PACKAGES_PER_MONTH[lang] ?? PACKAGES_PER_MONTH.de;
+  const customLabel = PACKAGES_CUSTOM[lang] ?? PACKAGES_CUSTOM.de;
+  const features = splitFeatures(pkg.description);
+  const cta = i18nHero[lang]?.cta ?? 'Kostenlose Beratung';
+  const priceLine = pkg.price ? `${fromLabel} ${pkg.price} ${perMonth}` : customLabel;
+  return [
+    '<article style="max-width:880px;margin:3rem auto;padding:1.5rem;font-family:system-ui,sans-serif;color:#0A264A;">',
+    `<h1 style="font-size:2rem;font-weight:900;line-height:1.2;margin:0 0 0.5rem;">${escapeHtmlMin(pkg.name)}</h1>`,
+    `<p style="font-size:1.5rem;color:#ED8400;font-weight:700;margin:0 0 1rem;">${escapeHtmlMin(priceLine)}</p>`,
+    `<p style="font-size:1.125rem;line-height:1.5;margin:0 0 1.5rem;color:#0A264A;opacity:0.85;">${escapeHtmlMin(pkg.description)}</p>`,
+    features.length > 1
+      ? `<ul style="list-style:none;padding:0;margin:0 0 1.5rem;">${features
+          .map((f) => `<li style="padding:0.5rem 0;">✓ ${escapeHtmlMin(f)}</li>`)
+          .join('')}</ul>`
+      : '',
+    `<a href="/${lang}${contactSlug(lang)}" style="display:inline-block;background:#ED8400;color:#fff;font-weight:700;padding:0.75rem 2rem;border-radius:0.75rem;text-decoration:none;">${escapeHtmlMin(cta)}</a>`,
+    '</article>',
+  ]
+    .filter(Boolean)
+    .join('');
+};
+
+// Static fallback for the /produkte hub. Lists all 4 main packages with
+// price + short description so a JS-less crawler sees the full catalogue.
+const buildHubPageStatic = (lang) => {
+  const heading = navLabel(lang, 'produkte');
+  // Reuse the same packages section we render under the hero on the home —
+  // but here it's the page's main content, not a secondary block.
+  return `<section style="max-width:880px;margin:2rem auto;padding:1.5rem;font-family:system-ui,sans-serif;color:#0A264A;"><h1 style="font-size:2rem;font-weight:900;text-align:center;margin:0 0 1.5rem;">${escapeHtmlMin(heading)}</h1>${buildStaticPackages(lang).replace(/<h2[^>]*>[^<]*<\/h2>/, '')}</section>`;
+};
+
+// Hardware page is a category landing — no fixed price, generic Product/Service
+// markup with a brief overview and link to the contact page for quotes.
+const HARDWARE_INTRO = {
+  de: 'TSE-zertifizierte Kassen, Drucker, Tablets, Bondrucker und Display-Hardware für deine Gastronomie. Kompatibel mit dem Gastro Master Kassensystem.',
+  en: 'TSE-certified POS terminals, printers, tablets and display hardware for your restaurant. Fully compatible with the Gastro Master POS system.',
+  it: 'Casse certificate TSE, stampanti, tablet e hardware display per la tua ristorazione. Compatibili con il sistema cassa Gastro Master.',
+  fa: 'صندوق‌های فروش گواهی‌شده TSE، چاپگرها، تبلت‌ها و سخت‌افزار نمایشگر برای رستوران شما. سازگار با سیستم صندوق Gastro Master.',
+  si: 'TSE සහතික කළ POS පර්යන්ත, මුද්‍රණ යන්ත්‍ර, ටැබ්ලට් සහ සංදර්ශක උපකරණ ඔබේ අවන්හල සඳහා. Gastro Master POS පද්ධතිය සමඟ සම්පූර්ණයෙන් අනුකූල.',
+  ru: 'Сертифицированные TSE кассы, принтеры, планшеты и дисплеи для вашего ресторана. Полностью совместимы с кассовой системой Gastro Master.',
+};
+
+const buildHardwarePageStatic = (lang) => {
+  const heading = `${navLabel(lang, 'hardware')} — Gastro Master`;
+  const intro = HARDWARE_INTRO[lang] ?? HARDWARE_INTRO.de;
+  const cta = i18nHero[lang]?.cta ?? 'Kostenlose Beratung';
+  return [
+    '<article style="max-width:880px;margin:3rem auto;padding:1.5rem;font-family:system-ui,sans-serif;color:#0A264A;">',
+    `<h1 style="font-size:2rem;font-weight:900;margin:0 0 1rem;">${escapeHtmlMin(navLabel(lang, 'hardware'))}</h1>`,
+    `<p style="font-size:1.125rem;line-height:1.5;margin:0 0 1.5rem;">${escapeHtmlMin(intro)}</p>`,
+    `<a href="/${lang}${contactSlug(lang)}" style="display:inline-block;background:#ED8400;color:#fff;font-weight:700;padding:0.75rem 2rem;border-radius:0.75rem;text-decoration:none;">${escapeHtmlMin(cta)}</a>`,
+    '</article>',
+  ].join('');
+};
+
 let perLangCount = 0;
 for (const route of routes) {
   // Schema (and curated meta) for routes covered by seoMeta.json
   const curatedMeta = seoMeta[route.slugs.de];
   const curatedSchema = pages.find((p) => p.path === route.slugs.de)?.schema;
 
+  // Detect product-page kind: package (one of the 4 main Pakete), the
+  // /produkte hub, or the /produkte/hardware category page. Each kind gets
+  // a different static fallback + Schema.org treatment.
+  const pkg = PACKAGES_BY_URL.get(route.slugs.de);
+  const isHub = route.key === 'produkte';
+  const isHardware = route.key === 'hardware';
+  const isProductPage = !!pkg || isHub || isHardware;
+
   for (const lang of LANGUAGES) {
     const slug = route.slugs[lang];
     const canonicalUrl = buildHref(lang, slug);
     const hreflangTags = buildHreflangTags(route.slugs.de);
 
-    // Priority: curated DE-only seoMeta.json > per-language home meta from i18n > root defaults.
-    // (The home route gets the i18n meta in every language; other routes only have curated DE meta for now.)
+    // Priority order for title/description:
+    //   1. Curated DE-only seoMeta.json (still authoritative where present)
+    //   2. Per-language home i18n.seo.* (only the home route)
+    //   3. Per-package title/description built from PACKAGES (4 Pakete-Pages)
+    //   4. Hub/Hardware: built from i18n nav labels + PACKAGES
+    //   5. Root index.html defaults (last-resort fallback)
     const langFallback = route.key === 'home' ? i18nMeta[lang] : undefined;
-    const title = curatedMeta?.title ?? langFallback?.title ?? ROOT_TITLE;
-    const description = curatedMeta?.description ?? langFallback?.description ?? ROOT_DESC;
+    let pageTitle, pageDesc;
+    if (pkg) {
+      const fromLabel = PACKAGES_PRICE_LABEL[lang] ?? PACKAGES_PRICE_LABEL.de;
+      const perMonth = PACKAGES_PER_MONTH[lang] ?? PACKAGES_PER_MONTH.de;
+      const priceTail = pkg.price ? ` – ${fromLabel} ${pkg.price} ${perMonth}` : '';
+      pageTitle = `${pkg.name}${priceTail} | Gastro Master`;
+      pageDesc = pkg.description;
+    } else if (isHub) {
+      pageTitle = `${navLabel(lang, 'produkte')} – ${navLabel(lang, 'pakete')}, ${navLabel(lang, 'add-ons')}, ${navLabel(lang, 'hardware')} | Gastro Master`;
+      pageDesc = PACKAGES.filter((p) => p.price)
+        .map((p) => `${p.name} (${p.price}€/Mo.)`)
+        .join(', ');
+    } else if (isHardware) {
+      pageTitle = `${navLabel(lang, 'hardware')} | Gastro Master`;
+      pageDesc = HARDWARE_INTRO[lang] ?? HARDWARE_INTRO.de;
+    }
+    const title = curatedMeta?.title ?? langFallback?.title ?? pageTitle ?? ROOT_TITLE;
+    const description = curatedMeta?.description ?? langFallback?.description ?? pageDesc ?? ROOT_DESC;
 
     let html = baseHtml
       .replace(/<title>[^<]*<\/title>/, `<title>${title}</title>`)
@@ -580,30 +759,108 @@ for (const route of routes) {
       if (homeStatic) {
         html = html.replace(/<div id="root"><\/div>/, `<div id="root">${homeStatic}</div>`);
       }
-      // Page-specific WebPage schema (separate JSON-LD block) — gives AI
-      // engines explicit context for THIS URL, with mainEntity → Organization
-      // and `speakable` markup so voice assistants know what to read aloud.
-      const webPageSchema = {
-        "@context": "https://schema.org",
-        "@type": "WebPage",
-        "@id": `${canonicalUrl}#webpage`,
-        url: canonicalUrl,
+      const webPageSchema = buildPageWebPageSchema({
+        canonicalUrl,
         name: title,
         description,
-        inLanguage: lang === 'de' ? 'de-DE' : lang === 'en' ? 'en-US' : `${lang}-${lang.toUpperCase()}`,
-        isPartOf: { "@id": `${SITE_URL}/#website` },
-        about: { "@id": `${SITE_URL}/#organization` },
-        mainEntity: { "@id": `${SITE_URL}/#software-application` },
-        primaryImageOfPage: `${SITE_URL}/logo-gastro-master.png`,
-        speakable: {
-          "@type": "SpeakableSpecification",
-          cssSelector: ['h1', 'section p:first-of-type'],
-        },
-      };
+        lang,
+        mainEntityId: `${SITE_URL}/#software-application`,
+      });
       html = html.replace(
         '</head>',
         `  <script type="application/ld+json">${JSON.stringify(webPageSchema)}</script>\n  </head>`,
       );
+    } else if (isProductPage) {
+      // ─── Product pages: Pakete (4) + /produkte hub + /produkte/hardware ──
+      // Each gets: localised static fallback in <div id="root">, page-specific
+      // WebPage + BreadcrumbList schemas, and (for Pakete) a Product node.
+      let staticContent = '';
+      const extraSchemas = [];
+      const baseCrumbs = [
+        { name: 'Home', url: `${SITE_URL}/${lang}` },
+        { name: navLabel(lang, 'produkte'), url: `${SITE_URL}${buildHref(lang, '/produkte').replace(SITE_URL, '')}` },
+      ];
+
+      if (pkg) {
+        staticContent = buildPackagePageStatic(pkg, lang);
+        extraSchemas.push(buildProductSchema(pkg, canonicalUrl, lang));
+        // Breadcrumb: Home → Produkte → Package. We intentionally drop a
+        // "Pakete" intermediate step because there is no /produkte/pakete
+        // route — only the products hub (/produkte) and individual package
+        // pages exist. Adding a fake intermediate would point to the same
+        // URL as "Produkte" and confuse AI engines.
+        extraSchemas.push(
+          buildBreadcrumbList(canonicalUrl, [
+            ...baseCrumbs,
+            { name: pkg.name, url: canonicalUrl },
+          ]),
+        );
+        extraSchemas.push(
+          buildPageWebPageSchema({
+            canonicalUrl,
+            name: title,
+            description,
+            lang,
+            mainEntityId: `${canonicalUrl}#product`,
+          }),
+        );
+      } else if (isHub) {
+        staticContent = buildHubPageStatic(lang);
+        extraSchemas.push({
+          "@context": "https://schema.org",
+          "@type": "CollectionPage",
+          "@id": `${canonicalUrl}#collection`,
+          url: canonicalUrl,
+          name: title,
+          description,
+          inLanguage: localeOf(lang),
+          isPartOf: { "@id": `${SITE_URL}/#website` },
+          about: { "@id": `${SITE_URL}/#organization` },
+          mainEntity: {
+            "@type": "ItemList",
+            name: `${navLabel(lang, 'produkte')} — ${navLabel(lang, 'pakete')}`,
+            numberOfItems: PACKAGES.length,
+            itemListElement: PACKAGES.map((p, i) => ({
+              "@type": "ListItem",
+              position: i + 1,
+              item: { "@id": `${SITE_URL}/#service-${p.key}` },
+            })),
+          },
+        });
+        extraSchemas.push(
+          buildBreadcrumbList(canonicalUrl, [
+            ...baseCrumbs.slice(0, 1),
+            { name: navLabel(lang, 'produkte'), url: canonicalUrl },
+          ]),
+        );
+      } else if (isHardware) {
+        staticContent = buildHardwarePageStatic(lang);
+        extraSchemas.push(
+          buildPageWebPageSchema({
+            canonicalUrl,
+            name: title,
+            description,
+            lang,
+            mainEntityId: `${SITE_URL}/#organization`,
+          }),
+        );
+        extraSchemas.push(
+          buildBreadcrumbList(canonicalUrl, [
+            ...baseCrumbs,
+            { name: navLabel(lang, 'hardware'), url: canonicalUrl },
+          ]),
+        );
+      }
+
+      if (staticContent) {
+        html = html.replace(/<div id="root"><\/div>/, `<div id="root">${staticContent}</div>`);
+      }
+      if (extraSchemas.length) {
+        const blocks = extraSchemas
+          .map((s) => `  <script type="application/ld+json">${JSON.stringify(s)}</script>`)
+          .join('\n');
+        html = html.replace('</head>', `${blocks}\n  </head>`);
+      }
     }
 
     // Build output path: dist/<lang>/<slug>/index.html.
