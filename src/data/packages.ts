@@ -30,6 +30,8 @@ export interface PackageNode {
   monthlyNote: string | null;
   /** Page-level description (1–2 Sätze, DE). */
   description: string;
+  /** Flag to distinguish Enterprise ("preis auf anfrage") from standard packages with list prices. */
+  isEnterprise?: boolean;
 }
 
 /** Derived from common.json pricing.slimPlans + pricing.packageFeatures. */
@@ -132,6 +134,7 @@ export const PACKAGES: readonly PackageNode[] = [
     monthlyNote: "Nach Projektumfang",
     description:
       "Enterprise-Paket für Franchise-Systeme und Multi-Standort-Betriebe – Preis nach Projektumfang.",
+    isEnterprise: true,
   },
 ] as const;
 
