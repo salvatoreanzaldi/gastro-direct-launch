@@ -412,6 +412,10 @@ const escapeHtmlMin = (s) =>
     .replace(/"/g, '&quot;')
     .replace(/'/g, '&#39;');
 
+// Localised contact-route slug — must match routes.ts so the hero CTA never 404s.
+const contactRoute = routes.find((r) => r.key === 'contact');
+const contactSlug = (lang) => contactRoute?.slugs?.[lang] ?? '/kontakt';
+
 const buildStaticHero = (lang) => {
   const h = i18nHero[lang];
   if (!h?.headline) return '';
@@ -425,7 +429,7 @@ const buildStaticHero = (lang) => {
           .map((t) => `<li>✓ ${escapeHtmlMin(t)}</li>`)
           .join('')}</ul>`
       : '',
-    h.cta ? `<a href="/${lang}/kontakt" style="display:inline-block;background:#ED8400;color:#fff;font-weight:700;padding:0.75rem 2rem;border-radius:0.75rem;text-decoration:none;">${escapeHtmlMin(h.cta)}</a>` : '',
+    h.cta ? `<a href="/${lang}${contactSlug(lang)}" style="display:inline-block;background:#ED8400;color:#fff;font-weight:700;padding:0.75rem 2rem;border-radius:0.75rem;text-decoration:none;">${escapeHtmlMin(h.cta)}</a>` : '',
     '</section>',
   ]
     .filter(Boolean)
