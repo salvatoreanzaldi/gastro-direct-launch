@@ -24,15 +24,15 @@ export const FOUNDERS = {
 } as const;
 
 /**
- * Public social profiles (sameAs).
- * TODO: confirm and add LinkedIn company-page URL, Google Business listing,
- * Trustpilot profile (currently omitted to avoid hallucinated URLs).
+ * Public company social profiles (sameAs).
+ * Only company-level profiles (Facebook Business, Instagram Business, etc.).
+ * Personal founder profiles are used separately in Person schema nodes (not in Organization.sameAs).
+ * TODO: Add LinkedIn company-page URL, Google Business listing, Trustpilot profile
+ * (currently omitted to avoid hallucinated URLs — add when URLs are confirmed).
  */
 export const ORG_SAME_AS = [
   "https://www.facebook.com/gastromasterde",
   "https://www.instagram.com/gastromasterde",
-  FOUNDERS.sanjayaPattiyage.linkedin,
-  FOUNDERS.reneEbert.linkedin,
 ] as const;
 
 export const ORG_NODE = {
