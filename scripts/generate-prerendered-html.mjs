@@ -658,6 +658,101 @@ const buildStaticHero = (lang) => {
     .join('');
 };
 
+// ─── Per-page i18n bundles (Sprint 2: Add-ons + future retrofit) ─────────────
+// Each product/feature page has its own structured i18n bundle with the keys
+// `meta`, `hero`, `pricing`, `faq.items` etc. in 6 languages — way richer
+// than the homepage common.json. This generic loader caches the parsed
+// bundle per (lang, name) so we read each file once.
+const _bundleCache = new Map();
+const loadBundle = (lang, name) => {
+  const key = `${lang}/${name}`;
+  if (_bundleCache.has(key)) return _bundleCache.get(key);
+  const path = resolve(ROOT, `public/locales/${lang}/${name}.json`);
+  let bundle = null;
+  if (existsSync(path)) {
+    try {
+      bundle = JSON.parse(readFileSync(path, 'utf-8'));
+    } catch (e) {
+      console.warn(`⚠️ Could not parse ${path}: ${e.message}`);
+    }
+  }
+  _bundleCache.set(key, bundle);
+  return bundle;
+};
+
+// Add-on registry: route.key → {bundle filename, dependencies, category}.
+// `deps` references PACKAGES.key for isAccessoryOrSparePartFor relationships
+// — Schema.org accessory linkage that AI engines use to answer "Welche
+// Add-ons gehören zum Business-Paket?".
+const ADDON_REGISTRY = {
+  'qr-flyer':                { bundle: 'qr-code-flyer',         deps: ['starter', 'business'],     category: 'Marketing' },
+  'driver-app-gps':          { bundle: 'fahrer-app',            deps: ['starter', 'kassensystem'], category: 'Logistics' },
+  'qr-table-system':         { bundle: 'qr-code-tischsystem',   deps: ['business', 'kassensystem'], category: 'Self-Service' },
+  'kitchen-display':         { bundle: 'bildschirmfunktion',    deps: ['business', 'kassensystem'], category: 'Operations' },
+  'kiosk':                   { bundle: 'kiosk',                 deps: ['business', 'kassensystem'], category: 'Self-Service' },
+  'transaction-fee-sharing': { bundle: 'transaktionsumlage',    deps: [],                          category: 'Payment' },
+};
+
+// Extract a numeric monthly EUR price from a free-form pricing string.
+// Returns null if no clear number found (custom-quote / per-unit / etc.).
+const parsePriceNumber = (priceText) => {
+  if (!priceText) return null;
+  // Match patterns like "ab 65 €", "+10 €/Monat", "79€/Mo", "ab 49 EUR"
+  const m = String(priceText).match(/(\d+(?:[.,]\d+)?)\s*(?:€|EUR)/i);
+  return m ? m[1].replace(',', '.') : null;
+};
+
+// Build Offer schema from bundle pricing data. Falls back to PriceSpecification
+// (description-only) for "Auf Anfrage" / custom-quote tiers.
+const buildOfferFromPricing = (canonicalUrl, pricing) => {
+  const priceText = pricing?.price ?? '';
+  const priceNum = parsePriceNumber(priceText);
+  const note = pricing?.note ?? '';
+  if (priceNum) {
+    return {
+      "@type": "Offer",
+      "@id": `${canonicalUrl}#offer`,
+      price: priceNum,
+      priceCurrency: 'EUR',
+      priceSpecification: {
+        "@type": "UnitPriceSpecification",
+        price: priceNum,
+        priceCurrency: 'EUR',
+        unitCode: 'MON',
+        description: priceText,
+      },
+      availability: 'https://schema.org/InStock',
+      url: canonicalUrl,
+    };
+  }
+  return {
+    "@type": "Offer",
+    "@id": `${canonicalUrl}#offer`,
+    priceSpecification: {
+      "@type": "PriceSpecification",
+      priceCurrency: 'EUR',
+      description: priceText || note || 'Auf Anfrage',
+    },
+    availability: 'https://schema.org/InStock',
+    url: canonicalUrl,
+  };
+};
+
+// FAQPage schema from bundle.faq.items[]. AI engines prize FAQPage citations.
+const buildFaqPageFromBundle = (canonicalUrl, faqItems) => {
+  if (!Array.isArray(faqItems) || faqItems.length < 2) return null;
+  return {
+    "@context": "https://schema.org",
+    "@type": "FAQPage",
+    "@id": `${canonicalUrl}#faq`,
+    mainEntity: faqItems.map((item) => ({
+      "@type": "Question",
+      name: item.q ?? item.question ?? '',
+      acceptedAnswer: { "@type": "Answer", text: item.a ?? item.answer ?? '' },
+    })),
+  };
+};
+
 // ─── Product-page enrichment helpers (Sprint: Pakete + Hub + Hardware) ───────
 // PACKAGES_BY_URL enables route → package lookup inside the per-language loop.
 const PACKAGES_BY_URL = new Map(PACKAGES.filter((p) => p.url).map((p) => [p.url, p]));
@@ -821,6 +916,154 @@ const buildHardwarePageStatic = (lang) => {
   ].join('');
 };
 
+// ─── Add-on enrichment (Sprint 2) ───────────────────────────────────────────
+// Asset filename hint per add-on registry key — best-effort glob into
+// dist/assets/. Mirrors the pattern used for Pakete (resolveAssetUrl).
+const ADDON_ASSET_HINTS = {
+  'qr-flyer':                'addon-qrcode',
+  'driver-app-gps':          'addon-frankfurt-gps',
+  'qr-table-system':         'addon-qr-tischsystem',
+  'kitchen-display':         'pickup-screen',
+  'kiosk':                   'selfordering-terminals',
+  'transaction-fee-sharing': null,
+};
+
+const addonImageUrl = (routeKey) => {
+  const hint = ADDON_ASSET_HINTS[routeKey];
+  return resolveAssetUrl(hint) ?? `${SITE_URL}/logo-gastro-master.png`;
+};
+
+// Build Product schema for an add-on. Mirrors buildProductSchema for Pakete
+// but uses the per-page bundle for naming + description, and links to its
+// dependent base packages via isAccessoryOrSparePartFor.
+const buildAddonProductSchema = ({ canonicalUrl, lang, bundle, registry, routeKey }) => {
+  const meta = bundle?.meta ?? {};
+  const hero = bundle?.hero ?? {};
+  const name = meta.breadcrumbName ?? hero.headline ?? routeKey;
+  const description = meta.description ?? hero.subline ?? '';
+  const offer = buildOfferFromPricing(canonicalUrl, bundle?.pricing);
+  return {
+    "@context": "https://schema.org",
+    "@type": "Product",
+    "@id": `${canonicalUrl}#product`,
+    name,
+    description,
+    brand: { "@id": `${SITE_URL}/#organization` },
+    category: `Restaurant Software / ${registry.category}`,
+    url: canonicalUrl,
+    image: addonImageUrl(routeKey),
+    inLanguage: localeOf(lang),
+    offers: offer,
+    audience: RESTAURANT_AUDIENCE,
+    aggregateRating: {
+      "@type": "AggregateRating",
+      ratingValue: String(REVIEW_META.totalRating || 5),
+      reviewCount: REVIEW_META.totalCount || 0,
+      bestRating: '5',
+      worstRating: '1',
+    },
+    // Schema.org accessory linkage: AI engines see "this add-on is for these
+    // base packages". Helps queries like "Welches Add-on brauche ich für …".
+    ...(registry.deps.length
+      ? {
+          isAccessoryOrSparePartFor: registry.deps.map((depKey) => ({
+            "@id": `${SITE_URL}/#service-${depKey}`,
+          })),
+        }
+      : {}),
+  };
+};
+
+// Static fallback for an add-on detail page — H1, badge, subline, structured
+// pricing block, dependency hint, CTA. All localised via the per-page bundle.
+const buildAddonPageStatic = ({ lang, bundle, registry }) => {
+  const hero = bundle?.hero ?? {};
+  const pricing = bundle?.pricing ?? {};
+  const cta = i18nHero[lang]?.cta ?? 'Kostenlose Beratung';
+  const depNames = registry.deps
+    .map((k) => {
+      const pkg = PACKAGES.find((p) => p.key === k);
+      return pkg ? localizedPackageName(pkg, lang) : null;
+    })
+    .filter(Boolean);
+  return [
+    '<article style="max-width:880px;margin:3rem auto;padding:1.5rem;font-family:system-ui,sans-serif;color:#0A264A;">',
+    hero.badge
+      ? `<p style="display:inline-block;background:#0A264A;color:#fff;font-size:0.75rem;font-weight:700;text-transform:uppercase;letter-spacing:0.05em;padding:0.25rem 0.75rem;border-radius:999px;margin:0 0 1rem;">${escapeHtmlMin(hero.badge)}</p>`
+      : '',
+    `<h1 style="font-size:2rem;font-weight:900;line-height:1.2;margin:0 0 0.75rem;">${escapeHtmlMin(hero.headline ?? '')}</h1>`,
+    hero.subline
+      ? `<p style="font-size:1.125rem;line-height:1.5;margin:0 0 1.5rem;color:#0A264A;opacity:0.85;">${escapeHtmlMin(hero.subline)}</p>`
+      : '',
+    pricing.price
+      ? `<p style="font-size:1.5rem;color:#ED8400;font-weight:700;margin:0 0 0.5rem;">${escapeHtmlMin(pricing.price)}</p>`
+      : '',
+    pricing.note
+      ? `<p style="font-size:0.95rem;line-height:1.4;margin:0 0 1.5rem;color:#475569;">${escapeHtmlMin(pricing.note)}</p>`
+      : '',
+    depNames.length
+      ? `<p style="font-size:0.875rem;color:#475569;margin:0 0 1.5rem;"><strong>Erfordert:</strong> ${depNames.map(escapeHtmlMin).join(' / ')}</p>`
+      : '',
+    `<a href="/${lang}${contactSlug(lang)}" style="display:inline-block;background:#ED8400;color:#fff;font-weight:700;padding:0.75rem 2rem;border-radius:0.75rem;text-decoration:none;">${escapeHtmlMin(cta)}</a>`,
+    '</article>',
+  ]
+    .filter(Boolean)
+    .join('');
+};
+
+// Static fallback for the /produkte/add-ons hub: pulls structured cards from
+// addons-hub.json (5 add-ons with title/price/desc/benefits/compatibility).
+const buildAddonsHubStatic = (lang) => {
+  const hub = loadBundle(lang, 'addons-hub') ?? loadBundle('de', 'addons-hub');
+  const addons = Array.isArray(hub?.addons) ? hub.addons : [];
+  // Bundle hero uses {headline, headlineHighlight, sub} — combine for H1.
+  const headline = hub?.hero?.headline ?? '';
+  const highlight = hub?.hero?.headlineHighlight ?? '';
+  const heading =
+    [headline, highlight].filter(Boolean).join(' ').trim() ||
+    navLabel(lang, 'add-ons');
+  const sub = hub?.hero?.sub ?? '';
+  const items = addons
+    .map((a) => {
+      const benefits = Array.isArray(a.benefits) ? a.benefits : [];
+      return [
+        '<li style="margin:0 0 1rem;padding:1rem;border:1px solid #e5e7eb;border-radius:0.5rem;">',
+        a.badge
+          ? `<p style="font-size:0.7rem;font-weight:700;color:#0A264A;text-transform:uppercase;letter-spacing:0.05em;margin:0 0 0.5rem;">${escapeHtmlMin(a.badge)}</p>`
+          : '',
+        `<strong style="font-size:1.125rem;">${escapeHtmlMin(a.title ?? '')}</strong>`,
+        a.price
+          ? ` — <span style="color:#ED8400;font-weight:600;">${escapeHtmlMin(a.price)}</span>`
+          : '',
+        '<br/>',
+        a.desc
+          ? `<span style="color:#475569;font-size:0.95rem;">${escapeHtmlMin(a.desc)}</span>`
+          : '',
+        benefits.length
+          ? `<ul style="margin:0.5rem 0 0;padding-left:1.25rem;color:#475569;font-size:0.875rem;">${benefits
+              .map((b) => `<li>${escapeHtmlMin(b)}</li>`)
+              .join('')}</ul>`
+          : '',
+        a.compatibility
+          ? `<p style="font-size:0.8rem;color:#0A264A;margin:0.5rem 0 0;"><strong>Kompatibel mit:</strong> ${escapeHtmlMin(a.compatibility)}</p>`
+          : '',
+        '</li>',
+      ]
+        .filter(Boolean)
+        .join('');
+    })
+    .join('');
+  return [
+    '<section style="max-width:880px;margin:2rem auto;padding:1.5rem;font-family:system-ui,sans-serif;color:#0A264A;">',
+    `<h1 style="font-size:2rem;font-weight:900;text-align:center;margin:0 0 1rem;">${escapeHtmlMin(heading)}</h1>`,
+    sub
+      ? `<p style="font-size:1rem;line-height:1.5;text-align:center;margin:0 0 1.5rem;color:#475569;">${escapeHtmlMin(sub)}</p>`
+      : '',
+    `<ul style="list-style:none;padding:0;margin:0;">${items}</ul>`,
+    '</section>',
+  ].join('');
+};
+
 // ItemList of hardware categories for the Hardware page Schema.
 const buildHardwareItemList = (canonicalUrl) => ({
   "@type": "ItemList",
@@ -847,12 +1090,13 @@ for (const route of routes) {
   const curatedSchema = pages.find((p) => p.path === route.slugs.de)?.schema;
 
   // Detect product-page kind: package (one of the 4 main Pakete), the
-  // /produkte hub, or the /produkte/hardware category page. Each kind gets
-  // a different static fallback + Schema.org treatment.
+  // /produkte hub, /produkte/hardware, an add-on, or the add-ons hub.
   const pkg = PACKAGES_BY_URL.get(route.slugs.de);
   const isHub = route.key === 'produkte';
   const isHardware = route.key === 'hardware';
-  const isProductPage = !!pkg || isHub || isHardware;
+  const addonRegistry = ADDON_REGISTRY[route.key];
+  const isAddonsHub = route.key === 'add-ons';
+  const isProductPage = !!pkg || isHub || isHardware || !!addonRegistry || isAddonsHub;
 
   for (const lang of LANGUAGES) {
     const slug = route.slugs[lang];
@@ -881,6 +1125,15 @@ for (const route of routes) {
     } else if (isHardware) {
       pageTitle = `${navLabel(lang, 'hardware')} | Gastro Master`;
       pageDesc = HARDWARE_INTRO[lang] ?? HARDWARE_INTRO.de;
+    } else if (addonRegistry) {
+      // Per-language SEO meta from the add-on's i18n bundle (or DE fallback).
+      const b = loadBundle(lang, addonRegistry.bundle) ?? loadBundle('de', addonRegistry.bundle);
+      pageTitle = b?.meta?.title ?? `${addonRegistry.bundle} | Gastro Master`;
+      pageDesc = b?.meta?.description ?? '';
+    } else if (isAddonsHub) {
+      const h = loadBundle(lang, 'addons-hub') ?? loadBundle('de', 'addons-hub');
+      pageTitle = h?.seo?.title ?? `${navLabel(lang, 'add-ons')} | Gastro Master`;
+      pageDesc = h?.seo?.description ?? '';
     }
     const title = curatedMeta?.title ?? langFallback?.title ?? pageTitle ?? ROOT_TITLE;
     const description = curatedMeta?.description ?? langFallback?.description ?? pageDesc ?? ROOT_DESC;
@@ -989,6 +1242,77 @@ for (const route of routes) {
           buildBreadcrumbList(canonicalUrl, [
             ...baseCrumbs.slice(0, 1),
             { name: navLabel(lang, 'produkte'), url: canonicalUrl },
+          ]),
+        );
+      } else if (addonRegistry) {
+        const bundle = loadBundle(lang, addonRegistry.bundle) ?? loadBundle('de', addonRegistry.bundle);
+        staticContent = buildAddonPageStatic({ lang, bundle, registry: addonRegistry });
+        extraSchemas.push(
+          buildAddonProductSchema({ canonicalUrl, lang, bundle, registry: addonRegistry, routeKey: route.key }),
+        );
+        // FAQPage if the bundle has at least 2 FAQ items.
+        const faqSchema = buildFaqPageFromBundle(canonicalUrl, bundle?.faq?.items);
+        if (faqSchema) extraSchemas.push(faqSchema);
+        extraSchemas.push(
+          buildPageWebPageSchema({
+            canonicalUrl,
+            name: title,
+            description,
+            lang,
+            mainEntityId: `${canonicalUrl}#product`,
+            image: addonImageUrl(route.key),
+          }),
+        );
+        // Breadcrumb: Home → Produkte → Add-Ons → [Add-on name]. The
+        // Add-Ons crumb points to the hub which DOES exist as a route.
+        const addonName =
+          bundle?.meta?.breadcrumbName ?? bundle?.hero?.headline ?? route.key;
+        extraSchemas.push(
+          buildBreadcrumbList(canonicalUrl, [
+            ...baseCrumbs,
+            { name: navLabel(lang, 'add-ons'), url: `${SITE_URL}/${lang}/produkte/add-ons` },
+            { name: addonName, url: canonicalUrl },
+          ]),
+        );
+      } else if (isAddonsHub) {
+        staticContent = buildAddonsHubStatic(lang);
+        // CollectionPage with mainEntity → ItemList of all 6 add-on Products.
+        const addonRoutes = Object.entries(ADDON_REGISTRY);
+        extraSchemas.push({
+          "@context": "https://schema.org",
+          "@type": "CollectionPage",
+          "@id": `${canonicalUrl}#collection`,
+          url: canonicalUrl,
+          name: title,
+          description,
+          inLanguage: localeOf(lang),
+          isPartOf: { "@id": `${SITE_URL}/#website` },
+          about: { "@id": `${SITE_URL}/#organization` },
+          datePublished: BUILD_DATE,
+          dateModified: BUILD_DATE,
+          mainEntity: {
+            "@type": "ItemList",
+            name: navLabel(lang, 'add-ons'),
+            numberOfItems: addonRoutes.length,
+            itemListElement: addonRoutes.map(([key], i) => {
+              const r = routes.find((rt) => rt.key === key);
+              const slug = r?.slugs?.[lang] ?? r?.slugs?.de ?? '';
+              return {
+                "@type": "ListItem",
+                position: i + 1,
+                item: { "@id": `${SITE_URL}/${lang}${slug}#product` },
+              };
+            }),
+          },
+          speakable: {
+            "@type": "SpeakableSpecification",
+            cssSelector: ['h1', 'section p:first-of-type'],
+          },
+        });
+        extraSchemas.push(
+          buildBreadcrumbList(canonicalUrl, [
+            ...baseCrumbs,
+            { name: navLabel(lang, 'add-ons'), url: canonicalUrl },
           ]),
         );
       } else if (isHardware) {
