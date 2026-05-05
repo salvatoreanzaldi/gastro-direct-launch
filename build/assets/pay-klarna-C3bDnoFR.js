@@ -1,1 +1,0 @@
-const a="/assets/Logo%20-%20Apple%20Pay-CDUoU0EK.png",s="/assets/pay-google-C7_mVAIO.png",p="/assets/pay-visa-CBdxe1CV.png",e="/assets/pay-mastercard-Bz4y33E0.png",n="/assets/pay-klarna-C_Dn0xP7.png";export{s as a,p as b,e as c,n as d,a as p};
