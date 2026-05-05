@@ -56,7 +56,9 @@ const buildHreflangTags = (deSlug) => {
 // Strip any prior hreflang/canonical injections so the script is idempotent
 // (otherwise re-running locally without `vite build` would accumulate tags).
 let baseHtml = readFileSync(join(distDir, 'index.html'), 'utf-8')
-  .replace(/\n?\s*<link rel="alternate"[^>]+\/?>/g, '')
+  // Strip prior hreflang alternates (have hreflang="...") but keep
+  // type="application/rss+xml" alternates intact.
+  .replace(/\n?\s*<link rel="alternate"[^>]*\shreflang="[^"]+"[^>]*\/?>/g, '')
   .replace(/\n?\s*<link rel="canonical"[^>]+>/g, '');
 
 // ─── Reviews + Founders metadata (used by AggregateRating + Person schemas) ─
