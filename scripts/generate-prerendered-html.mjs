@@ -335,6 +335,79 @@ const countWords = (html) => {
   return text.split(/\s+/).filter(Boolean).length;
 };
 
+// Strip HTML tags + entities to plain text. Used for static article fallback
+// and FAQ-answer extraction (LLMs read inner text directly).
+const stripTagsToText = (html) => {
+  if (!html) return '';
+  return String(html)
+    .replace(/<[^>]+>/g, ' ')
+    .replace(/&nbsp;/g, ' ')
+    .replace(/&amp;/g, '&')
+    .replace(/&quot;/g, '"')
+    .replace(/&#39;/g, "'")
+    .replace(/&lt;/g, '<')
+    .replace(/&gt;/g, '>')
+    .replace(/&[a-z]+;/gi, ' ')
+    .replace(/\s+/g, ' ')
+    .trim();
+};
+
+// Returns the first content <h2> + the first <p> that follows it in bodyHtml.
+// Skips wrapper-like h2s inside <aside> (TLDR boxes) and the FAQ heading,
+// so the result is a real article subheading + lead-in paragraph that
+// crawlers can read alongside the post's H1.
+const extractFirstSection = (bodyHtml) => {
+  if (!bodyHtml) return null;
+  // Drop <aside>...</aside> blocks first so their inner h2s don't win.
+  const cleaned = bodyHtml.replace(/<aside[\s\S]*?<\/aside>/gi, '');
+  const h2Re = /<h2[^>]*>([\s\S]*?)<\/h2>/gi;
+  let m;
+  while ((m = h2Re.exec(cleaned)) !== null) {
+    const heading = stripTagsToText(m[1]);
+    if (/^\s*(faq|häufige|frequently)/i.test(heading)) continue;
+    const after = cleaned.slice(m.index + m[0].length);
+    const pMatch = after.match(/<p[^>]*>([\s\S]*?)<\/p>/i);
+    const lead = pMatch ? stripTagsToText(pMatch[1]) : '';
+    return { heading, lead };
+  }
+  return null;
+};
+
+// Extracts Q&A pairs from a post's FAQ section.
+// Heuristic: find <h2>FAQ...</h2>, then iterate <h3>Question?</h3><p>Answer</p>
+// pairs until the next <h2> (or end). Returns null if no FAQ section.
+const extractFaqItems = (bodyHtml) => {
+  if (!bodyHtml) return null;
+  const faqHeadingRe = /<h2[^>]*>\s*(?:FAQ|Häufige|Frequently)[^<]*<\/h2>/i;
+  const headingMatch = bodyHtml.match(faqHeadingRe);
+  if (!headingMatch) return null;
+  const start = headingMatch.index + headingMatch[0].length;
+  // FAQ section ends at the next <h2> or end-of-document.
+  const nextH2 = bodyHtml.slice(start).search(/<h2[^>]*>/i);
+  const section = nextH2 >= 0 ? bodyHtml.slice(start, start + nextH2) : bodyHtml.slice(start);
+  // Pair every <h3>...</h3> with the immediately following <p>...</p>.
+  const items = [];
+  const pairRe = /<h3[^>]*>([\s\S]*?)<\/h3>\s*<p[^>]*>([\s\S]*?)<\/p>/gi;
+  let pm;
+  while ((pm = pairRe.exec(section)) !== null) {
+    const q = stripTagsToText(pm[1]);
+    const a = stripTagsToText(pm[2]);
+    if (q && a && q.length < 250 && a.length > 20) items.push({ q, a });
+  }
+  return items.length >= 2 ? items : null;
+};
+
+const buildFaqPageSchema = (post, items) => ({
+  "@context": "https://schema.org",
+  "@type": "FAQPage",
+  "@id": `${SITE_URL}/de/blog/${post.slug}#faq`,
+  mainEntity: items.map(({ q, a }) => ({
+    "@type": "Question",
+    name: q,
+    acceptedAnswer: { "@type": "Answer", text: a },
+  })),
+});
+
 const buildBlogPostingSchema = (post) => {
   const url = `${SITE_URL}/de/blog/${post.slug}`;
   // Use real Person @id refs for founders (links into Org @graph),
@@ -369,15 +442,39 @@ const buildBlogPostingSchema = (post) => {
 };
 
 let blogCount = 0;
+let faqPostsCount = 0;
 for (const post of generatedBlogPosts) {
   const url = `${SITE_URL}/de/blog/${post.slug}`;
   const title = `${post.title} | Gastro Master Blog`;
   const description = post.metaDescription || post.description || '';
   const schema = buildBlogPostingSchema(post);
 
+  // Heuristic content extraction from bodyHtml.
+  const firstSection = extractFirstSection(post.bodyHtml);
+  const faqItems = extractFaqItems(post.bodyHtml);
+  if (faqItems) faqPostsCount += 1;
+
   // Static crawler fallback: lives inside #root so createRoot() replaces it
   // when the React app mounts. AI crawlers (GPTBot/ClaudeBot/Perplexity) that
-  // do not execute JS see the headline, byline and lead paragraph here.
+  // do not execute JS see the headline, byline, lead paragraph, first section
+  // heading + body, and (when present) the FAQ Q&A pairs as schema-marked-up
+  // text. Together this is enough for an AI engine to summarise + cite.
+  const sectionBlock = firstSection
+    ? `<h2>${escapeHtml(firstSection.heading)}</h2><p>${escapeHtml(firstSection.lead)}</p>`
+    : '';
+  const faqBlock = faqItems
+    ? '<section itemscope itemtype="https://schema.org/FAQPage"><h2>Häufige Fragen</h2>' +
+      faqItems
+        .map(
+          ({ q, a }) =>
+            `<div itemprop="mainEntity" itemscope itemtype="https://schema.org/Question">` +
+            `<h3 itemprop="name">${escapeHtml(q)}</h3>` +
+            `<div itemprop="acceptedAnswer" itemscope itemtype="https://schema.org/Answer">` +
+            `<p itemprop="text">${escapeHtml(a)}</p></div></div>`,
+        )
+        .join('') +
+      '</section>'
+    : '';
   const staticArticle = [
     '<article itemscope itemtype="https://schema.org/BlogPosting" style="max-width:760px;margin:2rem auto;padding:1rem;font-family:system-ui,sans-serif;color:#0A264A;">',
     `<h1 itemprop="headline">${escapeHtml(post.title)}</h1>`,
@@ -386,6 +483,8 @@ for (const post of generatedBlogPosts) {
     ` · ${post.readingTime || 5} Min. Lesezeit · `,
     `<span itemprop="articleSection">${escapeHtml(post.category)}</span></small></p>`,
     `<p itemprop="description">${escapeHtml(post.excerpt || description)}</p>`,
+    sectionBlock,
+    faqBlock,
     '</article>',
   ].join('');
 
@@ -428,7 +527,12 @@ for (const post of generatedBlogPosts) {
     hreflangTags,
     articleMeta,
     `<script type="application/ld+json">${JSON.stringify(schema)}</script>`,
-  ].join('\n  ');
+    faqItems
+      ? `<script type="application/ld+json">${JSON.stringify(buildFaqPageSchema(post, faqItems))}</script>`
+      : null,
+  ]
+    .filter(Boolean)
+    .join('\n  ');
 
   html = html.replace('</head>', `  ${headExtras}\n  </head>`);
 
@@ -438,4 +542,4 @@ for (const post of generatedBlogPosts) {
   blogCount += 1;
 }
 
-console.log(`✅ Blog pre-render: ${blogCount} DE posts (BlogPosting schema + static article fallback)`);
+console.log(`✅ Blog pre-render: ${blogCount} DE posts (BlogPosting schema + static article fallback) — ${faqPostsCount} with FAQPage schema`);
