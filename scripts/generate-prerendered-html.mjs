@@ -228,3 +228,124 @@ for (const route of routes) {
 
 console.log(`\n✅ Per-language pre-render: ${perLangCount} files (${routes.length} routes × ${LANGUAGES.length} languages)`);
 console.log('✅ Pre-rendered critical pages created (with hreflang + x-default)');
+
+// ─── Phase 3: Per-post blog pre-render (DE-only) ─────────────────────────────
+// Reads blog data from src/data/blog-posts-generated.ts via Node 24 native TS
+// import (`import type` only is stripped). For every post writes
+// dist/de/blog/<slug>/index.html with: localised meta, BlogPosting JSON-LD,
+// article OpenGraph tags, and a static <article> block inside #root that
+// crawlers can read without executing JS (createRoot replaces it on hydration).
+const { generatedBlogPosts } = await import(
+  new URL('../src/data/blog-posts-generated.ts', import.meta.url).href
+);
+
+const escapeHtml = (s) =>
+  String(s ?? '')
+    .replace(/&/g, '&amp;')
+    .replace(/</g, '&lt;')
+    .replace(/>/g, '&gt;')
+    .replace(/"/g, '&quot;')
+    .replace(/'/g, '&#39;');
+
+const buildBlogPostingSchema = (post) => {
+  const url = `${SITE_URL}/de/blog/${post.slug}`;
+  // Handle multi-author bylines like "René Ebert & Sanjaya Pattiyage".
+  const authorNames = post.author.split(/\s*&\s*/).filter(Boolean);
+  const author =
+    authorNames.length === 1
+      ? { "@type": "Person", name: authorNames[0] }
+      : authorNames.map((name) => ({ "@type": "Person", name }));
+  return {
+    "@context": "https://schema.org",
+    "@type": "BlogPosting",
+    "@id": `${url}#article`,
+    headline: post.title,
+    description: post.metaDescription || post.description,
+    image: `${SITE_URL}/logo-gastro-master.png`,
+    datePublished: post.publishedDate,
+    dateModified: post.publishedDate,
+    author,
+    publisher: {
+      "@type": "Organization",
+      "@id": `${SITE_URL}/#organization`,
+      name: "Gastro Master",
+      logo: { "@type": "ImageObject", url: `${SITE_URL}/logo-gastro-master.png` },
+    },
+    mainEntityOfPage: { "@type": "WebPage", "@id": url },
+    articleSection: post.category,
+    keywords: [...(post.keywords ?? []), ...(post.tags ?? [])].join(", "),
+    inLanguage: "de-DE",
+  };
+};
+
+let blogCount = 0;
+for (const post of generatedBlogPosts) {
+  const url = `${SITE_URL}/de/blog/${post.slug}`;
+  const title = `${post.title} | Gastro Master Blog`;
+  const description = post.metaDescription || post.description || '';
+  const schema = buildBlogPostingSchema(post);
+
+  // Static crawler fallback: lives inside #root so createRoot() replaces it
+  // when the React app mounts. AI crawlers (GPTBot/ClaudeBot/Perplexity) that
+  // do not execute JS see the headline, byline and lead paragraph here.
+  const staticArticle = [
+    '<article itemscope itemtype="https://schema.org/BlogPosting" style="max-width:760px;margin:2rem auto;padding:1rem;font-family:system-ui,sans-serif;color:#0A264A;">',
+    `<h1 itemprop="headline">${escapeHtml(post.title)}</h1>`,
+    `<p><small>Von <span itemprop="author">${escapeHtml(post.author)}</span> · `,
+    `<time itemprop="datePublished" datetime="${escapeHtml(post.publishedDate)}">${escapeHtml(post.publishedDate)}</time>`,
+    ` · ${post.readingTime || 5} Min. Lesezeit · `,
+    `<span itemprop="articleSection">${escapeHtml(post.category)}</span></small></p>`,
+    `<p itemprop="description">${escapeHtml(post.excerpt || description)}</p>`,
+    '</article>',
+  ].join('');
+
+  let html = baseHtml
+    .replace(/<title>[^<]*<\/title>/, `<title>${escapeHtml(title)}</title>`)
+    .replace(
+      /<meta name="description" content="[^"]*"/,
+      `<meta name="description" content="${escapeHtml(description)}"`,
+    )
+    .replace(
+      /<meta property="og:title" content="[^"]*"/,
+      `<meta property="og:title" content="${escapeHtml(title)}"`,
+    )
+    .replace(
+      /<meta property="og:description" content="[^"]*"/,
+      `<meta property="og:description" content="${escapeHtml(description)}"`,
+    )
+    .replace(/<meta property="og:type" content="[^"]*"/, `<meta property="og:type" content="article"`)
+    .replace(/<html\s+lang="[^"]*"/, `<html lang="de"`)
+    .replace(/<div id="root"><\/div>/, `<div id="root">${staticArticle}</div>`);
+
+  const articleMeta = [
+    `<meta property="article:published_time" content="${escapeHtml(post.publishedDate)}">`,
+    `<meta property="article:modified_time" content="${escapeHtml(post.publishedDate)}">`,
+    `<meta property="article:author" content="${escapeHtml(post.author)}">`,
+    `<meta property="article:section" content="${escapeHtml(post.category)}">`,
+    ...(post.tags ?? [])
+      .slice(0, 6)
+      .map((t) => `<meta property="article:tag" content="${escapeHtml(t)}">`),
+    `<meta name="keywords" content="${escapeHtml([...(post.keywords ?? []), ...(post.tags ?? [])].join(', '))}">`,
+  ].join('\n  ');
+
+  // Hreflang: DE-only blog → self-canonical for `de` + `x-default` (both → DE).
+  const hreflangTags =
+    `  <link rel="alternate" hreflang="de" href="${url}" />\n` +
+    `  <link rel="alternate" hreflang="x-default" href="${url}" />`;
+
+  const headExtras = [
+    `<link rel="canonical" href="${url}">`,
+    hreflangTags,
+    articleMeta,
+    `<script type="application/ld+json">${JSON.stringify(schema)}</script>`,
+  ].join('\n  ');
+
+  html = html.replace('</head>', `  ${headExtras}\n  </head>`);
+
+  const outDir = join(distDir, 'de', 'blog', post.slug);
+  mkdirSync(outDir, { recursive: true });
+  writeFileSync(join(outDir, 'index.html'), html);
+  blogCount += 1;
+}
+
+console.log(`✅ Blog pre-render: ${blogCount} DE posts (BlogPosting schema + static article fallback)`);
