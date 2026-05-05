@@ -1,6 +1,9 @@
 import { motion } from "framer-motion";
+import { useTranslation } from "react-i18next";
+import { Link } from "react-router-dom";
 import { Button } from "@/components/ui/button";
 import { InfiniteSlider } from "@/components/ui/infinite-slider";
+import { useLangPath } from "@/components/LanguageLayout";
 
 // Import all 31 icons
 import geminIcon from "@/assets/icons/app/App Icon - Gemini.png";
@@ -97,6 +100,8 @@ const IconCard = ({ id, src, alt }: IconItem) => (
 );
 
 export default function IntegrationSliderSection() {
+  const { t } = useTranslation("common");
+  const lp = useLangPath();
   return (
     <section className="py-16 md:py-24 bg-background overflow-hidden">
       {/* Header */}
@@ -108,17 +113,17 @@ export default function IntegrationSliderSection() {
         className="max-w-4xl mx-auto px-5 md:px-8 text-center mb-12 md:mb-16"
       >
         <span className="inline-block bg-[#0A264A]/8 dark:bg-white/8 border border-[#0A264A]/10 dark:border-white/10 text-cyan-brand dark:text-cyan-mid text-xs font-bold uppercase tracking-widest px-4 py-1.5 rounded-full mb-6">
-          INTEGRATIONEN & INFRASTRUKTUR
+          {t("integrationSlider.eyebrow")}
         </span>
-        <h2 className="text-3xl md:text-4xl font-bold mt-4 mb-3">Überall verbunden.</h2>
+        <h2 className="text-3xl md:text-4xl font-bold mt-4 mb-3">{t("integrationSlider.title")}</h2>
         <p className="text-base md:text-lg text-muted-foreground mb-8">
-          Lieferando, Uber Eats, Wolt und mehr - alle Bestellungen landen automatisch in Gastro Master.
+          {t("integrationSlider.subtitle")}
         </p>
         <Button className="gap-2" asChild>
-          <a href="/de/integrations">
-            Integrationen ansehen
+          <Link to={lp("/integrations")}>
+            {t("integrationSlider.cta")}
             <span>→</span>
-          </a>
+          </Link>
         </Button>
       </motion.div>
 

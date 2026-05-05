@@ -96,12 +96,12 @@ const AddonCards = ({ t }: { t: (k: string, o?: any) => any }) => {
           </CarouselContent>
           <button onClick={() => api?.scrollPrev()}
             className="absolute left-0 top-1/2 -translate-y-1/2 -translate-x-1/2 z-20 w-9 h-9 rounded-full bg-background/90 border border-border shadow-lg flex items-center justify-center text-foreground active:scale-95 transition-transform"
-            aria-label="Vorheriger">
+            aria-label={t('a11y.previous')}>
             <ChevronLeft className="w-5 h-5" />
           </button>
           <button onClick={() => api?.scrollNext()}
             className="absolute right-0 top-1/2 -translate-y-1/2 translate-x-1/2 z-20 w-9 h-9 rounded-full bg-background/90 border border-border shadow-lg flex items-center justify-center text-foreground active:scale-95 transition-transform"
-            aria-label="Nächster">
+            aria-label={t('a11y.next')}>
             <ChevronRight className="w-5 h-5" />
           </button>
         </Carousel>
@@ -109,7 +109,7 @@ const AddonCards = ({ t }: { t: (k: string, o?: any) => any }) => {
           {addons.map((_, i) => (
             <button key={i} onClick={() => api?.scrollTo(i)}
               className={`w-2 h-2 rounded-full transition-all duration-300 ${i === current ? "bg-cyan-brand w-5" : "bg-foreground/20"}`}
-              aria-label={`Slide ${i + 1}`} />
+              aria-label={t('a11y.goToSlide', { n: i + 1 })} />
           ))}
         </div>
       </div>

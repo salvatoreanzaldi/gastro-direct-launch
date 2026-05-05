@@ -106,7 +106,7 @@ const VideoTestimonialSection = () => {
                 key={i}
                 onClick={() => api?.scrollTo(i)}
                 className={`h-2.5 rounded-full transition-all duration-300 ${i === current ? "w-8 bg-cyan-brand" : "w-2.5 bg-primary-foreground/20 hover:bg-primary-foreground/40"}`}
-                aria-label={`Go to slide ${i + 1}`}
+                aria-label={t('a11y.goToSlide', { n: i + 1 })}
               />
             ))}
           </div>

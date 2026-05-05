@@ -8,7 +8,6 @@ export const getCTAConfig = (productPath: string): CTASectionProps => {
   const configs: CTAConfig = {
     "/": {
       productPath: "/",
-      text: "Die komplette Lösung für dein Restaurant – von der Kasse bis zum Online-Shop. Einfach, skalierbar, vertrauenswürdig.",
     },
     "/produkte/pakete/kassensystem": {
       productPath: "/produkte/pakete/kassensystem",

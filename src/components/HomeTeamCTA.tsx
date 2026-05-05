@@ -1,6 +1,7 @@
 import { useState, useEffect } from "react";
 import { motion, AnimatePresence } from "framer-motion";
 import { ArrowRight, Star } from "lucide-react";
+import { useTranslation } from "react-i18next";
 import { useLangPath } from "@/components/LanguageLayout";
 
 // Team member images
@@ -23,15 +24,16 @@ const langColors = [
 ];
 
 const HomeTeamCTA = () => {
+  const { t } = useTranslation("common");
   const lp = useLangPath();
   const [current, setCurrent] = useState(0);
 
   const teamMembers = [
-    { name: "Sanjaya Pattiyage", role: "Gründer & CEO" },
-    { name: "René Ebert", role: "Gründer & CEO" },
-    { name: "Salvatore Anzaldi", role: "Vertriebsleiter" },
-    { name: "Andrej Krutsch", role: "Service Customer Manager" },
-    { name: "Mohammad Motakalemi", role: "Vertrieb" },
+    { name: "Sanjaya Pattiyage", roleKey: "ceo" },
+    { name: "René Ebert", roleKey: "ceo" },
+    { name: "Salvatore Anzaldi", roleKey: "salesLead" },
+    { name: "Andrej Krutsch", roleKey: "customerService" },
+    { name: "Mohammad Motakalemi", roleKey: "sales" },
   ];
 
   const languages = ["Deutsch", "English", "Italiano", "Farsi", "Русский", "සිංහල"];
@@ -55,17 +57,17 @@ const HomeTeamCTA = () => {
         >
           <div className="p-10 md:p-14 flex flex-col justify-center">
             <span className="bg-[#0A264A]/[0.07] dark:bg-white/10 text-[#0A264A] dark:text-white text-[11px] font-black uppercase tracking-widest px-4 py-2 rounded-full inline-block mb-8 w-fit">
-              JETZT DURCHSTARTEN
+              {t("homeCTA.eyebrow")}
             </span>
             <h2 className="text-3xl md:text-4xl font-black text-[#0A264A] dark:text-white leading-tight mb-6">
-              Buche jetzt dein<br />kostenloses Beratungsgespräch
+              {t("homeCTA.headline")}
             </h2>
-            <p className="font-bold text-[#0A264A] dark:text-white text-sm mb-3">Das erwartet dich:</p>
+            <p className="font-bold text-[#0A264A] dark:text-white text-sm mb-3">{t("homeCTA.expectLabel")}</p>
             <p className="text-[#0A264A]/60 dark:text-white/55 text-base leading-relaxed mb-5">
-              Im kostenlosen Erstgespräch entwickelt einer unserer Experten ein individuelles Konzept für dein Restaurant. Kostenlos, unverbindlich und auf deinen Betrieb zugeschnitten. Danach entscheidest du frei, ob du es mit uns umsetzen möchtest.
+              {t("homeCTA.expectText")}
             </p>
             <p className="text-[#0A264A]/40 dark:text-white/35 text-sm leading-relaxed mb-4">
-              Deine Informationen werden ausschließlich für die Kontaktaufnahme verwendet und nicht gespeichert.
+              {t("homeCTA.privacyNote")}
             </p>
             <div className="flex flex-wrap gap-2 mb-10">
               {languages.map((label: string, i: number) => (
@@ -86,7 +88,7 @@ const HomeTeamCTA = () => {
               transition={{ duration: 0.2 }}
               className="bg-[#ED8400] text-white font-bold px-9 py-4 rounded-xl text-base inline-flex items-center gap-3 shadow-lg shadow-[#ED8400]/30 group w-fit"
             >
-              Kostenlose Beratung
+              {t("homeCTA.cta")}
               <ArrowRight className="w-5 h-5 transition-transform duration-200 group-hover:translate-x-1" />
             </motion.button>
           </div>
@@ -114,7 +116,7 @@ const HomeTeamCTA = () => {
                   transition={{ duration: 0.4 }}
                 >
                   <p className="text-white font-bold text-lg leading-tight">{member.name}</p>
-                  <p className="text-white/70 text-sm">{member.role}</p>
+                  <p className="text-white/70 text-sm">{t(`homeCTA.roles.${member.roleKey}`)}</p>
                 </motion.div>
               </AnimatePresence>
             </div>

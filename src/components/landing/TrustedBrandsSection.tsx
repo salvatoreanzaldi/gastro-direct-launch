@@ -1,3 +1,4 @@
+import { useTranslation } from 'react-i18next';
 import { InfiniteSlider } from '@/components/ui/infinite-slider';
 
 // Import customer logos
@@ -18,16 +19,17 @@ const logos = [
 ];
 
 export default function TrustedBrandsSection() {
+  const { t } = useTranslation('common');
   return (
     <div className="bg-background pt-0 pb-6 md:pb-8">
       <div className="max-w-6xl mx-auto px-4">
         {/* Header */}
         <div className="text-center mb-4">
           <h2 className="text-2xl md:text-3xl lg:text-4xl font-black text-foreground mb-3">
-            800+ Gastronomiebetriebe vertrauen uns
+            {t('trustedBrands.title')}
           </h2>
           <p className="text-muted-foreground text-base max-w-2xl mx-auto">
-            Von der Einzelfiliale bis zur Multi-Brand-Kette – Gastro Master ist das Bestellsystem für Gastronomen, die unabhängig sein wollen.
+            {t('trustedBrands.subtitle')}
           </p>
         </div>
 

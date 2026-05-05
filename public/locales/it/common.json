@@ -878,5 +878,135 @@
       "5.0 ★ Google",
       "3 Mesi di Preavviso"
     ]
+  },
+  "trustedBrands": {
+    "title": "800+ ristoranti si fidano di noi",
+    "subtitle": "Dal singolo locale alle catene multi-brand – Gastro Master è il sistema d'ordinazione per ristoratori che vogliono restare indipendenti."
+  },
+  "productShowcase": {
+    "eyebrow": "I NOSTRI PRODOTTI",
+    "title": "Il pacchetto completo. Da un'unica fonte.",
+    "products": {
+      "webseite": { "title": "Sito web", "cta": "Scopri i siti web" },
+      "online-shop": { "title": "Negozio online", "cta": "Scopri di più" },
+      "app-system": { "title": "Sistema app", "cta": "Vedi le app" },
+      "kasse": { "title": "Cassa", "cta": "Vedi qui" },
+      "kiosk": { "title": "Chiosco", "cta": "Scopri di più" }
+    }
+  },
+  "appShowcase": {
+    "badge": "LE NOSTRE APP",
+    "headline": "La tua app. Il tuo design. Il tuo controllo.",
+    "subtitle": "Interfaccia intuitiva per ordini, gestione ed esperienza cliente — tutto su un unico schermo.",
+    "screens": [
+      { "id": "startbild", "label": "Schermata iniziale", "description": "Il tuo biglietto da visita — la prima impressione conta" },
+      { "id": "bestellart", "label": "Tipo di ordine", "description": "Consegna, ritiro, sul posto — presentati chiaramente" },
+      { "id": "filialen", "label": "Filiali", "description": "Più sedi? Gestione semplice." },
+      { "id": "menu", "label": "Menu", "description": "La tua offerta — organizzata in modo chiaro" },
+      { "id": "benutzerkonto", "label": "Account utente", "description": "Dati cliente, preferiti, cronologia ordini" }
+    ]
+  },
+  "integrationSlider": {
+    "eyebrow": "INTEGRAZIONI & INFRASTRUTTURA",
+    "title": "Connessi ovunque.",
+    "subtitle": "Lieferando, Uber Eats, Wolt e altro — tutti gli ordini arrivano automaticamente in Gastro Master.",
+    "cta": "Vedi le integrazioni"
+  },
+  "a11y": {
+    "previous": "Precedente",
+    "next": "Successivo",
+    "goToSlide": "Vai alla diapositiva {{n}}",
+    "submenu": "Sottomenu"
+  },
+  "homeCTA": {
+    "eyebrow": "INIZIA ORA",
+    "headline": "Prenota ora la tua consulenza gratuita",
+    "expectLabel": "Cosa aspettarti:",
+    "expectText": "Nella consulenza iniziale gratuita, uno dei nostri esperti svilupperà un concetto individuale per il tuo ristorante. Gratuito, senza impegno e su misura per la tua attività. Poi decidi liberamente se vuoi realizzarlo con noi.",
+    "privacyNote": "I tuoi dati saranno utilizzati esclusivamente per il contatto e non verranno conservati.",
+    "cta": "Consulenza gratuita",
+    "cardText": "La soluzione completa per il tuo ristorante – dalla cassa al negozio online. Semplice, scalabile, affidabile.",
+    "roles": {
+      "ceo": "Fondatore & CEO",
+      "salesLead": "Responsabile vendite",
+      "customerService": "Responsabile Servizio Clienti",
+      "sales": "Vendite"
+    }
+  },
+  "integrationsPage": {
+    "hero": {
+      "subtitle": "Lieferando, Uber Eats, Wolt e altro — tutti gli ordini arrivano automaticamente in Gastro Master. Collega il tuo sistema con le piattaforme e i servizi più importanti del tuo settore."
+    },
+    "cardCta": "Scopri di più",
+    "finalCTA": {
+      "title": "Pronto a collegare la tua attività?",
+      "description": "Lascia che i nostri esperti ti consiglino quali integrazioni siano più adatte al tuo ristorante o servizio di consegna.",
+      "button": "Contattaci"
+    },
+    "categories": {
+      "lieferplattformen": {
+        "title": "Piattaforme di consegna",
+        "subtitle": "Tutti gli ordini da Lieferando, Wolt e Uber Eats arrivano automaticamente in Gastro Master",
+        "cards": {
+          "lieferando": "La più grande piattaforma di consegna della Germania con milioni di utenti attivi",
+          "wolt": "Consegne rapide e facile integrazione nel tuo sistema",
+          "uber-eats": "Raggiungi milioni di clienti sulla più grande piattaforma di consegna al mondo"
+        }
+      },
+      "zahlungsmethoden": {
+        "title": "Metodi di pagamento",
+        "subtitle": "Opzioni di pagamento sicure e flessibili per i tuoi clienti",
+        "cards": {
+          "stripe": "Elaborazione professionale dei pagamenti con commissioni basse",
+          "visa": "Accetta pagamenti VISA validi in tutto il mondo",
+          "mastercard": "Pagamenti Mastercard sicuri per i tuoi clienti",
+          "klarna": "Opzioni di pagamento flessibili con Klarna (Acquista ora, paga dopo)",
+          "mollie": "Semplice integrazione dei pagamenti con Mollie",
+          "adyen": "Piattaforma di pagamento enterprise per transazioni rapide e sicure in tutto il mondo"
+        }
+      },
+      "kassensysteme": {
+        "title": "Sistemi di cassa & POS",
+        "subtitle": "Integrazione senza interruzioni con le principali soluzioni di cassa",
+        "cards": {
+          "tse": "Modulo TSE per transazioni legalmente sicure",
+          "elo": "Sistemi POS professionali per la ristorazione",
+          "sides": "Soluzione di cassa moderna per ristoranti e caffetterie",
+          "winorder": "Sistema completo di gestione del ristorante",
+          "datev": "Software di contabilità e fiscale per attività di ristorazione",
+          "epson": "Sistemi di stampa professionali e rotoli per scontrini POS",
+          "prisma": "Sistema POS moderno per ristoranti e attività di ristorazione",
+          "expert-order": "Soluzione professionale di gestione ordini e cassa"
+        }
+      },
+      "versand": {
+        "title": "Spedizione e logistica",
+        "subtitle": "Partner di spedizione affidabili per la tua catena di approvvigionamento",
+        "cards": {
+          "dhl": "Il principale servizio pacchi della Germania con consegna rapida",
+          "ups": "Servizio di spedizione mondiale con tracciamento",
+          "dpd": "Consegna pacchi rapida e affidabile in Germania"
+        }
+      },
+      "social-media": {
+        "title": "Social Media e Marketing",
+        "subtitle": "Espandi la tua presenza online e raggiungi più clienti",
+        "cards": {
+          "facebook": "Integrazione con Facebook per un marketing semplice",
+          "instagram": "Vendi direttamente tramite Instagram Shopping",
+          "tiktok": "Raggiungi giovani target tramite il marketing su TikTok",
+          "whatsapp": "Contatto diretto con i clienti tramite WhatsApp"
+        }
+      },
+      "router": {
+        "title": "Router e Internet",
+        "subtitle": "Connessione internet stabile per un riconoscimento chiamate POS affidabile",
+        "cards": {
+          "fritz": "Router professionali con riconoscimento chiamate per sistemi POS",
+          "vodafone": "Connessione internet affidabile e soluzioni router",
+          "telekom": "Internet ad alte prestazioni di Deutsche Telekom per la ristorazione"
+        }
+      }
+    }
   }
 }

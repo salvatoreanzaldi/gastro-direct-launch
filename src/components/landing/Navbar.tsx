@@ -400,7 +400,7 @@ const Navbar = () => {
               <button
                 onClick={() => setProdMobOpen(!prodMobOpen)}
                 className="flex-1 flex items-center justify-end py-2 px-1"
-                aria-label={`${t('nav.produkte')} Untermenü`}
+                aria-label={`${t('nav.produkte')} ${t('a11y.submenu')}`}
               >
                 <ChevronDown className={`w-4 h-4 text-primary-foreground/70 transition-transform duration-200 ${prodMobOpen ? "rotate-180" : ""}`} />
               </button>
@@ -474,7 +474,7 @@ const Navbar = () => {
               <button
                 onClick={() => setLoesMobOpen(!loesMobOpen)}
                 className="flex-1 flex items-center justify-end py-2 px-1"
-                aria-label={`${t('nav.loesungen')} Untermenü`}
+                aria-label={`${t('nav.loesungen')} ${t('a11y.submenu')}`}
               >
                 <ChevronDown className={`w-4 h-4 text-primary-foreground/70 transition-transform duration-200 ${loesMobOpen ? "rotate-180" : ""}`} />
               </button>

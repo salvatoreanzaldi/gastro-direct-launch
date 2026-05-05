@@ -1,6 +1,8 @@
 import { motion } from "framer-motion";
 import { Button } from "@/components/ui/button";
 import { useTranslation } from "react-i18next";
+import { Link } from "react-router-dom";
+import { useLangPath } from "@/components/LanguageLayout";
 import ScrollProgressBar from "@/components/ScrollProgressBar";
 import ScrollToTopButton from "@/components/ScrollToTopButton";
 import Navbar from "@/components/landing/Navbar";
@@ -92,14 +94,11 @@ interface IconItem {
 interface IntegrationCard {
   id: string;
   name: string;
-  description: string;
   icon: string;
 }
 
 interface IntegrationCategory {
   id: string;
-  title: string;
-  subtitle: string;
   cards: IntegrationCard[];
 }
 
@@ -173,217 +172,74 @@ const IconCardSlider = ({ id, src, alt }: IconItem) => (
 const categories: IntegrationCategory[] = [
   {
     id: "lieferplattformen",
-    title: "Lieferplattformen",
-    subtitle: "Alle Bestellungen von Lieferando, Wolt und Uber Eats landen automatisch in Gastro Master",
     cards: [
-      {
-        id: "lieferando",
-        name: "Lieferando",
-        description: "Deutschlands größte Lieferplattform mit Millionen von aktiven Nutzern",
-        icon: lieferandoIcon,
-      },
-      {
-        id: "wolt",
-        name: "Wolt",
-        description: "Schnelle Lieferungen und einfache Integration in dein System",
-        icon: woltIcon,
-      },
-      {
-        id: "uber-eats",
-        name: "Uber Eats",
-        description: "Erreiche Millionen von Kunden auf der weltweit größten Lieferplattform",
-        icon: uberEatsIcon,
-      },
+      { id: "lieferando", name: "Lieferando", icon: lieferandoIcon },
+      { id: "wolt", name: "Wolt", icon: woltIcon },
+      { id: "uber-eats", name: "Uber Eats", icon: uberEatsIcon },
     ],
   },
   {
     id: "zahlungsmethoden",
-    title: "Zahlungsmethoden",
-    subtitle: "Sichere und flexible Zahlungsoptionen für deine Kunden",
     cards: [
-      {
-        id: "stripe",
-        name: "Stripe",
-        description: "Professionelle Zahlungsverarbeitung mit niedrigen Gebühren",
-        icon: stripeIcon,
-      },
-      {
-        id: "visa",
-        name: "VISA",
-        description: "Akzeptiere weltweit gültige VISA-Zahlungen",
-        icon: visaIcon,
-      },
-      {
-        id: "mastercard",
-        name: "Mastercard",
-        description: "Sichere Mastercard-Zahlungen für deine Kunden",
-        icon: mastercardIcon,
-      },
-      {
-        id: "klarna",
-        name: "Klarna",
-        description: "Flexible Zahlungsoptionen mit Klarna (Jetzt kaufen, später bezahlen)",
-        icon: klarnaIcon,
-      },
-      {
-        id: "mollie",
-        name: "Mollie",
-        description: "Einfache Zahlungsintegration mit Mollie",
-        icon: mollieIcon,
-      },
-      {
-        id: "adyen",
-        name: "Adyen",
-        description: "Enterprise-Zahlungsplattform für schnelle und sichere Transaktionen weltweit",
-        icon: adyenIcon,
-      },
+      { id: "stripe", name: "Stripe", icon: stripeIcon },
+      { id: "visa", name: "VISA", icon: visaIcon },
+      { id: "mastercard", name: "Mastercard", icon: mastercardIcon },
+      { id: "klarna", name: "Klarna", icon: klarnaIcon },
+      { id: "mollie", name: "Mollie", icon: mollieIcon },
+      { id: "adyen", name: "Adyen", icon: adyenIcon },
     ],
   },
   {
     id: "kassensysteme",
-    title: "Kassensysteme & POS",
-    subtitle: "Nahtlose Integration mit führenden Kassenlösungen",
     cards: [
-      {
-        id: "tse",
-        name: "TSE",
-        description: "Kassensicherungsmodul für rechtssichere Transaktionen",
-        icon: tseIcon,
-      },
-      {
-        id: "elo",
-        name: "Elo",
-        description: "Professionelle POS-Systeme für Gastronomie",
-        icon: eloIcon,
-      },
-      {
-        id: "sides",
-        name: "Sides",
-        description: "Moderne Kassenlösung für Restaurants und Cafés",
-        icon: sidesIcon,
-      },
-      {
-        id: "winorder",
-        name: "WinOrder",
-        description: "Komplettes Restaurantmanagementsystem",
-        icon: winOrderIcon,
-      },
-      {
-        id: "datev",
-        name: "Datev",
-        description: "Buchhaltungs- und Steuersoftware für Gastronomiebetriebe",
-        icon: datevIcon,
-      },
-      {
-        id: "epson",
-        name: "Epson",
-        description: "Professionelle Drucksysteme und Kassenrollen für POS",
-        icon: epsonIcon,
-      },
-      {
-        id: "prisma",
-        name: "Prisma",
-        description: "Modernes Kassensystem für Restaurants und Gastronomiebetriebe",
-        icon: prismaIcon,
-      },
-      {
-        id: "expert-order",
-        name: "Expert Order",
-        description: "Professionelle Bestellmanagement- und Kassenlösung",
-        icon: expertOrderIcon,
-      },
+      { id: "tse", name: "TSE", icon: tseIcon },
+      { id: "elo", name: "Elo", icon: eloIcon },
+      { id: "sides", name: "Sides", icon: sidesIcon },
+      { id: "winorder", name: "WinOrder", icon: winOrderIcon },
+      { id: "datev", name: "Datev", icon: datevIcon },
+      { id: "epson", name: "Epson", icon: epsonIcon },
+      { id: "prisma", name: "Prisma", icon: prismaIcon },
+      { id: "expert-order", name: "Expert Order", icon: expertOrderIcon },
     ],
   },
   {
     id: "versand",
-    title: "Versand & Logistik",
-    subtitle: "Zuverlässige Versandpartner für deine Lieferkette",
     cards: [
-      {
-        id: "dhl",
-        name: "DHL",
-        description: "Deutschlands führender Paketdienst mit schneller Zustellung",
-        icon: dhlIcon,
-      },
-      {
-        id: "ups",
-        name: "UPS",
-        description: "Weltweiter Versandservice mit Tracking",
-        icon: upsIcon,
-      },
-      {
-        id: "dpd",
-        name: "DPD",
-        description: "Schneller und zuverlässiger Paketversand in Deutschland",
-        icon: dpdIcon,
-      },
+      { id: "dhl", name: "DHL", icon: dhlIcon },
+      { id: "ups", name: "UPS", icon: upsIcon },
+      { id: "dpd", name: "DPD", icon: dpdIcon },
     ],
   },
   {
     id: "social-media",
-    title: "Social Media & Marketing",
-    subtitle: "Erweitere deine Online-Präsenz und erreiche mehr Kunden",
     cards: [
-      {
-        id: "facebook",
-        name: "Facebook",
-        description: "Integration mit Facebook für einfaches Marketing",
-        icon: facebookIcon,
-      },
-      {
-        id: "instagram",
-        name: "Instagram",
-        description: "Verkaufe direkt über Instagram Shopping",
-        icon: instagramIcon,
-      },
-      {
-        id: "tiktok",
-        name: "TikTok",
-        description: "Erreiche junge Zielgruppen über TikTok Marketing",
-        icon: tiktokIcon,
-      },
-      {
-        id: "whatsapp",
-        name: "WhatsApp Business",
-        description: "Direkter Kontakt mit Kunden über WhatsApp",
-        icon: whatsappIcon,
-      },
+      { id: "facebook", name: "Facebook", icon: facebookIcon },
+      { id: "instagram", name: "Instagram", icon: instagramIcon },
+      { id: "tiktok", name: "TikTok", icon: tiktokIcon },
+      { id: "whatsapp", name: "WhatsApp Business", icon: whatsappIcon },
     ],
   },
   {
     id: "router",
-    title: "Router & Internet",
-    subtitle: "Stabile Internetverbindung für zuverlässige Anruferkennung der Kasse",
     cards: [
-      {
-        id: "fritz",
-        name: "Fritz!Box",
-        description: "Professionelle Router mit Anrufererkennung für Kassensysteme",
-        icon: fritzIcon,
-      },
-      {
-        id: "vodafone",
-        name: "Vodafone",
-        description: "Zuverlässige Internetverbindung und Router-Lösungen",
-        icon: vodafoneIcon,
-      },
-      {
-        id: "telekom",
-        name: "Telekom",
-        description: "Deutsche Telekom Hochleistungs-Internet für Gastronomie",
-        icon: telekomIcon,
-      },
+      { id: "fritz", name: "Fritz!Box", icon: fritzIcon },
+      { id: "vodafone", name: "Vodafone", icon: vodafoneIcon },
+      { id: "telekom", name: "Telekom", icon: telekomIcon },
     ],
   },
 ];
 
-const IntegrationCard = ({
+const IntegrationCardView = ({
   card,
+  categoryId,
   index,
 }: {
   card: IntegrationCard;
+  categoryId: string;
   index: number;
 }) => {
+  const { t } = useTranslation("common");
+  const lp = useLangPath();
   const isDesktop = useIsDesktop();
 
   return (
@@ -404,7 +260,7 @@ const IntegrationCard = ({
       {card.name}
     </h3>
     <p className="text-base text-muted-foreground mb-8 line-clamp-4 text-center flex-grow">
-      {card.description}
+      {t(`integrationsPage.categories.${categoryId}.cards.${card.id}`)}
     </p>
 
     {/* CTA Button */}
@@ -413,43 +269,47 @@ const IntegrationCard = ({
       variant="default"
       asChild
     >
-      <a href="/de/kontakt">
-        Mehr erfahren
+      <Link to={lp("/kontakt")}>
+        {t("integrationsPage.cardCta")}
         <span>→</span>
-      </a>
+      </Link>
     </Button>
   </motion.div>
   );
 };
 
-const IntegrationCategory = ({ category }: { category: IntegrationCategory }) => (
-  <section className="py-8 md:py-10 px-5 md:px-0">
-    <motion.div
-      initial={{ opacity: 0, y: 20 }}
-      whileInView={{ opacity: 1, y: 0 }}
-      transition={{ duration: 0.6 }}
-      viewport={{ once: true }}
-      className="mb-8"
-    >
-      <h2 className="text-2xl md:text-3xl font-bold text-foreground mb-2">
-        {category.title}
-      </h2>
-      <p className="text-base md:text-lg text-muted-foreground">
-        {category.subtitle}
-      </p>
-    </motion.div>
+const IntegrationCategoryView = ({ category }: { category: IntegrationCategory }) => {
+  const { t } = useTranslation("common");
+  return (
+    <section className="py-8 md:py-10 px-5 md:px-0">
+      <motion.div
+        initial={{ opacity: 0, y: 20 }}
+        whileInView={{ opacity: 1, y: 0 }}
+        transition={{ duration: 0.6 }}
+        viewport={{ once: true }}
+        className="mb-8"
+      >
+        <h2 className="text-2xl md:text-3xl font-bold text-foreground mb-2">
+          {t(`integrationsPage.categories.${category.id}.title`)}
+        </h2>
+        <p className="text-base md:text-lg text-muted-foreground">
+          {t(`integrationsPage.categories.${category.id}.subtitle`)}
+        </p>
+      </motion.div>
 
-    {/* Cards Grid */}
-    <div className="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-3 gap-6">
-      {category.cards.map((card, index) => (
-        <IntegrationCard key={card.id} card={card} index={index} />
-      ))}
-    </div>
-  </section>
-);
+      {/* Cards Grid */}
+      <div className="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-3 gap-6">
+        {category.cards.map((card, index) => (
+          <IntegrationCardView key={card.id} card={card} categoryId={category.id} index={index} />
+        ))}
+      </div>
+    </section>
+  );
+};
 
 export default function IntegrationPage() {
-  const { t } = useTranslation();
+  const { t } = useTranslation("common");
+  const lp = useLangPath();
 
   return (
     <div className="min-h-screen bg-background">
@@ -467,13 +327,13 @@ export default function IntegrationPage() {
             className="text-center mb-12"
           >
             <span className="inline-block bg-[#0A264A]/8 dark:bg-white/8 border border-[#0A264A]/10 dark:border-white/10 text-cyan-brand dark:text-cyan-mid text-xs font-bold uppercase tracking-widest px-4 py-1.5 rounded-full mb-6">
-              INTEGRATIONEN & INFRASTRUKTUR
+              {t("integrationSlider.eyebrow")}
             </span>
             <h1 className="text-4xl md:text-5xl lg:text-6xl font-black text-foreground mb-6">
-              Überall verbunden.
+              {t("integrationSlider.title")}
             </h1>
             <p className="text-lg md:text-xl text-muted-foreground max-w-3xl mx-auto">
-              Lieferando, Uber Eats, Wolt und mehr - alle Bestellungen landen automatisch in Gastro Master. Verbinde dein System mit den wichtigsten Plattformen und Diensten deiner Industrie.
+              {t("integrationsPage.hero.subtitle")}
             </p>
           </motion.div>
 
@@ -513,7 +373,7 @@ export default function IntegrationPage() {
       <section className="py-12 md:py-16">
         <div className="container-tight">
           {categories.map((category) => (
-            <IntegrationCategory key={category.id} category={category} />
+            <IntegrationCategoryView key={category.id} category={category} />
           ))}
         </div>
       </section>
@@ -527,20 +387,20 @@ export default function IntegrationPage() {
             transition={{ duration: 0.6 }}
           >
             <h2 className="text-3xl md:text-4xl font-bold text-white mb-4">
-              Bereit, dein Business zu verbinden?
+              {t("integrationsPage.finalCTA.title")}
             </h2>
             <p className="text-lg text-slate-300 mb-8 max-w-2xl mx-auto">
-              Lass dich von unseren Experten beraten, welche Integrationen für dein Restaurant oder deinen Lieferdienst am sinnvollsten sind.
+              {t("integrationsPage.finalCTA.description")}
             </p>
             <Button
               size="lg"
               className="gap-2"
               asChild
             >
-              <a href="/de/kontakt">
-                Kontakt aufnehmen
+              <Link to={lp("/kontakt")}>
+                {t("integrationsPage.finalCTA.button")}
                 <span>→</span>
-              </a>
+              </Link>
             </Button>
           </motion.div>
         </div>

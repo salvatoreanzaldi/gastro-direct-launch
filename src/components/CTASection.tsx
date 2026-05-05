@@ -21,20 +21,22 @@ import singhalesischSvg from "@/assets/icons/Singhalesisch.svg";
 
 export interface CTASectionProps {
   productPath: string;
-  text: string;
+  text?: string;
 }
 
 export const CTASection = ({ productPath, text }: CTASectionProps) => {
-  const { i18n } = useTranslation();
+  const { t, i18n } = useTranslation("common");
   const lp = useLangPath();
   const [current, setCurrent] = useState(0);
 
+  const cardText = text ?? t("homeCTA.cardText");
+
   const teamMembers = [
-    { name: "Sanjaya Pattiyage", role: "Gründer & CEO", img: teamSanjayaImg },
-    { name: "René Ebert", role: "Gründer & CEO", img: teamReneImg },
-    { name: "Salvatore Anzaldi", role: "Vertriebsleiter", img: teamSalvatoreImg },
-    { name: "Andrej Krutsch", role: "Service Customer Manager", img: teamAndrejImg },
-    { name: "Mohammad Motakalemi", role: "Vertrieb", img: teamMohammadImg },
+    { name: "Sanjaya Pattiyage", roleKey: "ceo", img: teamSanjayaImg },
+    { name: "René Ebert", roleKey: "ceo", img: teamReneImg },
+    { name: "Salvatore Anzaldi", roleKey: "salesLead", img: teamSalvatoreImg },
+    { name: "Andrej Krutsch", roleKey: "customerService", img: teamAndrejImg },
+    { name: "Mohammad Motakalemi", roleKey: "sales", img: teamMohammadImg },
   ];
 
   const languages = [
@@ -94,7 +96,7 @@ export const CTASection = ({ productPath, text }: CTASectionProps) => {
                   transition={{ duration: 0.3 }}
                 >
                   <p className="text-white font-bold text-base">{member.name}</p>
-                  <p className="text-white/80 text-xs mt-1">{member.role}</p>
+                  <p className="text-white/80 text-xs mt-1">{t(`homeCTA.roles.${member.roleKey}`)}</p>
                 </motion.div>
               </AnimatePresence>
             </div>
@@ -108,7 +110,7 @@ export const CTASection = ({ productPath, text }: CTASectionProps) => {
             transition={{ delay: 0.1, duration: 0.6 }}
             className="text-2xl font-black text-[#0A264A] dark:text-white leading-tight -mt-1"
           >
-            Buche jetzt dein kostenloses Beratungsgespräch
+            {t("homeCTA.headline")}
           </motion.h2>
 
           {/* Text */}
@@ -119,7 +121,7 @@ export const CTASection = ({ productPath, text }: CTASectionProps) => {
             transition={{ delay: 0.2, duration: 0.6 }}
             className="text-[#0A264A]/60 dark:text-white/60 text-base leading-relaxed -mt-2"
           >
-            {text}
+            {cardText}
           </motion.p>
 
           {/* Language Pills - 3x2 Grid */}
@@ -150,7 +152,7 @@ export const CTASection = ({ productPath, text }: CTASectionProps) => {
             onClick={() => { window.location.href = lp("/kontakt"); }}
             className="w-full max-w-xs bg-gradient-amber text-white font-bold px-8 py-4 rounded-xl inline-flex items-center justify-center gap-2 shadow-lg shadow-[#ED8400]/20 hover:shadow-[#ED8400]/40 transition-shadow"
           >
-            Kostenlose Beratung
+            {t("homeCTA.cta")}
             <ArrowRight className="w-5 h-5" />
           </button>
         </div>

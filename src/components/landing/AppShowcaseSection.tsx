@@ -53,11 +53,11 @@ const AppShowcaseSection = ({ animate = true, showFloatingFood = true, carousel 
   };
 
   const screenshotMap: Record<string, string> = {
-    "Startbild": screenshotStartbild,
-    "Bestellart": screenshotBestellart,
-    "Filialen": screenshotFilialen,
-    "Menü": screenshotMenu,
-    "Benutzerkonto": screenshotBenutzerkonto,
+    startbild: screenshotStartbild,
+    bestellart: screenshotBestellart,
+    filialen: screenshotFilialen,
+    menu: screenshotMenu,
+    benutzerkonto: screenshotBenutzerkonto,
   };
 
   if (screens.length === 0) return null;
@@ -155,7 +155,7 @@ const AppShowcaseSection = ({ animate = true, showFloatingFood = true, carousel 
                 >
                   {/* iPhone Screenshot (transparent PNG with full design) */}
                   <img
-                    src={screenshotMap[screen.label]}
+                    src={screenshotMap[screen.id]}
                     alt={screen.label}
                     className="w-full drop-shadow-lg"
                   />
@@ -204,7 +204,7 @@ const AppShowcaseSection = ({ animate = true, showFloatingFood = true, carousel 
                   }}
                 >
                   <img
-                    src={screenshotMap[screen.label]}
+                    src={screenshotMap[screen.id]}
                     alt={screen.label}
                     className="w-full drop-shadow-lg rounded-2xl"
                   />
@@ -261,7 +261,7 @@ const AppShowcaseSection = ({ animate = true, showFloatingFood = true, carousel 
               {screens.map((screen, i) => (
                 <div key={i} className="flex-shrink-0 w-40 md:w-48 lg:w-56">
                   <img
-                    src={screenshotMap[screen.label]}
+                    src={screenshotMap[screen.id]}
                     alt={screen.label}
                     className="w-full drop-shadow-lg"
                   />

@@ -133,7 +133,7 @@ const Footer = () => {
           {/* Accordion Sections */}
           <div className="border-t border-primary-foreground/10 mb-6">
             {/* PRODUKTE */}
-            <MobileAccordionItem title="PRODUKTE">
+            <MobileAccordionItem title={t('footer.produkte').toUpperCase()}>
               {/* Pakete Sub-Accordion */}
               <MobileSubAccordionItem title="Pakete">
                 {productData.pakete.map(pkg => (
@@ -171,7 +171,7 @@ const Footer = () => {
             </MobileAccordionItem>
 
             {/* LÖSUNGEN */}
-            <MobileAccordionItem title="LÖSUNGEN">
+            <MobileAccordionItem title={t('footer.loesungen').toUpperCase()}>
               {loesRoutes.map((to, i) => (
                 <Link
                   key={to}
@@ -184,7 +184,7 @@ const Footer = () => {
             </MobileAccordionItem>
 
             {/* WEITERES */}
-            <MobileAccordionItem title="WEITERES">
+            <MobileAccordionItem title={t('footer.weiteres').toUpperCase()}>
               <Link to={lp("/impressum")} className="block text-primary-foreground/60 hover:text-primary-foreground text-sm py-2 transition-colors">
                 {t('footer.impressum')}
               </Link>

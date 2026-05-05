@@ -885,5 +885,135 @@
       "5.0 ★ Google",
       "3-month Notice Period"
     ]
+  },
+  "trustedBrands": {
+    "title": "800+ restaurants trust us",
+    "subtitle": "From single locations to multi-brand chains – Gastro Master is the ordering system for restaurateurs who want to stay independent."
+  },
+  "productShowcase": {
+    "eyebrow": "OUR PRODUCTS",
+    "title": "The complete package. All from one source.",
+    "products": {
+      "webseite": { "title": "Website", "cta": "Discover websites" },
+      "online-shop": { "title": "Online Shop", "cta": "Learn more" },
+      "app-system": { "title": "App System", "cta": "View apps" },
+      "kasse": { "title": "POS System", "cta": "View here" },
+      "kiosk": { "title": "Kiosk", "cta": "Learn more" }
+    }
+  },
+  "appShowcase": {
+    "badge": "OUR APPS",
+    "headline": "Your app. Your design. Your control.",
+    "subtitle": "Intuitive interface for orders, management and customer experience — all on one screen.",
+    "screens": [
+      { "id": "startbild", "label": "Home Screen", "description": "Your business card — first impressions count" },
+      { "id": "bestellart", "label": "Order Type", "description": "Delivery, pickup, dine-in — clearly presented" },
+      { "id": "filialen", "label": "Locations", "description": "Multiple locations? Easily managed." },
+      { "id": "menu", "label": "Menu", "description": "Your offering — clearly organized" },
+      { "id": "benutzerkonto", "label": "User Account", "description": "Customer data, favorites, order history" }
+    ]
+  },
+  "integrationSlider": {
+    "eyebrow": "INTEGRATIONS & INFRASTRUCTURE",
+    "title": "Connected everywhere.",
+    "subtitle": "Lieferando, Uber Eats, Wolt and more — all orders land automatically in Gastro Master.",
+    "cta": "View integrations"
+  },
+  "a11y": {
+    "previous": "Previous",
+    "next": "Next",
+    "goToSlide": "Go to slide {{n}}",
+    "submenu": "Submenu"
+  },
+  "homeCTA": {
+    "eyebrow": "START NOW",
+    "headline": "Book your free consultation now",
+    "expectLabel": "What to expect:",
+    "expectText": "In the free initial consultation, one of our experts develops an individual concept for your restaurant. Free of charge, non-binding, and tailored to your business. You then decide freely whether you want to implement it with us.",
+    "privacyNote": "Your information will be used solely for contact purposes and will not be stored.",
+    "cta": "Free consultation",
+    "cardText": "The complete solution for your restaurant – from POS to online shop. Simple, scalable, trustworthy.",
+    "roles": {
+      "ceo": "Founder & CEO",
+      "salesLead": "Head of Sales",
+      "customerService": "Customer Service Manager",
+      "sales": "Sales"
+    }
+  },
+  "integrationsPage": {
+    "hero": {
+      "subtitle": "Lieferando, Uber Eats, Wolt and more — all orders land automatically in Gastro Master. Connect your system with the most important platforms and services in your industry."
+    },
+    "cardCta": "Learn more",
+    "finalCTA": {
+      "title": "Ready to connect your business?",
+      "description": "Get expert advice on which integrations make the most sense for your restaurant or delivery service.",
+      "button": "Get in touch"
+    },
+    "categories": {
+      "lieferplattformen": {
+        "title": "Delivery Platforms",
+        "subtitle": "All orders from Lieferando, Wolt and Uber Eats land automatically in Gastro Master",
+        "cards": {
+          "lieferando": "Germany's largest delivery platform with millions of active users",
+          "wolt": "Fast deliveries and easy integration into your system",
+          "uber-eats": "Reach millions of customers on the world's largest delivery platform"
+        }
+      },
+      "zahlungsmethoden": {
+        "title": "Payment Methods",
+        "subtitle": "Secure and flexible payment options for your customers",
+        "cards": {
+          "stripe": "Professional payment processing with low fees",
+          "visa": "Accept globally valid VISA payments",
+          "mastercard": "Secure Mastercard payments for your customers",
+          "klarna": "Flexible payment options with Klarna (Buy now, pay later)",
+          "mollie": "Simple payment integration with Mollie",
+          "adyen": "Enterprise payment platform for fast and secure transactions worldwide"
+        }
+      },
+      "kassensysteme": {
+        "title": "POS Systems",
+        "subtitle": "Seamless integration with leading POS solutions",
+        "cards": {
+          "tse": "TSE module for legally secure transactions",
+          "elo": "Professional POS systems for hospitality",
+          "sides": "Modern POS solution for restaurants and cafés",
+          "winorder": "Complete restaurant management system",
+          "datev": "Accounting and tax software for hospitality businesses",
+          "epson": "Professional printing systems and POS receipt rolls",
+          "prisma": "Modern POS system for restaurants and hospitality businesses",
+          "expert-order": "Professional order management and POS solution"
+        }
+      },
+      "versand": {
+        "title": "Shipping & Logistics",
+        "subtitle": "Reliable shipping partners for your supply chain",
+        "cards": {
+          "dhl": "Germany's leading parcel service with fast delivery",
+          "ups": "Worldwide shipping service with tracking",
+          "dpd": "Fast and reliable parcel delivery in Germany"
+        }
+      },
+      "social-media": {
+        "title": "Social Media & Marketing",
+        "subtitle": "Expand your online presence and reach more customers",
+        "cards": {
+          "facebook": "Integration with Facebook for easy marketing",
+          "instagram": "Sell directly via Instagram Shopping",
+          "tiktok": "Reach young target groups via TikTok marketing",
+          "whatsapp": "Direct contact with customers via WhatsApp"
+        }
+      },
+      "router": {
+        "title": "Router & Internet",
+        "subtitle": "Stable internet connection for reliable POS caller ID",
+        "cards": {
+          "fritz": "Professional routers with caller ID for POS systems",
+          "vodafone": "Reliable internet connection and router solutions",
+          "telekom": "Deutsche Telekom high-performance internet for hospitality"
+        }
+      }
+    }
   }
 }

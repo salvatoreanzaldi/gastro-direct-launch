@@ -1,4 +1,5 @@
 import { useState } from "react";
+import { useTranslation } from "react-i18next";
 
 import productWebseite from "@/assets/products/Webseite - Produkt.png";
 import productWebshop from "@/assets/products/Webshop - Produkt.png";
@@ -7,45 +8,40 @@ import productKasse from "@/assets/products/Kasse - Produkt.png";
 import productKiosk from "@/assets/products/Kiosk 2 - Produkt.png";
 
 const ProductShowcaseAccordionSection = () => {
+  const { t } = useTranslation("common");
   const [activeIndex, setActiveIndex] = useState(0);
 
   const products = [
     {
       id: "webseite",
-      title: "Webseite",
       imageUrl: productWebseite,
-      ctaText: "Webseiten entdecken",
       ctaUrl: "/produkte/pakete/webseite",
     },
     {
       id: "online-shop",
-      title: "Online Shop",
       imageUrl: productWebshop,
-      ctaText: "Mehr erfahren",
       ctaUrl: "/produkte/pakete/online-bestellshop",
     },
     {
       id: "app-system",
-      title: "App System",
       imageUrl: productApp,
-      ctaText: "Apps ansehen",
       ctaUrl: "/produkte/pakete/bestell-app",
     },
     {
       id: "kasse",
-      title: "Kasse",
       imageUrl: productKasse,
-      ctaText: "Hier ansehen",
       ctaUrl: "/produkte/pakete/kassensystem",
     },
     {
       id: "kiosk",
-      title: "Kiosk",
       imageUrl: productKiosk,
-      ctaText: "Mehr erfahren",
       ctaUrl: "/produkte/add-ons/kiosk",
     },
-  ];
+  ].map((p) => ({
+    ...p,
+    title: t(`productShowcase.products.${p.id}.title`),
+    ctaText: t(`productShowcase.products.${p.id}.cta`),
+  }));
 
   const handleItemHover = (index: number) => {
     setActiveIndex(index);
@@ -57,10 +53,10 @@ const ProductShowcaseAccordionSection = () => {
         {/* Header */}
         <div className="text-center mb-16">
           <span className="text-cyan-brand text-sm font-semibold uppercase tracking-wider mb-3 block">
-            UNSERE PRODUKTE
+            {t("productShowcase.eyebrow")}
           </span>
           <h2 className="text-3xl md:text-4xl lg:text-5xl font-black text-foreground mb-4">
-            Das komplette Paket. Aus einer Hand.
+            {t("productShowcase.title")}
           </h2>
         </div>
 
