@@ -59,9 +59,10 @@ const LIEFERDIENST_SERVICE_NODE = {
     name: "Pakete für Lieferdienste",
     itemListElement: PACKAGES.filter((p) =>
       ["Starter (Bestellsystem)", "Business (App + Bestellsystem)", "Kassensystem"].includes(p.name),
-    ).map((p) => ({
-      "@type": "Offer",
-      itemOffered: { "@id": p.id },
+    ).map((p, idx) => ({
+      "@type": "ListItem",
+      position: idx + 1,
+      item: { "@id": p.id },
     })),
   },
 };
