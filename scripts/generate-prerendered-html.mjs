@@ -135,33 +135,60 @@ const PACKAGES = [
     price: '69',
     url: '/produkte/pakete/kassensystem',
   },
+  {
+    key: 'enterprise',
+    name: 'Enterprise',
+    description:
+      'Franchise- und Mehr-Standorte-Setup: individuelles Design, Cloud-Kasse, Transaktionsumlage inklusive. Preis nach Projektumfang.',
+    // No fixed price — custom-quote tier. Schema below uses PriceSpecification
+    // without a numeric price so AI engines see "available, custom quote".
+    price: null,
+    url: '/produkte/pakete/enterprise',
+  },
 ];
 
 const buildServiceNodes = () =>
-  PACKAGES.map((p) => ({
-    "@type": "Service",
-    "@id": `${SITE_URL}/#service-${p.key}`,
-    name: p.name,
-    description: p.description,
-    provider: { "@id": `${SITE_URL}/#organization` },
-    serviceType: 'Restaurant Software',
-    areaServed: ['DE', 'AT', 'CH'],
-    offers: {
-      "@type": "Offer",
-      "@id": `${SITE_URL}${p.url}#offer`,
-      price: p.price,
-      priceCurrency: 'EUR',
-      priceSpecification: {
-        "@type": "UnitPriceSpecification",
-        price: p.price,
-        priceCurrency: 'EUR',
-        unitCode: 'MON',
-        referenceQuantity: { "@type": "QuantitativeValue", value: '1', unitCode: 'MON' },
-      },
-      availability: 'https://schema.org/InStock',
-      url: `${SITE_URL}${p.url}`,
-    },
-  }));
+  PACKAGES.map((p) => {
+    const offer = p.price
+      ? {
+          "@type": "Offer",
+          "@id": `${SITE_URL}${p.url}#offer`,
+          price: p.price,
+          priceCurrency: 'EUR',
+          priceSpecification: {
+            "@type": "UnitPriceSpecification",
+            price: p.price,
+            priceCurrency: 'EUR',
+            unitCode: 'MON',
+            referenceQuantity: { "@type": "QuantitativeValue", value: '1', unitCode: 'MON' },
+          },
+          availability: 'https://schema.org/InStock',
+          url: `${SITE_URL}${p.url}`,
+        }
+      : {
+          // Custom-quote tier: PriceSpecification without numeric price
+          // signals "available, contact for pricing" to AI engines.
+          "@type": "Offer",
+          "@id": `${SITE_URL}${p.url}#offer`,
+          priceSpecification: {
+            "@type": "PriceSpecification",
+            priceCurrency: 'EUR',
+            description: 'Preis nach Projektumfang',
+          },
+          availability: 'https://schema.org/InStock',
+          url: `${SITE_URL}${p.url}`,
+        };
+    return {
+      "@type": "Service",
+      "@id": `${SITE_URL}/#service-${p.key}`,
+      name: p.name,
+      description: p.description,
+      provider: { "@id": `${SITE_URL}/#organization` },
+      serviceType: 'Restaurant Software',
+      areaServed: ['DE', 'AT', 'CH'],
+      offers: offer,
+    };
+  });
 
 const buildSoftwareApplicationNode = () => ({
   "@type": "SoftwareApplication",
@@ -210,10 +237,19 @@ const buildReviewNodes = () => {
       .replace(/[̀-ͯ]/g, '')
       .replace(/[^a-z0-9-]+/g, '-')
       .replace(/^-+|-+$/g, '');
+    // Conservative business-name detection: only flag as Organization when
+    // the author_name explicitly contains a German/EU legal-form marker.
+    // Avoids false positives on regular Person names. Common business-name
+    // suffixes used by restaurants: GmbH, AG, UG, e.K., GbR, OHG, KG, Inh.
+    const authorName = r.author_name || 'Anonym';
+    const isBusiness = /\b(GmbH|AG|UG\b|e\.K\.|GbR|OHG|KG|Inh\.|Inc\.|Ltd\.?|LLC)\b/i.test(authorName);
+    const author = isBusiness
+      ? { "@type": "Organization", name: authorName }
+      : { "@type": "Person", name: authorName };
     const node = {
       "@type": "Review",
       "@id": `${SITE_URL}/#review-${slugId}`,
-      author: { "@type": "Person", name: r.author_name || 'Anonym' },
+      author,
       reviewRating: {
         "@type": "Rating",
         ratingValue: String(r.rating || 5),
@@ -261,6 +297,24 @@ const buildReviewNodes = () => {
         graph['@graph'][orgIdx].founder = FOUNDERS.map((f) => ({
           "@id": personSchemaByName.get(f.name)["@id"],
         }));
+        // Brand-name variants users actually search/type — helps Knowledge
+        // Graph entity resolution when the query doesn't match the canonical name.
+        graph['@graph'][orgIdx].alternateName = ['Gastromaster', 'Gastro-Master', 'gastro-master.de'];
+        // Topical authority signal — AI engines use knowsAbout to match
+        // "who's an expert on X" queries.
+        graph['@graph'][orgIdx].knowsAbout = [
+          'Online-Bestellsystem',
+          'Restaurant-Software',
+          'Lieferdienst-Software',
+          'Kassensystem',
+          'TSE-Kassensicherung',
+          'Bestell-App für Gastronomie',
+          'Webshop für Gastronomie',
+          'Provisionsfreie Direktbestellungen',
+          'Restaurant-Kassen-Hardware',
+          'QR-Code-Tischbestellsystem',
+        ];
+        graph['@graph'][orgIdx].slogan = 'Provisionsfrei. Direkt. Mehr Gewinn.';
       }
       for (const person of personSchemaByName.values()) graph['@graph'].push(person);
       // Maßnahme 2 + 3 + 4: SoftwareApplication, Services, Reviews.
@@ -416,6 +470,48 @@ const escapeHtmlMin = (s) =>
 const contactRoute = routes.find((r) => r.key === 'contact');
 const contactSlug = (lang) => contactRoute?.slugs?.[lang] ?? '/kontakt';
 
+// Per-language label for the static packages section heading (DE-only fallback).
+const PACKAGES_HEADING = {
+  de: 'Unsere Pakete',
+  en: 'Our Packages',
+  it: 'I nostri pacchetti',
+  fa: 'بسته‌های ما',
+  si: 'අපගේ පැකේජ',
+  ru: 'Наши тарифы',
+};
+const PACKAGES_PRICE_LABEL = {
+  de: 'ab', en: 'from', it: 'da', fa: 'از', si: 'සිට', ru: 'от',
+};
+const PACKAGES_PER_MONTH = {
+  de: '€/Mo.', en: '€/mo.', it: '€/mese', fa: 'یورو/ماه', si: '€/මාසය', ru: '€/мес.',
+};
+const PACKAGES_CUSTOM = {
+  de: 'Preis nach Anfrage', en: 'Custom quote', it: 'Preventivo personalizzato',
+  fa: 'قیمت طبق درخواست', si: 'ඉල්ලීම මත මිල', ru: 'Цена по запросу',
+};
+
+const buildStaticPackages = (lang) => {
+  const heading = PACKAGES_HEADING[lang] ?? PACKAGES_HEADING.de;
+  const fromLabel = PACKAGES_PRICE_LABEL[lang] ?? PACKAGES_PRICE_LABEL.de;
+  const perMonth = PACKAGES_PER_MONTH[lang] ?? PACKAGES_PER_MONTH.de;
+  const customLabel = PACKAGES_CUSTOM[lang] ?? PACKAGES_CUSTOM.de;
+  const items = PACKAGES.map((p) => {
+    const priceLine = p.price ? `${fromLabel} ${p.price} ${perMonth}` : customLabel;
+    return [
+      '<li style="margin:0 0 0.75rem;padding:0.75rem 1rem;border:1px solid #e5e7eb;border-radius:0.5rem;">',
+      `<strong>${escapeHtmlMin(p.name)}</strong> — <span style="color:#ED8400;font-weight:600;">${escapeHtmlMin(priceLine)}</span><br/>`,
+      `<span style="color:#475569;font-size:0.95rem;">${escapeHtmlMin(p.description)}</span>`,
+      '</li>',
+    ].join('');
+  }).join('');
+  return [
+    '<section style="max-width:880px;margin:1rem auto 3rem;padding:0 1.5rem;font-family:system-ui,sans-serif;color:#0A264A;">',
+    `<h2 style="font-size:1.5rem;font-weight:800;margin:0 0 1rem;text-align:center;">${escapeHtmlMin(heading)}</h2>`,
+    `<ul style="list-style:none;padding:0;margin:0;">${items}</ul>`,
+    '</section>',
+  ].join('');
+};
+
 const buildStaticHero = (lang) => {
   const h = i18nHero[lang];
   if (!h?.headline) return '';
@@ -479,9 +575,35 @@ for (const route of routes) {
     // an empty App-Shell. createRoot() will replace it at hydration.
     if (route.key === 'home') {
       const heroHtml = buildStaticHero(lang);
-      if (heroHtml) {
-        html = html.replace(/<div id="root"><\/div>/, `<div id="root">${heroHtml}</div>`);
+      const packagesHtml = buildStaticPackages(lang);
+      const homeStatic = `${heroHtml}${packagesHtml}`;
+      if (homeStatic) {
+        html = html.replace(/<div id="root"><\/div>/, `<div id="root">${homeStatic}</div>`);
       }
+      // Page-specific WebPage schema (separate JSON-LD block) — gives AI
+      // engines explicit context for THIS URL, with mainEntity → Organization
+      // and `speakable` markup so voice assistants know what to read aloud.
+      const webPageSchema = {
+        "@context": "https://schema.org",
+        "@type": "WebPage",
+        "@id": `${canonicalUrl}#webpage`,
+        url: canonicalUrl,
+        name: title,
+        description,
+        inLanguage: lang === 'de' ? 'de-DE' : lang === 'en' ? 'en-US' : `${lang}-${lang.toUpperCase()}`,
+        isPartOf: { "@id": `${SITE_URL}/#website` },
+        about: { "@id": `${SITE_URL}/#organization` },
+        mainEntity: { "@id": `${SITE_URL}/#software-application` },
+        primaryImageOfPage: `${SITE_URL}/logo-gastro-master.png`,
+        speakable: {
+          "@type": "SpeakableSpecification",
+          cssSelector: ['h1', 'section p:first-of-type'],
+        },
+      };
+      html = html.replace(
+        '</head>',
+        `  <script type="application/ld+json">${JSON.stringify(webPageSchema)}</script>\n  </head>`,
+      );
     }
 
     // Build output path: dist/<lang>/<slug>/index.html.

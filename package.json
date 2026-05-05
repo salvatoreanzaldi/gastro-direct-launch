@@ -7,7 +7,6 @@
     "dev": "vite",
     "build": "vite build && node scripts/generate-prerendered-html.mjs && node scripts/generate-sitemap.mjs && node scripts/generate-rss-feed.mjs && node scripts/validate-schema.mjs && node scripts/validate-jsonld.mjs",
     "validate:jsonld": "node scripts/validate-jsonld.mjs",
-    "build:prerender": "vite build && node scripts/generate-sitemap.mjs && node scripts/prerender.mjs && node scripts/validate-schema.mjs",
     "build:dev": "vite build --mode development",
     "lint": "eslint .",
     "preview": "vite preview",
