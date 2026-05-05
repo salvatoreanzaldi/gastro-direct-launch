@@ -1,4 +1,4 @@
-import { readFileSync, writeFileSync, mkdirSync } from 'fs';
+import { readFileSync, writeFileSync, mkdirSync, readdirSync, existsSync } from 'fs';
 import { join, resolve, dirname } from 'path';
 import { fileURLToPath } from 'url';
 
@@ -102,50 +102,141 @@ const personSchemaByName = new Map(
 // ─── Package catalogue (mirrors public/llms.txt — single source of truth for AI) ──
 // Each package becomes a Service node with an Offer in the @graph. AI engines
 // answering "Was kostet ein Bestellsystem?" can cite these directly.
+//
+// `i18nKey` ↔ productShowcase.products.<id> in public/locales/<lang>/common.json
+// gives us localised package names in 6 languages without manual translation.
+//
+// `features` is a structured array (not parsed from description) so localisation
+// + bullet rendering stay robust even when descriptions get rewritten.
+//
+// `assetMatch` is a substring used at build time to glob the Vite-hashed
+// product image (dist/assets/{assetMatch}*.png).
 const PACKAGES = [
   {
     key: 'webseite',
+    i18nKey: 'webseite',
     name: 'Webseite',
     description:
       'Professionelle Restaurant-Website ohne Bestellfunktion. Mindestvertragslaufzeit 12 Monate.',
+    features: [
+      'Professionelles Design',
+      'Mobile-optimiert',
+      'SEO-Grundausstattung',
+      'Eigene Domain',
+      'Mindestvertragslaufzeit 12 Monate',
+    ],
     price: '49',
     url: '/produkte/pakete/webseite',
+    assetMatch: 'Webseite - Produkt',
   },
   {
     key: 'starter',
+    i18nKey: 'online-shop',
     name: 'Starter / Bestellsystem',
     description:
       'Webshop mit 0 % Provision, eigene Domain, digitale Speisekarte, unbegrenzte Bestellungen, 2.500 Flyer mit QR-Code.',
+    features: [
+      '0 % Provision',
+      'Eigene Domain',
+      'Digitale Speisekarte',
+      'Unbegrenzte Bestellungen',
+      '2.500 Flyer mit QR-Code inklusive',
+      'Monatlich kündbar',
+    ],
     price: '79',
     url: '/produkte/pakete/online-bestellshop',
+    assetMatch: 'Webshop - Produkt',
   },
   {
     key: 'business',
+    i18nKey: 'app-system',
     name: 'Business / App + Bestellsystem',
     description:
       'Webshop + native App, Push-Benachrichtigungen, 5.000 Flyer mit QR-Code.',
+    features: [
+      'Alles aus Starter',
+      'Native iOS- und Android-App',
+      'Push-Benachrichtigungen',
+      '5.000 Flyer mit QR-Code inklusive',
+      'App-Store-Submission inklusive',
+      '0 % Provision',
+    ],
     price: '149',
     url: '/produkte/pakete/bestell-app',
+    assetMatch: 'App - Produkt',
   },
   {
     key: 'kassensystem',
+    i18nKey: 'kasse',
     name: 'Kassensystem',
     description:
       'TSE-zertifiziert, GoBD-konform, bis zu 4 Kassen mit einer Lizenz, Cloud-Updates.',
+    features: [
+      'TSE-zertifiziert',
+      'GoBD-konform',
+      'Bis zu 4 Kassen mit einer Lizenz',
+      'Cloud-Updates',
+      'DATEV-Export',
+    ],
     price: '69',
     url: '/produkte/pakete/kassensystem',
+    assetMatch: 'Kasse - Produkt',
   },
   {
     key: 'enterprise',
+    i18nKey: null,
     name: 'Enterprise',
     description:
       'Franchise- und Mehr-Standorte-Setup: individuelles Design, Cloud-Kasse, Transaktionsumlage inklusive. Preis nach Projektumfang.',
+    features: [
+      'Individuelles Design',
+      'Cloud-Kasse für Multi-Standorte',
+      'Transaktionsumlage inklusive',
+      'Franchise-Setup',
+      'Dedicated Onboarding',
+    ],
     // No fixed price — custom-quote tier. Schema below uses PriceSpecification
     // without a numeric price so AI engines see "available, custom quote".
     price: null,
     url: '/produkte/pakete/enterprise',
+    assetMatch: null,
   },
 ];
+
+// Resolve hashed Vite asset filename (e.g. "Webseite - Produkt-ntCPjsyM.png")
+// from a stable substring prefix. Returns absolute URL or null when not found.
+// Note: must run AFTER vite build (depends on dist/assets/ existing).
+const ASSETS_DIR = join(distDir, 'assets');
+let assetCache = null;
+const resolveAssetUrl = (matchPrefix) => {
+  if (!matchPrefix || !existsSync(ASSETS_DIR)) return null;
+  if (!assetCache) {
+    assetCache = readdirSync(ASSETS_DIR);
+  }
+  const found = assetCache.find(
+    (f) => f.startsWith(matchPrefix) && /\.(png|jpe?g|webp|avif)$/i.test(f),
+  );
+  return found ? `${SITE_URL}/assets/${encodeURIComponent(found)}` : null;
+};
+
+// Resolve image URL for a package: real product mockup if available,
+// fall back to logo (Schema.org Product.image is required).
+const packageImageUrl = (pkg) => resolveAssetUrl(pkg.assetMatch) ?? `${SITE_URL}/logo-gastro-master.png`;
+
+// Build per-language localised name map: PACKAGES.key → { de, en, it, fa, si, ru }.
+// Reads from i18n productShowcase.products.<i18nKey>.title — already migrated
+// in 6 languages. Falls back to PACKAGES.name (German) when no mapping exists.
+const localizedPackageName = (pkg, lang) => {
+  if (!pkg.i18nKey) return pkg.name;
+  try {
+    const bundle = JSON.parse(
+      readFileSync(resolve(ROOT, `public/locales/${lang}/common.json`), 'utf-8'),
+    );
+    return bundle?.productShowcase?.products?.[pkg.i18nKey]?.title ?? pkg.name;
+  } catch {
+    return pkg.name;
+  }
+};
 
 const buildServiceNodes = () =>
   PACKAGES.map((p) => {
@@ -285,6 +376,11 @@ const buildReviewNodes = () => {
         if (n['@type'] === 'Review' && typeof n['@id'] === 'string' && n['@id'].startsWith(`${SITE_URL}/#review-`)) return false;
         return true;
       });
+      // Idempotent removal of previously injected OfferCatalog node.
+      const offerCatalogId = `${SITE_URL}/#offer-catalog`;
+      graph['@graph'] = graph['@graph'].filter(
+        (n) => !(n['@type'] === 'OfferCatalog' && n['@id'] === offerCatalogId),
+      );
       const orgIdx = graph['@graph'].findIndex((n) => n['@type'] === 'Organization');
       if (orgIdx >= 0) {
         graph['@graph'][orgIdx].aggregateRating = {
@@ -315,7 +411,16 @@ const buildReviewNodes = () => {
           'QR-Code-Tischbestellsystem',
         ];
         graph['@graph'][orgIdx].slogan = 'Provisionsfrei. Direkt. Mehr Gewinn.';
+        graph['@graph'][orgIdx].hasOfferCatalog = { "@id": offerCatalogId };
       }
+      // OfferCatalog aggregating all 5 packages — closes the entity graph
+      // (Org → has → OfferCatalog → contains → Services → with → Offers).
+      graph['@graph'].push({
+        "@type": "OfferCatalog",
+        "@id": offerCatalogId,
+        name: 'Gastro Master Pakete',
+        itemListElement: PACKAGES.map((p) => ({ "@id": `${SITE_URL}/#service-${p.key}` })),
+      });
       for (const person of personSchemaByName.values()) graph['@graph'].push(person);
       // Maßnahme 2 + 3 + 4: SoftwareApplication, Services, Reviews.
       graph['@graph'].push(buildSoftwareApplicationNode());
@@ -557,18 +662,16 @@ const buildStaticHero = (lang) => {
 // PACKAGES_BY_URL enables route → package lookup inside the per-language loop.
 const PACKAGES_BY_URL = new Map(PACKAGES.filter((p) => p.url).map((p) => [p.url, p]));
 
-// Split the package description into 3-6 feature bullets for the static fallback.
-// LLMs prefer enumerated facts over prose paragraphs.
-const splitFeatures = (description) =>
-  String(description ?? '')
-    .split(/[,;]\s+/)
-    .map((s) => s.trim().replace(/\.$/, ''))
-    .filter((s) => s.length > 0)
-    .slice(0, 6);
+// (splitFeatures removed: PACKAGES now carries a structured `features` array
+// — robust regardless of how the prose description is rewritten.)
+
+// Build timestamp — used as datePublished/dateModified on WebPage schemas
+// so AI engines see fresh signal on every deploy.
+const BUILD_DATE = new Date().toISOString().slice(0, 10);
 
 // Generic page-level WebPage schema builder. AI engines use this to anchor
 // the page entity (mainEntity), the language, and what the page is *about*.
-const buildPageWebPageSchema = ({ canonicalUrl, name, description, lang, mainEntityId }) => ({
+const buildPageWebPageSchema = ({ canonicalUrl, name, description, lang, mainEntityId, image }) => ({
   "@context": "https://schema.org",
   "@type": "WebPage",
   "@id": `${canonicalUrl}#webpage`,
@@ -579,7 +682,9 @@ const buildPageWebPageSchema = ({ canonicalUrl, name, description, lang, mainEnt
   isPartOf: { "@id": `${SITE_URL}/#website` },
   about: { "@id": `${SITE_URL}/#organization` },
   ...(mainEntityId ? { mainEntity: { "@id": mainEntityId } } : {}),
-  primaryImageOfPage: `${SITE_URL}/logo-gastro-master.png`,
+  primaryImageOfPage: image ?? `${SITE_URL}/logo-gastro-master.png`,
+  datePublished: BUILD_DATE,
+  dateModified: BUILD_DATE,
   speakable: {
     "@type": "SpeakableSpecification",
     cssSelector: ['h1', 'section p:first-of-type'],
@@ -601,21 +706,33 @@ const buildBreadcrumbList = (canonicalUrl, crumbs) => ({
   })),
 });
 
+// Audience targeting: tells AI engines who this product is for. Helps queries
+// like "Welches Bestellsystem für italienische Restaurants?" — the Audience
+// node says "Restaurants, Cafés, Bäckereien, Lieferdienste in DACH".
+const RESTAURANT_AUDIENCE = {
+  "@type": "BusinessAudience",
+  "@id": `${SITE_URL}/#audience-restaurant-operators`,
+  audienceType: 'Restaurant operators, hospitality businesses, delivery services',
+  geographicArea: { "@type": "Country", name: ['DE', 'AT', 'CH'] },
+};
+
 // Per-package Product schema. Reuses the existing Service.offers @id from
 // the global @graph (so Offers don't duplicate; AI engines see one canonical
-// price node referenced from both Service and Product).
+// price node referenced from both Service and Product). Uses the real
+// product mockup image where available, falls back to logo.
 const buildProductSchema = (pkg, canonicalUrl, lang) => ({
   "@context": "https://schema.org",
   "@type": "Product",
   "@id": `${canonicalUrl}#product`,
-  name: pkg.name,
+  name: localizedPackageName(pkg, lang),
   description: pkg.description,
   brand: { "@id": `${SITE_URL}/#organization` },
   category: 'Restaurant Software',
   url: canonicalUrl,
-  image: `${SITE_URL}/logo-gastro-master.png`,
+  image: packageImageUrl(pkg),
   inLanguage: localeOf(lang),
   offers: { "@id": `${SITE_URL}${pkg.url}#offer` },
+  audience: RESTAURANT_AUDIENCE,
   aggregateRating: {
     "@type": "AggregateRating",
     ratingValue: String(REVIEW_META.totalRating || 5),
@@ -625,20 +742,22 @@ const buildProductSchema = (pkg, canonicalUrl, lang) => ({
   },
 });
 
-// Static crawler fallback for a single package page.
+// Static crawler fallback for a single package page. Uses the localised
+// package name + the structured features array (no parsing).
 const buildPackagePageStatic = (pkg, lang) => {
   const fromLabel = PACKAGES_PRICE_LABEL[lang] ?? PACKAGES_PRICE_LABEL.de;
   const perMonth = PACKAGES_PER_MONTH[lang] ?? PACKAGES_PER_MONTH.de;
   const customLabel = PACKAGES_CUSTOM[lang] ?? PACKAGES_CUSTOM.de;
-  const features = splitFeatures(pkg.description);
+  const features = pkg.features ?? [];
   const cta = i18nHero[lang]?.cta ?? 'Kostenlose Beratung';
   const priceLine = pkg.price ? `${fromLabel} ${pkg.price} ${perMonth}` : customLabel;
+  const localizedName = localizedPackageName(pkg, lang);
   return [
     '<article style="max-width:880px;margin:3rem auto;padding:1.5rem;font-family:system-ui,sans-serif;color:#0A264A;">',
-    `<h1 style="font-size:2rem;font-weight:900;line-height:1.2;margin:0 0 0.5rem;">${escapeHtmlMin(pkg.name)}</h1>`,
+    `<h1 style="font-size:2rem;font-weight:900;line-height:1.2;margin:0 0 0.5rem;">${escapeHtmlMin(localizedName)}</h1>`,
     `<p style="font-size:1.5rem;color:#ED8400;font-weight:700;margin:0 0 1rem;">${escapeHtmlMin(priceLine)}</p>`,
     `<p style="font-size:1.125rem;line-height:1.5;margin:0 0 1.5rem;color:#0A264A;opacity:0.85;">${escapeHtmlMin(pkg.description)}</p>`,
-    features.length > 1
+    features.length > 0
       ? `<ul style="list-style:none;padding:0;margin:0 0 1.5rem;">${features
           .map((f) => `<li style="padding:0.5rem 0;">✓ ${escapeHtmlMin(f)}</li>`)
           .join('')}</ul>`
@@ -659,8 +778,9 @@ const buildHubPageStatic = (lang) => {
   return `<section style="max-width:880px;margin:2rem auto;padding:1.5rem;font-family:system-ui,sans-serif;color:#0A264A;"><h1 style="font-size:2rem;font-weight:900;text-align:center;margin:0 0 1.5rem;">${escapeHtmlMin(heading)}</h1>${buildStaticPackages(lang).replace(/<h2[^>]*>[^<]*<\/h2>/, '')}</section>`;
 };
 
-// Hardware page is a category landing — no fixed price, generic Product/Service
-// markup with a brief overview and link to the contact page for quotes.
+// Hardware page is a category landing. We list the actual hardware categories
+// Gastro Master sells/integrates so AI engines have something concrete to cite
+// for queries like "Welche Hardware brauche ich für ein Kassensystem?".
 const HARDWARE_INTRO = {
   de: 'TSE-zertifizierte Kassen, Drucker, Tablets, Bondrucker und Display-Hardware für deine Gastronomie. Kompatibel mit dem Gastro Master Kassensystem.',
   en: 'TSE-certified POS terminals, printers, tablets and display hardware for your restaurant. Fully compatible with the Gastro Master POS system.',
@@ -670,18 +790,55 @@ const HARDWARE_INTRO = {
   ru: 'Сертифицированные TSE кассы, принтеры, планшеты и дисплеи для вашего ресторана. Полностью совместимы с кассовой системой Gastro Master.',
 };
 
+// Hardware categories (DE source — labels are technical terms widely understood
+// across languages; the section heading is localised, the items stay German for
+// matching with German technical product searches).
+const HARDWARE_CATEGORIES = [
+  { name: 'TSE-Kassensystem', description: 'Komplette TSE-zertifizierte Kassen-Stationen, GoBD-konform' },
+  { name: 'Bondrucker (Thermo)', description: 'Küchen- und Bondrucker mit LAN/WLAN, kompatibel mit dem Bestellsystem' },
+  { name: 'Kunden-Display', description: 'Kassen-Kundendisplay zur Anzeige des Bestellwerts' },
+  { name: 'Kiosk-Terminal', description: 'Self-Ordering-Tower für QSR und Schnellgastronomie' },
+  { name: 'Tablet-Stand', description: 'Tablet-Halterung für Kassen- oder Tisch-Bestell-Aufstellung' },
+  { name: 'Kassenschublade', description: 'Bargeld-Schublade mit elektronischem Auslöser' },
+  { name: 'Etiketten-Drucker', description: 'Drucker für Speisen-Etiketten und Allergene-Kennzeichnung' },
+  { name: 'Küchen-Display (KDS)', description: 'Bildschirm-System für die Küche statt Bonpapier' },
+];
+
 const buildHardwarePageStatic = (lang) => {
-  const heading = `${navLabel(lang, 'hardware')} — Gastro Master`;
   const intro = HARDWARE_INTRO[lang] ?? HARDWARE_INTRO.de;
   const cta = i18nHero[lang]?.cta ?? 'Kostenlose Beratung';
+  const itemsHtml = HARDWARE_CATEGORIES.map(
+    (c) =>
+      `<li style="margin:0 0 0.75rem;padding:0.75rem 1rem;border:1px solid #e5e7eb;border-radius:0.5rem;"><strong>${escapeHtmlMin(c.name)}</strong> — <span style="color:#475569;">${escapeHtmlMin(c.description)}</span></li>`,
+  ).join('');
   return [
     '<article style="max-width:880px;margin:3rem auto;padding:1.5rem;font-family:system-ui,sans-serif;color:#0A264A;">',
     `<h1 style="font-size:2rem;font-weight:900;margin:0 0 1rem;">${escapeHtmlMin(navLabel(lang, 'hardware'))}</h1>`,
     `<p style="font-size:1.125rem;line-height:1.5;margin:0 0 1.5rem;">${escapeHtmlMin(intro)}</p>`,
+    `<ul style="list-style:none;padding:0;margin:0 0 1.5rem;">${itemsHtml}</ul>`,
     `<a href="/${lang}${contactSlug(lang)}" style="display:inline-block;background:#ED8400;color:#fff;font-weight:700;padding:0.75rem 2rem;border-radius:0.75rem;text-decoration:none;">${escapeHtmlMin(cta)}</a>`,
     '</article>',
   ].join('');
 };
+
+// ItemList of hardware categories for the Hardware page Schema.
+const buildHardwareItemList = (canonicalUrl) => ({
+  "@type": "ItemList",
+  "@id": `${canonicalUrl}#hardware-list`,
+  name: 'Gastro Master Hardware-Kategorien',
+  numberOfItems: HARDWARE_CATEGORIES.length,
+  itemListElement: HARDWARE_CATEGORIES.map((c, i) => ({
+    "@type": "ListItem",
+    position: i + 1,
+    item: {
+      "@type": "Product",
+      name: c.name,
+      description: c.description,
+      category: 'Restaurant Hardware',
+      brand: { "@id": `${SITE_URL}/#organization` },
+    },
+  })),
+});
 
 let perLangCount = 0;
 for (const route of routes) {
@@ -792,7 +949,7 @@ for (const route of routes) {
         extraSchemas.push(
           buildBreadcrumbList(canonicalUrl, [
             ...baseCrumbs,
-            { name: pkg.name, url: canonicalUrl },
+            { name: localizedPackageName(pkg, lang), url: canonicalUrl },
           ]),
         );
         extraSchemas.push(
@@ -802,6 +959,7 @@ for (const route of routes) {
             description,
             lang,
             mainEntityId: `${canonicalUrl}#product`,
+            image: packageImageUrl(pkg),
           }),
         );
       } else if (isHub) {
@@ -835,15 +993,23 @@ for (const route of routes) {
         );
       } else if (isHardware) {
         staticContent = buildHardwarePageStatic(lang);
-        extraSchemas.push(
-          buildPageWebPageSchema({
-            canonicalUrl,
-            name: title,
-            description,
-            lang,
-            mainEntityId: `${SITE_URL}/#organization`,
-          }),
-        );
+        const hardwareList = buildHardwareItemList(canonicalUrl);
+        extraSchemas.push({
+          "@context": "https://schema.org",
+          "@type": "CollectionPage",
+          "@id": `${canonicalUrl}#collection`,
+          url: canonicalUrl,
+          name: title,
+          description,
+          inLanguage: localeOf(lang),
+          isPartOf: { "@id": `${SITE_URL}/#website` },
+          about: { "@id": `${SITE_URL}/#organization` },
+          mainEntity: hardwareList,
+          speakable: {
+            "@type": "SpeakableSpecification",
+            cssSelector: ['h1', 'article > p:first-of-type'],
+          },
+        });
         extraSchemas.push(
           buildBreadcrumbList(canonicalUrl, [
             ...baseCrumbs,
