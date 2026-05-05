@@ -23,8 +23,8 @@ for (const route of ROUTES) {
   try {
     const html = readFileSync(filepath, 'utf-8');
 
-    // Extract JSON-LD blocks
-    const jsonldMatches = html.match(/<script type="application\/ld\+json">(.+?)<\/script>/g) || [];
+    // Extract JSON-LD blocks (with `s` flag for multi-line JSON)
+    const jsonldMatches = html.match(/<script type="application\/ld\+json">(.+?)<\/script>/gs) || [];
 
     if (jsonldMatches.length === 0) {
       results.push({
