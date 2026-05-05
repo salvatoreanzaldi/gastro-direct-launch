@@ -52,12 +52,13 @@ for (const route of ROUTES) {
         const json = JSON.parse(jsonStr);
         schemaCount++;
 
-        // Basic validation
-        if (!json['@type']) {
+        // Basic validation (support both single @type and @graph structures)
+        const schemaType = json['@type'] || (json['@graph']?.[0]?.['@type']) || 'UNKNOWN';
+        if (!schemaType || schemaType === 'UNKNOWN') {
           errorCount++;
           schemas.push({ type: 'UNKNOWN', valid: false, error: 'Missing @type' });
         } else {
-          schemas.push({ type: json['@type'], valid: true });
+          schemas.push({ type: schemaType, valid: true });
         }
 
         // Check for common issues
