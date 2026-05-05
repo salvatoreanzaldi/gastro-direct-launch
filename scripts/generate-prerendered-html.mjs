@@ -55,9 +55,90 @@ const buildHreflangTags = (deSlug) => {
 // ─── Read base index.html and SEO metadata ───────────────────────────────────
 // Strip any prior hreflang/canonical injections so the script is idempotent
 // (otherwise re-running locally without `vite build` would accumulate tags).
-const baseHtml = readFileSync(join(distDir, 'index.html'), 'utf-8')
+let baseHtml = readFileSync(join(distDir, 'index.html'), 'utf-8')
   .replace(/\n?\s*<link rel="alternate"[^>]+\/?>/g, '')
   .replace(/\n?\s*<link rel="canonical"[^>]+>/g, '');
+
+// ─── Reviews + Founders metadata (used by AggregateRating + Person schemas) ─
+const reviewsData = JSON.parse(
+  readFileSync(resolve(ROOT, 'public/data/google-reviews.json'), 'utf-8'),
+);
+const REVIEW_META = reviewsData?.meta ?? { totalCount: 0, totalRating: 0 };
+
+const FOUNDERS = [
+  {
+    name: 'René Ebert',
+    jobTitle: 'Gründer & CEO',
+    sameAs: ['https://www.linkedin.com/in/rene-ebert/'],
+  },
+  {
+    name: 'Sanjaya Pattiyage',
+    jobTitle: 'Gründer & CEO',
+    sameAs: ['https://www.linkedin.com/in/sanjaya-pattiyage/'],
+  },
+];
+
+const personSchemaByName = new Map(
+  FOUNDERS.map((f) => [
+    f.name,
+    {
+      "@type": "Person",
+      "@id": `${SITE_URL}/#person-${f.name
+        .toLowerCase()
+        .normalize('NFD')
+        .replace(/[̀-ͯ]/g, '')
+        .replace(/\s+/g, '-')
+        .replace(/[^a-z0-9-]/g, '')}`,
+      name: f.name,
+      jobTitle: f.jobTitle,
+      worksFor: { "@id": `${SITE_URL}/#organization` },
+      sameAs: f.sameAs,
+    },
+  ]),
+);
+
+// Enrich the base index.html @graph so every downstream page (home + per-lang
+// + blog posts) inherits the AggregateRating + Person nodes. Idempotent: we
+// only add fields/nodes that aren't already present.
+{
+  const graphMatch = baseHtml.match(
+    /<script type="application\/ld\+json">\s*(\{[\s\S]*?"@graph"[\s\S]*?\})\s*<\/script>/,
+  );
+  if (graphMatch && REVIEW_META.totalCount > 0) {
+    try {
+      const graph = JSON.parse(graphMatch[1]);
+      // Idempotent: drop any previously injected Person nodes (matched by name)
+      // and reset Organization-level enrichments before re-applying.
+      const founderNames = new Set(FOUNDERS.map((f) => f.name));
+      graph['@graph'] = graph['@graph'].filter(
+        (n) => !(n['@type'] === 'Person' && founderNames.has(n.name)),
+      );
+      const orgIdx = graph['@graph'].findIndex((n) => n['@type'] === 'Organization');
+      if (orgIdx >= 0) {
+        graph['@graph'][orgIdx].aggregateRating = {
+          "@type": "AggregateRating",
+          ratingValue: String(REVIEW_META.totalRating),
+          reviewCount: REVIEW_META.totalCount,
+          bestRating: "5",
+          worstRating: "1",
+        };
+        graph['@graph'][orgIdx].founder = FOUNDERS.map((f) => ({
+          "@id": personSchemaByName.get(f.name)["@id"],
+        }));
+      }
+      for (const person of personSchemaByName.values()) {
+        graph['@graph'].push(person);
+      }
+      const replacement = `<script type="application/ld+json">\n${JSON.stringify(graph)}\n    </script>`;
+      baseHtml = baseHtml.replace(graphMatch[0], replacement);
+      console.log(
+        `✅ @graph enriched: AggregateRating (${REVIEW_META.totalRating}★ · ${REVIEW_META.totalCount} reviews) + ${FOUNDERS.length} Person nodes`,
+      );
+    } catch (e) {
+      console.warn('⚠️ Could not enrich @graph:', e.message);
+    }
+  }
+}
 const seoMeta = JSON.parse(readFileSync(resolve(ROOT, 'src/data/seoMeta.json'), 'utf-8'));
 
 // Package references for /preise ItemList
@@ -247,14 +328,22 @@ const escapeHtml = (s) =>
     .replace(/"/g, '&quot;')
     .replace(/'/g, '&#39;');
 
+// Approximate word count from bodyHtml (strip tags, count whitespace-separated tokens).
+const countWords = (html) => {
+  if (!html) return 0;
+  const text = String(html).replace(/<[^>]+>/g, ' ').replace(/&[a-z#0-9]+;/gi, ' ');
+  return text.split(/\s+/).filter(Boolean).length;
+};
+
 const buildBlogPostingSchema = (post) => {
   const url = `${SITE_URL}/de/blog/${post.slug}`;
-  // Handle multi-author bylines like "René Ebert & Sanjaya Pattiyage".
+  // Use real Person @id refs for founders (links into Org @graph),
+  // fall back to inline Person nodes for guest authors.
   const authorNames = post.author.split(/\s*&\s*/).filter(Boolean);
-  const author =
-    authorNames.length === 1
-      ? { "@type": "Person", name: authorNames[0] }
-      : authorNames.map((name) => ({ "@type": "Person", name }));
+  const author = authorNames.map((name) => {
+    const known = personSchemaByName.get(name);
+    return known ? { "@id": known["@id"] } : { "@type": "Person", name };
+  });
   return {
     "@context": "https://schema.org",
     "@type": "BlogPosting",
@@ -264,7 +353,7 @@ const buildBlogPostingSchema = (post) => {
     image: `${SITE_URL}/logo-gastro-master.png`,
     datePublished: post.publishedDate,
     dateModified: post.publishedDate,
-    author,
+    author: author.length === 1 ? author[0] : author,
     publisher: {
       "@type": "Organization",
       "@id": `${SITE_URL}/#organization`,
@@ -274,6 +363,7 @@ const buildBlogPostingSchema = (post) => {
     mainEntityOfPage: { "@type": "WebPage", "@id": url },
     articleSection: post.category,
     keywords: [...(post.keywords ?? []), ...(post.tags ?? [])].join(", "),
+    wordCount: countWords(post.bodyHtml),
     inLanguage: "de-DE",
   };
 };
