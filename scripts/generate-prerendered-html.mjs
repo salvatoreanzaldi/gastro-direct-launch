@@ -99,9 +99,139 @@ const personSchemaByName = new Map(
   ]),
 );
 
+// ─── Package catalogue (mirrors public/llms.txt — single source of truth for AI) ──
+// Each package becomes a Service node with an Offer in the @graph. AI engines
+// answering "Was kostet ein Bestellsystem?" can cite these directly.
+const PACKAGES = [
+  {
+    key: 'webseite',
+    name: 'Webseite',
+    description:
+      'Professionelle Restaurant-Website ohne Bestellfunktion. Mindestvertragslaufzeit 12 Monate.',
+    price: '49',
+    url: '/produkte/pakete/webseite',
+  },
+  {
+    key: 'starter',
+    name: 'Starter / Bestellsystem',
+    description:
+      'Webshop mit 0 % Provision, eigene Domain, digitale Speisekarte, unbegrenzte Bestellungen, 2.500 Flyer mit QR-Code.',
+    price: '79',
+    url: '/produkte/pakete/online-bestellshop',
+  },
+  {
+    key: 'business',
+    name: 'Business / App + Bestellsystem',
+    description:
+      'Webshop + native App, Push-Benachrichtigungen, 5.000 Flyer mit QR-Code.',
+    price: '149',
+    url: '/produkte/pakete/bestell-app',
+  },
+  {
+    key: 'kassensystem',
+    name: 'Kassensystem',
+    description:
+      'TSE-zertifiziert, GoBD-konform, bis zu 4 Kassen mit einer Lizenz, Cloud-Updates.',
+    price: '69',
+    url: '/produkte/pakete/kassensystem',
+  },
+];
+
+const buildServiceNodes = () =>
+  PACKAGES.map((p) => ({
+    "@type": "Service",
+    "@id": `${SITE_URL}/#service-${p.key}`,
+    name: p.name,
+    description: p.description,
+    provider: { "@id": `${SITE_URL}/#organization` },
+    serviceType: 'Restaurant Software',
+    areaServed: ['DE', 'AT', 'CH'],
+    offers: {
+      "@type": "Offer",
+      "@id": `${SITE_URL}${p.url}#offer`,
+      price: p.price,
+      priceCurrency: 'EUR',
+      priceSpecification: {
+        "@type": "UnitPriceSpecification",
+        price: p.price,
+        priceCurrency: 'EUR',
+        unitCode: 'MON',
+        referenceQuantity: { "@type": "QuantitativeValue", value: '1', unitCode: 'MON' },
+      },
+      availability: 'https://schema.org/InStock',
+      url: `${SITE_URL}${p.url}`,
+    },
+  }));
+
+const buildSoftwareApplicationNode = () => ({
+  "@type": "SoftwareApplication",
+  "@id": `${SITE_URL}/#software-application`,
+  name: 'Gastro Master',
+  description:
+    'Provisionsfreies Bestellsystem, eigene Lieferservice-App, Webshop, Webseite und Kassensystem für Restaurants im DACH-Raum.',
+  applicationCategory: 'BusinessApplication',
+  applicationSubCategory: 'Restaurant Management Software',
+  operatingSystem: 'Web, iOS, Android',
+  url: SITE_URL,
+  publisher: { "@id": `${SITE_URL}/#organization` },
+  aggregateRating: {
+    "@type": "AggregateRating",
+    ratingValue: String(REVIEW_META.totalRating || 5),
+    reviewCount: REVIEW_META.totalCount || 0,
+    bestRating: '5',
+    worstRating: '1',
+  },
+  offers: PACKAGES.map((p) => ({ "@id": `${SITE_URL}${p.url}#offer` })),
+});
+
+// Truncate review text to a reasonable length for JSON-LD (Google docs
+// suggest <= 5000 chars per node; we cap at 600 for keep-page-light).
+const truncate = (s, max = 600) => {
+  const t = String(s ?? '').trim();
+  return t.length > max ? t.slice(0, max - 1) + '…' : t;
+};
+
+const buildReviewNodes = () => {
+  // Use the "5-Sterne" tab if available (curated 5-star testimonials),
+  // fall back to "Alle". Pick top 10 with non-trivial text.
+  const all = reviewsData?.tabs?.['5-Sterne'] ?? reviewsData?.tabs?.Alle ?? [];
+  const candidates = all
+    .filter((r) => r.text && String(r.text).trim().length >= 40)
+    .slice(0, 10);
+  return candidates.map((r, i) => {
+    // Convert epoch (seconds) to ISO date if available.
+    const datePublished =
+      typeof r.time === 'number' && r.time > 0
+        ? new Date(r.time * 1000).toISOString().slice(0, 10)
+        : undefined;
+    const slugId = String(r.id ?? i + 1)
+      .toLowerCase()
+      .normalize('NFD')
+      .replace(/[̀-ͯ]/g, '')
+      .replace(/[^a-z0-9-]+/g, '-')
+      .replace(/^-+|-+$/g, '');
+    const node = {
+      "@type": "Review",
+      "@id": `${SITE_URL}/#review-${slugId}`,
+      author: { "@type": "Person", name: r.author_name || 'Anonym' },
+      reviewRating: {
+        "@type": "Rating",
+        ratingValue: String(r.rating || 5),
+        bestRating: '5',
+        worstRating: '1',
+      },
+      reviewBody: truncate(r.text),
+      itemReviewed: { "@id": `${SITE_URL}/#organization` },
+    };
+    if (datePublished) node.datePublished = datePublished;
+    return node;
+  });
+};
+
 // Enrich the base index.html @graph so every downstream page (home + per-lang
-// + blog posts) inherits the AggregateRating + Person nodes. Idempotent: we
-// only add fields/nodes that aren't already present.
+// + blog posts) inherits the AggregateRating + Person + SoftwareApplication +
+// Service + Review nodes. Idempotent: previously injected nodes are removed
+// before re-applying, so repeat runs do not accumulate duplicates.
 {
   const graphMatch = baseHtml.match(
     /<script type="application\/ld\+json">\s*(\{[\s\S]*?"@graph"[\s\S]*?\})\s*<\/script>/,
@@ -109,12 +239,16 @@ const personSchemaByName = new Map(
   if (graphMatch && REVIEW_META.totalCount > 0) {
     try {
       const graph = JSON.parse(graphMatch[1]);
-      // Idempotent: drop any previously injected Person nodes (matched by name)
-      // and reset Organization-level enrichments before re-applying.
+      // Idempotent: drop any previously injected nodes before re-applying.
       const founderNames = new Set(FOUNDERS.map((f) => f.name));
-      graph['@graph'] = graph['@graph'].filter(
-        (n) => !(n['@type'] === 'Person' && founderNames.has(n.name)),
-      );
+      const prevServiceIds = new Set(PACKAGES.map((p) => `${SITE_URL}/#service-${p.key}`));
+      graph['@graph'] = graph['@graph'].filter((n) => {
+        if (n['@type'] === 'Person' && founderNames.has(n.name)) return false;
+        if (n['@type'] === 'Service' && prevServiceIds.has(n['@id'])) return false;
+        if (n['@type'] === 'SoftwareApplication' && n['@id'] === `${SITE_URL}/#software-application`) return false;
+        if (n['@type'] === 'Review' && typeof n['@id'] === 'string' && n['@id'].startsWith(`${SITE_URL}/#review-`)) return false;
+        return true;
+      });
       const orgIdx = graph['@graph'].findIndex((n) => n['@type'] === 'Organization');
       if (orgIdx >= 0) {
         graph['@graph'][orgIdx].aggregateRating = {
@@ -128,13 +262,16 @@ const personSchemaByName = new Map(
           "@id": personSchemaByName.get(f.name)["@id"],
         }));
       }
-      for (const person of personSchemaByName.values()) {
-        graph['@graph'].push(person);
-      }
+      for (const person of personSchemaByName.values()) graph['@graph'].push(person);
+      // Maßnahme 2 + 3 + 4: SoftwareApplication, Services, Reviews.
+      graph['@graph'].push(buildSoftwareApplicationNode());
+      graph['@graph'].push(...buildServiceNodes());
+      const reviewNodes = buildReviewNodes();
+      graph['@graph'].push(...reviewNodes);
       const replacement = `<script type="application/ld+json">\n${JSON.stringify(graph)}\n    </script>`;
       baseHtml = baseHtml.replace(graphMatch[0], replacement);
       console.log(
-        `✅ @graph enriched: AggregateRating (${REVIEW_META.totalRating}★ · ${REVIEW_META.totalCount} reviews) + ${FOUNDERS.length} Person nodes`,
+        `✅ @graph enriched: AggregateRating (${REVIEW_META.totalRating}★ · ${REVIEW_META.totalCount}) + ${FOUNDERS.length} Person + 1 SoftwareApplication + ${PACKAGES.length} Service + ${reviewNodes.length} Review nodes`,
       );
     } catch (e) {
       console.warn('⚠️ Could not enrich @graph:', e.message);
@@ -244,9 +381,10 @@ const baseDescMatch = baseHtml.match(/<meta name="description" content="([^"]*)"
 const ROOT_TITLE = baseTitleMatch ? baseTitleMatch[1] : 'Gastro Master';
 const ROOT_DESC = baseDescMatch ? baseDescMatch[1] : '';
 
-// Per-language home meta from the i18n bundles (`seo.indexTitle`/`indexDescription`).
-// Used as the language-specific fallback when a route has no curated entry in seoMeta.json.
+// Per-language home meta from the i18n bundles (`seo.indexTitle`/`indexDescription`)
+// + hero strings for the static crawler-fallback markup.
 const i18nMeta = {};
+const i18nHero = {};
 for (const lang of LANGUAGES) {
   try {
     const bundle = JSON.parse(
@@ -256,10 +394,43 @@ for (const lang of LANGUAGES) {
       title: bundle?.seo?.indexTitle ?? ROOT_TITLE,
       description: bundle?.seo?.indexDescription ?? ROOT_DESC,
     };
+    i18nHero[lang] = bundle?.hero ?? null;
   } catch {
     i18nMeta[lang] = { title: ROOT_TITLE, description: ROOT_DESC };
+    i18nHero[lang] = null;
   }
 }
+
+// Build the per-language static hero block (lives inside #root, replaced by
+// createRoot() on mount). JS-less AI crawlers see headline + subtitle + the
+// three trust signals + a CTA — this is what the homepage WAS missing.
+const escapeHtmlMin = (s) =>
+  String(s ?? '')
+    .replace(/&/g, '&amp;')
+    .replace(/</g, '&lt;')
+    .replace(/>/g, '&gt;')
+    .replace(/"/g, '&quot;')
+    .replace(/'/g, '&#39;');
+
+const buildStaticHero = (lang) => {
+  const h = i18nHero[lang];
+  if (!h?.headline) return '';
+  const trusts = [h.trust1, h.trust2, h.trust3].filter(Boolean);
+  return [
+    '<section style="max-width:880px;margin:3rem auto;padding:1.5rem;font-family:system-ui,sans-serif;color:#0A264A;text-align:center;">',
+    `<h1 style="font-size:2rem;font-weight:900;line-height:1.2;margin:0 0 1rem;">${escapeHtmlMin(h.headline)}</h1>`,
+    h.sub ? `<p style="font-size:1.125rem;line-height:1.5;margin:0 0 1.5rem;color:#0A264A;opacity:0.85;">${escapeHtmlMin(h.sub)}</p>` : '',
+    trusts.length
+      ? `<ul style="list-style:none;padding:0;margin:0 0 1.5rem;display:flex;gap:1rem;justify-content:center;flex-wrap:wrap;font-size:0.875rem;font-weight:600;">${trusts
+          .map((t) => `<li>✓ ${escapeHtmlMin(t)}</li>`)
+          .join('')}</ul>`
+      : '',
+    h.cta ? `<a href="/${lang}/kontakt" style="display:inline-block;background:#ED8400;color:#fff;font-weight:700;padding:0.75rem 2rem;border-radius:0.75rem;text-decoration:none;">${escapeHtmlMin(h.cta)}</a>` : '',
+    '</section>',
+  ]
+    .filter(Boolean)
+    .join('');
+};
 
 let perLangCount = 0;
 for (const route of routes) {
@@ -298,6 +469,16 @@ for (const route of routes) {
       .join('\n');
 
     html = html.replace('</head>', `${headExtras}\n  </head>`);
+
+    // For the language home routes (/<lang>/), inject the static hero into
+    // <div id="root"> so JS-less AI crawlers see real content instead of
+    // an empty App-Shell. createRoot() will replace it at hydration.
+    if (route.key === 'home') {
+      const heroHtml = buildStaticHero(lang);
+      if (heroHtml) {
+        html = html.replace(/<div id="root"><\/div>/, `<div id="root">${heroHtml}</div>`);
+      }
+    }
 
     // Build output path: dist/<lang>/<slug>/index.html.
     // For the home route (slug === '/') write dist/<lang>/index.html.
