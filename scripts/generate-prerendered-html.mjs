@@ -693,22 +693,73 @@ const ADDON_REGISTRY = {
   'transaction-fee-sharing': { bundle: 'transaktionsumlage',    deps: [],                          category: 'Payment' },
 };
 
-// Extract a numeric monthly EUR price from a free-form pricing string.
-// Returns null if no clear number found (custom-quote / per-unit / etc.).
+// Transliterate Arabic-Indic (٠-٩) and Persian (۰-۹) digits to Latin so the
+// number-extraction regex below works on Persian copy like "۶۵.۰۰ €".
+const transliterateDigits = (s) =>
+  String(s ?? '')
+    .replace(/[٠-٩]/g, (d) => String.fromCharCode(d.charCodeAt(0) - 0x0660 + 0x30))
+    .replace(/[۰-۹]/g, (d) => String.fromCharCode(d.charCodeAt(0) - 0x06F0 + 0x30));
+
+// Extract a numeric EUR price from a free-form pricing string.
+// Returns null if no clear number found (custom-quote / "Auf Anfrage" / etc.).
 const parsePriceNumber = (priceText) => {
   if (!priceText) return null;
-  // Match patterns like "ab 65 €", "+10 €/Monat", "79€/Mo", "ab 49 EUR"
-  const m = String(priceText).match(/(\d+(?:[.,]\d+)?)\s*(?:€|EUR)/i);
-  return m ? m[1].replace(',', '.') : null;
+  const text = transliterateDigits(priceText);
+  // Two orderings: number-then-symbol (DE: "65 €", "65,00 EUR") OR
+  // symbol-then-number (EN: "€65.00", "EUR 49"). Try both.
+  // Handles both German "65,00" and English "65.00" decimal separators.
+  const numFirst = text.match(/(\d+(?:[.,]\d+)?)\s*(?:€|EUR|یورو)/i);
+  if (numFirst) return numFirst[1].replace(',', '.');
+  const symFirst = text.match(/(?:€|EUR|یورو)\s*(\d+(?:[.,]\d+)?)/i);
+  if (symFirst) return symFirst[1].replace(',', '.');
+  return null;
 };
 
-// Build Offer schema from bundle pricing data. Falls back to PriceSpecification
-// (description-only) for "Auf Anfrage" / custom-quote tiers.
+// Detect the billing/quantity unit from a free-form price string. Looks for
+// language-aware keywords (DE/EN — other languages typically reuse EN/DE
+// terms in pricing copy). Returns the UN/CEFACT unitCode or null.
+//
+//   MON  → monthly        (most Pakete + Add-ons)
+//   ANN  → yearly         (rare, edge case)
+//   C62  → piece/unit     (QR-Flyer: "65 € für 2.500 Stück" = one-time per-quantity)
+//   null → unknown        → fall back to a generic PriceSpecification without unitCode
+const detectBillingUnitCode = (priceText) => {
+  if (!priceText) return null;
+  const t = String(priceText).toLowerCase();
+  // Per-piece / per-unit / one-time MUST be checked BEFORE monthly because
+  // some strings include both ("ab 65€ einmalig pro Stück" hypothetically) —
+  // pieces dominates over the absent /monat suffix.
+  // Vocabulary: DE (Stück), EN (piece/pcs), IT (pezzi/pezzo),
+  // FA (عدد), SI (කෑලි/කෑල්ල), RU (штук/штука).
+  if (/(stück|stk\b|piece|pieces|pcs\b|pezzi|pezzo|عدد|කෑලි|කෑල්ල|штук|штука|einmalig|one-time|one\s*time|una tantum)/.test(t)) {
+    return 'C62';
+  }
+  // Monthly: DE (Monat/mtl), EN (month/monthly), IT (mese/mensile),
+  // FA (ماه), SI (මාසය/මාසික/මාසිකව), RU (месяц/в месяц).
+  if (/(monat|month|monthly|mese|mensile|ماه|මාසය|මාසික|месяц|\/mo\b|mtl)/.test(t)) {
+    return 'MON';
+  }
+  // Yearly: DE (Jahr/jährlich), EN (year/annually), IT (anno/annuo),
+  // FA (سال), SI (වසර), RU (год).
+  if (/(jahr|jährlich|year|annually|anno|annuo|سال|වසර|год|p\.a\.|per annum)/.test(t)) {
+    return 'ANN';
+  }
+  return null;
+};
+
+// Build Offer schema from bundle pricing data. Three branches:
+//   1. priceNum + MON   → UnitPriceSpecification (per month — current default)
+//   2. priceNum + C62   → PriceSpecification with description (one-time per-quantity)
+//                         AI engines see the raw text "Ab 65 € für 2.500 Stück"
+//                         instead of the misleading "65 €/month".
+//   3. no priceNum      → custom-quote PriceSpecification (description only)
 const buildOfferFromPricing = (canonicalUrl, pricing) => {
   const priceText = pricing?.price ?? '';
   const priceNum = parsePriceNumber(priceText);
   const note = pricing?.note ?? '';
-  if (priceNum) {
+  const unitCode = detectBillingUnitCode(priceText);
+
+  if (priceNum && unitCode === 'MON') {
     return {
       "@type": "Offer",
       "@id": `${canonicalUrl}#offer`,
@@ -725,6 +776,30 @@ const buildOfferFromPricing = (canonicalUrl, pricing) => {
       url: canonicalUrl,
     };
   }
+
+  if (priceNum) {
+    // Has a number but billing unit is non-monthly OR ambiguous (e.g. per piece,
+    // per year, or no clear period). Use a generic PriceSpecification with the
+    // verbatim price text as description so AI engines see the original framing.
+    const ps = {
+      "@type": "PriceSpecification",
+      price: priceNum,
+      priceCurrency: 'EUR',
+      description: priceText,
+    };
+    if (unitCode === 'ANN' || unitCode === 'C62') ps.unitCode = unitCode;
+    return {
+      "@type": "Offer",
+      "@id": `${canonicalUrl}#offer`,
+      price: priceNum,
+      priceCurrency: 'EUR',
+      priceSpecification: ps,
+      availability: 'https://schema.org/InStock',
+      url: canonicalUrl,
+    };
+  }
+
+  // No numeric price: custom quote / on request.
   return {
     "@type": "Offer",
     "@id": `${canonicalUrl}#offer`,
