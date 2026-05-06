@@ -900,20 +900,91 @@ const HARDWARE_CATEGORIES = [
 ];
 
 const buildHardwarePageStatic = (lang) => {
-  const intro = HARDWARE_INTRO[lang] ?? HARDWARE_INTRO.de;
-  const cta = i18nHero[lang]?.cta ?? 'Kostenlose Beratung';
-  const itemsHtml = HARDWARE_CATEGORIES.map(
-    (c) =>
-      `<li style="margin:0 0 0.75rem;padding:0.75rem 1rem;border:1px solid #e5e7eb;border-radius:0.5rem;"><strong>${escapeHtmlMin(c.name)}</strong> — <span style="color:#475569;">${escapeHtmlMin(c.description)}</span></li>`,
-  ).join('');
+  // Bundle-driven (hardware.json has 4 sections × 3-4 products = 13 real items).
+  // Falls back to the hardcoded HARDWARE_INTRO/HARDWARE_CATEGORIES when no bundle
+  // is loadable in any language.
+  const bundle = loadBundle(lang, 'hardware') ?? loadBundle('de', 'hardware');
+  const norm = bundle ? normalizeHeroFromBundle(bundle) : null;
+  const intro = norm?.subline || HARDWARE_INTRO[lang] || HARDWARE_INTRO.de;
+  const cta = norm?.cta || i18nHero[lang]?.cta || 'Kostenlose Beratung';
+  const headline = norm?.headline || navLabel(lang, 'hardware');
+  const sections = bundle?.sections;
+
+  const sectionsHtml =
+    sections && typeof sections === 'object'
+      ? Object.values(sections)
+          .map((sec) => {
+            if (!sec) return '';
+            const products = Array.isArray(sec.products) ? sec.products : [];
+            const productsHtml = products
+              .map(
+                (p) =>
+                  `<li style="margin:0 0 0.75rem;padding:0.75rem 1rem;border:1px solid #e5e7eb;border-radius:0.5rem;"><strong>${escapeHtmlMin(p.title ?? '')}</strong> — <span style="color:#475569;">${escapeHtmlMin(p.desc ?? '')}</span></li>`,
+              )
+              .join('');
+            return [
+              '<section style="margin:0 0 2rem;">',
+              sec.badge
+                ? `<p style="font-size:0.75rem;font-weight:700;color:#0A264A;text-transform:uppercase;letter-spacing:0.05em;margin:0 0 0.25rem;">${escapeHtmlMin(sec.badge)}</p>`
+                : '',
+              sec.headline
+                ? `<h2 style="font-size:1.25rem;font-weight:800;margin:0 0 0.5rem;">${escapeHtmlMin(sec.headline)}</h2>`
+                : '',
+              sec.sub
+                ? `<p style="font-size:0.95rem;color:#475569;margin:0 0 1rem;">${escapeHtmlMin(sec.sub)}</p>`
+                : '',
+              `<ul style="list-style:none;padding:0;margin:0;">${productsHtml}</ul>`,
+              '</section>',
+            ]
+              .filter(Boolean)
+              .join('');
+          })
+          .join('')
+      : `<ul style="list-style:none;padding:0;margin:0 0 1.5rem;">${HARDWARE_CATEGORIES.map(
+          (c) =>
+            `<li style="margin:0 0 0.75rem;padding:0.75rem 1rem;border:1px solid #e5e7eb;border-radius:0.5rem;"><strong>${escapeHtmlMin(c.name)}</strong> — <span style="color:#475569;">${escapeHtmlMin(c.description)}</span></li>`,
+        ).join('')}</ul>`;
+
   return [
     '<article style="max-width:880px;margin:3rem auto;padding:1.5rem;font-family:system-ui,sans-serif;color:#0A264A;">',
-    `<h1 style="font-size:2rem;font-weight:900;margin:0 0 1rem;">${escapeHtmlMin(navLabel(lang, 'hardware'))}</h1>`,
+    `<h1 style="font-size:2rem;font-weight:900;margin:0 0 1rem;">${escapeHtmlMin(headline)}</h1>`,
     `<p style="font-size:1.125rem;line-height:1.5;margin:0 0 1.5rem;">${escapeHtmlMin(intro)}</p>`,
-    `<ul style="list-style:none;padding:0;margin:0 0 1.5rem;">${itemsHtml}</ul>`,
+    sectionsHtml,
     `<a href="/${lang}${contactSlug(lang)}" style="display:inline-block;background:#ED8400;color:#fff;font-weight:700;padding:0.75rem 2rem;border-radius:0.75rem;text-decoration:none;">${escapeHtmlMin(cta)}</a>`,
     '</article>',
   ].join('');
+};
+
+// ─── Pakete + Hardware bundle mapping (retrofit Sprint, Mai 2026) ───────────
+// route.key → bundle filename in public/locales/<lang>/<filename>.json.
+// Bundles for these pages have a different schema than add-on bundles —
+// they use `seo.title/description` (not `meta.title/description`) and the
+// hero block has format variants per page. normalizeHeroFromBundle() unifies.
+const PACKAGE_BUNDLE_MAP = {
+  'website':    'webseite',
+  'online-shop': 'webshop',
+  'ordering-app': 'app',
+  'pos-system': 'kasse',
+  'hardware':   'hardware',
+};
+
+// Inconsistent hero formats across Pakete/Hardware bundles:
+//   webseite + app:        title1 + titleHighlight + title2
+//   webshop:               h1 + h1Highlight
+//   kasse + hardware:      h1 + h1Highlight + h1Suffix
+// Normalize to {headline, subline, badge, cta}.
+const normalizeHeroFromBundle = (bundle) => {
+  const h = bundle?.hero ?? {};
+  let headline = '';
+  if (h.h1) {
+    headline = [h.h1, h.h1Highlight, h.h1Suffix].filter(Boolean).join(' ');
+  } else if (h.title1) {
+    headline = [h.title1, h.titleHighlight, h.title2].filter(Boolean).join(' ');
+  } else if (h.headline) {
+    headline = [h.headline, h.headlineHighlight].filter(Boolean).join(' ');
+  }
+  const subline = h.subtitle ?? h.subline ?? h.desc ?? h.sub ?? '';
+  return { headline: headline.trim(), subline, badge: h.badge ?? '', cta: h.cta ?? '' };
 };
 
 // ─── Add-on enrichment (Sprint 2) ───────────────────────────────────────────
@@ -1064,24 +1135,59 @@ const buildAddonsHubStatic = (lang) => {
   ].join('');
 };
 
-// ItemList of hardware categories for the Hardware page Schema.
-const buildHardwareItemList = (canonicalUrl) => ({
-  "@type": "ItemList",
-  "@id": `${canonicalUrl}#hardware-list`,
-  name: 'Gastro Master Hardware-Kategorien',
-  numberOfItems: HARDWARE_CATEGORIES.length,
-  itemListElement: HARDWARE_CATEGORIES.map((c, i) => ({
-    "@type": "ListItem",
-    position: i + 1,
-    item: {
-      "@type": "Product",
-      name: c.name,
-      description: c.description,
-      category: 'Restaurant Hardware',
-      brand: { "@id": `${SITE_URL}/#organization` },
-    },
-  })),
-});
+// ItemList of hardware products from the bundle (when available, ~13 real
+// items across 4 sections), falling back to the hardcoded category list.
+const buildHardwareItemList = (canonicalUrl, lang) => {
+  const bundle = loadBundle(lang, 'hardware') ?? loadBundle('de', 'hardware');
+  const sections = bundle?.sections;
+  if (sections && typeof sections === 'object') {
+    const all = [];
+    for (const sec of Object.values(sections)) {
+      if (Array.isArray(sec?.products)) {
+        for (const p of sec.products) {
+          all.push({ title: p.title, desc: p.desc, sectionBadge: sec.badge });
+        }
+      }
+    }
+    if (all.length) {
+      return {
+        "@type": "ItemList",
+        "@id": `${canonicalUrl}#hardware-list`,
+        name: 'Gastro Master Hardware-Produkte',
+        numberOfItems: all.length,
+        itemListElement: all.map((p, i) => ({
+          "@type": "ListItem",
+          position: i + 1,
+          item: {
+            "@type": "Product",
+            name: p.title,
+            description: p.desc,
+            category: p.sectionBadge ? `Restaurant Hardware / ${p.sectionBadge}` : 'Restaurant Hardware',
+            brand: { "@id": `${SITE_URL}/#organization` },
+          },
+        })),
+      };
+    }
+  }
+  // Fallback: hardcoded HARDWARE_CATEGORIES.
+  return {
+    "@type": "ItemList",
+    "@id": `${canonicalUrl}#hardware-list`,
+    name: 'Gastro Master Hardware-Kategorien',
+    numberOfItems: HARDWARE_CATEGORIES.length,
+    itemListElement: HARDWARE_CATEGORIES.map((c, i) => ({
+      "@type": "ListItem",
+      position: i + 1,
+      item: {
+        "@type": "Product",
+        name: c.name,
+        description: c.description,
+        category: 'Restaurant Hardware',
+        brand: { "@id": `${SITE_URL}/#organization` },
+      },
+    })),
+  };
+};
 
 let perLangCount = 0;
 for (const route of routes) {
@@ -1112,19 +1218,36 @@ for (const route of routes) {
     const langFallback = route.key === 'home' ? i18nMeta[lang] : undefined;
     let pageTitle, pageDesc;
     if (pkg) {
-      const fromLabel = PACKAGES_PRICE_LABEL[lang] ?? PACKAGES_PRICE_LABEL.de;
-      const perMonth = PACKAGES_PER_MONTH[lang] ?? PACKAGES_PER_MONTH.de;
-      const priceTail = pkg.price ? ` – ${fromLabel} ${pkg.price} ${perMonth}` : '';
-      pageTitle = `${pkg.name}${priceTail} | Gastro Master`;
-      pageDesc = pkg.description;
+      // Prefer per-language bundle SEO meta over constructed German fallback.
+      const bundleName = PACKAGE_BUNDLE_MAP[route.key];
+      const pkgBundle = bundleName
+        ? loadBundle(lang, bundleName) ?? loadBundle('de', bundleName)
+        : null;
+      if (pkgBundle?.seo?.title) {
+        pageTitle = pkgBundle.seo.title;
+        pageDesc = pkgBundle.seo.description ?? pkg.description;
+      } else {
+        const fromLabel = PACKAGES_PRICE_LABEL[lang] ?? PACKAGES_PRICE_LABEL.de;
+        const perMonth = PACKAGES_PER_MONTH[lang] ?? PACKAGES_PER_MONTH.de;
+        const priceTail = pkg.price ? ` – ${fromLabel} ${pkg.price} ${perMonth}` : '';
+        pageTitle = `${pkg.name}${priceTail} | Gastro Master`;
+        pageDesc = pkg.description;
+      }
     } else if (isHub) {
       pageTitle = `${navLabel(lang, 'produkte')} – ${navLabel(lang, 'pakete')}, ${navLabel(lang, 'add-ons')}, ${navLabel(lang, 'hardware')} | Gastro Master`;
       pageDesc = PACKAGES.filter((p) => p.price)
         .map((p) => `${p.name} (${p.price}€/Mo.)`)
         .join(', ');
     } else if (isHardware) {
-      pageTitle = `${navLabel(lang, 'hardware')} | Gastro Master`;
-      pageDesc = HARDWARE_INTRO[lang] ?? HARDWARE_INTRO.de;
+      // Hardware bundle (hardware.json) has rich seo.title/description per language.
+      const hwBundle = loadBundle(lang, 'hardware') ?? loadBundle('de', 'hardware');
+      if (hwBundle?.seo?.title) {
+        pageTitle = hwBundle.seo.title;
+        pageDesc = hwBundle.seo.description ?? HARDWARE_INTRO[lang] ?? HARDWARE_INTRO.de;
+      } else {
+        pageTitle = `${navLabel(lang, 'hardware')} | Gastro Master`;
+        pageDesc = HARDWARE_INTRO[lang] ?? HARDWARE_INTRO.de;
+      }
     } else if (addonRegistry) {
       // Per-language SEO meta from the add-on's i18n bundle (or DE fallback).
       const b = loadBundle(lang, addonRegistry.bundle) ?? loadBundle('de', addonRegistry.bundle);
@@ -1192,8 +1315,49 @@ for (const route of routes) {
       ];
 
       if (pkg) {
-        staticContent = buildPackagePageStatic(pkg, lang);
+        // Use per-page bundle for marketing-quality H1, subline, and FAQs.
+        // Falls back to PACKAGES.description-based static when no bundle.
+        const bundleName = PACKAGE_BUNDLE_MAP[route.key];
+        const pkgBundle = bundleName
+          ? loadBundle(lang, bundleName) ?? loadBundle('de', bundleName)
+          : null;
+        const norm = pkgBundle ? normalizeHeroFromBundle(pkgBundle) : null;
+        if (norm?.headline) {
+          // Marketing-grade hero from bundle: badge, headline, subline,
+          // pricing display from PACKAGES (already structured), CTA.
+          const fromLabel = PACKAGES_PRICE_LABEL[lang] ?? PACKAGES_PRICE_LABEL.de;
+          const perMonth = PACKAGES_PER_MONTH[lang] ?? PACKAGES_PER_MONTH.de;
+          const customLabel = PACKAGES_CUSTOM[lang] ?? PACKAGES_CUSTOM.de;
+          const cta = norm.cta || i18nHero[lang]?.cta || 'Kostenlose Beratung';
+          const priceLine = pkg.price ? `${fromLabel} ${pkg.price} ${perMonth}` : customLabel;
+          const features = pkg.features ?? [];
+          staticContent = [
+            '<article style="max-width:880px;margin:3rem auto;padding:1.5rem;font-family:system-ui,sans-serif;color:#0A264A;">',
+            norm.badge
+              ? `<p style="display:inline-block;background:#0A264A;color:#fff;font-size:0.75rem;font-weight:700;text-transform:uppercase;letter-spacing:0.05em;padding:0.25rem 0.75rem;border-radius:999px;margin:0 0 1rem;">${escapeHtmlMin(norm.badge)}</p>`
+              : '',
+            `<h1 style="font-size:2rem;font-weight:900;line-height:1.2;margin:0 0 0.75rem;">${escapeHtmlMin(norm.headline)}</h1>`,
+            `<p style="font-size:1.5rem;color:#ED8400;font-weight:700;margin:0 0 1rem;">${escapeHtmlMin(priceLine)}</p>`,
+            norm.subline
+              ? `<p style="font-size:1.125rem;line-height:1.5;margin:0 0 1.5rem;color:#0A264A;opacity:0.85;">${escapeHtmlMin(norm.subline)}</p>`
+              : '',
+            features.length > 0
+              ? `<ul style="list-style:none;padding:0;margin:0 0 1.5rem;">${features
+                  .map((f) => `<li style="padding:0.5rem 0;">✓ ${escapeHtmlMin(f)}</li>`)
+                  .join('')}</ul>`
+              : '',
+            `<a href="/${lang}${contactSlug(lang)}" style="display:inline-block;background:#ED8400;color:#fff;font-weight:700;padding:0.75rem 2rem;border-radius:0.75rem;text-decoration:none;">${escapeHtmlMin(cta)}</a>`,
+            '</article>',
+          ]
+            .filter(Boolean)
+            .join('');
+        } else {
+          staticContent = buildPackagePageStatic(pkg, lang);
+        }
         extraSchemas.push(buildProductSchema(pkg, canonicalUrl, lang));
+        // FAQPage from bundle.faq.items[] — Pakete bundles have 6-7 FAQs each.
+        const pkgFaq = buildFaqPageFromBundle(canonicalUrl, pkgBundle?.faq?.items);
+        if (pkgFaq) extraSchemas.push(pkgFaq);
         // Breadcrumb: Home → Produkte → Package. We intentionally drop a
         // "Pakete" intermediate step because there is no /produkte/pakete
         // route — only the products hub (/produkte) and individual package
@@ -1317,7 +1481,11 @@ for (const route of routes) {
         );
       } else if (isHardware) {
         staticContent = buildHardwarePageStatic(lang);
-        const hardwareList = buildHardwareItemList(canonicalUrl);
+        const hardwareList = buildHardwareItemList(canonicalUrl, lang);
+        // FAQPage from hardware.json bundle (4 FAQs).
+        const hwBundle = loadBundle(lang, 'hardware') ?? loadBundle('de', 'hardware');
+        const hwFaq = buildFaqPageFromBundle(canonicalUrl, hwBundle?.faq?.items);
+        if (hwFaq) extraSchemas.push(hwFaq);
         extraSchemas.push({
           "@context": "https://schema.org",
           "@type": "CollectionPage",
