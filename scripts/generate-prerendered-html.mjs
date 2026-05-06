@@ -1055,6 +1055,23 @@ const SOLUTION_BUNDLE_MAP = {
   'cafe-bakery':       'cafe-baeckerei',
   'ghost-kitchen':     'ghost-kitchen',
 };
+// Misc-page bundles (Über uns, FAQ, Downloads, Druckertreiber + legal pages).
+// Different schemas per kind:
+//   about-us       → AboutPage (Schema.org type for company "About" pages)
+//   faq            → site-wide FAQPage with all categories flattened (~50 Q&A)
+//   downloads      → CollectionPage with ItemList of software bundles
+//   printer-drivers→ CollectionPage with ItemList of printer driver downloads
+//   imprint/privacy/terms → WebPage with localised meta (no rich schema needed)
+const MISC_BUNDLE_MAP = {
+  'about-us':        { bundle: 'ueber-uns',     kind: 'about' },
+  'faq':             { bundle: 'faq',           kind: 'faq' },
+  'downloads':       { bundle: 'downloads',     kind: 'downloads' },
+  'printer-drivers': { bundle: 'druckertreiber',kind: 'drivers' },
+  'imprint':         { bundle: 'impressum',     kind: 'legal' },
+  'privacy':         { bundle: 'datenschutz',   kind: 'legal' },
+  'terms':           { bundle: 'agb',           kind: 'legal' },
+};
+
 // Industry / business-type label per solution — fed into Service.audience
 // so AI engines can match queries like "Bestellsystem für Pizzeria" or
 // "Software für Lieferservice".
@@ -1084,26 +1101,42 @@ const SOLUTION_AUDIENCE = {
 // Normalize to {headline, subline, badge, cta}.
 const normalizeHeroFromBundle = (bundle) => {
   const h = bundle?.hero ?? {};
-  const join = (...parts) => parts.filter(Boolean).join(' ').trim();
+  // Joiner that doesn't add a leading space before a fragment that starts
+  // with punctuation (ueber-uns has headingPost="." which would otherwise
+  // produce "Gastro Master ." with a stray space).
+  const join = (...parts) =>
+    parts
+      .filter(Boolean)
+      .reduce((acc, cur) => {
+        const t = String(cur).trim();
+        if (!t) return acc;
+        if (!acc) return t;
+        return /^[.,:;!?…»"')\]]/.test(t) ? acc + t : `${acc} ${t}`;
+      }, '')
+      .trim();
   let headline = '';
   // Try each known pattern in priority order. First non-empty wins.
   // Each candidate REQUIRES its primary anchor field to be present, so an
   // optional `h1Highlight` alone doesn't accidentally match the `h1+suffix`
   // pattern (which would yield just the highlight word as the H1).
   const candidates = [
-    h.h1       ? join(h.h1, h.h1Highlight, h.h1Suffix) : '',
-    h.h1Line1  ? join(h.h1Line1, h.h1Line2, h.h1Highlight) : '',
-    h.h1Before ? join(h.h1Before, h.h1Highlight) : '',
-    h.h1_1     ? join(h.h1_1, h.h1_highlight, h.h1_2) : '',
-    h.title1   ? join(h.title1, h.titleHighlight, h.title2) : '',
-    h.headline ? join(h.headline, h.headlineHighlight) : '',
+    h.h1         ? join(h.h1, h.h1Highlight, h.h1Suffix) : '',
+    h.h1Line1    ? join(h.h1Line1, h.h1Line2, h.h1Highlight) : '',
+    h.h1Before   ? join(h.h1Before, h.h1Highlight) : '',
+    h.h1_1       ? join(h.h1_1, h.h1_highlight, h.h1_2) : '',
+    h.title1     ? join(h.title1, h.titleHighlight, h.title2) : '',
+    h.headline   ? join(h.headline, h.headlineHighlight) : '',
+    // ueber-uns: headingPre + headingHighlight + headingPost.
+    h.headingPre ? join(h.headingPre, h.headingHighlight, h.headingPost) : '',
   ];
   headline = candidates.find((c) => c.length > 0) || '';
 
-  // Subline fallbacks: explicit subtitle/subline > combined subtitle1+subtitle2 > desc/sub.
+  // Subline fallbacks: explicit subtitle/subline/text > combined subtitle1+subtitle2 > desc/sub.
+  // (`text` is the ueber-uns hero's intro paragraph.)
   const subline =
     h.subtitle ||
     h.subline ||
+    h.text ||
     join(h.subtitle1, h.subtitle2) ||
     h.desc ||
     h.sub ||
@@ -1336,6 +1369,220 @@ const buildSolutionsHubStatic = (lang) => {
   ].join('');
 };
 
+// ─── Misc-page enrichment (Über uns / FAQ / Downloads / Druckertreiber / Legal) ──
+
+// AboutPage = Schema.org type for company "About" landing pages. Strictly
+// richer than WebPage for this case because AI engines treat AboutPage as
+// the canonical entity description for the Organization.
+const buildAboutPageSchema = ({ canonicalUrl, lang, title, description }) => ({
+  "@context": "https://schema.org",
+  "@type": "AboutPage",
+  "@id": `${canonicalUrl}#aboutpage`,
+  url: canonicalUrl,
+  name: title,
+  description,
+  inLanguage: localeOf(lang),
+  isPartOf: { "@id": `${SITE_URL}/#website` },
+  about: { "@id": `${SITE_URL}/#organization` },
+  mainEntity: { "@id": `${SITE_URL}/#organization` },
+  primaryImageOfPage: `${SITE_URL}/logo-gastro-master.png`,
+  datePublished: BUILD_DATE,
+  dateModified: BUILD_DATE,
+  speakable: {
+    "@type": "SpeakableSpecification",
+    cssSelector: ['h1', 'article > p:first-of-type'],
+  },
+});
+
+const buildAboutPageStatic = ({ lang, bundle }) => {
+  const norm = normalizeHeroFromBundle(bundle);
+  const cta = norm.cta || i18nHero[lang]?.cta || 'Kostenlose Beratung';
+  return [
+    '<article style="max-width:880px;margin:3rem auto;padding:1.5rem;font-family:system-ui,sans-serif;color:#0A264A;">',
+    `<h1 style="font-size:2rem;font-weight:900;line-height:1.2;margin:0 0 1rem;">${escapeHtmlMin(norm.headline || '')}</h1>`,
+    norm.subline
+      ? `<p style="font-size:1.125rem;line-height:1.5;margin:0 0 1.5rem;color:#0A264A;opacity:0.85;">${escapeHtmlMin(norm.subline)}</p>`
+      : '',
+    `<a href="/${lang}${contactSlug(lang)}" style="display:inline-block;background:#ED8400;color:#fff;font-weight:700;padding:0.75rem 2rem;border-radius:0.75rem;text-decoration:none;">${escapeHtmlMin(cta)}</a>`,
+    '</article>',
+  ]
+    .filter(Boolean)
+    .join('');
+};
+
+// Comprehensive FAQPage from the /faq bundle's categories[].items[].
+// AI engines treat a single FAQPage with 30+ Q&A as a high-value reference
+// — citations to gastro-master.de/faq become the default answer for many
+// "Wie funktioniert X?" / "Was kostet Y?" queries.
+const buildFaqHubFaqSchema = ({ canonicalUrl, bundle }) => {
+  const cats = Array.isArray(bundle?.categories) ? bundle.categories : [];
+  const items = [];
+  for (const cat of cats) {
+    if (!Array.isArray(cat?.items)) continue;
+    for (const it of cat.items) {
+      const q = it.q ?? it.question;
+      const a = it.a ?? it.answer;
+      if (q && a) items.push({ q, a });
+    }
+  }
+  if (items.length < 2) return null;
+  return {
+    "@context": "https://schema.org",
+    "@type": "FAQPage",
+    "@id": `${canonicalUrl}#faq`,
+    mainEntity: items.map(({ q, a }) => ({
+      "@type": "Question",
+      name: q,
+      // Strip any markdown-link syntax (`[text](url)`) from answer prose for
+      // cleaner Schema text — the static HTML keeps the link if rendered.
+      acceptedAnswer: {
+        "@type": "Answer",
+        text: String(a).replace(/\[([^\]]+)\]\([^)]+\)/g, '$1'),
+      },
+    })),
+  };
+};
+
+const buildFaqHubStatic = ({ lang, bundle }) => {
+  const norm = normalizeHeroFromBundle(bundle);
+  const cats = Array.isArray(bundle?.categories) ? bundle.categories : [];
+  const cta = norm.cta || i18nHero[lang]?.cta || 'Kostenlose Beratung';
+  const sections = cats
+    .map((cat) => {
+      const items = Array.isArray(cat?.items) ? cat.items : [];
+      const itemsHtml = items
+        .slice(0, 5) // first 5 per category — keep static block manageable
+        .map(
+          (it) =>
+            `<li style="margin:0 0 0.75rem;padding:0.75rem 1rem;border:1px solid #e5e7eb;border-radius:0.5rem;"><strong>${escapeHtmlMin(it.q ?? '')}</strong><br/><span style="color:#475569;font-size:0.95rem;">${escapeHtmlMin(String(it.a ?? '').replace(/\[([^\]]+)\]\([^)]+\)/g, '$1'))}</span></li>`,
+        )
+        .join('');
+      return [
+        '<section style="margin:0 0 2rem;">',
+        cat.label ? `<h2 style="font-size:1.25rem;font-weight:800;margin:0 0 0.75rem;">${escapeHtmlMin(cat.label)}</h2>` : '',
+        `<ul style="list-style:none;padding:0;margin:0;">${itemsHtml}</ul>`,
+        '</section>',
+      ]
+        .filter(Boolean)
+        .join('');
+    })
+    .join('');
+  return [
+    '<article style="max-width:880px;margin:3rem auto;padding:1.5rem;font-family:system-ui,sans-serif;color:#0A264A;">',
+    `<h1 style="font-size:2rem;font-weight:900;line-height:1.2;margin:0 0 1rem;">${escapeHtmlMin(norm.headline || '')}</h1>`,
+    norm.subline
+      ? `<p style="font-size:1.125rem;line-height:1.5;margin:0 0 1.5rem;color:#475569;">${escapeHtmlMin(norm.subline)}</p>`
+      : '',
+    sections,
+    `<a href="/${lang}${contactSlug(lang)}" style="display:inline-block;background:#ED8400;color:#fff;font-weight:700;padding:0.75rem 2rem;border-radius:0.75rem;text-decoration:none;">${escapeHtmlMin(cta)}</a>`,
+    '</article>',
+  ]
+    .filter(Boolean)
+    .join('');
+};
+
+// Downloads + Druckertreiber pages: CollectionPage with an ItemList of
+// SoftwareApplication / DigitalDocument items. Both bundles use slightly
+// different shapes: downloads.json has `categories[].items[]`, druckertreiber
+// has flat `drivers[]`.
+const buildDownloadsItemList = ({ canonicalUrl, bundle, isPrinterDrivers }) => {
+  const items = [];
+  if (isPrinterDrivers && Array.isArray(bundle?.drivers)) {
+    for (const d of bundle.drivers) {
+      items.push({ name: d.label, version: d.version, ext: d.ext });
+    }
+  } else if (Array.isArray(bundle?.categories)) {
+    for (const cat of bundle.categories) {
+      const catItems = Array.isArray(cat?.items) ? cat.items : [];
+      for (const it of catItems) {
+        items.push({
+          name: it.label,
+          version: cat.category ?? cat.label,
+          ext: it.ext,
+        });
+      }
+    }
+  }
+  if (items.length === 0) return null;
+  return {
+    "@type": "ItemList",
+    "@id": `${canonicalUrl}#downloads-list`,
+    numberOfItems: items.length,
+    itemListElement: items.map((d, i) => ({
+      "@type": "ListItem",
+      position: i + 1,
+      item: {
+        "@type": "SoftwareApplication",
+        name: [d.name, d.version].filter(Boolean).join(' · '),
+        applicationCategory: 'BusinessApplication',
+        operatingSystem: d.version ?? 'Multi',
+        fileFormat: d.ext ?? '',
+        provider: { "@id": `${SITE_URL}/#organization` },
+      },
+    })),
+  };
+};
+
+const buildDownloadsStatic = ({ lang, bundle, isPrinterDrivers }) => {
+  const cta = i18nHero[lang]?.cta || 'Kostenlose Beratung';
+  const heading = bundle?.title || (isPrinterDrivers ? 'Druckertreiber' : 'Downloads');
+  const sub = bundle?.subtitle || '';
+  let body = '';
+  if (isPrinterDrivers && Array.isArray(bundle?.drivers)) {
+    body = `<ul style="list-style:none;padding:0;margin:0 0 1.5rem;">${bundle.drivers
+      .map(
+        (d) =>
+          `<li style="margin:0 0 0.5rem;padding:0.5rem 0.75rem;border:1px solid #e5e7eb;border-radius:0.5rem;display:flex;justify-content:space-between;gap:1rem;"><strong>${escapeHtmlMin(d.label ?? '')}</strong><span style="color:#475569;">${escapeHtmlMin(d.version ?? '')} ${escapeHtmlMin(d.ext ?? '')}</span></li>`,
+      )
+      .join('')}</ul>`;
+  } else if (Array.isArray(bundle?.categories)) {
+    body = bundle.categories
+      .map((cat) => {
+        const catItems = Array.isArray(cat?.items) ? cat.items : [];
+        const itemsHtml = catItems
+          .map(
+            (it) =>
+              `<li style="margin:0 0 0.5rem;padding:0.5rem 0.75rem;border:1px solid #e5e7eb;border-radius:0.5rem;"><strong>${escapeHtmlMin(it.label ?? '')}</strong> <span style="color:#475569;">${escapeHtmlMin(it.ext ?? '')}</span></li>`,
+          )
+          .join('');
+        return [
+          '<section style="margin:0 0 1.5rem;">',
+          `<h2 style="font-size:1.125rem;font-weight:800;margin:0 0 0.5rem;">${escapeHtmlMin(cat.category ?? cat.label ?? '')}</h2>`,
+          `<ul style="list-style:none;padding:0;margin:0;">${itemsHtml}</ul>`,
+          '</section>',
+        ].join('');
+      })
+      .join('');
+  }
+  return [
+    '<article style="max-width:880px;margin:3rem auto;padding:1.5rem;font-family:system-ui,sans-serif;color:#0A264A;">',
+    `<h1 style="font-size:2rem;font-weight:900;margin:0 0 1rem;">${escapeHtmlMin(heading)}</h1>`,
+    sub ? `<p style="font-size:1.125rem;line-height:1.5;margin:0 0 1.5rem;">${escapeHtmlMin(sub)}</p>` : '',
+    body,
+    `<a href="/${lang}${contactSlug(lang)}" style="display:inline-block;background:#ED8400;color:#fff;font-weight:700;padding:0.75rem 2rem;border-radius:0.75rem;text-decoration:none;">${escapeHtmlMin(cta)}</a>`,
+    '</article>',
+  ]
+    .filter(Boolean)
+    .join('');
+};
+
+// Static fallback for legal pages (Impressum, Datenschutz, AGB).
+// Just the page title + brief description from the bundle — no fancy schema.
+const buildLegalPageStatic = ({ lang, bundle }) => {
+  const heading = bundle?.title || '';
+  const sub = bundle?.subtitle || bundle?.stand || '';
+  const cta = i18nHero[lang]?.cta || 'Kostenlose Beratung';
+  return [
+    '<article style="max-width:880px;margin:3rem auto;padding:1.5rem;font-family:system-ui,sans-serif;color:#0A264A;">',
+    `<h1 style="font-size:2rem;font-weight:900;margin:0 0 1rem;">${escapeHtmlMin(heading)}</h1>`,
+    sub
+      ? `<p style="font-size:1rem;line-height:1.5;margin:0 0 1.5rem;color:#475569;">${escapeHtmlMin(sub)}</p>`
+      : '',
+    `<a href="/${lang}${contactSlug(lang)}" style="display:inline-block;background:#ED8400;color:#fff;font-weight:700;padding:0.75rem 2rem;border-radius:0.75rem;text-decoration:none;">${escapeHtmlMin(cta)}</a>`,
+    '</article>',
+  ].join('');
+};
+
 // Static fallback for the /produkte/add-ons hub: pulls structured cards from
 // addons-hub.json (5 add-ons with title/price/desc/benefits/compatibility).
 const buildAddonsHubStatic = (lang) => {
@@ -1460,8 +1707,11 @@ for (const route of routes) {
   const solutionBundleName = SOLUTION_BUNDLE_MAP[route.key];
   const isSolution = !!solutionBundleName;
   const isSolutionsHub = route.key === 'loesungen';
+  const miscEntry = MISC_BUNDLE_MAP[route.key];
+  const isMisc = !!miscEntry;
   const isProductPage =
-    !!pkg || isHub || isHardware || !!addonRegistry || isAddonsHub || isSolution || isSolutionsHub;
+    !!pkg || isHub || isHardware || !!addonRegistry || isAddonsHub ||
+    isSolution || isSolutionsHub || isMisc;
 
   for (const lang of LANGUAGES) {
     const slug = route.slugs[lang];
@@ -1543,6 +1793,12 @@ for (const route of routes) {
         b?.schema?.articleDescription ??
         b?.schema?.description ??
         '';
+    } else if (isMisc) {
+      // Misc-page meta: bundles use either `seo` (ueber-uns, faq) or `meta`
+      // (downloads, druckertreiber, legal pages). Try both.
+      const b = loadBundle(lang, miscEntry.bundle) ?? loadBundle('de', miscEntry.bundle);
+      pageTitle = b?.seo?.title ?? b?.meta?.title ?? `${miscEntry.bundle} | Gastro Master`;
+      pageDesc = b?.seo?.description ?? b?.meta?.description ?? '';
     }
     const title = curatedMeta?.title ?? langFallback?.title ?? pageTitle ?? ROOT_TITLE;
     const description = curatedMeta?.description ?? langFallback?.description ?? pageDesc ?? ROOT_DESC;
@@ -1847,6 +2103,87 @@ for (const route of routes) {
             { name: i18nNav[lang]?.loesungen ?? 'Lösungen', url: canonicalUrl },
           ]),
         );
+      } else if (isMisc) {
+        const mBundle = loadBundle(lang, miscEntry.bundle) ?? loadBundle('de', miscEntry.bundle);
+        if (miscEntry.kind === 'about') {
+          staticContent = buildAboutPageStatic({ lang, bundle: mBundle });
+          extraSchemas.push(buildAboutPageSchema({ canonicalUrl, lang, title, description }));
+          // ueber-uns has 5 FAQs at top-level faq.items.
+          const aboutFaq = buildFaqPageFromBundle(canonicalUrl, mBundle?.faq?.items);
+          if (aboutFaq) extraSchemas.push(aboutFaq);
+          extraSchemas.push(
+            buildBreadcrumbList(canonicalUrl, [
+              { name: 'Home', url: `${SITE_URL}/${lang}` },
+              { name: title.split(' | ')[0], url: canonicalUrl },
+            ]),
+          );
+        } else if (miscEntry.kind === 'faq') {
+          staticContent = buildFaqHubStatic({ lang, bundle: mBundle });
+          // Comprehensive FAQPage from all categories[].items[] (~30-50 Q&A).
+          const fullFaq = buildFaqHubFaqSchema({ canonicalUrl, bundle: mBundle });
+          if (fullFaq) extraSchemas.push(fullFaq);
+          extraSchemas.push(
+            buildPageWebPageSchema({
+              canonicalUrl,
+              name: title,
+              description,
+              lang,
+              mainEntityId: `${canonicalUrl}#faq`,
+            }),
+          );
+          extraSchemas.push(
+            buildBreadcrumbList(canonicalUrl, [
+              { name: 'Home', url: `${SITE_URL}/${lang}` },
+              { name: title.split(' | ')[0], url: canonicalUrl },
+            ]),
+          );
+        } else if (miscEntry.kind === 'downloads' || miscEntry.kind === 'drivers') {
+          const isDrivers = miscEntry.kind === 'drivers';
+          staticContent = buildDownloadsStatic({ lang, bundle: mBundle, isPrinterDrivers: isDrivers });
+          const itemList = buildDownloadsItemList({ canonicalUrl, bundle: mBundle, isPrinterDrivers: isDrivers });
+          extraSchemas.push({
+            "@context": "https://schema.org",
+            "@type": "CollectionPage",
+            "@id": `${canonicalUrl}#collection`,
+            url: canonicalUrl,
+            name: title,
+            description,
+            inLanguage: localeOf(lang),
+            isPartOf: { "@id": `${SITE_URL}/#website` },
+            about: { "@id": `${SITE_URL}/#organization` },
+            datePublished: BUILD_DATE,
+            dateModified: BUILD_DATE,
+            ...(itemList ? { mainEntity: itemList } : {}),
+          });
+          // Breadcrumb: Home → Downloads (→ Druckertreiber).
+          const crumbs = [
+            { name: 'Home', url: `${SITE_URL}/${lang}` },
+            { name: mBundle?.breadcrumbParent || 'Downloads', url: `${SITE_URL}/${lang}/downloads` },
+          ];
+          if (isDrivers) {
+            crumbs.push({ name: mBundle?.breadcrumbCurrent || 'Druckertreiber', url: canonicalUrl });
+          } else {
+            // Replace last crumb URL with self-canonical for Downloads root.
+            crumbs[1] = { name: 'Downloads', url: canonicalUrl };
+          }
+          extraSchemas.push(buildBreadcrumbList(canonicalUrl, crumbs));
+        } else if (miscEntry.kind === 'legal') {
+          staticContent = buildLegalPageStatic({ lang, bundle: mBundle });
+          extraSchemas.push(
+            buildPageWebPageSchema({
+              canonicalUrl,
+              name: title,
+              description,
+              lang,
+            }),
+          );
+          extraSchemas.push(
+            buildBreadcrumbList(canonicalUrl, [
+              { name: 'Home', url: `${SITE_URL}/${lang}` },
+              { name: mBundle?.title || title.split(' | ')[0], url: canonicalUrl },
+            ]),
+          );
+        }
       } else if (isHardware) {
         staticContent = buildHardwarePageStatic(lang);
         const hardwareList = buildHardwareItemList(canonicalUrl, lang);
