@@ -968,23 +968,72 @@ const PACKAGE_BUNDLE_MAP = {
   'hardware':   'hardware',
 };
 
-// Inconsistent hero formats across Pakete/Hardware bundles:
-//   webseite + app:        title1 + titleHighlight + title2
-//   webshop:               h1 + h1Highlight
-//   kasse + hardware:      h1 + h1Highlight + h1Suffix
+// Solution-Pages are industry-specific landing pages (Lieferdienst, Restaurant,
+// Franchise, etc.). They get Service schemas (not Product) since they describe
+// who-the-software-is-for rather than what-product-is-sold. Each maps onto a
+// per-language i18n bundle with seo + hero + faq.
+const SOLUTION_BUNDLE_MAP = {
+  'delivery':          'lieferdienst',
+  'start-delivery':    'lieferservice-gruenden',
+  'franchise':         'franchise',
+  'restaurant':        'restaurant',
+  'cafe-bakery':       'cafe-baeckerei',
+  'ghost-kitchen':     'ghost-kitchen',
+};
+// Industry / business-type label per solution — fed into Service.audience
+// so AI engines can match queries like "Bestellsystem für Pizzeria" or
+// "Software für Lieferservice".
+const SOLUTION_AUDIENCE = {
+  'delivery':       'Lieferdienste, Pizzerien, Imbisse, Eigenlieferung',
+  'start-delivery': 'Restaurants und Imbisse, die einen Lieferservice neu starten',
+  'franchise':      'Franchise-Systeme, Multi-Standort-Konzepte',
+  'restaurant':     'Restaurants mit Tisch-Service',
+  'cafe-bakery':    'Cafés, Bäckereien, Konditoreien',
+  'ghost-kitchen':  'Ghost Kitchens, Cloud-Kitchens, reine Liefer-Konzepte',
+};
+
+// Inconsistent hero formats across page bundles. Known variants (Mai 2026):
+//   Pakete:
+//     webseite + app:           title1 + titleHighlight + title2
+//     webshop:                  h1 + h1Highlight
+//     kasse + hardware:         h1 + h1Highlight + h1Suffix
+//   Add-ons:                    headline + headlineHighlight (or just headline)
+//   Solutions:
+//     lieferdienst:             title1 + titleHighlight                 (subtitle1 + subtitle2)
+//     restaurant:               title1 + title2                         (subtitle1 + subtitle2)
+//     franchise:                h1Line1 + h1Line2 + h1Highlight
+//     cafe-baeckerei:           h1_1 + h1_highlight + h1_2
+//     ghost-kitchen:            h1Line1 + h1Highlight
+//     lieferservice-gruenden:   h1 + h1Highlight                        (subline)
+//     loesungen (hub):          h1Before + h1Highlight
 // Normalize to {headline, subline, badge, cta}.
 const normalizeHeroFromBundle = (bundle) => {
   const h = bundle?.hero ?? {};
+  const join = (...parts) => parts.filter(Boolean).join(' ').trim();
   let headline = '';
-  if (h.h1) {
-    headline = [h.h1, h.h1Highlight, h.h1Suffix].filter(Boolean).join(' ');
-  } else if (h.title1) {
-    headline = [h.title1, h.titleHighlight, h.title2].filter(Boolean).join(' ');
-  } else if (h.headline) {
-    headline = [h.headline, h.headlineHighlight].filter(Boolean).join(' ');
-  }
-  const subline = h.subtitle ?? h.subline ?? h.desc ?? h.sub ?? '';
-  return { headline: headline.trim(), subline, badge: h.badge ?? '', cta: h.cta ?? '' };
+  // Try each known pattern in priority order. First non-empty wins.
+  // Each candidate REQUIRES its primary anchor field to be present, so an
+  // optional `h1Highlight` alone doesn't accidentally match the `h1+suffix`
+  // pattern (which would yield just the highlight word as the H1).
+  const candidates = [
+    h.h1       ? join(h.h1, h.h1Highlight, h.h1Suffix) : '',
+    h.h1Line1  ? join(h.h1Line1, h.h1Line2, h.h1Highlight) : '',
+    h.h1Before ? join(h.h1Before, h.h1Highlight) : '',
+    h.h1_1     ? join(h.h1_1, h.h1_highlight, h.h1_2) : '',
+    h.title1   ? join(h.title1, h.titleHighlight, h.title2) : '',
+    h.headline ? join(h.headline, h.headlineHighlight) : '',
+  ];
+  headline = candidates.find((c) => c.length > 0) || '';
+
+  // Subline fallbacks: explicit subtitle/subline > combined subtitle1+subtitle2 > desc/sub.
+  const subline =
+    h.subtitle ||
+    h.subline ||
+    join(h.subtitle1, h.subtitle2) ||
+    h.desc ||
+    h.sub ||
+    '';
+  return { headline, subline, badge: h.badge ?? '', cta: h.cta ?? '' };
 };
 
 // ─── Add-on enrichment (Sprint 2) ───────────────────────────────────────────
@@ -1080,6 +1129,136 @@ const buildAddonPageStatic = ({ lang, bundle, registry }) => {
   ]
     .filter(Boolean)
     .join('');
+};
+
+// ─── Solution pages enrichment (Sprint Option B) ────────────────────────────
+// Solution-Pages describe industry-specific use cases (Lieferdienst, Restaurant,
+// Franchise, etc.). They get Service schemas with audience-targeting (different
+// from Pakete which are Products). The deps reference back to the Pakete that
+// best fit the use case — AI engines see "this Solution uses these Services".
+const SOLUTION_RELATED_PACKAGES = {
+  'delivery':       ['starter', 'business', 'kassensystem'],
+  'start-delivery': ['business', 'kassensystem'],
+  'franchise':      ['business', 'kassensystem', 'enterprise'],
+  'restaurant':     ['kassensystem', 'business'],
+  'cafe-bakery':    ['starter', 'kassensystem'],
+  'ghost-kitchen':  ['starter', 'business'],
+};
+
+const buildSolutionServiceSchema = ({ canonicalUrl, lang, bundle, routeKey }) => {
+  const norm = normalizeHeroFromBundle(bundle);
+  const seo = bundle?.seo ?? {};
+  const schemaHints = bundle?.schema ?? {};
+  const name = norm.headline || schemaHints.headline || seo.title || routeKey;
+  const description =
+    seo.description || schemaHints.description || norm.subline || '';
+  const relatedKeys = SOLUTION_RELATED_PACKAGES[routeKey] ?? [];
+  return {
+    "@context": "https://schema.org",
+    "@type": "Service",
+    "@id": `${canonicalUrl}#service-solution`,
+    name,
+    description,
+    serviceType: 'Restaurant Software Solution',
+    provider: { "@id": `${SITE_URL}/#organization` },
+    areaServed: ['DE', 'AT', 'CH'],
+    url: canonicalUrl,
+    inLanguage: localeOf(lang),
+    audience: {
+      "@type": "BusinessAudience",
+      audienceType: SOLUTION_AUDIENCE[routeKey] ?? 'Restaurant operators',
+      geographicArea: { "@type": "Country", name: ['DE', 'AT', 'CH'] },
+    },
+    aggregateRating: {
+      "@type": "AggregateRating",
+      ratingValue: String(REVIEW_META.totalRating || 5),
+      reviewCount: REVIEW_META.totalCount || 0,
+      bestRating: '5',
+      worstRating: '1',
+    },
+    // Reference the Pakete that fit this solution — closes the entity loop:
+    // Solution → uses → Service-Pakete → has → Offers.
+    ...(relatedKeys.length
+      ? {
+          isRelatedTo: relatedKeys.map((k) => ({
+            "@id": `${SITE_URL}/#service-${k}`,
+          })),
+        }
+      : {}),
+  };
+};
+
+// Static fallback for a Solution detail page (industry landing).
+const buildSolutionPageStatic = ({ lang, bundle, routeKey }) => {
+  const norm = normalizeHeroFromBundle(bundle);
+  const cta = norm.cta || i18nHero[lang]?.cta || 'Kostenlose Beratung';
+  const trustPills =
+    bundle?.hero?.pills ||
+    bundle?.hero?.trustPills ||
+    [];
+  return [
+    '<article style="max-width:880px;margin:3rem auto;padding:1.5rem;font-family:system-ui,sans-serif;color:#0A264A;">',
+    norm.badge
+      ? `<p style="display:inline-block;background:#0A264A;color:#fff;font-size:0.75rem;font-weight:700;text-transform:uppercase;letter-spacing:0.05em;padding:0.25rem 0.75rem;border-radius:999px;margin:0 0 1rem;">${escapeHtmlMin(norm.badge)}</p>`
+      : '',
+    `<h1 style="font-size:2rem;font-weight:900;line-height:1.2;margin:0 0 0.75rem;">${escapeHtmlMin(norm.headline)}</h1>`,
+    norm.subline
+      ? `<p style="font-size:1.125rem;line-height:1.5;margin:0 0 1.5rem;color:#0A264A;opacity:0.85;">${escapeHtmlMin(norm.subline)}</p>`
+      : '',
+    Array.isArray(trustPills) && trustPills.length
+      ? `<ul style="list-style:none;padding:0;margin:0 0 1.5rem;display:flex;gap:1rem;flex-wrap:wrap;font-size:0.875rem;font-weight:600;">${trustPills
+          .map((t) => `<li>✓ ${escapeHtmlMin(t)}</li>`)
+          .join('')}</ul>`
+      : '',
+    `<a href="/${lang}${contactSlug(lang)}" style="display:inline-block;background:#ED8400;color:#fff;font-weight:700;padding:0.75rem 2rem;border-radius:0.75rem;text-decoration:none;">${escapeHtmlMin(cta)}</a>`,
+    '</article>',
+  ]
+    .filter(Boolean)
+    .join('');
+};
+
+// Static fallback for the /loesungen hub. Lists all 6 solutions with names
+// + tagline pulled from each bundle's hero.
+const buildSolutionsHubStatic = (lang) => {
+  const hub = loadBundle(lang, 'loesungen') ?? loadBundle('de', 'loesungen');
+  const norm = hub ? normalizeHeroFromBundle(hub) : null;
+  const heading = norm?.headline || 'Lösungen';
+  const sub = norm?.subline || '';
+  const cta = norm?.cta || i18nHero[lang]?.cta || 'Kostenlose Beratung';
+
+  const items = Object.entries(SOLUTION_BUNDLE_MAP)
+    .map(([key, bundleName]) => {
+      const b = loadBundle(lang, bundleName) ?? loadBundle('de', bundleName);
+      const n = b ? normalizeHeroFromBundle(b) : null;
+      const r = routes.find((rt) => rt.key === key);
+      const slug = r?.slugs?.[lang] ?? r?.slugs?.de ?? '';
+      const url = `${SITE_URL}/${lang}${slug}`;
+      return [
+        '<li style="margin:0 0 1rem;padding:1rem;border:1px solid #e5e7eb;border-radius:0.5rem;">',
+        n?.badge
+          ? `<p style="font-size:0.7rem;font-weight:700;color:#0A264A;text-transform:uppercase;letter-spacing:0.05em;margin:0 0 0.5rem;">${escapeHtmlMin(n.badge)}</p>`
+          : '',
+        `<a href="${escapeHtmlMin(url)}" style="font-size:1.125rem;font-weight:700;color:#0A264A;text-decoration:none;">${escapeHtmlMin(n?.headline ?? bundleName)}</a>`,
+        n?.subline
+          ? `<p style="color:#475569;font-size:0.95rem;margin:0.5rem 0 0;">${escapeHtmlMin(n.subline)}</p>`
+          : '',
+        '</li>',
+      ]
+        .filter(Boolean)
+        .join('');
+    })
+    .join('');
+
+  return [
+    '<section style="max-width:880px;margin:2rem auto;padding:1.5rem;font-family:system-ui,sans-serif;color:#0A264A;">',
+    `<h1 style="font-size:2rem;font-weight:900;text-align:center;margin:0 0 1rem;">${escapeHtmlMin(heading)}</h1>`,
+    sub
+      ? `<p style="font-size:1rem;line-height:1.5;text-align:center;margin:0 0 1.5rem;color:#475569;">${escapeHtmlMin(sub)}</p>`
+      : '',
+    `<ul style="list-style:none;padding:0;margin:0 0 1.5rem;">${items}</ul>`,
+    `<p style="text-align:center;margin:0;"><a href="/${lang}${contactSlug(lang)}" style="display:inline-block;background:#ED8400;color:#fff;font-weight:700;padding:0.75rem 2rem;border-radius:0.75rem;text-decoration:none;">${escapeHtmlMin(cta)}</a></p>`,
+    '</section>',
+  ].join('');
 };
 
 // Static fallback for the /produkte/add-ons hub: pulls structured cards from
@@ -1196,13 +1375,18 @@ for (const route of routes) {
   const curatedSchema = pages.find((p) => p.path === route.slugs.de)?.schema;
 
   // Detect product-page kind: package (one of the 4 main Pakete), the
-  // /produkte hub, /produkte/hardware, an add-on, or the add-ons hub.
+  // /produkte hub, /produkte/hardware, an add-on, the add-ons hub, an
+  // industry solution, or the solutions hub.
   const pkg = PACKAGES_BY_URL.get(route.slugs.de);
   const isHub = route.key === 'produkte';
   const isHardware = route.key === 'hardware';
   const addonRegistry = ADDON_REGISTRY[route.key];
   const isAddonsHub = route.key === 'add-ons';
-  const isProductPage = !!pkg || isHub || isHardware || !!addonRegistry || isAddonsHub;
+  const solutionBundleName = SOLUTION_BUNDLE_MAP[route.key];
+  const isSolution = !!solutionBundleName;
+  const isSolutionsHub = route.key === 'loesungen';
+  const isProductPage =
+    !!pkg || isHub || isHardware || !!addonRegistry || isAddonsHub || isSolution || isSolutionsHub;
 
   for (const lang of LANGUAGES) {
     const slug = route.slugs[lang];
@@ -1257,6 +1441,33 @@ for (const route of routes) {
       const h = loadBundle(lang, 'addons-hub') ?? loadBundle('de', 'addons-hub');
       pageTitle = h?.seo?.title ?? `${navLabel(lang, 'add-ons')} | Gastro Master`;
       pageDesc = h?.seo?.description ?? '';
+    } else if (isSolution) {
+      // Per-language SEO meta from the solution's bundle. Some bundles use
+      // `seo.title/description`, others use `schema.headline/description`,
+      // and a few use `schema.articleHeadline/articleDescription`.
+      const b = loadBundle(lang, solutionBundleName) ?? loadBundle('de', solutionBundleName);
+      pageTitle =
+        b?.seo?.title ??
+        b?.schema?.headline ??
+        b?.schema?.articleHeadline ??
+        `${solutionBundleName} | Gastro Master`;
+      pageDesc =
+        b?.seo?.description ??
+        b?.schema?.description ??
+        b?.schema?.articleDescription ??
+        '';
+    } else if (isSolutionsHub) {
+      const b = loadBundle(lang, 'loesungen') ?? loadBundle('de', 'loesungen');
+      pageTitle =
+        b?.seo?.title ??
+        b?.schema?.articleHeadline ??
+        b?.schema?.headline ??
+        `${i18nNav[lang]?.loesungen ?? 'Lösungen'} | Gastro Master`;
+      pageDesc =
+        b?.seo?.description ??
+        b?.schema?.articleDescription ??
+        b?.schema?.description ??
+        '';
     }
     const title = curatedMeta?.title ?? langFallback?.title ?? pageTitle ?? ROOT_TITLE;
     const description = curatedMeta?.description ?? langFallback?.description ?? pageDesc ?? ROOT_DESC;
@@ -1270,10 +1481,14 @@ for (const route of routes) {
     // Set the <html lang> attribute so headless crawlers can detect language.
     html = html.replace(/<html\s+lang="[^"]*"/, `<html lang="${lang}"`);
 
+    // Skip the curated DE-only seoMeta.json schema for Solutions — the
+    // bundle-driven Service schema below is strictly richer (audience, FAQ,
+    // localised name, etc.) and would duplicate the entity otherwise.
+    const useCuratedSchema = curatedSchema && !isSolution && !isSolutionsHub;
     const headExtras = [
       `<link rel="canonical" href="${canonicalUrl}">`,
       hreflangTags,
-      curatedSchema
+      useCuratedSchema
         ? `  <script type="application/ld+json">${JSON.stringify(curatedSchema)}</script>`
         : null,
     ]
@@ -1477,6 +1692,84 @@ for (const route of routes) {
           buildBreadcrumbList(canonicalUrl, [
             ...baseCrumbs,
             { name: navLabel(lang, 'add-ons'), url: canonicalUrl },
+          ]),
+        );
+      } else if (isSolution) {
+        // Industry solution detail page: Service + FAQPage + WebPage + Breadcrumb.
+        const sBundle =
+          loadBundle(lang, solutionBundleName) ?? loadBundle('de', solutionBundleName);
+        staticContent = buildSolutionPageStatic({ lang, bundle: sBundle, routeKey: route.key });
+        extraSchemas.push(
+          buildSolutionServiceSchema({ canonicalUrl, lang, bundle: sBundle, routeKey: route.key }),
+        );
+        const sFaq = buildFaqPageFromBundle(canonicalUrl, sBundle?.faq?.items);
+        if (sFaq) extraSchemas.push(sFaq);
+        extraSchemas.push(
+          buildPageWebPageSchema({
+            canonicalUrl,
+            name: title,
+            description,
+            lang,
+            mainEntityId: `${canonicalUrl}#service-solution`,
+          }),
+        );
+        // Breadcrumb-Name: prefer bundle.meta.breadcrumbName, fallback to
+        // hero headline, fallback to navigation slug-derived label.
+        const solutionName =
+          sBundle?.meta?.breadcrumbName ||
+          sBundle?.hero?.breadcrumbCurrent ||
+          normalizeHeroFromBundle(sBundle).headline ||
+          route.key;
+        extraSchemas.push(
+          buildBreadcrumbList(canonicalUrl, [
+            ...baseCrumbs.slice(0, 1), // Home only — solutions are NOT under /produkte
+            { name: i18nNav[lang]?.loesungen ?? 'Lösungen', url: `${SITE_URL}/${lang}/loesungen` },
+            { name: solutionName, url: canonicalUrl },
+          ]),
+        );
+      } else if (isSolutionsHub) {
+        staticContent = buildSolutionsHubStatic(lang);
+        // CollectionPage with mainEntity → ItemList of all 6 Solutions.
+        const solutionRoutes = Object.entries(SOLUTION_BUNDLE_MAP);
+        extraSchemas.push({
+          "@context": "https://schema.org",
+          "@type": "CollectionPage",
+          "@id": `${canonicalUrl}#collection`,
+          url: canonicalUrl,
+          name: title,
+          description,
+          inLanguage: localeOf(lang),
+          isPartOf: { "@id": `${SITE_URL}/#website` },
+          about: { "@id": `${SITE_URL}/#organization` },
+          datePublished: BUILD_DATE,
+          dateModified: BUILD_DATE,
+          mainEntity: {
+            "@type": "ItemList",
+            name: i18nNav[lang]?.loesungen ?? 'Lösungen',
+            numberOfItems: solutionRoutes.length,
+            itemListElement: solutionRoutes.map(([key], i) => {
+              const r = routes.find((rt) => rt.key === key);
+              const slug = r?.slugs?.[lang] ?? r?.slugs?.de ?? '';
+              return {
+                "@type": "ListItem",
+                position: i + 1,
+                item: { "@id": `${SITE_URL}/${lang}${slug}#service-solution` },
+              };
+            }),
+          },
+          speakable: {
+            "@type": "SpeakableSpecification",
+            cssSelector: ['h1', 'section p:first-of-type'],
+          },
+        });
+        // FAQPage from hub bundle (if any).
+        const hubBundle = loadBundle(lang, 'loesungen') ?? loadBundle('de', 'loesungen');
+        const hubFaq = buildFaqPageFromBundle(canonicalUrl, hubBundle?.faq?.items);
+        if (hubFaq) extraSchemas.push(hubFaq);
+        extraSchemas.push(
+          buildBreadcrumbList(canonicalUrl, [
+            ...baseCrumbs.slice(0, 1),
+            { name: i18nNav[lang]?.loesungen ?? 'Lösungen', url: canonicalUrl },
           ]),
         );
       } else if (isHardware) {
