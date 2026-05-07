@@ -420,7 +420,7 @@ const de = buildHubData("de", {
   },
   ourPosition: {
     heading: "Unsere Position",
-    body: "Gastro Master ist ein inhabergeführtes Familienunternehmen mit Sitz in Deutschland. Wir empfehlen unser eigenes System, wenn ein Restaurant Festpreise ohne Umsatzanteil, persönlichen direkten Kontakt und ein deutsches Service-Team will. Wir empfehlen es nicht, wenn der Hauptgrund eine bestimmte Reservierungs-Funktion ist, die wir nicht abdecken. Welcher Anbieter zu Ihrem Betrieb passt, entscheiden Sie nach den Fakten oben — ein 15-Minuten-Beratungsgespräch macht die Entscheidung in der Regel einfacher.",
+    body: "Gastro Master ist ein inhabergeführtes Familienunternehmen mit Sitz in Deutschland. Wir empfehlen unser eigenes System, wenn ein Restaurant Festpreise ohne Umsatzanteil, persönlichen direkten Kontakt und ein deutsches Service-Team will. Welcher Anbieter zu Ihrem Betrieb passt, entscheiden Sie nach den Fakten oben — ein 15-Minuten-Beratungsgespräch macht die Entscheidung in der Regel einfacher.",
   },
   hardCtaLabel: "Kostenlose Beratung",
   meta: {
@@ -477,7 +477,7 @@ const en = buildHubData("en", {
   },
   ourPosition: {
     heading: "Our position",
-    body: "Gastro Master is an owner-led family business based in Germany. We recommend our own system when a restaurant wants flat fees without revenue share, personal direct contact and a German service team. We don't recommend it when the main reason is a specific reservation function we don't cover. Which provider fits your operation, you decide based on the facts above — a 15-minute consultation usually makes the decision easier.",
+    body: "Gastro Master is an owner-led family business based in Germany. We recommend our own system when a restaurant wants flat fees without revenue share, personal direct contact and a German service team. Which provider fits your operation, you decide based on the facts above — a 15-minute consultation usually makes the decision easier.",
   },
   hardCtaLabel: "Free consultation",
   meta: {
@@ -534,7 +534,7 @@ const it = buildHubData("it", {
   },
   ourPosition: {
     heading: "La nostra posizione",
-    body: "Gastro Master è un'azienda a conduzione familiare con sede in Germania. Raccomandiamo il nostro sistema quando un ristorante vuole prezzi fissi senza percentuale sui ricavi, contatto diretto personale e un team di assistenza in tedesco. Non lo raccomandiamo quando il motivo principale è una specifica funzione di prenotazione che noi non copriamo. Quale fornitore si adatti alla tua attività lo decidi in base ai fatti sopra — una consulenza di 15 minuti di solito facilita la decisione.",
+    body: "Gastro Master è un'azienda a conduzione familiare con sede in Germania. Raccomandiamo il nostro sistema quando un ristorante vuole prezzi fissi senza percentuale sui ricavi, contatto diretto personale e un team di assistenza in tedesco. Quale fornitore si adatti alla tua attività lo decidi in base ai fatti sopra — una consulenza di 15 minuti di solito facilita la decisione.",
   },
   hardCtaLabel: "Consulenza gratuita",
   meta: {
@@ -591,7 +591,7 @@ const fa = buildHubData("fa", {
   },
   ourPosition: {
     heading: "موضع ما",
-    body: "Gastro Master یک کسب‌وکار خانوادگی مستقر در آلمان است. سیستم خود را زمانی توصیه می‌کنیم که رستوران قیمت ثابت بدون درصد فروش، تماس مستقیم شخصی و تیم خدمات آلمانی‌زبان بخواهد. آن را زمانی توصیه نمی‌کنیم که دلیل اصلی یک عملکرد رزرو خاص باشد که ما پوشش نمی‌دهیم. اینکه کدام ارائه‌دهنده با کسب‌وکار شما همخوان است را خودتان بر اساس واقعیت‌های بالا تصمیم می‌گیرید — یک مشاوره ۱۵ دقیقه‌ای معمولاً تصمیم را آسان‌تر می‌کند.",
+    body: "Gastro Master یک کسب‌وکار خانوادگی مستقر در آلمان است. سیستم خود را زمانی توصیه می‌کنیم که رستوران قیمت ثابت بدون درصد فروش، تماس مستقیم شخصی و تیم خدمات آلمانی‌زبان بخواهد. اینکه کدام ارائه‌دهنده با کسب‌وکار شما همخوان است را خودتان بر اساس واقعیت‌های بالا تصمیم می‌گیرید — یک مشاوره ۱۵ دقیقه‌ای معمولاً تصمیم را آسان‌تر می‌کند.",
   },
   hardCtaLabel: "مشاوره رایگان",
   meta: {
@@ -648,7 +648,7 @@ const si = buildHubData("si", {
   },
   ourPosition: {
     heading: "අපගේ ස්ථාවරය",
-    body: "Gastro Master ජර්මනියේ පදනම් වූ හිමිකරු-මෙහෙයවන පවුල් ව්‍යාපාරයකි. ආපනශාලාවකට ආදායම් කොටසක් නොමැති ස්ථාවර මිල, පුද්ගලික සෘජු සම්බන්ධතා සහ ජර්මන් සේවා කණ්ඩායමක් අවශ්‍ය නම් අපගේම පද්ධතිය නිර්දේශ කරමු. අප ආවරණය නොකරන විශේෂිත වෙන්කිරීම් කාර්යයක් ප්‍රධාන හේතුව නම් එය නිර්දේශ නොකරමු. ඔබේ ව්‍යාපාරයට ගැළපෙන සැපයුම්කරුවා ඉහත කරුණු මත පදනම්ව ඔබ තීරණය කරයි — මිනිත්තු 15ක උපදෙස් සාමාන්‍යයෙන් තීරණය පහසු කරයි.",
+    body: "Gastro Master ජර්මනියේ පදනම් වූ හිමිකරු-මෙහෙයවන පවුල් ව්‍යාපාරයකි. ආපනශාලාවකට ආදායම් කොටසක් නොමැති ස්ථාවර මිල, පුද්ගලික සෘජු සම්බන්ධතා සහ ජර්මන් සේවා කණ්ඩායමක් අවශ්‍ය නම් අපගේම පද්ධතිය නිර්දේශ කරමු. ඔබේ ව්‍යාපාරයට ගැළපෙන සැපයුම්කරුවා ඉහත කරුණු මත පදනම්ව ඔබ තීරණය කරයි — මිනිත්තු 15ක උපදෙස් සාමාන්‍යයෙන් තීරණය පහසු කරයි.",
   },
   hardCtaLabel: "නොමිලේ උපදෙස්",
   meta: {
@@ -705,7 +705,7 @@ const ru = buildHubData("ru", {
   },
   ourPosition: {
     heading: "Наша позиция",
-    body: "Gastro Master — семейный бизнес с местонахождением в Германии. Мы рекомендуем нашу собственную систему, когда ресторану нужны фикс. цены без процента с оборота, личный прямой контакт и немецкоязычная сервисная команда. Не рекомендуем её, если главная причина — конкретная функция бронирования, которую мы не покрываем. Какой поставщик подходит вашему бизнесу, вы решаете на основе фактов выше — 15-минутная консультация обычно облегчает решение.",
+    body: "Gastro Master — семейный бизнес с местонахождением в Германии. Мы рекомендуем нашу собственную систему, когда ресторану нужны фикс. цены без процента с оборота, личный прямой контакт и немецкоязычная сервисная команда. Какой поставщик подходит вашему бизнесу, вы решаете на основе фактов выше — 15-минутная консультация обычно облегчает решение.",
   },
   hardCtaLabel: "Бесплатная консультация",
   meta: {
