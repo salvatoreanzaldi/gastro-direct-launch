@@ -2,11 +2,13 @@ import { useState, useEffect } from "react";
 import { motion } from "framer-motion";
 import { Linkedin, Globe, ChevronLeft, ChevronRight, RotateCcw } from "lucide-react";
 import { Carousel, CarouselContent, CarouselItem, type CarouselApi } from "@/components/ui/carousel";
-import ceoPortrait from "@/assets/team/ceo-rene-ebert.png";
-import sanjayaPortrait from "@/assets/team/team-sanjaya-pattiyage.png";
-import salvatorePortrait from "@/assets/team/team-salvatore-anzaldi.png";
-import andrejPortrait from "@/assets/team/team-andrej-krutsch.png";
-import mohammadPortrait from "@/assets/team/team-mohammad-motakalemi.png";
+// Team-Portraits via vite-imagetools auf WebP konvertiert (w=800px Retina-Spielraum
+// bei Carousel-Avatar-Größen). Original 1.1-2.5 MB PNG → ~80-150 KB WebP/Stück.
+import ceoPortrait from "@/assets/team/ceo-rene-ebert.png?w=800&format=webp";
+import sanjayaPortrait from "@/assets/team/team-sanjaya-pattiyage.png?w=800&format=webp";
+import salvatorePortrait from "@/assets/team/team-salvatore-anzaldi.png?w=800&format=webp";
+import andrejPortrait from "@/assets/team/team-andrej-krutsch.png?w=800&format=webp";
+import mohammadPortrait from "@/assets/team/team-mohammad-motakalemi.png?w=800&format=webp";
 import { useTranslation } from "react-i18next";
 
 const founderImgs = [ceoPortrait, sanjayaPortrait];

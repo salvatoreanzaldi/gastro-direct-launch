@@ -78,15 +78,20 @@ const customerLogos: Record<string, { src: string; alt: string }[]> = {
   ],
 };
 
-import imgPizzeria from "@/assets/targets/target-pizzeria.png";
-import imgAsiatisch from "@/assets/targets/target-asiatisch.png";
-import imgIndisch from "@/assets/targets/target-indisch.png";
-import imgBurger from "@/assets/targets/target-burger.png";
-import imgEis from "@/assets/targets/target-eis.png";
-import imgBaeckerei from "@/assets/targets/target-baeckerei.png";
-import imgFranchise from "@/assets/targets/target-franchise.jpeg";
-import imgGhostKitchen from "@/assets/targets/target-ghost-kitchen.png";
-import imgEinzelhandel from "@/assets/targets/target-einzelhandel.png";
+// Target-Group-Bilder via vite-imagetools auf WebP konvertiert + auf Container-
+// Max-Width skaliert (Section ist max ~600px wide auf Desktop, 100vw mobile).
+// Original-PNGs sind 2.3-2.7 MB jeweils → erwartete Reduktion auf ~80-150 KB
+// pro Bild. WebP-Browser-Support: >95% global (Safari 14+, Chrome/Firefox/Edge).
+// Fallback: bei sehr alten Browsern bleibt das Bild leer — akzeptabel below-fold.
+import imgPizzeria from "@/assets/targets/target-pizzeria.png?w=1200&format=webp";
+import imgAsiatisch from "@/assets/targets/target-asiatisch.png?w=1200&format=webp";
+import imgIndisch from "@/assets/targets/target-indisch.png?w=1200&format=webp";
+import imgBurger from "@/assets/targets/target-burger.png?w=1200&format=webp";
+import imgEis from "@/assets/targets/target-eis.png?w=1200&format=webp";
+import imgBaeckerei from "@/assets/targets/target-baeckerei.png?w=1200&format=webp";
+import imgFranchise from "@/assets/targets/target-franchise.jpeg?w=1200&format=webp";
+import imgGhostKitchen from "@/assets/targets/target-ghost-kitchen.png?w=1200&format=webp";
+import imgEinzelhandel from "@/assets/targets/target-einzelhandel.png?w=1200&format=webp";
 
 const groupIcons: Record<string, typeof Truck> = {
   lieferdienst: Truck,
@@ -247,7 +252,16 @@ const TargetGroupSection = ({ getSolutionHref, ctaLabel }: TargetGroupSectionPro
               <div className="grid md:grid-cols-2 gap-0 md:h-full">
                 {/* Image */}
                 <div className="relative aspect-[5/4] md:aspect-auto md:h-full overflow-hidden">
-                  <img src={displayImg} alt={displayContent?.title ?? ""} loading="lazy" className="w-full h-full object-cover" />
+                  <img
+                    src={displayImg}
+                    alt={
+                      displayContent?.title
+                        ? `${displayContent.title} — Bestellsystem & Kassensystem für Gastronomie | Gastro Master`
+                        : "Bestellsystem für Restaurants & Lieferdienste — Gastro Master"
+                    }
+                    loading="lazy"
+                    className="w-full h-full object-cover"
+                  />
                   <div className="absolute inset-0 bg-gradient-to-r from-transparent to-surface-light/20 hidden md:block" />
                 </div>
                 {/* Text */}

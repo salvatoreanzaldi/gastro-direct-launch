@@ -4,12 +4,14 @@ import { ArrowRight, Star } from "lucide-react";
 import { useTranslation } from "react-i18next";
 import { useLangPath } from "@/components/LanguageLayout";
 
-// Team member images
-import teamReneImg      from "@/assets/team/ceo-rene-ebert.png";
-import teamSanjayaImg   from "@/assets/team/team-sanjaya-pattiyage.png";
-import teamSalvatoreImg from "@/assets/team/team-salvatore-anzaldi.png";
-import teamAndrejImg    from "@/assets/team/team-andrej-krutsch.png";
-import teamMohammadImg  from "@/assets/team/team-mohammad-motakalemi.png";
+// Team member images via vite-imagetools auf WebP konvertiert (w=800px für
+// Retina-Spielraum bei Avatar-Größen). Original 1.1-2.5 MB PNG → erwartete
+// ~80-150 KB WebP/Stück. WebP-Browser-Support >97% (Safari 14+, Chrome/FF/Edge).
+import teamReneImg      from "@/assets/team/ceo-rene-ebert.png?w=800&format=webp";
+import teamSanjayaImg   from "@/assets/team/team-sanjaya-pattiyage.png?w=800&format=webp";
+import teamSalvatoreImg from "@/assets/team/team-salvatore-anzaldi.png?w=800&format=webp";
+import teamAndrejImg    from "@/assets/team/team-andrej-krutsch.png?w=800&format=webp";
+import teamMohammadImg  from "@/assets/team/team-mohammad-motakalemi.png?w=800&format=webp";
 
 const teamMemberImgs = [teamSanjayaImg, teamReneImg, teamSalvatoreImg, teamAndrejImg, teamMohammadImg];
 
