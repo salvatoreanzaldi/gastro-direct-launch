@@ -11,6 +11,9 @@
     { "source": "/:lang(de|en|it|fa|si|ru)/produkte/kassensystem",      "destination": "/:lang/produkte/pakete/kassensystem",        "permanent": true },
     { "source": "/:locale(en|it|fa|si|ru)/blog/:slug",                  "destination": "/de/blog/:slug",                             "permanent": true },
 
+    { "source": "/:lang(en|fa|si|ru)/vergleiche/:slug",                 "destination": "/:lang/vs/:slug",                            "permanent": true },
+    { "source": "/it/vergleiche/:slug",                                  "destination": "/it/confronti/:slug",                        "permanent": true },
+
     { "source": "/ueber-uns",                                            "destination": "/uber-uns",                                  "permanent": true },
     { "source": "/de/ueber-uns",                                         "destination": "/de/uber-uns",                               "permanent": true },
 
