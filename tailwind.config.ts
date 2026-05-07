@@ -14,7 +14,10 @@ export default {
     },
     extend: {
       fontFamily: {
-        outfit: ["Outfit", "sans-serif"],
+        // Variable Font (self-hosted via @fontsource-variable/outfit) ersetzt 5
+        // Static-Weights aus Google Fonts. "Outfit" als Mittel-Fallback bleibt
+        // (falls Variable-Variant nicht lädt), "sans-serif" als finaler System-Fallback.
+        outfit: ['"Outfit Variable"', "Outfit", "sans-serif"],
       },
       colors: {
         border: "hsl(var(--border))",
