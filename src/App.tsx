@@ -45,6 +45,7 @@ const LAZY_COMPONENTS: Record<string, ComponentType> = {
   "@/pages/GhostKitchenPage":           lazy(() => import("@/pages/GhostKitchenPage")),
   "@/pages/IntegrationPage":            lazy(() => import("@/pages/IntegrationPage")),
   "@/pages/VergleichePage":             lazy(() => import("@/pages/VergleichePage")),
+  "@/pages/VergleicheHubPage":          lazy(() => import("@/pages/VergleicheHubPage")),
 
   // Blog
   "@/pages/BlogPage":                            lazy(() => import("@/pages/BlogPage")),
@@ -166,6 +167,12 @@ const App = () => (
                         ? <Suspense fallback={null}>{createElement(LAZY_COMPONENTS["@/pages/blog/BlogPostDetailPage"]!)}</Suspense>
                         : <BlogLocaleRedirect />
                     }
+                  />
+                  {/* Comparison-Hub-Page — Übersicht aller Konkurrenz-Vergleiche.
+                      DE /vergleiche, EN/FA/SI/RU /vs, IT /confronti */}
+                  <Route
+                    path={VERGLEICHE_SEGMENT[lang]}
+                    element={<Suspense fallback={null}>{createElement(LAZY_COMPONENTS["@/pages/VergleicheHubPage"]!)}</Suspense>}
                   />
                   {/* Dynamic Comparison-Page — segment lokalisiert pro Sprache:
                       DE /vergleiche/:slug, EN/FA/SI/RU /vs/:slug, IT /confronti/:slug */}

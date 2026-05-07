@@ -123,11 +123,32 @@ const COMPARISON_SEGMENT = {
   si: "vs",
   ru: "vs",
 };
+// Hub-Page (Übersicht aller Konkurrenz-Vergleiche) unter /{lang}/{seg}.
+let hubUrlCount = 0;
+for (const lang of LANGUAGES) {
+  const loc = `${BASE_URL}/${lang}/${COMPARISON_SEGMENT[lang]}`;
+  const alternates = LANGUAGES.map(
+    (l) =>
+      `    <xhtml:link rel="alternate" hreflang="${l}" href="${BASE_URL}/${l}/${COMPARISON_SEGMENT[l]}" />`,
+  ).join("\n");
+  const xDefault = `    <xhtml:link rel="alternate" hreflang="x-default" href="${BASE_URL}/de/${COMPARISON_SEGMENT.de}" />`;
+  urlEntries.push(
+    `  <url>\n    <loc>${loc}</loc>\n    <lastmod>${today}</lastmod>\n    <changefreq>weekly</changefreq>\n    <priority>0.9</priority>\n${alternates}\n${xDefault}\n  </url>`,
+  );
+  hubUrlCount += 1;
+}
+
 const { readdirSync: readdirSyncForComparisons } = await import("fs");
 let comparisonSlugs = [];
 try {
   comparisonSlugs = readdirSyncForComparisons(resolve(ROOT, "src/data/comparisons"))
-    .filter((f) => f.endsWith(".ts") && f !== "types.ts" && f !== "index.ts")
+    .filter(
+      (f) =>
+        f.endsWith(".ts") &&
+        f !== "types.ts" &&
+        f !== "index.ts" &&
+        f !== "hub.ts",
+    )
     .map((f) => f.replace(/\.ts$/, ""));
 } catch {
   comparisonSlugs = [];
@@ -162,5 +183,5 @@ const outPath = resolve(ROOT, "dist/sitemap.xml");
 writeFileSync(outPath, sitemap, "utf-8");
 
 const blogUrlCount = blogPosts.length;
-console.log(`✅ Sitemap generated: ${routes.length} routes × ${LANGUAGES.length} languages = ${routes.length * LANGUAGES.length} route URLs + ${blogUrlCount} blog URLs (DE only) + ${comparisonUrlCount} comparison URLs (${comparisonSlugs.length} × ${LANGUAGES.length}, segments: ${[...new Set(Object.values(COMPARISON_SEGMENT))].join("/")}) = ${urlEntries.length} total URLs`);
+console.log(`✅ Sitemap generated: ${routes.length} routes × ${LANGUAGES.length} languages = ${routes.length * LANGUAGES.length} route URLs + ${blogUrlCount} blog URLs (DE only) + ${hubUrlCount} comparison-hub URLs + ${comparisonUrlCount} comparison detail URLs (${comparisonSlugs.length} × ${LANGUAGES.length}, segments: ${[...new Set(Object.values(COMPARISON_SEGMENT))].join("/")}) = ${urlEntries.length} total URLs`);
 console.log(`   → ${outPath}`);

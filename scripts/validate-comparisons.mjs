@@ -70,7 +70,8 @@ function warn(file, msg) {
 function listComparisonFiles() {
   return readdirSync(COMPARISONS_DIR)
     .filter((f) => f.endsWith(".ts"))
-    .filter((f) => f !== "types.ts" && f !== "index.ts")
+    // hub.ts hat anderes Datenmodell (CollectionPage statt Detail-Page) — eigener Validator-Path
+    .filter((f) => f !== "types.ts" && f !== "index.ts" && f !== "hub.ts")
     .map((f) => join(COMPARISONS_DIR, f));
 }
 

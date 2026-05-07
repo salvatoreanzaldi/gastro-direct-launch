@@ -2539,3 +2539,29 @@ for (const [slug, byLang] of Object.entries(comparisons)) {
 console.log(
   `✅ Comparison pre-render: ${comparisonCount} pages (${Object.keys(comparisons).length} slug${Object.keys(comparisons).length === 1 ? '' : 's'} × ${COMPARISON_LANGS.length} languages · segments: ${[...new Set(Object.values(COMPARISON_SEGMENT))].join('/')} · WebPage + FAQPage + Review + AggregateRating + ItemList + HowTo + BreadcrumbList + Article + hreflang · H1 approved: ${COMPARISON_H1_APPROVED})`,
 );
+
+// ─── Phase 4b: Comparison-Hub-Page (multilingual) ──────────────────────────
+// Hub-Page unter /{lang}/{seg} mit Schema-Stack CollectionPage + ItemList +
+// Dataset + BreadcrumbList. Quelle: src/data/comparisons/hub.ts (hubByLang).
+const hubModule = await import(
+  new URL('../src/data/comparisons/hub.ts', import.meta.url).href
+);
+const { renderHubPage } = await import(
+  new URL('./hub-page-generator.mjs', import.meta.url).href
+);
+
+let hubCount = 0;
+for (const lang of COMPARISON_LANGS) {
+  const data = hubModule.hubByLang[lang] ?? hubModule.hubByLang.de;
+  const html = renderHubPage(rootHtmlPatched, data, {
+    lang,
+    allLangs: COMPARISON_LANGS,
+  });
+  const outDir = join(distDir, lang, COMPARISON_SEGMENT[lang]);
+  mkdirSync(outDir, { recursive: true });
+  writeFileSync(join(outDir, 'index.html'), html);
+  hubCount += 1;
+}
+console.log(
+  `✅ Comparison-Hub pre-render: ${hubCount} Hub-Pages (1 hub × ${COMPARISON_LANGS.length} languages · CollectionPage + ItemList + Dataset + BreadcrumbList + hreflang)`,
+);

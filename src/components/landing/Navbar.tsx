@@ -1,7 +1,7 @@
 import { useState, useEffect, useRef } from "react";
 import { Link, useLocation, useNavigate } from "react-router-dom";
 import { toast } from "sonner";
-import { buildLocalizedPath, buildComparisonPath, ROUTE_BY_LANG_SLUG, VERGLEICHE_SEGMENTS_ALL, type LangCode } from "@/config/routes";
+import { buildLocalizedPath, buildComparisonPath, ROUTE_BY_LANG_SLUG, VERGLEICHE_SEGMENTS_ALL, VERGLEICHE_SEGMENT as VERGLEICHE_SEGMENT_BY_LANG, type LangCode } from "@/config/routes";
 import { extractLangFromPath } from "@/components/LanguageLayout";
 import {
   ArrowRight, Menu, X, Moon, Sun, ChevronDown, ChevronRight,
@@ -140,7 +140,19 @@ const Navbar = () => {
     // Map current slug back to canonical DE slug, then forward to the target language's slug
     const currentSlug = pathname.replace(/^\/[a-z]{2}/, "") || "/";
 
-    // Dynamic comparison route (/vergleiche/:slug | /vs/:slug | /confronti/:slug):
+    // Comparison-Hub (/vergleiche | /vs | /confronti):
+    // not in ROUTE_BY_LANG_SLUG — switch directly to target lang's hub segment.
+    const isHub = VERGLEICHE_SEGMENTS_ALL.some(
+      (seg) => currentSlug === `/${seg}` || currentSlug === `/${seg}/`,
+    );
+    if (isHub) {
+      navigate(`/${code}/${VERGLEICHE_SEGMENT_BY_LANG[code as LangCode]}`);
+      setLangOpen(false);
+      setMobileOpen(false);
+      return;
+    }
+
+    // Dynamic comparison detail-page (/vergleiche/:slug | /vs/:slug | /confronti/:slug):
     // not in ROUTE_BY_LANG_SLUG — extract competitor slug, rebuild for target lang.
     const comparisonMatch = VERGLEICHE_SEGMENTS_ALL.map((seg) => {
       const re = new RegExp(`^/${seg}/([^/]+)/?$`);
