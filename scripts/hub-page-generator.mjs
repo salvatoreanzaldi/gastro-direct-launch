@@ -165,18 +165,6 @@ export function buildHubStaticHtml(data, { lang = "de" } = {}) {
     })
     .join("");
 
-  const orientationButtons = data.orientation.options
-    .map(
-      (opt) => `
-    <li>
-      <a href="/${lang}/${segFor(lang)}/${escapeHtml(opt.recommendedSlug)}">
-        <strong>${escapeHtml(opt.pain)}</strong>
-        <span>${escapeHtml(opt.reasoning)}</span>
-      </a>
-    </li>`,
-    )
-    .join("");
-
   const cards = data.cards.items
     .map(
       (c) => `
@@ -212,12 +200,6 @@ export function buildHubStaticHtml(data, { lang = "de" } = {}) {
       <thead><tr>${tableHeaders}</tr></thead>
       <tbody>${tableRows}</tbody>
     </table>
-  </section>
-
-  <section class="hub-orientation">
-    <h2>${escapeHtml(data.orientation.heading)}</h2>
-    <p>${escapeHtml(data.orientation.intro)}</p>
-    <ul>${orientationButtons}</ul>
   </section>
 
   <section class="hub-cards">

@@ -36,15 +36,6 @@ export interface HubTableRow {
   sourceDate?: string;
 }
 
-export interface OrientationOption {
-  /** Pain-Statement, z. B. "Kosten zu hoch" */
-  pain: string;
-  /** Detail-Slug, zu dem geleitet wird */
-  recommendedSlug: string;
-  /** Begründung als Text unter dem Button */
-  reasoning: string;
-}
-
 export interface CompetitorCard {
   slug: string;
   name: string;
@@ -66,12 +57,6 @@ export interface ComparisonHubData {
     rows: HubTableRow[];
     sourcesNote: string;
     ourLabel: string;
-  };
-  orientation: {
-    heading: string;
-    intro: string;
-    options: OrientationOption[];
-    softCtaLabel: string;
   };
   cards: {
     heading: string;
@@ -360,7 +345,6 @@ const buildHubData = (
       ...body.table,
       rows: [ours, ...competitorRows],
     },
-    orientation: body.orientation,
     cards: body.cards,
     methodology: body.methodology,
     customerStory: {
@@ -390,28 +374,6 @@ const de = buildHubData("de", {
     ],
     sourcesNote: "Pricing- und Eigentümer-Angaben jeweils wörtlich aus den verlinkten Primärquellen (Stand 07.05.2026). Klick auf einen Anbieter-Namen öffnet den Detail-Faktencheck.",
     ourLabel: "Unser Angebot",
-  },
-  orientation: {
-    heading: "Sie wechseln, weil ___?",
-    intro: "Wählen Sie den Hauptgrund — wir leiten Sie direkt zum Detail-Vergleich, der Ihre Frage am besten adressiert.",
-    options: [
-      {
-        pain: "Provision frisst meine Marge",
-        recommendedSlug: "resmio",
-        reasoning: "Detail-Vergleich mit Provisions-Modellen + Money-Math für 5.000 € und 10.000 € Online-Umsatz/Mo.",
-      },
-      {
-        pain: "Vertragslaufzeit zu lang",
-        recommendedSlug: "order-smart",
-        reasoning: "Detail-Vergleich der Vertragsmodelle inkl. Kündigungsfristen und Lock-In-Risiken.",
-      },
-      {
-        pain: "Kein deutscher persönlicher Service",
-        recommendedSlug: "dish-order",
-        reasoning: "Detail-Vergleich Konzern-Hotline vs. familiengeführter Direkt-Kontakt.",
-      },
-    ],
-    softCtaLabel: "Unsicher? 15 Min Beratung",
   },
   cards: {
     heading: "Detail-Vergleiche pro Anbieter",
@@ -485,16 +447,6 @@ const en = buildHubData("en", {
     sourcesNote: "Pricing and ownership data quoted verbatim from the linked primary sources (as of 07.05.2026). Click a provider name to open the detailed fact check.",
     ourLabel: "Our offering",
   },
-  orientation: {
-    heading: "You're switching because ___?",
-    intro: "Pick your main reason — we'll send you directly to the detail comparison that addresses it best.",
-    options: [
-      { pain: "Commission is eating my margin", recommendedSlug: "resmio", reasoning: "Detail comparison of commission models + money-math for 5,000 € and 10,000 € online revenue per month." },
-      { pain: "Contract term too long", recommendedSlug: "order-smart", reasoning: "Detail comparison of contract terms including notice periods and lock-in risk." },
-      { pain: "No personal German-speaking service", recommendedSlug: "dish-order", reasoning: "Detail comparison of corporate hotline vs. owner-led direct contact." },
-    ],
-    softCtaLabel: "Unsure? 15 min free consultation",
-  },
   cards: {
     heading: "Detail comparisons per provider",
     sub: "Fact check with pricing card, 7-axis table, FAQ and money-math per competitor.",
@@ -551,16 +503,6 @@ const it = buildHubData("it", {
     ],
     sourcesNote: "Dati di prezzo e proprietà citati letteralmente dalle fonti primarie collegate (al 07.05.2026). Clicca su un nome di fornitore per aprire la verifica dettagliata.",
     ourLabel: "La nostra offerta",
-  },
-  orientation: {
-    heading: "Stai cambiando perché ___?",
-    intro: "Scegli il motivo principale — ti porteremo direttamente al confronto dettagliato che lo affronta meglio.",
-    options: [
-      { pain: "Le commissioni mangiano il margine", recommendedSlug: "resmio", reasoning: "Confronto dettagliato dei modelli di commissione + calcolo per 5.000 € e 10.000 € di ordini online al mese." },
-      { pain: "Durata contrattuale troppo lunga", recommendedSlug: "order-smart", reasoning: "Confronto dettagliato dei modelli contrattuali incluso preavviso e rischio di lock-in." },
-      { pain: "Manca un servizio personale in tedesco", recommendedSlug: "dish-order", reasoning: "Confronto dettagliato hotline aziendale vs. contatto diretto a conduzione familiare." },
-    ],
-    softCtaLabel: "Indeciso? 15 min di consulenza",
   },
   cards: {
     heading: "Confronti dettagliati per fornitore",
@@ -619,16 +561,6 @@ const fa = buildHubData("fa", {
     sourcesNote: "اطلاعات قیمت‌گذاری و مالکیت به‌صورت مستقیم از منابع اصلی پیوندشده نقل شده‌اند (تاریخ ۰۷٫۰۵٫۲۰۲۶). برای دیدن بررسی تفصیلی روی نام ارائه‌دهنده کلیک کنید.",
     ourLabel: "پیشنهاد ما",
   },
-  orientation: {
-    heading: "تعویض می‌کنید چون ___؟",
-    intro: "دلیل اصلی را انتخاب کنید — مستقیم به مقایسه تفصیلی مرتبط هدایت می‌شوید.",
-    options: [
-      { pain: "کمیسیون حاشیه سود را می‌خورد", recommendedSlug: "resmio", reasoning: "مقایسه تفصیلی مدل‌های کمیسیون + محاسبه پولی برای ۵٬۰۰۰ و ۱۰٬۰۰۰ یورو فروش آنلاین در ماه." },
-      { pain: "مدت قرارداد بسیار طولانی", recommendedSlug: "order-smart", reasoning: "مقایسه تفصیلی مدل‌های قراردادی شامل دوره‌های اعلام و خطر قفل‌شدن." },
-      { pain: "نبود خدمات شخصی به آلمانی", recommendedSlug: "dish-order", reasoning: "مقایسه تفصیلی خط شرکتی در برابر تماس مستقیم خانوادگی." },
-    ],
-    softCtaLabel: "مطمئن نیستید؟ مشاوره ۱۵ دقیقه‌ای",
-  },
   cards: {
     heading: "مقایسه‌های تفصیلی به ازای هر ارائه‌دهنده",
     sub: "بررسی با کارت قیمت، جدول ۷ محوری، پرسش‌های متداول و محاسبه پولی برای هر رقیب.",
@@ -686,16 +618,6 @@ const si = buildHubData("si", {
     sourcesNote: "සම්බන්ධ කළ මූලික මූලාශ්‍රවලින් මිල සහ හිමිකරු දත්ත සෘජුව උපුටා දක්වා ඇත (07.05.2026 දිනට). සවිස්තර කරුණු පරීක්ෂාව බැලීමට සැපයුම්කරුවාගේ නම මත ක්ලික් කරන්න.",
     ourLabel: "අපගේ ඉදිරිපත් කිරීම",
   },
-  orientation: {
-    heading: "ඔබ මාරු වෙන්නේ ___ නිසා?",
-    intro: "ප්‍රධාන හේතුව තෝරන්න — අපි ඔබව කෙලින්ම ආශ්‍රිත සවිස්තර සැසඳීමට යවන්නෙමු.",
-    options: [
-      { pain: "කොමිස් මගේ ලාභය ගිලයි", recommendedSlug: "resmio", reasoning: "කොමිස් ආකෘතිවල සවිස්තර සැසඳීම + මාසයකට 5,000 € හා 10,000 € ඇණවුම් සඳහා ගණනය." },
-      { pain: "ගිවිසුම් කාලය ඉතා දිගුයි", recommendedSlug: "order-smart", reasoning: "දැනුම්දීම් කාල සහ අගුළු දැමීමේ අවදානම ඇතුළත් ගිවිසුම් ආකෘතිවල සවිස්තර සැසඳීම." },
-      { pain: "ජර්මන්බස පුද්ගලික සේවාවක් නොමැත", recommendedSlug: "dish-order", reasoning: "කෝපරේට් hotline එක එරෙහිව හිමිකරු-මෙහෙයවන සෘජු සම්බන්ධතාවයේ සවිස්තර සැසඳීම." },
-    ],
-    softCtaLabel: "අවිනිශ්චිතද? මිනිත්තු 15ක උපදෙස්",
-  },
   cards: {
     heading: "සැපයුම්කරුවෙකුට සවිස්තර සැසඳීම්",
     sub: "මිල කාඩ්පත, අක්ෂ 7 වගුව, FAQ සහ එක් එක් ප්‍රතිවාදියා සඳහා මුදල්-ගණනය සමඟ කරුණු පරීක්ෂාව.",
@@ -752,16 +674,6 @@ const ru = buildHubData("ru", {
     ],
     sourcesNote: "Данные о ценах и владельцах процитированы дословно из связанных первоисточников (по состоянию на 07.05.2026). Нажмите на имя поставщика, чтобы открыть подробную проверку фактов.",
     ourLabel: "Наше предложение",
-  },
-  orientation: {
-    heading: "Вы переходите, потому что ___?",
-    intro: "Выберите главную причину — мы направим вас прямо к подробному сравнению, которое лучше всего её разбирает.",
-    options: [
-      { pain: "Комиссия съедает маржу", recommendedSlug: "resmio", reasoning: "Подробное сравнение комиссионных моделей + расчёт для 5 000 € и 10 000 € онлайн-выручки в месяц." },
-      { pain: "Срок договора слишком долгий", recommendedSlug: "order-smart", reasoning: "Подробное сравнение договорных моделей, включая сроки уведомления и риск блокировки." },
-      { pain: "Нет личного немецкоязычного сервиса", recommendedSlug: "dish-order", reasoning: "Подробное сравнение корпоративной горячей линии и прямого контакта с владельцем." },
-    ],
-    softCtaLabel: "Не уверены? 15-минутная консультация",
   },
   cards: {
     heading: "Подробные сравнения по каждому поставщику",

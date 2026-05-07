@@ -79,20 +79,6 @@ const PrimaryCTA = ({ label, lang, className = "" }: { label: string; lang: Comp
   </Button>
 );
 
-const SoftCTA = ({ label, lang, className = "" }: { label: string; lang: ComparisonLang; className?: string }) => (
-  <Button
-    asChild
-    size="lg"
-    variant="outline"
-    className={`!font-semibold ${className}`}
-  >
-    <Link to={`/${lang}/kontakt`} className="gap-2">
-      {label}
-      <ArrowRight className="h-4 w-4" />
-    </Link>
-  </Button>
-);
-
 const VergleicheHubPage = () => {
   const { pathname } = useLocation();
   const lang = detectLang(pathname);
@@ -307,40 +293,6 @@ const VergleicheHubPage = () => {
                   </CardContent>
                 </Card>
               ))}
-            </div>
-          </div>
-        </section>
-
-        {/* ─── Section 2: Orientierungs-Filter ───────────────────────────── */}
-        <section className="border-b border-border/50 bg-muted/30 px-4 py-16">
-          <div className="mx-auto max-w-5xl">
-            <h2 className="mb-2 text-2xl font-semibold md:text-3xl">
-              {data.orientation.heading}
-            </h2>
-            <p className="mb-8 text-sm text-muted-foreground md:text-base">
-              {data.orientation.intro}
-            </p>
-            <div className="grid grid-cols-1 gap-4 md:grid-cols-3">
-              {data.orientation.options.map((opt) => (
-                <Link
-                  key={opt.pain}
-                  to={`/${lang}/${seg}/${opt.recommendedSlug}`}
-                  className="group relative flex flex-col gap-3 rounded-xl border border-border/60 bg-background p-5 shadow-sm transition-all hover:-translate-y-0.5 hover:border-cyan-brand/50 hover:shadow-md"
-                >
-                  <p className="text-base font-bold text-foreground group-hover:text-cyan-brand">
-                    {opt.pain}
-                  </p>
-                  <p className="text-sm text-muted-foreground">
-                    {opt.reasoning}
-                  </p>
-                  <span className="mt-auto inline-flex items-center gap-1 text-sm font-semibold text-cyan-brand">
-                    →
-                  </span>
-                </Link>
-              ))}
-            </div>
-            <div className="mt-8 flex justify-center">
-              <SoftCTA label={data.orientation.softCtaLabel} lang={lang} />
             </div>
           </div>
         </section>
