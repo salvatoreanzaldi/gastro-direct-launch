@@ -6,16 +6,39 @@
     <link rel="icon" type="image/png" sizes="32x32" href="/favicon-32x32.png" />
     <link rel="icon" type="image/png" sizes="16x16" href="/favicon-16x16.png" />
     <link rel="apple-touch-icon" sizes="180x180" href="/apple-touch-icon.png" />
-    <link rel="preconnect" href="https://fonts.googleapis.com" />
-    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin />
-    <link rel="stylesheet" href="https://fonts.googleapis.com/css2?family=Outfit:wght@400;600;700;800;900&display=swap" />
-    <title>Gastro Master – Mehr Gewinn durch Direktbestellungen</title>
-    <meta name="description" content="Dein eigener Webshop & deine eigene App für die Gastronomie. 0 % Provision. Mehr Direktbestellungen. 700+ zufriedene Kunden." />
+    <link rel="manifest" href="/site.webmanifest" />
+    <meta name="theme-color" content="#0A4A8F" />
+    <meta name="application-name" content="Gastro Master" />
+    <meta name="apple-mobile-web-app-title" content="Gastro Master" />
+    <meta name="apple-mobile-web-app-capable" content="yes" />
+    <meta name="apple-mobile-web-app-status-bar-style" content="default" />
+    <link rel="author" href="/humans.txt" />
+    <!-- Outfit Variable Font ist self-hosted via @fontsource-variable/outfit
+         (eingebunden in src/main.tsx). Vorteile gegenüber Google Fonts CDN:
+         kein render-blocking external Stylesheet, kein 3rd-Party-DNS-Lookup,
+         1 Variable-Font ersetzt 5 Static-Weights, font-display: swap. -->
+    <title>Kassensystem & Bestellsystem für Restaurants | Gastro Master</title>
+    <meta name="description" content="Provisionsfreies Kassensystem, eigener Webshop und Bestell-App für Restaurants. 0 % Provision, monatlich kündbar, 800+ Gastronomen vertrauen uns." />
     <meta name="author" content="Gastro Master" />
-    <meta property="og:title" content="Gastro Master – Mehr Gewinn durch Direktbestellungen" />
-    <meta property="og:description" content="Dein eigener Webshop & deine eigene App. 0 % Provision. Mehr Direktbestellungen. Mehr Gewinn." />
+    <meta property="og:title" content="Kassensystem & Bestellsystem für Restaurants | Gastro Master" />
+    <meta property="og:description" content="Provisionsfreies Kassensystem, eigener Webshop und Bestell-App für Restaurants. 0 % Provision, monatlich kündbar, 800+ Gastronomen vertrauen uns." />
     <meta property="og:type" content="website" />
+    <meta property="og:url" content="https://gastro-master.de/de" />
+    <meta property="og:site_name" content="Gastro Master" />
+    <meta property="og:locale" content="de_DE" />
+    <meta property="og:locale:alternate" content="en_US" />
+    <meta property="og:locale:alternate" content="it_IT" />
+    <meta property="og:locale:alternate" content="fa_IR" />
+    <meta property="og:locale:alternate" content="si_LK" />
+    <meta property="og:locale:alternate" content="ru_RU" />
+    <meta property="og:image" content="https://gastro-master.de/logo-gastro-master.png" />
+    <meta property="og:image:width" content="1024" />
+    <meta property="og:image:height" content="1024" />
+    <meta property="og:image:alt" content="Gastro Master — Provisionsfreies Bestellsystem für Restaurants" />
     <meta name="twitter:card" content="summary_large_image" />
+    <meta name="twitter:image" content="https://gastro-master.de/logo-gastro-master.png" />
+    <meta name="twitter:title" content="Kassensystem & Bestellsystem für Restaurants | Gastro Master" />
+    <meta name="twitter:description" content="Provisionsfreies Kassensystem, eigener Webshop und Bestell-App für Restaurants. 0 % Provision, monatlich kündbar, 800+ Gastronomen vertrauen uns." />
     <link rel="alternate" type="application/rss+xml" title="Gastro Master Blog" href="https://gastro-master.de/feed.xml" />
     <!--
       Brand-Entity Schema, server-delivered (pre-hydration) so LLM crawlers
@@ -25,7 +48,7 @@
       URL-independent organization + website data.
     -->
     <script type="application/ld+json">
-{"@context":"https://schema.org","@graph":[{"@type":"Organization","@id":"https://gastro-master.de/#organization","name":"Gastro Master","url":"https://gastro-master.de","logo":"https://gastro-master.de/logo-gastro-master.png","foundingDate":"2021","description":"Kassensystem, eigene Lieferservice-App, Webshop und Webseite für deutsche Restaurants. Provisionsfreie Direktbestellungen, monatlich kündbar.","address":{"@type":"PostalAddress","streetAddress":"Herzbergstr. 9","postalCode":"61250","addressLocality":"Usingen","addressRegion":"Hessen","addressCountry":"DE"},"contactPoint":{"@type":"ContactPoint","contactType":"customer support","areaServed":["DE","AT","CH"],"availableLanguage":["de","en","it"]},"numberOfEmployees":{"@type":"QuantitativeValue","value":"30+"},"areaServed":{"@type":"Country","name":"Deutschland"},"sameAs":["https://www.facebook.com/gastromasterde","https://www.instagram.com/gastromasterde","https://www.linkedin.com/in/sanjaya-pattiyage/","https://www.linkedin.com/in/rene-ebert/"]},{"@type":"WebSite","@id":"https://gastro-master.de/#website","url":"https://gastro-master.de","name":"Gastro Master","inLanguage":"de-DE","publisher":{"@id":"https://gastro-master.de/#organization"},"potentialAction":{"@type":"SearchAction","target":{"@type":"EntryPoint","urlTemplate":"https://gastro-master.de/blog?q={search_term_string}"},"query-input":"required name=search_term_string"}}]}
+{"@context":"https://schema.org","@graph":[{"@type":"Organization","@id":"https://gastro-master.de/#organization","name":"Gastro Master","url":"https://gastro-master.de","logo":"https://gastro-master.de/logo-gastro-master.png","foundingDate":"2021","description":"Kassensystem, eigene Lieferservice-App, Webshop und Webseite für deutsche Restaurants. Provisionsfreie Direktbestellungen, monatlich kündbar.","address":{"@type":"PostalAddress","streetAddress":"Herzbergstr. 9","postalCode":"61250","addressLocality":"Usingen","addressRegion":"Hessen","addressCountry":"DE"},"contactPoint":{"@type":"ContactPoint","contactType":"customer support","areaServed":["DE","AT","CH"],"availableLanguage":["de","en","it","ru","fa","si"]},"numberOfEmployees":{"@type":"QuantitativeValue","value":"30+"},"areaServed":{"@type":"Country","name":"Deutschland"},"sameAs":["https://www.facebook.com/gastromasterde","https://www.instagram.com/gastromasterde","https://www.linkedin.com/in/sanjaya-pattiyage/","https://www.linkedin.com/in/rene-ebert/"]},{"@type":"WebSite","@id":"https://gastro-master.de/#website","url":"https://gastro-master.de","name":"Gastro Master","inLanguage":"de-DE","publisher":{"@id":"https://gastro-master.de/#organization"},"potentialAction":{"@type":"SearchAction","target":{"@type":"EntryPoint","urlTemplate":"https://gastro-master.de/blog?q={search_term_string}"},"query-input":"required name=search_term_string"}}]}
     </script>
   </head>
   <body>
