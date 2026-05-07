@@ -43,6 +43,7 @@ const LAZY_COMPONENTS: Record<string, ComponentType> = {
   "@/pages/UeberUnsPage":               lazy(() => import("@/pages/UeberUnsPage")),
   "@/pages/GhostKitchenPage":           lazy(() => import("@/pages/GhostKitchenPage")),
   "@/pages/IntegrationPage":            lazy(() => import("@/pages/IntegrationPage")),
+  "@/pages/VergleichePage":             lazy(() => import("@/pages/VergleichePage")),
 
   // Blog
   "@/pages/BlogPage":                            lazy(() => import("@/pages/BlogPage")),
@@ -164,6 +165,11 @@ const App = () => (
                         ? <Suspense fallback={null}>{createElement(LAZY_COMPONENTS["@/pages/blog/BlogPostDetailPage"]!)}</Suspense>
                         : <BlogLocaleRedirect />
                     }
+                  />
+                  {/* Dynamic /vergleiche/:slug — multilingual (DE/EN/IT/FA/SI/RU). */}
+                  <Route
+                    path="vergleiche/:slug"
+                    element={<Suspense fallback={null}>{createElement(LAZY_COMPONENTS["@/pages/VergleichePage"]!)}</Suspense>}
                   />
                   <Route path="*" element={<NotFound />} />
                 </Route>

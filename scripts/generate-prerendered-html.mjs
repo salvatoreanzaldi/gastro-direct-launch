@@ -2472,3 +2472,58 @@ for (const post of generatedBlogPosts) {
 }
 
 console.log(`✅ Blog pre-render: ${blogCount} DE posts (BlogPosting schema + static article fallback) — ${faqPostsCount} with FAQPage schema`);
+
+// ─── Phase 4: /vergleiche/<slug>-Pages (multilingual, alle 6 Sprachen) ────────
+// Each file in src/data/comparisons/<slug>.ts exports `<slug>ByLang: ComparisonByLang`
+// — pro Sprache eine vollständige ComparisonData. Wir emittieren je Sprache eine
+// pre-rendered HTML mit erweiterten JSON-LD-Schemas (WebPage + FAQPage + Review +
+// AggregateRating + ItemList + HowTo + BreadcrumbList + Article) und hreflang-Tags.
+const comparisonFiles = readdirSync(
+  new URL('../src/data/comparisons/', import.meta.url),
+).filter((f) => f.endsWith('.ts') && f !== 'types.ts' && f !== 'index.ts');
+const comparisons = {};
+for (const f of comparisonFiles) {
+  const mod = await import(
+    new URL(`../src/data/comparisons/${f}`, import.meta.url).href
+  );
+  // Each file exports a `<slug-camel>ByLang: ComparisonByLang` record.
+  // Pick the export whose value looks like { de: {...slug:...}, en: {...}, ... }.
+  const byLang = Object.values(mod).find(
+    (v) =>
+      v &&
+      typeof v === 'object' &&
+      'de' in v &&
+      v.de &&
+      typeof v.de === 'object' &&
+      'slug' in v.de,
+  );
+  if (byLang) comparisons[byLang.de.slug] = byLang;
+}
+const { renderComparisonPage } = await import(
+  new URL('./comparison-page-generator.mjs', import.meta.url).href
+);
+
+// h1Approved: false bis Marge/AGB/Anwalt-Sign-off durch sind (Wissens-Bibel #19
+// Action-Items "Wechselangebot 50 % verifizieren"). Solange wird der softFallback
+// "Individuelle Wechsel-Konditionen" emittiert.
+const COMPARISON_H1_APPROVED = false;
+const COMPARISON_LANGS = ['de', 'en', 'it', 'fa', 'si', 'ru'];
+
+let comparisonCount = 0;
+for (const [slug, byLang] of Object.entries(comparisons)) {
+  for (const lang of COMPARISON_LANGS) {
+    const data = byLang[lang] ?? byLang.de;
+    const html = renderComparisonPage(rootHtmlPatched, data, {
+      h1Approved: COMPARISON_H1_APPROVED,
+      lang,
+      allLangs: COMPARISON_LANGS,
+    });
+    const outDir = join(distDir, lang, 'vergleiche', slug);
+    mkdirSync(outDir, { recursive: true });
+    writeFileSync(join(outDir, 'index.html'), html);
+    comparisonCount += 1;
+  }
+}
+console.log(
+  `✅ /vergleiche/ pre-render: ${comparisonCount} pages (${Object.keys(comparisons).length} slug${Object.keys(comparisons).length === 1 ? '' : 's'} × ${COMPARISON_LANGS.length} languages · WebPage + FAQPage + Review + AggregateRating + ItemList + HowTo + BreadcrumbList + Article + hreflang · H1 approved: ${COMPARISON_H1_APPROVED})`,
+);

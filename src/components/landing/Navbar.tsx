@@ -82,7 +82,10 @@ const Navbar = () => {
   const pathWithoutLang = pathname.replace(/^\/[a-z]{2}/, "") || "/";
   const currentRoute = ROUTE_BY_LANG_SLUG[currentLang as LangCode]?.[pathWithoutLang];
   const deSlug = currentRoute?.slugs.de ?? pathWithoutLang;
-  const alwaysVisible = ["/impressum", "/datenschutz", "/agb", "/kontakt", "/preise", "/integrations"].includes(deSlug) || deSlug.startsWith("/downloads");
+  const alwaysVisible =
+    ["/impressum", "/datenschutz", "/agb", "/kontakt", "/preise", "/integrations"].includes(deSlug) ||
+    deSlug.startsWith("/downloads") ||
+    deSlug.startsWith("/vergleiche");
   const [scrolled, setScrolled]             = useState(false);
   const active = scrolled;          // steuert schmal/weit
   const visibleBg = alwaysVisible || scrolled; // steuert Hintergrund-Sichtbarkeit

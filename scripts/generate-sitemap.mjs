@@ -112,6 +112,32 @@ for (const { slug, publishedDate } of blogPosts) {
   );
 }
 
+// ─── /vergleiche/<slug>-URLs (multilingual, alle 6 Sprachen) ────────────────
+const { readdirSync: readdirSyncForComparisons } = await import("fs");
+let comparisonSlugs = [];
+try {
+  comparisonSlugs = readdirSyncForComparisons(resolve(ROOT, "src/data/comparisons"))
+    .filter((f) => f.endsWith(".ts") && f !== "types.ts" && f !== "index.ts")
+    .map((f) => f.replace(/\.ts$/, ""));
+} catch {
+  comparisonSlugs = [];
+}
+let comparisonUrlCount = 0;
+for (const slug of comparisonSlugs) {
+  for (const lang of LANGUAGES) {
+    const loc = `${BASE_URL}/${lang}/vergleiche/${slug}`;
+    const alternates = LANGUAGES.map(
+      (l) =>
+        `    <xhtml:link rel="alternate" hreflang="${l}" href="${BASE_URL}/${l}/vergleiche/${slug}" />`,
+    ).join("\n");
+    const xDefault = `    <xhtml:link rel="alternate" hreflang="x-default" href="${BASE_URL}/de/vergleiche/${slug}" />`;
+    urlEntries.push(
+      `  <url>\n    <loc>${loc}</loc>\n    <lastmod>${today}</lastmod>\n    <changefreq>weekly</changefreq>\n    <priority>0.85</priority>\n${alternates}\n${xDefault}\n  </url>`,
+    );
+    comparisonUrlCount += 1;
+  }
+}
+
 const sitemap = `<?xml version="1.0" encoding="UTF-8"?>
 <urlset
   xmlns="http://www.sitemaps.org/schemas/sitemap/0.9"
@@ -126,5 +152,5 @@ const outPath = resolve(ROOT, "dist/sitemap.xml");
 writeFileSync(outPath, sitemap, "utf-8");
 
 const blogUrlCount = blogPosts.length;
-console.log(`✅ Sitemap generated: ${routes.length} routes × ${LANGUAGES.length} languages = ${routes.length * LANGUAGES.length} route URLs + ${blogUrlCount} blog URLs (DE only) = ${urlEntries.length} total URLs`);
+console.log(`✅ Sitemap generated: ${routes.length} routes × ${LANGUAGES.length} languages = ${routes.length * LANGUAGES.length} route URLs + ${blogUrlCount} blog URLs (DE only) + ${comparisonUrlCount} /vergleiche/ URLs (${comparisonSlugs.length} × ${LANGUAGES.length}) = ${urlEntries.length} total URLs`);
 console.log(`   → ${outPath}`);
