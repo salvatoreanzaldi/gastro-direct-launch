@@ -59,34 +59,15 @@ export default defineConfig(({ mode }) => ({
     cssCodeSplit: true,
     rollupOptions: {
       output: {
-        // Funktions-basiertes Chunking statt Object — splittet jedes @radix-ui/*
-        // Package in eigenen Chunk (vorher: 1 Sammel-Chunk "hub-*.js" mit 543 KB
-        // für ALLE Radix-Primitives). Per-Package-Chunks sind besser cachebar
-        // und Pages laden nur ihre tatsächlich genutzten Primitives.
-        // Fallback: bei undefined returned Chunk-Name → Vite default-chunking.
-        manualChunks(id) {
-          if (id.includes("node_modules/@radix-ui/")) {
-            const m = id.match(/@radix-ui\/([^/]+)/);
-            return m ? `radix-${m[1]}` : "radix-shared";
-          }
-          if (id.includes("node_modules/framer-motion")) return "framer-motion";
-          if (
-            id.includes("node_modules/react-router") ||
-            id.includes("node_modules/react-dom") ||
-            id.includes("node_modules/react/") ||
-            id.includes("node_modules/scheduler")
-          ) {
-            return "vendor";
-          }
-          if (
-            id.includes("node_modules/i18next") ||
-            id.includes("node_modules/react-i18next")
-          ) {
-            return "i18n";
-          }
-          // Garantie: blog-posts-Daten (3 MB) bleiben in eigenem Chunk —
-          // schützt gegen versehentliches Mergen in Main-Bundle (Berater A).
-          if (id.includes("src/data/blog-posts-generated")) return "blog-data";
+        // Object-basiertes Chunking — robust gegen Circular-Dependency-Issues.
+        // Funktions-basierte Per-Package-Splitting (z.B. Radix per-package) hat
+        // bei Vite 5 + React 18 zu Load-Order-Bugs geführt (i18n-Chunk lud vor
+        // vendor → React.createContext undefined → White Screen). Dies ist die
+        // bewährte Form. Win bleibt: framer-motion, vendor, i18n separiert.
+        manualChunks: {
+          'framer-motion': ['framer-motion'],
+          'vendor': ['react', 'react-dom', 'react-router-dom'],
+          'i18n': ['react-i18next', 'i18next'],
         },
       },
     },
