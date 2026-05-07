@@ -169,10 +169,49 @@ for (const slug of comparisonSlugs) {
   }
 }
 
+// Image-Sitemap-Block für die Hauptseite (alle 6 Sprachen). Ergänzt das
+// Standard-Sitemap-Schema mit Google's xmlns:image. Bei mehrsprachigen Sites
+// wird das Image-Tag pro Locale-URL (Homepage) wiederholt — das verbessert
+// Multimodal-SEO (Google Images, Bing Visual, Yandex). Wir referenzieren nur
+// hash-freie Public-Assets (Logo, Favicon) — gehashte Vite-Assets ändern
+// Filenames pro Build und sollten nicht in Sitemap.
+const HOMEPAGE_IMAGES = [
+  {
+    loc: `${BASE_URL}/logo-gastro-master.png`,
+    title: "Gastro Master — Provisionsfreies Bestellsystem für Restaurants",
+    caption: "Logo Gastro Master · Kassensystem & Bestellsystem für Restaurants",
+  },
+];
+
+// Patche Homepage-URL-Entries (route.slugs.de === "/") um image-Blocks
+const homeRoute = routes.find((r) => r.slugs.de === "/");
+if (homeRoute) {
+  const imagesXml = HOMEPAGE_IMAGES.map(
+    (img) => `    <image:image>
+      <image:loc>${img.loc}</image:loc>
+      <image:title>${img.title}</image:title>
+      <image:caption>${img.caption}</image:caption>
+    </image:image>`,
+  ).join("\n");
+  // Inject images before closing </url> für jede Homepage-Locale-URL (de/en/it/fa/si/ru)
+  for (let i = 0; i < urlEntries.length; i += 1) {
+    const isHome = LANGUAGES.some(
+      (lang) => urlEntries[i].includes(`<loc>${BASE_URL}/${lang}</loc>`),
+    );
+    if (isHome) {
+      urlEntries[i] = urlEntries[i].replace(
+        "  </url>",
+        `${imagesXml}\n  </url>`,
+      );
+    }
+  }
+}
+
 const sitemap = `<?xml version="1.0" encoding="UTF-8"?>
 <urlset
   xmlns="http://www.sitemaps.org/schemas/sitemap/0.9"
   xmlns:xhtml="http://www.w3.org/1999/xhtml"
+  xmlns:image="http://www.google.com/schemas/sitemap-image/1.1"
 >
 ${urlEntries.join("\n")}
 </urlset>

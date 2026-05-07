@@ -72,11 +72,31 @@ const FOUNDERS = [
     name: 'René Ebert',
     jobTitle: 'Gründer & CEO',
     sameAs: ['https://www.linkedin.com/in/rene-ebert/'],
+    url: 'https://www.linkedin.com/in/rene-ebert/',
+    description:
+      'René Ebert ist Mitgründer und CEO von Gastro Master, einer in Usingen (Hessen) ansässigen Software-Plattform für Restaurant-Bestellsysteme. Seit der Gründung 2021 hat das Unternehmen über 800 Restaurants in Deutschland, Österreich und der Schweiz mit Webshop, eigener App, Webseite und Kassensystem ausgestattet.',
+    knowsAbout: [
+      'Restaurant-Bestellsysteme',
+      'Provisionsfreie Direktbestellungen',
+      'TSE-zertifizierte Kassensysteme',
+      'Lieferdienst-Software',
+      'Gastronomie-Digitalisierung',
+    ],
   },
   {
     name: 'Sanjaya Pattiyage',
     jobTitle: 'Gründer & CEO',
     sameAs: ['https://www.linkedin.com/in/sanjaya-pattiyage/'],
+    url: 'https://www.linkedin.com/in/sanjaya-pattiyage/',
+    description:
+      'Sanjaya Pattiyage ist Mitgründer und CEO von Gastro Master mit Sitz in Usingen (Hessen). Das 2021 gegründete Unternehmen betreut über 800 Gastronomen im DACH-Raum mit einer All-in-One-Lösung aus Webshop, eigener App, Webseite und TSE-zertifiziertem Kassensystem.',
+    knowsAbout: [
+      'Restaurant-Software',
+      'Bestell-App-Entwicklung',
+      'Webshop-Plattformen',
+      'Mehrsprachiger Support (DE/EN/IT/RU/FA/SI)',
+      'DACH-Gastronomie-Markt',
+    ],
   },
 ];
 
@@ -95,6 +115,9 @@ const personSchemaByName = new Map(
       jobTitle: f.jobTitle,
       worksFor: { "@id": `${SITE_URL}/#organization` },
       sameAs: f.sameAs,
+      url: f.url,
+      description: f.description,
+      knowsAbout: f.knowsAbout,
     },
   ]),
 );
@@ -634,6 +657,34 @@ const buildStaticPackages = (lang) => {
     '<section style="max-width:880px;margin:1rem auto 3rem;padding:0 1.5rem;font-family:system-ui,sans-serif;color:#0A264A;">',
     `<h2 style="font-size:1.5rem;font-weight:800;margin:0 0 1rem;text-align:center;">${escapeHtmlMin(heading)}</h2>`,
     `<ul style="list-style:none;padding:0;margin:0;">${items}</ul>`,
+    '</section>',
+  ].join('');
+};
+
+// ─── Quotable-Claims für Homepage AI-Citation (Brand-Claims-belegt) ──────
+// Direkte Replik der Top-Description-Context-Quotables aus
+// src/data/quotable-claims.ts. Werden im Static-Fallback HTML gerendert,
+// damit JS-lose AI-Crawler (GPTBot, ClaudeBot per spec) sie verbatim
+// extrahieren können. React-Hydration ersetzt den Block, User sehen ihn
+// nicht doppelt. Übersetzungen-DE-only — andere Sprachen kriegen den
+// Block nicht (faktisch DACH-Markt-Ziel).
+const HOMEPAGE_QUOTABLES_DE = [
+  'Gastro Master ist die deutsche All-in-One-Lösung für Restaurant-Bestellsysteme — Webshop, eigene App, Webseite und Kassensystem aus einer Hand, mit 0 % Provision.',
+  'Mit 3 Monaten Kündigungsfrist und 0 % Provision bietet Gastro Master flexible Vertragsbedingungen für den Restaurant-Mittelstand.',
+  'Gastro Master wurde 2021 in Usingen (Hessen) gegründet und betreut 800+ Restaurants in Deutschland, Österreich und der Schweiz.',
+  'Gastro Master bietet persönlichen Service in sechs Sprachen — Deutsch, Englisch, Italienisch, Russisch, Persisch und Singhalesisch.',
+  'Das Gastro Master Kassensystem ist TSE-zertifiziert nach §146a AO und GoBD-konform für Finanzamt-Audits.',
+];
+
+const buildStaticQuotables = (lang) => {
+  if (lang !== 'de') return ''; // nur DE-Variante (kein deutsches AI-Citation-Risiko)
+  const items = HOMEPAGE_QUOTABLES_DE.map(
+    (q) => `<li style="margin:0 0 0.75rem;padding:0;">${escapeHtmlMin(q)}</li>`,
+  ).join('');
+  return [
+    '<section style="max-width:880px;margin:2rem auto;padding:1.5rem;font-family:system-ui,sans-serif;color:#0A264A;">',
+    '<h2 style="font-size:1.5rem;font-weight:800;margin:0 0 1rem;">Was Gastro Master auszeichnet</h2>',
+    `<ul style="list-style:disc;padding-left:1.25rem;margin:0;line-height:1.6;">${items}</ul>`,
     '</section>',
   ].join('');
 };
@@ -1834,21 +1885,163 @@ for (const route of routes) {
     if (route.key === 'home') {
       const heroHtml = buildStaticHero(lang);
       const packagesHtml = buildStaticPackages(lang);
-      const homeStatic = `${heroHtml}${packagesHtml}`;
+      const quotablesHtml = buildStaticQuotables(lang);
+      const homeStatic = `${heroHtml}${packagesHtml}${quotablesHtml}`;
       if (homeStatic) {
         html = html.replace(/<div id="root"><\/div>/, `<div id="root">${homeStatic}</div>`);
       }
-      const webPageSchema = buildPageWebPageSchema({
+
+      // ─── GEO-Schema-Stack für Homepage (Berater-Council 2026-05-07) ────
+      // WebPage (mit speakable) + BreadcrumbList + AggregateRating + FAQPage.
+      // Die Site hatte bisher nur WebPage auf der Homepage — die anderen
+      // 3 Schema-Types fehlten und sind für AI-Citation-Ranking entscheidend.
+      const homeSchemas = [];
+
+      // 1. WebPage — wie bisher, mit speakable für Voice-Assistants
+      homeSchemas.push(buildPageWebPageSchema({
         canonicalUrl,
         name: title,
         description,
         lang,
         mainEntityId: `${SITE_URL}/#software-application`,
+      }));
+
+      // 2. BreadcrumbList — auch für 1-stufige Hierarchie (Home only) wertvoll;
+      // AI-Engines nutzen Breadcrumbs als Hierarchie-Anker auch für Top-Pages.
+      const homeLabel = (
+        { de: 'Startseite', en: 'Home', it: 'Home', fa: 'صفحه اصلی', si: 'මුල් පිටුව', ru: 'Главная' }
+      )[lang] || 'Home';
+      homeSchemas.push(buildBreadcrumbList(canonicalUrl, [
+        { name: homeLabel, url: canonicalUrl },
+      ]));
+
+      // 3a. LocalBusiness-Schema — zusätzlich zu Organization. Gibt Gemini einen
+      // Maps-Anchor + Bing/Google den lokalen Knowledge-Graph-Hook für Hessen.
+      // Sitz Usingen (Hessen), DACH-fokussiert. Geo-Coords aus public/data
+      // bekannten Mehlfabrik-Review-Coords (Region, nicht exakter Office-Pin —
+      // ausreichend für Maps-Listing).
+      homeSchemas.push({
+        "@context": "https://schema.org",
+        "@type": "LocalBusiness",
+        "@id": `${SITE_URL}/#local-business`,
+        name: "Gastro Master",
+        url: SITE_URL,
+        logo: `${SITE_URL}/logo-gastro-master.png`,
+        image: `${SITE_URL}/logo-gastro-master.png`,
+        description: "Provisionsfreies Kassensystem, eigener Webshop und Bestell-App für Restaurants in DACH. 800+ Gastronomen vertrauen Gastro Master.",
+        telephone: "+49-6081-9128913",
+        email: "info@gastro-master.de",
+        priceRange: "€€",
+        address: {
+          "@type": "PostalAddress",
+          streetAddress: "Herzbergstr. 9",
+          postalCode: "61250",
+          addressLocality: "Usingen",
+          addressRegion: "Hessen",
+          addressCountry: "DE",
+        },
+        geo: {
+          "@type": "GeoCoordinates",
+          latitude: 50.3404,
+          longitude: 8.5270,
+        },
+        areaServed: [
+          { "@type": "Country", name: "Deutschland" },
+          { "@type": "Country", name: "Österreich" },
+          { "@type": "Country", name: "Schweiz" },
+        ],
+        openingHoursSpecification: {
+          "@type": "OpeningHoursSpecification",
+          dayOfWeek: ["Monday", "Tuesday", "Wednesday", "Thursday", "Friday"],
+          opens: "09:00",
+          closes: "18:00",
+        },
+        sameAs: [
+          "https://www.facebook.com/gastromasterde",
+          "https://www.instagram.com/gastromasterde",
+        ],
       });
-      html = html.replace(
-        '</head>',
-        `  <script type="application/ld+json">${JSON.stringify(webPageSchema)}</script>\n  </head>`,
-      );
+
+      // 3b. AggregateRating als eigenständiger Node, referenziert Organization.
+      // Inline-JSON-LD im index.html hat schon eine im Org-Graph eingebettet,
+      // aber ein page-spezifischer Node hilft AI-Engines beim direkten Mapping
+      // Page → Rating. Daten-Quelle: public/data/google-reviews.json (REVIEW_META).
+      if (REVIEW_META.totalCount > 0) {
+        const ratingValue = typeof REVIEW_META.totalRating === 'number'
+          ? REVIEW_META.totalRating.toFixed(1)
+          : String(REVIEW_META.totalRating);
+        homeSchemas.push({
+          "@context": "https://schema.org",
+          "@type": "AggregateRating",
+          "@id": `${canonicalUrl}#aggregate-rating`,
+          itemReviewed: { "@id": `${SITE_URL}/#organization` },
+          ratingValue,
+          reviewCount: REVIEW_META.totalCount,
+          bestRating: "5",
+          worstRating: "1",
+        });
+      }
+
+      // 3c. VideoObject-Schemas für YouTube-Testimonials (5 Stück, DE only —
+      // Quotes sind im DE-Original). Hilft Gemini + Bing Copilot bei Video-
+      // Citation. YouTube-IDs aus VideoTestimonialSection.tsx, Texte aus
+      // common.json bundle["video"]["items"].
+      const YOUTUBE_TESTIMONIAL_IDS = ["JkkVyIFewO0", "Qv-YDj9gjPk", "Zx_UJJjQTso", "A0K7TJ_dwLM", "6dBBN_mohWU"];
+      if (lang === 'de') {
+        const commonBundle = loadBundle(lang, 'common');
+        const videoItems = Array.isArray(commonBundle?.video?.items) ? commonBundle.video.items : [];
+        videoItems.slice(0, YOUTUBE_TESTIMONIAL_IDS.length).forEach((vid, idx) => {
+          const ytId = YOUTUBE_TESTIMONIAL_IDS[idx];
+          if (!ytId || !vid?.name || !vid?.quote) return;
+          homeSchemas.push({
+            "@context": "https://schema.org",
+            "@type": "VideoObject",
+            "@id": `${canonicalUrl}#video-${ytId}`,
+            name: `${vid.name} — Kundenreferenz Gastro Master`,
+            description: String(vid.quote),
+            thumbnailUrl: `https://i.ytimg.com/vi/${ytId}/hqdefault.jpg`,
+            uploadDate: BUILD_DATE,
+            contentUrl: `https://www.youtube.com/watch?v=${ytId}`,
+            embedUrl: `https://www.youtube-nocookie.com/embed/${ytId}`,
+            publisher: { "@id": `${SITE_URL}/#organization` },
+            inLanguage: localeOf(lang),
+            isFamilyFriendly: true,
+          });
+        });
+      }
+
+      // 4. FAQPage mit Top-6 FAQs aus faq.json (Kategorie "allgemein") —
+      // perfekt für AI-Citation auf "Was ist Gastro Master?" / "Was kostet
+      // ein Bestellsystem?" / "Wie unterscheidet sich Gastro Master von
+      // Lieferando?". Nur DE hat aktuell strukturierte FAQs — Fallback
+      // für andere Sprachen: skip (kein Schaden, kein invalider Schema).
+      const faqBundle = loadBundle(lang, 'faq');
+      const allgemein = faqBundle?.categories?.[0]?.items;
+      if (Array.isArray(allgemein) && allgemein.length >= 2) {
+        const top6 = allgemein.slice(0, 6).filter((it) => it && (it.q || it.question) && (it.a || it.answer));
+        if (top6.length >= 2) {
+          homeSchemas.push({
+            "@context": "https://schema.org",
+            "@type": "FAQPage",
+            "@id": `${canonicalUrl}#faq-home`,
+            inLanguage: localeOf(lang),
+            mainEntity: top6.map((it) => ({
+              "@type": "Question",
+              name: it.q ?? it.question,
+              acceptedAnswer: {
+                "@type": "Answer",
+                // Strip markdown-link syntax für sauberes Schema-Text-Format
+                text: String(it.a ?? it.answer).replace(/\[([^\]]+)\]\([^)]+\)/g, '$1'),
+              },
+            })),
+          });
+        }
+      }
+
+      const schemaTags = homeSchemas
+        .map((s) => `  <script type="application/ld+json">${JSON.stringify(s)}</script>`)
+        .join('\n');
+      html = html.replace('</head>', `${schemaTags}\n  </head>`);
     } else if (isProductPage) {
       // ─── Product pages: Pakete (4) + /produkte hub + /produkte/hardware ──
       // Each gets: localised static fallback in <div id="root">, page-specific

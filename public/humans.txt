@@ -1,0 +1,37 @@
+/* TEAM */
+
+Gründer & CEO: René Ebert
+LinkedIn: https://www.linkedin.com/in/rene-ebert/
+
+Gründer & CEO: Sanjaya Pattiyage
+LinkedIn: https://www.linkedin.com/in/sanjaya-pattiyage/
+
+Sales & Customer Success: Salvatore Anzaldi
+E-Mail: s.anzaldi@gastro-master.de
+
+Standort: Usingen, Hessen, Deutschland
+Team-Größe: 30+
+
+/* THANKS */
+
+Über 800 Gastronomen in DACH, die uns vertrauen.
+Mehlfabrik Rotenburg Wümme — für die ehrliche 5★-Bewertung.
+
+/* SITE */
+
+Last update: 2026-05-07
+Standards: HTML5, CSS3, ES2022
+Components: React 18, Vite 5, Tailwind CSS, Radix UI, framer-motion
+Software: TSE-zertifizierte Kassen-Lösung nach §146a AO, GoBD-konform
+Hosting: Vercel
+Sprache: Deutsch (primär), Englisch, Italienisch, Russisch, Persisch, Singhalesisch
+DSGVO-konform — Datenschutz: https://gastro-master.de/de/datenschutz
+
+/* COMPANY */
+
+Gastro Master
+Anschrift: Herzbergstr. 9, 61250 Usingen, Deutschland
+Telefon: +49 (0) 6081 9128913
+E-Mail: info@gastro-master.de
+Web: https://gastro-master.de
+Gegründet: 2021
