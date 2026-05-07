@@ -13,6 +13,7 @@ import {
   type LangCode,
   buildLocalizedPath,
   translateSlug,
+  VERGLEICHE_SEGMENT,
 } from "@/config/routes";
 import Index from "./pages/Index";
 import NotFound from "./pages/NotFound";
@@ -166,9 +167,10 @@ const App = () => (
                         : <BlogLocaleRedirect />
                     }
                   />
-                  {/* Dynamic /vergleiche/:slug — multilingual (DE/EN/IT/FA/SI/RU). */}
+                  {/* Dynamic Comparison-Page — segment lokalisiert pro Sprache:
+                      DE /vergleiche/:slug, EN/FA/SI/RU /vs/:slug, IT /confronti/:slug */}
                   <Route
-                    path="vergleiche/:slug"
+                    path={`${VERGLEICHE_SEGMENT[lang]}/:slug`}
                     element={<Suspense fallback={null}>{createElement(LAZY_COMPONENTS["@/pages/VergleichePage"]!)}</Suspense>}
                   />
                   <Route path="*" element={<NotFound />} />

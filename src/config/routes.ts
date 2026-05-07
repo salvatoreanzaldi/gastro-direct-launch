@@ -161,6 +161,31 @@ export function buildLocalizedPath(deSlug: string, lang: LangCode): string {
   return `/${lang}${translated}`;
 }
 
+/**
+ * Segment-Lokalisierung für /vergleiche/:slug-Pages.
+ * EN nutzt SaaS-Industrienorm "vs" (monday.com/vs/asana, airtable.com/vs/notion) —
+ * AI-Engines + User erkennen das Format als kanonische Konkurrenz-Vergleichs-URL.
+ * FA/SI/RU fallen wie bei allen anderen Routes auf EN zurück (kein non-Latin-Slug).
+ */
+export const VERGLEICHE_SEGMENT: Record<LangCode, string> = {
+  de: "vergleiche",
+  en: "vs",
+  it: "confronti",
+  fa: "vs",
+  si: "vs",
+  ru: "vs",
+};
+
+/** Alle Segment-Varianten (für Detection / Reverse-Lookup, dedupliziert). */
+export const VERGLEICHE_SEGMENTS_ALL: readonly string[] = Array.from(
+  new Set(Object.values(VERGLEICHE_SEGMENT)),
+);
+
+/** Build a fully-prefixed localized comparison URL, e.g. /en/vs/resmio */
+export function buildComparisonPath(slug: string, lang: LangCode): string {
+  return `/${lang}/${VERGLEICHE_SEGMENT[lang]}/${slug}`;
+}
+
 /** All DE paths (for backwards compatibility / sitemap legacy consumers) */
 export const ROUTE_PATHS = ROUTES.map((r) => r.slugs.de);
 
