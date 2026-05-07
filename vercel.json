@@ -49,5 +49,48 @@
   ],
   "rewrites": [
     { "source": "/(.*)", "destination": "/index.html" }
+  ],
+  "headers": [
+    {
+      "//": "Vite-Hash-Assets sind by-design immutable — aggressive Cache-Header für 1 Jahr",
+      "source": "/assets/(.*)",
+      "headers": [
+        { "key": "Cache-Control", "value": "public, max-age=31536000, immutable" }
+      ]
+    },
+    {
+      "//": "Fonts: lange Cache (Hash-Filenames) + crossorigin",
+      "source": "/(.*)\\.(woff2?|ttf|otf)",
+      "headers": [
+        { "key": "Cache-Control", "value": "public, max-age=31536000, immutable" },
+        { "key": "Access-Control-Allow-Origin", "value": "*" }
+      ]
+    },
+    {
+      "//": "Bilder im public/-Folder: 30 Tage Cache (kein Hash, daher kürzer als /assets/)",
+      "source": "/(.*)\\.(png|jpg|jpeg|webp|avif|svg|ico)",
+      "headers": [
+        { "key": "Cache-Control", "value": "public, max-age=2592000, stale-while-revalidate=86400" }
+      ]
+    },
+    {
+      "//": "HTML + Sitemap + RSS: kurze Cache + SWR (Vercel Edge cached, refreshed im Hintergrund)",
+      "source": "/(.*)\\.(html|xml)",
+      "headers": [
+        { "key": "Cache-Control", "value": "public, max-age=0, s-maxage=3600, stale-while-revalidate=86400" }
+      ]
+    },
+    {
+      "//": "Security + SEO Headers für ALLE Routes — Best-Practice 2026",
+      "source": "/(.*)",
+      "headers": [
+        { "key": "Strict-Transport-Security", "value": "max-age=63072000; includeSubDomains; preload" },
+        { "key": "X-Content-Type-Options", "value": "nosniff" },
+        { "key": "X-Frame-Options", "value": "SAMEORIGIN" },
+        { "key": "Referrer-Policy", "value": "strict-origin-when-cross-origin" },
+        { "key": "Permissions-Policy", "value": "geolocation=(), camera=(), microphone=(), payment=(self)" },
+        { "key": "X-Robots-Tag", "value": "index, follow, max-image-preview:large, max-snippet:-1, max-video-preview:-1" }
+      ]
+    }
   ]
 }
