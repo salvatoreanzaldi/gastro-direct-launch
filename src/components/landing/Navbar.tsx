@@ -1,7 +1,7 @@
 import { useState, useEffect, useRef } from "react";
 import { Link, useLocation, useNavigate } from "react-router-dom";
 import { toast } from "sonner";
-import { buildLocalizedPath, ROUTE_BY_LANG_SLUG, VERGLEICHE_SEGMENTS_ALL, type LangCode } from "@/config/routes";
+import { buildLocalizedPath, buildComparisonPath, ROUTE_BY_LANG_SLUG, VERGLEICHE_SEGMENTS_ALL, type LangCode } from "@/config/routes";
 import { extractLangFromPath } from "@/components/LanguageLayout";
 import {
   ArrowRight, Menu, X, Moon, Sun, ChevronDown, ChevronRight,
@@ -139,6 +139,20 @@ const Navbar = () => {
   const switchLanguage = (code: SupportedLang) => {
     // Map current slug back to canonical DE slug, then forward to the target language's slug
     const currentSlug = pathname.replace(/^\/[a-z]{2}/, "") || "/";
+
+    // Dynamic comparison route (/vergleiche/:slug | /vs/:slug | /confronti/:slug):
+    // not in ROUTE_BY_LANG_SLUG — extract competitor slug, rebuild for target lang.
+    const comparisonMatch = VERGLEICHE_SEGMENTS_ALL.map((seg) => {
+      const re = new RegExp(`^/${seg}/([^/]+)/?$`);
+      return currentSlug.match(re);
+    }).find((m) => m !== null);
+    if (comparisonMatch) {
+      navigate(buildComparisonPath(comparisonMatch[1], code as LangCode));
+      setLangOpen(false);
+      setMobileOpen(false);
+      return;
+    }
+
     const route = ROUTE_BY_LANG_SLUG[currentLang as LangCode]?.[currentSlug];
     const deSlugForLookup = route?.slugs.de ?? currentSlug;
     const newPath = buildLocalizedPath(deSlugForLookup, code as LangCode);
