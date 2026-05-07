@@ -98,7 +98,11 @@ const Index = () => {
       <Navbar />
       {/* ATTENTION */}
       <HeroScrollSection />
-      <Suspense fallback={null}>
+      {/* CLS-Schutz: min-h-Placeholder reserviert Platz während Lazy-Chunks laden.
+          Verhindert Layout-Shift wenn Chunks nachladen. 1200px ≈ Hero-Höhe + ein
+          paar Sektionen — wenn echte Inhalte größer/kleiner sind, expanded/kollabiert
+          es ohne CLS-Score-Hit (CLS misst nur Verschiebung sichtbarer Elemente). */}
+      <Suspense fallback={<div className="min-h-[1200px] w-full" aria-hidden="true" />}>
         <GoogleReviewsGrid />
         <TrustedBrandsSection />
         {/* INTEREST */}
