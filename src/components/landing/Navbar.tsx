@@ -1,7 +1,7 @@
 import { useState, useEffect, useRef } from "react";
 import { Link, useLocation, useNavigate } from "react-router-dom";
 import { toast } from "sonner";
-import { buildLocalizedPath, ROUTE_BY_LANG_SLUG, type LangCode } from "@/config/routes";
+import { buildLocalizedPath, ROUTE_BY_LANG_SLUG, VERGLEICHE_SEGMENTS_ALL, type LangCode } from "@/config/routes";
 import { extractLangFromPath } from "@/components/LanguageLayout";
 import {
   ArrowRight, Menu, X, Moon, Sun, ChevronDown, ChevronRight,
@@ -82,10 +82,13 @@ const Navbar = () => {
   const pathWithoutLang = pathname.replace(/^\/[a-z]{2}/, "") || "/";
   const currentRoute = ROUTE_BY_LANG_SLUG[currentLang as LangCode]?.[pathWithoutLang];
   const deSlug = currentRoute?.slugs.de ?? pathWithoutLang;
+  const isComparisonPath = VERGLEICHE_SEGMENTS_ALL.some(
+    (seg) => deSlug === `/${seg}` || deSlug.startsWith(`/${seg}/`),
+  );
   const alwaysVisible =
     ["/impressum", "/datenschutz", "/agb", "/kontakt", "/preise", "/integrations"].includes(deSlug) ||
     deSlug.startsWith("/downloads") ||
-    deSlug.startsWith("/vergleiche");
+    isComparisonPath;
   const [scrolled, setScrolled]             = useState(false);
   const active = scrolled;          // steuert schmal/weit
   const visibleBg = alwaysVisible || scrolled; // steuert Hintergrund-Sichtbarkeit

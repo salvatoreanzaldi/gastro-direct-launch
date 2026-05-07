@@ -36,6 +36,21 @@ const NAV_VERGLEICHE_LABEL = {
   ru: "Сравнения",
 };
 
+/**
+ * URL-Segment pro Sprache. EN nutzt SaaS-Industrienorm "vs" (monday.com/vs/asana).
+ * Muss synchron mit src/config/routes.ts:VERGLEICHE_SEGMENT bleiben.
+ */
+const VERGLEICHE_SEGMENT = {
+  de: "vergleiche",
+  en: "vs",
+  it: "confronti",
+  fa: "vs",
+  si: "vs",
+  ru: "vs",
+};
+
+const segFor = (lang) => VERGLEICHE_SEGMENT[lang] ?? "vergleiche";
+
 const escapeHtml = (s) =>
   String(s ?? "")
     .replace(/&/g, "&amp;")
@@ -55,7 +70,7 @@ const pickRiskReversalText = (line, h1Approved) => {
  * Build erweiterte JSON-LD @graph für eine /vergleiche/<slug>-Page.
  */
 export function buildComparisonSchemas(data, { h1Approved = false, lang = "de" } = {}) {
-  const url = `${SITE_URL}/${lang}/vergleiche/${data.slug}`;
+  const url = `${SITE_URL}/${lang}/${segFor(lang)}/${data.slug}`;
   const inLanguage = LOCALE_FOR_LANG[lang] ?? "de-DE";
   const orgRef = { "@id": `${SITE_URL}/#organization` };
 
@@ -69,7 +84,7 @@ export function buildComparisonSchemas(data, { h1Approved = false, lang = "de" }
         "@type": "ListItem",
         position: 2,
         name: NAV_VERGLEICHE_LABEL[lang] ?? "Vergleiche",
-        item: `${SITE_URL}/${lang}/vergleiche`,
+        item: `${SITE_URL}/${lang}/${segFor(lang)}`,
       },
       { "@type": "ListItem", position: 3, name: data.competitorName, item: url },
     ],
@@ -374,18 +389,18 @@ export function buildComparisonStaticHtml(data, { h1Approved = false, lang = "de
  * @param opts.h1Approved Wechselangebot-Flag
  */
 export function renderComparisonPage(baseHtml, data, { h1Approved = false, lang = "de", allLangs = ["de"] } = {}) {
-  const url = `${SITE_URL}/${lang}/vergleiche/${data.slug}`;
+  const url = `${SITE_URL}/${lang}/${segFor(lang)}/${data.slug}`;
   const schemas = buildComparisonSchemas(data, { h1Approved, lang });
   const staticHtml = buildComparisonStaticHtml(data, { h1Approved, lang });
   const inLanguage = LOCALE_FOR_LANG[lang] ?? "de-DE";
 
-  // Hreflang-Tags: alle Sprachen + x-default = de
+  // Hreflang-Tags: alle Sprachen + x-default = de (jede mit ihrem lokalisierten Segment)
   const hreflangTags = [
     ...allLangs.map(
       (l) =>
-        `<link rel="alternate" hreflang="${l}" href="${SITE_URL}/${l}/vergleiche/${data.slug}" />`,
+        `<link rel="alternate" hreflang="${l}" href="${SITE_URL}/${l}/${segFor(l)}/${data.slug}" />`,
     ),
-    `<link rel="alternate" hreflang="x-default" href="${SITE_URL}/de/vergleiche/${data.slug}" />`,
+    `<link rel="alternate" hreflang="x-default" href="${SITE_URL}/de/${segFor("de")}/${data.slug}" />`,
   ].join("\n  ");
 
   const headExtras = [

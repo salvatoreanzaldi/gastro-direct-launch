@@ -112,7 +112,17 @@ for (const { slug, publishedDate } of blogPosts) {
   );
 }
 
-// ─── /vergleiche/<slug>-URLs (multilingual, alle 6 Sprachen) ────────────────
+// ─── Comparison-URLs (multilingual, alle 6 Sprachen, lokalisiertes Segment) ─
+// EN nutzt SaaS-Industrienorm "vs" (monday.com/vs/asana). Muss synchron mit
+// src/config/routes.ts:VERGLEICHE_SEGMENT bleiben.
+const COMPARISON_SEGMENT = {
+  de: "vergleiche",
+  en: "vs",
+  it: "confronti",
+  fa: "vs",
+  si: "vs",
+  ru: "vs",
+};
 const { readdirSync: readdirSyncForComparisons } = await import("fs");
 let comparisonSlugs = [];
 try {
@@ -125,12 +135,12 @@ try {
 let comparisonUrlCount = 0;
 for (const slug of comparisonSlugs) {
   for (const lang of LANGUAGES) {
-    const loc = `${BASE_URL}/${lang}/vergleiche/${slug}`;
+    const loc = `${BASE_URL}/${lang}/${COMPARISON_SEGMENT[lang]}/${slug}`;
     const alternates = LANGUAGES.map(
       (l) =>
-        `    <xhtml:link rel="alternate" hreflang="${l}" href="${BASE_URL}/${l}/vergleiche/${slug}" />`,
+        `    <xhtml:link rel="alternate" hreflang="${l}" href="${BASE_URL}/${l}/${COMPARISON_SEGMENT[l]}/${slug}" />`,
     ).join("\n");
-    const xDefault = `    <xhtml:link rel="alternate" hreflang="x-default" href="${BASE_URL}/de/vergleiche/${slug}" />`;
+    const xDefault = `    <xhtml:link rel="alternate" hreflang="x-default" href="${BASE_URL}/de/${COMPARISON_SEGMENT.de}/${slug}" />`;
     urlEntries.push(
       `  <url>\n    <loc>${loc}</loc>\n    <lastmod>${today}</lastmod>\n    <changefreq>weekly</changefreq>\n    <priority>0.85</priority>\n${alternates}\n${xDefault}\n  </url>`,
     );
@@ -152,5 +162,5 @@ const outPath = resolve(ROOT, "dist/sitemap.xml");
 writeFileSync(outPath, sitemap, "utf-8");
 
 const blogUrlCount = blogPosts.length;
-console.log(`✅ Sitemap generated: ${routes.length} routes × ${LANGUAGES.length} languages = ${routes.length * LANGUAGES.length} route URLs + ${blogUrlCount} blog URLs (DE only) + ${comparisonUrlCount} /vergleiche/ URLs (${comparisonSlugs.length} × ${LANGUAGES.length}) = ${urlEntries.length} total URLs`);
+console.log(`✅ Sitemap generated: ${routes.length} routes × ${LANGUAGES.length} languages = ${routes.length * LANGUAGES.length} route URLs + ${blogUrlCount} blog URLs (DE only) + ${comparisonUrlCount} comparison URLs (${comparisonSlugs.length} × ${LANGUAGES.length}, segments: ${[...new Set(Object.values(COMPARISON_SEGMENT))].join("/")}) = ${urlEntries.length} total URLs`);
 console.log(`   → ${outPath}`);

@@ -19,6 +19,7 @@ import {
   type ComparisonData,
   type ComparisonLang,
 } from "@/data/comparisons";
+import { VERGLEICHE_SEGMENT, type LangCode } from "@/config/routes";
 
 const SUPPORTED_LANGS: readonly ComparisonLang[] = [
   "de",
@@ -291,7 +292,7 @@ const VergleichePage = () => {
   const data = slug ? getComparison(slug, lang) : undefined;
 
   const url = data
-    ? `${SITE_URL}/${lang}/vergleiche/${data.slug}`
+    ? `${SITE_URL}/${lang}/${VERGLEICHE_SEGMENT[lang as LangCode]}/${data.slug}`
     : `${SITE_URL}/${lang}`;
 
   useSeoMeta({
@@ -317,14 +318,20 @@ const VergleichePage = () => {
       const link = document.createElement("link");
       link.setAttribute("rel", "alternate");
       link.setAttribute("hreflang", l);
-      link.setAttribute("href", `${SITE_URL}/${l}/vergleiche/${data.slug}`);
+      link.setAttribute(
+        "href",
+        `${SITE_URL}/${l}/${VERGLEICHE_SEGMENT[l as LangCode]}/${data.slug}`,
+      );
       link.setAttribute("data-vergleiche", "1");
       head.appendChild(link);
     }
     const xDefault = document.createElement("link");
     xDefault.setAttribute("rel", "alternate");
     xDefault.setAttribute("hreflang", "x-default");
-    xDefault.setAttribute("href", `${SITE_URL}/de/vergleiche/${data.slug}`);
+    xDefault.setAttribute(
+      "href",
+      `${SITE_URL}/de/${VERGLEICHE_SEGMENT.de}/${data.slug}`,
+    );
     xDefault.setAttribute("data-vergleiche", "1");
     head.appendChild(xDefault);
   }, [data, lang]);

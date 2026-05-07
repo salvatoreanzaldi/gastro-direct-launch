@@ -2509,6 +2509,18 @@ const { renderComparisonPage } = await import(
 const COMPARISON_H1_APPROVED = false;
 const COMPARISON_LANGS = ['de', 'en', 'it', 'fa', 'si', 'ru'];
 
+// URL-Segment pro Sprache. EN nutzt SaaS-Industrienorm "vs"
+// (monday.com/vs/asana, airtable.com/vs/notion).
+// Muss synchron mit src/config/routes.ts:VERGLEICHE_SEGMENT bleiben.
+const COMPARISON_SEGMENT = {
+  de: 'vergleiche',
+  en: 'vs',
+  it: 'confronti',
+  fa: 'vs',
+  si: 'vs',
+  ru: 'vs',
+};
+
 let comparisonCount = 0;
 for (const [slug, byLang] of Object.entries(comparisons)) {
   for (const lang of COMPARISON_LANGS) {
@@ -2518,12 +2530,12 @@ for (const [slug, byLang] of Object.entries(comparisons)) {
       lang,
       allLangs: COMPARISON_LANGS,
     });
-    const outDir = join(distDir, lang, 'vergleiche', slug);
+    const outDir = join(distDir, lang, COMPARISON_SEGMENT[lang], slug);
     mkdirSync(outDir, { recursive: true });
     writeFileSync(join(outDir, 'index.html'), html);
     comparisonCount += 1;
   }
 }
 console.log(
-  `✅ /vergleiche/ pre-render: ${comparisonCount} pages (${Object.keys(comparisons).length} slug${Object.keys(comparisons).length === 1 ? '' : 's'} × ${COMPARISON_LANGS.length} languages · WebPage + FAQPage + Review + AggregateRating + ItemList + HowTo + BreadcrumbList + Article + hreflang · H1 approved: ${COMPARISON_H1_APPROVED})`,
+  `✅ Comparison pre-render: ${comparisonCount} pages (${Object.keys(comparisons).length} slug${Object.keys(comparisons).length === 1 ? '' : 's'} × ${COMPARISON_LANGS.length} languages · segments: ${[...new Set(Object.values(COMPARISON_SEGMENT))].join('/')} · WebPage + FAQPage + Review + AggregateRating + ItemList + HowTo + BreadcrumbList + Article + hreflang · H1 approved: ${COMPARISON_H1_APPROVED})`,
 );
