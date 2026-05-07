@@ -2,7 +2,8 @@ import { useState } from "react";
 import { Link } from "react-router-dom";
 import logoWide from "@/assets/logos/logo-gastro-master-wide.png";
 import { useTranslation } from "react-i18next";
-import { useLangPath } from "@/components/LanguageLayout";
+import { useLangPath, useCurrentLang } from "@/components/LanguageLayout";
+import { VERGLEICHE_SEGMENT, type LangCode } from "@/config/routes";
 import { ChevronDown, ArrowRight } from "lucide-react";
 
 // Product data structure for mobile accordion + desktop
@@ -102,6 +103,18 @@ const MobileSubAccordionItem = ({ title, children }: { title: string; children: 
 const Footer = () => {
   const { t } = useTranslation("common");
   const lp = useLangPath();
+  const currentLang = useCurrentLang() as LangCode;
+  const hubPath = `/${currentLang}/${VERGLEICHE_SEGMENT[currentLang]}`;
+  const hubLabel = (
+    {
+      de: "Anbieter-Vergleich",
+      en: "Provider comparison",
+      it: "Confronto fornitori",
+      fa: "مقایسه ارائه‌دهندگان",
+      si: "සැපයුම්කරු සැසඳීම",
+      ru: "Сравнение поставщиков",
+    } as Record<LangCode, string>
+  )[currentLang];
 
   return (
     <footer className="bg-gradient-navy border-t border-primary-foreground/10 px-5 md:px-8 lg:px-16 py-12">
@@ -205,6 +218,9 @@ const Footer = () => {
               </Link>
               <Link to={lp("/blog")} className="block text-primary-foreground/60 hover:text-primary-foreground text-sm py-2 transition-colors">
                 Blog
+              </Link>
+              <Link to={hubPath} className="block text-primary-foreground/60 hover:text-primary-foreground text-sm py-2 transition-colors">
+                {hubLabel}
               </Link>
               <Link to={lp("/downloads")} className="block text-primary-foreground/60 hover:text-primary-foreground text-sm py-2 transition-colors">
                 {t('footer.downloads')}
@@ -327,6 +343,11 @@ const Footer = () => {
               <li>
                 <Link to={lp("/blog")} className="text-primary-foreground/50 hover:text-primary-foreground text-sm transition-colors duration-200">
                   Blog
+                </Link>
+              </li>
+              <li>
+                <Link to={hubPath} className="text-primary-foreground/50 hover:text-primary-foreground text-sm transition-colors duration-200">
+                  {hubLabel}
                 </Link>
               </li>
               <li>

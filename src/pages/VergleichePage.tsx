@@ -16,6 +16,7 @@ import ScrollProgressBar from "@/components/ScrollProgressBar";
 import { useSeoMeta } from "@/hooks/useSeoMeta";
 import {
   getComparison,
+  comparisonSlugs,
   type ComparisonData,
   type ComparisonLang,
 } from "@/data/comparisons";
@@ -61,6 +62,9 @@ const T = {
     cta: "Kostenlose Beratung",
     moreQuestions: "Mehr Fragen?",
     lastUpdate: "Letzte Faktencheck-Aktualisierung:",
+    siblingHeading: "Weitere Vergleiche",
+    siblingSub: "Faktenchecks zu drei weiteren Anbietern.",
+    siblingHubLink: "→ Alle Anbieter im Markt-Überblick",
   },
   en: {
     badge: "Fact check with sources · As of",
@@ -83,6 +87,9 @@ const T = {
     cta: "Free consultation",
     moreQuestions: "More questions?",
     lastUpdate: "Last fact-check update:",
+    siblingHeading: "Other comparisons",
+    siblingSub: "Fact checks for three more providers.",
+    siblingHubLink: "→ All providers in the market overview",
   },
   it: {
     badge: "Verifica dei fatti con fonti · Stato",
@@ -105,6 +112,9 @@ const T = {
     cta: "Consulenza gratuita",
     moreQuestions: "Altre domande?",
     lastUpdate: "Ultimo aggiornamento dei fatti:",
+    siblingHeading: "Altri confronti",
+    siblingSub: "Verifica dei fatti per altri tre fornitori.",
+    siblingHubLink: "→ Tutti i fornitori nella panoramica del mercato",
   },
   fa: {
     badge: "بررسی واقعیت‌ها با منابع · تاریخ",
@@ -127,6 +137,9 @@ const T = {
     cta: "مشاورهٔ رایگان",
     moreQuestions: "سؤالات بیشتر؟",
     lastUpdate: "آخرین به‌روزرسانی بررسی:",
+    siblingHeading: "مقایسه‌های دیگر",
+    siblingSub: "بررسی واقعیت‌ها برای سه ارائه‌دهنده دیگر.",
+    siblingHubLink: "← همه ارائه‌دهندگان در نمای کلی بازار",
   },
   si: {
     badge: "මූලාශ්‍ර සමඟ කරුණු පරීක්ෂාව · ස්ථිතිය",
@@ -149,6 +162,9 @@ const T = {
     cta: "නොමිලේ උපදෙස්",
     moreQuestions: "තවත් ප්‍රශ්න?",
     lastUpdate: "අන්තිම කරුණු පරීක්ෂණ යාවත්කාලීනය:",
+    siblingHeading: "තවත් සැසඳීම්",
+    siblingSub: "තවත් සැපයුම්කරුවන් තිදෙනෙකු සඳහා කරුණු පරීක්ෂාව.",
+    siblingHubLink: "→ වෙළඳපල දළ විශ්ලේෂණයේ සියලු සැපයුම්කරුවන්",
   },
   ru: {
     badge: "Проверка фактов с источниками · По состоянию на",
@@ -171,6 +187,9 @@ const T = {
     cta: "Бесплатная консультация",
     moreQuestions: "Ещё вопросы?",
     lastUpdate: "Последнее обновление проверки:",
+    siblingHeading: "Другие сравнения",
+    siblingSub: "Проверка фактов для трёх других поставщиков.",
+    siblingHubLink: "→ Все поставщики в обзоре рынка",
   },
 } as const;
 
@@ -736,6 +755,51 @@ const VergleichePage = () => {
             </p>
           </div>
         </section>
+
+        {/* ─── Weitere Vergleiche (Sibling-Links + Hub) ─────────────────── */}
+        {(() => {
+          const seg = VERGLEICHE_SEGMENT[lang as LangCode];
+          const siblings = comparisonSlugs
+            .filter((s) => s !== data.slug)
+            .slice(0, 3)
+            .map((slug) => {
+              const sibling = getComparison(slug, lang);
+              return sibling ? { slug, name: sibling.competitorName } : null;
+            })
+            .filter((s): s is { slug: string; name: string } => s !== null);
+          if (siblings.length === 0) return null;
+          return (
+            <section className="border-b border-border/50 bg-muted/30 px-4 py-12">
+              <div className="mx-auto max-w-5xl">
+                <h2 className="mb-1 text-xl font-semibold md:text-2xl">
+                  {t.siblingHeading}
+                </h2>
+                <p className="mb-6 text-sm text-muted-foreground">
+                  {t.siblingSub}
+                </p>
+                <div className="grid grid-cols-1 gap-3 sm:grid-cols-3">
+                  {siblings.map((s) => (
+                    <Link
+                      key={s.slug}
+                      to={`/${lang}/${seg}/${s.slug}`}
+                      className="group rounded-lg border border-border/60 bg-background px-4 py-3 text-sm font-semibold transition-all hover:-translate-y-0.5 hover:border-cyan-brand/50 hover:shadow-sm"
+                    >
+                      Gastro Master vs. {s.name}
+                      <ArrowRight className="ml-1 inline-block h-3.5 w-3.5 text-cyan-brand transition-transform group-hover:translate-x-0.5" />
+                    </Link>
+                  ))}
+                </div>
+                <Link
+                  to={`/${lang}/${seg}`}
+                  className="mt-5 inline-block text-sm font-semibold text-cyan-brand underline-offset-2 hover:underline"
+                >
+                  {t.siblingHubLink}
+                </Link>
+              </div>
+            </section>
+          );
+        })()}
+
         {/* ─── Final CTA-Sektion (Desktop = HomeTeamCTA, Mobile = CTASection) ── */}
         {/* CTASection enthält intern eine leere Desktop-Hülle mit bg-white +
             vertikalem Padding — wir kappen sie hier sauber via md:hidden, damit
