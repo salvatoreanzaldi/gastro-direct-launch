@@ -514,13 +514,19 @@ const pages = [
 
 mkdirSync(distDir, { recursive: true });
 
-// Inject hreflang into the root index.html (the SPA fallback served for any
-// not-yet-prerendered route). The root represents the language-neutral entry
-// point — alternates point to the localised /<lang>/ home variants.
+// Inject hreflang + canonical into the root index.html (the SPA fallback served
+// for any not-yet-prerendered route). The root represents the language-neutral
+// entry point — alternates point to the localised /<lang>/ home variants.
+// Canonical points to /de (consistent with x-default) so JS-less crawlers
+// (GPTBot, ClaudeBot, PerplexityBot) get a kanonical hint.
 const rootHreflangTags = buildHreflangTags('/');
-const rootHtmlPatched = baseHtml.replace('</head>', `${rootHreflangTags}\n  </head>`);
+const rootCanonical = `<link rel="canonical" href="${SITE_URL}/de">`;
+const rootHtmlPatched = baseHtml.replace(
+  '</head>',
+  `${rootCanonical}\n${rootHreflangTags}\n  </head>`,
+);
 writeFileSync(join(distDir, 'index.html'), rootHtmlPatched);
-console.log('✅ Hreflang injected: dist/index.html');
+console.log('✅ Hreflang + canonical injected: dist/index.html');
 
 for (const page of pages) {
   const htmlWithMeta = baseHtml

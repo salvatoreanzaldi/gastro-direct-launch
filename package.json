@@ -14,6 +14,9 @@
     "test": "vitest run",
     "test:watch": "vitest",
     "validate:schema": "node scripts/validate-schema.mjs",
+    "audit:hreflang": "node scripts/audit-hreflang-canonical.mjs",
+    "audit:vercel-leaks": "if grep -rIl 'vercel\\.app' dist/ 2>/dev/null; then echo '❌ vercel.app references leaked into dist/' >&2; exit 1; else echo '✅ No vercel.app leaks in dist/'; fi",
+    "audit:all": "npm run audit:hreflang && npm run audit:vercel-leaks",
     "sync-reviews": "node scripts/sync-reviews.js",
     "import-reviews": "node scripts/import-reviews-to-sheet.js",
     "download-avatars": "node scripts/download-review-avatars.js"
