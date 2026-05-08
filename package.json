@@ -17,6 +17,7 @@
     "audit:hreflang": "node scripts/audit-hreflang-canonical.mjs",
     "audit:vercel-leaks": "if grep -rIl 'vercel\\.app' dist/ 2>/dev/null; then echo '❌ vercel.app references leaked into dist/' >&2; exit 1; else echo '✅ No vercel.app leaks in dist/'; fi",
     "audit:all": "npm run audit:hreflang && npm run audit:vercel-leaks",
+    "generate:blog-posts": "node scripts/generate-blog-posts.mjs",
     "sync-reviews": "node scripts/sync-reviews.js",
     "import-reviews": "node scripts/import-reviews-to-sheet.js",
     "download-avatars": "node scripts/download-review-avatars.js"
@@ -100,8 +101,10 @@
     "eslint-plugin-react-refresh": "^0.4.20",
     "exceljs": "^4.4.0",
     "globals": "^15.15.0",
+    "gray-matter": "^4.0.3",
     "jsdom": "^20.0.3",
     "lovable-tagger": "^1.1.13",
+    "marked": "^18.0.3",
     "postcss": "^8.5.6",
     "sharp": "^0.34.5",
     "tailwindcss": "^3.4.17",

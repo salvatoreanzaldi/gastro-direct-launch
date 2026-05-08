@@ -31,7 +31,7 @@
     { "source": "/blog/restaurant-mieten-oder-kaufen-ratgeber-fur-gastronomen/",                              "destination": "/de/blog/miete-pacht-gastronomie", "permanent": true },
     { "source": "/blog/restaurant-pachten-oder-kaufen-ratgeber-fur-den-einstieg-in-die-gastronomie/",        "destination": "/de/blog/miete-pacht-gastronomie", "permanent": true },
     { "source": "/gastronomie-trends-2024/",                            "destination": "/de/blog/gastronomie-trends-2026",           "permanent": true },
-    { "source": "/restaurant-namen-witzig/",                            "destination": "/de/blog/restaurant-namen-markenrechtlich-pruefen", "permanent": true },
+    { "source": "/restaurant-namen-witzig/",                            "destination": "/de/blog/witzige-restaurant-namen",          "permanent": true },
     { "source": "/lieferando-provision/",                               "destination": "/de/blog/lieferando-provision-2026",         "permanent": true },
     { "source": "/zukunft-der-essenslieferungen/",                      "destination": "/de/blog/zukunft-essenslieferungen-2026",    "permanent": true },
     { "source": "/lustige-werbespruche/",                               "destination": "/de/blog/lustige-werbesprueche-gastronomie", "permanent": true },
@@ -45,7 +45,18 @@
     { "source": "/gastro-master-blogposts/",                            "destination": "/de/blog",                                  "permanent": true },
     { "source": "/pizza-lieferservice-in-der-nahe/",                    "destination": "/de/blog",                                  "permanent": true },
     { "source": "/seacuterie/",                                         "destination": "/de/blog",                                  "permanent": true },
-    { "source": "/erfolgsstories/",                                     "destination": "/de/blog",                                  "permanent": true }
+    { "source": "/erfolgsstories/",                                     "destination": "/de/blog",                                  "permanent": true },
+
+    { "source": "/darf-man-mit-14-in-der-gastronomie-arbeiten/",                                              "destination": "/de/blog/darf-man-mit-14-in-der-gastronomie-arbeiten",      "permanent": true },
+    { "source": "/lieferando-geld/",                                                                          "destination": "/de/blog/lieferando-geld-zurueckfordern",                   "permanent": true },
+    { "source": "/essen-bestellen-klarna/",                                                                   "destination": "/de/blog/essen-bestellen-mit-klarna",                       "permanent": true },
+    { "source": "/tipps-um-sich-auf-der-lieferando-plattform/",                                               "destination": "/de/blog/lieferando-portal-richtig-nutzen",                 "permanent": true },
+    { "source": "/speisekarte-mit-bildern/",                                                                  "destination": "/de/blog/speisekarte-mit-bildern-erstellen",                "permanent": true },
+    { "source": "/wolt-vs-lieferando/",                                                                       "destination": "/de/blog/wolt-vs-lieferando",                               "permanent": true },
+    { "source": "/arbeitsbedingungen-bei-wolt/",                                                              "destination": "/de/blog/wolt-fahrer-arbeitsbedingungen",                   "permanent": true },
+    { "source": "/wie-viele-pizzen-verkauft-eine-pizzeria-am-tag-hinter-den-ofenkulissen/",                   "destination": "/de/blog/wie-viele-pizzen-verkauft-pizzeria-pro-tag",       "permanent": true },
+    { "source": "/lieferando-partner-werden/",                                                                "destination": "/de/blog/lieferando-partner-werden-vor-und-nachteile",      "permanent": true },
+    { "source": "/best-food-delivery-apps-in-germany/",                                                       "destination": "/de/blog/beste-bestell-apps-deutschland-2026",              "permanent": true }
   ],
   "rewrites": [
     { "source": "/(.*)", "destination": "/index.html" }

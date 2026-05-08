@@ -6,6 +6,13 @@
 import { readFileSync, writeFileSync, readdirSync } from "fs";
 import { resolve, dirname, join } from "path";
 import { fileURLToPath } from "url";
+import matter from "gray-matter";
+import { marked } from "marked";
+
+// Markdown → HTML config for flat-MD batches (Batch 21+).
+// `mangle: false`/`headerIds: false`: keep clean HTML without injected anchor IDs.
+// Inline HTML (callout boxes, disclaimers) passes through unchanged.
+marked.setOptions({ mangle: false, headerIds: false });
 
 const __dirname = dirname(fileURLToPath(import.meta.url));
 const ROOT = resolve(__dirname, "..");
@@ -34,7 +41,34 @@ const BATCH_DIRS = [
   "batch-18-cluster8-betrieb-service",
   "batch-19-cluster8-9-uebergang",
   "batch-20-cluster9-finale",
+  "batch-21-migrations-altsite",
 ];
+
+/**
+ * Slug → Category-Label-Mapping für Batch 21 (flat-MD-Format).
+ * Die YAML-cluster-Werte ("21-migrations-altsite") matchen keine
+ * kanonische Kategorie — daher slug-basiertes Override-Mapping.
+ * Kategorien-Labels matchen src/config/blog-categories.ts.
+ */
+const FLAT_MD_CATEGORY_BY_SLUG = {
+  "darf-man-mit-14-in-der-gastronomie-arbeiten": "Personal & Schulung",
+  "lieferando-geld-zurueckfordern": "Lieferservice",
+  "essen-bestellen-mit-klarna": "Finanzen",
+  "lieferando-portal-richtig-nutzen": "Lieferservice",
+  "speisekarte-mit-bildern-erstellen": "Website & Marketing",
+  "wolt-vs-lieferando": "Lieferservice",
+  "wolt-fahrer-arbeitsbedingungen": "Lieferservice",
+  "witzige-restaurant-namen": "Website & Marketing",
+  "wie-viele-pizzen-verkauft-pizzeria-pro-tag": "Betrieb & Service",
+  "lieferando-partner-werden-vor-und-nachteile": "Lieferservice",
+  "beste-bestell-apps-deutschland-2026": "Bestellsysteme",
+  "lieferando-bewertung-loeschen-antworten": "Lieferservice",
+  "lieferando-mindestbestellwert-richtig-setzen": "Lieferservice",
+  "ferienjob-gastronomie-rechtliche-grundlagen-2026": "Personal & Schulung",
+  "paypal-beim-essen-bestellen-restaurant-vorteile": "Finanzen",
+  "bnpl-im-lieferdienst-vergleich": "Finanzen",
+  "lieferando-bestellung-storniert-restaurant-perspektive": "Lieferservice",
+};
 
 /**
  * Normalize meta: handle both top-level fields and nested post_meta format.
@@ -638,10 +672,205 @@ function getCategory(meta) {
   return "Betrieb & Service";
 }
 
+/**
+ * Parse a flat-Markdown file (Batch 21+ format): YAML-frontmatter + Markdown body.
+ * Returns a normalized meta object + HTML-converted body, compatible with the
+ * meta.json / wordpress.html pipeline used by Batches 1-20.
+ *
+ * Returns null if frontmatter is invalid (e.g., no slug).
+ */
+/**
+ * Slugify a heading text into a stable anchor-id. Matches TOC-Listenpunkte
+ * gegen H2-Headings: führendes "N. " wird entfernt, Umlaute transkribiert,
+ * dann lowercase + dash-separated.
+ *
+ * Beispiel:
+ *   slugifyHeading("1. Die kurze Antwort vorab") → "die-kurze-antwort-vorab"
+ *   slugifyHeading("Die kurze Antwort vorab")    → "die-kurze-antwort-vorab"  (matcht!)
+ *   slugifyHeading("Inhaltsverzeichnis")          → "inhaltsverzeichnis"
+ */
+function slugifyHeading(text) {
+  return String(text)
+    .replace(/^\s*\d+\.\s+/, "") // strip leading "1. ", "2. ", etc.
+    .replace(/&amp;/g, "and")
+    .replace(/&[a-z]+;/gi, "")    // strip remaining HTML entities
+    .toLowerCase()
+    .replace(/ä/g, "ae")
+    .replace(/ö/g, "oe")
+    .replace(/ü/g, "ue")
+    .replace(/ß/g, "ss")
+    .normalize("NFD")
+    .replace(/[̀-ͯ]/g, "")
+    .replace(/[^a-z0-9\s-]/g, "")
+    .replace(/\s+/g, "-")
+    .replace(/-+/g, "-")
+    .replace(/^-|-$/g, "")
+    .substring(0, 80);
+}
+
+/**
+ * Inject TOC-Anchor-Logic in flat-MD-converted HTML:
+ *   1. Jeder <h2> bekommt id="<slug>" (slugifyHeading auf Heading-Text)
+ *   2. Die <ol>, die direkt auf <h2 id="inhaltsverzeichnis">folgt,
+ *      bekommt jedes <li> als <a href="#<slug>">...</a> umschlossen.
+ *
+ * Match-Regel: TOC-li-Text "Die kurze Antwort vorab" → slug "die-kurze-antwort-vorab",
+ * matcht H2 "1. Die kurze Antwort vorab" weil slugifyHeading führende "N. " entfernt.
+ */
+function injectTocAnchors(html) {
+  // Step 1: add id to every <h2> without existing id-attribute
+  let result = html.replace(/<h2(?!\s+[^>]*id=)>([\s\S]*?)<\/h2>/g, (_, inner) => {
+    // Strip nested HTML for slug-source, keep inner unchanged in output
+    const text = inner.replace(/<[^>]+>/g, "");
+    const id = slugifyHeading(text);
+    return `<h2 id="${id}">${inner}</h2>`;
+  });
+
+  // Step 2: wrap <li>-items in TOC ol with anchor links.
+  // Anchor: erste <ol> nach <h2 id="inhaltsverzeichnis">.
+  result = result.replace(
+    /(<h2 id="inhaltsverzeichnis">[\s\S]*?<\/h2>\s*<ol>)([\s\S]*?)(<\/ol>)/,
+    (_, prefix, listBody, suffix) => {
+      const newBody = listBody.replace(
+        /<li>([\s\S]*?)<\/li>/g,
+        (__, itemText) => {
+          // Use the visible text content for slug-matching.
+          const text = itemText.replace(/<[^>]+>/g, "").trim();
+          const id = slugifyHeading(text);
+          return `<li><a href="#${id}">${itemText}</a></li>`;
+        },
+      );
+      return prefix + newBody + suffix;
+    },
+  );
+
+  return result;
+}
+
+/**
+ * Coerce gray-matter's parsed YAML date (Date object) into "YYYY-MM-DD"
+ * string format — matches the date-only format used by Batches 1-20.
+ */
+function toDateString(value) {
+  if (!value) return null;
+  if (value instanceof Date) {
+    const yyyy = value.getUTCFullYear();
+    const mm = String(value.getUTCMonth() + 1).padStart(2, "0");
+    const dd = String(value.getUTCDate()).padStart(2, "0");
+    return `${yyyy}-${mm}-${dd}`;
+  }
+  // Already a string — accept as-is, strip any trailing time portion
+  return String(value).split("T")[0];
+}
+
+function parseFlatMarkdownFile(filePath, batchDir) {
+  const raw = readFileSync(filePath, "utf-8");
+  const parsed = matter(raw);
+  const fm = parsed.data;
+  if (!fm.slug) return null;
+
+  // Convert MD body → HTML via marked. Inline HTML passes through unchanged.
+  const bodyHtmlRaw = marked.parse(parsed.content);
+  // Reuse existing cleanBodyHtml for whitespace + safety.
+  const bodyHtmlClean = cleanBodyHtml(bodyHtmlRaw);
+  // Inject id-Attribute auf H2 + Anchor-Links im TOC <ol>.
+  const bodyHtml = injectTocAnchors(bodyHtmlClean);
+
+  // Reading time: ceil(words / 250)
+  const words = countWords(bodyHtml);
+  const readingTime = Math.max(1, Math.ceil(words / 250));
+
+  // Cluster override: slug-based mapping for batches whose YAML "cluster"
+  // doesn't match a canonical category (e.g., Batch 21 → "21-migrations-altsite").
+  const categoryOverride = FLAT_MD_CATEGORY_BY_SLUG[fm.slug];
+
+  // Author: keep authors[] array; existing isSalvatore-Logik (in main loop)
+  // erzeugt automatisch "René Ebert & Sanjaya Pattiyage" für non-Salvatore-Slugs.
+
+  return {
+    meta: {
+      slug: fm.slug,
+      title: fm.title,
+      meta_description: fm.meta_description,
+      focus_keyword: fm.focus_keyword,
+      main_keyword: fm.focus_keyword ? { term: fm.focus_keyword } : null,
+      secondary_keywords: Array.isArray(fm.secondary_keywords)
+        ? fm.secondary_keywords
+        : [],
+      publish_date: toDateString(fm.date || fm.publish_date),
+      modified_date: toDateString(fm.modified_date || fm.date || fm.publish_date),
+      cluster: categoryOverride || fm.cluster,
+      categories: categoryOverride ? [categoryOverride] : (fm.categories || []),
+      tags: Array.isArray(fm.tags) ? fm.tags : [],
+      reading_time_minutes: readingTime,
+      canonical_url: fm.canonical_url,
+      authors: Array.isArray(fm.authors) ? fm.authors : null,
+      old_url: fm.old_url || null,
+      _source: "flat-md",
+      _batchDir: batchDir,
+    },
+    bodyHtml,
+  };
+}
+
 // ─── Main ─────────────────────────────────────────────────────────────────────
 
 const posts = [];
 const errors = [];
+
+/**
+ * Build a post object from a normalized meta + bodyHtml + optional jsonLd input,
+ * apply schema fixes, and push into the posts array.
+ * Used by both the meta.json + wordpress.html path (Batches 1-20) and the
+ * flat-MD path (Batch 21+).
+ */
+function buildAndPushPost({ meta, bodyHtml, jsonLdInput }) {
+  const slug = meta.slug;
+  const isSalvatore = SALVATORE_SLUGS.has(slug);
+
+  let jsonLd = jsonLdInput || "";
+  if (!jsonLd || jsonLd.trim() === "") {
+    jsonLd = buildFallbackJsonLd({
+      title: getTitle(meta),
+      description: getDescription(meta),
+      datePublished: meta.publish_date || "2026-01-01",
+    });
+  }
+  jsonLd = fixJsonLdMeta(jsonLd, { slug, bodyHtml, isSalvatore });
+
+  const productLinks = extractProductLinks(meta.internal_links || {});
+  const internalLinks = productLinks
+    .filter((url) => typeof url === "string" && url.startsWith("/"))
+    .slice(0, 3)
+    .map((url) => ({ title: urlToTitle(url), href: "/de" + url }));
+
+  const secondaryKeywords = getSecondaryKeywords(meta);
+  const mainKeywordTerm = meta.main_keyword?.term || meta.focus_keyword || "";
+  const keywords = [mainKeywordTerm, ...secondaryKeywords].filter(Boolean);
+
+  const post = {
+    id: meta.post_id ? `post-${meta.post_id}` : `post-${slug}`,
+    slug,
+    title: getTitle(meta),
+    description: getDescription(meta),
+    excerpt: generateExcerpt(bodyHtml, getTitle(meta)),
+    metaDescription: getDescription(meta),
+    bodyHtml,
+    jsonLd,
+    author: isSalvatore ? "Salvatore Anzaldi" : "René Ebert & Sanjaya Pattiyage",
+    publishedDate: meta.publish_date || "2026-01-01",
+    category: getCategory(meta),
+    tags: Array.isArray(meta.tags) ? meta.tags : [],
+    keywords,
+    readingTime: getReadingTime(meta),
+    featured: false,
+    internalLinks,
+    faqItems: [],
+    sections: [],
+  };
+
+  posts.push(post);
+}
 
 for (const batchDir of BATCH_DIRS) {
   const batchPath = join(BLOG_EXPORTS_DIR, batchDir);
@@ -654,7 +883,7 @@ for (const batchDir of BATCH_DIRS) {
     continue;
   }
 
-  // Find all meta.json files
+  // Path 1 — Batches 1-20: meta.json + wordpress.html
   const metaFiles = files.filter((f) => f.endsWith("-meta.json"));
 
   for (const metaFile of metaFiles) {
@@ -682,14 +911,13 @@ for (const batchDir of BATCH_DIRS) {
     );
 
     let bodyHtml = "";
-    let jsonLd = "";
-    const isSalvatore = SALVATORE_SLUGS.has(slug);
+    let jsonLdInput = "";
 
     if (wpFile) {
       try {
         const wpContent = readFileSync(join(batchPath, wpFile), "utf-8");
         bodyHtml = cleanBodyHtml(wpContent);
-        jsonLd = extractJsonLd(wpContent);
+        jsonLdInput = extractJsonLd(wpContent);
       } catch (e) {
         errors.push(`Failed to read ${wpFile}: ${e.message}`);
       }
@@ -697,56 +925,33 @@ for (const batchDir of BATCH_DIRS) {
       errors.push(`No wordpress.html found for slug: ${slug} in ${batchDir}`);
     }
 
-    // Fallback: build a minimal Article skeleton if the source HTML had no JSON-LD.
-    // (fixJsonLdMeta will then enrich it with deterministic author/publisher/image/etc.)
-    if (!jsonLd || jsonLd.trim() === "") {
-      jsonLd = buildFallbackJsonLd({
-        title: getTitle(meta),
-        description: getDescription(meta),
-        datePublished: meta.publish_date || "2026-01-01",
-      });
+    buildAndPushPost({ meta, bodyHtml, jsonLdInput });
+  }
+
+  // Path 2 — Batch 21+: flat-MD (.md mit YAML-Frontmatter, kein -meta.json/-wordpress.html-Peer)
+  // Filter: nur Files mit numerischem Prefix (z.B. "01-foo.md") — schließt BATCH-XX-*.md
+  // README/Redirect-Notes aus, die keine Posts sind.
+  const mdFiles = files.filter(
+    (f) => f.endsWith(".md") && /^\d+-/.test(f),
+  );
+  for (const mdFile of mdFiles) {
+    const baseName = mdFile.replace(/\.md$/, "");
+    // Skip if a -meta.json peer with same prefix exists (handled by Path 1)
+    const hasMetaJsonPeer = files.some(
+      (f) => f.startsWith(baseName) && f.endsWith("-meta.json"),
+    );
+    if (hasMetaJsonPeer) continue;
+
+    const result = parseFlatMarkdownFile(join(batchPath, mdFile), batchDir);
+    if (!result) {
+      errors.push(`Invalid flat-MD frontmatter: ${mdFile} in ${batchDir}`);
+      continue;
     }
-
-    // Apply all schema fixes (B.1–B.7)
-    jsonLd = fixJsonLdMeta(jsonLd, { slug, bodyHtml, isSalvatore });
-
-    // Build internalLinks
-    const productLinks = extractProductLinks(meta.internal_links || {});
-    const internalLinks = productLinks
-      .filter((url) => typeof url === "string" && url.startsWith("/"))
-      .slice(0, 3) // max 3 per rule
-      .map((url) => ({
-        title: urlToTitle(url),
-        href: "/de" + url,
-      }));
-
-    // Build post
-    const secondaryKeywords = getSecondaryKeywords(meta);
-    const mainKeywordTerm = meta.main_keyword?.term || meta.focus_keyword || "";
-    const keywords = [mainKeywordTerm, ...secondaryKeywords].filter(Boolean);
-
-    const post = {
-      id: meta.post_id ? `post-${meta.post_id}` : `post-${slug}`,
-      slug,
-      title: getTitle(meta),
-      description: getDescription(meta),
-      excerpt: generateExcerpt(bodyHtml, getTitle(meta)),
-      metaDescription: getDescription(meta),
-      bodyHtml,
-      jsonLd,
-      author: isSalvatore ? "Salvatore Anzaldi" : "René Ebert & Sanjaya Pattiyage",
-      publishedDate: meta.publish_date || "2026-01-01",
-      category: getCategory(meta),
-      tags: Array.isArray(meta.tags) ? meta.tags : [],
-      keywords,
-      readingTime: getReadingTime(meta),
-      featured: false,
-      internalLinks,
-      faqItems: [],
-      sections: [],
-    };
-
-    posts.push(post);
+    buildAndPushPost({
+      meta: result.meta,
+      bodyHtml: result.bodyHtml,
+      jsonLdInput: "",
+    });
   }
 }
 
