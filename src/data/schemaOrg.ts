@@ -56,7 +56,7 @@ export const ORG_NODE = {
     "@type": "ContactPoint",
     contactType: "customer support",
     areaServed: ["DE", "AT", "CH"],
-    availableLanguage: ["de", "en", "it"],
+    availableLanguage: ["de", "en", "it", "ru", "fa", "si"],
   },
   numberOfEmployees: { "@type": "QuantitativeValue", value: "30+" },
   areaServed: { "@type": "Country", name: "Deutschland" },
