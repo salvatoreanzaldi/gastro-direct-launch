@@ -11,15 +11,33 @@ export const SITE_URL = "https://gastro-master.de" as const;
 export const ORG_ID = `${SITE_URL}/#organization` as const;
 export const WEBSITE_ID = `${SITE_URL}/#website` as const;
 
-/** LinkedIn profiles sourced from public/locales/de/ueber-uns.json (team.founders[]). */
+/**
+ * LinkedIn profiles sourced from public/locales/de/ueber-uns.json (team.founders[]).
+ * Echte Mitgründer: René Ebert + Sanjaya Pattiyage.
+ * Salvatore Anzaldi ist Mitarbeiter (Marketing/SEO), nicht Founder — siehe STAFF.
+ */
 export const FOUNDERS = {
   sanjayaPattiyage: {
     name: "Sanjaya Pattiyage",
     linkedin: "https://www.linkedin.com/in/sanjaya-pattiyage/",
+    role: "Mitgründer & Chef-Entwickler",
   },
   reneEbert: {
     name: "René Ebert",
     linkedin: "https://www.linkedin.com/in/rene-ebert/",
+    role: "Mitgründer & CEO",
+  },
+} as const;
+
+/**
+ * Mitarbeitende-Profile (kein Founder-Status, aber legitime Person-Nodes
+ * im @graph für Author-Bylines, knowsAbout, etc.).
+ */
+export const STAFF = {
+  salvatoreAnzaldi: {
+    name: "Salvatore Anzaldi",
+    linkedin: "https://www.linkedin.com/in/salvatore-a-a42711208/",
+    role: "Marketing & SEO Operations",
   },
 } as const;
 
@@ -39,9 +57,14 @@ export const ORG_NODE = {
   "@type": "Organization",
   "@id": ORG_ID,
   name: "Gastro Master",
+  legalName: "Gastro Master GmbH",
   url: SITE_URL,
   logo: `${SITE_URL}/logo-gastro-master.png`,
   foundingDate: "2021",
+  founder: [
+    { "@type": "Person", "@id": `${SITE_URL}/#person-rene-ebert`, name: "René Ebert", sameAs: [FOUNDERS.reneEbert.linkedin] },
+    { "@type": "Person", "@id": `${SITE_URL}/#person-sanjaya-pattiyage`, name: "Sanjaya Pattiyage", sameAs: [FOUNDERS.sanjayaPattiyage.linkedin] },
+  ],
   description:
     "Kassensystem, eigene Lieferservice-App, Webshop und Webseite für deutsche Restaurants. Provisionsfreie Direktbestellungen, monatlich kündbar.",
   address: {
@@ -60,6 +83,18 @@ export const ORG_NODE = {
   },
   numberOfEmployees: { "@type": "QuantitativeValue", value: "30+" },
   areaServed: { "@type": "Country", name: "Deutschland" },
+  knowsAbout: [
+    "Restaurant-Bestellsysteme",
+    "Lieferdienst-Aufbau",
+    "DACH-Gastronomie-Tech",
+    "Foodcost-Optimierung",
+    "Restaurant-Operations",
+    "Lieferando-Alternative",
+    "Eigene Bestell-App",
+    "Restaurant-Marketing",
+    "TSE-Kassensysteme",
+    "Provisionsfreie Direktbestellungen",
+  ],
   sameAs: ORG_SAME_AS,
 } as const;
 

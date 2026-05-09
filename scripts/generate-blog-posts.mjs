@@ -546,12 +546,14 @@ function buildFallbackJsonLd({ title, description, datePublished }) {
  *   B.5 wordCount on Article/BlogPosting nodes
  *   B.6 Person.image for author objects
  *   B.7 author override based on isSalvatore flag
+ *   B.8 headline sync — wenn ctx.title gesetzt ist, überschreibt es alle node.headline
+ *       (Source-of-Truth: aktuelle post.title, nicht inline-jsonLd-headline)
  */
 function fixJsonLdMeta(jsonLdStr, ctx) {
   if (!jsonLdStr) return jsonLdStr;
   try {
     const obj = JSON.parse(jsonLdStr);
-    const { slug, bodyHtml, isSalvatore } = ctx;
+    const { slug, bodyHtml, isSalvatore, title } = ctx;
     const wordCount = countWords(bodyHtml);
     const correctAuthors = isSalvatore
       ? [AUTHOR_SALVATORE]
@@ -561,6 +563,14 @@ function fixJsonLdMeta(jsonLdStr, ctx) {
     const nodes = Array.isArray(obj["@graph"]) ? obj["@graph"] : [obj];
 
     for (const node of nodes) {
+      // B.8 — headline sync (only on Article/BlogPosting/etc., not Organization/FAQPage)
+      if (title && typeof node["@type"] === "string"
+          && (node["@type"].endsWith("Article") || node["@type"] === "BlogPosting" || node["@type"] === "NewsArticle")
+          && typeof node.headline === "string"
+          && node.headline !== title) {
+        node.headline = title;
+      }
+
       // B.1 — publisher.logo (on any node with publisher object)
       if (node.publisher && typeof node.publisher === "object" && !Array.isArray(node.publisher)) {
         node.publisher.logo = {
@@ -584,6 +594,14 @@ function fixJsonLdMeta(jsonLdStr, ctx) {
       }
 
       if (isContentNode(node)) {
+        // B.9 — SpeakableSpecification (Welle C: AI-Citation-Boost)
+        // Setzt cssSelector auf ".quotable" — alle <blockquote class="quotable">-Markups
+        // im Body werden so für Voice-Assistants + LLM-Citation als zitierbar markiert.
+        node.speakable = {
+          "@type": "SpeakableSpecification",
+          "cssSelector": [".quotable"],
+        };
+
         // B.2 — mainEntityOfPage.@id (always Object format with @type: WebPage)
         if (typeof node.mainEntityOfPage === "string") {
           node.mainEntityOfPage = { "@type": "WebPage", "@id": canonicalUrl };
@@ -628,7 +646,9 @@ function fixJsonLdMeta(jsonLdStr, ctx) {
  * Get the title from meta — prefers the longer `title` or `h1_title`, falls back to `meta_title`
  */
 function getTitle(meta) {
-  return meta.title || meta.h1_title || meta.meta_title || meta.slug || "";
+  // Priorität: title > h1_title > h1_titel (deutsche Schreibweise — Legacy-Aliase
+  // aus alten Batch-Meta-Files) > meta_title > slug-Fallback.
+  return meta.title || meta.h1_title || meta.h1_titel || meta.meta_title || meta.slug || "";
 }
 
 /**
@@ -748,6 +768,100 @@ function injectTocAnchors(html) {
 }
 
 /**
+ * Extract FAQ-Items aus dem Body-HTML.
+ * Sucht eine H2 mit "FAQ"/"Häufige Fragen"-Pattern, liest dann alle nachfolgenden
+ * H3+nachfolgende P-Inhalte als Q+A bis zur nächsten H2.
+ *
+ * Returns: [{ question, answer }, ...]   (leeres Array wenn keine FAQ-Sektion)
+ */
+function extractFaqsFromBody(bodyHtml) {
+  if (!bodyHtml) return [];
+  // Find FAQ-H2 (broad pattern: contains "FAQ" or "Häufige Fragen" / "Haeufige Fragen")
+  const faqH2Re =
+    /<h2[^>]*>([^<]*(?:FAQ|H[äa]ufige Fragen|F\.A\.Q|Q\s*&amp;\s*A|Q&amp;A)[^<]*)<\/h2>/i;
+  const m = bodyHtml.match(faqH2Re);
+  if (!m) return [];
+  const startIdx = m.index + m[0].length;
+  // Slice until next <h2> or end
+  const rest = bodyHtml.substring(startIdx);
+  const nextH2 = rest.search(/<h2[\s>]/i);
+  const faqSection = nextH2 >= 0 ? rest.substring(0, nextH2) : rest;
+  // Iterate H3 + first <p> after each H3
+  const faqs = [];
+  const itemRe = /<h3[^>]*>([\s\S]*?)<\/h3>([\s\S]*?)(?=<h3|$)/gi;
+  let im;
+  while ((im = itemRe.exec(faqSection)) !== null) {
+    const qHtml = im[1];
+    const aHtml = im[2];
+    const question = decodeHtmlEntities(qHtml.replace(/<[^>]+>/g, "").trim());
+    // Take first <p>...</p> as answer (may be multi-paragraph; concatenate first 1-2)
+    const pMatches = [...aHtml.matchAll(/<p[^>]*>([\s\S]*?)<\/p>/gi)];
+    if (pMatches.length === 0) continue;
+    const answerHtml = pMatches.slice(0, 2).map((x) => x[1]).join(" ");
+    const answer = decodeHtmlEntities(answerHtml.replace(/<[^>]+>/g, "").replace(/\s+/g, " ").trim());
+    if (!question || !answer || answer.length < 20) continue;
+    faqs.push({ question, answer });
+  }
+  return faqs;
+}
+
+/**
+ * Inject a FAQPage node into a parsed JSON-LD @graph (or wrap into one).
+ * If FAQPage already exists with mainEntity, this is a no-op (Source-Daten
+ * haben Vorrang). Sonst: neue FAQPage hinzufügen.
+ *
+ * Returns updated jsonLd-String.
+ */
+function injectFaqPageInGraph(jsonLdStr, faqs, slug) {
+  if (!jsonLdStr || faqs.length === 0) return jsonLdStr;
+  let obj;
+  try { obj = JSON.parse(jsonLdStr); } catch { return jsonLdStr; }
+
+  const ensureGraph = () => {
+    if (Array.isArray(obj["@graph"])) return obj["@graph"];
+    const graph = [{ ...obj }];
+    delete graph[0]["@context"];
+    return obj["@graph"] = graph;
+  };
+
+  const nodes = Array.isArray(obj["@graph"]) ? obj["@graph"] : [obj];
+  const existingFaq = nodes.find(
+    (n) => n["@type"] === "FAQPage" && Array.isArray(n.mainEntity) && n.mainEntity.length > 0,
+  );
+  if (existingFaq) {
+    // Source hat schon FAQPage. Merge-Regel: wenn Body MEHR Items als Source hat
+    // → Body gewinnt (Body ist die User-sichtbare Wahrheit). Sonst Source behalten.
+    if (faqs.length > existingFaq.mainEntity.length) {
+      existingFaq.mainEntity = faqs.map((q) => ({
+        "@type": "Question",
+        "name": q.question,
+        "acceptedAnswer": { "@type": "Answer", "text": q.answer },
+      }));
+      return JSON.stringify(obj, null, 2);
+    }
+    return jsonLdStr;
+  }
+
+  const faqPageNode = {
+    "@type": "FAQPage",
+    "@id": `${SITE_BASE}/de/blog/${slug}#faq`,
+    "mainEntity": faqs.map((q) => ({
+      "@type": "Question",
+      "name": q.question,
+      "acceptedAnswer": {
+        "@type": "Answer",
+        "text": q.answer,
+      },
+    })),
+  };
+
+  if (!obj["@context"]) obj["@context"] = "https://schema.org";
+  const graph = ensureGraph();
+  graph.push(faqPageNode);
+  return JSON.stringify(obj, null, 2);
+}
+
+/**
  * Coerce gray-matter's parsed YAML date (Date object) into "YYYY-MM-DD"
  * string format — matches the date-only format used by Batches 1-20.
  */
@@ -836,7 +950,14 @@ function buildAndPushPost({ meta, bodyHtml, jsonLdInput }) {
       datePublished: meta.publish_date || "2026-01-01",
     });
   }
-  jsonLd = fixJsonLdMeta(jsonLd, { slug, bodyHtml, isSalvatore });
+  jsonLd = fixJsonLdMeta(jsonLd, { slug, bodyHtml, isSalvatore, title: getTitle(meta) });
+
+  // Auto-extract FAQs aus Body und in jsonLd injizieren, falls noch keine FAQPage da
+  // (Source-Daten haben Vorrang — Auto-Inject ergänzt nur Lücken).
+  const bodyFaqs = extractFaqsFromBody(bodyHtml);
+  if (bodyFaqs.length > 0) {
+    jsonLd = injectFaqPageInGraph(jsonLd, bodyFaqs, slug);
+  }
 
   const productLinks = extractProductLinks(meta.internal_links || {});
   const internalLinks = productLinks

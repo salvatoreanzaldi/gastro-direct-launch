@@ -107,8 +107,10 @@ while ((bp = blogPostRegex.exec(blogPostsSource)) !== null) {
 
 for (const { slug, publishedDate } of blogPosts) {
   const loc = `${BASE_URL}/de/blog/${slug}`;
+  // lastmod: today (statt publishedDate) — signalisiert GSC die laufenden
+  // Polish-Wellen (FAQ-Erweiterung, Internal-Links, Quotables, Schema-Upgrades).
   urlEntries.push(
-    `  <url>\n    <loc>${loc}</loc>\n    <lastmod>${publishedDate}</lastmod>\n    <changefreq>monthly</changefreq>\n    <priority>0.7</priority>\n  </url>`,
+    `  <url>\n    <loc>${loc}</loc>\n    <lastmod>${today}</lastmod>\n    <changefreq>monthly</changefreq>\n    <priority>0.7</priority>\n  </url>`,
   );
 }
 

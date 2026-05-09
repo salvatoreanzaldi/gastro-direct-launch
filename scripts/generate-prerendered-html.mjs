@@ -70,38 +70,73 @@ const REVIEW_META = reviewsData?.meta ?? { totalCount: 0, totalRating: 0 };
 const FOUNDERS = [
   {
     name: 'René Ebert',
-    jobTitle: 'Gründer & CEO',
+    jobTitle: 'Mitgründer & CEO',
     sameAs: ['https://www.linkedin.com/in/rene-ebert/'],
-    url: 'https://www.linkedin.com/in/rene-ebert/',
+    url: 'https://gastro-master.de/de/uber-uns#rene-ebert',
     description:
-      'René Ebert ist Mitgründer und CEO von Gastro Master, einer in Usingen (Hessen) ansässigen Software-Plattform für Restaurant-Bestellsysteme. Seit der Gründung 2021 hat das Unternehmen über 800 Restaurants in Deutschland, Österreich und der Schweiz mit Webshop, eigener App, Webseite und Kassensystem ausgestattet.',
+      'René Ebert ist Mitgründer und CEO von Gastro Master, einer in Usingen (Hessen) ansässigen Software-Plattform für Restaurant-Bestellsysteme. Seit der Gründung 2021 hat das Unternehmen über 800 Restaurants in Deutschland, Österreich und der Schweiz mit Webshop, eigener App, Webseite und Kassensystem ausgestattet. René verantwortet Sales, Customer-Success und Strategie. Aus regelmäßigen Beratungsgesprächen mit Restaurant-Inhabern weiß er, welche Fragen Gastronomen vor der Digitalisierung wirklich umtreiben — von TSE-Konformität über Provisions-Math bis zur Frage, ob eine eigene App sich für ein Pizzeria-Setup mit 100 Bestellungen pro Woche überhaupt rechnet. Seine Blog-Beiträge fokussieren sich auf praktische Entscheidungshilfen, Branchen-Benchmarks und ehrliche Trade-off-Diskussionen ohne Marketing-Schönfärberei.',
     knowsAbout: [
       'Restaurant-Bestellsysteme',
       'Provisionsfreie Direktbestellungen',
       'TSE-zertifizierte Kassensysteme',
       'Lieferdienst-Software',
       'Gastronomie-Digitalisierung',
+      'Sales-Strategie DACH-Gastro',
+      'Customer-Success-Operations',
+      'Vergleich Lieferando vs. Eigenlieferung',
     ],
   },
   {
     name: 'Sanjaya Pattiyage',
-    jobTitle: 'Gründer & CEO',
+    jobTitle: 'Mitgründer & Chef-Entwickler',
     sameAs: ['https://www.linkedin.com/in/sanjaya-pattiyage/'],
-    url: 'https://www.linkedin.com/in/sanjaya-pattiyage/',
+    url: 'https://gastro-master.de/de/uber-uns#sanjaya-pattiyage',
     description:
-      'Sanjaya Pattiyage ist Mitgründer und CEO von Gastro Master mit Sitz in Usingen (Hessen). Das 2021 gegründete Unternehmen betreut über 800 Gastronomen im DACH-Raum mit einer All-in-One-Lösung aus Webshop, eigener App, Webseite und TSE-zertifiziertem Kassensystem.',
+      'Sanjaya Pattiyage ist Mitgründer und Chef-Entwickler von Gastro Master mit Sitz in Usingen (Hessen). Das 2021 gegründete Unternehmen betreut über 800 Gastronomen im DACH-Raum mit einer All-in-One-Lösung aus Webshop, eigener App, Webseite und TSE-zertifiziertem Kassensystem. Sanjaya verantwortet die technische Architektur — vom Backend für Bestellabwicklung über die Mobile-Apps (iOS + Android) bis zum mehrsprachigen Frontend in sechs Sprachen (DE/EN/IT/RU/FA/SI). Seine Blog-Beiträge konzentrieren sich auf technische Themen wie Cloud-POS-Vergleiche, Bestellsystem-Schnittstellen, Performance-Optimierung und Datenschutz-konforme Implementierung. Aus 800+ aktiven Restaurants im Live-Betrieb kennt er die typischen Edge-Cases: Wenn der Internet-Anschluss am Samstagabend bricht, wenn die Lieferando-API einen unerwarteten Status zurückgibt, wenn der TSE-Anbieter ein unangekündigtes Update einspielt.',
     knowsAbout: [
-      'Restaurant-Software',
+      'Restaurant-Software-Architektur',
       'Bestell-App-Entwicklung',
       'Webshop-Plattformen',
+      'Cloud-POS-Systeme',
+      'TSE-Integration',
       'Mehrsprachiger Support (DE/EN/IT/RU/FA/SI)',
       'DACH-Gastronomie-Markt',
+      'Lieferando-/Wolt-Schnittstellen',
     ],
   },
 ];
 
+// STAFF — Mitarbeitende mit legitimer Person-Node-Präsenz (z. B. als Author),
+// aber NICHT als Founder. Werden in personSchemaByName gemerged, aber NICHT
+// in Organization.founder[] eingefügt.
+const STAFF = [
+  {
+    name: 'Salvatore Anzaldi',
+    jobTitle: 'Marketing & SEO Operations',
+    sameAs: ['https://www.linkedin.com/in/salvatore-a-a42711208/'],
+    url: 'https://gastro-master.de/de/uber-uns#salvatore-anzaldi',
+    description:
+      'Salvatore Anzaldi verantwortet bei Gastro Master Marketing, SEO und Customer-Strategie. Er pflegt die Website, koordiniert die Content-Pipeline und sorgt dafür, dass Restaurant-Inhaber im DACH-Raum die Plattform überhaupt finden — über Google, ChatGPT und Branchen-Netzwerke. In seiner täglichen Arbeit sieht er aus erster Hand, welche Fragen Pizzerien, Lieferdienste und Restaurants vor der Digitalisierung wirklich umtreiben: was bei Lieferando-Verträgen wirklich passiert, wo die Foodcost-Hebel liegen, wann eine eigene App sich rechnet und wann nicht. Aus mehr als 800 aktiven Customer-Cases destilliert er die Themen, die im Blog landen, und schreibt gelegentlich selbst — vor allem zu Lieferdienst-Aufbau aus Operations-Sicht und Provisionsmodell-Math. Die 131 Google-Bewertungen mit 5,0-Schnitt sind das Ergebnis einer engen Customer-Success-Arbeit, die er gemeinsam mit dem Team Tag für Tag pflegt.',
+    knowsAbout: [
+      'Restaurant-Marketing DACH',
+      'Local SEO Gastronomie',
+      'Customer-Success-Operations',
+      'Content-Strategie Restaurant-Blog',
+      'Lieferdienst-Aufbau aus Operations-Sicht',
+      'Provisionsmodell-Math',
+      'Foodcost-Optimierung',
+      'Lieferando-Alternative',
+      'Pizzeria-Operations',
+      'Customer-Story-Curation',
+    ],
+  },
+];
+
+// Person-Schema-Map enthält FOUNDERS + STAFF — beide bekommen vollständige
+// Person-Nodes im @graph (für Author-Bylines, knowsAbout, etc.).
+// Unterscheidung Founder vs. Staff erfolgt NUR via Organization.founder[] (siehe unten).
 const personSchemaByName = new Map(
-  FOUNDERS.map((f) => [
+  [...FOUNDERS, ...STAFF].map((f) => [
     f.name,
     {
       "@type": "Person",
@@ -453,7 +488,7 @@ const buildReviewNodes = () => {
       const replacement = `<script type="application/ld+json">\n${JSON.stringify(graph)}\n    </script>`;
       baseHtml = baseHtml.replace(graphMatch[0], replacement);
       console.log(
-        `✅ @graph enriched: AggregateRating (${REVIEW_META.totalRating}★ · ${REVIEW_META.totalCount}) + ${FOUNDERS.length} Person + 1 SoftwareApplication + ${PACKAGES.length} Service + ${reviewNodes.length} Review nodes`,
+        `✅ @graph enriched: AggregateRating (${REVIEW_META.totalRating}★ · ${REVIEW_META.totalCount}) + ${personSchemaByName.size} Person (${FOUNDERS.length} Founder + ${STAFF.length} Staff) + 1 SoftwareApplication + ${PACKAGES.length} Service + ${reviewNodes.length} Review nodes`,
       );
     } catch (e) {
       console.warn('⚠️ Could not enrich @graph:', e.message);
@@ -2506,20 +2541,27 @@ const extractFirstSection = (bodyHtml) => {
 // pairs until the next <h2> (or end). Returns null if no FAQ section.
 const extractFaqItems = (bodyHtml) => {
   if (!bodyHtml) return null;
-  const faqHeadingRe = /<h2[^>]*>\s*(?:FAQ|Häufige|Frequently)[^<]*<\/h2>/i;
+  // Permissive heading match: catches "FAQ", "Häufige Fragen", "7. Häufige Fragen...",
+  // "8. FAQ — 12 Antworten", "Q&A", etc. Match must be inside the H2 text.
+  const faqHeadingRe =
+    /<h2[^>]*>([^<]*(?:FAQ|H[äa]ufige Fragen|F\.A\.Q|Frequently|Q\s*&amp;\s*A|Q&amp;A)[^<]*)<\/h2>/i;
   const headingMatch = bodyHtml.match(faqHeadingRe);
   if (!headingMatch) return null;
   const start = headingMatch.index + headingMatch[0].length;
   // FAQ section ends at the next <h2> or end-of-document.
   const nextH2 = bodyHtml.slice(start).search(/<h2[^>]*>/i);
   const section = nextH2 >= 0 ? bodyHtml.slice(start, start + nextH2) : bodyHtml.slice(start);
-  // Pair every <h3>...</h3> with the immediately following <p>...</p>.
+  // Pair every <h3>...</h3> with the following <p>...</p>(s) — answer can be 1-2 paragraphs.
   const items = [];
-  const pairRe = /<h3[^>]*>([\s\S]*?)<\/h3>\s*<p[^>]*>([\s\S]*?)<\/p>/gi;
+  const itemRe = /<h3[^>]*>([\s\S]*?)<\/h3>([\s\S]*?)(?=<h3|$)/gi;
   let pm;
-  while ((pm = pairRe.exec(section)) !== null) {
+  while ((pm = itemRe.exec(section)) !== null) {
     const q = stripTagsToText(pm[1]);
-    const a = stripTagsToText(pm[2]);
+    const aBlock = pm[2];
+    const pMatches = [...aBlock.matchAll(/<p[^>]*>([\s\S]*?)<\/p>/gi)];
+    if (pMatches.length === 0) continue;
+    const aRaw = pMatches.slice(0, 2).map((x) => x[1]).join(' ');
+    const a = stripTagsToText(aRaw);
     if (q && a && q.length < 250 && a.length > 20) items.push({ q, a });
   }
   return items.length >= 2 ? items : null;
@@ -2566,7 +2608,61 @@ const buildBlogPostingSchema = (post) => {
     keywords: [...(post.keywords ?? []), ...(post.tags ?? [])].join(", "),
     wordCount: countWords(post.bodyHtml),
     inLanguage: "de-DE",
+    // Welle C: SpeakableSpecification — Voice-Assistants + LLM-Citation auf
+    // <blockquote class="quotable"> — von generate-blog-posts.mjs ins post.jsonLd
+    // injiziert; hier nochmal konsistent für die per-post BlogPosting-Schema.
+    speakable: {
+      "@type": "SpeakableSpecification",
+      "cssSelector": [".quotable"],
+    },
   };
+};
+
+// Welle D — Extract top-N quotables from bodyHtml (<blockquote class="quotable">).
+// Ordering: längste/inhaltsreichste zuerst (Math/Zahl-haltig priorisiert).
+// Returns Array of plain-text quotables (Tags entfernt, Entities decoded).
+const extractTopQuotables = (bodyHtml, n = 3) => {
+  if (!bodyHtml) return [];
+  const matches = [...bodyHtml.matchAll(/<blockquote\b[^>]*class="quotable"[^>]*>([\s\S]*?)<\/blockquote>/gi)];
+  if (matches.length === 0) return [];
+  const candidates = matches.map((m) => {
+    // Extrahiere ersten <p>-Inhalt oder den ganzen Inner-Content
+    const inner = m[1];
+    const pMatch = inner.match(/<p[^>]*>([\s\S]*?)<\/p>/i);
+    const text = stripTagsToText(pMatch ? pMatch[1] : inner);
+    // Score: +5 base · +3 wenn Zahl+Unit · +2 wenn Datenquelle (DEHOGA/Statista/Faustregel) · Länge-Bonus
+    let score = 5;
+    if (/\d+(?:[.,]\d+)?\s*(?:%|€|EUR|Std|Min|Stunden|Minuten|Tage|Wochen|Monate|Jahre|Personen|Bestellungen|Mitarbeitende|kg|m²)/iu.test(text)) score += 3;
+    if (/\b(DEHOGA|Statista|Bundesbank|destatis|Forschungsverband|Faustregel|Mindestlohn|brutale Wahrheit|laut\s+(?:der|dem))/iu.test(text)) score += 2;
+    const wc = text.split(/\s+/).filter(Boolean).length;
+    if (wc >= 30 && wc <= 80) score += 1;
+    return { text, score, wc };
+  })
+  .filter((q) => q.text && q.text.length >= 40 && q.text.length <= 600)
+  .sort((a, b) => b.score - a.score || b.wc - a.wc);
+  return candidates.slice(0, n).map((q) => q.text);
+};
+
+// Extract FAQ items from post.jsonLd FAQPage node — that's the canonical source
+// (generate-blog-posts.mjs ensures every post with body-FAQs gets a FAQPage in jsonLd).
+// Fallback: try body extraction (for legacy/partial cases).
+const extractFaqItemsFromJsonLd = (post) => {
+  if (!post.jsonLd) return null;
+  let obj;
+  try { obj = JSON.parse(post.jsonLd); } catch { return null; }
+  const nodes = Array.isArray(obj["@graph"]) ? obj["@graph"] : [obj];
+  for (const n of nodes) {
+    if (n["@type"] === "FAQPage" && Array.isArray(n.mainEntity) && n.mainEntity.length > 0) {
+      const items = n.mainEntity
+        .map((q) => ({
+          q: typeof q.name === "string" ? q.name : "",
+          a: typeof q.acceptedAnswer?.text === "string" ? q.acceptedAnswer.text : "",
+        }))
+        .filter((item) => item.q && item.a && item.a.length >= 20);
+      if (items.length >= 2) return items;
+    }
+  }
+  return null;
 };
 
 let blogCount = 0;
@@ -2579,8 +2675,14 @@ for (const post of generatedBlogPosts) {
 
   // Heuristic content extraction from bodyHtml.
   const firstSection = extractFirstSection(post.bodyHtml);
-  const faqItems = extractFaqItems(post.bodyHtml);
+  // Primary source: post.jsonLd FAQPage (canonical, set by generate-blog-posts.mjs).
+  // Fallback: legacy body-regex extraction.
+  const faqItems = extractFaqItemsFromJsonLd(post) || extractFaqItems(post.bodyHtml);
   if (faqItems) faqPostsCount += 1;
+
+  // Welle D — Top-3 Quotables aus dem Body extrahieren für Static-Fallback.
+  // <blockquote class="quotable"> wurde von Welle C gemarkt.
+  const topQuotables = extractTopQuotables(post.bodyHtml, 3);
 
   // Static crawler fallback: lives inside #root so createRoot() replaces it
   // when the React app mounts. AI crawlers (GPTBot/ClaudeBot/Perplexity) that
@@ -2589,6 +2691,18 @@ for (const post of generatedBlogPosts) {
   // text. Together this is enough for an AI engine to summarise + cite.
   const sectionBlock = firstSection
     ? `<h2>${escapeHtml(firstSection.heading)}</h2><p>${escapeHtml(firstSection.lead)}</p>`
+    : '';
+  // Welle D — Quotable-Highlights für JS-lose Crawler. Position: NACH firstSection,
+  // VOR faqBlock. Mit Speakable-cssSelector .quotable, der von SpeakableSpec referenziert wird.
+  const cite = `${SITE_URL}/de/blog/${post.slug}`;
+  const quotableBlock = topQuotables.length > 0
+    ? '<section class="quotable-highlights"><h2>Highlights aus diesem Beitrag</h2>' +
+      topQuotables
+        .map((text) =>
+          `<blockquote class="quotable" cite="${cite}"><p>${escapeHtml(text)}</p></blockquote>`,
+        )
+        .join('') +
+      '</section>'
     : '';
   const faqBlock = faqItems
     ? '<section itemscope itemtype="https://schema.org/FAQPage"><h2>Häufige Fragen</h2>' +
@@ -2612,6 +2726,7 @@ for (const post of generatedBlogPosts) {
     `<span itemprop="articleSection">${escapeHtml(post.category)}</span></small></p>`,
     `<p itemprop="description">${escapeHtml(post.excerpt || description)}</p>`,
     sectionBlock,
+    quotableBlock,
     faqBlock,
     '</article>',
   ].join('');
