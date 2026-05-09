@@ -138,8 +138,10 @@ KV-Connection-Vars (`KV_REST_API_URL`, `KV_REST_API_TOKEN`) werden von Vercel au
 From:      Gastro Master Kontakt <onboarding@resend.dev>
 To:        info@gastro-master.de
 Reply-To:  {form.email}                ← Direktantwort möglich
-Subject:   Neue Kontaktanfrage: {form.name} ({form.restaurant})
+Subject:   Neue Kontaktanfrage: {form.name}{restaurant ? ` (${form.restaurant})` : ""}
 ```
+
+**Subject-Fallback:** Wenn `restaurant` leer ist, wird die Klammer komplett weggelassen. Beispiel: `Neue Kontaktanfrage: Max Mustermann` (statt `... ()`).
 
 **Initial:** `onboarding@resend.dev` (sofort einsatzbereit, kein DNS-Setup nötig).
 **Phase C:** `noreply@gastro-master.de` (nach DNS-Migration weg von WordPress + Resend-Domain-Verification).
@@ -152,17 +154,22 @@ Tabellarische Auflistung aller Form-Felder:
 <h2>Neue Kontaktanfrage</h2>
 <table>
   <tr><td><strong>Name:</strong></td><td>{escape(name)}</td></tr>
-  <tr><td><strong>Restaurant:</strong></td><td>{escape(restaurant)}</td></tr>
-  <tr><td><strong>PLZ:</strong></td><td>{escape(plz)}</td></tr>
+  <tr><td><strong>Restaurant:</strong></td><td>{escape(restaurant) || "—"}</td></tr>
+  <tr><td><strong>PLZ:</strong></td><td>{escape(plz) || "—"}</td></tr>
   <tr><td><strong>Telefon:</strong></td><td>{escape(phone)}</td></tr>
   <tr><td><strong>E-Mail:</strong></td><td>{escape(email)}</td></tr>
-  <tr><td><strong>Interessiert an:</strong></td><td>{escape(products.join(", "))}</td></tr>
+  <tr><td><strong>Interessiert an:</strong></td><td>{products.length > 0 ? escape(products.join(", ")) : "(keine Auswahl)"}</td></tr>
   <tr><td colspan="2"><strong>Nachricht:</strong></td></tr>
-  <tr><td colspan="2">{escape(message)}</td></tr>
+  <tr><td colspan="2">{escape(message).replace(/\n/g, "<br>")}</td></tr>
   <tr><td><strong>Datenschutz:</strong></td><td>✅ akzeptiert</td></tr>
   <tr><td><strong>Eingegangen:</strong></td><td>{ISO-Timestamp}</td></tr>
 </table>
 ```
+
+**Kritische Formatierungs-Details:**
+1. **Newline-Konvertierung:** Nach `escape(message)` werden `\n` → `<br>` konvertiert. Sonst werden mehrzeilige Kunden-Nachrichten als unleserlicher Single-Line-Block gerendert.
+2. **Empty-Fallbacks:** Optionale Felder (`restaurant`, `plz`, `products`) zeigen `—` bzw. `(keine Auswahl)` statt leerer Zellen.
+3. **Reihenfolge der String-Operationen:** Immer `escape()` ZUERST, dann `\n`-Konvertierung. Sonst entsteht `&lt;br&gt;` statt `<br>`.
 
 ---
 
@@ -194,6 +201,14 @@ Wenn Vercel KV nicht erreichbar ist (Outage, Misconfig, Quota), wird der Rate-Li
 4. **Rate-Limit:** 6× hintereinander submitten → 6. Anfrage → 429
 5. **Length-Limit:** Nachricht > 5000 Zeichen → Mail enthält gekürzten Text + "[gekürzt]"
 6. **Reply-To:** In empfangener Mail "Antworten" klicken → Empfänger ist Kunden-E-Mail
+7. **Sonderzeichen / Sanitize-Härtetest:** Form mit Restaurant-Name `Stefano's Café & Co.` und Nachricht mit Umlauten + Apostroph + Ampersand + Emoji absenden → Mail empfangen, prüfen:
+   - Kein Doppel-Escape (`&amp;amp;` statt `&amp;`)
+   - Umlaute (`äöüß`) korrekt dargestellt
+   - Apostroph (`'`) korrekt
+   - Ampersand (`&`) korrekt als `&amp;` in HTML
+   - Emoji rendert (oder zumindest kein Crash)
+8. **Newline-Test:** Nachricht mit mehreren Zeilenumbrüchen senden → Mail zeigt visuelle Zeilenumbrüche, keine Wall-of-Text
+9. **Empty-Fallback-Test:** Form ohne `restaurant` (leer lassen) und ohne `products` (nichts ankreuzen) → Subject ohne Klammer, Tabelle zeigt `—` und `(keine Auswahl)`
 
 ### Automated Tests (optional, post-Go-Live)
 
@@ -239,7 +254,12 @@ Wenn Vercel KV nicht erreichbar ist (Outage, Misconfig, Quota), wird der Rate-Li
 ## 10. Approvals
 
 - **Salvatore Anzaldi** (Product Owner): ✅ Approved
-- **Claude Cowork** (External Review): ✅ Approved mit drei Anpassungen — alle übernommen:
+- **Claude Cowork** (External Review, 1. Runde): ✅ Approved mit drei Anpassungen — alle übernommen:
   1. Vercel KV statt In-Memory Rate-Limit
   2. 5000-Zeichen-Limit auf message
   3. Fail-open bei KV-Outage
+- **Claude Cowork** (External Review, 2. Runde — Spec-Review): ✅ Approved mit zwei Pflicht- und einer optionalen Anpassung — alle übernommen:
+  1. **Pflicht:** Newline-Konvertierung im HTML-Body (`\n` → `<br>` nach Escape)
+  2. **Pflicht:** Empty-Fallbacks für optionale Felder (Subject ohne leere Klammer, Tabelle mit `—` / `(keine Auswahl)`)
+  3. **Optional:** Test 7 — Sonderzeichen-Härtetest (Apostroph, Ampersand, Umlaute, Emoji)
+  + zusätzlich aufgenommen: Test 8 (Newline-Verhalten), Test 9 (Empty-Fallback-Verhalten)
