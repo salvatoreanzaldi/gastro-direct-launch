@@ -109,21 +109,23 @@ vercel env pull .env.local   # Zieht alle Env-Vars (RESEND_API_KEY + 4× KV_*) h
 
 2. Dependencies installieren:
    ```bash
-   npm install resend@^4.0.0 @vercel/kv@^3.0.0
+   npm install resend@^4.0.0 @upstash/redis@^1.34.0
    ```
+
+   **Note:** `@upstash/redis` statt `@vercel/kv` — Vendor-recommended Path. Vercel KV wurde 2025 deprecated; im Marketplace ist Upstash der direkte Nachfolger. `@vercel/kv` ist mittlerweile nur ein Wrapper um `@upstash/redis` — wir nutzen die Direkt-Integration für eine Abstraktions-Ebene weniger und Zukunftssicherheit.
 
 3. Verify in `package.json`:
    ```bash
-   grep -E "resend|@vercel/kv" package.json
+   grep -E "resend|@upstash/redis" package.json
    # Expected output:
    # "resend": "^4.x.x",
-   # "@vercel/kv": "^3.x.x"
+   # "@upstash/redis": "^1.x.x"
    ```
 
 4. Commit:
    ```bash
    git add package.json package-lock.json
-   git commit -m "chore(deps): add resend + @vercel/kv for kontakt form backend"
+   git commit -m "chore(deps): add resend + @upstash/redis for kontakt form backend"
    ```
 
 ---
@@ -549,25 +551,39 @@ vercel env pull .env.local   # Zieht alle Env-Vars (RESEND_API_KEY + 4× KV_*) h
 
 ---
 
-## Task 5: Rate-Limit Helper mit fail-open
+## Task 5: Rate-Limit Helper mit fail-open (`@upstash/redis`)
 
 **Files affected:**
-- `api/_lib/rateLimit.ts` — KV-basiertes Rate-Limit, fail-open bei Outage
+- `api/_lib/rateLimit.ts` — Upstash-Redis-basiertes Rate-Limit, fail-open bei Outage
 
-**Why no test:** Diese Funktion umhüllt `@vercel/kv`, das nur live oder gemockt testbar ist. Manuelles Testing in Task 9 deckt den Real-Path ab. Mocking wäre Test-Fiction.
+**Why no test:** Diese Funktion umhüllt `@upstash/redis`, das nur live oder gemockt testbar ist. Manuelles Testing in Task 9 deckt den Real-Path ab. Mocking wäre Test-Fiction.
+
+**Init-Hinweis:** Vercel hat bei der Upstash-Integration die Env-Vars als `KV_REST_API_URL` + `KV_REST_API_TOKEN` gesetzt (Vercel-Naming, nicht Upstash-Naming). `Redis.fromEnv()` würde nach `UPSTASH_REDIS_REST_URL` suchen → daher explizite Init mit den Vercel-Vars.
 
 **Steps:**
 
 1. Implement in `api/_lib/rateLimit.ts`:
    ```typescript
-   import { kv } from "@vercel/kv";
+   import { Redis } from "@upstash/redis";
 
    const RATE_LIMIT_PER_HOUR = 5;
    const TTL_SECONDS = 3600; // 1h
 
+   // Lazy-init: only construct on first call to avoid eager env-var reads at module load
+   let redis: Redis | null = null;
+   function getRedis(): Redis {
+     if (!redis) {
+       redis = new Redis({
+         url: process.env.KV_REST_API_URL!,
+         token: process.env.KV_REST_API_TOKEN!,
+       });
+     }
+     return redis;
+   }
+
    /**
-    * IP-based rate-limit via Vercel KV.
-    * FAIL-OPEN: bei KV-Outage wird die Anfrage durchgelassen.
+    * IP-based rate-limit via Upstash Redis (Vercel Marketplace).
+    * FAIL-OPEN: bei Redis-Outage wird die Anfrage durchgelassen.
     * Begründung: Lead-Verlust ist teurer als kurzes Spam-Risiko.
     * Honeypot bleibt als primärer Schutz aktiv.
     */
@@ -576,17 +592,17 @@ vercel env pull .env.local   # Zieht alle Env-Vars (RESEND_API_KEY + 4× KV_*) h
    ): Promise<{ allowed: boolean; remaining: number }> {
      try {
        const key = `ratelimit:contact:${ip}`;
-       const count = (await kv.incr(key)) as number;
+       const count = await getRedis().incr(key);
        if (count === 1) {
-         await kv.expire(key, TTL_SECONDS);
+         await getRedis().expire(key, TTL_SECONDS);
        }
        return {
          allowed: count <= RATE_LIMIT_PER_HOUR,
          remaining: Math.max(0, RATE_LIMIT_PER_HOUR - count),
        };
      } catch (err) {
-       // FAIL-OPEN: KV-Outage darf keine Leads blockieren
-       console.error("[rateLimit] KV-Error, failing open:", err);
+       // FAIL-OPEN: Redis-Outage darf keine Leads blockieren
+       console.error("[rateLimit] Redis-Error, failing open:", err);
        return { allowed: true, remaining: -1 };
      }
    }
@@ -601,7 +617,7 @@ vercel env pull .env.local   # Zieht alle Env-Vars (RESEND_API_KEY + 4× KV_*) h
 3. Commit:
    ```bash
    git add api/_lib/rateLimit.ts
-   git commit -m "feat(api): add KV-based rate limit with fail-open on KV outage"
+   git commit -m "feat(api): add Upstash-Redis rate limit with fail-open and explicit Vercel env-var init"
    ```
 
 ---

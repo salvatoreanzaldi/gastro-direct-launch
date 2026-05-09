@@ -90,7 +90,7 @@ Die `/kontakt`-Seite ist UI-fertig, aber das Formular ist nicht funktional. Aktu
 
 **Dependencies:**
 - `resend` (~7 KB)
-- `@vercel/kv` (~12 KB)
+- `@upstash/redis` (~15 KB) — Vendor-recommended Path. Vercel KV wurde 2025 deprecated; `@vercel/kv` ist mittlerweile nur ein Wrapper um `@upstash/redis`. Direkt-Integration ist zukunftssicher und eine Abstraktions-Ebene weniger.
 
 ### 4.2 Edit: `src/pages/Kontakt.tsx` (minimal)
 
@@ -111,10 +111,21 @@ Die `/kontakt`-Seite ist UI-fertig, aber das Formular ist nicht funktional. Aktu
 ```diff
 "dependencies": {
 +   "resend": "^4.0.0",
-+   "@vercel/kv": "^3.0.0",
++   "@upstash/redis": "^1.34.0",
     ...
 }
 ```
+
+**Init-Pattern (siehe Task 5 im Plan):**
+```typescript
+import { Redis } from "@upstash/redis";
+const redis = new Redis({
+  url: process.env.KV_REST_API_URL!,
+  token: process.env.KV_REST_API_TOKEN!,
+});
+```
+
+**Hintergrund:** Vercel's Upstash-Integration setzt die Env-Vars als `KV_REST_API_URL` + `KV_REST_API_TOKEN` (Vercel-Naming, nicht Upstash-Naming). `Redis.fromEnv()` würde nach `UPSTASH_REDIS_REST_URL` suchen und failen — daher explizite Init mit den Vercel-Vars.
 
 ### 4.4 Manuell durch Salvatore (Vercel Dashboard)
 
@@ -289,3 +300,7 @@ Wenn Vercel KV nicht erreichbar ist (Outage, Misconfig, Quota), wird der Rate-Li
   - 4 Adressen für Phase A (info, rene.ebert, sanjaya.p, s.anzaldi)
   - MX-Records bereits auf Google Workspace verifiziert — Mailboxen empfangsbereit
   - Begründung Env-Var statt Hardcode: Recipient-Änderungen ohne Code-Deploy
+
+- **Salvatore + Cowork** (Post-PRE-FLIGHT-Adjustment 2026-05-05): ✅ Architektur-Update:
+  - **`@upstash/redis` statt `@vercel/kv`:** Vercel KV wurde 2025 deprecated, Upstash ist Vendor-recommended Path
+  - **Explizite Init mit Vercel-Vars (`KV_REST_API_URL` / `KV_REST_API_TOKEN`):** statt `Redis.fromEnv()`, das auf `UPSTASH_REDIS_REST_URL` prüfen würde — Vercel's Integration nutzt KV-prefixed Naming.
