@@ -136,10 +136,30 @@ KV-Connection-Vars (`KV_REST_API_URL`, `KV_REST_API_TOKEN`) werden von Vercel au
 
 ```
 From:      Gastro Master Kontakt <onboarding@resend.dev>
-To:        info@gastro-master.de
+To:        [info@gastro-master.de, rene.ebert@gastro-master.de,
+            sanjaya.p@gastro-master.de, s.anzaldi@gastro-master.de]
 Reply-To:  {form.email}                ← Direktantwort möglich
 Subject:   Neue Kontaktanfrage: {form.name}{restaurant ? ` (${form.restaurant})` : ""}
 ```
+
+**Multi-Recipient via Env-Var:** Empfänger-Liste wird aus `process.env.CONTACT_RECIPIENTS` (komma-separiert) gelesen, NICHT hardcoded. Vorteil: Änderungen ohne Redeploy.
+
+**Konfiguration in Vercel Env-Vars:**
+```
+CONTACT_RECIPIENTS=info@gastro-master.de,rene.ebert@gastro-master.de,sanjaya.p@gastro-master.de,s.anzaldi@gastro-master.de
+```
+
+**Empfänger-Mapping (Phase A):**
+| Adresse | Rolle |
+|---------|-------|
+| `info@gastro-master.de` | Konsistenz mit Alt-Setup (WordPress-Form) |
+| `rene.ebert@gastro-master.de` | Founder, primärer Lead-Responder (24h SLA) |
+| `sanjaya.p@gastro-master.de` | Founder, Backend-Lead |
+| `s.anzaldi@gastro-master.de` | Operations + Form-Optimierung |
+
+**Fail-fast-Verhalten:** Wenn `CONTACT_RECIPIENTS` fehlt oder leer ist, antwortet die Function mit `500` + Fehlermeldung "Server-Konfiguration unvollständig". Verhindert Silent-Drop von Leads in Misconfig-Szenarien.
+
+**MX-Verifikation (vor Go-Live):** `gastro-master.de` läuft bereits auf Google Workspace (MX-Records geprüft). Alle 4 Adressen sind aktive Mailboxen — keine Blocker.
 
 **Subject-Fallback:** Wenn `restaurant` leer ist, wird die Klammer komplett weggelassen. Beispiel: `Neue Kontaktanfrage: Max Mustermann` (statt `... ()`).
 
@@ -263,3 +283,9 @@ Wenn Vercel KV nicht erreichbar ist (Outage, Misconfig, Quota), wird der Rate-Li
   2. **Pflicht:** Empty-Fallbacks für optionale Felder (Subject ohne leere Klammer, Tabelle mit `—` / `(keine Auswahl)`)
   3. **Optional:** Test 7 — Sonderzeichen-Härtetest (Apostroph, Ampersand, Umlaute, Emoji)
   + zusätzlich aufgenommen: Test 8 (Newline-Verhalten), Test 9 (Empty-Fallback-Verhalten)
+
+- **Salvatore + Cowork** (Pre-Pre-Flight, MX-Check 2026-05-05): ✅ Approved mit Architektur-Anpassung:
+  - **Multi-Recipient statt Single-To:** Empfänger-Liste über Env-Var `CONTACT_RECIPIENTS`, nicht hardcoded
+  - 4 Adressen für Phase A (info, rene.ebert, sanjaya.p, s.anzaldi)
+  - MX-Records bereits auf Google Workspace verifiziert — Mailboxen empfangsbereit
+  - Begründung Env-Var statt Hardcode: Recipient-Änderungen ohne Code-Deploy

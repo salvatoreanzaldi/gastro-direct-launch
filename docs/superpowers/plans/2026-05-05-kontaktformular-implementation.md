@@ -44,16 +44,35 @@ Diese Schritte müssen **VOR** Task 1 abgeschlossen sein, sonst crasht der Produ
 
 **Done-Check:** Im Vercel Project → Settings → Environment Variables siehst du die 4 `KV_*` Vars für alle Environments.
 
-### PF-3: Resend Env-Var setzen (~1 Min)
+### PF-3: Env-Vars setzen (~3 Min)
+
+Zwei Env-Vars sind nötig: `RESEND_API_KEY` (Auth) und `CONTACT_RECIPIENTS` (Empfänger-Liste).
 
 1. Vercel Dashboard → Project → Settings → **Environment Variables**
-2. "Add New":
-   - Key: `RESEND_API_KEY`
-   - Value: (der Key aus PF-1, `re_xxx...`)
-   - Environments: ✅ Production, ✅ Preview, ✅ Development (alle 3 ankreuzen)
-3. "Save"
 
-**Done-Check:** `RESEND_API_KEY` erscheint in der Liste, Value zeigt `re_***********` (Vercel maskiert).
+2. **Variable 1 — Resend API Key:**
+   - "Add New":
+     - Key: `RESEND_API_KEY`
+     - Value: (der Key aus PF-1, `re_xxx...`)
+     - Environments: ✅ Production, ✅ Preview, ✅ Development (alle 3 ankreuzen)
+   - "Save"
+
+3. **Variable 2 — Recipient-Liste (Multi-To):**
+   - "Add New":
+     - Key: `CONTACT_RECIPIENTS`
+     - Value: `info@gastro-master.de,rene.ebert@gastro-master.de,sanjaya.p@gastro-master.de,s.anzaldi@gastro-master.de`
+     - **Wichtig:** Komma-separiert, **keine Leerzeichen** zwischen den Adressen (Code trimmt sie zwar, aber sauberer ist sauberer)
+     - Environments: ✅ Production, ✅ Preview, ✅ Development
+   - "Save"
+
+**Done-Check:**
+- `RESEND_API_KEY` in der Liste, Value zeigt `re_***********`
+- `CONTACT_RECIPIENTS` in der Liste, Value zeigt die 4 Adressen
+- Beide für alle 3 Environments aktiv
+
+**Vorteil dieser Architektur:**
+- Empfänger-Anpassungen (z.B. neuer Mitarbeiter, René verlässt Firma) erfordern nur Env-Var-Update + Redeploy via Dashboard ("Redeploy"-Button), kein Code-Change.
+- Format-Validierung im Code (siehe Task 6) verhindert leere oder kaputte Configs.
 
 ### PF-4: Local `.env.local` für Dev-Server (~2 Min, optional)
 
@@ -587,22 +606,105 @@ vercel env pull .env.local   # Zieht alle Env-Vars (RESEND_API_KEY + 4× KV_*) h
 
 ---
 
-## Task 6: Main Handler `api/contact.ts`
+## Task 6: Main Handler `api/contact.ts` (Multi-Recipient via Env-Var)
 
 **Files affected:**
 - `api/contact.ts` — Vercel Serverless Function (Main Entry)
+- `api/_lib/recipients.ts` — Helper für Recipient-Parsing + Validation (TDD)
+- `api/_lib/recipients.test.ts` — Vitest-Tests
 
-**Steps:**
+### 6a) Recipient-Helper (TDD)
 
-1. Implement in `api/contact.ts`:
+1. Write failing tests in `api/_lib/recipients.test.ts`:
+   ```typescript
+   import { describe, expect, test } from "vitest";
+   import { parseRecipients } from "./recipients";
+
+   describe("parseRecipients", () => {
+     test("parses comma-separated list", () => {
+       expect(parseRecipients("a@x.de,b@x.de,c@x.de")).toEqual([
+         "a@x.de",
+         "b@x.de",
+         "c@x.de",
+       ]);
+     });
+
+     test("trims whitespace around addresses", () => {
+       expect(parseRecipients(" a@x.de , b@x.de ")).toEqual(["a@x.de", "b@x.de"]);
+     });
+
+     test("filters empty entries (e.g. trailing comma)", () => {
+       expect(parseRecipients("a@x.de,,b@x.de,")).toEqual(["a@x.de", "b@x.de"]);
+     });
+
+     test("filters invalid email addresses (no @)", () => {
+       expect(parseRecipients("a@x.de,not-an-email,b@x.de")).toEqual([
+         "a@x.de",
+         "b@x.de",
+       ]);
+     });
+
+     test("returns empty array for undefined input", () => {
+       expect(parseRecipients(undefined)).toEqual([]);
+     });
+
+     test("returns empty array for empty string", () => {
+       expect(parseRecipients("")).toEqual([]);
+     });
+
+     test("returns empty array for whitespace-only", () => {
+       expect(parseRecipients("   ")).toEqual([]);
+     });
+
+     test("preserves multi-recipient ordering (for Reply-All consistency)", () => {
+       const result = parseRecipients("info@x.de,rene@x.de,sanjaya@x.de,salva@x.de");
+       expect(result[0]).toBe("info@x.de");
+       expect(result[3]).toBe("salva@x.de");
+     });
+   });
+   ```
+
+2. Run tests, verify failure:
+   ```bash
+   npm test api/_lib/recipients.test.ts
+   # Expected: FAIL — Cannot find module './recipients'
+   ```
+
+3. Implement in `api/_lib/recipients.ts`:
+   ```typescript
+   const EMAIL_REGEX = /^[^\s@]+@[^\s@]+\.[^\s@]+$/;
+
+   /**
+    * Parse comma-separated recipient list from CONTACT_RECIPIENTS env var.
+    * Filters out empty entries and invalid email formats.
+    * Returns empty array if input is missing/empty.
+    */
+   export function parseRecipients(input: string | undefined): string[] {
+     if (!input) return [];
+     return input
+       .split(",")
+       .map((s) => s.trim())
+       .filter((s) => s.length > 0 && EMAIL_REGEX.test(s));
+   }
+   ```
+
+4. Verify tests pass:
+   ```bash
+   npm test api/_lib/recipients.test.ts
+   # Expected: PASS — 8/8 tests passing
+   ```
+
+### 6b) Main Handler
+
+5. Implement in `api/contact.ts`:
    ```typescript
    import { Resend } from "resend";
    import type { VercelRequest, VercelResponse } from "@vercel/node";
    import { validateContactForm } from "./_lib/validate";
    import { buildEmailBody, buildEmailSubject } from "./_lib/buildEmailBody";
    import { checkRateLimit } from "./_lib/rateLimit";
+   import { parseRecipients } from "./_lib/recipients";
 
-   const RECIPIENT = "info@gastro-master.de";
    const SENDER = "Gastro Master Kontakt <onboarding@resend.dev>";
 
    export default async function handler(req: VercelRequest, res: VercelResponse) {
@@ -611,7 +713,7 @@ vercel env pull .env.local   # Zieht alle Env-Vars (RESEND_API_KEY + 4× KV_*) h
        return res.status(405).json({ error: "Method not allowed" });
      }
 
-     // Lazy-init Resend (fail fast if env missing)
+     // Fail-fast on missing config
      const apiKey = process.env.RESEND_API_KEY;
      if (!apiKey) {
        console.error("[api/contact] RESEND_API_KEY missing");
@@ -619,6 +721,17 @@ vercel env pull .env.local   # Zieht alle Env-Vars (RESEND_API_KEY + 4× KV_*) h
          error: "Server-Konfiguration unvollständig. Bitte direkt an info@gastro-master.de mailen.",
        });
      }
+
+     const recipients = parseRecipients(process.env.CONTACT_RECIPIENTS);
+     if (recipients.length === 0) {
+       console.error(
+         "[api/contact] CONTACT_RECIPIENTS missing or contains no valid addresses",
+       );
+       return res.status(500).json({
+         error: "Server-Konfiguration unvollständig. Bitte direkt an info@gastro-master.de mailen.",
+       });
+     }
+
      const resend = new Resend(apiKey);
 
      // Validation (incl. honeypot, email format, datenschutz, length)
@@ -650,11 +763,11 @@ vercel env pull .env.local   # Zieht alle Env-Vars (RESEND_API_KEY + 4× KV_*) h
        message: validation.truncatedMessage ?? req.body.message,
      };
 
-     // Send email via Resend
+     // Send email via Resend (multi-recipient)
      try {
        const { error } = await resend.emails.send({
          from: SENDER,
-         to: RECIPIENT,
+         to: recipients, // Resend accepts string[] for multi-recipient
          replyTo: formData.email,
          subject: buildEmailSubject(formData),
          html: buildEmailBody(formData),
@@ -677,22 +790,27 @@ vercel env pull .env.local   # Zieht alle Env-Vars (RESEND_API_KEY + 4× KV_*) h
    }
    ```
 
-2. Add `@vercel/node` types as devDep:
+6. Add `@vercel/node` types as devDep:
    ```bash
    npm install --save-dev @vercel/node@^3.0.0
    ```
 
-3. Compile-Check:
+7. Compile-Check:
    ```bash
    npx tsc --noEmit api/contact.ts
    # Expected: kein Output (kein TypeScript-Fehler)
    ```
 
-4. Commit:
+8. Commit:
    ```bash
-   git add api/contact.ts package.json package-lock.json
-   git commit -m "feat(api): wire main contact handler (validation → rate-limit → resend)"
+   git add api/_lib/recipients.ts api/_lib/recipients.test.ts api/contact.ts package.json package-lock.json
+   git commit -m "feat(api): wire main contact handler with multi-recipient via CONTACT_RECIPIENTS env var"
    ```
+
+**Key behavioral changes vs. previous version:**
+- **Multi-Recipient:** Resend bekommt `to: string[]` statt `to: string`. Resend's API akzeptiert beides; bei Array landen alle in der `To:`-Header-Zeile (alle sehen sich gegenseitig — gewünscht für Team-Sichtbarkeit).
+- **Fail-fast bei Misconfig:** Wenn `CONTACT_RECIPIENTS` fehlt ODER nur Garbage enthält (`parseRecipients()` filtert ungültige raus), antwortet der Handler mit 500 statt einer Mail an Niemanden zu schicken.
+- **Tolerant gegen Format-Probleme:** Trailing Comma, Spaces zwischen Adressen, einzelne ungültige Adressen werden tolerant behandelt — gültige Adressen bleiben erhalten.
 
 ---
 
@@ -962,8 +1080,10 @@ Nach DNS-Migration weg von WordPress:
 
 ## Notes
 
-- **TDD-Coverage:** 28 Unit-Tests für Pure Functions (escape, buildEmail, validate). Integration (Resend, KV) wird manuell verifiziert in Task 9 — Mocking wäre für Phase A Test-Fiction.
+- **TDD-Coverage:** 36 Unit-Tests für Pure Functions (escape: 6, buildEmail: 13, validate: 9, recipients: 8). Integration (Resend, KV) wird manuell verifiziert in Task 9 — Mocking wäre für Phase A Test-Fiction.
 - **Commits:** 7 Code-Commits (Tasks 1–7) + 1 Merge-Commit (Task 10). Granular für Rollback.
-- **Manuelle PRE-FLIGHT-Schritte zuerst:** PF-1 (Resend) → PF-2 (KV) → PF-3 (Env-Vars) → erst DANN Code-Tasks. Sonst crasht Production mit "RESEND_API_KEY undefined".
+- **Manuelle PRE-FLIGHT-Schritte zuerst:** PF-1 (Resend) → PF-2 (KV) → PF-3 (Env-Vars: `RESEND_API_KEY` + `CONTACT_RECIPIENTS`) → erst DANN Code-Tasks. Sonst crasht Production mit "RESEND_API_KEY undefined" oder "CONTACT_RECIPIENTS missing".
+- **Multi-Recipient via Env-Var:** 4 Empfänger (info, rene.ebert, sanjaya.p, s.anzaldi) — Änderungen ohne Code-Deploy möglich.
 - **Newline-Robustheit:** `\r?\n` matcht sowohl Unix (`\n`) als auch Windows (`\r\n`) Line-Endings.
 - **Reihenfolge im HTML-Body:** ESCAPE ZUERST, dann `\n` → `<br>`. Sonst entsteht `&lt;br&gt;` statt `<br>`.
+- **MX-Setup vorab geprüft:** `gastro-master.de` läuft auf Google Workspace (Mailboxen empfangsbereit, kein DNS-Blocker für Phase A).
