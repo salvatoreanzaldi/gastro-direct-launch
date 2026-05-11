@@ -18,8 +18,21 @@
 1. Erstelle ein lokales Test-Verzeichnis:
    ```
    test-htaccess/
-   ├── .htaccess     ← Inhalt: "Require all denied"
+   ├── .htaccess     ← Inhalt: siehe unten (Dual-Pattern identisch zu data/.htaccess)
    └── secret.txt    ← Inhalt: "if you see this, htaccess failed"
+   ```
+
+   **Inhalt der Test-`.htaccess`** (Cowork-R1: identisch zu Task 9 data/.htaccess, sonst falsch-negative bei Apache 2.2):
+   ```apache
+   # Apache 2.4+
+   <IfModule mod_authz_core.c>
+       Require all denied
+   </IfModule>
+   # Apache 2.2 Fallback
+   <IfModule !mod_authz_core.c>
+       Order deny,allow
+       Deny from all
+   </IfModule>
    ```
 
 2. Upload via FileZilla nach Webroot von sandbox: `/test-htaccess/`
@@ -1049,12 +1062,11 @@
    }
 
    // ── 5. Rate-Limit (fail-open on FS-error) ─────────────────────────────────
-   $ip = $_SERVER['HTTP_X_FORWARDED_FOR']
-       ?? $_SERVER['REMOTE_ADDR']
-       ?? 'unknown';
-   if (str_contains($ip, ',')) {
-       $ip = trim(explode(',', $ip)[0]);  // First IP in X-Forwarded-For
-   }
+   // SECURITY: REMOTE_ADDR direkt verwenden, X-Forwarded-For NICHT trusten.
+   // Auf All-Inkl ist REMOTE_ADDR der echte Client-IP (kein vertrauter Proxy davor).
+   // X-Forwarded-For ist vom Client setzbar → spoofbar → Rate-Limit-Bypass.
+   // Falls in Phase D ein Proxy/CDN davor kommt: hier Trusted-Proxy-Logik einbauen.
+   $ip = $_SERVER['REMOTE_ADDR'] ?? 'unknown';
    $rl = checkRateLimit($ip, $config['rate_limit']);
    if (!$rl['allowed']) {
        jsonResponse(429, ['error' => 'Zu viele Anfragen. Bitte später erneut versuchen.']);
@@ -1325,6 +1337,17 @@ SERVER: /www/htdocs/w01d17b9/webiste_2026/config.php
 
 Permissions: 0600 (rw------- nur Owner)
 ```
+
+**Permissions-Eskalation falls 500-Error nach Upload** (Cowork R1):
+`0600` setzt voraus, dass PHP-FPM-User === FTP-User. Auf All-Inkl ist das typisch der Fall (FPM läuft als Kunden-User `w01d17b9`), aber nicht garantiert. Falls PHP nach Upload einen 500-Error wirft mit "Permission denied" beim `require __DIR__ . '/config.php'`:
+
+| Stufe | Wert | Bedeutung |
+|-------|------|-----------|
+| 1 (default) | `0600` | rw------- (nur Owner) — sicherste Option |
+| 2 (Fallback) | `0640` | rw-r----- (Group lesen) — falls PHP unter anderem Group-User läuft |
+| 3 (Breakglass) | `0644` | rw-r--r-- (alle lesen) — letzter Ausweg, **nicht** öffentlich aufrufbar wenn außerhalb Webroot oder per .htaccess geschützt |
+
+In der Praxis reicht `0600` auf All-Inkl. Stufen 2 + 3 sind dokumentiert für Edge-Cases.
 
 ### 11.5 contact.php ZULETZT
 ```
