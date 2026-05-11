@@ -1,4 +1,20 @@
-# Plan: Kontaktformular Funktionalisierung (Phase A)
+# Plan: Kontaktformular Funktionalisierung (Phase A) [ARCHIVIERT]
+
+> ## 🗄️ ARCHIVIERT 2026-05-11 — Strategie-Wechsel zu Plan D
+>
+> **Dieser Plan wird nicht weiter ausgeführt.** Tasks 1–8 wurden umgesetzt, der Code befindet sich auf Branch `feat/kontakt-form-functional`. Beim Live-Test in Task 9 trat die Resend-Sandbox-Sperre auf, woraufhin gemeinsam mit Sanju (Chef-Entwickler) ein Strategie-Wechsel zu **Plan D: All-Inkl + PHP + SMTP** beschlossen wurde.
+>
+> **Was bleibt aus diesem Plan:**
+> - 9 manuelle Tests aus Task 9 — werden in Plan D wiederverwendet
+> - Frontend-Honeypot in `src/pages/Kontakt.tsx` — bleibt erhalten, nur Endpoint-URL wechselt
+>
+> **Was wird verworfen / nicht deployed:**
+> - Branch `feat/kontakt-form-functional` Code (`api/_lib/*`, `api/contact.ts`, Vercel-Env-Vars)
+> - Tasks 9 (Vercel Preview) + 10 (Production Deploy) — werden in Plan D ersetzt durch PHP-Deploy + Frontend-Endpoint-Switch
+>
+> **Aktive Doku:** Spec [`docs/superpowers/specs/2026-05-11-kontaktformular-plan-d.md`](../specs/2026-05-11-kontaktformular-plan-d.md) *(in Erstellung)*
+
+---
 
 **Goal:** Aktivierung des `/kontakt`-Formulars sodass Anfragen via Resend an `info@gastro-master.de` versendet werden.
 **Architecture:** Vercel Serverless Function `api/contact.ts` mit Resend (E-Mail-Versand) + Vercel KV (Rate-Limiting, fail-open).

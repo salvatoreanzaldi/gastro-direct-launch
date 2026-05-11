@@ -1,8 +1,31 @@
-# Kontaktformular Funktionalisierung — Design Spec
+# Kontaktformular Funktionalisierung — Design Spec [ARCHIVIERT]
+
+> ## 🗄️ ARCHIVIERT 2026-05-11 — Strategie-Wechsel zu Plan D
+>
+> **Diese Spec wird nicht weiter umgesetzt.** Nach Phase-A-Preview-Test wurde der Resend-Ansatz verworfen zugunsten von **Plan D: All-Inkl + PHP + SMTP** (DSGVO-clean, existierende Mail-Pipeline, keine Sandbox-Limits).
+>
+> **Aktive Spec:** [`docs/superpowers/specs/2026-05-11-kontaktformular-plan-d.md`](2026-05-11-kontaktformular-plan-d.md) *(in Erstellung)*
+>
+> **Was bleibt aus dieser Spec übernommen** (konzeptionell, in PHP neu implementiert):
+> - Edge-Case-Handling (Newlines→`<br>`, Empty-Fallbacks, HTML-Escape, Subject-Conditional)
+> - Multi-Recipient-Pattern (4 Empfänger via Config)
+> - 9 Test-Szenarien (Tests 1–9 aus Task 9)
+> - Honeypot-Konzept im Frontend
+> - Empfänger-Konfiguration über externe Quelle (Env-Var → PHP-Config)
+>
+> **Was endgültig verworfen wird:**
+> - `api/contact.ts` + `api/_lib/*.ts` (Vercel Serverless Function)
+> - Resend SDK
+> - Vercel KV / Upstash Redis
+> - Env-Vars `RESEND_API_KEY`, `CONTACT_RECIPIENTS`, `KV_*`
+>
+> Der Code bleibt im Git-Verlauf als historische Referenz. Diese Spec dokumentiert die Designentscheidungen, die in Plan D weiterleben.
+
+---
 
 **Datum:** 2026-05-05
 **Branch:** TBD (wird in Implementation-Plan-Phase angelegt)
-**Status:** Approved (Brainstorming-Phase abgeschlossen)
+**Status:** ARCHIVIERT (Plan D ersetzt diese Spec)
 **Author:** Salvatore Anzaldi + Claude (Brainstorming) + Claude Cowork (Review)
 
 ---
