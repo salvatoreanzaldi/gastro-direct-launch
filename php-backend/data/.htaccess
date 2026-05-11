@@ -1,0 +1,16 @@
+# Block all web access to this directory.
+#
+# Runtime rate-limit JSON files have non-sensitive content
+# (count + reset-timestamp + sha256-hashed IP), but better safe than sorry —
+# defense in depth. The hash-based filenames are also not guessable.
+
+<IfModule mod_authz_core.c>
+    # Apache 2.4+
+    Require all denied
+</IfModule>
+
+<IfModule !mod_authz_core.c>
+    # Apache 2.2 fallback
+    Order deny,allow
+    Deny from all
+</IfModule>
