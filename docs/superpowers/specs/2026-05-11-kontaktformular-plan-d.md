@@ -82,26 +82,29 @@ Die `/kontakt`-Seite (React-SPA auf Vercel) soll Form-Submissions als E-Mail an 
     ├─→ 2. Method-Check
     │     └─ POST only → sonst 405
     │
-    ├─→ 3. Honeypot-Check (silent fail)
-    │     └─ website-Field non-empty? → 200 silent success
+    ├─→ 3. JSON-Parse
+    │     ├─ Body lesen, JSON dekodieren
+    │     └─ Parse-Fehler → 400 "Ungültige Anfrage"
     │
-    ├─→ 4. Validate
-    │     ├─ JSON-Body parsen
-    │     ├─ Required fields (name, phone, email, message)
-    │     ├─ Email-Format-Regex
-    │     └─ datenschutz === true
+    ├─→ 4. Honeypot-Check (silent fail)
+    │     └─ $form->website non-empty? → 200 silent success (EXIT)
+    │     └─ Bot verbraucht KEIN Rate-Limit-Quota (Step 4 vor Step 5)
     │
-    ├─→ 5. Length-Limit
-    │     └─ message > 5000? → truncate + " [gekürzt]"
-    │
-    ├─→ 6. Rate-Limit (file-based in data/rate-limits/)
+    ├─→ 5. Rate-Limit (file-based in data/rate-limits/)
     │     ├─ try: read data/rate-limits/<ip-hash>.json
     │     │   └─ if count >= 5 within 1h → 429
     │     │   └─ else increment, write back
     │     └─ catch (FS-error): FAIL-OPEN, log & proceed
     │
-    ├─→ 7. Sanitize
-    │     └─ htmlspecialchars() für alle User-Inputs
+    ├─→ 6. Validate
+    │     ├─ Required fields (name, phone, email, message)
+    │     ├─ Email-Format-Regex
+    │     └─ datenschutz === true
+    │     └─ alle Fehler → 400 mit klarer UI-Message
+    │
+    ├─→ 7. Sanitize + Length-Limit
+    │     ├─ htmlspecialchars() für alle User-Inputs
+    │     └─ message > 5000? → truncate + " [gekürzt]"
     │
     ├─→ 8. PHPMailer + SMTP zu w01d17b9.kasserver.com:465 (SMTPS)
     │     ├─ Auth: hallo@gastro-master.de (From config.php)
@@ -112,6 +115,11 @@ Die `/kontakt`-Seite (React-SPA auf Vercel) soll Form-Submissions als E-Mail an 
     │     └─ Body (HTML): tabular, mit Newlines→<br>, Empty-Fallbacks
     │
     └─→ 9. JSON-Response (200/400/429/500) + CORS-Headers
+
+**Pipeline-Order-Begründung (Cowork R1):**
+- **Step 3 (JSON-Parse) VOR Step 4 (Honeypot):** Sonst kann `$form->website` nicht gelesen werden — Honeypot-Logik braucht geparste Daten.
+- **Step 4 (Honeypot) VOR Step 5 (Rate-Limit):** Bots, die den Honeypot auslösen, verbrauchen kein Rate-Limit-Quota → mehr Quota für echte User. Eleganter und schützt vor Quota-Exhaustion durch Bots.
+- **Step 5 (Rate-Limit) VOR Step 6 (Validate):** Rate-Limit-Check ist günstiger (1 File-Read) als komplette Validation — Spam-Bots werden früher abgewiesen.
 ```
 
 ---
@@ -179,7 +187,7 @@ return [
   ],
   'cors' => [
     // Allowed origins: regex-Pattern matched gegen Origin-Header
-    'origin_pattern' => '#^https://(gastro-master|gastro-direct-launch[-a-z0-9]*)\.vercel\.app$#',
+    'origin_pattern' => '#^https://gastro-master(-[a-z0-9-]+)?\.vercel\.app$#',
     // Phase C: ergänzen um 'https://gastro-master.de' (exact match preferred)
   ],
   'rate_limit' => [
@@ -198,8 +206,8 @@ Identisch zu `config.example.php`, aber mit echten SMTP-Credentials. Wird **nur*
 
 ### 4.4 Neu: `php-backend/lib/phpmailer/` (Vendor-Bundle, in Git)
 
-**Version:** PHPMailer 7.0.2 (Stand 2026-01)
-**Download:** [GitHub Release ZIP](https://github.com/PHPMailer/PHPMailer/releases/tag/v7.0.2)
+**Version:** PHPMailer 6.10.x (latest stable 6er, Cowork-R1-Empfehlung — siehe §14)
+**Download:** [GitHub PHPMailer Releases](https://github.com/PHPMailer/PHPMailer/releases) → letzte 6.10.x-Version als ZIP
 **Im Repo tracked** für:
 - Deterministische Deployments
 - Salvatore lädt ein konsistentes Bundle hoch (kein Versions-Drift)
@@ -281,7 +289,7 @@ use PHPMailer\PHPMailer\Exception;
 | Username | `hallo@gastro-master.de` | SMTP-User |
 | Password | (in config.php) | SMTP-Passwort |
 | `CharSet` | `PHPMailer::CHARSET_UTF8` | UTF-8 (Umlaute, Emojis) |
-| `Encoding` | `PHPMailer::ENCODING_BASE64` | Für Mail-Body |
+| `Encoding` | `PHPMailer::ENCODING_QUOTED_PRINTABLE` | Standard für HTML+UTF-8 (kompakter als BASE64) |
 
 **Stolperstein vermieden:** Port 465 mit `'ssl'` (= `ENCRYPTION_SMTPS`). Port 465 mit `'tls'` oder Port 587 mit `'ssl'` würden **stumm scheitern**. ([PHPMailer Docs](https://deepwiki.com/PHPMailer/PHPMailer/3-authentication-and-security))
 
@@ -369,7 +377,8 @@ Cross-Origin von `*.vercel.app` (Frontend) → `sandbox.gastro-master.de` (Backe
 **Whitelisting via Regex** (Salvatores Empfehlung):
 
 ```php
-$allowed_origin_pattern = '#^https://(gastro-master|gastro-direct-launch[-a-z0-9]*)\.vercel\.app$#';
+// Vercel-Projekt heißt "gastro-master" (NICHT gastro-direct-launch — Repo-Name ≠ Projekt-Name)
+$allowed_origin_pattern = '#^https://gastro-master(-[a-z0-9-]+)?\.vercel\.app$#';
 
 $origin = $_SERVER['HTTP_ORIGIN'] ?? '';
 if (preg_match($allowed_origin_pattern, $origin)) {
@@ -381,11 +390,14 @@ header("Access-Control-Allow-Headers: Content-Type");
 header("Access-Control-Max-Age: 86400"); // 24h preflight-cache
 ```
 
-**Was das Pattern matched:**
-- ✅ `https://gastro-master.vercel.app` (Production Preview)
-- ✅ `https://gastro-direct-launch-xyz.vercel.app` (Branch Previews)
-- ✅ `https://gastro-direct-launch-feat-kontakt.vercel.app` (Feature-Branch-Previews)
+**Was das Pattern matched (verifiziert anhand echter Vercel-Preview-URLs):**
+- ✅ `https://gastro-master.vercel.app` (Production Alias)
+- ✅ `https://gastro-master-git-feat-kontakt-f-70ceac-sanzaldi-4022s-projects.vercel.app` (Git-Branch-Preview)
+- ✅ `https://gastro-master-<hash>-sanzaldi-4022s-projects.vercel.app` (Commit-spezifische Previews)
 - ❌ `https://evil-site.com` → kein CORS-Header → Browser blockt
+- ❌ `https://gastro-master-something.othersite.com` → kein Match (Domain ≠ vercel.app)
+
+**Cowork-R1-Befund (kritisch, vor Implementation gefixt):** Das ursprüngliche Pattern enthielt `gastro-direct-launch` (Repo-Name) statt `gastro-master` (Vercel-Projekt-Name). Das hätte ALLE Preflight-Requests durchfallen lassen → komplettes CORS-Blocking → Pipeline dead.
 
 ### OPTIONS-Preflight
 
@@ -450,6 +462,9 @@ function checkRateLimit(string $ip, array $config): bool {
 ```
 
 **Cleanup-Strategie:** Keine aktive Garbage-Collection nötig. Dateien werden bei Bedarf überschrieben. Falls die Anzahl der Dateien problematisch wird (>10.000), kann ein simpler Cron-Job sie aufräumen — aber realistisch für ein Kontaktformular: nie nötig.
+
+**Concurrency-Hinweis (Cowork R1 Polish-Punkt):**
+`file_put_contents(..., LOCK_EX)` macht den Schreibvorgang atomar, **NICHT** die ganze read-modify-write-Sequenz. Bei zwei wirklich simultanen Anfragen vom gleichen IP kann ein theoretischer TOCTOU-Drift entstehen (eine Anfrage wird im Counter "verloren"). Für unseren Lead-Form-Use-Case (max ~1 Submission/Min): **vernachlässigbar**. Für saubere `flock()`-basierte Implementierung wäre der Code 2–3× komplexer ohne praktischen Vorteil — bewusste Entscheidung gegen Over-Engineering. Falls in Phase D (echte Lastspitzen) jemand das Form spammt, kann mit `fopen('c+')` + `flock(LOCK_EX)` + manuelle `fread`/`ftruncate`/`fwrite`/`flock(LOCK_UN)` rigoroser nachgezogen werden.
 
 ---
 
@@ -543,7 +558,7 @@ PHP-Unit-Tests für Pure Functions (escape, validate, buildSubject, buildHtmlBod
 - [x] ~~Q2: Composer verfügbar~~ (nein → Standalone-Bundle)
 - [x] ~~Q3: Production-URL~~ (Sandbox in Phase A, api-Subdomain in C)
 - [x] ~~Q4: Edit-Workflow~~ (Variante 1: lokal + manuelles FTP-Upload)
-- [ ] Salvatore: PHPMailer 7.0.2 ZIP von GitHub Release ziehen, ins Repo entpacken
+- [ ] Salvatore (oder Claude Code via curl): PHPMailer **6.10.x** ZIP von GitHub Release ziehen, ins Repo unter `php-backend/lib/phpmailer/` entpacken (NUR `src/` + `LICENSE` + `README.md` brauchen wir)
 - [ ] Salvatore: `config.php` lokal anlegen (NICHT committen), via FileZilla hochladen
 - [ ] Salvatore: `data/rate-limits/`-Verzeichnis auf Server mit chmod 0755 anlegen
 - [ ] Phase C: api-Subdomain einrichten (siehe Roadmap C2)
@@ -553,13 +568,19 @@ PHP-Unit-Tests für Pure Functions (escape, validate, buildSubject, buildHtmlBod
 
 ## 13. Approvals
 
-- **Salvatore Anzaldi** (Product Owner): Pending Review
-- **Sanjaya Pattiyage** (Chef-Entwickler, Plan-D-Strategie-Entscheider): Pending Review
-- **Claude Cowork** (External Review): Pending
+- **Salvatore Anzaldi** (Product Owner): Pending Final Review (nach R2-Updates)
+- **Sanjaya Pattiyage** (Chef-Entwickler, Plan-D-Strategie-Entscheider): Strategie approved, Spec pending
+- **Claude Cowork** (External Review, R1 — 2026-05-11): ✅ Approved mit 2 Pflicht- und 3 Optional-Anpassungen — alle übernommen:
+  - **Pflicht 1:** §3 Pipeline-Order umsortiert — Honeypot NACH JSON-Parse, VOR Rate-Limit (Bot-Quota-Schutz)
+  - **Pflicht 2:** §7 CORS-Regex gefixt — Repo-Name `gastro-direct-launch` → Vercel-Projekt-Name `gastro-master`
+  - **Optional 1:** §8 Concurrency-Hinweis zu TOCTOU-Drift inline ergänzt (bewusste Wahl gegen `flock()`-Komplexität)
+  - **Optional 2:** §5 Encoding gewechselt — `BASE64` → `ENCODING_QUOTED_PRINTABLE` (Standard für HTML+UTF-8)
+  - **Optional 3:** PHPMailer-Downgrade 7.0.2 → 6.10.x (battle-tested, identische API für unseren Use-Case, Cowork-Empfehlung)
 
 **Geplante Review-Runden:**
-1. Cowork-Review zu Architektur + Edge-Cases (~heute)
-2. Optional: Cowork-Review nach Implementation (Code-Review)
+1. ~~Cowork R1: Architektur + Edge-Cases~~ — abgeschlossen 2026-05-11 ✅
+2. Cowork R2 (optional): Finaler Sanity-Check nach R1-Updates
+3. Optional: Cowork-Code-Review nach Implementation
 
 ---
 
@@ -568,7 +589,20 @@ PHP-Unit-Tests für Pure Functions (escape, validate, buildSubject, buildHtmlBod
 | Behauptung | Quelle | Verifiziert |
 |------------|--------|-------------|
 | PHPMailer 7.0.2 ist neueste stabile Version (Jan 2026) | [GitHub Releases](https://github.com/PHPMailer/PHPMailer/releases) | ✅ |
+| **Entscheidung: Downgrade auf 6.10.x** statt 7.0.2 | Cowork R1 + [PHPMailer UPGRADING.md](https://github.com/PHPMailer/PHPMailer/blob/master/UPGRADING.md) — Begründung unten | ✅ |
 | Port 465 = `PHPMailer::ENCRYPTION_SMTPS` (= `'ssl'`), NICHT `'tls'` | [PHPMailer Auth & Security](https://deepwiki.com/PHPMailer/PHPMailer/3-authentication-and-security) | ✅ |
+| 6.10.x API identisch zu 7.x für unseren Use-Case (`setFrom`, `addAddress`, `addReplyTo`, `isHTML`, `Body`, `Subject`, `ENCRYPTION_SMTPS`) | UPGRADING.md: nur 2 Breaking Changes — `lang()/setLanguage()/$language` jetzt statisch (nutzen wir nicht) + STARTTLS-localhost-Verhalten (nutzen wir nicht) | ✅ |
 | PHP 8.5 syntax features (readonly, named args, typed props) | Salvatores `phpinfo()` zeigt PHP 8.5.3 | ✅ |
 | All-Inkl SMTP-Verbindung Port 465 funktioniert | Live-Test am 2026-05-11 (hallo@-Mailbox) | ✅ |
 | FTP-Webroot = sandbox.gastro-master.de Webroot | Live-Test am 2026-05-11 (FileZilla) | ✅ |
+| CORS-Regex matched echte Vercel-URLs (Projekt `gastro-master`, NICHT Repo `gastro-direct-launch`) | Cowork R1 — Pattern gegen reale Preview-URL `gastro-master-git-feat-kontakt-f-70ceac-sanzaldi-4022s-projects.vercel.app` getestet | ✅ |
+
+### Begründung zum PHPMailer-Downgrade (6.10.x statt 7.0.2)
+
+Obwohl 7.0.2 die neueste stabile Version ist, fällt die Wahl bewusst auf 6.10.x:
+
+1. **Keine Featurelücke:** Für unseren Use-Case (SMTP-Versand, HTML-Body, Reply-To, Multi-Recipient) ist die 6.10.x-API identisch zu 7.0.2.
+2. **Battle-tested:** 6.x-Serie läuft seit 2016 in WordPress, Drupal, Laravel, Joomla → Millionen Production-Deployments ohne bekannte Issues für unseren Use-Case.
+3. **Minimaler Risk-Surface:** Major-Version-Bumps können subtile Verhaltensänderungen mitbringen, selbst bei stabiler API-Oberfläche. Lead-Form-Backend ist kein Ort für Major-Version-Experiments.
+4. **Cowork-R1-Empfehlung:** *"Wenn die 7.x-API breaking changes hat, lieber PHPMailer 6.10.x (latest stable 6er) verwenden — funktioniert ebenso mit PHP 8.5 und ist battle-tested."*
+5. **Phase-D-Upgrade-Path bleibt offen:** Sollte 7.x in 6+ Monaten ausreichend in Production getestet sein (oder eine kritische Sicherheits-Patch erfordert), ist der Upgrade trivial (identische API-Calls).
