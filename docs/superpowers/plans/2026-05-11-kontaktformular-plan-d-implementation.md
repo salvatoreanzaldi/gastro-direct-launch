@@ -335,13 +335,14 @@ Lokales PHP-Setup ist für diesen Use-Case zu viel Overhead (technischer Beginne
 
    /**
     * HTML-escape user input to prevent XSS in email body.
-    * Uses ENT_QUOTES (escapes both " and ') + ENT_HTML5 + UTF-8.
-    * Single call is safe — htmlspecialchars escapes & to &amp;
-    * exactly once when called once per field.
+    * Uses ENT_QUOTES (escapes both " and ') + UTF-8.
+    * NO ENT_HTML5 — that would escape ' to &apos;, which older email clients
+    * (Outlook 2003/2007) render as literal text instead of an apostrophe.
+    * Default (HTML4.01) escapes ' to &#039; — universally compatible.
     */
    function escapeHtml(?string $input): string {
        if ($input === null) return '';
-       return htmlspecialchars($input, ENT_QUOTES | ENT_HTML5, 'UTF-8');
+       return htmlspecialchars($input, ENT_QUOTES, 'UTF-8');
    }
    ```
 

@@ -596,6 +596,7 @@ PHP-Unit-Tests für Pure Functions (escape, validate, buildSubject, buildHtmlBod
 | All-Inkl SMTP-Verbindung Port 465 funktioniert | Live-Test am 2026-05-11 (hallo@-Mailbox) | ✅ |
 | FTP-Webroot = sandbox.gastro-master.de Webroot | Live-Test am 2026-05-11 (FileZilla) | ✅ |
 | CORS-Regex matched echte Vercel-URLs (Projekt `gastro-master`, NICHT Repo `gastro-direct-launch`) | Cowork R1 — Pattern gegen reale Preview-URL `gastro-master-git-feat-kontakt-f-70ceac-sanzaldi-4022s-projects.vercel.app` getestet | ✅ |
+| `htmlspecialchars()` mit `ENT_QUOTES` (Default HTML4.01) escaped `'` zu `&#039;` — für Email-Compat besser als `ENT_HTML5`-Variante `&apos;` | Cowork-Catch 2026-05-11: Initial-Implementierung nutzte `ENT_QUOTES \| ENT_HTML5` → Test schlug fehl (Expected: `&#039;`, Actual: `&apos;`). `&apos;` rendert in Outlook 2003/2007 als Literal-Text. Korrigiert: `ENT_HTML5`-Flag entfernt. | ✅ |
 
 ### Begründung zum PHPMailer-Downgrade (6.10.x statt 7.0.2)
 
