@@ -31,6 +31,7 @@ const Kontakt = () => {
     products: [] as string[],
     datenschutz: false,
     recaptcha: false,
+    website: "", // honeypot — must stay empty
   });
   const [activeSlide, setActiveSlide] = useState(0);
   const [isSubmitting, setIsSubmitting] = useState(false);
@@ -58,7 +59,7 @@ const Kontakt = () => {
     setSubmitMessage("");
 
     try {
-      const response = await fetch("/api/contact", {
+      const response = await fetch("https://sandbox.gastro-master.de/contact.php", {
         method: "POST",
         headers: { "Content-Type": "application/json" },
         body: JSON.stringify(form),
@@ -71,6 +72,7 @@ const Kontakt = () => {
         products: [],
         datenschutz: false,
         recaptcha: false,
+        website: "",
       });
       setSubmitMessage("success");
       setTimeout(() => setSubmitMessage(""), 5000);
@@ -107,6 +109,17 @@ const Kontakt = () => {
                 {t("contact.heroSub")}
               </p>
               <form onSubmit={handleSubmit}>
+                {/* Honeypot — hidden from real users, bots fill it. Must stay empty. */}
+                <input
+                  type="text"
+                  name="website"
+                  value={form.website}
+                  onChange={e => setForm(f => ({ ...f, website: e.target.value }))}
+                  tabIndex={-1}
+                  autoComplete="off"
+                  aria-hidden="true"
+                  style={{ position: "absolute", left: "-9999px", width: 1, height: 1, opacity: 0 }}
+                />
                 <div className="space-y-3.5">
                   {/* Name */}
                   <div>
@@ -167,7 +180,7 @@ const Kontakt = () => {
                   <div>
                     <label className="block text-[#0A264A]/70 text-sm font-medium mb-1.5">{t("contact.labelMessage")}</label>
                     <textarea
-                      value={form.message} rows={3}
+                      value={form.message} rows={3} maxLength={5000}
                       onChange={e => setForm(f => ({ ...f, message: e.target.value }))}
                       className="w-full bg-gray-50 border border-gray-200 rounded-xl px-4 py-3 text-[#0A264A] placeholder:text-gray-400 focus:outline-none focus:ring-2 focus:ring-[#007DCF]/40 transition resize-none"
                       placeholder={t("contact.placeholderMessage")}
