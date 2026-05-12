@@ -1,0 +1,10 @@
+# /data/ — Static-Asset-Verzeichnis (z.B. google-reviews.json).
+#
+# Web-Zugriff auf Dateien hier ist GEWOLLT (Frontend lädt google-reviews.json
+# via fetch). Daher KEIN "Require all denied" auf data/-Root-Ebene.
+#
+# Privacy-Schutz für PHP-Runtime-State: siehe data/rate-limits/.htaccess
+# (sensitive IP-Hash-Files, "Require all denied" greift dort).
+
+# Verhindert Apache-Directory-Listing wenn jemand /data/ direkt aufruft.
+Options -Indexes
