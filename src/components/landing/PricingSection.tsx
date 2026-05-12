@@ -1,4 +1,5 @@
 import { motion } from "framer-motion";
+import { useNavigate } from "react-router-dom";
 import { ArrowRight, Check, Minus, Star } from "lucide-react";
 import { useState } from "react";
 import { useTranslation } from "react-i18next";
@@ -76,10 +77,11 @@ const renderCell = (val: FeatureStatus) => {
 
 const PricingSection = () => {
   const { t } = useTranslation("common");
+  const navigate = useNavigate();
   const [showTable, setShowTable] = useState(false);
 
   const scrollToForm = () => {
-    window.location.href = "/kontakt";
+    navigate("/kontakt");
   };
 
   const packageFeaturesMap = t("pricing.packageFeatures", { returnObjects: true }) as Record<string, readonly string[]>;

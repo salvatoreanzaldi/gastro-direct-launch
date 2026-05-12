@@ -1,4 +1,5 @@
 import { useState, useEffect, useCallback, useRef } from "react";
+import { useNavigate } from "react-router-dom";
 import { motion, AnimatePresence } from "framer-motion";
 import { Truck, Building2, ChefHat, Store, CakeSlice, Pizza, Drumstick, IceCream, Croissant, Layers, ArrowRight, UtensilsCrossed, Zap } from "lucide-react";
 import { Link } from "react-router-dom";
@@ -138,6 +139,7 @@ interface TargetGroupSectionProps {
 
 const TargetGroupSection = ({ getSolutionHref, ctaLabel }: TargetGroupSectionProps = {}) => {
   const { t } = useTranslation("common");
+  const navigate = useNavigate();
   const lp = useLangPath();
   const [activeGroup, setActiveGroup] = useState("lieferdienst");
   const [activeSub, setActiveSub] = useState("pizzeria");
@@ -188,7 +190,7 @@ const TargetGroupSection = ({ getSolutionHref, ctaLabel }: TargetGroupSectionPro
   };
 
   const scrollToForm = () => {
-    window.location.href = lp("/kontakt");
+    navigate(lp("/kontakt"));
   };
 
   return (

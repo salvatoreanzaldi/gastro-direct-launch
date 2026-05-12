@@ -1,4 +1,5 @@
 import { useState } from "react";
+import { useNavigate } from "react-router-dom";
 import { useTranslation } from "react-i18next";
 
 import productWebseite from "@/assets/products/Webseite - Produkt.png";
@@ -9,6 +10,7 @@ import productKiosk from "@/assets/products/Kiosk 2 - Produkt.png";
 
 const ProductShowcaseAccordionSection = () => {
   const { t } = useTranslation("common");
+  const navigate = useNavigate();
   const [activeIndex, setActiveIndex] = useState(0);
 
   const products = [
@@ -113,7 +115,7 @@ const ProductShowcaseAccordionSection = () => {
                 onMouseEnter={() => handleItemHover(index)}
                 onClick={() => {
                   if (index === activeIndex) {
-                    window.location.href = product.ctaUrl;
+                    navigate(product.ctaUrl);
                   } else {
                     setActiveIndex(index);
                   }

@@ -1,4 +1,5 @@
 import React, { useState, useEffect } from "react";
+import { useNavigate } from "react-router-dom";
 import { motion } from "framer-motion";
 import { ArrowRight, Check, Truck, QrCode, ShoppingBag, ChevronLeft, ChevronRight } from "lucide-react";
 import { Carousel, CarouselContent, CarouselItem, type CarouselApi } from "@/components/ui/carousel";
@@ -128,8 +129,9 @@ const AddonCards = ({ t }: { t: (k: string, o?: any) => any }) => {
 
 const POSSection = () => {
   const { t } = useTranslation("common");
+  const navigate = useNavigate();
   const scrollToForm = () => {
-    window.location.href = "/kontakt";
+    navigate("/kontakt");
   };
 
   return (

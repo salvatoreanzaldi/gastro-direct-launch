@@ -1,4 +1,5 @@
 import { lazy, Suspense, useState, useEffect, useRef, useCallback } from "react";
+import { useNavigate } from "react-router-dom";
 import React from "react";
 import { useSeoMeta } from "@/hooks/useSeoMeta";
 import { motion, AnimatePresence } from "framer-motion";
@@ -350,7 +351,7 @@ const TeamCTASection = ({ t, lp }: { t: (k: string, o?: any) => any; lp: (p: str
               ))}
             </div>
             <motion.button
-              onClick={() => { window.location.href = lp("/kontakt"); }}
+              onClick={() => { navigate(lp("/kontakt")); }}
               whileHover={{ scale: 1.04, boxShadow: "0 0 32px 8px rgba(237,132,0,0.55), 0 0 64px 16px rgba(237,132,0,0.25)" }}
               whileTap={{ scale: 0.97 }}
               transition={{ duration: 0.2 }}
@@ -791,6 +792,7 @@ const WaveFeatureSection = ({ t }: { t: (k: string, o?: any) => any }) => {
 // ─── Page ─────────────────────────────────────────────────────────────────────
 const KassePage = () => {
   const { t, ready } = useTranslation("kasse");
+  const navigate = useNavigate();
   const lp = useLangPath();
 
   const arr = (key: string) => { const v = t(key, { returnObjects: true }); return Array.isArray(v) ? v : []; };
@@ -881,7 +883,7 @@ const tiles = arr("featuresGrid.tiles") as { title: string; text: string; taglin
             className="flex flex-col items-center sm:flex-row sm:items-start gap-4"
           >
             <button
-              onClick={() => { window.location.href = lp("/kontakt"); }}
+              onClick={() => { navigate(lp("/kontakt")); }}
               className="bg-gradient-amber text-white font-bold px-8 py-4 rounded-xl text-base inline-flex items-center gap-2 hover:scale-[1.02] transition-transform shadow-lg shadow-[#ED8400]/20"
             >
               {t("hero.cta")}
@@ -1163,7 +1165,7 @@ const tiles = arr("featuresGrid.tiles") as { title: string; text: string; taglin
                 <div className="flex items-center gap-8">
                   {cfg.cta && (
                     <motion.button
-                      onClick={() => { window.location.href = lp("/kontakt"); }}
+                      onClick={() => { navigate(lp("/kontakt")); }}
                       whileHover={{ scale: 1.04, boxShadow: "0 0 32px 8px rgba(237,132,0,0.55), 0 0 64px 16px rgba(237,132,0,0.25)" }}
                       whileTap={{ scale: 0.97 }}
                       transition={{ duration: 0.2 }}
@@ -1216,7 +1218,7 @@ const tiles = arr("featuresGrid.tiles") as { title: string; text: string; taglin
               {t("faq.sub")}
             </p>
             <button
-              onClick={() => { window.location.href = lp("/kontakt"); }}
+              onClick={() => { navigate(lp("/kontakt")); }}
               className="mt-8 text-cyan-brand text-sm font-semibold inline-flex items-center gap-2 hover:gap-3 transition-all"
             >
               {t("faq.cta")} <ArrowRight className="w-4 h-4" />

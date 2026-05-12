@@ -1,10 +1,12 @@
 import { ArrowRight } from "lucide-react";
+import { useNavigate } from "react-router-dom";
 import { useTranslation } from "react-i18next";
 
 const StickyMobileCTA = () => {
   const { t } = useTranslation("common");
+  const navigate = useNavigate();
   const scrollToForm = () => {
-    window.location.href = "/kontakt";
+    navigate("/kontakt");
   };
 
   return (

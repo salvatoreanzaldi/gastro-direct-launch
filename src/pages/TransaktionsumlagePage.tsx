@@ -1,4 +1,5 @@
 import React, { useState, useEffect } from "react";
+import { useNavigate } from "react-router-dom";
 import { useTranslation } from "react-i18next";
 import ScrollProgressBar from "@/components/ScrollProgressBar";
 import ScrollToTopButton from "@/components/ScrollToTopButton";
@@ -209,6 +210,7 @@ const FaqItem = ({ q, a, lp }: { q: string; a: string; lp: (p: string) => string
 // ─── Hero Variante B – Particle Canvas ──────────────────────────────────────
 const HeroParticleVariant = () => {
   const { t } = useTranslation("transaktionsumlage");
+  const navigate = useNavigate();
   const lp = useLangPath();
   const canvasRef = React.useRef<HTMLCanvasElement>(null);
 
@@ -378,7 +380,7 @@ const HeroParticleVariant = () => {
         {/* CTA */}
         <motion.div custom={4} variants={fadeUp} initial="hidden" animate="visible">
           <motion.button
-            onClick={() => { window.location.href = lp("/kontakt"); }}
+            onClick={() => { navigate(lp("/kontakt")); }}
             whileHover={{ scale: 1.04, boxShadow: "0 0 32px 8px rgba(237,132,0,0.55)" }}
             whileTap={{ scale: 0.97 }}
             className="px-5 py-3 md:px-8 md:py-4 bg-[#ED8400] text-white font-bold rounded-xl shadow-lg shadow-[#ED8400]/30 inline-flex items-center gap-2 text-base md:text-lg whitespace-nowrap"
@@ -444,7 +446,7 @@ const TeamCTA = () => {
               ))}
             </div>
             <motion.button
-              onClick={() => { window.location.href = lp("/kontakt"); }}
+              onClick={() => { navigate(lp("/kontakt")); }}
               whileHover={{ scale: 1.04, boxShadow: "0 0 32px 8px rgba(237,132,0,0.55), 0 0 64px 16px rgba(237,132,0,0.25)" }}
               whileTap={{ scale: 0.97 }}
               transition={{ duration: 0.2 }}
@@ -715,7 +717,7 @@ const TransaktionsumlagePage = () => {
                   {t("calculator.savingsText2")}
                 </p>
                 <button
-                  onClick={() => { window.location.href = lp("/kontakt"); }}
+                  onClick={() => { navigate(lp("/kontakt")); }}
                   className="bg-gradient-amber text-primary font-bold px-8 py-4 rounded-xl text-lg hover:scale-[1.02] transition-transform shadow-lg inline-flex items-center gap-2"
                 >
                   {t("calculator.cta")}
@@ -882,7 +884,7 @@ const TransaktionsumlagePage = () => {
                       </li>
                     ))}
                   </ul>
-                  <button onClick={() => { window.location.href = lp("/produkte/pakete/online-bestellshop"); }} className="text-cyan-brand text-sm font-semibold inline-flex items-center gap-1 hover:gap-2 transition-all duration-200">
+                  <button onClick={() => { navigate(lp("/produkte/pakete/online-bestellshop")); }} className="text-cyan-brand text-sm font-semibold inline-flex items-center gap-1 hover:gap-2 transition-all duration-200">
                     {t("requirements.webshop.link")} <ArrowRight className="w-4 h-4" />
                   </button>
                 </div>
@@ -902,7 +904,7 @@ const TransaktionsumlagePage = () => {
                       </li>
                     ))}
                   </ul>
-                  <button onClick={() => { window.location.href = lp("/produkte/pakete/bestell-app"); }} className="text-cyan-brand text-sm font-semibold inline-flex items-center gap-1 hover:gap-2 transition-all duration-200">
+                  <button onClick={() => { navigate(lp("/produkte/pakete/bestell-app")); }} className="text-cyan-brand text-sm font-semibold inline-flex items-center gap-1 hover:gap-2 transition-all duration-200">
                     {t("requirements.appWebshop.link")} <ArrowRight className="w-4 h-4" />
                   </button>
                 </div>
@@ -931,7 +933,7 @@ const TransaktionsumlagePage = () => {
                   </div>
                 </div>
                 <motion.button
-                  onClick={() => { window.location.href = lp("/kontakt"); }}
+                  onClick={() => { navigate(lp("/kontakt")); }}
                   whileHover={{ scale: 1.04, boxShadow: "0 0 32px 8px rgba(237,132,0,0.45)" }}
                   whileTap={{ scale: 0.97 }}
                   className="shrink-0 bg-[#ED8400] text-white font-bold px-7 py-3.5 rounded-xl text-sm shadow-lg shadow-[#ED8400]/30 whitespace-nowrap inline-flex items-center gap-2"
@@ -1024,7 +1026,7 @@ const TransaktionsumlagePage = () => {
                   {t("faq.desc")}
                 </p>
                 <button
-                  onClick={() => { window.location.href = lp("/kontakt"); }}
+                  onClick={() => { navigate(lp("/kontakt")); }}
                   className="mt-8 text-cyan-brand text-sm font-semibold inline-flex items-center gap-2 hover:gap-3 transition-all"
                 >
                   {t("faq.cta")} <ArrowRight className="w-4 h-4" />

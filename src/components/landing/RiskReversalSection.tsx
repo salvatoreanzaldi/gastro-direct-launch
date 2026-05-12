@@ -1,4 +1,5 @@
 import { motion } from "framer-motion";
+import { useNavigate } from "react-router-dom";
 import { ShieldCheck, Rocket, HeartHandshake, ArrowRight } from "lucide-react";
 import { useTranslation } from "react-i18next";
 
@@ -6,8 +7,9 @@ const icons = [ShieldCheck, Rocket, HeartHandshake];
 
 const RiskReversalSection = () => {
   const { t } = useTranslation("common");
+  const navigate = useNavigate();
   const scrollToForm = () => {
-    window.location.href = "/kontakt";
+    navigate("/kontakt");
   };
 
   return (

@@ -1,4 +1,5 @@
 import { useState, useEffect, useRef, useCallback } from "react";
+import { useNavigate } from "react-router-dom";
 import { motion, AnimatePresence } from "framer-motion";
 import { Tv, Eye, Sparkles, ArrowRight } from "lucide-react";
 import pickupScreen from "@/assets/addons/pickup-screen.jpeg";
@@ -11,6 +12,7 @@ const featureIcons = [Tv, Eye, Sparkles];
 
 const PickUpScreenSection = () => {
   const { t } = useTranslation("common");
+  const navigate = useNavigate();
   const [imgIndex, setImgIndex] = useState(0);
   const timerRef = useRef<ReturnType<typeof setInterval> | null>(null);
 
@@ -30,7 +32,7 @@ const PickUpScreenSection = () => {
   };
 
   const scrollToForm = () => {
-    window.location.href = "/kontakt";
+    navigate("/kontakt");
   };
 
   const featureItems = [

@@ -1,4 +1,5 @@
 import React, { lazy, Suspense, useState, useEffect } from "react";
+import { useNavigate } from "react-router-dom";
 import { useTranslation } from "react-i18next";
 import ScrollProgressBar from "@/components/ScrollProgressBar";
 import ScrollToTopButton from "@/components/ScrollToTopButton";
@@ -213,6 +214,7 @@ const FaqItem = ({ q, a, lp }: { q: string; a: string; lp: (p: string) => string
 
 const TeamCTA = () => {
   const { t } = useTranslation("webseite");
+  const navigate = useNavigate();
   const lp = useLangPath();
   const arr = (key: string) => { const v = t(key, { returnObjects: true }); return Array.isArray(v) ? v : []; };
 
@@ -271,7 +273,7 @@ const TeamCTA = () => {
               ))}
             </div>
             <motion.button
-              onClick={() => { window.location.href = lp("/kontakt"); }}
+              onClick={() => { navigate(lp("/kontakt")); }}
               whileHover={{ scale: 1.04, boxShadow: "0 0 32px 8px rgba(237,132,0,0.55), 0 0 64px 16px rgba(237,132,0,0.25)" }}
               whileTap={{ scale: 0.97 }}
               transition={{ duration: 0.2 }}
@@ -423,7 +425,7 @@ const WebseitePage = () => {
               </div>
 
               <motion.button
-                onClick={() => { window.location.href = lp("/kontakt"); }}
+                onClick={() => { navigate(lp("/kontakt")); }}
                 whileHover={{ scale: 1.03, boxShadow: "0 0 32px 8px rgba(237,132,0,0.55)" }}
                 whileTap={{ scale: 0.97 }}
                 className="bg-gradient-amber text-[#0A264A] font-bold px-5 py-3 md:px-8 md:py-4 rounded-xl text-base md:text-lg inline-flex items-center gap-2 shadow-lg whitespace-nowrap"
@@ -484,7 +486,7 @@ const WebseitePage = () => {
               </div>
 
               <motion.button
-                onClick={() => { window.location.href = lp("/kontakt"); }}
+                onClick={() => { navigate(lp("/kontakt")); }}
                 whileHover={{ scale: 1.03, boxShadow: "0 0 32px 8px rgba(237,132,0,0.55)" }}
                 whileTap={{ scale: 0.97 }}
                 className="bg-gradient-amber text-white font-bold px-5 py-3 md:px-8 md:py-4 rounded-xl text-base md:text-lg inline-flex items-center gap-2 shadow-lg whitespace-nowrap"
@@ -632,7 +634,7 @@ const WebseitePage = () => {
             {/* CTA */}
             <div className="text-center mt-12">
               <motion.button
-                onClick={() => { window.location.href = lp("/kontakt"); }}
+                onClick={() => { navigate(lp("/kontakt")); }}
                 whileHover={{ scale: 1.03 }}
                 whileTap={{ scale: 0.97 }}
                 className="bg-gradient-amber text-white dark:text-[#0A264A] font-bold px-8 py-4 rounded-xl text-base inline-flex items-center gap-2 shadow-lg"
@@ -687,7 +689,7 @@ const WebseitePage = () => {
 
             <div className="text-center mt-12">
               <motion.button
-                onClick={() => { window.location.href = lp("/kontakt"); }}
+                onClick={() => { navigate(lp("/kontakt")); }}
                 whileHover={{ scale: 1.03 }}
                 whileTap={{ scale: 0.97 }}
                 className="inline-flex items-center gap-2 bg-[#0A264A] dark:bg-white text-white dark:text-[#0A264A] font-bold px-8 py-4 rounded-xl text-base shadow-lg"
@@ -786,7 +788,7 @@ const WebseitePage = () => {
 
             <div className="text-center mt-12">
               <motion.button
-                onClick={() => { window.location.href = lp("/kontakt"); }}
+                onClick={() => { navigate(lp("/kontakt")); }}
                 whileHover={{ scale: 1.03 }}
                 whileTap={{ scale: 0.97 }}
                 className="inline-flex items-center gap-2 bg-[#0A264A] dark:bg-white text-white dark:text-[#0A264A] font-bold px-8 py-4 rounded-xl text-base shadow-lg"
@@ -920,7 +922,7 @@ const WebseitePage = () => {
                   ))}
                 </ul>
                 <motion.button
-                  onClick={() => { window.location.href = lp("/kontakt"); }}
+                  onClick={() => { navigate(lp("/kontakt")); }}
                   whileHover={{ scale: 1.03, boxShadow: "0 0 24px 6px rgba(237,132,0,0.45)" }}
                   whileTap={{ scale: 0.97 }}
                   className="w-full bg-[#ED8400] text-white font-bold py-3.5 rounded-xl inline-flex items-center justify-center gap-2 shadow-lg"
@@ -956,7 +958,7 @@ const WebseitePage = () => {
                   ))}
                 </ul>
                 <motion.button
-                  onClick={() => { window.location.href = lp("/kontakt"); }}
+                  onClick={() => { navigate(lp("/kontakt")); }}
                   whileHover={{ scale: 1.03 }}
                   whileTap={{ scale: 0.97 }}
                   className="w-full bg-white/10 border border-white/20 text-white font-bold py-3.5 rounded-xl inline-flex items-center justify-center gap-2 hover:bg-white/15 transition-colors"
@@ -991,7 +993,7 @@ const WebseitePage = () => {
                   ))}
                 </ul>
                 <motion.button
-                  onClick={() => { window.location.href = lp("/kontakt"); }}
+                  onClick={() => { navigate(lp("/kontakt")); }}
                   whileHover={{ scale: 1.03 }}
                   whileTap={{ scale: 0.97 }}
                   className="w-full bg-white/10 border border-white/20 text-white font-bold py-3.5 rounded-xl inline-flex items-center justify-center gap-2 hover:bg-white/15 transition-colors"
@@ -1079,7 +1081,7 @@ const WebseitePage = () => {
                   {t("faq.desc")}
                 </p>
                 <motion.button
-                  onClick={() => { window.location.href = lp("/kontakt"); }}
+                  onClick={() => { navigate(lp("/kontakt")); }}
                   whileHover={{ scale: 1.03 }}
                   whileTap={{ scale: 0.97 }}
                   className="mt-8 inline-flex items-center gap-2 bg-white/10 border border-white/20 text-white font-bold px-6 py-3 rounded-xl text-sm hover:bg-white/15 transition-colors"

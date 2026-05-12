@@ -1,4 +1,5 @@
 import { useState } from "react";
+import { useNavigate } from "react-router-dom";
 import { motion } from "framer-motion";
 import { ArrowRight, Check, TrendingUp } from "lucide-react";
 import partnerPaypal from "@/assets/logos/partner/partner-paypal.png";
@@ -23,6 +24,7 @@ const paymentMethods = [
 
 const TransaktionsUmlageSection = () => {
   const { t } = useTranslation("common");
+  const navigate = useNavigate();
   const lp = useLangPath();
   const [orders, setOrders] = useState(300);
   const [avgCart, setAvgCart] = useState(30);
@@ -32,7 +34,7 @@ const TransaktionsUmlageSection = () => {
   const totalFees = Math.round(paypalFee + stripeFee);
 
   const scrollToForm = () => {
-    window.location.href = lp("/kontakt");
+    navigate(lp("/kontakt"));
   };
 
   return (

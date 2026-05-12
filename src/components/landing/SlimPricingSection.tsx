@@ -1,4 +1,5 @@
 import { motion } from "framer-motion";
+import { useNavigate } from "react-router-dom";
 import { useRef, useEffect, useState } from "react";
 import { RippleButton } from "@/components/ui/multi-type-ripple-buttons";
 import { useTranslation } from "react-i18next";
@@ -269,6 +270,7 @@ const SlimCard = ({
 
 const SlimPricingSection = () => {
   const { t } = useTranslation("common");
+  const navigate = useNavigate();
   const lp = useLangPath();
   const [isDark, setIsDark] = useState(
     () => document.documentElement.classList.contains("dark")
@@ -296,7 +298,7 @@ const SlimPricingSection = () => {
   }, []);
 
   const scrollToForm = () => {
-    window.location.href = lp("/kontakt");
+    navigate(lp("/kontakt"));
   };
 
   const arr = (key: string) => { const v = t(key, { returnObjects: true }); return Array.isArray(v) ? v : []; };
