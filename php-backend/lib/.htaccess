@@ -1,0 +1,22 @@
+# Block direct web access to PHP library files.
+#
+# Library files (sanitize.php, buildEmailBody.php, validate.php, rateLimit.php,
+# parseRecipients.php, phpmailer/*) are required by contact.php server-side
+# only — never directly hit via HTTP.
+#
+# Defense-in-depth: even if someone discovers the filenames, all return
+# empty/500 errors when called directly (they're libraries, not endpoints).
+# But better to 403 than expose internal structure.
+#
+# Analog zu data/.htaccess: dual-pattern für Apache 2.4+ und 2.2 fallback.
+
+<IfModule mod_authz_core.c>
+    # Apache 2.4+
+    Require all denied
+</IfModule>
+
+<IfModule !mod_authz_core.c>
+    # Apache 2.2 fallback
+    Order deny,allow
+    Deny from all
+</IfModule>
