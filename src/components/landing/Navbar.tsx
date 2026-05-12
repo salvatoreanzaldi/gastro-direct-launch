@@ -90,7 +90,7 @@ const Navbar = () => {
     deSlug.startsWith("/downloads") ||
     isComparisonPath;
   const [scrolled, setScrolled]             = useState(false);
-  const active = scrolled;          // steuert schmal/weit
+  const active = scrolled || alwaysVisible; // steuert schmal/weit — auf hellen Pages ohne Hero ab Page-Load aktiv
   const visibleBg = alwaysVisible || scrolled; // steuert Hintergrund-Sichtbarkeit
   const [mobileOpen, setMobileOpen]         = useState(false);
   const [dark, setDark]                     = useState(false);
