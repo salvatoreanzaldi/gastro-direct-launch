@@ -1,4 +1,5 @@
 import { useState, useEffect } from "react";
+import { useNavigate } from "react-router-dom";
 import { motion, AnimatePresence } from "framer-motion";
 import { ArrowRight } from "lucide-react";
 import { useTranslation } from "react-i18next";
@@ -29,6 +30,7 @@ export interface CTASectionProps {
 export const CTASection = ({ productPath, text }: CTASectionProps) => {
   const { t, i18n } = useTranslation("common");
   const lp = useLangPath();
+  const navigate = useNavigate();
   const [current, setCurrent] = useState(0);
 
   const cardText = text ?? t("homeCTA.cardText");
@@ -151,7 +153,7 @@ export const CTASection = ({ productPath, text }: CTASectionProps) => {
 
           {/* CTA Button - Statisch */}
           <button
-            onClick={() => { window.location.href = lp("/kontakt"); }}
+            onClick={() => { navigate(lp("/kontakt")); }}
             className="w-full max-w-xs bg-gradient-amber text-white font-bold px-8 py-4 rounded-xl inline-flex items-center justify-center gap-2 shadow-lg shadow-[#ED8400]/20 hover:shadow-[#ED8400]/40 transition-shadow"
           >
             {t("homeCTA.cta")}
