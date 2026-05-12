@@ -1,4 +1,5 @@
 import { motion } from "framer-motion";
+import { useNavigate } from "react-router-dom";
 import { ArrowRight } from "lucide-react";
 
 interface ProductHeroProps {
@@ -9,7 +10,9 @@ interface ProductHeroProps {
   mockupSrc?: string;
 }
 
-const ProductHero = ({ badge, headline, subline, ctaLabel, mockupSrc }: ProductHeroProps) => (
+const ProductHero = ({ badge, headline, subline, ctaLabel, mockupSrc }: ProductHeroProps) => {
+  const navigate = useNavigate();
+  return (
   <section className="mesh-gradient min-h-[88vh] flex items-center section-padding pt-36 relative overflow-hidden">
     {/* Ambient glow */}
     <div className="absolute top-1/2 left-1/2 -translate-x-1/2 -translate-y-1/2 w-[700px] h-[500px] rounded-full bg-[#007DCF]/10 blur-[140px] pointer-events-none" />
@@ -42,7 +45,7 @@ const ProductHero = ({ badge, headline, subline, ctaLabel, mockupSrc }: ProductH
           </p>
 
           <button
-            onClick={() => { window.location.href = "/kontakt"; }}
+            onClick={() => { navigate("/kontakt"); }}
             className="bg-gradient-amber text-[#0A264A] font-bold px-8 py-4 rounded-xl text-base inline-flex items-center gap-2 hover:scale-[1.02] transition-transform shadow-lg shadow-[#ED8400]/20"
           >
             {ctaLabel}
@@ -67,6 +70,7 @@ const ProductHero = ({ badge, headline, subline, ctaLabel, mockupSrc }: ProductH
       </div>
     </div>
   </section>
-);
+  );
+};
 
 export default ProductHero;

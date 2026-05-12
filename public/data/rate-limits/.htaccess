@@ -1,0 +1,19 @@
+# /data/rate-limits/ — PHP-Runtime-Storage (IP-Hash-basierte Counter).
+#
+# Privacy/DSGVO-Begründung:
+# - Dateinamen sind sha256-Hashes von IPs (z.B. "abc123…ef.json")
+# - Inhalt: { count: N, resetAt: unix-ts }
+# - Defense-in-depth: hash-Namen sind nicht erratbar UND Web-Zugriff blockiert
+#
+# Web-Block via dual-pattern (Apache 2.4+ + Apache 2.2 Fallback):
+
+<IfModule mod_authz_core.c>
+    # Apache 2.4+
+    Require all denied
+</IfModule>
+
+<IfModule !mod_authz_core.c>
+    # Apache 2.2 Fallback
+    Order deny,allow
+    Deny from all
+</IfModule>

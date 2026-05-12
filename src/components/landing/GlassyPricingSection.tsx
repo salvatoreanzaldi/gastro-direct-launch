@@ -1,4 +1,5 @@
 import { motion } from "framer-motion";
+import { useNavigate } from "react-router-dom";
 import { useRef, useEffect, useState } from "react";
 import { RippleButton } from "@/components/ui/multi-type-ripple-buttons";
 import { useTranslation } from "react-i18next";
@@ -234,6 +235,7 @@ const GlassyCard = ({
 
 const GlassyPricingSection = () => {
   const { t } = useTranslation("common");
+  const navigate = useNavigate();
   const [isDark, setIsDark] = useState(
     () => document.documentElement.classList.contains("dark")
   );
@@ -247,7 +249,7 @@ const GlassyPricingSection = () => {
   }, []);
 
   const scrollToForm = () => {
-    window.location.href = "/kontakt";
+    navigate("/kontakt");
   };
 
   const packageFeaturesMap = t("pricing.packageFeatures", { returnObjects: true }) as Record<string, readonly string[]>;

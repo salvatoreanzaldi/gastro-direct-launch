@@ -1,4 +1,5 @@
 import { motion } from "framer-motion";
+import { useNavigate } from "react-router-dom";
 import { MessageSquareText, CalendarCheck, UtensilsCrossed, Rocket } from "lucide-react";
 import { useTranslation } from "react-i18next";
 
@@ -6,8 +7,9 @@ const stepIcons = [MessageSquareText, CalendarCheck, UtensilsCrossed, Rocket];
 
 const ProcessSection = () => {
   const { t } = useTranslation("common");
+  const navigate = useNavigate();
   const scrollToForm = () => {
-    window.location.href = "/kontakt";
+    navigate("/kontakt");
   };
 
   return (

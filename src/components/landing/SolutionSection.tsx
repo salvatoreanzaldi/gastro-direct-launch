@@ -1,4 +1,5 @@
 import { motion } from "framer-motion";
+import { useNavigate } from "react-router-dom";
 import { ArrowRight, Globe, Smartphone, CreditCard, Palette } from "lucide-react";
 import { Link } from "react-router-dom";
 import { useTranslation } from "react-i18next";
@@ -9,9 +10,10 @@ const featureHrefPaths = ["/produkte/pakete/online-bestellshop", "/produkte/pake
 
 const SolutionSection = () => {
   const { t } = useTranslation("common");
+  const navigate = useNavigate();
   const lp = useLangPath();
   const scrollToForm = () => {
-    window.location.href = lp("/kontakt");
+    navigate(lp("/kontakt"));
   };
 
   return (

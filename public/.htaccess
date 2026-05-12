@@ -1,0 +1,89 @@
+# ════════════════════════════════════════════════════════════════════════════
+# .htaccess für gastro-master.de / sandbox.gastro-master.de (All-Inkl Apache)
+#
+# Quelle: public/.htaccess → Vite kopiert automatisch nach dist/.htaccess
+#         beim Build. Manueller Upload via FileZilla nach Webroot.
+#
+# Wichtig:
+# - Greift NICHT auf data/ und lib/ Subverzeichnisse durch (haben eigene
+#   .htaccess mit "Require all denied")
+# - PHP-Files (contact.php) bleiben unangetastet durch !-f Check in SPA-Fallback
+# ════════════════════════════════════════════════════════════════════════════
+
+# ── Prio 1: SPA Fallback Routing ─────────────────────────────────────────────
+# Vite-React-SPA: Direkter Aufruf von /de/produkte/pakete/webseite muss
+# /index.html ausliefern, dann übernimmt React Router client-side.
+# Pre-rendered Routes (z.B. /preise/index.html) werden via !-d Check
+# direkt ausgeliefert (Apache findet die Datei).
+
+<IfModule mod_rewrite.c>
+    RewriteEngine On
+    RewriteBase /
+
+    # Direkter Aufruf von /index.html immer erlaubt
+    RewriteRule ^index\.html$ - [L]
+
+    # Skip rewrite wenn:
+    # - Datei existiert (contact.php, /assets/script.js, /favicon.ico, etc.)
+    # - Verzeichnis existiert (/preise/, /de/kontakt/ — Apache nutzt DirectoryIndex)
+    RewriteCond %{REQUEST_FILENAME} !-f
+    RewriteCond %{REQUEST_FILENAME} !-d
+
+    # Catch-all: nicht-existente Pfade → SPA Entry → React Router rendert
+    RewriteRule . /index.html [L]
+</IfModule>
+
+# ── Prio 1: Kein Directory-Listing ───────────────────────────────────────────
+Options -Indexes
+
+# ── Prio 2: Cache-Control (1:1 von vercel.json portiert) ─────────────────────
+<IfModule mod_headers.c>
+
+    # JS/CSS/Fonts haben fingerprinted Filenames (Vite-Build) → safe für immutable
+    <FilesMatch "\.(js|css|woff2?|ttf|otf)$">
+        Header set Cache-Control "public, max-age=31536000, immutable"
+    </FilesMatch>
+
+    # Bilder: 30 Tage Cache, stale-while-revalidate für Hot-Reload-Verhalten
+    <FilesMatch "\.(png|jpg|jpeg|webp|avif|svg|ico)$">
+        Header set Cache-Control "public, max-age=2592000, stale-while-revalidate=86400"
+    </FilesMatch>
+
+    # HTML/XML: kein Browser-Cache, aber CDN/Reverse-Proxy für 1h zulässig
+    <FilesMatch "\.(html|xml)$">
+        Header set Cache-Control "public, max-age=0, s-maxage=3600, stale-while-revalidate=86400"
+    </FilesMatch>
+
+    # CORS für Fonts (Web-Font-Loading von anderen Origins)
+    <FilesMatch "\.(woff2?|ttf|otf)$">
+        Header set Access-Control-Allow-Origin "*"
+    </FilesMatch>
+
+    # ── Prio 2: Security Headers (1:1 von vercel.json portiert) ──────────────
+
+    # HSTS: HTTPS für 2 Jahre erzwingen, mit Subdomain-Coverage + Preload-Submit
+    Header set Strict-Transport-Security "max-age=63072000; includeSubDomains; preload"
+
+    # Verhindert MIME-Type-Sniffing-Angriffe
+    Header set X-Content-Type-Options "nosniff"
+
+    # Erlaubt iframe-Embedding nur von eigenem Origin (Clickjacking-Schutz)
+    Header set X-Frame-Options "SAMEORIGIN"
+
+    # Referrer-Header: bei Cross-Origin nur Origin senden, bei Same-Origin Full
+    Header set Referrer-Policy "strict-origin-when-cross-origin"
+
+    # Disable potenziell-sensitive Browser-APIs (Privacy + Security)
+    Header set Permissions-Policy "geolocation=(), camera=(), microphone=(), payment=(self)"
+
+    # Search-Engine-Crawler-Hint: index, full image-previews, lange Snippets ok
+    Header set X-Robots-Tag "index, follow, max-image-preview:large, max-snippet:-1, max-video-preview:-1"
+
+</IfModule>
+
+# ── Performance: Compression on-the-fly (falls mod_deflate aktiv ist) ───────
+# All-Inkl hat mod_deflate typischerweise als Standard. Pre-compressed
+# .br/.gz Files (von Vite gebaut) werden NICHT genutzt — wäre eine 2. Iteration.
+<IfModule mod_deflate.c>
+    AddOutputFilterByType DEFLATE text/html text/plain text/xml text/css text/javascript application/javascript application/json application/xml
+</IfModule>

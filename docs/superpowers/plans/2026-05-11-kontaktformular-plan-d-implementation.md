@@ -18,8 +18,21 @@
 1. Erstelle ein lokales Test-Verzeichnis:
    ```
    test-htaccess/
-   ├── .htaccess     ← Inhalt: "Require all denied"
+   ├── .htaccess     ← Inhalt: siehe unten (Dual-Pattern identisch zu data/.htaccess)
    └── secret.txt    ← Inhalt: "if you see this, htaccess failed"
+   ```
+
+   **Inhalt der Test-`.htaccess`** (Cowork-R1: identisch zu Task 9 data/.htaccess, sonst falsch-negative bei Apache 2.2):
+   ```apache
+   # Apache 2.4+
+   <IfModule mod_authz_core.c>
+       Require all denied
+   </IfModule>
+   # Apache 2.2 Fallback
+   <IfModule !mod_authz_core.c>
+       Order deny,allow
+       Deny from all
+   </IfModule>
    ```
 
 2. Upload via FileZilla nach Webroot von sandbox: `/test-htaccess/`
@@ -120,11 +133,22 @@
 
 ---
 
-## Task 2: Test-Framework Skeleton (CLI-basiert, kein Composer)
+## Task 2: Test-Framework Skeleton (Browser-Runner, kein Composer)
 
 **Files affected:**
-- New: `php-backend/tests/assert.php` — Mini-Assert-Helpers
-- New: `php-backend/tests/run.php` — Test-Runner
+- New: `php-backend/tests/assert.php` — Mini-Assert-Helpers (sammelt Ergebnisse)
+- New: `php-backend/tests/run.php` — Browser-Runner mit HTML-Output
+
+**Workflow-Begründung (Pivot 2026-05-11):**
+Lokales PHP-Setup ist für diesen Use-Case zu viel Overhead (technischer Beginner, einmalige Implementation, Xcode-CLT-Install-Issues). Stattdessen: Server-side Test-Execution via Browser.
+
+**Workflow:**
+1. Claude Code schreibt Tests + Implementation in TDD-Struktur (40 Tests über 5 Module).
+2. Salvatore uploaded `tests/`-Ordner + alle Module via FTP.
+3. Browser → `https://sandbox.gastro-master.de/tests/run.php`
+4. HTML-Output zeigt alle Tests mit grün/rot + Error-Messages bei Fails.
+5. Bei Fails: Claude Code iteriert, Salvatore re-uploaded betroffene Files.
+6. **🔒 SECURITY-KRITISCH:** Nach Smoke-Tests → `tests/`-Ordner via FileZilla **LÖSCHEN**. Sonst kann jeder im Internet die Test-Suite triggern.
 
 **Steps:**
 
@@ -311,13 +335,14 @@
 
    /**
     * HTML-escape user input to prevent XSS in email body.
-    * Uses ENT_QUOTES (escapes both " and ') + ENT_HTML5 + UTF-8.
-    * Single call is safe — htmlspecialchars escapes & to &amp;
-    * exactly once when called once per field.
+    * Uses ENT_QUOTES (escapes both " and ') + UTF-8.
+    * NO ENT_HTML5 — that would escape ' to &apos;, which older email clients
+    * (Outlook 2003/2007) render as literal text instead of an apostrophe.
+    * Default (HTML4.01) escapes ' to &#039; — universally compatible.
     */
    function escapeHtml(?string $input): string {
        if ($input === null) return '';
-       return htmlspecialchars($input, ENT_QUOTES | ENT_HTML5, 'UTF-8');
+       return htmlspecialchars($input, ENT_QUOTES, 'UTF-8');
    }
    ```
 
@@ -1049,12 +1074,11 @@
    }
 
    // ── 5. Rate-Limit (fail-open on FS-error) ─────────────────────────────────
-   $ip = $_SERVER['HTTP_X_FORWARDED_FOR']
-       ?? $_SERVER['REMOTE_ADDR']
-       ?? 'unknown';
-   if (str_contains($ip, ',')) {
-       $ip = trim(explode(',', $ip)[0]);  // First IP in X-Forwarded-For
-   }
+   // SECURITY: REMOTE_ADDR direkt verwenden, X-Forwarded-For NICHT trusten.
+   // Auf All-Inkl ist REMOTE_ADDR der echte Client-IP (kein vertrauter Proxy davor).
+   // X-Forwarded-For ist vom Client setzbar → spoofbar → Rate-Limit-Bypass.
+   // Falls in Phase D ein Proxy/CDN davor kommt: hier Trusted-Proxy-Logik einbauen.
+   $ip = $_SERVER['REMOTE_ADDR'] ?? 'unknown';
    $rl = checkRateLimit($ip, $config['rate_limit']);
    if (!$rl['allowed']) {
        jsonResponse(429, ['error' => 'Zu viele Anfragen. Bitte später erneut versuchen.']);
@@ -1296,6 +1320,23 @@ SERVER: /www/htdocs/w01d17b9/webiste_2026/lib/sanitize.php
 [+ buildEmailBody.php, validate.php, rateLimit.php, parseRecipients.php]
 ```
 
+### 11.1b Test-Runner (TEMPORÄR — nach Verifikation LÖSCHEN!)
+
+```
+LOKAL: php-backend/tests/
+SERVER: /www/htdocs/w01d17b9/webiste_2026/tests/
+
+Inhalt: assert.php, run.php, sanitize_test.php, buildEmailBody_test.php,
+        validate_test.php, rateLimit_test.php, parseRecipients_test.php
+```
+
+**Smoke-Test:**
+1. Browser → `https://sandbox.gastro-master.de/tests/run.php`
+2. Erwartung: HTML-Tabelle mit allen 40 Tests grün (`Passed: 40 / 40 — Failed: 0`)
+3. Bei Fails: Claude Code informieren mit Screenshot/Copy der Fehler-Tabelle → Iteration → Re-upload betroffene Files → Refresh Browser
+
+**🔒 SECURITY: Nach erfolgreichem Smoke-Test → Schritt 11.7 (Test-Folder LÖSCHEN!)**
+
 ### 11.2 Data-Folder mit Protection
 ```
 LOKAL: php-backend/data/.htaccess
@@ -1326,6 +1367,17 @@ SERVER: /www/htdocs/w01d17b9/webiste_2026/config.php
 Permissions: 0600 (rw------- nur Owner)
 ```
 
+**Permissions-Eskalation falls 500-Error nach Upload** (Cowork R1):
+`0600` setzt voraus, dass PHP-FPM-User === FTP-User. Auf All-Inkl ist das typisch der Fall (FPM läuft als Kunden-User `w01d17b9`), aber nicht garantiert. Falls PHP nach Upload einen 500-Error wirft mit "Permission denied" beim `require __DIR__ . '/config.php'`:
+
+| Stufe | Wert | Bedeutung |
+|-------|------|-----------|
+| 1 (default) | `0600` | rw------- (nur Owner) — sicherste Option |
+| 2 (Fallback) | `0640` | rw-r----- (Group lesen) — falls PHP unter anderem Group-User läuft |
+| 3 (Breakglass) | `0644` | rw-r--r-- (alle lesen) — letzter Ausweg, **nicht** öffentlich aufrufbar wenn außerhalb Webroot oder per .htaccess geschützt |
+
+In der Praxis reicht `0600` auf All-Inkl. Stufen 2 + 3 sind dokumentiert für Edge-Cases.
+
 ### 11.5 contact.php ZULETZT
 ```
 LOKAL: php-backend/contact.php
@@ -1333,6 +1385,25 @@ SERVER: /www/htdocs/w01d17b9/webiste_2026/contact.php
 
 Permissions: 0644 (rw-r--r--)
 ```
+
+### 11.7 🔒 TEST-FOLDER LÖSCHEN (SICHERHEITS-KRITISCH)
+
+Nach erfolgreichem 11.1b-Smoke-Test (alle 40 Tests grün) UND erfolgreichem 11.6-curl-Smoke-Test:
+
+```
+SERVER: /www/htdocs/w01d17b9/webiste_2026/tests/  →  via FileZilla LÖSCHEN
+```
+
+**Warum:** `tests/run.php` ist ein öffentlich aufrufbarer Endpoint, der die komplette Test-Suite ausführt. Während Setup ist das nützlich (Browser-basierte Verifikation), aber in Production:
+- Reveals internal logic structure (welche Validations, welche Regex-Patterns)
+- Verbraucht Server-Resourcen wenn von außen getriggert
+- Schreibt Rate-Limit-Test-Dateien in `data/rate-limits/` (wenn Tests via Browser laufen mit echtem `data_dir`)
+
+**Verify nach Löschung:**
+- `https://sandbox.gastro-master.de/tests/` → 404 oder 403
+- `https://sandbox.gastro-master.de/tests/run.php` → 404
+
+**Falls Re-Test später nötig:** Folder via FileZilla wieder hochladen → Tests laufen → wieder löschen.
 
 ### 11.6 Smoke-Test mit curl
 ```bash

@@ -2,6 +2,7 @@ import { useEffect, useState } from "react";
 import { motion, AnimatePresence } from "framer-motion";
 import { ArrowRight, CheckCircle2, XCircle, Quote, Plus, Minus, type LucideIcon } from "lucide-react";
 import { Link } from "react-router-dom";
+import { useLangPath } from "@/components/LanguageLayout";
 import { useTranslation } from "react-i18next";
 import Navbar from "@/components/landing/Navbar";
 import Footer from "@/components/landing/Footer";
@@ -93,6 +94,7 @@ export interface AddOnPageConfig {
 // ─── Hero (stays dark — brand-signature dramatic opener) ─────────────────────
 const HeroSection = ({ badge, headline, subline, heroImage, heroImageRounded, heroImageLarge }: AddOnPageConfig["hero"]) => {
   const { t } = useTranslation("common");
+  const lp = useLangPath();
   return (
   <section className="mesh-gradient min-h-[82vh] flex items-center section-padding pt-48 relative overflow-hidden">
     <div className="absolute top-1/2 left-1/2 -translate-x-1/2 -translate-y-1/2 w-[700px] h-[500px] rounded-full bg-[#007DCF]/10 blur-[140px] pointer-events-none" />
@@ -113,13 +115,13 @@ const HeroSection = ({ badge, headline, subline, heroImage, heroImageRounded, he
           <p className="text-lg text-white/60 max-w-lg mb-10 leading-relaxed">
             {subline}
           </p>
-          <a
-            href="/kontakt"
+          <Link
+            to={lp("/kontakt")}
             className="bg-gradient-amber text-white font-bold px-8 py-4 rounded-xl text-base inline-flex items-center gap-2 hover:scale-[1.02] transition-transform shadow-lg shadow-[#ED8400]/20"
           >
             {t("nav.cta")}
             <ArrowRight className="w-5 h-5" />
-          </a>
+          </Link>
         </motion.div>
         {heroImage && (
           <motion.div

@@ -1,10 +1,12 @@
 import { useState } from "react";
+import { useNavigate } from "react-router-dom";
 import { motion } from "framer-motion";
 import { ArrowRight, Calculator } from "lucide-react";
 import { useTranslation } from "react-i18next";
 
 const CalculatorSection = () => {
   const { t } = useTranslation("common");
+  const navigate = useNavigate();
   const [orders, setOrders] = useState(300);
   const [avgCart, setAvgCart] = useState(30);
   const [commission, setCommission] = useState(15);
@@ -14,7 +16,7 @@ const CalculatorSection = () => {
   const yearlyLoss = monthlyLoss * 12;
 
   const scrollToForm = () => {
-    window.location.href = "/kontakt";
+    navigate("/kontakt");
   };
 
   return (

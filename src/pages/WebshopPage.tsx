@@ -1,4 +1,5 @@
 import React, { lazy, Suspense, useState, useEffect } from "react";
+import { useNavigate } from "react-router-dom";
 import { useSeoMeta } from "@/hooks/useSeoMeta";
 import ScrollProgressBar from "@/components/ScrollProgressBar";
 import ScrollToTopButton from "@/components/ScrollToTopButton";
@@ -242,6 +243,7 @@ const testimonials = [
 // ─── Team CTA ─────────────────────────────────────────────────────────────────
 const WebshopTeamCTA = () => {
   const { t } = useTranslation("webshop");
+  const navigate = useNavigate();
   const lp = useLangPath();
   const arr = (key: string) => { const v = t(key, { returnObjects: true }); return Array.isArray(v) ? v : []; };
   const roles = arr("teamCta.roles") as string[];
@@ -309,7 +311,7 @@ const WebshopTeamCTA = () => {
             </div>
 
             <motion.button
-              onClick={() => { window.location.href = lp("/kontakt"); }}
+              onClick={() => { navigate(lp("/kontakt")); }}
               whileHover={{ scale: 1.04, boxShadow: "0 0 32px 8px rgba(237,132,0,0.55), 0 0 64px 16px rgba(237,132,0,0.25)" }}
               whileTap={{ scale: 0.97 }}
               transition={{ duration: 0.2 }}
@@ -457,7 +459,7 @@ const WebshopPage = () => {
           </p>
 
           <motion.button
-            onClick={() => { window.location.href = lp("/kontakt"); }}
+            onClick={() => { navigate(lp("/kontakt")); }}
             whileHover={{ scale: 1.04, boxShadow: "0 0 32px 8px rgba(237,132,0,0.55), 0 0 64px 16px rgba(237,132,0,0.25)" }}
             whileTap={{ scale: 0.97 }}
             transition={{ duration: 0.2 }}
@@ -651,7 +653,7 @@ const WebshopPage = () => {
             className="mt-14"
           >
             <motion.button
-              onClick={() => { window.location.href = lp("/kontakt"); }}
+              onClick={() => { navigate(lp("/kontakt")); }}
               whileHover={{ scale: 1.04, boxShadow: "0 0 32px 8px rgba(237,132,0,0.55), 0 0 64px 16px rgba(237,132,0,0.25)" }}
               whileTap={{ scale: 0.97 }}
               transition={{ duration: 0.2 }}
@@ -883,7 +885,7 @@ const WebshopPage = () => {
 
               <div className="flex-shrink-0">
                 <motion.button
-                  onClick={() => { window.location.href = lp("/kontakt"); }}
+                  onClick={() => { navigate(lp("/kontakt")); }}
                   whileHover={{ scale: 1.04, boxShadow: "0 0 32px 8px rgba(237,132,0,0.55), 0 0 64px 16px rgba(237,132,0,0.25)" }}
                   whileTap={{ scale: 0.97 }}
                   transition={{ duration: 0.2 }}
@@ -914,7 +916,7 @@ const WebshopPage = () => {
                 Upgrade auf die vollständige App-Lösung: deine eigene App erscheint unter deinem Namen im Apple App Store und Google Play Store. Gemeinsam mit dem Webshop für 149 € / Monat.
               </p>
               <button
-                onClick={() => { window.location.href = lp("/produkte/bestellapp"); }}
+                onClick={() => { navigate(lp("/produkte/bestellapp")); }}
                 className="mt-5 text-cyan-brand text-sm font-semibold flex items-center gap-1 hover:gap-2 transition-all duration-200"
               >
                 Mehr erfahren <ArrowRight className="w-4 h-4" />
@@ -938,7 +940,7 @@ const WebshopPage = () => {
                 Dein digitales Aushängeschild – eine eigenständige Restaurant-Website mit Bildergalerie, Kontaktformular und Google Maps. Informiert Besucher, während der Webshop Bestellungen entgegennimmt.
               </p>
               <button
-                onClick={() => { window.location.href = lp("/produkte/pakete/webseite"); }}
+                onClick={() => { navigate(lp("/produkte/pakete/webseite")); }}
                 className="mt-5 text-cyan-brand text-sm font-semibold flex items-center gap-1 hover:gap-2 transition-all duration-200"
               >
                 Mehr erfahren <ArrowRight className="w-4 h-4" />
@@ -982,7 +984,7 @@ const WebshopPage = () => {
                 ))}
               </div>
               <button
-                onClick={() => { window.location.href = lp("/produkte/add-ons/transaktionsumlage"); }}
+                onClick={() => { navigate(lp("/produkte/add-ons/transaktionsumlage")); }}
                 className="text-cyan-brand text-sm font-semibold flex items-center gap-1 hover:gap-2 transition-all duration-200"
               >
                 Mehr erfahren <ArrowRight className="w-4 h-4" />
@@ -1045,7 +1047,7 @@ const WebshopPage = () => {
                 Weitere Fragen? Ruf uns an oder schreib uns – wir antworten innerhalb von 24 Stunden.
               </p>
               <button
-                onClick={() => { window.location.href = lp("/kontakt"); }}
+                onClick={() => { navigate(lp("/kontakt")); }}
                 className="mt-8 text-cyan-brand text-sm font-semibold inline-flex items-center gap-2 hover:gap-3 transition-all"
               >
                 Direkt anfragen <ArrowRight className="w-4 h-4" />

@@ -1,4 +1,5 @@
 import { motion } from "framer-motion";
+import { useNavigate } from "react-router-dom";
 import { ArrowRight, Star, Users, ShieldCheck } from "lucide-react";
 import heroPOS from "@/assets/heroes/hero-pos-system.png";
 import { useTranslation } from "react-i18next";
@@ -13,8 +14,9 @@ const fadeUp = {
 
 const HeroSection = () => {
   const { t } = useTranslation("common");
+  const navigate = useNavigate();
   const scrollToForm = () => {
-    window.location.href = "/kontakt";
+    navigate("/kontakt");
   };
 
   return (

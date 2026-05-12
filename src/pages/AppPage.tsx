@@ -1,4 +1,5 @@
 import React, { lazy, Suspense, useState, useEffect, useRef } from "react";
+import { useNavigate } from "react-router-dom";
 import ScrollProgressBar from "@/components/ScrollProgressBar";
 import ScrollToTopButton from "@/components/ScrollToTopButton";
 import { useSeoMeta } from "@/hooks/useSeoMeta";
@@ -134,6 +135,7 @@ const GlowCard = ({
 
 const FlyerPriceList = () => {
   const { t } = useTranslation("app");
+  const navigate = useNavigate();
   const arr = (key: string) => { const v = t(key, { returnObjects: true }); return Array.isArray(v) ? v : []; };
   const [open, setOpen] = useState(false);
   const tiers = arr("flyerTiers") as { qty: string; price: string }[];
@@ -314,7 +316,7 @@ const AppTeamCTA = () => {
               ))}
             </div>
             <motion.button
-              onClick={() => { window.location.href = lp("/kontakt"); }}
+              onClick={() => { navigate(lp("/kontakt")); }}
               whileHover={{ scale: 1.04, boxShadow: "0 0 32px 8px rgba(237,132,0,0.55), 0 0 64px 16px rgba(237,132,0,0.25)" }}
               whileTap={{ scale: 0.97 }}
               transition={{ duration: 0.2 }}
@@ -457,7 +459,7 @@ const AppPage = () => {
           </p>
 
           <motion.button
-            onClick={() => { window.location.href = lp("/kontakt"); }}
+            onClick={() => { navigate(lp("/kontakt")); }}
             whileHover={{ scale: 1.04, boxShadow: "0 0 32px 8px rgba(237,132,0,0.55), 0 0 64px 16px rgba(237,132,0,0.25)" }}
             whileTap={{ scale: 0.97 }}
             transition={{ duration: 0.2 }}
@@ -892,7 +894,7 @@ const AppPage = () => {
 
               <div className="flex-shrink-0">
                 <motion.button
-                  onClick={() => { window.location.href = lp("/kontakt"); }}
+                  onClick={() => { navigate(lp("/kontakt")); }}
                   whileHover={{ scale: 1.04, boxShadow: "0 0 32px 8px rgba(237,132,0,0.55), 0 0 64px 16px rgba(237,132,0,0.25)" }}
                   whileTap={{ scale: 0.97 }}
                   transition={{ duration: 0.2 }}
@@ -922,7 +924,7 @@ const AppPage = () => {
                 {t("pricing.websiteText")}
               </p>
               <button
-                onClick={() => { window.location.href = lp("/produkte/pakete/webseite"); }}
+                onClick={() => { navigate(lp("/produkte/pakete/webseite")); }}
                 className="mt-5 text-cyan-brand text-sm font-semibold flex items-center gap-1 hover:gap-2 transition-all duration-200"
               >
                 {t("pricing.websiteLink")} <ArrowRight className="w-4 h-4" />
@@ -963,7 +965,7 @@ const AppPage = () => {
                 ))}
               </div>
               <button
-                onClick={() => { window.location.href = lp("/produkte/add-ons/transaktionsumlage"); }}
+                onClick={() => { navigate(lp("/produkte/add-ons/transaktionsumlage")); }}
                 className="text-cyan-brand text-sm font-semibold flex items-center gap-1 hover:gap-2 transition-all duration-200"
               >
                 {t("pricing.txLink")} <ArrowRight className="w-4 h-4" />
@@ -1048,7 +1050,7 @@ const AppPage = () => {
                 {t("faq.text")}
               </p>
               <button
-                onClick={() => { window.location.href = lp("/kontakt"); }}
+                onClick={() => { navigate(lp("/kontakt")); }}
                 className="mt-8 text-cyan-brand text-sm font-semibold inline-flex items-center gap-2 hover:gap-3 transition-all"
               >
                 {t("faq.cta")} <ArrowRight className="w-4 h-4" />

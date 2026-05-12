@@ -1,4 +1,5 @@
 import { motion } from "framer-motion";
+import { useNavigate } from "react-router-dom";
 import { ArrowRight } from "lucide-react";
 
 interface ProductCTAProps {
@@ -7,7 +8,9 @@ interface ProductCTAProps {
   buttonLabel: string;
 }
 
-const ProductCTA = ({ headline, sub, buttonLabel }: ProductCTAProps) => (
+const ProductCTA = ({ headline, sub, buttonLabel }: ProductCTAProps) => {
+  const navigate = useNavigate();
+  return (
   <section className="bg-gradient-amber section-padding">
     <div className="container-tight text-center">
       <motion.div
@@ -23,7 +26,7 @@ const ProductCTA = ({ headline, sub, buttonLabel }: ProductCTAProps) => (
           {sub}
         </p>
         <button
-          onClick={() => { window.location.href = "/kontakt"; }}
+          onClick={() => { navigate("/kontakt"); }}
           className="bg-[#0A264A] text-white font-bold px-8 py-4 rounded-xl text-base inline-flex items-center gap-2 hover:bg-[#0A264A]/90 transition-colors shadow-xl shadow-[#0A264A]/25"
         >
           {buttonLabel}
@@ -32,6 +35,7 @@ const ProductCTA = ({ headline, sub, buttonLabel }: ProductCTAProps) => (
       </motion.div>
     </div>
   </section>
-);
+  );
+};
 
 export default ProductCTA;
